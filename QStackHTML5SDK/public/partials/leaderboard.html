@@ -1,0 +1,134 @@
+<md-dialog style="width: 80%; max-height: 600px;" aria-label="Leaderboard">
+	
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<h2>Tournament Detail</h2>
+				<span flex></span>
+				<md-button class="md-icon-button" ng-click="closeLeaderboardPopup()">
+					<md-icon>close</md-icon>
+				</md-button>
+			</div>
+		</md-toolbar>
+		
+		
+		<md-dialog-content>
+		
+			<div class="md-body-2">{{detailTourn.name}}</div>
+			
+			<div class="md-body-1">{{detailTourn.info}}</div>
+			
+			
+			<md-tabs md-dynamic-height md-border-bottom md-center-tabs>
+			 	<md-tab label="Leaderboard">
+			
+					<div layout="row" layout-fill>
+						<div layout="row" layout-fill>
+							<div flex="10" class="md-body-2" style="text-align: center;">
+								Rank
+							</div>
+							<div flex="15" class="md-body-2" style="text-align: center;">
+								Payout
+							</div>
+							<div flex="35" class="md-body-2" style="text-align: center;">
+								Player
+							</div>
+							<div flex="20" class="md-body-2" style="text-align: center;">
+								Correct Answers
+							</div>
+							<div flex="20" class="md-body-2" style="text-align: center;">
+								Average Time
+							</div>
+						</div>
+					</div>
+			
+					
+					<div layout-fill ng-repeat="player in hiScoreData">
+						<div layout="row" layout-fill>
+							<div flex="10" class="md-body-1" layout="row" layout-align="center center">
+								{{player.rank}}
+							</div>
+							
+							<div flex="15" class="md-body-1" layout="row" layout-align="center center">
+								${{detailTourn.prizes[$index].item.quantity}}
+							</div>
+					
+							<div flex="35">
+								<div layout="row" layout-align="center center">
+									<div style="width: 40px; height: 40px; border-radius: 20px; overflow: hidden;">
+										<img ng-src="{{player.team.avatar}}" style="width: 40px; height: 40px; border-radius: 20px;" />
+									</div>
+									<div class="md-body-1">
+										&nbsp{{player.team.teamNames[0]}}
+									</div>
+								</div>
+							</div>
+					
+							<div flex="20" class="md-body-1" layout="row" layout-align="center center">
+								{{player.numCorrect}}
+							</div>
+					
+							<div flex="20" class="md-body-1" layout="row" layout-align="center center">
+								{{player.correctTime.toFixed(2)}}s
+							</div>
+					
+						</div>
+				
+					</div>
+					
+				</md-tab>
+					
+				
+				<md-tab label="Prizes">
+			
+					<md-list>
+						<md-list-item ng-repeat="prize in detailTourn.prizesNew">
+				
+							<div layout="row" layout-padding layout-fill layout-align="space-between center">
+								<div>
+									<div ng-show="prize.first === prize.last">
+										<div>
+											<span class="md-display-1">{{prize.first}}</span>
+											<span class="Regular 16px">{{ordinal(prize.first)}}</span>
+											<span class="md-body-1"> Place</span>
+										</div>
+									</div>
+									<div ng-hide="prize.first === prize.last">
+										<div>
+											<span class="md-display-1">{{prize.first}}</span>
+											<span class="Regular 16px">{{ordinal(prize.first)}}</span>
+										</div>
+										<div class="md-body-1">
+											to {{prize.last}}{{ordinal(prize.last)}} Place
+										</div>
+									</div>
+									<br />
+									<div class="md-body-2">
+										{{prize.name}}
+									</div>
+								</div>
+						
+								<div flex></div>
+						
+								<div>
+									<div style="width:140px; height: 140px; border-radius: 10px; background: #ffffff;">
+										<img ng-src="http://{{prize.image.image}}" style="width: 140px; height: 140px; border-radius: 10px" />
+									</div>
+								</div>
+					
+							</div>
+					
+					
+						</md-list-item>
+					</md-list>
+			
+				
+				</md-tab>
+			</md-tabs>
+
+		</md-dialog-content>
+		
+		<div class="md-actions" layout="row">
+			<span flex></span>
+		</div>
+	
+</md-dialog>

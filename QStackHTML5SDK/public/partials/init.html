@@ -1,0 +1,49 @@
+<div style="background: grey;" class="md-whiteframe-z2">
+	<div layout-padding>
+        <img src="imgs/qStack.png">
+	</div>
+</div>
+
+
+<div layout-padding >
+	<md-tabs md-dynamic-height md-border-bottom md-center-tabs md-selected="loginOrSignUp">
+	
+	
+		
+		<md-tab label="Login">
+			<div layout="row" layout-padding>
+			
+				<div flex hide-sm></div>
+				
+				<div flex="66" flex-sm="100">
+					<md-content layout-padding class="md-whiteframe-z1">
+					<h3 class="md-headline" style="text-align: center;">Login With Any Unique Identifier </h3>
+				
+					
+					<form novalidate ng-submit="userLogin()">
+					
+						<md-input-container>
+							<md-icon>person</md-icon>
+							<input type="text" placeholder="Unique Identifier" ng-model="userInput.email" />
+						</md-input-container>
+
+						
+						<div layout="row">
+							<div flex></div>
+							<md-button type="submit" class="md-raised md-primary">Submit</md-button>
+						</div>
+					</form>
+					
+				</md-content>
+				</div>
+				
+				<div flex hide-sm></div>
+				
+			</div>
+		</md-tab>
+
+	</md-tabs>
+</div>
+
+
+

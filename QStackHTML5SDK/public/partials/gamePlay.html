@@ -1,0 +1,64 @@
+
+
+<div layout="row">
+	<div flex hide-sm></div>
+	
+	<div flex="66" flex-sm="100" layout-padding>
+		
+		<md-content layout-padding class="md-whiteframe-z1">
+			<div layout="column">
+				<div layout="row">
+					
+					<div style="position: relative; bottom: 2px; left: 2px; z-index: 10;
+						background: rgb(63,81,181); width: 20px; height: 20px; border-radius: 10px;">
+						<div class="md-body-2" style="color: white; text-align: center; position: relative; bottom: 2px;">{{timerClock}}</div>
+					</div>
+					
+					
+					<md-progress-linear md-mode="determinate" value="{{timerBar}}"></md-progress-linear>
+					
+				</div>
+
+				<div style="height: 200px;" layout="row" layout-align="center center">
+					<div class="gamePlay-fade" ng-show='showTransition'>
+						<h3 class="md-headline">{{questionNumTransition}}</h3>
+					</div>
+
+					<div class="gamePlay-fade" ng-show='showQuestion'>
+						<h3 class="md-headline">{{question}}</h3>
+					</div>
+				</div>
+			
+			</div>
+		</md-content>
+		
+	
+	</div>
+	
+	<div flex hide-sm></div>
+</div>
+
+
+<div layout="row" style="height: 200px;">
+	<div flex hide-sm></div>
+	
+	<div flex="66" flex-sm="100" layout-padding>
+		<div layout="column" class="gamePlay-fade" ng-show='showAnswers'>
+		
+			<md-button class="md-raised" ng-class="buttonStyles[0]" ng-click="submitAnswer(0)">{{answers[0]}}</md-button>
+			<md-button class="md-raised" ng-class="buttonStyles[1]" ng-click="submitAnswer(1)">{{answers[1]}}</md-button>
+			<md-button class="md-raised" ng-class="buttonStyles[2]" ng-click="submitAnswer(2)">{{answers[2]}}</md-button>
+			<md-button class="md-raised" ng-class="buttonStyles[3]" ng-click="submitAnswer(3)">{{answers[3]}}</md-button>
+			
+		</div>
+	</div>
+	
+	<div flex hide-sm></div>
+</div>
+
+
+<div style="height: 20px;"></div>
+
+<div ui-view></div>
+
+

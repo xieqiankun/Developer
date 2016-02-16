@@ -1,0 +1,149 @@
+
+
+<div layout="row" layout-align="center center" layout-padding>
+	<md-button class=" md-raised" ng-click="goToChallenge()">Start A Challenge</md-button>
+</div>
+
+
+<div layout="row" layout-wrap layout-padding>
+	
+	<div flex="50" flex-md="100" flex-sm="100">
+		
+		<md-content class="md-whiteframe-z1">
+			
+			<md-toolbar>
+				<div class="md-toolbar-tools">
+					<h2>OUTGOING CHALLENGES</h2>
+					
+					<span flex></span>
+					
+					<md-button class="md-icon-button" aria-label="Refresh" ng-click="refresh()">
+						<md-tooltip>
+							Refresh
+						</md-tooltip>
+						<md-icon>refresh</md-icon>
+					</md-button>
+				</div>
+			</md-toolbar>
+			
+			
+			<md-list>
+				<md-list-item ng-repeat="message in outgoingChallenges">
+					
+					<div layout="row" layout-fill layout-padding style="cursor: pointer;" 
+						ng-class="{'md-body-1': message.isRead, 'md-body-2': !message.isRead}" ng-click="markRead(message, $event, 'outgoingAsyncChallenge')">
+						<div flex="15" layout="row" layout-align="center center">
+							<div style="width: 0px;" ng-hide="message.isRead">
+								<div style="width: 10px; height: 10px; border-radius: 5px; background: rgb(255,64,129);
+									position: relative; right: 15px;">
+								</div>
+							</div>
+							{{message.isDeclined ? "Declined" : "Pending"}}
+						</div>
+						
+						
+						<div flex="25" layout="row" layout-align="start center">
+							<div style="width: 40px; height: 40px; border-radius: 22px; border: 2px solid grey; background: white;">
+								<img ng-if="message.teamAvatars[1][0]" ng-src="{{message.teamAvatars[1][0]}}" style="width: 40px; height: 40px; border-radius: 20px; background: white;" />
+								<img ng-if="!message.teamAvatars[1][0]" src="/imgs/random.png" style="width: 40px; height: 40px; border-radius: 20px; background: white;" />
+							</div>
+							<div layout="row" layout-align="center center">			
+								&nbsp{{message.recipient}} 
+							</div>
+						</div>
+						
+						
+						<div flex="15" layout="row" layout-align="center center">
+							${{message.wager}}
+						</div>
+						
+						
+						<div flex="25" layout="row" layout-align="center center">
+							{{message.zone}} - {{message.category}}
+						</div>
+						
+						
+						<div flex="20" layout="row" layout-align="center center" class="md-caption">
+							{{message.date | amCalendar}}
+						</div>
+						
+					</div>
+
+					<md-divider ng-if="!$last"></md-divider>
+					
+				</md-list-item>
+			</md-list>
+		</md-content>
+		
+	</div>
+	
+	<div flex="50" flex-md="100" flex-sm="100">
+		
+		<md-content class="md-whiteframe-z1">
+			<md-toolbar>
+				<div class="md-toolbar-tools">
+					<h2>FINISHED CHALLENGES</h2>
+					
+					<span flex></span>
+					
+					<md-button class="md-icon-button" aria-label="Refresh" ng-click="refresh()">
+						<md-tooltip>
+							Refresh
+						</md-tooltip>
+						<md-icon>refresh</md-icon>
+					</md-button>
+				</div>
+			</md-toolbar>
+			
+			
+			<md-list>
+				<md-list-item ng-repeat="message in finishedChallenges">
+					<div layout="row" layout-fill layout-padding style="cursor: pointer;" 
+						ng-class="{'md-body-1': message.isRead, 'md-body-2': !message.isRead}" ng-click="markRead(message, $event, 'finishedAsyncChallenge')">
+						
+						<div flex="15" layout="row" layout-align="start center">
+							<div style="width: 0px;" ng-hide="message.isRead">
+								<div style="width: 10px; height: 10px; border-radius: 5px; background: rgb(255,64,129);
+									position: relative; right: 15px;">
+								</div>
+							</div>
+							{{message.winnerTeamNum ===  myNumber(message) ? "Win" : "Lose"}}
+						</div>
+						
+						
+						<div flex="25" layout="row" layout-align="start center">
+							<div style="width: 40px; height: 40px; border-radius: 22px; border: 2px solid grey; background: white;">
+								<img ng-src="{{message.teamAvatars[1 - myNumber(message)][0]}}" style="width: 40px; height: 40px; border-radius: 20px; background: white;" />
+							</div>
+							<div layout="row" layout-align="center center">			
+								&nbsp{{message.teamNames[1 - myNumber(message)][0]}} 
+							</div>
+						</div>
+						
+						
+						<div flex="15" layout="row" layout-align="center center">
+							${{message.wager}}
+						</div>
+						
+						
+						<div flex="25" layout="row" layout-align="center center">
+							{{message.zone}} - {{message.category}}
+						</div>
+						
+						
+						<div flex="20" layout="row" layout-align="center center" class="md-caption">
+							{{message.date | amCalendar}}
+						</div>
+						
+					</div>
+
+					<md-divider ng-if="!$last"></md-divider>
+					
+
+				</md-list-item>
+			</md-list>
+		</md-content>
+		
+	</div>
+		
+</div>

@@ -1,0 +1,27 @@
+<div layout="row" layout-padding>
+	<div flex hide-sm></div>
+	
+	<div flex="66" flex-sm="100">
+		
+		<md-content class="md-whiteframe-z1">
+			<h3 class="md-headline" style="text-align: center;">YOUR FEEDBACK IS WELCOME</h3>
+			
+			<form name="feedbackForm" novalidate ng-submit="send()">
+				<md-input-container>
+					<label>Feedback</label>
+					<textarea ng-model="userInput.feedback" columns="1" md-maxlength="1000" required></textarea>
+				</md-input-container>
+				
+				
+				<div layout="row">
+					<div flex></div>
+					<md-button type="submit" ng-show="showbutton" ng-disabled="feedbackForm.$invalid" class="md-raised md-primary">Submit</md-button>
+					<md-progress-circular ng-hide="showbutton" md-mode="indeterminate"></md-progress-circular>
+				</div>
+			</form>
+			
+		</md-content>
+	</div>
+		
+	<div flex hide-sm></div>
+</div>

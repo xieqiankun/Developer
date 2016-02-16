@@ -1,0 +1,258 @@
+<div style="width: 100%; background: grey;">
+	<div layout="column">
+	
+		<div layout="row" layout-padding>
+	
+			<div flex hide-sm></div>
+	
+			<div flex="66" flex-sm="100" layout="row" layout-fill>
+				<div>
+					<div layout="row" layout-align="center center">
+						<div style="width: 40px; height: 40px; border-radius: 20px; overflow: hidden; background: white;">
+							<img ng-src="{{myAvatar}}" style="width: 40px; height: 40px; border-radius: 20px;" />
+						</div>
+				
+						<div class="md-body-2">
+							&nbsp{{myName}}
+						</div>
+						
+					</div>
+				</div>
+				
+				<div flex></div>
+				
+				<div layout="column" layout-align="center center">
+					<div class="md-title">
+						{{numberOfCorrect}}
+					</div>
+					<div class="md-caption">
+						Correct Answers
+					</div>
+				</div>
+				
+				<div flex></div>
+		
+				<div layout="column" layout-align="center center">
+					<div class="md-title" ng-show="totalTime">
+						{{(totalTime / numberOfCorrect / 1000).toFixed(2)}}s
+					</div>
+					<div class="md-title" ng-hide="totalTime">
+						0s
+					</div>
+					<div class="md-caption">
+						Average Time
+					</div>
+				</div>
+			</div>
+	
+			<div flex hide-sm></div>
+	
+		</div>
+		
+		
+		<div style="height: 0px;">
+			<div class="md-body-2" style="color: white; text-align: center;"><span style="color: rgb(63,81,181);">{{questionNum + 1}}</span> / <span style="color: rgb(197,202,233);">{{gameLength}}</span></div>
+		</div>
+		
+		
+		<div layout="row" layout-padding>
+			<div flex hide-sm></div>
+		
+			<div flex="66" flex-sm="100">
+				<md-progress-linear md-mode="determinate" value="{{teamProgress[0]}}"></md-progress-linear>
+			</div>
+		
+			<div flex hide-sm></div>
+		</div>
+		
+		<div style="height: 10px;"></div>
+		
+		<div ng-show="showBracket">
+			<h3 class="md-headline" style="text-align: center;">{{roundText}}</h3>
+		
+			<div layout="row">
+				<div flex hide-sm></div>
+			
+				<div flex="15">
+					<div>
+						<div layout="row" layout-align="start center" ng-class="{outOfGame: (teamAlive[0] == 0)}">
+							<div style="width: 40px; height: 40px; border-radius: 20px; overflow: hidden; background: white;">
+								<img ng-src="{{teamAvatars[0][0]}}" style="width: 40px; height: 40px; border-radius: 20px;" />
+							</div>
+			
+							<div class="md-body-2">
+								&nbsp{{teamNames[0][0]}}
+							</div>
+						</div>
+					
+						<div layout="row" layout-align="start center" ng-class="{outOfGame: (teamAlive[1] == 0)}">
+							<div style="width: 40px; height: 40px; border-radius: 20px; overflow: hidden; background: white;">
+								<img ng-src="{{teamAvatars[1][0]}}" style="width: 40px; height: 40px; border-radius: 20px;" />
+							</div>
+			
+							<div class="md-body-2">
+								&nbsp{{teamNames[1][0]}}
+							</div>
+						</div>
+					
+						<div style="height: 10px;"></div>
+					
+						<div layout="row" layout-align="start center" ng-class="{outOfGame: (teamAlive[2] == 0)}">
+							<div style="width: 40px; height: 40px; border-radius: 20px; overflow: hidden; background: white;">
+								<img ng-src="{{teamAvatars[2][0]}}" style="width: 40px; height: 40px; border-radius: 20px;" />
+							</div>
+			
+							<div class="md-body-2">
+								&nbsp{{teamNames[2][0]}}
+							</div>
+						</div>
+					
+						<div layout="row" layout-align="start center" ng-class="{outOfGame: (teamAlive[3] == 0)}">
+							<div style="width: 40px; height: 40px; border-radius: 20px; overflow: hidden; background: white;">
+								<img ng-src="{{teamAvatars[3][0]}}" style="width: 40px; height: 40px; border-radius: 20px;" />
+							</div>
+			
+							<div class="md-body-2">
+								&nbsp{{teamNames[3][0]}}
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<div flex="15">
+					<div>
+						<div style="height: 45px;"></div>
+						<div layout="row" layout-align="start center" ng-class="{outOfGame: (round2TeamAlive[0] == 0)}">
+							<div style="width: 40px; height: 40px; border-radius: 20px; overflow: hidden; background: white;">
+								<img ng-src="{{round2TeamAvatars[0]}}" style="width: 40px; height: 40px; border-radius: 20px;" />
+							</div>
+			
+							<div class="md-body-2">
+								&nbsp{{round2TeamNames[0]}}
+							</div>
+						</div>
+					
+						<div layout="row" layout-align="start center" ng-class="{outOfGame: (round2TeamAlive[1] == 0)}">
+							<div style="width: 40px; height: 40px; border-radius: 20px; overflow: hidden; background: white;">
+								<img ng-src="{{round2TeamAvatars[1]}}" style="width: 40px; height: 40px; border-radius: 20px;" />
+							</div>
+			
+							<div class="md-body-2">
+								&nbsp{{round2TeamNames[1]}}
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<div flex="15">
+					<div>
+						<div style="height: 65px;"></div>
+						<div layout="row" layout-align="start center" ng-class="{outOfGame: (round3TeamAlive[0] == 0)}">
+							<div style="width: 40px; height: 40px; border-radius: 20px; overflow: hidden; background: white;">
+								<img ng-src="{{round3TeamAvatars[0]}}" style="width: 40px; height: 40px; border-radius: 20px;" />
+							</div>
+			
+							<div class="md-body-2">
+								&nbsp{{round3TeamNames[0]}}
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<div flex="15">
+					<div style="height: 65px;"></div>
+					<div>
+						<div layout="row" layout-align="end center" ng-class="{outOfGame: (round3TeamAlive[1] == 0)}">
+							<div class="md-body-2">
+								{{round3TeamNames[1]}}&nbsp
+							</div>
+						
+							<div style="width: 40px; height: 40px; border-radius: 20px; overflow: hidden; background: white;">
+								<img ng-src="{{round3TeamAvatars[1]}}" style="width: 40px; height: 40px; border-radius: 20px;" />
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<div flex="15">
+					<div style="height: 45px;"></div>
+					<div>
+						<div layout="row" layout-align="end center" ng-class="{outOfGame: (round2TeamAlive[2] == 0)}">
+							<div class="md-body-2">
+								{{round2TeamNames[2]}}&nbsp
+							</div>
+						
+							<div style="width: 40px; height: 40px; border-radius: 20px; overflow: hidden; background: white;">
+								<img ng-src="{{round2TeamAvatars[2]}}" style="width: 40px; height: 40px; border-radius: 20px;" />
+							</div>
+						</div>
+					
+						<div layout="row" layout-align="end center" ng-class="{outOfGame: (round2TeamAlive[3] == 0)}">
+							<div class="md-body-2">
+								{{round2TeamNames[3]}}&nbsp
+							</div>
+						
+							<div style="width: 40px; height: 40px; border-radius: 20px; overflow: hidden; background: white;">
+								<img ng-src="{{round2TeamAvatars[3]}}" style="width: 40px; height: 40px; border-radius: 20px;" />
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<div flex="15">
+					<div>
+						<div layout="row" layout-align="end center" ng-class="{outOfGame: (teamAlive[4] == 0)}">
+							<div class="md-body-2">
+								{{teamNames[4][0]}}&nbsp
+							</div>
+						
+							<div style="width: 40px; height: 40px; border-radius: 20px; overflow: hidden; background: white;">
+								<img ng-src="{{teamAvatars[4][0]}}" style="width: 40px; height: 40px; border-radius: 20px;" />
+							</div>
+						</div>
+					
+						<div layout="row" layout-align="end center" ng-class="{outOfGame: (teamAlive[5] == 0)}">
+							<div class="md-body-2">
+								{{teamNames[5][0]}}&nbsp
+							</div>
+						
+							<div style="width: 40px; height: 40px; border-radius: 20px; overflow: hidden; background: white;">
+								<img ng-src="{{teamAvatars[5][0]}}" style="width: 40px; height: 40px; border-radius: 20px;" />
+							</div>
+						</div>
+					
+						<div style="height: 10px;"></div>
+					
+						<div layout="row" layout-align="end center" ng-class="{outOfGame: (teamAlive[6] == 0)}">
+							<div class="md-body-2">
+								{{teamNames[6][0]}}&nbsp
+							</div>
+						
+							<div style="width: 40px; height: 40px; border-radius: 20px; overflow: hidden; background: white;">
+								<img ng-src="{{teamAvatars[6][0]}}" style="width: 40px; height: 40px; border-radius: 20px;" />
+							</div>
+						</div>
+					
+						<div layout="row" layout-align="end center" ng-class="{outOfGame: (teamAlive[7] == 0)}">
+							<div class="md-body-2">
+								{{teamNames[7][0]}}&nbsp
+							</div>
+						
+							<div style="width: 40px; height: 40px; border-radius: 20px; overflow: hidden; background: white;">
+								<img ng-src="{{teamAvatars[7][0]}}" style="width: 40px; height: 40px; border-radius: 20px;" />
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<div flex hide-sm></div>
+			</div>
+		
+		
+			<div style="height: 20px;"></div>
+		</div>
+		
+	</div>
+
+</div>
+

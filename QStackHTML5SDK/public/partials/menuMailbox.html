@@ -1,0 +1,55 @@
+<div layout="row" layout-padding>
+	<div flex hide-sm></div>
+	
+	<div flex="66" flex-sm="100">
+		
+		<md-content class="md-whiteframe-z1">
+			<md-toolbar>
+				<div class="md-toolbar-tools">
+					<h2>INBOX</h2>
+					
+					<span flex></span>
+					
+					<md-button class="md-icon-button" aria-label="Refresh" ng-click="refresh()">
+						<md-tooltip>
+							Refresh
+						</md-tooltip>
+						<md-icon>refresh</md-icon>
+					</md-button>
+				</div>
+			</md-toolbar>
+			
+			
+			<md-list>
+				<md-list-item ng-repeat="message in incomingMails">
+					<div layout="row" layout-fill layout-padding style="cursor: pointer;" ng-click="markRead(message, $event)">
+						<div style="width: 10px;" layout="row" layout-align="start center">
+							<div ng-hide="message.isRead" style="width: 10px; height: 10px; border-radius: 5px; background: rgb(255,64,129);">
+							</div>
+						</div>
+						<div flex="20" layout="row" layout-align="start center">
+							<div ng-class="{'md-body-1': message.isRead, 'md-body-2': !message.isRead}" >
+								{{message.sender}}
+							</div>
+						</div>
+						
+						<div flex layout="row" layout-align="start center">
+							<div ng-class="{'md-body-1': message.isRead, 'md-body-2': !message.isRead}" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+								{{message.body}}
+							</div>
+						</div>
+						
+						<div layout="row" layout-align="start center">
+							<div class="md-caption">
+								{{message.date | amCalendar}}
+							</div>
+						</div>
+					</div>
+					<md-divider ng-if="!$last"></md-divider>
+				</md-list-item>
+			</md-list>
+		</md-content>
+	</div>
+		
+	<div flex hide-sm></div>
+</div>

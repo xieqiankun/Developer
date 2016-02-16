@@ -1,0 +1,57 @@
+<div style="background: grey;" class="md-whiteframe-z2">
+	<div layout="row" layout-sm="column" layout-padding>
+		<div>
+			<h1 style="cursor: pointer;" class="md-display-1 neon-light" ng-click="goToHome()">
+				<md-tooltip>
+					<div>Home</div>
+				</md-tooltip>
+				<span>qStack SDK</span>
+			</h1>
+		</div>
+		<div flex hide-sm></div>
+		
+		<div layout="row" layout-align="end end">
+			<div layout="row" layout-align="center center">
+
+
+				<md-menu style="padding: 0px;">
+					<md-button ng-click="$mdOpenMenu()">
+						<md-tooltip>
+							<div>Signed in as {{userState.displayName}}</div>
+						</md-tooltip>
+						<div layout="row" layout-align="center center">
+							<div style="width: 40px; height: 40px; border-radius: 20px; background: white; overflow: hidden;">
+								<img ng-src="{{userState.avatar}}" style="width: 100%; height: auto;"/>
+							</div>
+							<div class="md-body-2" style="text-transform: none;">
+								&nbsp{{userState.displayName}}
+							</div>
+							<md-icon md-menu-origin>arrow_drop_down</md-icon>
+						</div>
+					</md-button>
+
+					<md-menu-content>
+						<md-menu-item>
+							<md-button ng-click="goToFeedback()">
+								<md-icon md-menu-align-target>feedback</md-icon>
+								Feedback
+							</md-button>
+						</md-menu-item>
+						<md-menu-item>
+							<md-button ng-click="logout()">
+								<md-icon md-menu-align-target>exit_to_app</md-icon>
+								Log Out
+							</md-button>
+						</md-menu-item>
+					</md-menu-content>
+				</md-menu>
+				
+				
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div ui-view="menuContent"></div>

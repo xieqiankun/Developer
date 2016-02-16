@@ -1,0 +1,147 @@
+
+
+/* ----buttons---- */
+
+h1:focus {
+	outline:0;
+}
+
+.md-button.md-raised.btn-right {
+    background-color: #29AB29;
+    color: white;
+}
+
+.md-button.md-raised.btn-right:not([disabled]):hover {
+    background-color: #29AB29;
+    color: white;
+}
+
+.md-button.md-raised.btn-wrong {
+    background-color: #FF3333;
+    color: white;
+}
+
+.md-button.md-raised.btn-wrong:not([disabled]):hover {
+    background-color: #FF3333;
+    color: white;
+}
+
+
+
+/* ---text effect--- */
+
+@font-face {
+  font-family: 'Monoton';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Monoton'), local('Monoton-Regular'), url('/fonts/monoton.woff') format('woff');
+}
+
+.neon-light {
+	color:#fff;
+	font-family: Monoton;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
+	-webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+	-moz-animation: neon2 1.5s ease-in-out infinite alternate;
+	animation: neon2 1.5s ease-in-out infinite alternate;
+}
+
+@media screen and (max-width: 420px) {
+    .neon-light {
+        color:#fff;
+		font-family: Monoton;
+		-webkit-animation: none;
+		-moz-animation: none;
+		animation: none; 
+    }
+}
+
+.neon-light:hover {
+	color:#BA01FF;
+	-webkit-animation: none;
+	-moz-animation: none;
+	animation: none; 
+}
+
+
+@-webkit-keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff,
+               0 0 20px #fff,
+               0 0 30px #fff,
+               0 0 40px #ff00de,
+               0 0 70px #ff00de,
+               0 0 80px #ff00de,
+               0 0 100px #ff00de,
+               0 0 150px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 15px #fff,
+               0 0 20px #ff00de,
+               0 0 35px #ff00de,
+               0 0 40px #ff00de,
+               0 0 50px #ff00de,
+               0 0 75px #ff00de;
+  }
+}
+
+@keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff,
+               0 0 20px #fff,
+               0 0 30px #fff,
+               0 0 40px #ff00de,
+               0 0 70px #ff00de,
+               0 0 80px #ff00de,
+               0 0 100px #ff00de,
+               0 0 150px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 15px #fff,
+               0 0 20px #ff00de,
+               0 0 35px #ff00de,
+               0 0 40px #ff00de,
+               0 0 50px #ff00de,
+               0 0 75px #ff00de;
+  }
+}
+
+.text-3d {
+	text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+
+
+
+
+/* ---game play--- */
+
+.gamePlay-fade.ng-hide-remove {
+    -webkit-animation: fadeIn 0.5s;
+    animation: fadeIn 0.5s;
+}
+
+.gamePlay-fade.ng-hide-add {
+    animation: fadeOut 0.3s;
+    -webkit-animation: fadeOut 0.3s;
+}
+
+.outOfGame {
+	opacity: 0.2;
+}

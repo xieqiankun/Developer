@@ -1,0 +1,137 @@
+<div layout-padding>
+	<div layout="row" layout-fill layout-padding>
+		<div flex hide-sm></div>
+		
+		<div flex="66" flex-sm="100">
+			<md-content layout-padding class="md-whiteframe-z1">
+				
+				
+				<h3 class="md-headline" style="text-align: center;">CHALLENGE</h3>
+				
+				<div layout="row" layout-padding layout-fill>
+					
+					<div flex layout="row" layout-align="center center">
+						<div  ng-show="userInput.asyncChallenge.displayName" ng-click="step=0" style="cursor: pointer;">
+							<div style="width: 100px; height: 100px; border-radius: 50px; overflow: hidden; margin-left: auto; margin-right: auto;">
+								<img ng-src="{{userInput.asyncChallenge.avatar}}" style="width: 100px; height: 100px; border-radius: 50px;"/>
+							</div>
+							<div class="md-body-2" style="text-align: center;">
+								{{userInput.asyncChallenge.displayName}}
+							</div>
+						</div>
+					</div>
+					
+					<div flex layout="row" layout-align="center center">
+						<div ng-show="userInput.category.zone" ng-click="step=1" style="cursor: pointer;">
+							<div style="width: 100px; height: 100px; border-radius: 10px; background: grey; overflow: hidden; margin-left: auto; margin-right: auto;">
+								<img ng-src="{{userInput.category.img}}" style="width: 100px; height: 100px;"/>
+							</div>
+						
+							<div class="md-caption" style="line-height: 16px; text-align: center;">
+								{{userInput.category.zone}}
+							</div>
+						
+							<div class="md-body-2" style="text-align: center;">
+								{{userInput.category.category}}
+							</div>
+						</div>
+					</div>
+					
+					<div flex layout="row" layout-align="center center">
+						<div ng-show="userInput.wager !== ''" ng-click="step=2" style="cursor: pointer;">
+							<div>
+								<h2 class="md-display-1" style="text-align: center;">${{userInput.wager}}</h2>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				
+				
+				<div ng-show="step===0">
+					<h5 class="md-subhead">1. Choose your opponent</h5>
+					
+					
+					<div layout="row" layout-wrap>
+						<div flex="20" flex-md="25" flex-sm="33" ng-repeat="player in players">
+							<div layout="row" layout-align="center center">
+								<md-button ng-click="chooseThisOppenent(player)" aria-label="Animal">
+									<div layout="column" layout-align="center center">
+										<div layout="row" layout-align="center center">
+											<img ng-src="{{player.avatar}}" style="width: 40px; height: 40px; border-radius: 20px; background: white;"/>
+										</div>
+										<div class="md-body-2" style="text-transform: none;">
+											{{player.displayName}}
+										</div>
+									</div>
+								</md-button>
+							</div>
+						</div>
+					</div>
+					
+					
+				</div>
+				
+				
+				<div ng-show="step===1">
+					<h5 class="md-subhead">2. Choose your category</h5>
+					
+					<div layout="row" layout-padding layout-wrap>
+						<div flex="25" flex-md="33" flex-sm="50" ng-repeat="cat in choosableCategories">
+							<div layout="row" layout-align="center center">
+								<md-button ng-click="chooseThisCategory(cat)" aria-label="Category">
+									<div layout="column" layout-fill>
+										<div style="width: 100px; height: 100px; border-radius: 10px; background: grey; margin-left: auto; margin-right: auto;">
+											<img ng-src="{{cat.img}}" style="width: 100%; height: auto;"/>
+										</div>
+										
+										<div class="md-caption" style="line-height: 16px;">
+											{{cat.zone}}
+										</div>
+										
+										<div class="md-body-2">
+											{{cat.category}}
+										</div>
+									</div>
+								</md-button>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div ng-show="step===2">
+					<h5 class="md-subhead">3. Choose your wager</h5>
+					
+					<div layout="row" layout-wrap layout-padding layout-fill>
+						<div flex="20" flex-sm="33" ng-repeat="wag in choosableWagers">
+							<div layout="row" layout-align="center center">
+								<md-button ng-click="chooseThisWager(wag, $event)">
+								
+									<h2 class="md-display-1">${{wag}}</h2>
+								</md-button>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div ng-show="step===3">
+					<div layout="row">
+						<div flex></div>
+						<md-button class="md-raised md-primary" ng-click="startGame()"><h3 class="md-headline">Start Challenge</h3></md-button>
+					</div>
+				</div>
+				
+				
+			</md-content>
+		</div>
+		
+		
+		<div flex hide-sm></div>
+		
+	</div>
+	
+	
+
+</div>

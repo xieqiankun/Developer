@@ -1,0 +1,46 @@
+<md-dialog aria-label="Read Message">
+	
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<h2>Read Message</h2>
+				<span flex></span>
+				<md-button class="md-icon-button" ng-click="closeMessagePopup()">
+					<md-icon>close</md-icon>
+				</md-button>
+			</div>
+		</md-toolbar>
+		
+		
+		<md-dialog-content>
+	
+			<md-subheader>
+				<div layout="row">
+					<div class="md-body-2">
+						{{selectedMessage.sender}}
+					</div>
+					
+					<div flex>
+					</div>
+					
+					<div class="md-body-2">
+						{{selectedMessage.date | amCalendar}}
+					</div>
+				</div>
+			</md-subheader>
+			
+			<div class="md-body-1">
+				<div ng-if="selectedMessage.bodyHTML" ng-bind-html="selectedMessage.bodyHTML"></div>
+				<div ng-if="!selectedMessage.bodyHTML">{{selectedMessage.body}}</div>
+			</div>
+			
+
+		</md-dialog-content>
+		
+		<div class="md-actions" layout="row">
+			<span flex></span>
+			<md-button class="md-warn" ng-click="deleteMessage(selectedMessage)">
+				Delete
+			</md-button>
+		</div>
+	
+</md-dialog>

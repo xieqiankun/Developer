@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		284211801C625E6100DC69AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2842117F1C625E6100DC69AD /* main.m */; };
+		284211831C625E6100DC69AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 284211821C625E6100DC69AD /* AppDelegate.m */; };
+		284211861C625E6100DC69AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 284211851C625E6100DC69AD /* ViewController.m */; };
+		284211891C625E6100DC69AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 284211871C625E6100DC69AD /* Main.storyboard */; };
+		2842118B1C625E6100DC69AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2842118A1C625E6100DC69AD /* Assets.xcassets */; };
+		2842118E1C625E6100DC69AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2842118C1C625E6100DC69AD /* LaunchScreen.storyboard */; };
+		284211991C625E6100DC69AD /* TeachingPokerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 284211981C625E6100DC69AD /* TeachingPokerTests.m */; };
+		284211A41C625E6100DC69AD /* TeachingPokerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 284211A31C625E6100DC69AD /* TeachingPokerUITests.m */; };
+		284211B31C62608100DC69AD /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 284211B21C62608100DC69AD /* Card.m */; };
+		284211B71C6265C000DC69AD /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 284211B61C6265C000DC69AD /* Deck.m */; };
+		284211BA1C62687700DC69AD /* PokerCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 284211B91C62687700DC69AD /* PokerCard.m */; };
+		284211BD1C626B4A00DC69AD /* PokerDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 284211BC1C626B4A00DC69AD /* PokerDeck.m */; };
+		284211C01C626DDC00DC69AD /* LearningTexasHoledmGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 284211BF1C626DDC00DC69AD /* LearningTexasHoledmGame.m */; };
+		284211C31C62711200DC69AD /* TexasHoldemRegulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 284211C21C62711200DC69AD /* TexasHoldemRegulation.m */; };
+		286633ED1C692ACB00B7CB67 /* PokerCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 286633EC1C692ACB00B7CB67 /* PokerCardView.m */; };
+		28DD13B61C6305370054F359 /* TestGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DD13B51C6305370054F359 /* TestGameViewController.m */; };
+		28DD13B91C6306980054F359 /* TestTexasHoldemGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DD13B81C6306980054F359 /* TestTexasHoldemGame.m */; };
+		28E61AE81C628658007AC233 /* LearningGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E61AE71C628658007AC233 /* LearningGameViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		284211951C625E6100DC69AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 284211731C625E6100DC69AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2842117A1C625E6100DC69AD;
+			remoteInfo = TeachingPoker;
+		};
+		284211A01C625E6100DC69AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 284211731C625E6100DC69AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2842117A1C625E6100DC69AD;
+			remoteInfo = TeachingPoker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2842117B1C625E6100DC69AD /* TeachingPoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachingPoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2842117F1C625E6100DC69AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		284211811C625E6100DC69AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		284211821C625E6100DC69AD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		284211841C625E6100DC69AD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		284211851C625E6100DC69AD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		284211881C625E6100DC69AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2842118A1C625E6100DC69AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2842118D1C625E6100DC69AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2842118F1C625E6100DC69AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		284211941C625E6100DC69AD /* TeachingPokerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeachingPokerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		284211981C625E6100DC69AD /* TeachingPokerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeachingPokerTests.m; sourceTree = "<group>"; };
+		2842119A1C625E6100DC69AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2842119F1C625E6100DC69AD /* TeachingPokerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeachingPokerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		284211A31C625E6100DC69AD /* TeachingPokerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeachingPokerUITests.m; sourceTree = "<group>"; };
+		284211A51C625E6100DC69AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		284211B11C62608100DC69AD /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = Model/Card.h; sourceTree = "<group>"; };
+		284211B21C62608100DC69AD /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Model/Card.m; sourceTree = "<group>"; };
+		284211B51C6265C000DC69AD /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Deck.h; path = Model/Deck.h; sourceTree = "<group>"; };
+		284211B61C6265C000DC69AD /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Deck.m; path = Model/Deck.m; sourceTree = "<group>"; };
+		284211B81C62687700DC69AD /* PokerCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PokerCard.h; path = Model/PokerCard.h; sourceTree = "<group>"; };
+		284211B91C62687700DC69AD /* PokerCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PokerCard.m; path = Model/PokerCard.m; sourceTree = "<group>"; };
+		284211BB1C626B4A00DC69AD /* PokerDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PokerDeck.h; path = Model/PokerDeck.h; sourceTree = "<group>"; };
+		284211BC1C626B4A00DC69AD /* PokerDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PokerDeck.m; path = Model/PokerDeck.m; sourceTree = "<group>"; };
+		284211BE1C626DDC00DC69AD /* LearningTexasHoledmGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LearningTexasHoledmGame.h; path = Model/LearningTexasHoledmGame.h; sourceTree = "<group>"; };
+		284211BF1C626DDC00DC69AD /* LearningTexasHoledmGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LearningTexasHoledmGame.m; path = Model/LearningTexasHoledmGame.m; sourceTree = "<group>"; };
+		284211C11C62711200DC69AD /* TexasHoldemRegulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TexasHoldemRegulation.h; path = Model/TexasHoldemRegulation.h; sourceTree = "<group>"; };
+		284211C21C62711200DC69AD /* TexasHoldemRegulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TexasHoldemRegulation.m; path = Model/TexasHoldemRegulation.m; sourceTree = "<group>"; };
+		286633EB1C692ACB00B7CB67 /* PokerCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokerCardView.h; sourceTree = "<group>"; };
+		286633EC1C692ACB00B7CB67 /* PokerCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokerCardView.m; sourceTree = "<group>"; };
+		28DD13B41C6305370054F359 /* TestGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestGameViewController.h; sourceTree = "<group>"; };
+		28DD13B51C6305370054F359 /* TestGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestGameViewController.m; sourceTree = "<group>"; };
+		28DD13B71C6306980054F359 /* TestTexasHoldemGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestTexasHoldemGame.h; path = Model/TestTexasHoldemGame.h; sourceTree = "<group>"; };
+		28DD13B81C6306980054F359 /* TestTexasHoldemGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestTexasHoldemGame.m; path = Model/TestTexasHoldemGame.m; sourceTree = "<group>"; };
+		28E61AE61C628658007AC233 /* LearningGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearningGameViewController.h; sourceTree = "<group>"; };
+		28E61AE71C628658007AC233 /* LearningGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearningGameViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		284211781C625E6100DC69AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		284211911C625E6100DC69AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2842119C1C625E6100DC69AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		284211721C625E6100DC69AD = {
+			isa = PBXGroup;
+			children = (
+				2842117D1C625E6100DC69AD /* TeachingPoker */,
+				284211971C625E6100DC69AD /* TeachingPokerTests */,
+				284211A21C625E6100DC69AD /* TeachingPokerUITests */,
+				2842117C1C625E6100DC69AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2842117C1C625E6100DC69AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2842117B1C625E6100DC69AD /* TeachingPoker.app */,
+				284211941C625E6100DC69AD /* TeachingPokerTests.xctest */,
+				2842119F1C625E6100DC69AD /* TeachingPokerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2842117D1C625E6100DC69AD /* TeachingPoker */ = {
+			isa = PBXGroup;
+			children = (
+				284211841C625E6100DC69AD /* ViewController.h */,
+				284211851C625E6100DC69AD /* ViewController.m */,
+				284211871C625E6100DC69AD /* Main.storyboard */,
+				28DD13B41C6305370054F359 /* TestGameViewController.h */,
+				28DD13B51C6305370054F359 /* TestGameViewController.m */,
+				28E61AE61C628658007AC233 /* LearningGameViewController.h */,
+				28E61AE71C628658007AC233 /* LearningGameViewController.m */,
+				2842118A1C625E6100DC69AD /* Assets.xcassets */,
+				2842118C1C625E6100DC69AD /* LaunchScreen.storyboard */,
+				2842118F1C625E6100DC69AD /* Info.plist */,
+				2842117E1C625E6100DC69AD /* Supporting Files */,
+				284211B41C62608900DC69AD /* Model */,
+				286633EB1C692ACB00B7CB67 /* PokerCardView.h */,
+				286633EC1C692ACB00B7CB67 /* PokerCardView.m */,
+			);
+			path = TeachingPoker;
+			sourceTree = "<group>";
+		};
+		2842117E1C625E6100DC69AD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				284211811C625E6100DC69AD /* AppDelegate.h */,
+				284211821C625E6100DC69AD /* AppDelegate.m */,
+				2842117F1C625E6100DC69AD /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		284211971C625E6100DC69AD /* TeachingPokerTests */ = {
+			isa = PBXGroup;
+			children = (
+				284211981C625E6100DC69AD /* TeachingPokerTests.m */,
+				2842119A1C625E6100DC69AD /* Info.plist */,
+			);
+			path = TeachingPokerTests;
+			sourceTree = "<group>";
+		};
+		284211A21C625E6100DC69AD /* TeachingPokerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				284211A31C625E6100DC69AD /* TeachingPokerUITests.m */,
+				284211A51C625E6100DC69AD /* Info.plist */,
+			);
+			path = TeachingPokerUITests;
+			sourceTree = "<group>";
+		};
+		284211B41C62608900DC69AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				284211B11C62608100DC69AD /* Card.h */,
+				284211B21C62608100DC69AD /* Card.m */,
+				284211B51C6265C000DC69AD /* Deck.h */,
+				284211B61C6265C000DC69AD /* Deck.m */,
+				284211B81C62687700DC69AD /* PokerCard.h */,
+				284211B91C62687700DC69AD /* PokerCard.m */,
+				284211BB1C626B4A00DC69AD /* PokerDeck.h */,
+				284211BC1C626B4A00DC69AD /* PokerDeck.m */,
+				284211BE1C626DDC00DC69AD /* LearningTexasHoledmGame.h */,
+				284211BF1C626DDC00DC69AD /* LearningTexasHoledmGame.m */,
+				284211C11C62711200DC69AD /* TexasHoldemRegulation.h */,
+				284211C21C62711200DC69AD /* TexasHoldemRegulation.m */,
+				28DD13B71C6306980054F359 /* TestTexasHoldemGame.h */,
+				28DD13B81C6306980054F359 /* TestTexasHoldemGame.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2842117A1C625E6100DC69AD /* TeachingPoker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 284211A81C625E6100DC69AD /* Build configuration list for PBXNativeTarget "TeachingPoker" */;
+			buildPhases = (
+				284211771C625E6100DC69AD /* Sources */,
+				284211781C625E6100DC69AD /* Frameworks */,
+				284211791C625E6100DC69AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TeachingPoker;
+			productName = TeachingPoker;
+			productReference = 2842117B1C625E6100DC69AD /* TeachingPoker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		284211931C625E6100DC69AD /* TeachingPokerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 284211AB1C625E6100DC69AD /* Build configuration list for PBXNativeTarget "TeachingPokerTests" */;
+			buildPhases = (
+				284211901C625E6100DC69AD /* Sources */,
+				284211911C625E6100DC69AD /* Frameworks */,
+				284211921C625E6100DC69AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				284211961C625E6100DC69AD /* PBXTargetDependency */,
+			);
+			name = TeachingPokerTests;
+			productName = TeachingPokerTests;
+			productReference = 284211941C625E6100DC69AD /* TeachingPokerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2842119E1C625E6100DC69AD /* TeachingPokerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 284211AE1C625E6100DC69AD /* Build configuration list for PBXNativeTarget "TeachingPokerUITests" */;
+			buildPhases = (
+				2842119B1C625E6100DC69AD /* Sources */,
+				2842119C1C625E6100DC69AD /* Frameworks */,
+				2842119D1C625E6100DC69AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				284211A11C625E6100DC69AD /* PBXTargetDependency */,
+			);
+			name = TeachingPokerUITests;
+			productName = TeachingPokerUITests;
+			productReference = 2842119F1C625E6100DC69AD /* TeachingPokerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		284211731C625E6100DC69AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = QiankunXie;
+				TargetAttributes = {
+					2842117A1C625E6100DC69AD = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = A4KK8R4439;
+					};
+					284211931C625E6100DC69AD = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = A4KK8R4439;
+						TestTargetID = 2842117A1C625E6100DC69AD;
+					};
+					2842119E1C625E6100DC69AD = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = A4KK8R4439;
+						TestTargetID = 2842117A1C625E6100DC69AD;
+					};
+				};
+			};
+			buildConfigurationList = 284211761C625E6100DC69AD /* Build configuration list for PBXProject "TeachingPoker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 284211721C625E6100DC69AD;
+			productRefGroup = 2842117C1C625E6100DC69AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2842117A1C625E6100DC69AD /* TeachingPoker */,
+				284211931C625E6100DC69AD /* TeachingPokerTests */,
+				2842119E1C625E6100DC69AD /* TeachingPokerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		284211791C625E6100DC69AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2842118E1C625E6100DC69AD /* LaunchScreen.storyboard in Resources */,
+				2842118B1C625E6100DC69AD /* Assets.xcassets in Resources */,
+				284211891C625E6100DC69AD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		284211921C625E6100DC69AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2842119D1C625E6100DC69AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		284211771C625E6100DC69AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				284211B71C6265C000DC69AD /* Deck.m in Sources */,
+				284211BA1C62687700DC69AD /* PokerCard.m in Sources */,
+				284211861C625E6100DC69AD /* ViewController.m in Sources */,
+				284211C31C62711200DC69AD /* TexasHoldemRegulation.m in Sources */,
+				284211BD1C626B4A00DC69AD /* PokerDeck.m in Sources */,
+				284211C01C626DDC00DC69AD /* LearningTexasHoledmGame.m in Sources */,
+				28E61AE81C628658007AC233 /* LearningGameViewController.m in Sources */,
+				286633ED1C692ACB00B7CB67 /* PokerCardView.m in Sources */,
+				28DD13B61C6305370054F359 /* TestGameViewController.m in Sources */,
+				28DD13B91C6306980054F359 /* TestTexasHoldemGame.m in Sources */,
+				284211831C625E6100DC69AD /* AppDelegate.m in Sources */,
+				284211801C625E6100DC69AD /* main.m in Sources */,
+				284211B31C62608100DC69AD /* Card.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		284211901C625E6100DC69AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				284211991C625E6100DC69AD /* TeachingPokerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2842119B1C625E6100DC69AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				284211A41C625E6100DC69AD /* TeachingPokerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		284211961C625E6100DC69AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2842117A1C625E6100DC69AD /* TeachingPoker */;
+			targetProxy = 284211951C625E6100DC69AD /* PBXContainerItemProxy */;
+		};
+		284211A11C625E6100DC69AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2842117A1C625E6100DC69AD /* TeachingPoker */;
+			targetProxy = 284211A01C625E6100DC69AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		284211871C625E6100DC69AD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				284211881C625E6100DC69AD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2842118C1C625E6100DC69AD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2842118D1C625E6100DC69AD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		284211A61C625E6100DC69AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		284211A71C625E6100DC69AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		284211A91C625E6100DC69AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TeachingPoker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.wustl.qiankun.TeachingPoker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		284211AA1C625E6100DC69AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TeachingPoker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.wustl.qiankun.TeachingPoker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		284211AC1C625E6100DC69AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TeachingPokerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.wustl.qiankun.TeachingPokerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TeachingPoker.app/TeachingPoker";
+			};
+			name = Debug;
+		};
+		284211AD1C625E6100DC69AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TeachingPokerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.wustl.qiankun.TeachingPokerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TeachingPoker.app/TeachingPoker";
+			};
+			name = Release;
+		};
+		284211AF1C625E6100DC69AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TeachingPokerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.wustl.qiankun.TeachingPokerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TeachingPoker;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		284211B01C625E6100DC69AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TeachingPokerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.wustl.qiankun.TeachingPokerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TeachingPoker;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		284211761C625E6100DC69AD /* Build configuration list for PBXProject "TeachingPoker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				284211A61C625E6100DC69AD /* Debug */,
+				284211A71C625E6100DC69AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		284211A81C625E6100DC69AD /* Build configuration list for PBXNativeTarget "TeachingPoker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				284211A91C625E6100DC69AD /* Debug */,
+				284211AA1C625E6100DC69AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		284211AB1C625E6100DC69AD /* Build configuration list for PBXNativeTarget "TeachingPokerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				284211AC1C625E6100DC69AD /* Debug */,
+				284211AD1C625E6100DC69AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		284211AE1C625E6100DC69AD /* Build configuration list for PBXNativeTarget "TeachingPokerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				284211AF1C625E6100DC69AD /* Debug */,
+				284211B01C625E6100DC69AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 284211731C625E6100DC69AD /* Project object */;
+}

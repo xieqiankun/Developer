@@ -1,0 +1,33 @@
+<md-dialog style="width: 80%;" aria-label="Change Avatar">
+	
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<h2>Change Avatar</h2>
+				<span flex></span>
+				<md-button class="md-icon-button" ng-click="cancelAvatarPopup()">
+					<md-icon>close</md-icon>
+				</md-button>
+			</div>
+		</md-toolbar>
+		
+		<md-dialog-content>
+			
+			
+			<div layout="row" layout-fill layout-wrap>
+				<div flex="20" flex-md="25" flex-sm="33" ng-repeat="avatar in avatars">
+					<div layout="row" layout-align="center center">
+						<md-button ng-click="userSelectAvatar($index)" aria-label="Animal">
+							<img ng-src="{{avatar}}" style="width: 40px; height: 40px;"/>
+						</md-button>
+					</div>
+				</div>
+			</div>
+				
+			
+		</md-dialog-content>
+		
+		<div class="md-actions" layout="row">
+			<span flex></span>
+		</div>
+	
+</md-dialog>
