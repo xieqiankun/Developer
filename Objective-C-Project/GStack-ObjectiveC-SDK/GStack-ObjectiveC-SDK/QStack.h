@@ -16,7 +16,6 @@
 
 @property (strong, nonatomic) NSArray *myTournaments;
 
-
 + (instancetype) sharedQStack;
 
 //For set user information

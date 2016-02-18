@@ -35,7 +35,7 @@
     QStack *qstack = [QStack sharedQStack];
  
     //set the user information
-    [qstack setUserInformation:@"yyy" withAvatar:@"yyy"];
+    [qstack setUserInformation:@"yyy" withAvatar:@""];
     
     NSString *usernameField = @"308189542";//self.username.text;
     NSString *passwordField = @"/o3I3goKCQ==";// self.password.text;
@@ -46,11 +46,12 @@
     [qstack login:usernameField withKey:passwordField completionHandler:^(NSError *error) {
         if (!error){
             NSLog(@"Logged in");
-            
+
             dispatch_async(dispatch_get_main_queue(),^{
                 
             //if successed login, pop tournaments viewcontroller
             TournamentTableViewController * tvc = [[TournamentTableViewController alloc] initWithStyle:UITableViewStylePlain];
+                
                 
             //  NSLog(@"%@", self.navigationController);
             [self.navigationController pushViewController:tvc animated:YES];

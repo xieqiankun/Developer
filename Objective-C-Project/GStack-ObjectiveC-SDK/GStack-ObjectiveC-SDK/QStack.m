@@ -10,6 +10,10 @@
 
 @interface QStack()
 
+@property (strong, nonatomic) NSString *serverURL;
+@property (strong, nonatomic) NSString *appKey;
+@property (strong, nonatomic) NSString *appID;
+
 @property (strong, nonatomic) NSString *displayName;
 @property (strong, nonatomic) NSString *avatar;
 @property (strong, nonatomic) NSString *channel;
@@ -39,6 +43,9 @@
     
     if(!qstack){
         qstack = [[QStack alloc] initPrivate];
+        // init server URL
+        qstack.serverURL = @"http://UserServerLB-672243361.us-west-2.elb.amazonaws.com";
+        
     }
     return qstack;
 }
@@ -94,30 +101,42 @@
       withKey:(NSString*)myAppKey
 completionHandler:(void (^)(NSError *error))completionHandler
 {
-    NSString *post = [NSString stringWithFormat:@"type=apiRegister&payload={\"appId\":%@,\"appKey\":\"%@\"}", myAppId, myAppKey];
+    
+    //set the payload && get post string
+    NSDictionary *payloadDic = @{
+                                 @"appId" : myAppId,
+                                 @"appKey" : myAppKey
+                                 };
+    NSString *payloadStr = [self stringifyDic:payloadDic];
+    
+    NSDictionary *postDic = @{
+                              @"type" : @"apiRegister",
+                              @"payload" : payloadStr
+                              };
+    NSString * post =[self stringifyDic:postDic];
     
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     
     NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
-
+    
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
-    [request setURL:[NSURL URLWithString:@"http://UserServerLB-672243361.us-west-2.elb.amazonaws.com/qstack/register"]];
+    [request setURL:[NSURL URLWithString:[self.serverURL stringByAppendingString:@"/qstack/register"]]];
+    
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
-// like NSURLConnection
+    // like NSURLConnection
     NSURLSession *session = [NSURLSession sharedSession];
     [[session dataTaskWithRequest: request
                 completionHandler:^(NSData *data,
                                     NSURLResponse *response,
                                     NSError *error) {
-                    
                     if (!error){
                         NSDictionary *myDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-                        
-//NSLog(@"Debug 1:%@",myDictionary);
+                        //NSLog(@"Debug 1:%@",myDictionary);
                         
                         NSString* type = myDictionary[@"type"];
                         if ([type isEqual: @"apiRegisterSuccess"]){
@@ -136,96 +155,137 @@ completionHandler:(void (^)(NSError *error))completionHandler
                         completionHandler(error);
                     }
                 }] resume];
- 
+    
 }
 
 - (void)getTournaments:(void (^)(NSError *error, NSData *data))completionHandler{
     
-    NSString *post = [NSString stringWithFormat:@"type=getUserTournaments&payload={}"];
+    //set the payload && get post string
+    NSDictionary *payloadDic = @{};
+    
+    NSString *payloadStr = [self stringifyDic:payloadDic];
+    
+    NSDictionary *postDic = @{
+                              @"type" : @"getUserTournaments",
+                              @"payload" : payloadStr
+                              };
+    NSString * post =[self stringifyDic:postDic];
     
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     
     NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:@"http://UserServerLB-672243361.us-west-2.elb.amazonaws.com/qstacks/gettournaments"]];
+    [request setURL:[NSURL URLWithString:[self.serverURL stringByAppendingString:@"/qstacks/gettournaments"]]];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:self.token forHTTPHeaderField:@"Authorization"];
     [request setHTTPBody:postData];
     
     NSURLSession *session = [NSURLSession sharedSession];
-    [[session dataTaskWithRequest: request
-                completionHandler:^(NSData *data,
-                                    NSURLResponse *response,
-                                    NSError *error) {
-                    completionHandler(error, data);
-                    
-                }] resume];
+    NSURLSessionTask *dataTask = [session dataTaskWithRequest: request
+                                            completionHandler:^(NSData *data,
+                                                                NSURLResponse *response,
+                                                                NSError *error) {
+                                                completionHandler(error, data);
+                                                
+                                            }];
+    
+    [dataTask resume];
     
 }
 
 #pragma mark -start to play
 
 - (void)connectGameServer:(NSString*)uuid completionHandler:(void (^)(NSError *error))completionHandler{
-    NSString *post = [NSString stringWithFormat:@"type=clientStartGame&payload={\"gameMode\":{\"type\":\"tournament\",\"category\":\"General\",\"wager\":0,\"asyncChallenge\":null,\"uuid\":\"%@\",\"zone\":\"General Knowledge\"},\"teams\":[{\"displayName\":\"%@\",\"channel\":\"%@\",\"avatar\":\"%@\"}]}", uuid, self.displayName, self.channel, self.avatar];
+    
+    //set the payload && get post string
+    
+    NSDictionary *gameModeDic = @{
+                                  @"type" : @"tournament",
+                                  @"category" : @"General",
+                                  @"wager" : [NSNumber numberWithInt:0],
+                                  @"asyncChallenge" : [NSNull null],
+                                  @"uuid" : uuid,
+                                  @"zone" :@"General Knowledge"
+                                  };
+    NSDictionary *teamDic = @{
+                              @"displayName" : self.displayName,
+                              @"channel" : self.channel,
+                              @"avatar" : self.avatar
+                              };
+    
+    NSDictionary *payloadDic = @{
+                                 @"gameMode" : gameModeDic,
+                                 @"teams" : @[teamDic]
+                                 };
+    
+    NSString *payloadStr = [self stringifyDic:payloadDic];
+    
+    NSDictionary *postDic = @{
+                              @"type" : @"clientStartGame",
+                              @"payload" : payloadStr
+                              };
+    NSString * post =[self stringifyDic:postDic];
+    
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:@"http://UserServerLB-672243361.us-west-2.elb.amazonaws.com/qstacks/startgame"]];
+    [request setURL:[NSURL URLWithString:[self.serverURL stringByAppendingString:@"/qstacks/startgame"]]];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:self.token forHTTPHeaderField:@"Authorization"];
     [request setHTTPBody:postData];
     
     NSURLSession *session = [NSURLSession sharedSession];
-    [[session dataTaskWithRequest: request
-                completionHandler:^(NSData *data,
-                                    NSURLResponse *response,
-                                    NSError *error) {
-                    
-                    if (!error){
-                        NSDictionary *myDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-                        
-                        NSString* type = myDictionary[@"type"];
-                        
-                        NSLog(@"type for date: %@",myDictionary);
-                        
-                        if ([type isEqual: @"startGameSuccess"]){
-                            
-                            if (self.pusherBinding) {
-                                [self.pusherClient removeBinding:self.pusherBinding];
-                            }
-                            self.pusherBinding = [self.pusherChannel bindToEventNamed:@"newGameSuccess" handleWithBlock:^(PTPusherEvent *channelEvent) {
-                                
-                                NSDictionary *data = [channelEvent data];
-                                
-                                if([[channelEvent data][@"event"]  isEqual: @"newGameSuccess"]){
-                                    self.gameToken = data[@"token"];
-                                    self.gameServerIp = data[@"serverIp"];
-                                    self.gameServerPort = data[@"serverPort"];
-                                    
-//NSLog(@"Server IP : %@",self.gameServerIp);
-//NSLog(@"Server prot : %@",self.gameServerPort);
-                                    
-                                    completionHandler(nil);
-                                }
-                                else{
-                                    completionHandler([NSError errorWithDomain:@"Game Error" code:0 userInfo:nil]);
-                                }
-                            }];
-                        }
-                        else{
-                            completionHandler([NSError errorWithDomain:type code:0 userInfo:myDictionary]);
-                        }
-                    }
-                    else{
-                        NSLog(@"%@", error);
-                        completionHandler(error);
-                    }
-                }] resume];
+    
+    NSURLSessionTask *dataTask = [session dataTaskWithRequest: request
+                                            completionHandler:^(NSData *data,
+                                                                NSURLResponse *response,
+                                                                NSError *error) {
+                                                
+                                                if (!error){
+                                                    NSDictionary *myDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+                                                    
+                                                    NSString* type = myDictionary[@"type"];
+                                                    
+                                                    NSLog(@"type for date: %@",myDictionary);
+                                                    
+                                                    if ([type isEqual: @"startGameSuccess"]){
+                                                        
+                                                        if (self.pusherBinding) {
+                                                            [self.pusherClient removeBinding:self.pusherBinding];
+                                                        }
+                                                        self.pusherBinding = [self.pusherChannel bindToEventNamed:@"newGameSuccess" handleWithBlock:^(PTPusherEvent *channelEvent) {
+                                                            
+                                                            NSDictionary *data = [channelEvent data];
+                                                            
+                                                            if([[channelEvent data][@"event"]  isEqual: @"newGameSuccess"]){
+                                                                self.gameToken = data[@"token"];
+                                                                self.gameServerIp = data[@"serverIp"];
+                                                                self.gameServerPort = data[@"serverPort"];
+                                                                
+                                                             //   NSLog(@"Server IP : %@",self.gameServerIp);
+                                                             //  NSLog(@"Server prot : %@",self.gameServerPort);
+                                                                completionHandler(nil);
+                                                            }
+                                                            else{
+                                                                completionHandler([NSError errorWithDomain:@"Game Error" code:0 userInfo:nil]);
+                                                            }
+                                                        }];
+                                                    }
+                                                    else{
+                                                        completionHandler([NSError errorWithDomain:type code:0 userInfo:myDictionary]);
+                                                    }
+                                                }
+                                                else{
+                                                    NSLog(@"%@", error);
+                                                    completionHandler(error);
+                                                }
+                                            }];
+    [dataTask resume];
 }
 
 
@@ -289,6 +349,7 @@ completionHandler:(void (^)(NSError *error))completionHandler
 }
 
 - (void)submitAnswer:(NSDictionary*) answer {
+    
     NSDictionary *data = @{
                            @"type" : @"clientSubmitAnswer",
                            @"payload" : answer,
@@ -300,8 +361,20 @@ completionHandler:(void (^)(NSError *error))completionHandler
 }
 
 
-
-
-
+- (NSString *) stringifyDic:(NSDictionary *)dic
+{
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic
+                                                       options:0
+                                                         error:&error];
+    NSString *jsonString = nil;
+    if (! jsonData) {
+        NSLog(@"Got an error: %@", error);
+    } else {
+        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        NSLog(@"%@",jsonString);
+    }
+    return jsonString;
+}
 
 @end

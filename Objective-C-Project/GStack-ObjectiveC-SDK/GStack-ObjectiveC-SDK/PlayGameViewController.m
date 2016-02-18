@@ -34,63 +34,70 @@
         if (!error){
             NSLog(@"start loading data");
             [qstack startSocket:^(NSDictionary *data) {
-                
-                NSString* type = data[@"type"];
-                
-                NSDictionary * gameInfo = data[@"payload" ];
-                
-                if ([type isEqual: @"sendQuestion"]){
-                    
-                    self.questionLabel.lineBreakMode = NSLineBreakByWordWrapping;
-                    self.questionLabel.numberOfLines = 0;
-                    
-                    //set current question number && submit allowance
-                    self.currentQuestionNumber = [gameInfo[@"questionNum"] intValue];
-                    self.isAllowSubmit = YES;
-                    
-                    NSString * s = [self fixString:gameInfo[@"question"]];
-                    
-                    [self.questionLabel setText:[NSString stringWithFormat:@"%lu : %@",(self.currentQuestionNumber + 1), s]];
-                    
-                    //game answers
-                    NSArray *receivedAnswers = gameInfo[@"answers"];
-                    
-                    for(UIButton *btn in self.answers){
-                        //set visible
-                        NSInteger index = [self.answers indexOfObject:btn];
-                        NSString *s = receivedAnswers[index];
-                        [btn setTitle:s forState:UIControlStateNormal];
-                        [btn setBackgroundColor:[UIColor whiteColor]];
-                        btn.hidden = NO;
-                        
-                    }
-                }
-                if ([type isEqual: @"correctAnswer"]){
-                    
-                    NSInteger answerNum = [gameInfo[@"correctAnswer"] integerValue];
-                    self.isAllowSubmit = NO;
-                    
-                    if ([gameInfo[@"questionNum"] intValue] == self.currentQuestionNumber) {
-                        [self.answers[answerNum] setBackgroundColor:[UIColor yellowColor]];
-                    }
-                    
-                }
-                
-                if([type isEqual:@"gameResult"]){
-                    
-                    [self.questionLabel setText:@"Game Over"];
-                    
-                    for(UIButton *btn in self.answers){
-                        //set visible
-                        btn.hidden = YES;
-                    }
-
-                }
+              
+                [self choosePayLoadType:data];
                 
             }];
         }
     }];
 }
+
+- (void) choosePayLoadType:(NSDictionary *)data
+{
+    NSString* type = data[@"type"];
+    
+    NSDictionary * gameInfo = data[@"payload" ];
+    
+    if ([type isEqual: @"sendQuestion"]){
+        
+        self.questionLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        self.questionLabel.numberOfLines = 0;
+        
+        //set current question number && submit allowance
+        self.currentQuestionNumber = [gameInfo[@"questionNum"] intValue];
+        self.isAllowSubmit = YES;
+        
+        NSString * s = [self fixString:gameInfo[@"question"]];
+        
+        [self.questionLabel setText:[NSString stringWithFormat:@"%lu : %@",(self.currentQuestionNumber + 1), s]];
+        
+        //game answers
+        NSArray *receivedAnswers = gameInfo[@"answers"];
+        
+        for(UIButton *btn in self.answers){
+            //set visible
+            NSInteger index = [self.answers indexOfObject:btn];
+            NSString *s = receivedAnswers[index];
+            [btn setTitle:s forState:UIControlStateNormal];
+            [btn setBackgroundColor:[UIColor whiteColor]];
+            btn.hidden = NO;
+            
+        }
+    }
+    if ([type isEqual: @"correctAnswer"]){
+        
+        NSInteger answerNum = [gameInfo[@"correctAnswer"] integerValue];
+        self.isAllowSubmit = NO;
+        
+        if ([gameInfo[@"questionNum"] intValue] == self.currentQuestionNumber) {
+            [self.answers[answerNum] setBackgroundColor:[UIColor yellowColor]];
+        }
+        
+    }
+    
+    if([type isEqual:@"gameResult"]){
+        
+        [self.questionLabel setText:@"Game Over"];
+        
+        for(UIButton *btn in self.answers){
+            //set visible
+            btn.hidden = YES;
+        }
+        
+    }
+
+}
+
 
 - (NSString *)fixString:(NSString *)neededFixString
 {
@@ -113,18 +120,19 @@
 
 - (IBAction)chooseAnswer:(id)sender {
     
-  //  NSString * timestamp;
-    
     if (self.isAllowSubmit) {
         
         NSInteger index = [self.answers indexOfObject:sender];
         
         self.isAllowSubmit = NO;
         
+        NSLocale* currentLocale = [NSLocale currentLocale];
+        
         NSDictionary* answer = @{
-                                 @"questionNum" : [NSString stringWithFormat:@"%lu",self.currentQuestionNumber],
-                                 @"answer" : [NSString stringWithFormat:@"%lu",index],
-                                 @"time" : @""
+                                 @"questionNum" : [NSNumber numberWithInteger:self.currentQuestionNumber],
+                                 @"answer" : [NSNumber numberWithInteger:index],
+                                 @"time" : [[NSDate date] descriptionWithLocale:currentLocale]
+
                                  };
         [sender setBackgroundColor:[UIColor blueColor]];
         [[QStack sharedQStack] submitAnswer:answer];
