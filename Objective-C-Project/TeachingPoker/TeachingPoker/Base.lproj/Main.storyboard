@@ -557,7 +557,6 @@
                     <connections>
                         <outlet property="answerBoard" destination="yVU-li-yEV" id="F9y-le-sMr"/>
                         <outlet property="gameStepBtn" destination="2O2-Gk-t5u" id="qhs-Ce-Bgo"/>
-                        <outlet property="sss" destination="ppn-D8-UR8" id="S9Q-9A-fhy"/>
                         <outletCollection property="cardsOnDeck" destination="ppn-D8-UR8" id="khv-zb-Cwn"/>
                         <outletCollection property="cardsOnDeck" destination="5bp-ql-Gcg" id="WMp-X0-P1y"/>
                         <outletCollection property="cardsOnDeck" destination="GSq-AW-gFI" id="YYd-R0-ms5"/>
