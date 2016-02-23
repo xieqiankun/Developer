@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		286982BC1C7B7435004E2FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B7C5FF1C7683F100CCD1B2 /* Main.storyboard */; };
 		28B7C5F81C7683F100CCD1B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7C5F71C7683F100CCD1B2 /* main.m */; };
 		28B7C5FB1C7683F100CCD1B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7C5FA1C7683F100CCD1B2 /* AppDelegate.m */; };
 		28B7C5FE1C7683F100CCD1B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7C5FD1C7683F100CCD1B2 /* ViewController.m */; };
-		28B7C6011C7683F100CCD1B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B7C5FF1C7683F100CCD1B2 /* Main.storyboard */; };
 		28B7C6031C7683F100CCD1B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28B7C6021C7683F100CCD1B2 /* Assets.xcassets */; };
 		28B7C6061C7683F100CCD1B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B7C6041C7683F100CCD1B2 /* LaunchScreen.storyboard */; };
 		28B7C6111C7683F100CCD1B2 /* TestStoryBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7C6101C7683F100CCD1B2 /* TestStoryBoardTests.m */; };
@@ -23,7 +23,6 @@
 		28DB85E51C77772400787139 /* BracketTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DB85E41C77772400787139 /* BracketTableViewController.m */; };
 		28DB85E91C77780100787139 /* BracketTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DB85E81C77780100787139 /* BracketTableViewCell.m */; };
 		28DB85EC1C77854900787139 /* PlayBracketiewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DB85EB1C77854900787139 /* PlayBracketiewController.m */; };
-		28DB85F01C77C45900787139 /* NameBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DB85EF1C77C45900787139 /* NameBoardView.m */; };
 		2CC375D290F39CBFDF92CCB8 /* libPods-TestStoryBoard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 525CECDAE318417BECB68B59 /* libPods-TestStoryBoard.a */; };
 /* End PBXBuildFile section */
 
@@ -79,8 +78,6 @@
 		28DB85E81C77780100787139 /* BracketTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BracketTableViewCell.m; sourceTree = "<group>"; };
 		28DB85EA1C77854900787139 /* PlayBracketiewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayBracketiewController.h; sourceTree = "<group>"; };
 		28DB85EB1C77854900787139 /* PlayBracketiewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayBracketiewController.m; sourceTree = "<group>"; };
-		28DB85EE1C77C45900787139 /* NameBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameBoardView.h; sourceTree = "<group>"; };
-		28DB85EF1C77C45900787139 /* NameBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameBoardView.m; sourceTree = "<group>"; };
 		525CECDAE318417BECB68B59 /* libPods-TestStoryBoard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestStoryBoard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -234,8 +231,6 @@
 			children = (
 				28DB85EA1C77854900787139 /* PlayBracketiewController.h */,
 				28DB85EB1C77854900787139 /* PlayBracketiewController.m */,
-				28DB85EE1C77C45900787139 /* NameBoardView.h */,
-				28DB85EF1C77C45900787139 /* NameBoardView.m */,
 			);
 			name = PlayBracketViewController;
 			sourceTree = "<group>";
@@ -358,9 +353,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				286982BC1C7B7435004E2FA6 /* Main.storyboard in Resources */,
 				28B7C6061C7683F100CCD1B2 /* LaunchScreen.storyboard in Resources */,
 				28B7C6031C7683F100CCD1B2 /* Assets.xcassets in Resources */,
-				28B7C6011C7683F100CCD1B2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,7 +430,6 @@
 			files = (
 				28B7C6321C76D98300CCD1B2 /* TraditionalTableViewController.m in Sources */,
 				28B7C62B1C76D16600CCD1B2 /* LoginViewController.m in Sources */,
-				28DB85F01C77C45900787139 /* NameBoardView.m in Sources */,
 				28B7C62F1C76D71200CCD1B2 /* QStack.m in Sources */,
 				28DB85E21C7773D300787139 /* TraditionalTableCellViewTableViewCell.m in Sources */,
 				28DB85E51C77772400787139 /* BracketTableViewController.m in Sources */,

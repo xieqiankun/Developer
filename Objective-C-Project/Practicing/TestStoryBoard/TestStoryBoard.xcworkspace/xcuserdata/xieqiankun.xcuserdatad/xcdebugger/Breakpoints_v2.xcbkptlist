@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestStoryBoard/PlayBracketiewController.m"
-            timestampString = "477607506.041662"
+            timestampString = "477879617.926862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "-choosePayLoadType:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestStoryBoard/PlayBracketiewController.m"
-            timestampString = "477607506.041662"
+            timestampString = "477879617.926862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "-choosePayLoadType:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestStoryBoard/PlayBracketiewController.m"
-            timestampString = "477605576.970527"
+            timestampString = "477879617.926862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,13 +58,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestStoryBoard/PlayBracketiewController.m"
-            timestampString = "477605577.972436"
+            timestampString = "477879617.926862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "@implementation PlayBracketiewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestStoryBoard/PlayBracketiewController.m"
-            timestampString = "477605764.055335"
+            timestampString = "477879617.926862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "-startGame:"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,13 +90,77 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestStoryBoard/PlayBracketiewController.m"
-            timestampString = "477605764.055335"
+            timestampString = "477879617.926862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "-startGame:"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "-choosePayLoadType:"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestStoryBoard/PlayBracketiewController.m"
+            timestampString = "477879617.926862"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
+            landmarkName = "-setNames"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestStoryBoard/PlayBracketiewController.m"
+            timestampString = "477878525.726352"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "firstRoundPlayers"
+            landmarkType = "19">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[PlayBracketiewController firstRoundPlayers]"
+                  moduleName = "TestStoryBoard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xieqiankun/Developer/Objective-C-Project/Practicing/TestStoryBoard/TestStoryBoard/PlayBracketiewController.m"
+                  timestampString = "477878525.73211"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[PlayBracketiewController setFirstRoundPlayers:]"
+                  moduleName = "TestStoryBoard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xieqiankun/Developer/Objective-C-Project/Practicing/TestStoryBoard/TestStoryBoard/PlayBracketiewController.m"
+                  timestampString = "477878525.732304"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

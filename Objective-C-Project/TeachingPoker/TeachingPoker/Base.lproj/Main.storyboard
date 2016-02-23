@@ -300,6 +300,10 @@
                                     <action selector="doItAgainBtn:" destination="qDB-qT-42y" eventType="touchUpInside" id="zPZ-bj-pqX"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5bp-ql-Gcg" customClass="PokerCardView">
+                                <rect key="frame" x="142.5" y="80" width="90" height="126"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ppn-D8-UR8" customClass="PokerCardView">
                                 <rect key="frame" x="30" y="80" width="90" height="126"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -307,16 +311,16 @@
                                     <constraint firstAttribute="width" secondItem="ppn-D8-UR8" secondAttribute="height" multiplier="2.5:3.5" id="AjY-PE-79e"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5bp-ql-Gcg" customClass="PokerCardView">
-                                <rect key="frame" x="142.5" y="80" width="90" height="126"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GSq-AW-gFI" customClass="PokerCardView">
                                 <rect key="frame" x="255" y="80" width="90" height="126"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UBh-qW-Wwo" customClass="PokerCardView">
                                 <rect key="frame" x="367.5" y="80" width="90" height="126"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A0N-8p-tgL" customClass="PokerCardView">
+                                <rect key="frame" x="480" y="80" width="90" height="126"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdV-3h-atr" customClass="PokerCardView">
@@ -345,10 +349,6 @@
                                     <action selector="gameStep:" destination="qDB-qT-42y" eventType="touchUpInside" id="Y7V-ih-Cra"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A0N-8p-tgL" customClass="PokerCardView">
-                                <rect key="frame" x="480" y="80" width="90" height="126"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iTL-6b-olo">
                                 <rect key="frame" x="120" y="80" width="22.5" height="126"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

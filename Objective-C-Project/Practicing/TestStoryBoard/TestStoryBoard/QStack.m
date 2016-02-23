@@ -195,8 +195,8 @@ completionHandler:(void (^)(NSError *error))completionHandler
                                                 [self setMyTraditionalT:self.myTournaments];
                                                 [self setMyBracketT:self.myTournaments];
                                                 
-                                                NSLog(@"mmmmmmmmmmmmmmmmmmmmmmmm, %@",temp);
-                                                NSLog(@"ggggggggggggggg, %@",self.myTraditionalT);
+                                               // NSLog(@"mmmmmmmmmmmmmmmmmmmmmmmm, %@",temp);
+                                               // NSLog(@"ggggggggggggggg, %@",self.myTraditionalT);
                                                 
                                                 completionHandler(error, data);
 
@@ -341,10 +341,10 @@ completionHandler:(void (^)(NSError *error))completionHandler
     
     options.transformerClass = SocketRocketClient.class;
     options.strategy = @[@(kPrimusReconnectionStrategyTimeout)];
-    //    options.timeout = 200;
+    options.timeout = 200;
     options.manual = YES;
-    options.ping = 5000;
-    options.autodetect = NO;
+    //options.ping = 5000;
+    //options.autodetect = NO;
     
     self.primus = [[Primus alloc] initWithURL:url options:options];
     
