@@ -1,0 +1,1817 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0308AAA644C4B8A96033091A9A0C6A94 /* NSObject+A2BlockDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A013F7245A5C7E2092692244C04AABB /* NSObject+A2BlockDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		043DF1D2B65659B01533B55FC8775E83 /* PTURLRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 4575F8C8770B68E780C4AF51579F5DE4 /* PTURLRequestOperation.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		04600F7CA523B6BC2D51DE20DF8F7F17 /* libextobjc-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3660D7676E3FC61F8B40EA93638EAD /* libextobjc-dummy.m */; };
+		079F275323D790391D8F78CEDB57C440 /* Emitter+Selectors.m in Sources */ = {isa = PBXBuildFile; fileRef = 668C25F78686B01B6EAA69CDA9D3345E /* Emitter+Selectors.m */; };
+		08FB8F61CAC88D60F15D1C6AD6AA0C2D /* PrimusTransformers.h in Headers */ = {isa = PBXBuildFile; fileRef = F4498CB866ACCEACF971A392CB473031 /* PrimusTransformers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0CA422A0610D18E76ECA654461274689 /* PTPusherAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B1352152B13D39D9999466872673D4 /* PTPusherAPI.m */; };
+		0D1C3D6A1970550124F92E5FE1EFDCD4 /* PTTargetActionEventListener.h in Headers */ = {isa = PBXBuildFile; fileRef = C5C4913E81270C8C1C9BD63B59BF02C2 /* PTTargetActionEventListener.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		0DA4FB3856C2F00B0802E7582C4B2FC6 /* PTPusherDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 03994CFE3B7262233721384E733C3379 /* PTPusherDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		17A1D297778E5DD1AE5D79942A3E556D /* Emitter+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCD6385B0FF6F360F4230CE59A2D02D /* Emitter+Blocks.m */; };
+		18021FFF28615F5A7F05628800AE2AB4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6204446BD9150A17B12E81B4A6F9CA8 /* Security.framework */; };
+		1AD4F8BBB2523CFB0B0ACECF37BBCACA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C49D928448B31FB9A7D5AE5C8D6C4E /* Foundation.framework */; };
+		1BBDD20520B5FD1AD2AEAD5F98EEA4F1 /* SocketRocketClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A86DB45A7AB2499B62C3F51E17D1E4A8 /* SocketRocketClient.m */; };
+		1C7CA48A5EAC47836BB392A6E71E2DE3 /* NSString+Hashing.h in Headers */ = {isa = PBXBuildFile; fileRef = DBBE55AAAF91DC5FF639B8267CFED9FC /* NSString+Hashing.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		1F63FA1EF496E01A15DA0EA3BC6DE8F6 /* libPusher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF50DA50CEE4CE9776A1F735DD73945 /* libPusher-dummy.m */; };
+		204104FAC7BDC0661D641874B50F5B8C /* PTPusher+Testing.h in Headers */ = {isa = PBXBuildFile; fileRef = 56CAAAB8EA2F71B6ACDBFB00423E9A9E /* PTPusher+Testing.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2372ABBD04479D96364F66A37FED5767 /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAF4A533627527A0BAF8CD600E57B8B /* NSDictionary+QueryString.m */; };
+		23EB9E348F2FDC848A4C6BB5EC89B3EF /* Transformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E0A0328123B0F0D0632B93A238E9380 /* Transformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24AE992B7DC5DF5DCD41E4BCD28DD749 /* SRWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = F7875B6B8FF1BA06C14A6CB48F47A162 /* SRWebSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27670580F0FA4B581E297F6055C255AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C49D928448B31FB9A7D5AE5C8D6C4E /* Foundation.framework */; };
+		296AE326C55897F6058F8242915CFFEB /* PrimusProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = C3C8B7662821618C9147F703D7A21EB9 /* PrimusProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29C29F64BB92C3D52A7E4AB30ACEA85E /* SocketIOClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 53782CF5627687A77212137A841C5A65 /* SocketIOClient.m */; };
+		2BE68CB3AEFD445ABA08731A93AF643E /* SocketRocketClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 97661A44BEFC02B362D08179623D0E97 /* SocketRocketClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2DDAE9ABEC4303CF3CA8A4ED79CBD4E4 /* SocketRocketWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = EE64BE9391FBA36A4B847AD804DBAEAD /* SocketRocketWebSocket.m */; };
+		2EB9A2D4C90E64AB78254ED9873E6E20 /* A2BlockInvocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A16206E57F41C7104DB2EE6D69205B9 /* A2BlockInvocation.m */; };
+		2F1AC3E7CFDFEF473F2617DDF2312263 /* NSInvocation+BlockArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B80ABDC0C8B9932001AF8A1FBAE2280 /* NSInvocation+BlockArguments.m */; };
+		2F83779C0358D4FD5E3FBDB70578EF0C /* GCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = D2167008DF5998D20647BC0F10D302BB /* GCDTimer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		31285BAA8578F22C51FB321314376843 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 83E02B1A39E376E5497D43CE5473BC72 /* Reachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A0F02AFDB5C245C6021A34876152DD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C49D928448B31FB9A7D5AE5C8D6C4E /* Foundation.framework */; };
+		3DA8CDD5EF3819C8FDFB1E6672447EB2 /* PTPusherChannelAuthorizationOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 465BEE0A5D56713EFD8B0F09B0432668 /* PTPusherChannelAuthorizationOperation.m */; };
+		41687E864AAE9ECB98189A8D99DDE34D /* SocketIOClient.h in Headers */ = {isa = PBXBuildFile; fileRef = F348DBFCAD93264D00C5652166FA743E /* SocketIOClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		424BD23855C47883AE5AD49C5AB748D7 /* Pods-TestStoryBoard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F907E7691A5FC2DB2D234854E27A71 /* Pods-TestStoryBoard-dummy.m */; };
+		42797ECF9A4F7C7459AE3C4157983D0D /* EXTRuntimeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = F724F6D6408338E5A1C5900D8E514D4C /* EXTRuntimeExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4495938BB762399CDAFA58965D1FB1B9 /* Emitter.h in Headers */ = {isa = PBXBuildFile; fileRef = 567AB15BF963BB7DA8FEED162F6FF8D5 /* Emitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46938C3CE3AC1F245688EC1AEE88BC31 /* Emitter+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = FE53CE48A07DA64CE6827DADD829AB50 /* Emitter+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		481FA86FFD53AE15B1C8172611688598 /* NSObject+A2DynamicDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E71C91199343CF6EBE5B8A8ADC8ED174 /* NSObject+A2DynamicDelegate.m */; };
+		49FA8E06946AAD9A831CF127AA36608C /* GCDTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 46F04AB538647E2A2890682FF0B3EFB7 /* GCDTimer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B2FFCAA5FEA4E10F3A48316026C8002 /* PrimusConnectOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FA456DBA62849E609C2E7A5425F255 /* PrimusConnectOptions.m */; };
+		4BDB487443F0080C5DF1D4783CEFD87E /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2C5046D761E8E17E2BCE394FE35A23 /* EXTScope.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		504673F8E1E0B3D64B284D8ED150E057 /* GCDTimer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6801B1F485A41F698E1FB140A509B7 /* GCDTimer-dummy.m */; };
+		51D61CDEA5E22F82C14813B421568904 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C49D928448B31FB9A7D5AE5C8D6C4E /* Foundation.framework */; };
+		53A6AA8CDD0B3FDF990D040DA8502A99 /* Primus-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A8D318C310ECE3F64583125623E7C8 /* Primus-dummy.m */; };
+		56538FF3153EF794762EF1963F82F095 /* NSCache+BlocksKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D0C82FD442F94A23A12A85B48E90E8B /* NSCache+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		571FA977B619D9DAD054AE44E0E5B4A3 /* PTPusherEventDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E11275091502C4DFEABAB2A47D79A0A /* PTPusherEventDispatcher.m */; };
+		5A41611B9A4439118E9F89BDB8BF8CAF /* A2BlockInvocation.h in Headers */ = {isa = PBXBuildFile; fileRef = C866936B64651C54D8F5EC37B7023370 /* A2BlockInvocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B5A4137338C3DBC896FCE0DB8EDCF2F /* PrimusTimers.h in Headers */ = {isa = PBXBuildFile; fileRef = AF67C67E060CC616FE22F394A4306856 /* PrimusTimers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5CE0B78931B2FFF01465E6278A62071C /* PTPusherMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 44FB5959F02A773F8838AFDBACE4F664 /* PTPusherMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DA3A81628B0B95B81DD9B753DE8A710 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 2283749776E404D7694A508936BA761D /* SRWebSocket.m */; };
+		5E0EACFD3C76DB1CC5B776B86F4A1F46 /* Primus.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5BEA0C75F6143D81EBC044E2365408 /* Primus.m */; };
+		6258CCDB1466D13757AEB1DAB72C315F /* NSURLConnection+BlocksKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 40A125A365060A7B59A075AD98929D28 /* NSURLConnection+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6514A911236BF0883969C4256646008D /* SocketRocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A35C274F6DCFB96E4DA904859F00EC4 /* SocketRocket-dummy.m */; };
+		6603B1BB4A2D284DA8CD70E62493C029 /* Emitter+Selectors.h in Headers */ = {isa = PBXBuildFile; fileRef = 01F2571613A2A2B6782D022912AA21DE /* Emitter+Selectors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67A64470FCB623E1C2D694EE7338773A /* NSObject+A2DynamicDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ACA5232076FF9697720F92518561829 /* NSObject+A2DynamicDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6BF861A01B5314AB89089A05D14F985A /* Reachability-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B9C4E256F6FDC53D2924133F0D4CC9 /* Reachability-dummy.m */; };
+		6E12513ED35111FAFEA4A00C4775CBD7 /* A2DynamicDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D238EB04BB47D8F0BA3860319360F /* A2DynamicDelegate.m */; };
+		738174E33B9DEBDF84A4483E976F328C /* PrimusError.h in Headers */ = {isa = PBXBuildFile; fileRef = 416EE7442FF38E111E77CB66F1173BBA /* PrimusError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7602C79D72D8EFE321333B71B7206697 /* Primus.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD13CF36750E682F3AFA7CDA4F1635D /* Primus.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A35671980066ED1F8BCFFF1773DF5E4 /* TransformerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = AD644D3DE341E13E7D257A542977A516 /* TransformerProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D52ACD07A377F6564290B5669B8BB2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C49D928448B31FB9A7D5AE5C8D6C4E /* Foundation.framework */; };
+		7E64E2949067F90A450DEB19E7779A05 /* PTPusherEventDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 5713E27345D30E30275F6AA785B0C907 /* PTPusherEventDispatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81F1021C60A069BDD0B8F8BE0976788B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60F85758B54CB0D843A3E97DFFB2F21F /* CFNetwork.framework */; };
+		8EF12FD31162E73BB7F45D444C0A1408 /* PTPusherEventPublisher.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B2DB71BD249BBC1A917C4F9DEAA0CBE /* PTPusherEventPublisher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F22BEBA1714291587846F87C744D11D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6166BE40C18BC6BF0EED92CAB212EC33 /* SystemConfiguration.framework */; };
+		916E41F229CC53A1F238861ADF21C8FD /* PrimusTransformers.m in Sources */ = {isa = PBXBuildFile; fileRef = F991CE8D3A8FE63D3C27B638ED7EFBE1 /* PrimusTransformers.m */; };
+		92F0DAF072F5604396BA5A7B52FE05B9 /* PTPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF5A0E36BA97EC1902BF2652916D3AE /* PTPusher.m */; };
+		94AB78C03A56E17E2AB96179ECE9ECF4 /* PTPusherMockConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 98084A90B50320AA901DB0992652B503 /* PTPusherMockConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		96A12CE0A63438B2795BE69F77F7C070 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DEAB9296352AFB7F5B3E821C5F7C439 /* Reachability.m */; };
+		9E4EEF603B6C9B8CC9829523AA037772 /* PTPusherConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 463C3811912FEA7606BAA9FB88BEDA9D /* PTPusherConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0B56B339B5B9FB24FC0730380C86637 /* ParserProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BB9C536D9241B161D3028DA0155A445 /* ParserProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0DA17F4B0E17402BAC03E9A4251D49E /* NSInvocation+BlockArguments.h in Headers */ = {isa = PBXBuildFile; fileRef = 9582F864C4F17CC5D25351DF97006473 /* NSInvocation+BlockArguments.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A391B59CE9ED39C9A07F776A83C2DF54 /* PTPusherChannelAuthorizationOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7150BF061E6172CE0DF7022A94819875 /* PTPusherChannelAuthorizationOperation.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A5D3D500FAFB575BB0F5ABB93B33A45D /* BlocksKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E80BBB05C27D8635CB24A2324C4BAE /* BlocksKit-dummy.m */; };
+		A8A90F741D64EF722292E621AF0E2904 /* PTPusherErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF25F7F3A8FF5925AE5960176498889 /* PTPusherErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA672A16AE2AEBEA8AA11104356F037E /* EXTRuntimeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF1651538E21F3BE113BC32C5A9C719 /* EXTRuntimeExtensions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		AD3314D2F55182BBB4CA99ECC76D3933 /* PrimusTimers.m in Sources */ = {isa = PBXBuildFile; fileRef = C269D02C67F9A5EC5A0A6964015A2F2C /* PrimusTimers.m */; };
+		AD76AB131D9AA41853759860899F5775 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C49D928448B31FB9A7D5AE5C8D6C4E /* Foundation.framework */; };
+		B43048D3B5BF0CCEF75500FE9B7804B7 /* NSString+Hashing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC094A40B566A9B2DC5FB3D3EF0FC28 /* NSString+Hashing.m */; };
+		B7E09E709ED7CBFB2A2CD7EDAEF8647D /* PTPusherConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E7340C1F280CB4EBABD8C799228E48 /* PTPusherConnection.m */; };
+		B86E530F3A057C47CAB1FDAD9A865BBA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C49D928448B31FB9A7D5AE5C8D6C4E /* Foundation.framework */; };
+		BA00DA362510B3F28A2266A0F32AA051 /* PTJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 644C3D5E6E1A6AB5B7A6BB50E45F530A /* PTJSON.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		BD10E17DB57A0BA9E22089916C843736 /* PTBlockEventListener.h in Headers */ = {isa = PBXBuildFile; fileRef = BAA389EFAC3D1692307FD3367CC34061 /* PTBlockEventListener.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		BD2472A0BD4B85CB45EBFF3C6C176A04 /* NSDictionary+QueryString.h in Headers */ = {isa = PBXBuildFile; fileRef = C0679B2C17F7C428103B92C770721C7A /* NSDictionary+QueryString.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		BE50D417A6046D8ABFA0BB7A39462F91 /* NSCache+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1548D73E5DDB969BE315CA0A48F6A984 /* NSCache+BlocksKit.m */; };
+		C2F34EFD83C9905B939C0154951F416D /* PTPusherChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B77A2BE7523EE13F1D0A3DAE7A602C8 /* PTPusherChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C2FB562BBC18924F5B2FA0A34D3C5223 /* A2DynamicDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BFCAFF02B4485B1776052A7FC85EE61 /* A2DynamicDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C42C30CDA9265A4106506F5943C1E699 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C49D928448B31FB9A7D5AE5C8D6C4E /* Foundation.framework */; };
+		C77CF1E77724CB4728CB1CCD929F9249 /* PTPusherEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A85C9F5E4F783D5D7AB806840A81E077 /* PTPusherEvent.m */; };
+		C7EF15C472CDDCF39C7161E8373D41ED /* PrimusReconnectOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 83ABE90E1DA93E4C6D20A7D6652E55D5 /* PrimusReconnectOptions.m */; };
+		C9A56777C79F7F040AE298BD10723353 /* PTPusherEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = BC74919028A1B32323AA56D14D8B6A4B /* PTPusherEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D1435582D549971AEF69422FBF264D8C /* SocketRocketWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = A8410E7F359A2723259180074CF14E8F /* SocketRocketWebSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D1C28DD2F5F34D128548E02E3513EE18 /* JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 67262A00BBF59EC6FB6425C0F75A853F /* JSON.m */; };
+		D6815BDB94FE8905CAE203FE12DA176A /* PTPusherChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520B52A5F2BF3AA749A85DD49AFF9D6 /* PTPusherChannel.m */; };
+		D8DC9C7E66C4DD51AC8FCF9B7922EFB1 /* PTPusher+Testing.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E2388EBCA61B7D384EF1FB4E26E1CD /* PTPusher+Testing.m */; };
+		DA60089F9D7407AC4313B2C47144EF39 /* PrimusConnectOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = BDD272C7AE177DB5243C5291676EF013 /* PrimusConnectOptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD25BD48AE5564D5A8B6F05427A8CD47 /* PTJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = D92A492483AB5BD148D13351523402C6 /* PTJSON.m */; };
+		DE2E6D645CAC46C19479E41611516F1B /* PTPusherAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 13844ACB7B16F53CDA216FAA038F470E /* PTPusherAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DEFBD1948BEC6423BAF16BCE1648352D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C49D928448B31FB9A7D5AE5C8D6C4E /* Foundation.framework */; };
+		DFF7819E0C03D4E2E0B5FE807D16DB28 /* Transformer.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E16E5AF46223F73B7121215C457EB7 /* Transformer.m */; };
+		E086BB8A9FD9CA6E4B4F7DC0EBCA2F7E /* metamacros.h in Headers */ = {isa = PBXBuildFile; fileRef = B7E0408FFFE71342C1BED86E5EA6164B /* metamacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E30C9C7C0C03C0377CC51F4F833E959B /* PTPusherMockConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = AECB20B559D36FF3E165EFA2BD2FE4DF /* PTPusherMockConnection.m */; };
+		E54236BBA40110AE4C9C938D21E82A13 /* PTTargetActionEventListener.m in Sources */ = {isa = PBXBuildFile; fileRef = A221A190747B435DFFD54BBE68EBDE58 /* PTTargetActionEventListener.m */; };
+		E7DEE015FEDAC237196D73FE91DFBBE1 /* PTPusherChannel_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = DD474F7C28BC039F11D1627BBF89549F /* PTPusherChannel_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		E9A34BD97614D71369BDB5A6BC8EFB49 /* PTEventListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 952FA3C74E91307D4634AECB2480E005 /* PTEventListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9F4B9160DEA3ADF66644E4AD964FAC2 /* NSObject+A2BlockDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 491A73D2485E68ECFD03595CEA26E0D3 /* NSObject+A2BlockDelegate.m */; };
+		EA5E6F5AE6B771A72FF893EBDA92AA55 /* Pusher.h in Headers */ = {isa = PBXBuildFile; fileRef = 7015F7F544AD8BD00F91DE770ECEB3CA /* Pusher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB8117017F7BCD3BB2A06A0ACC2A08CB /* PTBlockEventListener.m in Sources */ = {isa = PBXBuildFile; fileRef = EC39A59E176CAECE5CEEAD2844558F6B /* PTBlockEventListener.m */; };
+		F10A21697B96987F1A7B882ECB65D5D2 /* PrimusReconnectOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = DFEBCD567BDE6CBCECF0F6B82834E854 /* PrimusReconnectOptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8C24AB02CCDFEA8EBBCCF4B9BAEA8BB /* Emitter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA9EEAAF2FB35001A996C0A9617B1BF /* Emitter-dummy.m */; };
+		FABF4198A46105C2CCD720352B817472 /* PluginProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C924EAED563BBCA8AD77179809FBD3 /* PluginProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB3B5B572036E93052B2C7637F2352FC /* PTPusherPresenceChannelDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 089732B1F708206A90E668E20AB55049 /* PTPusherPresenceChannelDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FC3763B8530832877CF996F289B9D403 /* EXTScope.h in Headers */ = {isa = PBXBuildFile; fileRef = BE2AF78BFC6FCF5C07FE834D15050AB2 /* EXTScope.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FDE7646630B0A79C1842D6C3A5A11CB5 /* PTURLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B846962F91F1FB6BB44EFB1F1B07FE /* PTURLRequestOperation.m */; };
+		FE76F5FD80C2CBFC9733621065B9BAB1 /* NSURLConnection+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B71101B1D0D9BCA36228DFA451D6ABAE /* NSURLConnection+BlocksKit.m */; };
+		FEF1B954A8740E94E23902E25CD28674 /* PTPusher.h in Headers */ = {isa = PBXBuildFile; fileRef = D8E54DA88C47AC5DBBB19ED31F5A5781 /* PTPusher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FF3DC64FF29B17A54EFDA6FEBA66ED95 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E825E6AD560E456A8526B52996D164A /* JSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1977E560C08A288E94CDBCCA300160CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0EE5634CAD0D778C76414552FE5B44AB;
+			remoteInfo = libextobjc;
+		};
+		1F0015F9C315CC7BEB17B19C010F863E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C1AB0E57B13A15D5A67F9132781D616;
+			remoteInfo = Emitter;
+		};
+		2EDE2393E2CB908E80696370E15F7E6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CDFDB6F38088D821677660B18FA80D72;
+			remoteInfo = BlocksKit;
+		};
+		4E2636CE917BE59BA91C1DB45DAF7089 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3330929D68955DAF5EFC4C5728E267E;
+			remoteInfo = GCDTimer;
+		};
+		58D3B38D1C845FBAE6EA8E3A93C60615 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C1AB0E57B13A15D5A67F9132781D616;
+			remoteInfo = Emitter;
+		};
+		5CBAC3B530E41AEEBB8B5B79BB24DD3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F779F2CCE9E35CF7CCE35E583499B8B;
+			remoteInfo = Reachability;
+		};
+		656FD081E70F0BA415E0B5AC3D6EBB07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F779F2CCE9E35CF7CCE35E583499B8B;
+			remoteInfo = Reachability;
+		};
+		80694B2D29F2E882F960AD8AD44711F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC037D5D14F4B33C99B28790B2FAC642;
+			remoteInfo = SocketRocket;
+		};
+		9C31F7E531615EB7ADA03BCB62897167 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC037D5D14F4B33C99B28790B2FAC642;
+			remoteInfo = SocketRocket;
+		};
+		A0548241E63A5DE33FA6402EF09AAF35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 25E1B6400E486E65CA06D48E8A4B6B31;
+			remoteInfo = Primus;
+		};
+		B05FDF73D479D4088B580049C5AAA382 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CDFDB6F38088D821677660B18FA80D72;
+			remoteInfo = BlocksKit;
+		};
+		C7A47F849F0D23ED99ED959F8BB00DEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0EE5634CAD0D778C76414552FE5B44AB;
+			remoteInfo = libextobjc;
+		};
+		D2495BF576D51AA3C23383FC5F0840B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3330929D68955DAF5EFC4C5728E267E;
+			remoteInfo = GCDTimer;
+		};
+		DE5EA0999485313B93FA5B95707A362D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B00B8E591B74E0BE579AA63B83F320A7;
+			remoteInfo = libPusher;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01F2571613A2A2B6782D022912AA21DE /* Emitter+Selectors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Emitter+Selectors.h"; path = "Emitter/Emitter+Selectors.h"; sourceTree = "<group>"; };
+		03994CFE3B7262233721384E733C3379 /* PTPusherDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTPusherDelegate.h; path = Library/PTPusherDelegate.h; sourceTree = "<group>"; };
+		089732B1F708206A90E668E20AB55049 /* PTPusherPresenceChannelDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTPusherPresenceChannelDelegate.h; path = Library/PTPusherPresenceChannelDelegate.h; sourceTree = "<group>"; };
+		08CBF7E55C468C1BCA59131CC7B190CA /* Pods-TestStoryBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TestStoryBoard.debug.xcconfig"; sourceTree = "<group>"; };
+		0A013F7245A5C7E2092692244C04AABB /* NSObject+A2BlockDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+A2BlockDelegate.h"; path = "BlocksKit/DynamicDelegate/NSObject+A2BlockDelegate.h"; sourceTree = "<group>"; };
+		0A35C274F6DCFB96E4DA904859F00EC4 /* SocketRocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SocketRocket-dummy.m"; sourceTree = "<group>"; };
+		0B77A2BE7523EE13F1D0A3DAE7A602C8 /* PTPusherChannel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTPusherChannel.h; path = Library/PTPusherChannel.h; sourceTree = "<group>"; };
+		0E11275091502C4DFEABAB2A47D79A0A /* PTPusherEventDispatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTPusherEventDispatcher.m; path = Library/PTPusherEventDispatcher.m; sourceTree = "<group>"; };
+		0E825E6AD560E456A8526B52996D164A /* JSON.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = Primus/Parsers/JSON/JSON.h; sourceTree = "<group>"; };
+		0FCD6385B0FF6F360F4230CE59A2D02D /* Emitter+Blocks.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Emitter+Blocks.m"; path = "Emitter/Emitter+Blocks.m"; sourceTree = "<group>"; };
+		10DDA7F417DFF75EC48E8910595F94F3 /* libPods-TestStoryBoard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestStoryBoard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		11806A20F8ADC9931E0C81149B1C8BA9 /* Emitter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Emitter-prefix.pch"; sourceTree = "<group>"; };
+		130095A3FEC1C859D3CC121D2543FC81 /* Emitter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Emitter.xcconfig; sourceTree = "<group>"; };
+		13844ACB7B16F53CDA216FAA038F470E /* PTPusherAPI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTPusherAPI.h; path = Library/PTPusherAPI.h; sourceTree = "<group>"; };
+		144C0C67220BFF453C0C2DB04FC99F83 /* Primus-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Primus-prefix.pch"; sourceTree = "<group>"; };
+		1548D73E5DDB969BE315CA0A48F6A984 /* NSCache+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSCache+BlocksKit.m"; path = "BlocksKit/DynamicDelegate/Foundation/NSCache+BlocksKit.m"; sourceTree = "<group>"; };
+		1AC22B06301CE76312C7B291B6AFB9E6 /* Pods-TestStoryBoard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TestStoryBoard.release.xcconfig"; sourceTree = "<group>"; };
+		1D0C82FD442F94A23A12A85B48E90E8B /* NSCache+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSCache+BlocksKit.h"; path = "BlocksKit/DynamicDelegate/Foundation/NSCache+BlocksKit.h"; sourceTree = "<group>"; };
+		2283749776E404D7694A508936BA761D /* SRWebSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SRWebSocket.m; path = SocketRocket/SRWebSocket.m; sourceTree = "<group>"; };
+		27C924EAED563BBCA8AD77179809FBD3 /* PluginProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PluginProtocol.h; path = Primus/PluginProtocol.h; sourceTree = "<group>"; };
+		2BB9C536D9241B161D3028DA0155A445 /* ParserProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ParserProtocol.h; path = Primus/ParserProtocol.h; sourceTree = "<group>"; };
+		2BFCAFF02B4485B1776052A7FC85EE61 /* A2DynamicDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = A2DynamicDelegate.h; path = BlocksKit/DynamicDelegate/A2DynamicDelegate.h; sourceTree = "<group>"; };
+		2CF1651538E21F3BE113BC32C5A9C719 /* EXTRuntimeExtensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXTRuntimeExtensions.m; path = extobjc/EXTRuntimeExtensions.m; sourceTree = "<group>"; };
+		2DEAB9296352AFB7F5B3E821C5F7C439 /* Reachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		34A8D318C310ECE3F64583125623E7C8 /* Primus-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Primus-dummy.m"; sourceTree = "<group>"; };
+		3520B52A5F2BF3AA749A85DD49AFF9D6 /* PTPusherChannel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTPusherChannel.m; path = Library/PTPusherChannel.m; sourceTree = "<group>"; };
+		39F11B3262DA79335AF6ECD44B57B91F /* libReachability.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReachability.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A894F0CE47D1AC39D097B1917AC19D0 /* Pods-TestStoryBoard-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TestStoryBoard-frameworks.sh"; sourceTree = "<group>"; };
+		3ACA5232076FF9697720F92518561829 /* NSObject+A2DynamicDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+A2DynamicDelegate.h"; path = "BlocksKit/DynamicDelegate/NSObject+A2DynamicDelegate.h"; sourceTree = "<group>"; };
+		3CD946806EE99AE2C4DC95FF02DB9D99 /* libextobjc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = libextobjc.xcconfig; sourceTree = "<group>"; };
+		3D2C5046D761E8E17E2BCE394FE35A23 /* EXTScope.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXTScope.m; path = extobjc/EXTScope.m; sourceTree = "<group>"; };
+		40A125A365060A7B59A075AD98929D28 /* NSURLConnection+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURLConnection+BlocksKit.h"; path = "BlocksKit/DynamicDelegate/Foundation/NSURLConnection+BlocksKit.h"; sourceTree = "<group>"; };
+		416EE7442FF38E111E77CB66F1173BBA /* PrimusError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PrimusError.h; path = Primus/Core/PrimusError.h; sourceTree = "<group>"; };
+		42E2388EBCA61B7D384EF1FB4E26E1CD /* PTPusher+Testing.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "PTPusher+Testing.m"; path = "Library/PTPusher+Testing.m"; sourceTree = "<group>"; };
+		42F907E7691A5FC2DB2D234854E27A71 /* Pods-TestStoryBoard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TestStoryBoard-dummy.m"; sourceTree = "<group>"; };
+		44FB5959F02A773F8838AFDBACE4F664 /* PTPusherMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTPusherMacros.h; path = Library/PTPusherMacros.h; sourceTree = "<group>"; };
+		4575F8C8770B68E780C4AF51579F5DE4 /* PTURLRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTURLRequestOperation.h; path = "Library/Private Headers/PTURLRequestOperation.h"; sourceTree = "<group>"; };
+		463C3811912FEA7606BAA9FB88BEDA9D /* PTPusherConnection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTPusherConnection.h; path = Library/PTPusherConnection.h; sourceTree = "<group>"; };
+		465BEE0A5D56713EFD8B0F09B0432668 /* PTPusherChannelAuthorizationOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTPusherChannelAuthorizationOperation.m; path = Library/PTPusherChannelAuthorizationOperation.m; sourceTree = "<group>"; };
+		46F04AB538647E2A2890682FF0B3EFB7 /* GCDTimer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDTimer.h; path = Source/GCDTimer.h; sourceTree = "<group>"; };
+		491A73D2485E68ECFD03595CEA26E0D3 /* NSObject+A2BlockDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+A2BlockDelegate.m"; path = "BlocksKit/DynamicDelegate/NSObject+A2BlockDelegate.m"; sourceTree = "<group>"; };
+		4CF25F7F3A8FF5925AE5960176498889 /* PTPusherErrors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTPusherErrors.h; path = Library/PTPusherErrors.h; sourceTree = "<group>"; };
+		53782CF5627687A77212137A841C5A65 /* SocketIOClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SocketIOClient.m; path = Primus/Transformers/socket.IO/SocketIOClient.m; sourceTree = "<group>"; };
+		5658881F49935D994EDACEAE1A2D921E /* BlocksKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BlocksKit.xcconfig; sourceTree = "<group>"; };
+		567AB15BF963BB7DA8FEED162F6FF8D5 /* Emitter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Emitter.h; path = Emitter/Emitter.h; sourceTree = "<group>"; };
+		56CAAAB8EA2F71B6ACDBFB00423E9A9E /* PTPusher+Testing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PTPusher+Testing.h"; path = "Library/PTPusher+Testing.h"; sourceTree = "<group>"; };
+		5713E27345D30E30275F6AA785B0C907 /* PTPusherEventDispatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTPusherEventDispatcher.h; path = Library/PTPusherEventDispatcher.h; sourceTree = "<group>"; };
+		5B80ABDC0C8B9932001AF8A1FBAE2280 /* NSInvocation+BlockArguments.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSInvocation+BlockArguments.m"; path = "Emitter/NSInvocation+BlockArguments.m"; sourceTree = "<group>"; };
+		5BF50DA50CEE4CE9776A1F735DD73945 /* libPusher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "libPusher-dummy.m"; sourceTree = "<group>"; };
+		5D5B9BA0A52AA33E728CFFA9C5FB173D /* GCDTimer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GCDTimer.xcconfig; sourceTree = "<group>"; };
+		5D6801B1F485A41F698E1FB140A509B7 /* GCDTimer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GCDTimer-dummy.m"; sourceTree = "<group>"; };
+		5E0A0328123B0F0D0632B93A238E9380 /* Transformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Transformer.h; path = Primus/Transformers/Transformer.h; sourceTree = "<group>"; };
+		60F85758B54CB0D843A3E97DFFB2F21F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		6166BE40C18BC6BF0EED92CAB212EC33 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		644C3D5E6E1A6AB5B7A6BB50E45F530A /* PTJSON.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTJSON.h; path = "Library/Private Headers/PTJSON.h"; sourceTree = "<group>"; };
+		668C25F78686B01B6EAA69CDA9D3345E /* Emitter+Selectors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Emitter+Selectors.m"; path = "Emitter/Emitter+Selectors.m"; sourceTree = "<group>"; };
+		67262A00BBF59EC6FB6425C0F75A853F /* JSON.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSON.m; path = Primus/Parsers/JSON/JSON.m; sourceTree = "<group>"; };
+		67E7340C1F280CB4EBABD8C799228E48 /* PTPusherConnection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTPusherConnection.m; path = Library/PTPusherConnection.m; sourceTree = "<group>"; };
+		6B2DB71BD249BBC1A917C4F9DEAA0CBE /* PTPusherEventPublisher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTPusherEventPublisher.h; path = Library/PTPusherEventPublisher.h; sourceTree = "<group>"; };
+		6E5BEA0C75F6143D81EBC044E2365408 /* Primus.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Primus.m; path = Primus/Primus.m; sourceTree = "<group>"; };
+		7015F7F544AD8BD00F91DE770ECEB3CA /* Pusher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Pusher.h; path = Library/Pusher.h; sourceTree = "<group>"; };
+		7150BF061E6172CE0DF7022A94819875 /* PTPusherChannelAuthorizationOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTPusherChannelAuthorizationOperation.h; path = "Library/Private Headers/PTPusherChannelAuthorizationOperation.h"; sourceTree = "<group>"; };
+		77C49D928448B31FB9A7D5AE5C8D6C4E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7A16206E57F41C7104DB2EE6D69205B9 /* A2BlockInvocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = A2BlockInvocation.m; path = BlocksKit/DynamicDelegate/A2BlockInvocation.m; sourceTree = "<group>"; };
+		7BA0E81007E9088E8315447403A59918 /* liblibPusher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibPusher.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BC62C9820A85663437F886D71D25783 /* liblibextobjc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibextobjc.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8123AF0EFE2602309943E8CAEB9127D7 /* Pods-TestStoryBoard-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TestStoryBoard-resources.sh"; sourceTree = "<group>"; };
+		83ABE90E1DA93E4C6D20A7D6652E55D5 /* PrimusReconnectOptions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PrimusReconnectOptions.m; path = Primus/Core/PrimusReconnectOptions.m; sourceTree = "<group>"; };
+		83E02B1A39E376E5497D43CE5473BC72 /* Reachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		844D238EB04BB47D8F0BA3860319360F /* A2DynamicDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = A2DynamicDelegate.m; path = BlocksKit/DynamicDelegate/A2DynamicDelegate.m; sourceTree = "<group>"; };
+		86FA456DBA62849E609C2E7A5425F255 /* PrimusConnectOptions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PrimusConnectOptions.m; path = Primus/Core/PrimusConnectOptions.m; sourceTree = "<group>"; };
+		8BD03F8CD2CAA5F8D7581FBE6A1BCFA9 /* Primus.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Primus.xcconfig; sourceTree = "<group>"; };
+		8BD86399A57EF01BC09BCEB89547A392 /* Pods-TestStoryBoard-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TestStoryBoard-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8F189ECC26BFC59C3A1918B21559777D /* libBlocksKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBlocksKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FBE526EAA8606C16973D943655607FC /* Pods-TestStoryBoard-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TestStoryBoard-acknowledgements.plist"; sourceTree = "<group>"; };
+		952FA3C74E91307D4634AECB2480E005 /* PTEventListener.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTEventListener.h; path = Library/PTEventListener.h; sourceTree = "<group>"; };
+		9582F864C4F17CC5D25351DF97006473 /* NSInvocation+BlockArguments.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSInvocation+BlockArguments.h"; path = "Emitter/NSInvocation+BlockArguments.h"; sourceTree = "<group>"; };
+		9701F8A10E2F98710AD8730E243867D7 /* libextobjc-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "libextobjc-prefix.pch"; sourceTree = "<group>"; };
+		97661A44BEFC02B362D08179623D0E97 /* SocketRocketClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SocketRocketClient.h; path = Primus/Transformers/SocketRocket/SocketRocketClient.h; sourceTree = "<group>"; };
+		98084A90B50320AA901DB0992652B503 /* PTPusherMockConnection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTPusherMockConnection.h; path = Library/PTPusherMockConnection.h; sourceTree = "<group>"; };
+		9BC094A40B566A9B2DC5FB3D3EF0FC28 /* NSString+Hashing.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+Hashing.m"; path = "Library/NSString+Hashing.m"; sourceTree = "<group>"; };
+		9F8F4539B07EE06AD95F580D38C1D09E /* Reachability-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Reachability-prefix.pch"; sourceTree = "<group>"; };
+		9FAF4A533627527A0BAF8CD600E57B8B /* NSDictionary+QueryString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+QueryString.m"; path = "Library/NSDictionary+QueryString.m"; sourceTree = "<group>"; };
+		A221A190747B435DFFD54BBE68EBDE58 /* PTTargetActionEventListener.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTTargetActionEventListener.m; path = Library/PTTargetActionEventListener.m; sourceTree = "<group>"; };
+		A6E16E5AF46223F73B7121215C457EB7 /* Transformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Transformer.m; path = Primus/Transformers/Transformer.m; sourceTree = "<group>"; };
+		A8410E7F359A2723259180074CF14E8F /* SocketRocketWebSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SocketRocketWebSocket.h; path = Primus/Transformers/SocketRocket/SocketRocketWebSocket.h; sourceTree = "<group>"; };
+		A85C9F5E4F783D5D7AB806840A81E077 /* PTPusherEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTPusherEvent.m; path = Library/PTPusherEvent.m; sourceTree = "<group>"; };
+		A86DB45A7AB2499B62C3F51E17D1E4A8 /* SocketRocketClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SocketRocketClient.m; path = Primus/Transformers/SocketRocket/SocketRocketClient.m; sourceTree = "<group>"; };
+		ABA9EEAAF2FB35001A996C0A9617B1BF /* Emitter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Emitter-dummy.m"; sourceTree = "<group>"; };
+		AD644D3DE341E13E7D257A542977A516 /* TransformerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TransformerProtocol.h; path = Primus/TransformerProtocol.h; sourceTree = "<group>"; };
+		AECB20B559D36FF3E165EFA2BD2FE4DF /* PTPusherMockConnection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTPusherMockConnection.m; path = Library/PTPusherMockConnection.m; sourceTree = "<group>"; };
+		AF67C67E060CC616FE22F394A4306856 /* PrimusTimers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PrimusTimers.h; path = Primus/Core/PrimusTimers.h; sourceTree = "<group>"; };
+		B3B1352152B13D39D9999466872673D4 /* PTPusherAPI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTPusherAPI.m; path = Library/PTPusherAPI.m; sourceTree = "<group>"; };
+		B6D07D4C276C31BDE29B8BA66C73BF23 /* Reachability.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Reachability.xcconfig; sourceTree = "<group>"; };
+		B71101B1D0D9BCA36228DFA451D6ABAE /* NSURLConnection+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLConnection+BlocksKit.m"; path = "BlocksKit/DynamicDelegate/Foundation/NSURLConnection+BlocksKit.m"; sourceTree = "<group>"; };
+		B7E0408FFFE71342C1BED86E5EA6164B /* metamacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = metamacros.h; path = extobjc/metamacros.h; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BAA389EFAC3D1692307FD3367CC34061 /* PTBlockEventListener.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTBlockEventListener.h; path = "Library/Private Headers/PTBlockEventListener.h"; sourceTree = "<group>"; };
+		BC74919028A1B32323AA56D14D8B6A4B /* PTPusherEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTPusherEvent.h; path = Library/PTPusherEvent.h; sourceTree = "<group>"; };
+		BDD272C7AE177DB5243C5291676EF013 /* PrimusConnectOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PrimusConnectOptions.h; path = Primus/Core/PrimusConnectOptions.h; sourceTree = "<group>"; };
+		BE2AF78BFC6FCF5C07FE834D15050AB2 /* EXTScope.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXTScope.h; path = extobjc/EXTScope.h; sourceTree = "<group>"; };
+		C0679B2C17F7C428103B92C770721C7A /* NSDictionary+QueryString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+QueryString.h"; path = "Library/Private Headers/NSDictionary+QueryString.h"; sourceTree = "<group>"; };
+		C0B08B2EEAE2479DA20B1FA3BDECC02B /* libPrimus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPrimus.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0B9C4E256F6FDC53D2924133F0D4CC9 /* Reachability-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Reachability-dummy.m"; sourceTree = "<group>"; };
+		C1B846962F91F1FB6BB44EFB1F1B07FE /* PTURLRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTURLRequestOperation.m; path = Library/PTURLRequestOperation.m; sourceTree = "<group>"; };
+		C269D02C67F9A5EC5A0A6964015A2F2C /* PrimusTimers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PrimusTimers.m; path = Primus/Core/PrimusTimers.m; sourceTree = "<group>"; };
+		C3C8B7662821618C9147F703D7A21EB9 /* PrimusProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PrimusProtocol.h; path = Primus/PrimusProtocol.h; sourceTree = "<group>"; };
+		C5C4913E81270C8C1C9BD63B59BF02C2 /* PTTargetActionEventListener.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTTargetActionEventListener.h; path = "Library/Private Headers/PTTargetActionEventListener.h"; sourceTree = "<group>"; };
+		C6204446BD9150A17B12E81B4A6F9CA8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		C622F9CFEA47F3CC138D5CE1F6A00D47 /* libPusher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = libPusher.xcconfig; sourceTree = "<group>"; };
+		C866936B64651C54D8F5EC37B7023370 /* A2BlockInvocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = A2BlockInvocation.h; path = BlocksKit/DynamicDelegate/A2BlockInvocation.h; sourceTree = "<group>"; };
+		C86F56AB2DACE07E5AFE8F031425F6E3 /* SocketRocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-prefix.pch"; sourceTree = "<group>"; };
+		C89401279390F3C3A1DD3BD3473F54EE /* SocketRocket.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SocketRocket.xcconfig; sourceTree = "<group>"; };
+		CA3660D7676E3FC61F8B40EA93638EAD /* libextobjc-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "libextobjc-dummy.m"; sourceTree = "<group>"; };
+		CDF5A0E36BA97EC1902BF2652916D3AE /* PTPusher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTPusher.m; path = Library/PTPusher.m; sourceTree = "<group>"; };
+		D2167008DF5998D20647BC0F10D302BB /* GCDTimer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDTimer.m; path = Source/GCDTimer.m; sourceTree = "<group>"; };
+		D8E54DA88C47AC5DBBB19ED31F5A5781 /* PTPusher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTPusher.h; path = Library/PTPusher.h; sourceTree = "<group>"; };
+		D92A492483AB5BD148D13351523402C6 /* PTJSON.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTJSON.m; path = Library/PTJSON.m; sourceTree = "<group>"; };
+		DBBE55AAAF91DC5FF639B8267CFED9FC /* NSString+Hashing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+Hashing.h"; path = "Library/Private Headers/NSString+Hashing.h"; sourceTree = "<group>"; };
+		DD474F7C28BC039F11D1627BBF89549F /* PTPusherChannel_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTPusherChannel_Private.h; path = "Library/Private Headers/PTPusherChannel_Private.h"; sourceTree = "<group>"; };
+		DD65C37A08A036BDC459F7AB12BA5E73 /* libSocketRocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSocketRocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFEBCD567BDE6CBCECF0F6B82834E854 /* PrimusReconnectOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PrimusReconnectOptions.h; path = Primus/Core/PrimusReconnectOptions.h; sourceTree = "<group>"; };
+		E71C91199343CF6EBE5B8A8ADC8ED174 /* NSObject+A2DynamicDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+A2DynamicDelegate.m"; path = "BlocksKit/DynamicDelegate/NSObject+A2DynamicDelegate.m"; sourceTree = "<group>"; };
+		EC39A59E176CAECE5CEEAD2844558F6B /* PTBlockEventListener.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTBlockEventListener.m; path = Library/PTBlockEventListener.m; sourceTree = "<group>"; };
+		EE64BE9391FBA36A4B847AD804DBAEAD /* SocketRocketWebSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SocketRocketWebSocket.m; path = Primus/Transformers/SocketRocket/SocketRocketWebSocket.m; sourceTree = "<group>"; };
+		F348DBFCAD93264D00C5652166FA743E /* SocketIOClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SocketIOClient.h; path = Primus/Transformers/socket.IO/SocketIOClient.h; sourceTree = "<group>"; };
+		F4498CB866ACCEACF971A392CB473031 /* PrimusTransformers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PrimusTransformers.h; path = Primus/Core/PrimusTransformers.h; sourceTree = "<group>"; };
+		F44DB2D34A3CB293A895EA6DF98480E8 /* GCDTimer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GCDTimer-prefix.pch"; sourceTree = "<group>"; };
+		F724F6D6408338E5A1C5900D8E514D4C /* EXTRuntimeExtensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXTRuntimeExtensions.h; path = extobjc/EXTRuntimeExtensions.h; sourceTree = "<group>"; };
+		F7875B6B8FF1BA06C14A6CB48F47A162 /* SRWebSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SRWebSocket.h; path = SocketRocket/SRWebSocket.h; sourceTree = "<group>"; };
+		F80E72329D8720FACC0CE2629D64F3B8 /* BlocksKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BlocksKit-prefix.pch"; sourceTree = "<group>"; };
+		F991CE8D3A8FE63D3C27B638ED7EFBE1 /* PrimusTransformers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PrimusTransformers.m; path = Primus/Core/PrimusTransformers.m; sourceTree = "<group>"; };
+		F9E80BBB05C27D8635CB24A2324C4BAE /* BlocksKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BlocksKit-dummy.m"; sourceTree = "<group>"; };
+		FA4FAE1879E7572F7819AE7AC50AC33C /* libGCDTimer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGCDTimer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAD13CF36750E682F3AFA7CDA4F1635D /* Primus.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Primus.h; path = Primus/Primus.h; sourceTree = "<group>"; };
+		FE36BFE813E2C1C561473CD70D6E2559 /* libPusher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "libPusher-prefix.pch"; sourceTree = "<group>"; };
+		FE53CE48A07DA64CE6827DADD829AB50 /* Emitter+Blocks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Emitter+Blocks.h"; path = "Emitter/Emitter+Blocks.h"; sourceTree = "<group>"; };
+		FFA79F60E9B35344D442A7FCD63A980D /* libEmitter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEmitter.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1DF36B8DAC72A04E9D834B26CD163AA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27670580F0FA4B581E297F6055C255AA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		304071A94A5601A8CCFEBC051531ABF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEFBD1948BEC6423BAF16BCE1648352D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36AD994E0DC09A052629EC677F7B680C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C42C30CDA9265A4106506F5943C1E699 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		487952A9778243D8F4ECA6D6C565969D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81F1021C60A069BDD0B8F8BE0976788B /* CFNetwork.framework in Frameworks */,
+				AD76AB131D9AA41853759860899F5775 /* Foundation.framework in Frameworks */,
+				18021FFF28615F5A7F05628800AE2AB4 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50720B5658A0B5C8E87B61AF0F3224DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D52ACD07A377F6564290B5669B8BB2A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C697EF9C1AF494FD640259705A6511D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51D61CDEA5E22F82C14813B421568904 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97556332D107C74B20C3A00A32F4C589 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B86E530F3A057C47CAB1FDAD9A865BBA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99486337FD40A6A68F7672824FEFEE69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A0F02AFDB5C245C6021A34876152DD5 /* Foundation.framework in Frameworks */,
+				8F22BEBA1714291587846F87C744D11D /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C983E6CD78777F06CB1D428B148E2E10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AD4F8BBB2523CFB0B0ACECF37BBCACA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0411937BD070B1B1974B7AD5B9C5AD5F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C89401279390F3C3A1DD3BD3473F54EE /* SocketRocket.xcconfig */,
+				0A35C274F6DCFB96E4DA904859F00EC4 /* SocketRocket-dummy.m */,
+				C86F56AB2DACE07E5AFE8F031425F6E3 /* SocketRocket-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SocketRocket";
+			sourceTree = "<group>";
+		};
+		04228DE95BDCB8EDC692844875AF6B11 /* Primus */ = {
+			isa = PBXGroup;
+			children = (
+				0E825E6AD560E456A8526B52996D164A /* JSON.h */,
+				67262A00BBF59EC6FB6425C0F75A853F /* JSON.m */,
+				2BB9C536D9241B161D3028DA0155A445 /* ParserProtocol.h */,
+				27C924EAED563BBCA8AD77179809FBD3 /* PluginProtocol.h */,
+				FAD13CF36750E682F3AFA7CDA4F1635D /* Primus.h */,
+				6E5BEA0C75F6143D81EBC044E2365408 /* Primus.m */,
+				BDD272C7AE177DB5243C5291676EF013 /* PrimusConnectOptions.h */,
+				86FA456DBA62849E609C2E7A5425F255 /* PrimusConnectOptions.m */,
+				416EE7442FF38E111E77CB66F1173BBA /* PrimusError.h */,
+				C3C8B7662821618C9147F703D7A21EB9 /* PrimusProtocol.h */,
+				DFEBCD567BDE6CBCECF0F6B82834E854 /* PrimusReconnectOptions.h */,
+				83ABE90E1DA93E4C6D20A7D6652E55D5 /* PrimusReconnectOptions.m */,
+				AF67C67E060CC616FE22F394A4306856 /* PrimusTimers.h */,
+				C269D02C67F9A5EC5A0A6964015A2F2C /* PrimusTimers.m */,
+				F4498CB866ACCEACF971A392CB473031 /* PrimusTransformers.h */,
+				F991CE8D3A8FE63D3C27B638ED7EFBE1 /* PrimusTransformers.m */,
+				F348DBFCAD93264D00C5652166FA743E /* SocketIOClient.h */,
+				53782CF5627687A77212137A841C5A65 /* SocketIOClient.m */,
+				97661A44BEFC02B362D08179623D0E97 /* SocketRocketClient.h */,
+				A86DB45A7AB2499B62C3F51E17D1E4A8 /* SocketRocketClient.m */,
+				A8410E7F359A2723259180074CF14E8F /* SocketRocketWebSocket.h */,
+				EE64BE9391FBA36A4B847AD804DBAEAD /* SocketRocketWebSocket.m */,
+				5E0A0328123B0F0D0632B93A238E9380 /* Transformer.h */,
+				A6E16E5AF46223F73B7121215C457EB7 /* Transformer.m */,
+				AD644D3DE341E13E7D257A542977A516 /* TransformerProtocol.h */,
+				218108E8F9CBA39EFB905C0CFAD1B8DF /* Support Files */,
+			);
+			path = Primus;
+			sourceTree = "<group>";
+		};
+		132E02E0987DA4133ADF9D635E9ACCA3 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5658881F49935D994EDACEAE1A2D921E /* BlocksKit.xcconfig */,
+				F9E80BBB05C27D8635CB24A2324C4BAE /* BlocksKit-dummy.m */,
+				F80E72329D8720FACC0CE2629D64F3B8 /* BlocksKit-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/BlocksKit";
+			sourceTree = "<group>";
+		};
+		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				843A690C4A272ACCFA5202DC4499C74E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1C4AEBFF5F287ED15B4AFFDF8B4BBCBE /* Emitter */ = {
+			isa = PBXGroup;
+			children = (
+				567AB15BF963BB7DA8FEED162F6FF8D5 /* Emitter.h */,
+				FE53CE48A07DA64CE6827DADD829AB50 /* Emitter+Blocks.h */,
+				0FCD6385B0FF6F360F4230CE59A2D02D /* Emitter+Blocks.m */,
+				01F2571613A2A2B6782D022912AA21DE /* Emitter+Selectors.h */,
+				668C25F78686B01B6EAA69CDA9D3345E /* Emitter+Selectors.m */,
+				9582F864C4F17CC5D25351DF97006473 /* NSInvocation+BlockArguments.h */,
+				5B80ABDC0C8B9932001AF8A1FBAE2280 /* NSInvocation+BlockArguments.m */,
+				1E716D32946DC47D1FE0E86E080A3BFF /* Support Files */,
+			);
+			path = Emitter;
+			sourceTree = "<group>";
+		};
+		1E716D32946DC47D1FE0E86E080A3BFF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				130095A3FEC1C859D3CC121D2543FC81 /* Emitter.xcconfig */,
+				ABA9EEAAF2FB35001A996C0A9617B1BF /* Emitter-dummy.m */,
+				11806A20F8ADC9931E0C81149B1C8BA9 /* Emitter-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Emitter";
+			sourceTree = "<group>";
+		};
+		218108E8F9CBA39EFB905C0CFAD1B8DF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8BD03F8CD2CAA5F8D7581FBE6A1BCFA9 /* Primus.xcconfig */,
+				34A8D318C310ECE3F64583125623E7C8 /* Primus-dummy.m */,
+				144C0C67220BFF453C0C2DB04FC99F83 /* Primus-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Primus";
+			sourceTree = "<group>";
+		};
+		38172A33DE08835771F1E9360846A9EB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C0679B2C17F7C428103B92C770721C7A /* NSDictionary+QueryString.h */,
+				9FAF4A533627527A0BAF8CD600E57B8B /* NSDictionary+QueryString.m */,
+				DBBE55AAAF91DC5FF639B8267CFED9FC /* NSString+Hashing.h */,
+				9BC094A40B566A9B2DC5FB3D3EF0FC28 /* NSString+Hashing.m */,
+				BAA389EFAC3D1692307FD3367CC34061 /* PTBlockEventListener.h */,
+				EC39A59E176CAECE5CEEAD2844558F6B /* PTBlockEventListener.m */,
+				952FA3C74E91307D4634AECB2480E005 /* PTEventListener.h */,
+				644C3D5E6E1A6AB5B7A6BB50E45F530A /* PTJSON.h */,
+				D92A492483AB5BD148D13351523402C6 /* PTJSON.m */,
+				D8E54DA88C47AC5DBBB19ED31F5A5781 /* PTPusher.h */,
+				CDF5A0E36BA97EC1902BF2652916D3AE /* PTPusher.m */,
+				56CAAAB8EA2F71B6ACDBFB00423E9A9E /* PTPusher+Testing.h */,
+				42E2388EBCA61B7D384EF1FB4E26E1CD /* PTPusher+Testing.m */,
+				13844ACB7B16F53CDA216FAA038F470E /* PTPusherAPI.h */,
+				B3B1352152B13D39D9999466872673D4 /* PTPusherAPI.m */,
+				0B77A2BE7523EE13F1D0A3DAE7A602C8 /* PTPusherChannel.h */,
+				3520B52A5F2BF3AA749A85DD49AFF9D6 /* PTPusherChannel.m */,
+				DD474F7C28BC039F11D1627BBF89549F /* PTPusherChannel_Private.h */,
+				7150BF061E6172CE0DF7022A94819875 /* PTPusherChannelAuthorizationOperation.h */,
+				465BEE0A5D56713EFD8B0F09B0432668 /* PTPusherChannelAuthorizationOperation.m */,
+				463C3811912FEA7606BAA9FB88BEDA9D /* PTPusherConnection.h */,
+				67E7340C1F280CB4EBABD8C799228E48 /* PTPusherConnection.m */,
+				03994CFE3B7262233721384E733C3379 /* PTPusherDelegate.h */,
+				4CF25F7F3A8FF5925AE5960176498889 /* PTPusherErrors.h */,
+				BC74919028A1B32323AA56D14D8B6A4B /* PTPusherEvent.h */,
+				A85C9F5E4F783D5D7AB806840A81E077 /* PTPusherEvent.m */,
+				5713E27345D30E30275F6AA785B0C907 /* PTPusherEventDispatcher.h */,
+				0E11275091502C4DFEABAB2A47D79A0A /* PTPusherEventDispatcher.m */,
+				6B2DB71BD249BBC1A917C4F9DEAA0CBE /* PTPusherEventPublisher.h */,
+				44FB5959F02A773F8838AFDBACE4F664 /* PTPusherMacros.h */,
+				98084A90B50320AA901DB0992652B503 /* PTPusherMockConnection.h */,
+				AECB20B559D36FF3E165EFA2BD2FE4DF /* PTPusherMockConnection.m */,
+				089732B1F708206A90E668E20AB55049 /* PTPusherPresenceChannelDelegate.h */,
+				C5C4913E81270C8C1C9BD63B59BF02C2 /* PTTargetActionEventListener.h */,
+				A221A190747B435DFFD54BBE68EBDE58 /* PTTargetActionEventListener.m */,
+				4575F8C8770B68E780C4AF51579F5DE4 /* PTURLRequestOperation.h */,
+				C1B846962F91F1FB6BB44EFB1F1B07FE /* PTURLRequestOperation.m */,
+				7015F7F544AD8BD00F91DE770ECEB3CA /* Pusher.h */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		38927F6DDF4402B73E107FB810680DE2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B6D07D4C276C31BDE29B8BA66C73BF23 /* Reachability.xcconfig */,
+				C0B9C4E256F6FDC53D2924133F0D4CC9 /* Reachability-dummy.m */,
+				9F8F4539B07EE06AD95F580D38C1D09E /* Reachability-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Reachability";
+			sourceTree = "<group>";
+		};
+		4092B59A296918E6D96075D3C489758E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5D097ADFFD5E153E0338D9E9D8612461 /* Pods-TestStoryBoard */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		46D838D820F1E163B14E28195539026C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C622F9CFEA47F3CC138D5CE1F6A00D47 /* libPusher.xcconfig */,
+				5BF50DA50CEE4CE9776A1F735DD73945 /* libPusher-dummy.m */,
+				FE36BFE813E2C1C561473CD70D6E2559 /* libPusher-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/libPusher";
+			sourceTree = "<group>";
+		};
+		4B8382632E1BF56B1CE25B87E89F980B /* BlocksKit */ = {
+			isa = PBXGroup;
+			children = (
+				634194A48FBA5779F33DAB90D3C17362 /* DynamicDelegate */,
+				132E02E0987DA4133ADF9D635E9ACCA3 /* Support Files */,
+			);
+			path = BlocksKit;
+			sourceTree = "<group>";
+		};
+		4D3920980FEA8228022E61C7ECC08148 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				83E02B1A39E376E5497D43CE5473BC72 /* Reachability.h */,
+				2DEAB9296352AFB7F5B3E821C5F7C439 /* Reachability.m */,
+				38927F6DDF4402B73E107FB810680DE2 /* Support Files */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		50C22F1748DE0B94F307738C5FAF186D /* libextobjc */ = {
+			isa = PBXGroup;
+			children = (
+				A354318814E818C71184B1F22A2DA4EB /* EXTScope */,
+				EEBE3F4B4E699668D7826FCB43661870 /* RuntimeExtensions */,
+				F042CF0D5BEF7179A8F6486670CED591 /* Support Files */,
+			);
+			path = libextobjc;
+			sourceTree = "<group>";
+		};
+		5D097ADFFD5E153E0338D9E9D8612461 /* Pods-TestStoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				8BD86399A57EF01BC09BCEB89547A392 /* Pods-TestStoryBoard-acknowledgements.markdown */,
+				8FBE526EAA8606C16973D943655607FC /* Pods-TestStoryBoard-acknowledgements.plist */,
+				42F907E7691A5FC2DB2D234854E27A71 /* Pods-TestStoryBoard-dummy.m */,
+				3A894F0CE47D1AC39D097B1917AC19D0 /* Pods-TestStoryBoard-frameworks.sh */,
+				8123AF0EFE2602309943E8CAEB9127D7 /* Pods-TestStoryBoard-resources.sh */,
+				08CBF7E55C468C1BCA59131CC7B190CA /* Pods-TestStoryBoard.debug.xcconfig */,
+				1AC22B06301CE76312C7B291B6AFB9E6 /* Pods-TestStoryBoard.release.xcconfig */,
+			);
+			name = "Pods-TestStoryBoard";
+			path = "Target Support Files/Pods-TestStoryBoard";
+			sourceTree = "<group>";
+		};
+		634194A48FBA5779F33DAB90D3C17362 /* DynamicDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				C866936B64651C54D8F5EC37B7023370 /* A2BlockInvocation.h */,
+				7A16206E57F41C7104DB2EE6D69205B9 /* A2BlockInvocation.m */,
+				2BFCAFF02B4485B1776052A7FC85EE61 /* A2DynamicDelegate.h */,
+				844D238EB04BB47D8F0BA3860319360F /* A2DynamicDelegate.m */,
+				1D0C82FD442F94A23A12A85B48E90E8B /* NSCache+BlocksKit.h */,
+				1548D73E5DDB969BE315CA0A48F6A984 /* NSCache+BlocksKit.m */,
+				0A013F7245A5C7E2092692244C04AABB /* NSObject+A2BlockDelegate.h */,
+				491A73D2485E68ECFD03595CEA26E0D3 /* NSObject+A2BlockDelegate.m */,
+				3ACA5232076FF9697720F92518561829 /* NSObject+A2DynamicDelegate.h */,
+				E71C91199343CF6EBE5B8A8ADC8ED174 /* NSObject+A2DynamicDelegate.m */,
+				40A125A365060A7B59A075AD98929D28 /* NSURLConnection+BlocksKit.h */,
+				B71101B1D0D9BCA36228DFA451D6ABAE /* NSURLConnection+BlocksKit.m */,
+			);
+			name = DynamicDelegate;
+			sourceTree = "<group>";
+		};
+		71A8736C78E08A4FADC7AF2984764470 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8F189ECC26BFC59C3A1918B21559777D /* libBlocksKit.a */,
+				FFA79F60E9B35344D442A7FCD63A980D /* libEmitter.a */,
+				FA4FAE1879E7572F7819AE7AC50AC33C /* libGCDTimer.a */,
+				7BC62C9820A85663437F886D71D25783 /* liblibextobjc.a */,
+				7BA0E81007E9088E8315447403A59918 /* liblibPusher.a */,
+				10DDA7F417DFF75EC48E8910595F94F3 /* libPods-TestStoryBoard.a */,
+				C0B08B2EEAE2479DA20B1FA3BDECC02B /* libPrimus.a */,
+				39F11B3262DA79335AF6ECD44B57B91F /* libReachability.a */,
+				DD65C37A08A036BDC459F7AB12BA5E73 /* libSocketRocket.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
+				F2C6070E6783EB49E187839E612D502E /* Pods */,
+				71A8736C78E08A4FADC7AF2984764470 /* Products */,
+				4092B59A296918E6D96075D3C489758E /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		843A690C4A272ACCFA5202DC4499C74E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				60F85758B54CB0D843A3E97DFFB2F21F /* CFNetwork.framework */,
+				77C49D928448B31FB9A7D5AE5C8D6C4E /* Foundation.framework */,
+				C6204446BD9150A17B12E81B4A6F9CA8 /* Security.framework */,
+				6166BE40C18BC6BF0EED92CAB212EC33 /* SystemConfiguration.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		A354318814E818C71184B1F22A2DA4EB /* EXTScope */ = {
+			isa = PBXGroup;
+			children = (
+				BE2AF78BFC6FCF5C07FE834D15050AB2 /* EXTScope.h */,
+				3D2C5046D761E8E17E2BCE394FE35A23 /* EXTScope.m */,
+			);
+			name = EXTScope;
+			sourceTree = "<group>";
+		};
+		A6FD16A556C6FC98503EBB18DECA7E79 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5D5B9BA0A52AA33E728CFFA9C5FB173D /* GCDTimer.xcconfig */,
+				5D6801B1F485A41F698E1FB140A509B7 /* GCDTimer-dummy.m */,
+				F44DB2D34A3CB293A895EA6DF98480E8 /* GCDTimer-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GCDTimer";
+			sourceTree = "<group>";
+		};
+		A7D00721BF65B03C3721EE9C85710BED /* libPusher */ = {
+			isa = PBXGroup;
+			children = (
+				38172A33DE08835771F1E9360846A9EB /* Core */,
+				46D838D820F1E163B14E28195539026C /* Support Files */,
+			);
+			path = libPusher;
+			sourceTree = "<group>";
+		};
+		AAC32DD89D33609FA30B83978FAD8328 /* GCDTimer */ = {
+			isa = PBXGroup;
+			children = (
+				46F04AB538647E2A2890682FF0B3EFB7 /* GCDTimer.h */,
+				D2167008DF5998D20647BC0F10D302BB /* GCDTimer.m */,
+				A6FD16A556C6FC98503EBB18DECA7E79 /* Support Files */,
+			);
+			path = GCDTimer;
+			sourceTree = "<group>";
+		};
+		C4A8CBCE77D7279C4DB4F8C1D4EB7ECD /* SocketRocket */ = {
+			isa = PBXGroup;
+			children = (
+				F7875B6B8FF1BA06C14A6CB48F47A162 /* SRWebSocket.h */,
+				2283749776E404D7694A508936BA761D /* SRWebSocket.m */,
+				0411937BD070B1B1974B7AD5B9C5AD5F /* Support Files */,
+			);
+			path = SocketRocket;
+			sourceTree = "<group>";
+		};
+		EEBE3F4B4E699668D7826FCB43661870 /* RuntimeExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				F724F6D6408338E5A1C5900D8E514D4C /* EXTRuntimeExtensions.h */,
+				2CF1651538E21F3BE113BC32C5A9C719 /* EXTRuntimeExtensions.m */,
+				B7E0408FFFE71342C1BED86E5EA6164B /* metamacros.h */,
+			);
+			name = RuntimeExtensions;
+			sourceTree = "<group>";
+		};
+		F042CF0D5BEF7179A8F6486670CED591 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3CD946806EE99AE2C4DC95FF02DB9D99 /* libextobjc.xcconfig */,
+				CA3660D7676E3FC61F8B40EA93638EAD /* libextobjc-dummy.m */,
+				9701F8A10E2F98710AD8730E243867D7 /* libextobjc-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/libextobjc";
+			sourceTree = "<group>";
+		};
+		F2C6070E6783EB49E187839E612D502E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B8382632E1BF56B1CE25B87E89F980B /* BlocksKit */,
+				1C4AEBFF5F287ED15B4AFFDF8B4BBCBE /* Emitter */,
+				AAC32DD89D33609FA30B83978FAD8328 /* GCDTimer */,
+				50C22F1748DE0B94F307738C5FAF186D /* libextobjc */,
+				A7D00721BF65B03C3721EE9C85710BED /* libPusher */,
+				04228DE95BDCB8EDC692844875AF6B11 /* Primus */,
+				4D3920980FEA8228022E61C7ECC08148 /* Reachability */,
+				C4A8CBCE77D7279C4DB4F8C1D4EB7ECD /* SocketRocket */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		102CDC873A6A12156ADA30312653D639 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A41611B9A4439118E9F89BDB8BF8CAF /* A2BlockInvocation.h in Headers */,
+				C2FB562BBC18924F5B2FA0A34D3C5223 /* A2DynamicDelegate.h in Headers */,
+				56538FF3153EF794762EF1963F82F095 /* NSCache+BlocksKit.h in Headers */,
+				0308AAA644C4B8A96033091A9A0C6A94 /* NSObject+A2BlockDelegate.h in Headers */,
+				67A64470FCB623E1C2D694EE7338773A /* NSObject+A2DynamicDelegate.h in Headers */,
+				6258CCDB1466D13757AEB1DAB72C315F /* NSURLConnection+BlocksKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BCB77679C7370431995109109EE5E30 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD2472A0BD4B85CB45EBFF3C6C176A04 /* NSDictionary+QueryString.h in Headers */,
+				1C7CA48A5EAC47836BB392A6E71E2DE3 /* NSString+Hashing.h in Headers */,
+				BD10E17DB57A0BA9E22089916C843736 /* PTBlockEventListener.h in Headers */,
+				E9A34BD97614D71369BDB5A6BC8EFB49 /* PTEventListener.h in Headers */,
+				BA00DA362510B3F28A2266A0F32AA051 /* PTJSON.h in Headers */,
+				204104FAC7BDC0661D641874B50F5B8C /* PTPusher+Testing.h in Headers */,
+				FEF1B954A8740E94E23902E25CD28674 /* PTPusher.h in Headers */,
+				DE2E6D645CAC46C19479E41611516F1B /* PTPusherAPI.h in Headers */,
+				C2F34EFD83C9905B939C0154951F416D /* PTPusherChannel.h in Headers */,
+				E7DEE015FEDAC237196D73FE91DFBBE1 /* PTPusherChannel_Private.h in Headers */,
+				A391B59CE9ED39C9A07F776A83C2DF54 /* PTPusherChannelAuthorizationOperation.h in Headers */,
+				9E4EEF603B6C9B8CC9829523AA037772 /* PTPusherConnection.h in Headers */,
+				0DA4FB3856C2F00B0802E7582C4B2FC6 /* PTPusherDelegate.h in Headers */,
+				A8A90F741D64EF722292E621AF0E2904 /* PTPusherErrors.h in Headers */,
+				C9A56777C79F7F040AE298BD10723353 /* PTPusherEvent.h in Headers */,
+				7E64E2949067F90A450DEB19E7779A05 /* PTPusherEventDispatcher.h in Headers */,
+				8EF12FD31162E73BB7F45D444C0A1408 /* PTPusherEventPublisher.h in Headers */,
+				5CE0B78931B2FFF01465E6278A62071C /* PTPusherMacros.h in Headers */,
+				94AB78C03A56E17E2AB96179ECE9ECF4 /* PTPusherMockConnection.h in Headers */,
+				FB3B5B572036E93052B2C7637F2352FC /* PTPusherPresenceChannelDelegate.h in Headers */,
+				0D1C3D6A1970550124F92E5FE1EFDCD4 /* PTTargetActionEventListener.h in Headers */,
+				043DF1D2B65659B01533B55FC8775E83 /* PTURLRequestOperation.h in Headers */,
+				EA5E6F5AE6B771A72FF893EBDA92AA55 /* Pusher.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6383822AEA8F84557A00276940CA96AA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42797ECF9A4F7C7459AE3C4157983D0D /* EXTRuntimeExtensions.h in Headers */,
+				FC3763B8530832877CF996F289B9D403 /* EXTScope.h in Headers */,
+				E086BB8A9FD9CA6E4B4F7DC0EBCA2F7E /* metamacros.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64FD4D2A1DC59EB4640DFFD76C22C514 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24AE992B7DC5DF5DCD41E4BCD28DD749 /* SRWebSocket.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		686BCE38FB19D39EC7510BE2D879A11A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31285BAA8578F22C51FB321314376843 /* Reachability.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8715D69E58C63B9EDFEA12E2F37D5255 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF3DC64FF29B17A54EFDA6FEBA66ED95 /* JSON.h in Headers */,
+				A0B56B339B5B9FB24FC0730380C86637 /* ParserProtocol.h in Headers */,
+				FABF4198A46105C2CCD720352B817472 /* PluginProtocol.h in Headers */,
+				7602C79D72D8EFE321333B71B7206697 /* Primus.h in Headers */,
+				DA60089F9D7407AC4313B2C47144EF39 /* PrimusConnectOptions.h in Headers */,
+				738174E33B9DEBDF84A4483E976F328C /* PrimusError.h in Headers */,
+				296AE326C55897F6058F8242915CFFEB /* PrimusProtocol.h in Headers */,
+				F10A21697B96987F1A7B882ECB65D5D2 /* PrimusReconnectOptions.h in Headers */,
+				5B5A4137338C3DBC896FCE0DB8EDCF2F /* PrimusTimers.h in Headers */,
+				08FB8F61CAC88D60F15D1C6AD6AA0C2D /* PrimusTransformers.h in Headers */,
+				41687E864AAE9ECB98189A8D99DDE34D /* SocketIOClient.h in Headers */,
+				2BE68CB3AEFD445ABA08731A93AF643E /* SocketRocketClient.h in Headers */,
+				D1435582D549971AEF69422FBF264D8C /* SocketRocketWebSocket.h in Headers */,
+				23EB9E348F2FDC848A4C6BB5EC89B3EF /* Transformer.h in Headers */,
+				7A35671980066ED1F8BCFFF1773DF5E4 /* TransformerProtocol.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE38F858B4207C86150C1BE73197B878 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49FA8E06946AAD9A831CF127AA36608C /* GCDTimer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B89CCF6B22E89FB418FA7C8749CCFDD5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46938C3CE3AC1F245688EC1AEE88BC31 /* Emitter+Blocks.h in Headers */,
+				6603B1BB4A2D284DA8CD70E62493C029 /* Emitter+Selectors.h in Headers */,
+				4495938BB762399CDAFA58965D1FB1B9 /* Emitter.h in Headers */,
+				A0DA17F4B0E17402BAC03E9A4251D49E /* NSInvocation+BlockArguments.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0EE5634CAD0D778C76414552FE5B44AB /* libextobjc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7546A81BFD4FACD2FB01C1CAC06BA09D /* Build configuration list for PBXNativeTarget "libextobjc" */;
+			buildPhases = (
+				2B4F49588EEC07AD86DAEAD52C558679 /* Sources */,
+				36AD994E0DC09A052629EC677F7B680C /* Frameworks */,
+				6383822AEA8F84557A00276940CA96AA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libextobjc;
+			productName = libextobjc;
+			productReference = 7BC62C9820A85663437F886D71D25783 /* liblibextobjc.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		0F779F2CCE9E35CF7CCE35E583499B8B /* Reachability */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0AA70201BE99ACE603555241947B0F7 /* Build configuration list for PBXNativeTarget "Reachability" */;
+			buildPhases = (
+				E170E15A65E338CC9435D22BCA5270A3 /* Sources */,
+				99486337FD40A6A68F7672824FEFEE69 /* Frameworks */,
+				686BCE38FB19D39EC7510BE2D879A11A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Reachability;
+			productName = Reachability;
+			productReference = 39F11B3262DA79335AF6ECD44B57B91F /* libReachability.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		25E1B6400E486E65CA06D48E8A4B6B31 /* Primus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98147D9265ADD1AAD7D68F9033E82F86 /* Build configuration list for PBXNativeTarget "Primus" */;
+			buildPhases = (
+				9769F5A99CF5664B5FD243A1282239F6 /* Sources */,
+				8C697EF9C1AF494FD640259705A6511D /* Frameworks */,
+				8715D69E58C63B9EDFEA12E2F37D5255 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				47DAAAD9ED018C0B99C8BF07F0DA649A /* PBXTargetDependency */,
+				F953737186ED6776FE53F3660D49A7F7 /* PBXTargetDependency */,
+				92B990C555D0F5171B3B2D3B02187C82 /* PBXTargetDependency */,
+				2EAC80BF4513AE8ACF3AA164ED73AE30 /* PBXTargetDependency */,
+			);
+			name = Primus;
+			productName = Primus;
+			productReference = C0B08B2EEAE2479DA20B1FA3BDECC02B /* libPrimus.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7C1AB0E57B13A15D5A67F9132781D616 /* Emitter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB242695F03C89369422A4A9A801F917 /* Build configuration list for PBXNativeTarget "Emitter" */;
+			buildPhases = (
+				F2004F291D86B3746675DDB4C011700A /* Sources */,
+				1DF36B8DAC72A04E9D834B26CD163AA5 /* Frameworks */,
+				B89CCF6B22E89FB418FA7C8749CCFDD5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A4C08F52E3FF9AFDABFF86987726A582 /* PBXTargetDependency */,
+			);
+			name = Emitter;
+			productName = Emitter;
+			productReference = FFA79F60E9B35344D442A7FCD63A980D /* libEmitter.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B00B8E591B74E0BE579AA63B83F320A7 /* libPusher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F738566A5A61E88B329BB2D7E94F651B /* Build configuration list for PBXNativeTarget "libPusher" */;
+			buildPhases = (
+				5869E4AB98B116449FA80A7247BE449B /* Sources */,
+				97556332D107C74B20C3A00A32F4C589 /* Frameworks */,
+				5BCB77679C7370431995109109EE5E30 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C7056CF2838BA781C6F3E7152CB44A1 /* PBXTargetDependency */,
+			);
+			name = libPusher;
+			productName = libPusher;
+			productReference = 7BA0E81007E9088E8315447403A59918 /* liblibPusher.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		BC037D5D14F4B33C99B28790B2FAC642 /* SocketRocket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E7185E6535690E408C632D7CDCCAA23 /* Build configuration list for PBXNativeTarget "SocketRocket" */;
+			buildPhases = (
+				FD6C853CE57E1CEE3EFE990175DA04A5 /* Sources */,
+				487952A9778243D8F4ECA6D6C565969D /* Frameworks */,
+				64FD4D2A1DC59EB4640DFFD76C22C514 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SocketRocket;
+			productName = SocketRocket;
+			productReference = DD65C37A08A036BDC459F7AB12BA5E73 /* libSocketRocket.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CDFDB6F38088D821677660B18FA80D72 /* BlocksKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E153044DC78B4DF242D7B6155E4BACD1 /* Build configuration list for PBXNativeTarget "BlocksKit" */;
+			buildPhases = (
+				8C57FA1A5BF94AD58D6E4AA0FFA62412 /* Sources */,
+				C983E6CD78777F06CB1D428B148E2E10 /* Frameworks */,
+				102CDC873A6A12156ADA30312653D639 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlocksKit;
+			productName = BlocksKit;
+			productReference = 8F189ECC26BFC59C3A1918B21559777D /* libBlocksKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D5685BA73C072604E92D9E67BF10CB29 /* Pods-TestStoryBoard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD846B36C92E433475DF595AE01B4413 /* Build configuration list for PBXNativeTarget "Pods-TestStoryBoard" */;
+			buildPhases = (
+				57443E627273AC2D13212934C56A5FED /* Sources */,
+				50720B5658A0B5C8E87B61AF0F3224DF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2D9B0AECD001F3D50CD1E09662897C00 /* PBXTargetDependency */,
+				AAEACFFF3CDDEF7E6AD3A0816E513E45 /* PBXTargetDependency */,
+				0302D2ACC5BBA79C1F1A8891F240E76A /* PBXTargetDependency */,
+				EEEBB5D2C18D262A5C7B3B84F3782814 /* PBXTargetDependency */,
+				078237B1FE6D6A4C29E59DCC74FD1B59 /* PBXTargetDependency */,
+				A34F108DB21AF58FDBDAF86D80E513DF /* PBXTargetDependency */,
+				3E97E3EDD722833D75C51E1DB63049B8 /* PBXTargetDependency */,
+				D3DDC385B6BB31936AE1077BAACAC879 /* PBXTargetDependency */,
+			);
+			name = "Pods-TestStoryBoard";
+			productName = "Pods-TestStoryBoard";
+			productReference = 10DDA7F417DFF75EC48E8910595F94F3 /* libPods-TestStoryBoard.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E3330929D68955DAF5EFC4C5728E267E /* GCDTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D05837C05EE39C77919F19B41412486E /* Build configuration list for PBXNativeTarget "GCDTimer" */;
+			buildPhases = (
+				3EE1F2E1F6E1725476DC9BC58ED28CBA /* Sources */,
+				304071A94A5601A8CCFEBC051531ABF5 /* Frameworks */,
+				AE38F858B4207C86150C1BE73197B878 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GCDTimer;
+			productName = GCDTimer;
+			productReference = FA4FAE1879E7572F7819AE7AC50AC33C /* libGCDTimer.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 71A8736C78E08A4FADC7AF2984764470 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CDFDB6F38088D821677660B18FA80D72 /* BlocksKit */,
+				7C1AB0E57B13A15D5A67F9132781D616 /* Emitter */,
+				E3330929D68955DAF5EFC4C5728E267E /* GCDTimer */,
+				0EE5634CAD0D778C76414552FE5B44AB /* libextobjc */,
+				B00B8E591B74E0BE579AA63B83F320A7 /* libPusher */,
+				D5685BA73C072604E92D9E67BF10CB29 /* Pods-TestStoryBoard */,
+				25E1B6400E486E65CA06D48E8A4B6B31 /* Primus */,
+				0F779F2CCE9E35CF7CCE35E583499B8B /* Reachability */,
+				BC037D5D14F4B33C99B28790B2FAC642 /* SocketRocket */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2B4F49588EEC07AD86DAEAD52C558679 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA672A16AE2AEBEA8AA11104356F037E /* EXTRuntimeExtensions.m in Sources */,
+				4BDB487443F0080C5DF1D4783CEFD87E /* EXTScope.m in Sources */,
+				04600F7CA523B6BC2D51DE20DF8F7F17 /* libextobjc-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EE1F2E1F6E1725476DC9BC58ED28CBA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				504673F8E1E0B3D64B284D8ED150E057 /* GCDTimer-dummy.m in Sources */,
+				2F83779C0358D4FD5E3FBDB70578EF0C /* GCDTimer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57443E627273AC2D13212934C56A5FED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				424BD23855C47883AE5AD49C5AB748D7 /* Pods-TestStoryBoard-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5869E4AB98B116449FA80A7247BE449B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F63FA1EF496E01A15DA0EA3BC6DE8F6 /* libPusher-dummy.m in Sources */,
+				2372ABBD04479D96364F66A37FED5767 /* NSDictionary+QueryString.m in Sources */,
+				B43048D3B5BF0CCEF75500FE9B7804B7 /* NSString+Hashing.m in Sources */,
+				EB8117017F7BCD3BB2A06A0ACC2A08CB /* PTBlockEventListener.m in Sources */,
+				DD25BD48AE5564D5A8B6F05427A8CD47 /* PTJSON.m in Sources */,
+				D8DC9C7E66C4DD51AC8FCF9B7922EFB1 /* PTPusher+Testing.m in Sources */,
+				92F0DAF072F5604396BA5A7B52FE05B9 /* PTPusher.m in Sources */,
+				0CA422A0610D18E76ECA654461274689 /* PTPusherAPI.m in Sources */,
+				D6815BDB94FE8905CAE203FE12DA176A /* PTPusherChannel.m in Sources */,
+				3DA8CDD5EF3819C8FDFB1E6672447EB2 /* PTPusherChannelAuthorizationOperation.m in Sources */,
+				B7E09E709ED7CBFB2A2CD7EDAEF8647D /* PTPusherConnection.m in Sources */,
+				C77CF1E77724CB4728CB1CCD929F9249 /* PTPusherEvent.m in Sources */,
+				571FA977B619D9DAD054AE44E0E5B4A3 /* PTPusherEventDispatcher.m in Sources */,
+				E30C9C7C0C03C0377CC51F4F833E959B /* PTPusherMockConnection.m in Sources */,
+				E54236BBA40110AE4C9C938D21E82A13 /* PTTargetActionEventListener.m in Sources */,
+				FDE7646630B0A79C1842D6C3A5A11CB5 /* PTURLRequestOperation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C57FA1A5BF94AD58D6E4AA0FFA62412 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EB9A2D4C90E64AB78254ED9873E6E20 /* A2BlockInvocation.m in Sources */,
+				6E12513ED35111FAFEA4A00C4775CBD7 /* A2DynamicDelegate.m in Sources */,
+				A5D3D500FAFB575BB0F5ABB93B33A45D /* BlocksKit-dummy.m in Sources */,
+				BE50D417A6046D8ABFA0BB7A39462F91 /* NSCache+BlocksKit.m in Sources */,
+				E9F4B9160DEA3ADF66644E4AD964FAC2 /* NSObject+A2BlockDelegate.m in Sources */,
+				481FA86FFD53AE15B1C8172611688598 /* NSObject+A2DynamicDelegate.m in Sources */,
+				FE76F5FD80C2CBFC9733621065B9BAB1 /* NSURLConnection+BlocksKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9769F5A99CF5664B5FD243A1282239F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1C28DD2F5F34D128548E02E3513EE18 /* JSON.m in Sources */,
+				53A6AA8CDD0B3FDF990D040DA8502A99 /* Primus-dummy.m in Sources */,
+				5E0EACFD3C76DB1CC5B776B86F4A1F46 /* Primus.m in Sources */,
+				4B2FFCAA5FEA4E10F3A48316026C8002 /* PrimusConnectOptions.m in Sources */,
+				C7EF15C472CDDCF39C7161E8373D41ED /* PrimusReconnectOptions.m in Sources */,
+				AD3314D2F55182BBB4CA99ECC76D3933 /* PrimusTimers.m in Sources */,
+				916E41F229CC53A1F238861ADF21C8FD /* PrimusTransformers.m in Sources */,
+				29C29F64BB92C3D52A7E4AB30ACEA85E /* SocketIOClient.m in Sources */,
+				1BBDD20520B5FD1AD2AEAD5F98EEA4F1 /* SocketRocketClient.m in Sources */,
+				2DDAE9ABEC4303CF3CA8A4ED79CBD4E4 /* SocketRocketWebSocket.m in Sources */,
+				DFF7819E0C03D4E2E0B5FE807D16DB28 /* Transformer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E170E15A65E338CC9435D22BCA5270A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BF861A01B5314AB89089A05D14F985A /* Reachability-dummy.m in Sources */,
+				96A12CE0A63438B2795BE69F77F7C070 /* Reachability.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2004F291D86B3746675DDB4C011700A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17A1D297778E5DD1AE5D79942A3E556D /* Emitter+Blocks.m in Sources */,
+				079F275323D790391D8F78CEDB57C440 /* Emitter+Selectors.m in Sources */,
+				F8C24AB02CCDFEA8EBBCCF4B9BAEA8BB /* Emitter-dummy.m in Sources */,
+				2F1AC3E7CFDFEF473F2617DDF2312263 /* NSInvocation+BlockArguments.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD6C853CE57E1CEE3EFE990175DA04A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6514A911236BF0883969C4256646008D /* SocketRocket-dummy.m in Sources */,
+				5DA3A81628B0B95B81DD9B753DE8A710 /* SRWebSocket.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0302D2ACC5BBA79C1F1A8891F240E76A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GCDTimer;
+			target = E3330929D68955DAF5EFC4C5728E267E /* GCDTimer */;
+			targetProxy = D2495BF576D51AA3C23383FC5F0840B2 /* PBXContainerItemProxy */;
+		};
+		078237B1FE6D6A4C29E59DCC74FD1B59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Reachability;
+			target = 0F779F2CCE9E35CF7CCE35E583499B8B /* Reachability */;
+			targetProxy = 656FD081E70F0BA415E0B5AC3D6EBB07 /* PBXContainerItemProxy */;
+		};
+		2D9B0AECD001F3D50CD1E09662897C00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BlocksKit;
+			target = CDFDB6F38088D821677660B18FA80D72 /* BlocksKit */;
+			targetProxy = B05FDF73D479D4088B580049C5AAA382 /* PBXContainerItemProxy */;
+		};
+		2EAC80BF4513AE8ACF3AA164ED73AE30 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libextobjc;
+			target = 0EE5634CAD0D778C76414552FE5B44AB /* libextobjc */;
+			targetProxy = 1977E560C08A288E94CDBCCA300160CA /* PBXContainerItemProxy */;
+		};
+		3E97E3EDD722833D75C51E1DB63049B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libPusher;
+			target = B00B8E591B74E0BE579AA63B83F320A7 /* libPusher */;
+			targetProxy = DE5EA0999485313B93FA5B95707A362D /* PBXContainerItemProxy */;
+		};
+		47DAAAD9ED018C0B99C8BF07F0DA649A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Emitter;
+			target = 7C1AB0E57B13A15D5A67F9132781D616 /* Emitter */;
+			targetProxy = 1F0015F9C315CC7BEB17B19C010F863E /* PBXContainerItemProxy */;
+		};
+		92B990C555D0F5171B3B2D3B02187C82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Reachability;
+			target = 0F779F2CCE9E35CF7CCE35E583499B8B /* Reachability */;
+			targetProxy = 5CBAC3B530E41AEEBB8B5B79BB24DD3F /* PBXContainerItemProxy */;
+		};
+		9C7056CF2838BA781C6F3E7152CB44A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SocketRocket;
+			target = BC037D5D14F4B33C99B28790B2FAC642 /* SocketRocket */;
+			targetProxy = 80694B2D29F2E882F960AD8AD44711F0 /* PBXContainerItemProxy */;
+		};
+		A34F108DB21AF58FDBDAF86D80E513DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SocketRocket;
+			target = BC037D5D14F4B33C99B28790B2FAC642 /* SocketRocket */;
+			targetProxy = 9C31F7E531615EB7ADA03BCB62897167 /* PBXContainerItemProxy */;
+		};
+		A4C08F52E3FF9AFDABFF86987726A582 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BlocksKit;
+			target = CDFDB6F38088D821677660B18FA80D72 /* BlocksKit */;
+			targetProxy = 2EDE2393E2CB908E80696370E15F7E6E /* PBXContainerItemProxy */;
+		};
+		AAEACFFF3CDDEF7E6AD3A0816E513E45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Emitter;
+			target = 7C1AB0E57B13A15D5A67F9132781D616 /* Emitter */;
+			targetProxy = 58D3B38D1C845FBAE6EA8E3A93C60615 /* PBXContainerItemProxy */;
+		};
+		D3DDC385B6BB31936AE1077BAACAC879 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libextobjc;
+			target = 0EE5634CAD0D778C76414552FE5B44AB /* libextobjc */;
+			targetProxy = C7A47F849F0D23ED99ED959F8BB00DEC /* PBXContainerItemProxy */;
+		};
+		EEEBB5D2C18D262A5C7B3B84F3782814 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Primus;
+			target = 25E1B6400E486E65CA06D48E8A4B6B31 /* Primus */;
+			targetProxy = A0548241E63A5DE33FA6402EF09AAF35 /* PBXContainerItemProxy */;
+		};
+		F953737186ED6776FE53F3660D49A7F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GCDTimer;
+			target = E3330929D68955DAF5EFC4C5728E267E /* GCDTimer */;
+			targetProxy = 4E2636CE917BE59BA91C1DB45DAF7089 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		02FD19EFB826E09FDBF936081DAF00D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6D07D4C276C31BDE29B8BA66C73BF23 /* Reachability.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Reachability/Reachability-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		04BDDC052443CB7AAF121EBF594BF83A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6D07D4C276C31BDE29B8BA66C73BF23 /* Reachability.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Reachability/Reachability-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		09723D3B02039DEAA6AD0262D3FD36DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C89401279390F3C3A1DD3BD3473F54EE /* SocketRocket.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SocketRocket/SocketRocket-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		139D0B37797E282BDDBC86E1E9E49B3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CD946806EE99AE2C4DC95FF02DB9D99 /* libextobjc.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/libextobjc/libextobjc-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		1994A83D830803A4625D937597E0AFD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5658881F49935D994EDACEAE1A2D921E /* BlocksKit.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/BlocksKit/BlocksKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		2CCCBA395405B4AAEAC4DF210290FF00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CD946806EE99AE2C4DC95FF02DB9D99 /* libextobjc.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/libextobjc/libextobjc-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3209F0D5A01F2C2C58B0B796A225CD1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D5B9BA0A52AA33E728CFFA9C5FB173D /* GCDTimer.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GCDTimer/GCDTimer-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5CE5176205D06FF3FFE3DDDA9291E44B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		70F197026185AC38D09EC7C4D8FD5E13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 130095A3FEC1C859D3CC121D2543FC81 /* Emitter.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Emitter/Emitter-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		74857149DC1E0D599B8A01A78349A926 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		772899BC4FF747FD2C65885195643832 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 130095A3FEC1C859D3CC121D2543FC81 /* Emitter.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Emitter/Emitter-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		AF261C8B805C61D1CAE15B94A277B0A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AC22B06301CE76312C7B291B6AFB9E6 /* Pods-TestStoryBoard.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C0EB984D174837D4EECEEB53F27C524F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08CBF7E55C468C1BCA59131CC7B190CA /* Pods-TestStoryBoard.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CB6552468D1EE8596A34FDAA29D7CFA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D5B9BA0A52AA33E728CFFA9C5FB173D /* GCDTimer.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GCDTimer/GCDTimer-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DC69CA9F58CA0B0BB562357135FA39F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BD03F8CD2CAA5F8D7581FBE6A1BCFA9 /* Primus.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Primus/Primus-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DF16C04E44EB25045F4B033F2CDDF48A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C89401279390F3C3A1DD3BD3473F54EE /* SocketRocket.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SocketRocket/SocketRocket-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		E3CABA9D61E15C27A0CD28452E567E67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5658881F49935D994EDACEAE1A2D921E /* BlocksKit.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/BlocksKit/BlocksKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F11B79ED81341D1D724DE917187A862B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BD03F8CD2CAA5F8D7581FBE6A1BCFA9 /* Primus.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Primus/Primus-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F9F83C8A623ECE3EA15B77ED1C5BB389 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C622F9CFEA47F3CC138D5CE1F6A00D47 /* libPusher.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/libPusher/libPusher-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		FFBE5C54A8C61CE5A4CF4BB36B85B005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C622F9CFEA47F3CC138D5CE1F6A00D47 /* libPusher.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/libPusher/libPusher-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CE5176205D06FF3FFE3DDDA9291E44B /* Debug */,
+				74857149DC1E0D599B8A01A78349A926 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E7185E6535690E408C632D7CDCCAA23 /* Build configuration list for PBXNativeTarget "SocketRocket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09723D3B02039DEAA6AD0262D3FD36DE /* Debug */,
+				DF16C04E44EB25045F4B033F2CDDF48A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7546A81BFD4FACD2FB01C1CAC06BA09D /* Build configuration list for PBXNativeTarget "libextobjc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CCCBA395405B4AAEAC4DF210290FF00 /* Debug */,
+				139D0B37797E282BDDBC86E1E9E49B3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98147D9265ADD1AAD7D68F9033E82F86 /* Build configuration list for PBXNativeTarget "Primus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC69CA9F58CA0B0BB562357135FA39F8 /* Debug */,
+				F11B79ED81341D1D724DE917187A862B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0AA70201BE99ACE603555241947B0F7 /* Build configuration list for PBXNativeTarget "Reachability" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04BDDC052443CB7AAF121EBF594BF83A /* Debug */,
+				02FD19EFB826E09FDBF936081DAF00D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD846B36C92E433475DF595AE01B4413 /* Build configuration list for PBXNativeTarget "Pods-TestStoryBoard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0EB984D174837D4EECEEB53F27C524F /* Debug */,
+				AF261C8B805C61D1CAE15B94A277B0A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D05837C05EE39C77919F19B41412486E /* Build configuration list for PBXNativeTarget "GCDTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB6552468D1EE8596A34FDAA29D7CFA6 /* Debug */,
+				3209F0D5A01F2C2C58B0B796A225CD1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E153044DC78B4DF242D7B6155E4BACD1 /* Build configuration list for PBXNativeTarget "BlocksKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3CABA9D61E15C27A0CD28452E567E67 /* Debug */,
+				1994A83D830803A4625D937597E0AFD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F738566A5A61E88B329BB2D7E94F651B /* Build configuration list for PBXNativeTarget "libPusher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFBE5C54A8C61CE5A4CF4BB36B85B005 /* Debug */,
+				F9F83C8A623ECE3EA15B77ED1C5BB389 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB242695F03C89369422A4A9A801F917 /* Build configuration list for PBXNativeTarget "Emitter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70F197026185AC38D09EC7C4D8FD5E13 /* Debug */,
+				772899BC4FF747FD2C65885195643832 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
