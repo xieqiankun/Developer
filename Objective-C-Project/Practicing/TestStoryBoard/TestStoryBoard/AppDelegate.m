@@ -26,9 +26,9 @@
     else
     {
         UIViewController* rootController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LoginViewController"];
-        UINavigationController* navigation = [[UINavigationController alloc] initWithRootViewController:rootController];
+        //UINavigationController* navigation = [[UINavigationController alloc] initWithRootViewController:rootController];
         
-        self.window.rootViewController = navigation;
+        self.window.rootViewController = rootController;
     }
     
     return YES;

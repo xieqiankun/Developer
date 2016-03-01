@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2807A0DE1C84E89B0028DFD1 /* QStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 2807A0DD1C84E89B0028DFD1 /* QStack.m */; };
+		2807A0E21C84FDC70028DFD1 /* PusherSock.m in Sources */ = {isa = PBXBuildFile; fileRef = 2807A0E11C84FDC70028DFD1 /* PusherSock.m */; };
+		2807A0E51C850DA40028DFD1 /* QStackGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 2807A0E41C850DA40028DFD1 /* QStackGame.m */; };
 		286982BC1C7B7435004E2FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B7C5FF1C7683F100CCD1B2 /* Main.storyboard */; };
 		28B7C5F81C7683F100CCD1B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7C5F71C7683F100CCD1B2 /* main.m */; };
 		28B7C5FB1C7683F100CCD1B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7C5FA1C7683F100CCD1B2 /* AppDelegate.m */; };
@@ -16,7 +19,6 @@
 		28B7C6111C7683F100CCD1B2 /* TestStoryBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7C6101C7683F100CCD1B2 /* TestStoryBoardTests.m */; };
 		28B7C61C1C7683F100CCD1B2 /* TestStoryBoardUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7C61B1C7683F100CCD1B2 /* TestStoryBoardUITests.m */; };
 		28B7C62B1C76D16600CCD1B2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7C62A1C76D16600CCD1B2 /* LoginViewController.m */; };
-		28B7C62F1C76D71200CCD1B2 /* QStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7C62E1C76D71200CCD1B2 /* QStack.m */; };
 		28B7C6321C76D98300CCD1B2 /* TraditionalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7C6311C76D98300CCD1B2 /* TraditionalTableViewController.m */; };
 		28B7C6361C76DDA500CCD1B2 /* PlayTraditionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7C6351C76DDA500CCD1B2 /* PlayTraditionalViewController.m */; };
 		28DB85E21C7773D300787139 /* TraditionalTableCellViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DB85E11C7773D300787139 /* TraditionalTableCellViewTableViewCell.m */; };
@@ -46,6 +48,12 @@
 /* Begin PBXFileReference section */
 		083AFC4A34D5CED78FC30123 /* Pods-TestStoryBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestStoryBoard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestStoryBoard/Pods-TestStoryBoard.debug.xcconfig"; sourceTree = "<group>"; };
 		1D40CE180AD9B7A4FD17DA58 /* Pods-TestStoryBoard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestStoryBoard.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestStoryBoard/Pods-TestStoryBoard.release.xcconfig"; sourceTree = "<group>"; };
+		2807A0DC1C84E89B0028DFD1 /* QStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QStack.h; sourceTree = "<group>"; };
+		2807A0DD1C84E89B0028DFD1 /* QStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QStack.m; sourceTree = "<group>"; };
+		2807A0E01C84FDC70028DFD1 /* PusherSock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PusherSock.h; sourceTree = "<group>"; };
+		2807A0E11C84FDC70028DFD1 /* PusherSock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PusherSock.m; sourceTree = "<group>"; };
+		2807A0E31C850DA40028DFD1 /* QStackGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QStackGame.h; sourceTree = "<group>"; };
+		2807A0E41C850DA40028DFD1 /* QStackGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QStackGame.m; sourceTree = "<group>"; };
 		28B7C5F31C7683F100CCD1B2 /* TestStoryBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestStoryBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28B7C5F71C7683F100CCD1B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		28B7C5F91C7683F100CCD1B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -64,8 +72,6 @@
 		28B7C61D1C7683F100CCD1B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28B7C6291C76D16600CCD1B2 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		28B7C62A1C76D16600CCD1B2 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		28B7C62D1C76D71200CCD1B2 /* QStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QStack.h; sourceTree = "<group>"; };
-		28B7C62E1C76D71200CCD1B2 /* QStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QStack.m; sourceTree = "<group>"; };
 		28B7C6301C76D98300CCD1B2 /* TraditionalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraditionalTableViewController.h; sourceTree = "<group>"; };
 		28B7C6311C76D98300CCD1B2 /* TraditionalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraditionalTableViewController.m; sourceTree = "<group>"; };
 		28B7C6341C76DDA500CCD1B2 /* PlayTraditionalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayTraditionalViewController.h; sourceTree = "<group>"; };
@@ -115,6 +121,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2807A0DF1C84E9B60028DFD1 /* qStackSDK */ = {
+			isa = PBXGroup;
+			children = (
+				2807A0DC1C84E89B0028DFD1 /* QStack.h */,
+				2807A0DD1C84E89B0028DFD1 /* QStack.m */,
+				2807A0E01C84FDC70028DFD1 /* PusherSock.h */,
+				2807A0E11C84FDC70028DFD1 /* PusherSock.m */,
+				2807A0E31C850DA40028DFD1 /* QStackGame.h */,
+				2807A0E41C850DA40028DFD1 /* QStackGame.m */,
+			);
+			name = qStackSDK;
+			sourceTree = "<group>";
+		};
 		28B7C5EA1C7683F100CCD1B2 = {
 			isa = PBXGroup;
 			children = (
@@ -145,11 +164,10 @@
 				28B7C5FC1C7683F100CCD1B2 /* ViewController.h */,
 				28B7C5FD1C7683F100CCD1B2 /* ViewController.m */,
 				28B7C5FF1C7683F100CCD1B2 /* Main.storyboard */,
-				28B7C62D1C76D71200CCD1B2 /* QStack.h */,
-				28B7C62E1C76D71200CCD1B2 /* QStack.m */,
 				28B7C6021C7683F100CCD1B2 /* Assets.xcassets */,
 				28B7C6041C7683F100CCD1B2 /* LaunchScreen.storyboard */,
 				28B7C6071C7683F100CCD1B2 /* Info.plist */,
+				2807A0DF1C84E9B60028DFD1 /* qStackSDK */,
 				28B7C5F61C7683F100CCD1B2 /* Supporting Files */,
 				28B7C62C1C76D17100CCD1B2 /* LoginViewController */,
 				28B7C6331C76D98B00CCD1B2 /* TraditionalTableViewController */,
@@ -430,11 +448,13 @@
 			files = (
 				28B7C6321C76D98300CCD1B2 /* TraditionalTableViewController.m in Sources */,
 				28B7C62B1C76D16600CCD1B2 /* LoginViewController.m in Sources */,
-				28B7C62F1C76D71200CCD1B2 /* QStack.m in Sources */,
 				28DB85E21C7773D300787139 /* TraditionalTableCellViewTableViewCell.m in Sources */,
 				28DB85E51C77772400787139 /* BracketTableViewController.m in Sources */,
 				28B7C5FE1C7683F100CCD1B2 /* ViewController.m in Sources */,
 				28DB85EC1C77854900787139 /* PlayBracketiewController.m in Sources */,
+				2807A0E51C850DA40028DFD1 /* QStackGame.m in Sources */,
+				2807A0E21C84FDC70028DFD1 /* PusherSock.m in Sources */,
+				2807A0DE1C84E89B0028DFD1 /* QStack.m in Sources */,
 				28DB85E91C77780100787139 /* BracketTableViewCell.m in Sources */,
 				28B7C5FB1C7683F100CCD1B2 /* AppDelegate.m in Sources */,
 				28B7C5F81C7683F100CCD1B2 /* main.m in Sources */,
