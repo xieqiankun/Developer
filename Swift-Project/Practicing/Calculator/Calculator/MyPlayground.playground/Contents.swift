@@ -36,3 +36,24 @@ somePoint.x
 if somePoint.isToTheRightOfX(1.0) {
     print("This point is to the right of the line where x == 1.0")
 }
+extension Int {
+    func repetitions(task: () -> Void) {
+        for _ in 0..<self {
+            task()
+        }
+    }
+}
+5.repetitions({
+    print("Hello!")
+    print("aaaa")
+})
+
+
+
+
+
+
+
+
+
+

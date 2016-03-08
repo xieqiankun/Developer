@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *tournamentName;
 @property (weak, nonatomic) IBOutlet UILabel *tournamentStyle;
 @property (weak, nonatomic) IBOutlet UILabel *tournamentCategory;
+@property (weak, nonatomic) IBOutlet UILabel *tournamentQuestionNum;
 
 @end

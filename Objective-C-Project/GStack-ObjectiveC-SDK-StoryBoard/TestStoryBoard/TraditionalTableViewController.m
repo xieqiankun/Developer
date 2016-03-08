@@ -45,15 +45,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
     
-    //[self.tableView registerClass:[UITableViewCell class]
-     //      forCellReuseIdentifier:@"TableCell"];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,9 +58,9 @@
 #pragma mark - Table view data source
 
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[[QStack sharedQStack] myTraditionalT] count];
-}
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    return [[[QStack sharedQStack] myTraditionalT] count];
+//}
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -76,18 +70,26 @@
     static NSString *CellIdentifier = @"TraditionalTableCell";
     TraditionalTableCellViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    NSDictionary *tournamet = [[QStack sharedQStack] myTraditionalT][indexPath.row];
+    NSDictionary *tournamet = [[QStack sharedQStack] myTraditionalT][indexPath.section];
     
     // Set the text on the cell with the description of the item
     // that is at the nth index of items, where n = row this cell
     // will appear in on the tableview
     cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     
+    //NSLog(@"index ================== %ld", (long)indexPath.section);
+    
     cell.tournamentName.text = tournamet[@"name"];
-    cell.tournamentStyle.text = tournamet[@"style"];
+    cell.tournamentStyle.text = tournamet[@"questions"][@"zone"];
     cell.tournamentCategory.text = tournamet[@"questions"][@"category"];
+    cell.tournamentQuestionNum.text = [NSString stringWithFormat:@"%@ Questions",tournamet[@"questions"][@"num"]];
     
+    cell.backgroundColor = [UIColor clearColor];
     
+    [cell.contentView.layer setBorderColor:[UIColor whiteColor].CGColor];
+    cell.contentView.layer.cornerRadius = 5;
+    cell.contentView.layer.masksToBounds = YES;
+    [cell.contentView.layer setBorderWidth:2.0f];
     
     return cell;
 
@@ -106,7 +108,27 @@
     
     
 }
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [[[QStack sharedQStack] myTraditionalT] count];
+}
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 10;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *v = [UIView new];
+    [v setBackgroundColor:[UIColor clearColor]];
+    return v;
+}
 
 /*
 // Override to support conditional editing of the table view.

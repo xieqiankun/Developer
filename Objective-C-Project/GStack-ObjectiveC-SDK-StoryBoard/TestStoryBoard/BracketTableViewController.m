@@ -45,11 +45,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+      self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,17 +56,12 @@
 #pragma mark - Table view data source
 
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[[QStack sharedQStack] myBracketT] count];
-}
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *CellIdentifier = @"BracketTableCell";
     BracketTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    NSDictionary *tournamet = [[QStack sharedQStack] myBracketT][indexPath.row];
+    NSDictionary *tournamet = [[QStack sharedQStack] myBracketT][indexPath.section];
     
     // Set the text on the cell with the description of the item
     // that is at the nth index of items, where n = row this cell
@@ -78,14 +69,42 @@
     cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     
     cell.tournamentName.text = tournamet[@"name"];
-    cell.tournamentStyle.text = tournamet[@"style"];
+    cell.tournamentStyle.text = tournamet[@"questions"][@"zone"];
     cell.tournamentCategory.text = tournamet[@"questions"][@"category"];
+    cell.tournamentQuestionNum.text = [NSString stringWithFormat:@"%@ Questions",tournamet[@"questions"][@"num"]];
+    cell.backgroundColor = [UIColor clearColor];
     
-    
+    [cell.contentView.layer setBorderColor:[UIColor whiteColor].CGColor];
+    cell.contentView.layer.cornerRadius = 5;
+    cell.contentView.layer.masksToBounds = YES;
+    [cell.contentView.layer setBorderWidth:2.0f];
     
     return cell;
     
 }
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [[[QStack sharedQStack] myBracketT] count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 10;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *v = [UIView new];
+    [v setBackgroundColor:[UIColor clearColor]];
+    return v;
+}
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
