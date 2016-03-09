@@ -25,6 +25,8 @@ public protocol GStackGameDelegate {
     func didReceiveUpdatedScore(game: GStackGame, updatedScore: GStackGameUpdatedScore)
     func didReceiveGameResult(game: GStackGame, result: GStackGameResult)
     func didReceiveOtherGameFinished(game: GStackGame,alive:GStackGameOtherGameFinished)
+    func didReceiveStartRound(game:GStackGame, round:GStackGameStartRound)
+    func didReceiveRoundResult(game:GStackGame, win:GStackGameRoundResult)
 }
 
 
@@ -87,6 +89,10 @@ public class GStackGame: NSObject {
                         self.delegate?.didReceiveQuestion(self, question: GStackGameQuestion(dictionary: payload))
                     case "timer":
                         self.delegate?.didReceiveTimer(self, timer: GStackGameTimer(dictionary: payload))
+                    case "startRound":
+                        self.delegate?.didReceiveStartRound(self, round: GStackGameStartRound(dictionary: payload))
+                    case "roundResult":
+                        self.delegate?.didReceiveRoundResult(self, win: GStackGameRoundResult(dictionary: payload))
                     case "sendPlayerInfo":
                         self.delegate?.didReceivePlayerInfo(self, playerInfo: GStackGamePlayerInfo(dictionary: payload))
                     case "correctAnswer":
@@ -128,6 +134,7 @@ public class GStackGame: NSObject {
     public func submitAnswerForQuestion(question: GStackGameQuestion, answerIndex: NSNumber) {
         let payload = ["questionNum": question.questionNum!, "answer": answerIndex] as Dictionary<String,AnyObject>
         let answer = ["type": "clientSubmitAnswer","payload":payload] as Dictionary<String,AnyObject>
+        print(answer)
         primus?.write(answer)
     }
     
@@ -229,13 +236,32 @@ public class GStackGameCorrectAnswer: NSObject {
     }
 }
 
+public class GStackGameStartRound:NSObject {
+    public var round: NSNumber?
+    public var teamNum:NSNumber?
+    
+    init(dictionary:[String:AnyObject]) {
+        round = dictionary["round"] as? NSNumber
+        teamNum = dictionary["teamNum"] as? NSNumber
+    }
+}
+
+public class GStackGameRoundResult:NSObject {
+    public var win:NSNumber?
+    init(dictionary:[String:AnyObject]){
+        win = dictionary["win"] as? NSNumber
+    }
+}
+
 public class GStackGameOtherGameFinished:NSObject{
     public var alive: [NSNumber]?
     public var gameRemaining: NSNumber?
+    public var round:NSNumber?
     
     init(dictionary: [String:AnyObject]) {
         alive = dictionary["alive"] as? [NSNumber]
         gameRemaining = dictionary["gameRemaining"] as? NSNumber
+        round = dictionary["round"] as? NSNumber
     }
 }
 
