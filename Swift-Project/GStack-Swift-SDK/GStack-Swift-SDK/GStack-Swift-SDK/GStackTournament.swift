@@ -58,6 +58,19 @@ public class GStackTournament: NSObject {
         
         return rfc3339DateFormatter.dateFromString(dateString)!
     }
+    
+    public func status() -> GStackTournamentStatus {
+        let now = NSDate()
+        if now.compare(stopTime!) == .OrderedDescending {
+            return .Expired
+        }
+        else if now.compare(startTime!) == .OrderedAscending {
+            return .Upcoming
+        }
+        else {
+            return .Active
+        }
+    }
 }
 
 public class GStackTournamentQuestionsInfo: NSObject {

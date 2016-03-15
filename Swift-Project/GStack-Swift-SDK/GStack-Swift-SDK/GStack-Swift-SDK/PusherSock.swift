@@ -28,10 +28,15 @@ class PusherSock:NSObject, PTPusherDelegate, PTPusherPresenceChannelDelegate{
     }
     
     func didReceiveEvent(event: String, completion:PTPusherEventBlockHandler){
-        if self.pusherEventBinding != nil{
-            self.pusherClient?.removeBinding(self.pusherEventBinding)
-        }
-        self.pusherEventBinding = self.pusherChannel?.bindToEventNamed(event, handleWithBlock: completion)
+        
+        self.pusherChannel?.removeAllBindings()
+        
+//        if self.pusherEventBinding != nil{
+//            self.pusherClient?.removeBinding(self.pusherEventBinding)
+//        }
+        self.pusherChannel?.bindToEventNamed(event, handleWithBlock: completion)
+        
+       // self.pusherEventBinding = self.pusherChannel?.bindToEventNamed(event, handleWithBlock: completion)
     }
     
 

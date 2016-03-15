@@ -70,6 +70,7 @@ class GStack {
                 
             }
             //for completion
+            print(tournaments)
             var ts = [GStackTournament]()
             self.GStacKBracketTtournaments.removeAll()
             self.GStackTraditionalTournaments.removeAll()
@@ -78,10 +79,14 @@ class GStack {
                 ts.append(t)
                 if t.style == "traditional"{
                     print("in tradition")
-                    self.GStackTraditionalTournaments.append(t)
+                    if case .Active = t.status() {
+                        self.GStackTraditionalTournaments.append(t)
+                    }
+
                 } else if t.style == "shootout" {
-                    print("in shootout")
-                    self.GStacKBracketTtournaments.append(t)
+                    if case .Active = t.status() {
+                        self.GStacKBracketTtournaments.append(t)
+                    }
                 }
             }
             
@@ -93,10 +98,13 @@ class GStack {
     func GStackStartGameForTournament(tournament: GStackTournament, completion: (error: NSError?, game: GStackGame?) -> Void) {
         if tournament.uuid == nil {
             tournament.uuid = ""
+            return
         }
         let requestDictionary = ["teams":[["displayName":"yyy", "channel": self.channel!, "avatar": "yyy"]],"gameMode":["type":"tournament","uuid":tournament.uuid!]]
+        print(requestDictionary)
         sendRequest(true, route: "startgame", type: "clientStartGame", payload: requestDictionary, completion: {
             data, reply, error in
+            
             self.processResponse(error,data: data,successType: "startGameSuccess", completion: {
                 error, payload in
                 if error != nil {

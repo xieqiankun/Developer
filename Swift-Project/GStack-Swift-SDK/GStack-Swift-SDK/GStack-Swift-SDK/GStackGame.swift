@@ -49,6 +49,8 @@ public class GStackGame: NSObject {
     
     func startGame() {
         
+        print("I am in Start Game")
+        
         let connection = GStackGameConnection(_serverIp: gameServerIp!, _serverPort: gameServerPort!, _gameToken: gameToken!)
         
         primus = Primus(URL: primusURL(connection)!, options: PrimusConnectOptions(transformerClass: SocketRocketClient.self))
@@ -127,7 +129,6 @@ public class GStackGame: NSObject {
     
     func primusURL(connection: GStackGameConnection) -> NSURL? {
         let urlString = "ws://" + connection.serverIp + ":" + connection.serverPort + "/primus/websocket"
-        print(urlString)
         return NSURL(string: urlString)
     }
     
@@ -138,9 +139,18 @@ public class GStackGame: NSObject {
         primus?.write(answer)
     }
     
+    public func sendForfeitMessage() {
+        
+        let info = ["type": "clientForfeit","payload":["":""]] as [String: AnyObject]
+        primus?.write(info)
+        print(info)
+        
+    }
+    
     
     public func endGame() {
         primus?.end()
+        primus = nil
     }
 }
 

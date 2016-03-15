@@ -1,14 +1,15 @@
 //
-//  PlayBracketViewController.swift
+//  PlayTraditionalViewController.swift
 //  GStack-Swift-SDK
 //
-//  Created by 谢乾坤 on 3/7/16.
+//  Created by 谢乾坤 on 3/14/16.
 //  Copyright © 2016 QiankunXie. All rights reserved.
 //
 
 import UIKit
 
-class PlayBracketViewController: UIViewController,GStackGameDelegate {
+class PlayTraditionalViewController: UIViewController,GStackGameDelegate {
+
     
     var tournament: GStackTournament?
     var game: GStackGame?
@@ -17,8 +18,6 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
     //for question label
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var questionLabelView: UIView!
-    
-    //TO-DO make the player one and player two
     
     //for answers
     @IBOutlet var answers: [UIButton]!
@@ -31,33 +30,9 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
     @IBOutlet weak var clock: UIView!
     @IBOutlet weak var clockLabel: UILabel!
     
-    //for nameboard
-    @IBOutlet weak var nameBoard: UIView!
-    
-    @IBOutlet var firstRoundPlayersView: [UIView]!
-    
-    @IBOutlet var firstRoundPlayers: [UILabel]!
-    
-    @IBOutlet var firstRoundPlaysAlive: [UIView]!
-    
-    
-    @IBOutlet var secondRoundPlayersView: [UIView]!
-    
-    @IBOutlet var secondRoundPlayers: [UILabel]!
-    
-    @IBOutlet var secondRoundPlaysAlive: [UIView]!
-    
-    
-    @IBOutlet var thirdRoundPlayersView: [UIView]!
-    
-    @IBOutlet var thirdRoundPlayers: [UILabel]!
-    
-    @IBOutlet var thirdRoundPlaysAlive: [UIView]!
     //for game control
     
     var isAllowSubmit = false
-    
-    var alivePlayers = [1,1,1,1,1,1,1,1]
     
     var currentSumbittedAnswer = -1
     
@@ -65,11 +40,8 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
     
     var playersNames: [String]?
     
-    var firstInRoundTwo = true
-    
-    var firstInRoundThree = true
-    
     var isNeedToForfeit = true
+    
     //timer
     var timeBarTimer: NSTimer?
     var timeNow: Double?
@@ -80,11 +52,11 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background.png")!)
-        self.nameBoard.backgroundColor = UIColor(patternImage: UIImage(named: "Background.png")!)
         self.UIInit()
         
         GStack.sharedInstance.GStackStartGameForTournament(tournament!) { (error, game) -> Void in
             
+            print("I am in traditional game starting : \(self.tournament?.uuid)")
             //prepare for starting game
             self.game = game
             game?.delegate = self
@@ -98,6 +70,8 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
         //stop primus when leave the page
         game?.endGame()
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -113,7 +87,6 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
         self.questionLabelView.layer.borderWidth = 2.0
         self.questionLabelView.backgroundColor = UIColor.clearColor()
         self.questionLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        
         //set answers
         
         for view in self.answersView {
@@ -138,33 +111,6 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
         
         self.clock.layer.cornerRadius = 22
         self.clock.layer.masksToBounds = true
-        
-        //set nameboard
-        for view in self.firstRoundPlayersView {
-            
-            view.layer.borderColor = UIColor.whiteColor().CGColor
-            view.layer.cornerRadius = 8
-            view.layer.masksToBounds = true
-            view.layer.borderWidth = 2.0
-            view.backgroundColor = UIColor.clearColor()
-        }
-        for view in self.secondRoundPlayersView {
-            
-            view.layer.borderColor = UIColor.whiteColor().CGColor
-            view.layer.cornerRadius = 8
-            view.layer.masksToBounds = true
-            view.layer.borderWidth = 2.0
-            view.backgroundColor = UIColor.clearColor()
-        }
-        for view in self.thirdRoundPlayersView {
-            
-            view.layer.borderColor = UIColor.whiteColor().CGColor
-            view.layer.cornerRadius = 8
-            view.layer.masksToBounds = true
-            view.layer.borderWidth = 2.0
-            view.backgroundColor = UIColor.clearColor()
-        }
-        
         
     }
     
@@ -207,11 +153,12 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
         self.timeBar.frame = newRect
     }
     
-    
+
     
     @IBAction func backToMain(sender: AnyObject) {
         
         if isNeedToForfeit {
+        
         let title = "Back to Main"
         let message = "Are you sure"
         
@@ -233,18 +180,17 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
             // self.performSegueWithIdentifier("Main", sender: self)
             
         })
-        
         ac.addAction(deleteAction)
         
         //present the alert controller
         presentViewController(ac, animated: true, completion: nil)
-        
-        } else {
             
+        } else {
             self.dismissViewControllerAnimated(true, completion: nil)
         }
+        
     }
-    
+ 
     
     @IBAction func submitAnswer(sender: UIButton) {
         
@@ -258,7 +204,6 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
             
             self.isAllowSubmit = false
         }
-        self.timeBarTimer?.invalidate()
     }
     
     
@@ -304,18 +249,14 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
         //clear all the ui
         self.setupQuestionUI()
         self.clockLabel.text = ""
-        self.nameBoard.hidden = true
         
     }
     func didReceiveRoundResult(game: GStackGame, win: GStackGameRoundResult) {
         
-        self.nameBoard.hidden = false
-        if win.win == 0 {
-            self.isNeedToForfeit = false
-        }
-        
     }
     func didReceiveQuestion(game: GStackGame, question: GStackGameQuestion){
+        
+        print("I am in send question")
         
         self.setupQuestionUI()
         
@@ -358,12 +299,6 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
             info.append(array[0])
         }
         self.playersNames = info
-        print(self.playersNames)
-        
-        for var i = 0; i < 8; i++ {
-            let label = self.firstRoundPlayers[i]
-            label.text = self.playersNames![i]
-        }
         
     }
     func didReceiveCorrectAnswer(game: GStackGame, correctAnswer: GStackGameCorrectAnswer){
@@ -387,109 +322,24 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
         //implement latter
     }
     func didReceiveGameResult(game: GStackGame, result: GStackGameResult){
+
+        self.setupQuestionUI()
+        self.questionLabel.text = "Game Over"
         
         self.isNeedToForfeit = false
         
-        for var i = 0; i < 8; i++ {
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
             
-            if result.teamAlive![i].integerValue != self.alivePlayers[i] {
-                
-                self.alivePlayers[i] = 0;
-                
-                self.thirdRoundPlaysAlive[i/4].backgroundColor = UIColor.redColor()
-                if i/4 % 2 != 0 {
-                    self.thirdRoundPlaysAlive[i/4-1].backgroundColor = UIColor.greenColor()
-                } else {
-                    self.thirdRoundPlaysAlive[i/4+1].backgroundColor = UIColor.greenColor()
-                }
-
-            }
+            self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                self.game = nil
+                self.tournament = nil
+            })
         }
-        
         
     }
     func didReceiveOtherGameFinished(game: GStackGame,alive:GStackGameOtherGameFinished){
         
         
-        for var i = 0; i < 8; i++ {
-            
-            print("I am in looppppppp")
-            
-            if alive.alive![i].integerValue != self.alivePlayers[i] {
-                
-                self.alivePlayers[i] = 0;
-                
-                print("I am in not alive")
-                
-                if Int(alive.round!) == 1 {
-                    
-                    print("I am in round 1")
-                    
-                    self.firstRoundPlaysAlive[i].backgroundColor = UIColor.redColor()
-                    if i % 2 != 0 {
-                        self.firstRoundPlaysAlive[i-1].backgroundColor = UIColor.greenColor()
-                    } else {
-                        self.firstRoundPlaysAlive[i+1].backgroundColor = UIColor.greenColor()
-                    }
-                    
-                    
-                } else if Int(alive.round!) == 2 {
-                    
-                    if self.firstInRoundTwo {
-                        
-                        self.firstRoundPlaysAlive[i].backgroundColor = UIColor.redColor()
-                        if i % 2 != 0 {
-                            self.firstRoundPlaysAlive[i-1].backgroundColor = UIColor.greenColor()
-                        } else {
-                            self.firstRoundPlaysAlive[i+1].backgroundColor = UIColor.greenColor()
-                        }
-                        
-                        //set the names
-                        
-                        for var j = 0; j < 8; j++ {
-                            
-                            if self.alivePlayers[j] == 1 {
-                                self.secondRoundPlayers[j / 2].text = self.playersNames![j]
-                            }
-                            
-                        }
-                        
-                        self.firstInRoundTwo = false
-                        
-                    } else {
-                        
-                        self.secondRoundPlaysAlive[i/2].backgroundColor = UIColor.redColor()
-                        if i/2 % 2 != 0 {
-                            self.secondRoundPlaysAlive[i/2-1].backgroundColor = UIColor.greenColor()
-                        } else {
-                            self.secondRoundPlaysAlive[i/2+1].backgroundColor = UIColor.greenColor()
-                        }
-                    }
-                    
-                } else {
-                    
-                    if self.firstInRoundThree {
-                        
-                        self.secondRoundPlaysAlive[i/2].backgroundColor = UIColor.redColor()
-                        if i/2 % 2 != 0 {
-                            self.secondRoundPlaysAlive[i/2-1].backgroundColor = UIColor.greenColor()
-                        } else {
-                            self.secondRoundPlaysAlive[i/2+1].backgroundColor = UIColor.greenColor()
-                        }
-                        
-                        for var j = 0; j < 8; j++ {
-                            
-                            if self.alivePlayers[j] == 1 {
-                                self.thirdRoundPlayers[j / 4].text = self.playersNames![j]
-                            }
-                            
-                        }
-                        
-                        self.firstInRoundThree = false
-                        
-                    }
-                }
-            }
-        }
     }
 }

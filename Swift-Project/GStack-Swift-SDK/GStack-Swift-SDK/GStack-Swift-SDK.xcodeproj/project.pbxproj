@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1AC83ED8BB56CBA0E7F94581 /* libPods-GStack-Swift-SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76932C973443C95B80566BAA /* libPods-GStack-Swift-SDK.a */; };
+		287594BF1C970C4600CDE4CF /* PlayTraditionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287594BE1C970C4600CDE4CF /* PlayTraditionalViewController.swift */; };
+		287594C21C971EF500CDE4CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287594C01C971EF500CDE4CF /* Main.storyboard */; };
 		287A8D731C8A10D500F19A91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A8D721C8A10D500F19A91 /* AppDelegate.swift */; };
 		287A8D751C8A10D500F19A91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A8D741C8A10D500F19A91 /* ViewController.swift */; };
-		287A8D781C8A10D500F19A91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287A8D761C8A10D500F19A91 /* Main.storyboard */; };
 		287A8D7A1C8A10D500F19A91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 287A8D791C8A10D500F19A91 /* Assets.xcassets */; };
 		287A8D7D1C8A10D500F19A91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287A8D7B1C8A10D500F19A91 /* LaunchScreen.storyboard */; };
 		287A8D881C8A10D500F19A91 /* GStack_Swift_SDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A8D871C8A10D500F19A91 /* GStack_Swift_SDKTests.swift */; };
@@ -65,6 +66,8 @@
 		28A2DF7D1C8E1C0400C22C22 /* PlayBracketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A2DF7C1C8E1C0400C22C22 /* PlayBracketViewController.swift */; };
 		28D3C3BB1C8CCDB50046BDB6 /* GStackGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D3C3BA1C8CCDB50046BDB6 /* GStackGame.swift */; };
 		28D3C3BD1C8CD20D0046BDB6 /* GStackTournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D3C3BC1C8CD20D0046BDB6 /* GStackTournament.swift */; };
+		28FD62871C970468001E922C /* TraditionalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD62861C970468001E922C /* TraditionalTableViewCell.swift */; };
+		28FD628A1C9704B2001E922C /* TraditionalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD62891C9704B2001E922C /* TraditionalTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,10 +89,11 @@
 
 /* Begin PBXFileReference section */
 		01492C55FA163FFB0DCC5180 /* Pods-GStack-Swift-SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GStack-Swift-SDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-GStack-Swift-SDK/Pods-GStack-Swift-SDK.release.xcconfig"; sourceTree = "<group>"; };
+		287594BE1C970C4600CDE4CF /* PlayTraditionalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayTraditionalViewController.swift; sourceTree = "<group>"; };
+		287594C11C971EF500CDE4CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		287A8D6F1C8A10D500F19A91 /* GStack-Swift-SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GStack-Swift-SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		287A8D721C8A10D500F19A91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		287A8D741C8A10D500F19A91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		287A8D771C8A10D500F19A91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		287A8D791C8A10D500F19A91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		287A8D7C1C8A10D500F19A91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		287A8D7E1C8A10D500F19A91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 		28A2DF7C1C8E1C0400C22C22 /* PlayBracketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayBracketViewController.swift; sourceTree = "<group>"; };
 		28D3C3BA1C8CCDB50046BDB6 /* GStackGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GStackGame.swift; sourceTree = "<group>"; };
 		28D3C3BC1C8CD20D0046BDB6 /* GStackTournament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GStackTournament.swift; sourceTree = "<group>"; };
+		28FD62861C970468001E922C /* TraditionalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraditionalTableViewCell.swift; sourceTree = "<group>"; };
+		28FD62891C9704B2001E922C /* TraditionalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraditionalTableViewController.swift; sourceTree = "<group>"; };
 		76932C973443C95B80566BAA /* libPods-GStack-Swift-SDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GStack-Swift-SDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A26782FBEC98964ED7A3EBDE /* Pods-GStack-Swift-SDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GStack-Swift-SDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GStack-Swift-SDK/Pods-GStack-Swift-SDK.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,9 +211,9 @@
 		287A8D711C8A10D500F19A91 /* GStack-Swift-SDK */ = {
 			isa = PBXGroup;
 			children = (
+				287594C01C971EF500CDE4CF /* Main.storyboard */,
 				287A8D721C8A10D500F19A91 /* AppDelegate.swift */,
 				287A8D741C8A10D500F19A91 /* ViewController.swift */,
-				287A8D761C8A10D500F19A91 /* Main.storyboard */,
 				287A8D791C8A10D500F19A91 /* Assets.xcassets */,
 				287A8D7B1C8A10D500F19A91 /* LaunchScreen.storyboard */,
 				287A8D7E1C8A10D500F19A91 /* Info.plist */,
@@ -318,6 +324,7 @@
 			children = (
 				28A2DF721C8DE6B800C22C22 /* LoginViewController.swift */,
 				28A2DF771C8E02CF00C22C22 /* Bracket */,
+				28FD62881C970471001E922C /* Traditional */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -330,6 +337,16 @@
 				28A2DF7C1C8E1C0400C22C22 /* PlayBracketViewController.swift */,
 			);
 			name = Bracket;
+			sourceTree = "<group>";
+		};
+		28FD62881C970471001E922C /* Traditional */ = {
+			isa = PBXGroup;
+			children = (
+				28FD62861C970468001E922C /* TraditionalTableViewCell.swift */,
+				28FD62891C9704B2001E922C /* TraditionalTableViewController.swift */,
+				287594BE1C970C4600CDE4CF /* PlayTraditionalViewController.swift */,
+			);
+			name = Traditional;
 			sourceTree = "<group>";
 		};
 		E2668176EE7FD2C465C16AD2 /* Pods */ = {
@@ -466,6 +483,7 @@
 				28A2DF671C8DE5EF00C22C22 /* SF-UI-Text-Heavy.otf in Resources */,
 				28A2DF601C8DE5EF00C22C22 /* SF-UI-Display-Medium.otf in Resources */,
 				28A2DF5F1C8DE5EF00C22C22 /* SF-UI-Display-Light.otf in Resources */,
+				287594C21C971EF500CDE4CF /* Main.storyboard in Resources */,
 				28A2DF4E1C8DE5EF00C22C22 /* SF-Compact-Display-Thin.otf in Resources */,
 				28A2DF6B1C8DE5EF00C22C22 /* SF-UI-Text-Medium.otf in Resources */,
 				287A8D7D1C8A10D500F19A91 /* LaunchScreen.storyboard in Resources */,
@@ -503,7 +521,6 @@
 				28A2DF481C8DE5EF00C22C22 /* SF-Compact-Display-Bold.otf in Resources */,
 				28A2DF521C8DE5EF00C22C22 /* SF-Compact-Text-Heavy.otf in Resources */,
 				28A2DF591C8DE5EF00C22C22 /* SF-Compact-Text-RegularItalic.otf in Resources */,
-				287A8D781C8A10D500F19A91 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,14 +593,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28FD62871C970468001E922C /* TraditionalTableViewCell.swift in Sources */,
 				28A2DF731C8DE6B800C22C22 /* LoginViewController.swift in Sources */,
 				287A8D751C8A10D500F19A91 /* ViewController.swift in Sources */,
 				28A2DF7B1C8E0E7700C22C22 /* BracketTableViewCell.swift in Sources */,
 				28D3C3BB1C8CCDB50046BDB6 /* GStackGame.swift in Sources */,
+				287594BF1C970C4600CDE4CF /* PlayTraditionalViewController.swift in Sources */,
 				287A8D731C8A10D500F19A91 /* AppDelegate.swift in Sources */,
 				28A2DF7D1C8E1C0400C22C22 /* PlayBracketViewController.swift in Sources */,
 				28A2DF791C8E031300C22C22 /* BracketTableViewController.swift in Sources */,
 				28D3C3BD1C8CD20D0046BDB6 /* GStackTournament.swift in Sources */,
+				28FD628A1C9704B2001E922C /* TraditionalTableViewController.swift in Sources */,
 				287A8DA51C8A4A9200F19A91 /* PusherSock.swift in Sources */,
 				287A8DA21C8A185F00F19A91 /* GStack.swift in Sources */,
 			);
@@ -621,10 +641,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		287A8D761C8A10D500F19A91 /* Main.storyboard */ = {
+		287594C01C971EF500CDE4CF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				287A8D771C8A10D500F19A91 /* Base */,
+				287594C11C971EF500CDE4CF /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
