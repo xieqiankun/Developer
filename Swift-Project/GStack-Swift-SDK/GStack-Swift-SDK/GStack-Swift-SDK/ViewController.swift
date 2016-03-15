@@ -33,7 +33,7 @@ class ViewController: UIViewController {
 
     @IBAction func seedata(sender: AnyObject) {
         
-        let t = GStack.sharedInstance.GStacKBracketTtournaments[0]
+        let t = GStack.sharedInstance.GStackBracketTournaments[0]
         
         GStack.sharedInstance.GStackStartGameForTournament(t) { (error, game) -> Void in
             print("I am nearly start the game")

@@ -17,7 +17,7 @@ class GStack {
     var displayName: String?
     
     var GStackTraditionalTournaments = Array<GStackTournament>()
-    var GStacKBracketTtournaments = Array<GStackTournament>()
+    var GStackBracketTournaments = Array<GStackTournament>()
     
     var gameServerIp: String?
     var gameServerPort: String?
@@ -72,7 +72,7 @@ class GStack {
             //for completion
             print(tournaments)
             var ts = [GStackTournament]()
-            self.GStacKBracketTtournaments.removeAll()
+            self.GStackBracketTournaments.removeAll()
             self.GStackTraditionalTournaments.removeAll()
             for tournament in tournaments! {
                 let t = GStackTournament(tournament: tournament)
@@ -85,7 +85,7 @@ class GStack {
 
                 } else if t.style == "shootout" {
                     if case .Active = t.status() {
-                        self.GStacKBracketTtournaments.append(t)
+                        self.GStackBracketTournaments.append(t)
                     }
                 }
             }
@@ -110,20 +110,17 @@ class GStack {
                 if error != nil {
                     completion(error: error, game: nil)
                 } else {
-                    print("I am in start the primus")
-                    
                     PusherSock.sharedPusher.didReceiveEvent("newGameSuccess",completion: {
                         t in
-                        print(t.data)
                         let receivedData = t.data as! Dictionary<String, AnyObject>
                         if receivedData["event"] as! String == "newGameSuccess"{
                             self.gameServerIp = receivedData["serverIp"] as? String
                             self.gameServerPort = String(receivedData["serverPort"] as! NSNumber)
                             self.gameToken = receivedData["token"] as? String
                             
-                            print(self.gameServerIp)
-                            print(self.gameServerPort)
-                            print(self.gameToken)
+//                            print(self.gameServerIp)
+//                            print(self.gameServerPort)
+//                            print(self.gameToken)
                             
                             let game = GStackGame(_gameServerIp: self.gameServerIp!, _gameServerPort: self.gameServerPort!, _gameToken: self.gameToken!)
                             

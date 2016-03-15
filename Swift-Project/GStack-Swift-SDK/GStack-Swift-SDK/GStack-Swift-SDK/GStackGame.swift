@@ -9,24 +9,25 @@
 import Foundation
 
 public protocol GStackGameDelegate {
-    func gameDidStart(game: GStackGame)
+    func gameDidStart()
     
-    func willAttemptToReconnect(game: GStackGame, options: PrimusReconnectOptions)
-    func didReconnect(game: GStackGame)
-    func didLoseConnection(game: GStackGame)
-    func didEstablishConnection(game: GStackGame)
-    func didEncounterError(game: GStackGame, error: NSError)
-    func connectionDidEnd(game: GStackGame)
-    func connectionDidClose(game: GStackGame)
-    func didReceiveTimer(game:GStackGame, timer:GStackGameTimer)
-    func didReceiveQuestion(game: GStackGame, question: GStackGameQuestion)
-    func didReceivePlayerInfo(game: GStackGame, playerInfo: GStackGamePlayerInfo)
-    func didReceiveCorrectAnswer(game: GStackGame, correctAnswer: GStackGameCorrectAnswer)
-    func didReceiveUpdatedScore(game: GStackGame, updatedScore: GStackGameUpdatedScore)
-    func didReceiveGameResult(game: GStackGame, result: GStackGameResult)
-    func didReceiveOtherGameFinished(game: GStackGame,alive:GStackGameOtherGameFinished)
-    func didReceiveStartRound(game:GStackGame, round:GStackGameStartRound)
-    func didReceiveRoundResult(game:GStackGame, win:GStackGameRoundResult)
+    func willAttemptToReconnect(options: PrimusReconnectOptions)
+    func didReconnect()
+    func didLoseConnection()
+    func didEstablishConnection()
+    func didEncounterError(error: NSError)
+    func connectionDidEnd()
+    func connectionDidClose()
+    func didReceiveTimer(timer:GStackGameTimer)
+    func didReceiveQuestion(question: GStackGameQuestion)
+    func didReceivePlayerInfo(playerInfo: GStackGamePlayerInfo)
+    func didReceiveCorrectAnswer(correctAnswer: GStackGameCorrectAnswer)
+    func didReceiveUpdatedScore(updatedScore: GStackGameUpdatedScore)
+    func didReceiveGameResult(result: GStackGameResult)
+    func didReceiveOtherGameFinished(alive:GStackGameOtherGameFinished)
+    func didReceiveStartRound(round:GStackGameStartRound)
+    func didReceiveRoundResult(win:GStackGameRoundResult)
+    func didReceiveErrorMsg(error:GStackGameErrorMsg)
 }
 
 
@@ -57,28 +58,28 @@ public class GStackGame: NSObject {
         
         
         let onReconnect: @convention(block) (PrimusReconnectOptions) -> () = { (options: PrimusReconnectOptions) -> () in
-            self.delegate?.willAttemptToReconnect(self, options: options)
+            self.delegate?.willAttemptToReconnect(options)
         }
         primus!.on("reconnect", listener: unsafeBitCast(onReconnect, AnyObject.self))
         
         let onOnline: @convention(block) () -> () = { () -> () in
-            self.delegate?.didReconnect(self)
+            self.delegate?.didReconnect()
         }
         primus!.on("online", listener: unsafeBitCast(onOnline, AnyObject.self))
         
         let onOffline: @convention(block) () -> () = { () -> () in
-            self.delegate?.didLoseConnection(self)
+            self.delegate?.didLoseConnection()
         }
         primus!.on("offline", listener: unsafeBitCast(onOffline, AnyObject.self))
         
         let onOpen: @convention(block) () -> () = { () -> () in
             self.primus!.write(connection.gameToken)
-            self.delegate?.didEstablishConnection(self)
+            self.delegate?.didEstablishConnection()
         }
         primus!.on("open", listener: unsafeBitCast(onOpen, AnyObject.self))
         
         let onError: @convention(block) (NSError) -> () = { (error: NSError) -> () in
-            self.delegate?.didEncounterError(self, error: error)
+            self.delegate?.didEncounterError(error)
         }
         primus!.on("error", listener: unsafeBitCast(onError, AnyObject.self))
         
@@ -88,23 +89,25 @@ public class GStackGame: NSObject {
                 if let type = data["type"] as? String {
                     switch type {
                     case "sendQuestion":
-                        self.delegate?.didReceiveQuestion(self, question: GStackGameQuestion(dictionary: payload))
+                        self.delegate?.didReceiveQuestion(GStackGameQuestion(dictionary: payload))
                     case "timer":
-                        self.delegate?.didReceiveTimer(self, timer: GStackGameTimer(dictionary: payload))
+                        self.delegate?.didReceiveTimer(GStackGameTimer(dictionary: payload))
                     case "startRound":
-                        self.delegate?.didReceiveStartRound(self, round: GStackGameStartRound(dictionary: payload))
+                        self.delegate?.didReceiveStartRound(GStackGameStartRound(dictionary: payload))
                     case "roundResult":
-                        self.delegate?.didReceiveRoundResult(self, win: GStackGameRoundResult(dictionary: payload))
+                        self.delegate?.didReceiveRoundResult(GStackGameRoundResult(dictionary: payload))
                     case "sendPlayerInfo":
-                        self.delegate?.didReceivePlayerInfo(self, playerInfo: GStackGamePlayerInfo(dictionary: payload))
+                        self.delegate?.didReceivePlayerInfo(GStackGamePlayerInfo(dictionary: payload))
                     case "correctAnswer":
-                        self.delegate?.didReceiveCorrectAnswer(self, correctAnswer: GStackGameCorrectAnswer(dictionary: payload))
+                        self.delegate?.didReceiveCorrectAnswer(GStackGameCorrectAnswer(dictionary: payload))
                     case "updateScore":
-                        self.delegate?.didReceiveUpdatedScore(self, updatedScore: GStackGameUpdatedScore(dictionary: payload))
+                        self.delegate?.didReceiveUpdatedScore(GStackGameUpdatedScore(dictionary: payload))
                     case "gameResult":
-                        self.delegate?.didReceiveGameResult(self, result: GStackGameResult(dictionary: payload))
+                        self.delegate?.didReceiveGameResult(GStackGameResult(dictionary: payload))
                     case "otherGameFinished":
-                        self.delegate?.didReceiveOtherGameFinished(self,alive:GStackGameOtherGameFinished(dictionary: payload))
+                        self.delegate?.didReceiveOtherGameFinished(GStackGameOtherGameFinished(dictionary: payload))
+                    case "error":
+                        self.delegate?.didReceiveErrorMsg(GStackGameErrorMsg(dictionary: payload))
                     default:
                         break
                     }
@@ -114,16 +117,16 @@ public class GStackGame: NSObject {
         primus!.on("data", listener: unsafeBitCast(onData, AnyObject.self))
         
         let onEnd: @convention(block) () -> () = { () -> () in
-            self.delegate?.connectionDidEnd(self)
+            self.delegate?.connectionDidEnd()
         }
         primus!.on("end", listener: unsafeBitCast(onEnd, AnyObject.self))
         
         let onClose: @convention(block) () -> () = { () -> () in
-            self.delegate?.connectionDidClose(self)
+            self.delegate?.connectionDidClose()
         }
         primus!.on("close", listener: unsafeBitCast(onClose, AnyObject.self))
         
-        delegate?.gameDidStart(self)
+        delegate?.gameDidStart()
     }
     
     
@@ -280,11 +283,15 @@ public class GStackGameOtherGameFinished:NSObject{
 public class GStackGameUpdatedScore: NSObject {
     public var teamAnswersTime: Array<Array<NSNumber>>?
     public var answerNumber: NSNumber?
+    public var rightOrWrong: NSNumber?
+    public var teamNum: NSNumber?
     //Others probably...
     
     init(dictionary: Dictionary<String,AnyObject>) {
         teamAnswersTime = dictionary["teamAnswersTime"] as? Array<Array<NSNumber>>
         answerNumber = dictionary["answerNumber"] as? NSNumber
+        rightOrWrong = dictionary["rightOrWrong"] as? NSNumber
+        teamNum = dictionary["teamNum"] as? NSNumber
         //Others probably...
     }
 }
@@ -318,3 +325,17 @@ public class GStackGameResult: NSObject {
         
     }
 }
+
+public class GStackGameErrorMsg:NSObject {
+    
+    public var error: String?
+    
+    init(dictionary: Dictionary<String,AnyObject>) {
+        error = dictionary["error"] as? String
+    }
+    
+}
+
+
+
+

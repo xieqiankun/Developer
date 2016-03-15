@@ -55,47 +55,46 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
     @IBOutlet var thirdRoundPlaysAlive: [UIView]!
     //for game control
     
-    var isAllowSubmit = false
+    var isAllowSubmit       = false
+    var isNeedToForfeit     = true
     
-    var alivePlayers = [1,1,1,1,1,1,1,1]
+    var alivePlayers        = [1,1,1,1,1,1,1,1]
     
-    var currentSumbittedAnswer = -1
+    var currentTeamNum          = 0
+    var currentSumbittedAnswer  = -1
     
-    var currentQuestion: GStackGameQuestion?
+    var currentQuestion : GStackGameQuestion?
     
-    var playersNames: [String]?
+    var playersNames    : [String]?
     
-    var firstInRoundTwo = true
-    
-    var firstInRoundThree = true
-    
-    var isNeedToForfeit = true
+
     //timer
-    var timeBarTimer: NSTimer?
-    var timeNow: Double?
-    var time: Int?
+    var timeBarTimer    : NSTimer?
+    var timeNow         : Double?
+    var time            : Int?
     
     
     
+    /**
+     Prepare to start the game and set the GStackGame Instance's delegate to self
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background.png")!)
-        self.nameBoard.backgroundColor = UIColor(patternImage: UIImage(named: "Background.png")!)
         self.UIInit()
         
-        GStack.sharedInstance.GStackStartGameForTournament(tournament!) { (error, game) -> Void in
+        GStack.sharedInstance.GStackStartGameForTournament(tournament!) { (error, gameInstance) -> Void in
             
             //prepare for starting game
-            self.game = game
-            game?.delegate = self
-            game?.startGame()
+            self.game = gameInstance
+            self.game?.delegate = self
+            self.game?.startGame()
             
         }
         
     }
     
     override func viewWillDisappear(animated: Bool) {
-        //stop primus when leave the page
+        //use endgame to end the connection to server
         game?.endGame()
     }
     
@@ -104,7 +103,13 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: -setup UI
+    
     func UIInit() {
+        
+        //set the background
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background.png")!)
+        self.nameBoard.backgroundColor = UIColor(patternImage: UIImage(named: "Background.png")!)
         
         //set question label
         self.questionLabelView.layer.borderColor = UIColor.whiteColor().CGColor
@@ -168,29 +173,6 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
         
     }
     
-    //for time bar
-    
-    func startTimer() {
-        
-        //print("call me")
-        
-        let tempTimeNow = self.timeNow! - 0.05
-        self.timeNow = tempTimeNow
-        
-        self.clockLabel.text = String(Int(tempTimeNow))
-        
-        var newRect = self.timeBar.frame
-        let ratio = 1.0 * (Double(self.time!) - tempTimeNow)/Double(self.time!)
-        
-        newRect.origin.x = CGFloat(ratio * Double(self.timeBarBackGround.frame.size.width - self.clock.frame.size.width) / 2)
-        
-        newRect.size.width = CGFloat(self.timeBarBackGround.frame.size.width - 2 * newRect.origin.x)
-        
-        self.timeBar.frame = newRect
-        
-        
-    }
-    
     func setupQuestionUI() {
         
         //clear button text
@@ -208,43 +190,70 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
     }
     
     
+    // MARK: - helper func and action control
+    
+    //for time bar
+    
+    func startTimer() {
+        
+        let tempTimeNow = self.timeNow! - 0.05
+        self.timeNow    = tempTimeNow
+        
+        self.clockLabel.text = String(Int(tempTimeNow))
+        
+        var newRect     = self.timeBar.frame
+        let ratio       = 1.0 * (Double(self.time!) - tempTimeNow)/Double(self.time!)
+        
+        newRect.origin.x = CGFloat(ratio * Double(self.timeBarBackGround.frame.size.width - self.clock.frame.size.width) / 2)
+        
+        newRect.size.width = CGFloat(self.timeBarBackGround.frame.size.width - 2 * newRect.origin.x)
+        
+        self.timeBar.frame = newRect
+        
+    }
+    
+
+    
     
     @IBAction func backToMain(sender: AnyObject) {
         
+        //we need to dialog box asking if the user want to forfeit, and if so we send a forefeit message to the server
         if isNeedToForfeit {
-        let title = "Back to Main"
-        let message = "Are you sure"
-        
-        let ac = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet)
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-        ac.addAction(cancelAction)
-        
-        let deleteAction = UIAlertAction(title: "Forfeit", style: UIAlertActionStyle.Destructive, handler: {
-            (action) -> Void in
+            let title = "Back to Main"
+            let message = "Are you sure"
             
-            //send forfeit message
-            self.game?.sendForfeitMessage()
+            let ac = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet)
             
-            self.dismissViewControllerAnimated(true, completion: { () -> Void in
-                self.game = nil
-                self.tournament = nil
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            ac.addAction(cancelAction)
+            
+            let deleteAction = UIAlertAction(title: "Forfeit", style: UIAlertActionStyle.Destructive, handler: {
+                (action) -> Void in
+                
+                //send forfeit message
+                self.game?.sendForfeitMessage()
+                
+                self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                    self.game = nil
+                    self.tournament = nil
+                })
+                
             })
-            // self.performSegueWithIdentifier("Main", sender: self)
             
-        })
-        
-        ac.addAction(deleteAction)
-        
-        //present the alert controller
-        presentViewController(ac, animated: true, completion: nil)
-        
+            ac.addAction(deleteAction)
+            
+            //present the alert controller
+            presentViewController(ac, animated: true, completion: nil)
+            
         } else {
             
             self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
     
+    /**
+     To submit the user's answer to this question we call the gstack game's submitAnswerForQuestion
+     */
     
     @IBAction func submitAnswer(sender: UIButton) {
         
@@ -262,52 +271,53 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
     }
     
     
-    /*
-    // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
-    
-    func gameDidStart(game: GStackGame){
+    // MARK: - Delegation part
+
+    func gameDidStart(){
         print("Game did start")
     }
-    func willAttemptToReconnect(game: GStackGame, options: PrimusReconnectOptions) {
+    func willAttemptToReconnect(options: PrimusReconnectOptions) {
         print("Will attempt to reconnect")
     }
-    func didReconnect(game: GStackGame) {
+    func didReconnect() {
         print("Did reconnect")
     }
-    func didLoseConnection(game: GStackGame) {
+    func didLoseConnection() {
         print("Did lose connection")
     }
-    func didEstablishConnection(game: GStackGame) {
+    func didEstablishConnection() {
         print("Did establish connection")
     }
-    func didEncounterError(game: GStackGame, error: NSError) {
+    func didEncounterError(error: NSError) {
         print("Did encounter error: \(error)")
     }
-    func connectionDidEnd(game: GStackGame) {
+    func connectionDidEnd() {
         print("Connection did end")
     }
-    func connectionDidClose(game: GStackGame) {
+    func connectionDidClose() {
         print("Connection did close")
     }
-    func didReceiveTimer(game:GStackGame, timer:GStackGameTimer){
+    /**
+     Debug helper data type and will show if mis-submit info to server or...
+     */
+    func didReceiveErrorMsg(error:GStackGameErrorMsg){
+        print("Receive an error: \(error.error)")
+    }
+    func didReceiveTimer(timer:GStackGameTimer){
         //for helping the ui
     }
-    func didReceiveStartRound(game: GStackGame, round: GStackGameStartRound) {
+    func didReceiveStartRound(round: GStackGameStartRound) {
         
         //clear all the ui
         self.setupQuestionUI()
         self.clockLabel.text = ""
         self.nameBoard.hidden = true
         
+        self.currentTeamNum = round.teamNum as! Int
+        
     }
-    func didReceiveRoundResult(game: GStackGame, win: GStackGameRoundResult) {
+    func didReceiveRoundResult(win: GStackGameRoundResult) {
         
         self.nameBoard.hidden = false
         if win.win == 0 {
@@ -315,13 +325,16 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
         }
         
     }
-    func didReceiveQuestion(game: GStackGame, question: GStackGameQuestion){
+    func didReceiveQuestion(question: GStackGameQuestion){
         
         self.setupQuestionUI()
+        
         
         //reset the submitted answer
         self.currentSumbittedAnswer = -1
         self.isAllowSubmit = false
+        
+        //store the currentQuestion and will be used in submit the answerpart
         self.currentQuestion = question
         
         //set question
@@ -330,9 +343,9 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
         //set timer
         self.time = (question.timer as? Int)! / 1000
         self.timeNow = Double(self.time!)
-        
         self.clockLabel.text = String(self.time!)
         
+        //promptTime is for displaying the question before showing the answers. submiting the answer during promptTime will cause an error
         let delayInSeconds = Double(question.promptTime!)
         let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds / 1000 * Double(NSEC_PER_SEC)))
         dispatch_after(delayTime, dispatch_get_main_queue()) {
@@ -348,17 +361,15 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
             self.timeBarTimer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: "startTimer", userInfo: nil, repeats: true)
             
         }
-        
-        
     }
-    func didReceivePlayerInfo(game: GStackGame, playerInfo: GStackGamePlayerInfo){
+    func didReceivePlayerInfo(playerInfo: GStackGamePlayerInfo){
         
         var info = [String]()
         for array in playerInfo.teamNames! {
             info.append(array[0])
         }
+        //store the players' info
         self.playersNames = info
-        print(self.playersNames)
         
         for var i = 0; i < 8; i++ {
             let label = self.firstRoundPlayers[i]
@@ -366,7 +377,7 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
         }
         
     }
-    func didReceiveCorrectAnswer(game: GStackGame, correctAnswer: GStackGameCorrectAnswer){
+    func didReceiveCorrectAnswer(correctAnswer: GStackGameCorrectAnswer){
         
         self.timeBarTimer?.invalidate()
         
@@ -383,12 +394,17 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
             }
         }
     }
-    func didReceiveUpdatedScore(game: GStackGame, updatedScore: GStackGameUpdatedScore){
+    func didReceiveUpdatedScore(updatedScore: GStackGameUpdatedScore){
         //implement latter
+        if updatedScore.teamNum == currentTeamNum {
+            if updatedScore.rightOrWrong == 0 {
+                self.answersView[self.currentSumbittedAnswer].backgroundColor = UIColor.redColor()
+            } else {
+                self.answersView[self.currentSumbittedAnswer].backgroundColor = UIColor.greenColor()
+            }
+        }
     }
-    func didReceiveGameResult(game: GStackGame, result: GStackGameResult){
-        
-        self.isNeedToForfeit = false
+    func didReceiveGameResult(result: GStackGameResult){
         
         for var i = 0; i < 8; i++ {
             
@@ -402,92 +418,76 @@ class PlayBracketViewController: UIViewController,GStackGameDelegate {
                 } else {
                     self.thirdRoundPlaysAlive[i/4+1].backgroundColor = UIColor.greenColor()
                 }
-
+                
             }
+        }
+        self.isNeedToForfeit = false
+        
+        //auto go back to main
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            
+            self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                self.game = nil
+                self.tournament = nil
+            })
         }
         
         
     }
-    func didReceiveOtherGameFinished(game: GStackGame,alive:GStackGameOtherGameFinished){
+    
+    
+    func didReceiveOtherGameFinished(alive:GStackGameOtherGameFinished){
         
+        let num = alive.alive?.count
+        //to get the dead player in this game using comparsion with last alive players info
+        var currentAliveNum = 0;
         
-        for var i = 0; i < 8; i++ {
-            
-            print("I am in looppppppp")
+        var thisRoundDead = -1;
+        
+        for var i = 0; i < num; i++ {
             
             if alive.alive![i].integerValue != self.alivePlayers[i] {
-                
+                thisRoundDead = i
+                //set the dead player to 0
                 self.alivePlayers[i] = 0;
-                
-                print("I am in not alive")
-                
-                if Int(alive.round!) == 1 {
-                    
-                    print("I am in round 1")
-                    
-                    self.firstRoundPlaysAlive[i].backgroundColor = UIColor.redColor()
-                    if i % 2 != 0 {
-                        self.firstRoundPlaysAlive[i-1].backgroundColor = UIColor.greenColor()
-                    } else {
-                        self.firstRoundPlaysAlive[i+1].backgroundColor = UIColor.greenColor()
+            }
+            if alive.alive![i].integerValue == 1 {
+                currentAliveNum++
+            }
+        }
+        //if currentAliveNum >= 4 means in first round
+        if currentAliveNum >= 4 {
+            self.firstRoundPlaysAlive[thisRoundDead].backgroundColor = UIColor.redColor()
+            if thisRoundDead % 2 != 0 {
+                self.firstRoundPlaysAlive[thisRoundDead-1].backgroundColor = UIColor.greenColor()
+            } else {
+                self.firstRoundPlaysAlive[thisRoundDead+1].backgroundColor = UIColor.greenColor()
+            }
+            if(currentAliveNum == 4){
+                //set the name board for second round
+                for var j = 0; j < num; j++ {
+                    if self.alivePlayers[j] == 1 {
+                        self.secondRoundPlayers[j / 2].text = self.playersNames![j]
+                    }
+                }
+            }
+            
+        } else if currentAliveNum >= 2{ //means in second round and final round info will be got in game result func
+            
+            self.secondRoundPlaysAlive[thisRoundDead/2].backgroundColor = UIColor.redColor()
+            if thisRoundDead/2 % 2 != 0 {
+                self.secondRoundPlaysAlive[thisRoundDead/2-1].backgroundColor = UIColor.greenColor()
+            } else {
+                self.secondRoundPlaysAlive[thisRoundDead/2+1].backgroundColor = UIColor.greenColor()
+            }
+            if(currentAliveNum == 2){
+                //set the name board for final round
+                for var j = 0; j < 8; j++ {
+                    if self.alivePlayers[j] == 1 {
+                        self.thirdRoundPlayers[j / 4].text = self.playersNames![j]
                     }
                     
-                    
-                } else if Int(alive.round!) == 2 {
-                    
-                    if self.firstInRoundTwo {
-                        
-                        self.firstRoundPlaysAlive[i].backgroundColor = UIColor.redColor()
-                        if i % 2 != 0 {
-                            self.firstRoundPlaysAlive[i-1].backgroundColor = UIColor.greenColor()
-                        } else {
-                            self.firstRoundPlaysAlive[i+1].backgroundColor = UIColor.greenColor()
-                        }
-                        
-                        //set the names
-                        
-                        for var j = 0; j < 8; j++ {
-                            
-                            if self.alivePlayers[j] == 1 {
-                                self.secondRoundPlayers[j / 2].text = self.playersNames![j]
-                            }
-                            
-                        }
-                        
-                        self.firstInRoundTwo = false
-                        
-                    } else {
-                        
-                        self.secondRoundPlaysAlive[i/2].backgroundColor = UIColor.redColor()
-                        if i/2 % 2 != 0 {
-                            self.secondRoundPlaysAlive[i/2-1].backgroundColor = UIColor.greenColor()
-                        } else {
-                            self.secondRoundPlaysAlive[i/2+1].backgroundColor = UIColor.greenColor()
-                        }
-                    }
-                    
-                } else {
-                    
-                    if self.firstInRoundThree {
-                        
-                        self.secondRoundPlaysAlive[i/2].backgroundColor = UIColor.redColor()
-                        if i/2 % 2 != 0 {
-                            self.secondRoundPlaysAlive[i/2-1].backgroundColor = UIColor.greenColor()
-                        } else {
-                            self.secondRoundPlaysAlive[i/2+1].backgroundColor = UIColor.greenColor()
-                        }
-                        
-                        for var j = 0; j < 8; j++ {
-                            
-                            if self.alivePlayers[j] == 1 {
-                                self.thirdRoundPlayers[j / 4].text = self.playersNames![j]
-                            }
-                            
-                        }
-                        
-                        self.firstInRoundThree = false
-                        
-                    }
                 }
             }
         }

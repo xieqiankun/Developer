@@ -23,7 +23,6 @@ class LoginViewController: UIViewController {
         let passwordField = "/o3I3goKCQ=="
         
         GStack.sharedInstance.gStackLoginWithAppID(usernameField, appKey: passwordField) { (error) -> Void in
-            print("I am in login part")
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 

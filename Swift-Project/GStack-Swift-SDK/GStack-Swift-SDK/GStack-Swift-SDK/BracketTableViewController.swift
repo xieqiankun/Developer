@@ -32,8 +32,8 @@ class BracketTableViewController: UITableViewController {
                 
                 self.tableView.reloadData()
                 
-                print("I am here in table view")
-                print(GStack.sharedInstance.GStacKBracketTtournaments.count)
+                //print("I am here in table view")
+                //print(GStack.sharedInstance.GStackBracketTournaments.count)
                 
             })
         }
@@ -49,7 +49,7 @@ class BracketTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return GStack.sharedInstance.GStacKBracketTtournaments.count
+        return GStack.sharedInstance.GStackBracketTournaments.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,7 +71,7 @@ class BracketTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifer, forIndexPath: indexPath) as! BracketTableViewCell
         
-        let tournmanet = GStack.sharedInstance.GStacKBracketTtournaments[indexPath.section]
+        let tournmanet = GStack.sharedInstance.GStackBracketTournaments[indexPath.section]
         
         cell.selectionStyle = UITableViewCellSelectionStyle.Blue
         
@@ -99,7 +99,7 @@ class BracketTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        self.selectedTournament = GStack.sharedInstance.GStacKBracketTtournaments[indexPath.section]
+        self.selectedTournament = GStack.sharedInstance.GStackBracketTournaments[indexPath.section]
         
         self.performSegueWithIdentifier("playBracket", sender: self)
         

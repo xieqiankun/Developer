@@ -48,15 +48,15 @@ class PlayTraditionalViewController: UIViewController,GStackGameDelegate {
     var time: Int?
     
     
-    
+    /**
+     Prepare to start the game and set the GStackGame Instance's delegate to self
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background.png")!)
         self.UIInit()
         
         GStack.sharedInstance.GStackStartGameForTournament(tournament!) { (error, game) -> Void in
             
-            print("I am in traditional game starting : \(self.tournament?.uuid)")
             //prepare for starting game
             self.game = game
             game?.delegate = self
@@ -67,19 +67,21 @@ class PlayTraditionalViewController: UIViewController,GStackGameDelegate {
     }
     
     override func viewWillDisappear(animated: Bool) {
-        //stop primus when leave the page
+        //use endgame func to disconnect with server
         game?.endGame()
     }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: - setup UI
     func UIInit() {
         
+        //set background
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background.png")!)
+
         //set question label
         self.questionLabelView.layer.borderColor = UIColor.whiteColor().CGColor
         self.questionLabelView.layer.cornerRadius = 8
@@ -114,6 +116,26 @@ class PlayTraditionalViewController: UIViewController,GStackGameDelegate {
         
     }
     
+    
+    func setupQuestionUI() {
+        
+        //clear button text
+        for btn in self.answers {
+            btn.setTitle("", forState: .Normal)
+        }
+        for view in self.answersView {
+            view.backgroundColor = UIColor.clearColor()
+        }
+        
+        //reset the timebar
+        var newRect = self.timeBarBackGround.frame
+        newRect.origin = CGPointZero
+        self.timeBar.frame = newRect
+    }
+    
+
+    
+    //MARK: - helper func and action
     //for time bar
     
     func startTimer() {
@@ -136,27 +158,11 @@ class PlayTraditionalViewController: UIViewController,GStackGameDelegate {
         
         
     }
-    
-    func setupQuestionUI() {
-        
-        //clear button text
-        for btn in self.answers {
-            btn.setTitle("", forState: .Normal)
-        }
-        for view in self.answersView {
-            view.backgroundColor = UIColor.clearColor()
-        }
-        
-        //reset the timebar
-        var newRect = self.timeBarBackGround.frame
-        newRect.origin = CGPointZero
-        self.timeBar.frame = newRect
-    }
-    
 
     
     @IBAction func backToMain(sender: AnyObject) {
         
+        //we need to dialog box asking if the user want to forfeit, and if so we send a forefeit message to the server
         if isNeedToForfeit {
         
         let title = "Back to Main"
@@ -207,56 +213,51 @@ class PlayTraditionalViewController: UIViewController,GStackGameDelegate {
     }
     
     
-    /*
-    // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
+    // MARK: - Delegation part
+
     
-    func gameDidStart(game: GStackGame){
+    func gameDidStart(){
         print("Game did start")
     }
-    func willAttemptToReconnect(game: GStackGame, options: PrimusReconnectOptions) {
+    func willAttemptToReconnect(options: PrimusReconnectOptions) {
         print("Will attempt to reconnect")
     }
-    func didReconnect(game: GStackGame) {
+    func didReconnect() {
         print("Did reconnect")
     }
-    func didLoseConnection(game: GStackGame) {
+    func didLoseConnection() {
         print("Did lose connection")
     }
-    func didEstablishConnection(game: GStackGame) {
+    func didEstablishConnection() {
         print("Did establish connection")
     }
-    func didEncounterError(game: GStackGame, error: NSError) {
+    func didEncounterError(error: NSError) {
         print("Did encounter error: \(error)")
     }
-    func connectionDidEnd(game: GStackGame) {
+    func connectionDidEnd() {
         print("Connection did end")
     }
-    func connectionDidClose(game: GStackGame) {
+    func connectionDidClose() {
         print("Connection did close")
     }
-    func didReceiveTimer(game:GStackGame, timer:GStackGameTimer){
+    func didReceiveTimer(timer:GStackGameTimer){
         //for helping the ui
     }
-    func didReceiveStartRound(game: GStackGame, round: GStackGameStartRound) {
+    func didReceiveErrorMsg(error:GStackGameErrorMsg){
+        print("Receive an error: \(error.error)")
+    }
+    func didReceiveStartRound( round: GStackGameStartRound) {
         
         //clear all the ui
         self.setupQuestionUI()
         self.clockLabel.text = ""
         
     }
-    func didReceiveRoundResult(game: GStackGame, win: GStackGameRoundResult) {
+    func didReceiveRoundResult( win: GStackGameRoundResult) {
         
     }
-    func didReceiveQuestion(game: GStackGame, question: GStackGameQuestion){
-        
-        print("I am in send question")
+    func didReceiveQuestion(question: GStackGameQuestion){
         
         self.setupQuestionUI()
         
@@ -292,7 +293,7 @@ class PlayTraditionalViewController: UIViewController,GStackGameDelegate {
         
         
     }
-    func didReceivePlayerInfo(game: GStackGame, playerInfo: GStackGamePlayerInfo){
+    func didReceivePlayerInfo(playerInfo: GStackGamePlayerInfo){
         
         var info = [String]()
         for array in playerInfo.teamNames! {
@@ -301,7 +302,7 @@ class PlayTraditionalViewController: UIViewController,GStackGameDelegate {
         self.playersNames = info
         
     }
-    func didReceiveCorrectAnswer(game: GStackGame, correctAnswer: GStackGameCorrectAnswer){
+    func didReceiveCorrectAnswer(correctAnswer: GStackGameCorrectAnswer){
         
         self.timeBarTimer?.invalidate()
         
@@ -318,16 +319,18 @@ class PlayTraditionalViewController: UIViewController,GStackGameDelegate {
             }
         }
     }
-    func didReceiveUpdatedScore(game: GStackGame, updatedScore: GStackGameUpdatedScore){
+    func didReceiveUpdatedScore(updatedScore: GStackGameUpdatedScore){
         //implement latter
     }
-    func didReceiveGameResult(game: GStackGame, result: GStackGameResult){
+    func didReceiveGameResult(result: GStackGameResult){
 
         self.setupQuestionUI()
         self.questionLabel.text = "Game Over"
         
         self.isNeedToForfeit = false
         
+        
+        //auto go back to main
         let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC)))
         dispatch_after(delayTime, dispatch_get_main_queue()) {
             
@@ -338,7 +341,7 @@ class PlayTraditionalViewController: UIViewController,GStackGameDelegate {
         }
         
     }
-    func didReceiveOtherGameFinished(game: GStackGame,alive:GStackGameOtherGameFinished){
+    func didReceiveOtherGameFinished(alive:GStackGameOtherGameFinished){
         
         
     }
