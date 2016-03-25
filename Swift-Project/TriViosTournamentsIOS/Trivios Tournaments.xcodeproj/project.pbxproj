@@ -1,0 +1,926 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		200DE1931B7A6E5100505013 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200DE1921B7A6E5100505013 /* SettingsViewController.swift */; };
+		200DE1971B7A78DF00505013 /* SubmitQuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200DE1961B7A78DF00505013 /* SubmitQuestionTableViewController.swift */; };
+		20252FB11B94C7AA00F66652 /* UIButton+tintImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 20252FB01B94C7AA00F66652 /* UIButton+tintImage.m */; };
+		20252FB41B94E81900F66652 /* UIFont+SizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 20252FB31B94E81900F66652 /* UIFont+SizeHelper.m */; };
+		203A2DDF1B6FC94C005AFA17 /* TournamentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203A2DDE1B6FC94C005AFA17 /* TournamentDetailsViewController.swift */; };
+		203A2DE11B6FCC9C005AFA17 /* MiniTournamentLeaderboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203A2DE01B6FCC9C005AFA17 /* MiniTournamentLeaderboardTableViewController.swift */; };
+		203A2DE31B6FCD98005AFA17 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203A2DE21B6FCD98005AFA17 /* MapKit.framework */; };
+		203A2DE71B6FDE4A005AFA17 /* Time Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203A2DE61B6FDE4A005AFA17 /* Time Formatting.swift */; };
+		203B2C3D1B680F0F00B862C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203B2C3C1B680F0F00B862C7 /* AppDelegate.swift */; };
+		203B2C441B680F0F00B862C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 203B2C421B680F0F00B862C7 /* Main.storyboard */; };
+		203B2C461B680F0F00B862C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 203B2C451B680F0F00B862C7 /* Images.xcassets */; };
+		203B2C491B680F0F00B862C7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 203B2C471B680F0F00B862C7 /* LaunchScreen.xib */; };
+		203B2C551B680F0F00B862C7 /* Trivios_TournamentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203B2C541B680F0F00B862C7 /* Trivios_TournamentsTests.swift */; };
+		203B2C601B68102A00B862C7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203B2C5F1B68102A00B862C7 /* HomeViewController.swift */; };
+		204221F91B8E04EE006B457B /* ChangePasswordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204221F81B8E04EE006B457B /* ChangePasswordTableViewController.swift */; };
+		204221FF1B8E59EF006B457B /* EmbeddedWebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204221FE1B8E59EF006B457B /* EmbeddedWebPageViewController.swift */; };
+		204222011B8E6660006B457B /* OtherGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204222001B8E6660006B457B /* OtherGamesViewController.swift */; };
+		2048E1221B90E6B8006974E4 /* TournamentTalkIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2048E1211B90E6B8006974E4 /* TournamentTalkIcon.swift */; };
+		2048E1261B90F543006974E4 /* GlobalFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2048E1251B90F543006974E4 /* GlobalFeedTableViewController.swift */; };
+		2059309B1B71049A00B6AA9A /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2059309A1B71049A00B6AA9A /* GamePlayViewController.swift */; };
+		206294B51B7D017400DDA901 /* CorrectAnswerDotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206294B41B7D017400DDA901 /* CorrectAnswerDotsView.swift */; };
+		206294B71B7D2D4500DDA901 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206294B61B7D2D4500DDA901 /* GameOverViewController.swift */; };
+		206837941B8B916200BBC8AC /* PromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837931B8B916200BBC8AC /* PromotionsViewController.swift */; };
+		206837961B8B948600BBC8AC /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837951B8B948600BBC8AC /* ShopViewController.swift */; };
+		206837981B8B9BB500BBC8AC /* TournamentTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206837971B8B9BB500BBC8AC /* TournamentTalkViewController.swift */; };
+		2068379E1B8BBD0200BBC8AC /* ReviewQuestionsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2068379D1B8BBD0200BBC8AC /* ReviewQuestionsPageViewController.swift */; };
+		206837A01B8BBDCE00BBC8AC /* ReviewQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2068379F1B8BBDCE00BBC8AC /* ReviewQuestionViewController.swift */; };
+		206EB9551B8CEE7800C32873 /* ReportQuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206EB9541B8CEE7800C32873 /* ReportQuestionTableViewController.swift */; };
+		206EB9571B8CF5AE00C32873 /* SendFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206EB9561B8CF5AE00C32873 /* SendFeedbackViewController.swift */; };
+		206EB9591B8CFB5200C32873 /* OtherSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206EB9581B8CFB5200C32873 /* OtherSettingsTableViewController.swift */; };
+		206EB95B1B8D0D0F00C32873 /* AccountInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206EB95A1B8D0D0F00C32873 /* AccountInformationTableViewController.swift */; };
+		206F8EAF1B7B9301001AACD3 /* LoginTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F8EAE1B7B9301001AACD3 /* LoginTypeViewController.swift */; };
+		206F8EB11B7B946F001AACD3 /* LoginEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F8EB01B7B946F001AACD3 /* LoginEmailViewController.swift */; };
+		206F8EB31B7B95D1001AACD3 /* LoginUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F8EB21B7B95D1001AACD3 /* LoginUsernameViewController.swift */; };
+		206F8EB81B7BA030001AACD3 /* error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 206F8EB51B7BA030001AACD3 /* error@2x.png */; };
+		206F8EB91B7BA030001AACD3 /* TextFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 206F8EB71B7BA030001AACD3 /* TextFieldValidator.m */; };
+		206F8EBB1B7BC1F8001AACD3 /* Avatars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F8EBA1B7BC1F8001AACD3 /* Avatars.swift */; };
+		206F8EBD1B7BDD5D001AACD3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 206F8EBC1B7BDD5D001AACD3 /* FBSDKCoreKit.framework */; };
+		206F8EBF1B7BDFAF001AACD3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 206F8EBE1B7BDFAF001AACD3 /* FBSDKLoginKit.framework */; };
+		20ADBA411B692EFE00EF5D42 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ADBA401B692EFE00EF5D42 /* Colors.swift */; };
+		20ADBA4C1B694B1500EF5D42 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ADBA4B1B694B1500EF5D42 /* AsyncImageView.m */; };
+		20C063171B682CEF00325356 /* TournamentsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C063161B682CEF00325356 /* TournamentsPageViewController.swift */; };
+		20C063191B682D1600325356 /* TournamentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C063181B682D1600325356 /* TournamentsTableViewController.swift */; };
+		20CD9AFC1B878314002FD7FD /* gStack Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9AF11B878314002FD7FD /* gStack Info.swift */; };
+		20CD9AFD1B878314002FD7FD /* gStackMasterDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9AF21B878314002FD7FD /* gStackMasterDataFetcher.swift */; };
+		20CD9AFE1B878314002FD7FD /* gStackNotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9AF31B878314002FD7FD /* gStackNotificationHandler.swift */; };
+		20CD9AFF1B878314002FD7FD /* gStack Private Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9AF41B878314002FD7FD /* gStack Private Routes.swift */; };
+		20CD9B001B878314002FD7FD /* gStack Public Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9AF51B878314002FD7FD /* gStack Public Routes.swift */; };
+		20CD9B011B878314002FD7FD /* gStackGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9AF61B878314002FD7FD /* gStackGame.swift */; };
+		20CD9B021B878314002FD7FD /* gStackQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9AF71B878314002FD7FD /* gStackQuestion.swift */; };
+		20CD9B031B878314002FD7FD /* gStackTournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9AF81B878314002FD7FD /* gStackTournament.swift */; };
+		20CD9B041B878314002FD7FD /* triviaUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9AF91B878314002FD7FD /* triviaUser.swift */; };
+		20CD9B051B878314002FD7FD /* triviaUserInbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9AFA1B878314002FD7FD /* triviaUserInbox.swift */; };
+		20CD9B081B878504002FD7FD /* Facebook Data Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9B071B878504002FD7FD /* Facebook Data Fetcher.swift */; };
+		20E4EDEE1B7502D000A769B3 /* TournamentsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E4EDED1B7502D000A769B3 /* TournamentsCollectionViewController.swift */; };
+		20F3F8A61B7E3D8300963FA6 /* ThreadsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3F8A51B7E3D8300963FA6 /* ThreadsTableViewController.swift */; };
+		20F3F8AA1B7E440100963FA6 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F3F8A91B7E440100963FA6 /* NSDate+Utilities.m */; };
+		20F3F8AC1B7E454300963FA6 /* ThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3F8AB1B7E454300963FA6 /* ThreadViewController.swift */; };
+		20F3F8B21B7E7FDE00963FA6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3F8B11B7E7FDE00963FA6 /* ProfileViewController.swift */; };
+		20F3F8B51B7E900700963FA6 /* NSString+USStateMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F3F8B41B7E900700963FA6 /* NSString+USStateMap.m */; };
+		20F3F8B71B7E901000963FA6 /* USStateAbbreviations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20F3F8B61B7E901000963FA6 /* USStateAbbreviations.plist */; };
+		20F3F8B91B7E989900963FA6 /* ComposeMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3F8B81B7E989900963FA6 /* ComposeMessageViewController.swift */; };
+		289950FF1CA4A81E002A33F9 /* trivia Public Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289950FE1CA4A81E002A33F9 /* trivia Public Routes.swift */; };
+		289951011CA5B66C002A33F9 /* trivia Private Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289951001CA5B66C002A33F9 /* trivia Private Routes.swift */; };
+		289951031CA5F61A002A33F9 /* triviaTournamentTalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289951021CA5F61A002A33F9 /* triviaTournamentTalk.swift */; };
+		28F4D2631CA321AB00BAF8A9 /* ServerInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28F4D2621CA321AB00BAF8A9 /* ServerInfo.plist */; };
+		28F4D2651CA3513E00BAF8A9 /* TempFileForRoutesFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F4D2641CA3513E00BAF8A9 /* TempFileForRoutesFunctions.swift */; };
+		28F4D2671CA3539D00BAF8A9 /* triviaDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F4D2661CA3539D00BAF8A9 /* triviaDataFetcher.swift */; };
+		28F4D2691CA3552100BAF8A9 /* App Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F4D2681CA3552100BAF8A9 /* App Info.swift */; };
+		28F4D26D1CA38D3E00BAF8A9 /* testqstackcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F4D26C1CA38D3E00BAF8A9 /* testqstackcontroller.swift */; };
+		28F4D26F1CA46C9E00BAF8A9 /* triviaNotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F4D26E1CA46C9E00BAF8A9 /* triviaNotificationHandler.swift */; };
+		C1DC17578E528603A647821C /* libPods-Trivios Tournaments.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F831AE56AA76B46C80FBEDD /* libPods-Trivios Tournaments.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		203B2C4F1B680F0F00B862C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 203B2C2F1B680F0F00B862C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 203B2C361B680F0F00B862C7;
+			remoteInfo = "Trivios Tournaments";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		200DE1921B7A6E5100505013 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		200DE1961B7A78DF00505013 /* SubmitQuestionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitQuestionTableViewController.swift; sourceTree = "<group>"; };
+		20252FAF1B94C7AA00F66652 /* UIButton+tintImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+tintImage.h"; sourceTree = "<group>"; };
+		20252FB01B94C7AA00F66652 /* UIButton+tintImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+tintImage.m"; sourceTree = "<group>"; };
+		20252FB21B94E81900F66652 /* UIFont+SizeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+SizeHelper.h"; sourceTree = "<group>"; };
+		20252FB31B94E81900F66652 /* UIFont+SizeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+SizeHelper.m"; sourceTree = "<group>"; };
+		203A2DDE1B6FC94C005AFA17 /* TournamentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentDetailsViewController.swift; sourceTree = "<group>"; };
+		203A2DE01B6FCC9C005AFA17 /* MiniTournamentLeaderboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniTournamentLeaderboardTableViewController.swift; sourceTree = "<group>"; };
+		203A2DE21B6FCD98005AFA17 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		203A2DE61B6FDE4A005AFA17 /* Time Formatting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Time Formatting.swift"; sourceTree = "<group>"; };
+		203B2C371B680F0F00B862C7 /* Trivios Tournaments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trivios Tournaments.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		203B2C3B1B680F0F00B862C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		203B2C3C1B680F0F00B862C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		203B2C431B680F0F00B862C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		203B2C451B680F0F00B862C7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		203B2C481B680F0F00B862C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		203B2C4E1B680F0F00B862C7 /* Trivios TournamentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Trivios TournamentsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		203B2C531B680F0F00B862C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		203B2C541B680F0F00B862C7 /* Trivios_TournamentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trivios_TournamentsTests.swift; sourceTree = "<group>"; };
+		203B2C5F1B68102A00B862C7 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		204221F81B8E04EE006B457B /* ChangePasswordTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordTableViewController.swift; sourceTree = "<group>"; };
+		204221FE1B8E59EF006B457B /* EmbeddedWebPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbeddedWebPageViewController.swift; sourceTree = "<group>"; };
+		204222001B8E6660006B457B /* OtherGamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherGamesViewController.swift; sourceTree = "<group>"; };
+		2048E1211B90E6B8006974E4 /* TournamentTalkIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentTalkIcon.swift; sourceTree = "<group>"; };
+		2048E1251B90F543006974E4 /* GlobalFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFeedTableViewController.swift; sourceTree = "<group>"; };
+		2059309A1B71049A00B6AA9A /* GamePlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
+		206294B41B7D017400DDA901 /* CorrectAnswerDotsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorrectAnswerDotsView.swift; sourceTree = "<group>"; };
+		206294B61B7D2D4500DDA901 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		206837931B8B916200BBC8AC /* PromotionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionsViewController.swift; sourceTree = "<group>"; };
+		206837951B8B948600BBC8AC /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		206837971B8B9BB500BBC8AC /* TournamentTalkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentTalkViewController.swift; sourceTree = "<group>"; };
+		2068379D1B8BBD0200BBC8AC /* ReviewQuestionsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewQuestionsPageViewController.swift; sourceTree = "<group>"; };
+		2068379F1B8BBDCE00BBC8AC /* ReviewQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewQuestionViewController.swift; sourceTree = "<group>"; };
+		206EB9541B8CEE7800C32873 /* ReportQuestionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportQuestionTableViewController.swift; sourceTree = "<group>"; };
+		206EB9561B8CF5AE00C32873 /* SendFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendFeedbackViewController.swift; sourceTree = "<group>"; };
+		206EB9581B8CFB5200C32873 /* OtherSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherSettingsTableViewController.swift; sourceTree = "<group>"; };
+		206EB95A1B8D0D0F00C32873 /* AccountInformationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInformationTableViewController.swift; sourceTree = "<group>"; };
+		206F8EAE1B7B9301001AACD3 /* LoginTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTypeViewController.swift; sourceTree = "<group>"; };
+		206F8EB01B7B946F001AACD3 /* LoginEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginEmailViewController.swift; sourceTree = "<group>"; };
+		206F8EB21B7B95D1001AACD3 /* LoginUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUsernameViewController.swift; sourceTree = "<group>"; };
+		206F8EB51B7BA030001AACD3 /* error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "error@2x.png"; sourceTree = "<group>"; };
+		206F8EB61B7BA030001AACD3 /* TextFieldValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldValidator.h; sourceTree = "<group>"; };
+		206F8EB71B7BA030001AACD3 /* TextFieldValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldValidator.m; sourceTree = "<group>"; };
+		206F8EBA1B7BC1F8001AACD3 /* Avatars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avatars.swift; sourceTree = "<group>"; };
+		206F8EBC1B7BDD5D001AACD3 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		206F8EBE1B7BDFAF001AACD3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		20ADBA401B692EFE00EF5D42 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		20ADBA481B69358000EF5D42 /* Trivios-Tournaments-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Trivios-Tournaments-Bridging-Header.h"; sourceTree = "<group>"; };
+		20ADBA4A1B694B1500EF5D42 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		20ADBA4B1B694B1500EF5D42 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		20C063161B682CEF00325356 /* TournamentsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentsPageViewController.swift; sourceTree = "<group>"; };
+		20C063181B682D1600325356 /* TournamentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentsTableViewController.swift; sourceTree = "<group>"; };
+		20CD9AF11B878314002FD7FD /* gStack Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "gStack Info.swift"; sourceTree = "<group>"; };
+		20CD9AF21B878314002FD7FD /* gStackMasterDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gStackMasterDataFetcher.swift; sourceTree = "<group>"; };
+		20CD9AF31B878314002FD7FD /* gStackNotificationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gStackNotificationHandler.swift; sourceTree = "<group>"; };
+		20CD9AF41B878314002FD7FD /* gStack Private Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "gStack Private Routes.swift"; sourceTree = "<group>"; };
+		20CD9AF51B878314002FD7FD /* gStack Public Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "gStack Public Routes.swift"; sourceTree = "<group>"; };
+		20CD9AF61B878314002FD7FD /* gStackGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gStackGame.swift; sourceTree = "<group>"; };
+		20CD9AF71B878314002FD7FD /* gStackQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gStackQuestion.swift; sourceTree = "<group>"; };
+		20CD9AF81B878314002FD7FD /* gStackTournament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gStackTournament.swift; sourceTree = "<group>"; };
+		20CD9AF91B878314002FD7FD /* triviaUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = triviaUser.swift; path = qStackSDK/triviaUser.swift; sourceTree = "<group>"; };
+		20CD9AFA1B878314002FD7FD /* triviaUserInbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = triviaUserInbox.swift; path = qStackSDK/triviaUserInbox.swift; sourceTree = "<group>"; };
+		20CD9B071B878504002FD7FD /* Facebook Data Fetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Facebook Data Fetcher.swift"; sourceTree = "<group>"; };
+		20E4EDED1B7502D000A769B3 /* TournamentsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentsCollectionViewController.swift; sourceTree = "<group>"; };
+		20F3F8A51B7E3D8300963FA6 /* ThreadsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadsTableViewController.swift; sourceTree = "<group>"; };
+		20F3F8A81B7E440100963FA6 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
+		20F3F8A91B7E440100963FA6 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
+		20F3F8AB1B7E454300963FA6 /* ThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadViewController.swift; sourceTree = "<group>"; };
+		20F3F8B11B7E7FDE00963FA6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		20F3F8B31B7E900700963FA6 /* NSString+USStateMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+USStateMap.h"; sourceTree = "<group>"; };
+		20F3F8B41B7E900700963FA6 /* NSString+USStateMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+USStateMap.m"; sourceTree = "<group>"; };
+		20F3F8B61B7E901000963FA6 /* USStateAbbreviations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = USStateAbbreviations.plist; sourceTree = "<group>"; };
+		20F3F8B81B7E989900963FA6 /* ComposeMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeMessageViewController.swift; sourceTree = "<group>"; };
+		289950FE1CA4A81E002A33F9 /* trivia Public Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "trivia Public Routes.swift"; sourceTree = "<group>"; };
+		289951001CA5B66C002A33F9 /* trivia Private Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "trivia Private Routes.swift"; sourceTree = "<group>"; };
+		289951021CA5F61A002A33F9 /* triviaTournamentTalk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = triviaTournamentTalk.swift; sourceTree = "<group>"; };
+		28F4D2621CA321AB00BAF8A9 /* ServerInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServerInfo.plist; sourceTree = "<group>"; };
+		28F4D2641CA3513E00BAF8A9 /* TempFileForRoutesFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempFileForRoutesFunctions.swift; sourceTree = "<group>"; };
+		28F4D2661CA3539D00BAF8A9 /* triviaDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = triviaDataFetcher.swift; sourceTree = "<group>"; };
+		28F4D2681CA3552100BAF8A9 /* App Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "App Info.swift"; sourceTree = "<group>"; };
+		28F4D26C1CA38D3E00BAF8A9 /* testqstackcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testqstackcontroller.swift; sourceTree = "<group>"; };
+		28F4D26E1CA46C9E00BAF8A9 /* triviaNotificationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = triviaNotificationHandler.swift; sourceTree = "<group>"; };
+		8A0B8F8D5ABEA1FC36C6B4B7 /* Pods-Trivios Tournaments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trivios Tournaments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trivios Tournaments/Pods-Trivios Tournaments.debug.xcconfig"; sourceTree = "<group>"; };
+		9F831AE56AA76B46C80FBEDD /* libPods-Trivios Tournaments.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Trivios Tournaments.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC3B22492D114CB3FC4214E4 /* Pods-Trivios Tournaments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trivios Tournaments.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trivios Tournaments/Pods-Trivios Tournaments.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		203B2C341B680F0F00B862C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				203A2DE31B6FCD98005AFA17 /* MapKit.framework in Frameworks */,
+				206F8EBD1B7BDD5D001AACD3 /* FBSDKCoreKit.framework in Frameworks */,
+				206F8EBF1B7BDFAF001AACD3 /* FBSDKLoginKit.framework in Frameworks */,
+				C1DC17578E528603A647821C /* libPods-Trivios Tournaments.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		203B2C4B1B680F0F00B862C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		200DE1911B7A6E2000505013 /* Settings Tab */ = {
+			isa = PBXGroup;
+			children = (
+				200DE1921B7A6E5100505013 /* SettingsViewController.swift */,
+				20F3F8B11B7E7FDE00963FA6 /* ProfileViewController.swift */,
+				200DE1961B7A78DF00505013 /* SubmitQuestionTableViewController.swift */,
+				206837931B8B916200BBC8AC /* PromotionsViewController.swift */,
+				206837951B8B948600BBC8AC /* ShopViewController.swift */,
+				206EB9581B8CFB5200C32873 /* OtherSettingsTableViewController.swift */,
+				206EB95A1B8D0D0F00C32873 /* AccountInformationTableViewController.swift */,
+				204221F81B8E04EE006B457B /* ChangePasswordTableViewController.swift */,
+				204221FE1B8E59EF006B457B /* EmbeddedWebPageViewController.swift */,
+				204222001B8E6660006B457B /* OtherGamesViewController.swift */,
+			);
+			name = "Settings Tab";
+			sourceTree = "<group>";
+		};
+		20252FAE1B94C79500F66652 /* Tinted Button */ = {
+			isa = PBXGroup;
+			children = (
+				20252FAF1B94C7AA00F66652 /* UIButton+tintImage.h */,
+				20252FB01B94C7AA00F66652 /* UIButton+tintImage.m */,
+			);
+			name = "Tinted Button";
+			sourceTree = "<group>";
+		};
+		20252FB51B94E82200F66652 /* Font Size */ = {
+			isa = PBXGroup;
+			children = (
+				20252FB21B94E81900F66652 /* UIFont+SizeHelper.h */,
+				20252FB31B94E81900F66652 /* UIFont+SizeHelper.m */,
+			);
+			name = "Font Size";
+			sourceTree = "<group>";
+		};
+		203B2C2E1B680F0F00B862C7 = {
+			isa = PBXGroup;
+			children = (
+				203B2C391B680F0F00B862C7 /* Trivios Tournaments */,
+				203B2C511B680F0F00B862C7 /* Trivios TournamentsTests */,
+				203B2C381B680F0F00B862C7 /* Products */,
+				D37ABB996006B8FD7A396351 /* Pods */,
+				CC02AE64E02BA0F4F1606233 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		203B2C381B680F0F00B862C7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				203B2C371B680F0F00B862C7 /* Trivios Tournaments.app */,
+				203B2C4E1B680F0F00B862C7 /* Trivios TournamentsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		203B2C391B680F0F00B862C7 /* Trivios Tournaments */ = {
+			isa = PBXGroup;
+			children = (
+				28F4D2641CA3513E00BAF8A9 /* TempFileForRoutesFunctions.swift */,
+				289950FD1CA4A59B002A33F9 /* TriviaSwagAPI */,
+				20CD9AF01B8782E4002FD7FD /* GStackAPI */,
+				20ADBA421B69321300EF5D42 /* Model */,
+				20ADBA3F1B692ED000EF5D42 /* UI Helpers */,
+				203B2C5E1B68100F00B862C7 /* View Controllers */,
+				203B2C3C1B680F0F00B862C7 /* AppDelegate.swift */,
+				203B2C421B680F0F00B862C7 /* Main.storyboard */,
+				203B2C451B680F0F00B862C7 /* Images.xcassets */,
+				203B2C471B680F0F00B862C7 /* LaunchScreen.xib */,
+				203B2C3A1B680F0F00B862C7 /* Supporting Files */,
+				20ADBA481B69358000EF5D42 /* Trivios-Tournaments-Bridging-Header.h */,
+				28F4D26C1CA38D3E00BAF8A9 /* testqstackcontroller.swift */,
+			);
+			path = "Trivios Tournaments";
+			sourceTree = "<group>";
+		};
+		203B2C3A1B680F0F00B862C7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				203B2C3B1B680F0F00B862C7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		203B2C511B680F0F00B862C7 /* Trivios TournamentsTests */ = {
+			isa = PBXGroup;
+			children = (
+				203B2C541B680F0F00B862C7 /* Trivios_TournamentsTests.swift */,
+				203B2C521B680F0F00B862C7 /* Supporting Files */,
+			);
+			path = "Trivios TournamentsTests";
+			sourceTree = "<group>";
+		};
+		203B2C521B680F0F00B862C7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				203B2C531B680F0F00B862C7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		203B2C5E1B68100F00B862C7 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				206F8EAD1B7B92C9001AACD3 /* Login Controllers */,
+				20E4EDF61B7536B400A769B3 /* Home Tab */,
+				2048E1241B90F502006974E4 /* Global Feed Tab */,
+				20F3F8A41B7E3B1200963FA6 /* Messages Tab */,
+				200DE1911B7A6E2000505013 /* Settings Tab */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		2048E1241B90F502006974E4 /* Global Feed Tab */ = {
+			isa = PBXGroup;
+			children = (
+				2048E1251B90F543006974E4 /* GlobalFeedTableViewController.swift */,
+			);
+			name = "Global Feed Tab";
+			sourceTree = "<group>";
+		};
+		206F8EAD1B7B92C9001AACD3 /* Login Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				206F8EAE1B7B9301001AACD3 /* LoginTypeViewController.swift */,
+				206F8EB01B7B946F001AACD3 /* LoginEmailViewController.swift */,
+				206F8EB21B7B95D1001AACD3 /* LoginUsernameViewController.swift */,
+			);
+			name = "Login Controllers";
+			sourceTree = "<group>";
+		};
+		206F8EB41B7BA01A001AACD3 /* Validate Text Field */ = {
+			isa = PBXGroup;
+			children = (
+				206F8EB51B7BA030001AACD3 /* error@2x.png */,
+				206F8EB61B7BA030001AACD3 /* TextFieldValidator.h */,
+				206F8EB71B7BA030001AACD3 /* TextFieldValidator.m */,
+			);
+			name = "Validate Text Field";
+			sourceTree = "<group>";
+		};
+		20ADBA3F1B692ED000EF5D42 /* UI Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				20252FB51B94E82200F66652 /* Font Size */,
+				20252FAE1B94C79500F66652 /* Tinted Button */,
+				206F8EB41B7BA01A001AACD3 /* Validate Text Field */,
+				20ADBA491B694B0600EF5D42 /* Asynchronous Image Loading */,
+				20ADBA401B692EFE00EF5D42 /* Colors.swift */,
+				206F8EBA1B7BC1F8001AACD3 /* Avatars.swift */,
+				206294B41B7D017400DDA901 /* CorrectAnswerDotsView.swift */,
+				2048E1211B90E6B8006974E4 /* TournamentTalkIcon.swift */,
+			);
+			name = "UI Helpers";
+			sourceTree = "<group>";
+		};
+		20ADBA421B69321300EF5D42 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				20F3F8A71B7E43DA00963FA6 /* Object Helpers */,
+				203A2DE61B6FDE4A005AFA17 /* Time Formatting.swift */,
+				20CD9B071B878504002FD7FD /* Facebook Data Fetcher.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		20ADBA491B694B0600EF5D42 /* Asynchronous Image Loading */ = {
+			isa = PBXGroup;
+			children = (
+				20ADBA4A1B694B1500EF5D42 /* AsyncImageView.h */,
+				20ADBA4B1B694B1500EF5D42 /* AsyncImageView.m */,
+			);
+			name = "Asynchronous Image Loading";
+			sourceTree = "<group>";
+		};
+		20CD9AF01B8782E4002FD7FD /* GStackAPI */ = {
+			isa = PBXGroup;
+			children = (
+				20CD9AF11B878314002FD7FD /* gStack Info.swift */,
+				20CD9AF21B878314002FD7FD /* gStackMasterDataFetcher.swift */,
+				20CD9AF31B878314002FD7FD /* gStackNotificationHandler.swift */,
+				20CD9AF41B878314002FD7FD /* gStack Private Routes.swift */,
+				20CD9AF51B878314002FD7FD /* gStack Public Routes.swift */,
+				20CD9AF61B878314002FD7FD /* gStackGame.swift */,
+				20CD9AF71B878314002FD7FD /* gStackQuestion.swift */,
+				20CD9AF81B878314002FD7FD /* gStackTournament.swift */,
+				28F4D2621CA321AB00BAF8A9 /* ServerInfo.plist */,
+			);
+			name = GStackAPI;
+			path = qStackSDK;
+			sourceTree = "<group>";
+		};
+		20E4EDF61B7536B400A769B3 /* Home Tab */ = {
+			isa = PBXGroup;
+			children = (
+				203B2C5F1B68102A00B862C7 /* HomeViewController.swift */,
+				20C063161B682CEF00325356 /* TournamentsPageViewController.swift */,
+				20C063181B682D1600325356 /* TournamentsTableViewController.swift */,
+				20E4EDED1B7502D000A769B3 /* TournamentsCollectionViewController.swift */,
+				203A2DDE1B6FC94C005AFA17 /* TournamentDetailsViewController.swift */,
+				203A2DE01B6FCC9C005AFA17 /* MiniTournamentLeaderboardTableViewController.swift */,
+				2059309A1B71049A00B6AA9A /* GamePlayViewController.swift */,
+				206294B61B7D2D4500DDA901 /* GameOverViewController.swift */,
+				206837971B8B9BB500BBC8AC /* TournamentTalkViewController.swift */,
+				2068379D1B8BBD0200BBC8AC /* ReviewQuestionsPageViewController.swift */,
+				2068379F1B8BBDCE00BBC8AC /* ReviewQuestionViewController.swift */,
+				206EB9541B8CEE7800C32873 /* ReportQuestionTableViewController.swift */,
+				206EB9561B8CF5AE00C32873 /* SendFeedbackViewController.swift */,
+			);
+			name = "Home Tab";
+			sourceTree = "<group>";
+		};
+		20F3F8A41B7E3B1200963FA6 /* Messages Tab */ = {
+			isa = PBXGroup;
+			children = (
+				20F3F8A51B7E3D8300963FA6 /* ThreadsTableViewController.swift */,
+				20F3F8AB1B7E454300963FA6 /* ThreadViewController.swift */,
+				20F3F8B81B7E989900963FA6 /* ComposeMessageViewController.swift */,
+			);
+			name = "Messages Tab";
+			sourceTree = "<group>";
+		};
+		20F3F8A71B7E43DA00963FA6 /* Object Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				20F3F8B31B7E900700963FA6 /* NSString+USStateMap.h */,
+				20F3F8B41B7E900700963FA6 /* NSString+USStateMap.m */,
+				20F3F8B61B7E901000963FA6 /* USStateAbbreviations.plist */,
+				20F3F8A81B7E440100963FA6 /* NSDate+Utilities.h */,
+				20F3F8A91B7E440100963FA6 /* NSDate+Utilities.m */,
+			);
+			name = "Object Helpers";
+			sourceTree = "<group>";
+		};
+		289950FD1CA4A59B002A33F9 /* TriviaSwagAPI */ = {
+			isa = PBXGroup;
+			children = (
+				28F4D2681CA3552100BAF8A9 /* App Info.swift */,
+				28F4D2661CA3539D00BAF8A9 /* triviaDataFetcher.swift */,
+				20CD9AF91B878314002FD7FD /* triviaUser.swift */,
+				28F4D26E1CA46C9E00BAF8A9 /* triviaNotificationHandler.swift */,
+				20CD9AFA1B878314002FD7FD /* triviaUserInbox.swift */,
+				289951021CA5F61A002A33F9 /* triviaTournamentTalk.swift */,
+				289950FE1CA4A81E002A33F9 /* trivia Public Routes.swift */,
+				289951001CA5B66C002A33F9 /* trivia Private Routes.swift */,
+			);
+			name = TriviaSwagAPI;
+			sourceTree = "<group>";
+		};
+		CC02AE64E02BA0F4F1606233 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				206F8EBE1B7BDFAF001AACD3 /* FBSDKLoginKit.framework */,
+				206F8EBC1B7BDD5D001AACD3 /* FBSDKCoreKit.framework */,
+				203A2DE21B6FCD98005AFA17 /* MapKit.framework */,
+				9F831AE56AA76B46C80FBEDD /* libPods-Trivios Tournaments.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D37ABB996006B8FD7A396351 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A0B8F8D5ABEA1FC36C6B4B7 /* Pods-Trivios Tournaments.debug.xcconfig */,
+				EC3B22492D114CB3FC4214E4 /* Pods-Trivios Tournaments.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		203B2C361B680F0F00B862C7 /* Trivios Tournaments */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 203B2C581B680F0F00B862C7 /* Build configuration list for PBXNativeTarget "Trivios Tournaments" */;
+			buildPhases = (
+				5BD8776F8B58ECFE933A52E8 /* Check Pods Manifest.lock */,
+				203B2C331B680F0F00B862C7 /* Sources */,
+				203B2C341B680F0F00B862C7 /* Frameworks */,
+				203B2C351B680F0F00B862C7 /* Resources */,
+				2870BD28FB1AD6E171577BB8 /* Copy Pods Resources */,
+				AC083D1EFBE023BB557D5FB7 /* Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Trivios Tournaments";
+			productName = "Trivios Tournaments";
+			productReference = 203B2C371B680F0F00B862C7 /* Trivios Tournaments.app */;
+			productType = "com.apple.product-type.application";
+		};
+		203B2C4D1B680F0F00B862C7 /* Trivios TournamentsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 203B2C5B1B680F0F00B862C7 /* Build configuration list for PBXNativeTarget "Trivios TournamentsTests" */;
+			buildPhases = (
+				203B2C4A1B680F0F00B862C7 /* Sources */,
+				203B2C4B1B680F0F00B862C7 /* Frameworks */,
+				203B2C4C1B680F0F00B862C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				203B2C501B680F0F00B862C7 /* PBXTargetDependency */,
+			);
+			name = "Trivios TournamentsTests";
+			productName = "Trivios TournamentsTests";
+			productReference = 203B2C4E1B680F0F00B862C7 /* Trivios TournamentsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		203B2C2F1B680F0F00B862C7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Purple Gator";
+				TargetAttributes = {
+					203B2C361B680F0F00B862C7 = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = A4KK8R4439;
+					};
+					203B2C4D1B680F0F00B862C7 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 203B2C361B680F0F00B862C7;
+					};
+				};
+			};
+			buildConfigurationList = 203B2C321B680F0F00B862C7 /* Build configuration list for PBXProject "Trivios Tournaments" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 203B2C2E1B680F0F00B862C7;
+			productRefGroup = 203B2C381B680F0F00B862C7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				203B2C361B680F0F00B862C7 /* Trivios Tournaments */,
+				203B2C4D1B680F0F00B862C7 /* Trivios TournamentsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		203B2C351B680F0F00B862C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				203B2C441B680F0F00B862C7 /* Main.storyboard in Resources */,
+				28F4D2631CA321AB00BAF8A9 /* ServerInfo.plist in Resources */,
+				206F8EB81B7BA030001AACD3 /* error@2x.png in Resources */,
+				203B2C491B680F0F00B862C7 /* LaunchScreen.xib in Resources */,
+				20F3F8B71B7E901000963FA6 /* USStateAbbreviations.plist in Resources */,
+				203B2C461B680F0F00B862C7 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		203B2C4C1B680F0F00B862C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2870BD28FB1AD6E171577BB8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Trivios Tournaments/Pods-Trivios Tournaments-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BD8776F8B58ECFE933A52E8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AC083D1EFBE023BB557D5FB7 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Trivios Tournaments/Pods-Trivios Tournaments-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		203B2C331B680F0F00B862C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				206837A01B8BBDCE00BBC8AC /* ReviewQuestionViewController.swift in Sources */,
+				206F8EB31B7B95D1001AACD3 /* LoginUsernameViewController.swift in Sources */,
+				28F4D26F1CA46C9E00BAF8A9 /* triviaNotificationHandler.swift in Sources */,
+				289950FF1CA4A81E002A33F9 /* trivia Public Routes.swift in Sources */,
+				204221FF1B8E59EF006B457B /* EmbeddedWebPageViewController.swift in Sources */,
+				20CD9AFE1B878314002FD7FD /* gStackNotificationHandler.swift in Sources */,
+				289951031CA5F61A002A33F9 /* triviaTournamentTalk.swift in Sources */,
+				204221F91B8E04EE006B457B /* ChangePasswordTableViewController.swift in Sources */,
+				2068379E1B8BBD0200BBC8AC /* ReviewQuestionsPageViewController.swift in Sources */,
+				206EB95B1B8D0D0F00C32873 /* AccountInformationTableViewController.swift in Sources */,
+				200DE1971B7A78DF00505013 /* SubmitQuestionTableViewController.swift in Sources */,
+				20F3F8A61B7E3D8300963FA6 /* ThreadsTableViewController.swift in Sources */,
+				203B2C3D1B680F0F00B862C7 /* AppDelegate.swift in Sources */,
+				20ADBA411B692EFE00EF5D42 /* Colors.swift in Sources */,
+				28F4D26D1CA38D3E00BAF8A9 /* testqstackcontroller.swift in Sources */,
+				20F3F8AC1B7E454300963FA6 /* ThreadViewController.swift in Sources */,
+				206F8EBB1B7BC1F8001AACD3 /* Avatars.swift in Sources */,
+				20CD9AFC1B878314002FD7FD /* gStack Info.swift in Sources */,
+				20CD9B041B878314002FD7FD /* triviaUser.swift in Sources */,
+				20F3F8B51B7E900700963FA6 /* NSString+USStateMap.m in Sources */,
+				20F3F8B21B7E7FDE00963FA6 /* ProfileViewController.swift in Sources */,
+				20CD9B011B878314002FD7FD /* gStackGame.swift in Sources */,
+				203B2C601B68102A00B862C7 /* HomeViewController.swift in Sources */,
+				203A2DE11B6FCC9C005AFA17 /* MiniTournamentLeaderboardTableViewController.swift in Sources */,
+				206294B71B7D2D4500DDA901 /* GameOverViewController.swift in Sources */,
+				206837941B8B916200BBC8AC /* PromotionsViewController.swift in Sources */,
+				206837961B8B948600BBC8AC /* ShopViewController.swift in Sources */,
+				28F4D2671CA3539D00BAF8A9 /* triviaDataFetcher.swift in Sources */,
+				204222011B8E6660006B457B /* OtherGamesViewController.swift in Sources */,
+				20C063191B682D1600325356 /* TournamentsTableViewController.swift in Sources */,
+				203A2DDF1B6FC94C005AFA17 /* TournamentDetailsViewController.swift in Sources */,
+				206EB9571B8CF5AE00C32873 /* SendFeedbackViewController.swift in Sources */,
+				20F3F8B91B7E989900963FA6 /* ComposeMessageViewController.swift in Sources */,
+				200DE1931B7A6E5100505013 /* SettingsViewController.swift in Sources */,
+				28F4D2691CA3552100BAF8A9 /* App Info.swift in Sources */,
+				20F3F8AA1B7E440100963FA6 /* NSDate+Utilities.m in Sources */,
+				20CD9B051B878314002FD7FD /* triviaUserInbox.swift in Sources */,
+				20CD9AFF1B878314002FD7FD /* gStack Private Routes.swift in Sources */,
+				2048E1261B90F543006974E4 /* GlobalFeedTableViewController.swift in Sources */,
+				206294B51B7D017400DDA901 /* CorrectAnswerDotsView.swift in Sources */,
+				206F8EB91B7BA030001AACD3 /* TextFieldValidator.m in Sources */,
+				20C063171B682CEF00325356 /* TournamentsPageViewController.swift in Sources */,
+				20CD9B031B878314002FD7FD /* gStackTournament.swift in Sources */,
+				203A2DE71B6FDE4A005AFA17 /* Time Formatting.swift in Sources */,
+				2048E1221B90E6B8006974E4 /* TournamentTalkIcon.swift in Sources */,
+				20252FB41B94E81900F66652 /* UIFont+SizeHelper.m in Sources */,
+				2059309B1B71049A00B6AA9A /* GamePlayViewController.swift in Sources */,
+				206F8EAF1B7B9301001AACD3 /* LoginTypeViewController.swift in Sources */,
+				28F4D2651CA3513E00BAF8A9 /* TempFileForRoutesFunctions.swift in Sources */,
+				206EB9551B8CEE7800C32873 /* ReportQuestionTableViewController.swift in Sources */,
+				20CD9AFD1B878314002FD7FD /* gStackMasterDataFetcher.swift in Sources */,
+				206837981B8B9BB500BBC8AC /* TournamentTalkViewController.swift in Sources */,
+				206F8EB11B7B946F001AACD3 /* LoginEmailViewController.swift in Sources */,
+				206EB9591B8CFB5200C32873 /* OtherSettingsTableViewController.swift in Sources */,
+				20252FB11B94C7AA00F66652 /* UIButton+tintImage.m in Sources */,
+				289951011CA5B66C002A33F9 /* trivia Private Routes.swift in Sources */,
+				20CD9B001B878314002FD7FD /* gStack Public Routes.swift in Sources */,
+				20E4EDEE1B7502D000A769B3 /* TournamentsCollectionViewController.swift in Sources */,
+				20CD9B081B878504002FD7FD /* Facebook Data Fetcher.swift in Sources */,
+				20CD9B021B878314002FD7FD /* gStackQuestion.swift in Sources */,
+				20ADBA4C1B694B1500EF5D42 /* AsyncImageView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		203B2C4A1B680F0F00B862C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				203B2C551B680F0F00B862C7 /* Trivios_TournamentsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		203B2C501B680F0F00B862C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 203B2C361B680F0F00B862C7 /* Trivios Tournaments */;
+			targetProxy = 203B2C4F1B680F0F00B862C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		203B2C421B680F0F00B862C7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				203B2C431B680F0F00B862C7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		203B2C471B680F0F00B862C7 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				203B2C481B680F0F00B862C7 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		203B2C561B680F0F00B862C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		203B2C571B680F0F00B862C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		203B2C591B680F0F00B862C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A0B8F8D5ABEA1FC36C6B4B7 /* Pods-Trivios Tournaments.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "Trivios Tournaments/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.purplegator.qiankun.triviostournaments;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Trivios Tournaments/Trivios-Tournaments-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		203B2C5A1B680F0F00B862C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC3B22492D114CB3FC4214E4 /* Pods-Trivios Tournaments.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "Trivios Tournaments/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.purplegator.qiankun.triviostournaments;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Trivios Tournaments/Trivios-Tournaments-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		203B2C5C1B680F0F00B862C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Trivios TournamentsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.purplegator.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trivios Tournaments.app/Trivios Tournaments";
+			};
+			name = Debug;
+		};
+		203B2C5D1B680F0F00B862C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Trivios TournamentsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.purplegator.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trivios Tournaments.app/Trivios Tournaments";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		203B2C321B680F0F00B862C7 /* Build configuration list for PBXProject "Trivios Tournaments" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				203B2C561B680F0F00B862C7 /* Debug */,
+				203B2C571B680F0F00B862C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		203B2C581B680F0F00B862C7 /* Build configuration list for PBXNativeTarget "Trivios Tournaments" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				203B2C591B680F0F00B862C7 /* Debug */,
+				203B2C5A1B680F0F00B862C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		203B2C5B1B680F0F00B862C7 /* Build configuration list for PBXNativeTarget "Trivios TournamentsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				203B2C5C1B680F0F00B862C7 /* Debug */,
+				203B2C5D1B680F0F00B862C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 203B2C2F1B680F0F00B862C7 /* Project object */;
+}

@@ -1,0 +1,721 @@
+//
+//  TempFileForRoutesFunctions.swift
+//  Trivios Tournaments
+//
+//  Created by 谢乾坤 on 3/23/16.
+//  Copyright © 2016 Purple Gator. All rights reserved.
+//
+
+import Foundation
+
+
+
+
+
+
+
+
+
+
+//private part
+//nq
+public func gStackLinkCurrentUserToFacebook(facebookAccessToken: String, facebookName: String, facebookGender: String, facebookAgeRange: AnyObject, facebookId: String, facebookEmail: String, completion: (error: NSError?) -> Void) {
+    let requestDictionary = ["fbToken":facebookAccessToken,"name":facebookName,"gender":facebookGender,"age_range":facebookAgeRange,"userID":facebookId,"fbEmail":facebookEmail]
+    makeRequest(true, route: "linkfacebook", type: "clientLinkFacebook", payload: requestDictionary, completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _ in
+            completion(error: _error)
+        })
+    })
+}
+
+//nq
+public func gStackRedeemPromoCode(promoCode: String, completion: (error: NSError?, summary: String?) -> Void) {
+    makeRequest(true, route: "promo", type: "redeemPromo", payload: promoCode, completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _payload in
+            if _error != nil {
+                completion(error: _error, summary: nil)
+            } else if let payload = _payload as? Dictionary<String,AnyObject> {
+                if let userDictionary = payload["user"] as? Dictionary<String,AnyObject> {
+                    if let id = userDictionary["_id"] as? String {
+                        triviaCurrentUser?._id = id
+                    }
+                    if let adFreeExpire = userDictionary["adFreeExpire"] as? NSNumber {
+                        triviaCurrentUser?.adFreeExpire = adFreeExpire
+                    }
+                    if let ticketBalance = userDictionary["ticketBalance"] as? NSNumber {
+                        triviaCurrentUser?.ticketBalance = ticketBalance
+                    }
+                    if let multiplier = userDictionary["multiplier"] as? NSNumber {
+                        triviaCurrentUser?.multiplier = multiplier
+                    }
+                    if let multiplierExpireString = userDictionary["multiplierExpire"] as? String {
+                        triviaCurrentUser?.multiplierExpire = dateForString(multiplierExpireString)
+                    }
+                }
+                completion(error: nil, summary: payload["summary"] as? String)
+            } else {
+                completion(error: gStackMissingPayloadError, summary: nil)
+            }
+        })
+    })
+}
+
+
+
+
+//nq
+
+//nq
+public func gStackSetCurrentUserAvatar(avatar: String, completion: (error: NSError?) -> Void) {
+    makeRequest(true, route: "avatar", type: "setUserAva", payload: ["avatar":avatar], completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _ in
+            if _error == nil {
+                triviaCurrentUser?.avatar = avatar
+            }
+            completion(error: _error)
+        })
+    })
+}
+
+//nq
+public func gStackSetCurrentUserStatus(status: String, completion: (error: NSError?) -> Void) {
+    makeRequest(true, route: "userstatus", type: "setUserStatus", payload: ["status":status], completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _ in
+            if _error == nil {
+                triviaCurrentUser?.status = status
+            }
+            completion(error: _error)
+        })
+    })
+}
+
+//nq
+public func gStackGetGameMessage(completion: (error: NSError?, message: String?) -> Void) {
+    makeRequest(true, route: "getgamemessage", type: "getGameMessage", payload: true, completion: {
+        data, response, error in
+        if error != nil {
+            completion(error: error, message: nil)
+        } else {
+            var parseError: NSError?
+            do {
+                let reply = try parseJSONReply(data!)
+                if let gameMessage = reply["payload"] as? String {
+                    if let type = reply["type"] as? String where type == "getGameMessageFail" {
+                        let failError = NSError(domain: "getGameMessageFail", code: 1111, userInfo: ["message": gameMessage])
+                        completion(error: failError, message: nil)
+                    } else {
+                        completion(error: nil, message: gameMessage)
+                    }
+                }
+            } catch let error1 as NSError {
+                parseError = error1
+                completion(error: parseError, message: nil)
+            } catch {
+                fatalError()
+            }
+        }
+    })
+}
+
+//nq
+public func gStackSetCurrentUserLocation(location: triviaUserLocation, completion: (error: NSError?) -> Void) {
+    if location.region == nil {
+        location.region = ""
+    }
+    if location.country == nil {
+        location.country = ""
+    }
+    if location.lat == nil {
+        location.lat = ""
+    }
+    if location.long == nil {
+        location.long = ""
+    }
+    let requestDictionary = ["location":["region":location.region!,"country":location.country!,"lat":location.lat!,"long":location.long!]]
+    makeRequest(true, route: "location", type: "setUserLoc", payload: requestDictionary, completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _ in
+            if _error == nil {
+                triviaCurrentUser?.location = location
+            }
+            completion(error: _error)
+        })
+    })
+}
+
+//nq
+public func gStackGetCurrentUserInbox(completion: (error: NSError?, inbox: triviaUserInbox?) -> Void) {
+    makeRequest(true, route: "getinbox", type: "clientGetInbox", payload: true, completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _payload in
+            if _error != nil {
+                completion(error: _error, inbox: nil)
+            } else if let payload = _payload as? Dictionary<String,AnyObject> {
+                if let userInbox = payload["userInbox"] as? Dictionary<String,AnyObject> {
+                    completion(error: nil, inbox: triviaUserInbox(dictionary: userInbox))
+                } else {
+                    let missingError = NSError(domain: "Missing User Inbox", code: 1111, userInfo: nil)
+                    completion(error: missingError, inbox: nil)
+                }
+            } else {
+                completion(error: gStackMissingPayloadError, inbox: nil)
+            }
+        })
+    })
+}
+
+//nq
+public func gStackSearchForUsers(searchString: String, completion: (error: NSError?, users: Array<triviaUser>?) -> Void) {
+    makeRequest(true, route: "searchforusers", type: "clientUsersSearch", payload: ["searchName":searchString], completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _payload in
+            if _error != nil {
+                completion(error: _error, users: nil)
+            } else if let payload = _payload as? Dictionary<String,AnyObject> {
+                if let users = payload["users"] as? Array<Dictionary<String,AnyObject>> {
+                    var triviaUsers = Array<triviaUser>()
+                    for user in users {
+                        triviaUsers.append(triviaUser(payload: user))
+                    }
+                    completion(error: nil, users: triviaUsers)
+                } else {
+                    let missingError = NSError(domain: "Users missing", code: 1111, userInfo: nil)
+                    completion(error: missingError, users: nil)
+                }
+            } else {
+                completion(error: gStackMissingPayloadError, users: nil)
+            }
+        })
+    })
+}
+
+//nq
+public func gStackRequestFriend(friendDisplayName: String, completion: (error: NSError?, newInbox: triviaUserInbox?) -> Void) {
+    makeRequest(true, route: "requestfriend", type: "clientRequestFriend", payload: ["recipientName":friendDisplayName], completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _payload in
+            if _error != nil {
+                completion(error: _error, newInbox: nil)
+            } else if let payload = _payload as? Dictionary<String,AnyObject> {
+                if let updatedInboxDictionary = payload["userInbox"] as? Dictionary<String,AnyObject> {
+                    completion(error: nil, newInbox: triviaUserInbox(dictionary: updatedInboxDictionary))
+                } else {
+                    let missingError = NSError(domain: "Missing updated inbox", code: 1111, userInfo: nil)
+                    completion(error: missingError, newInbox: nil)
+                }
+            } else {
+                completion(error: gStackMissingPayloadError, newInbox: nil)
+            }
+        })
+    })
+}
+
+//nq
+public func gStackAnswerFriendRequest(request: gStackFriendRequest, accept: Bool, completion: (error: NSError?, updatedFriends: Array<gStackFriend>?) -> Void) {
+    if request.token == nil || request._id == nil {
+        let error = NSError(domain: "Request missing token and/or _id", code: 2222, userInfo: nil)
+        completion(error: error, updatedFriends: nil)
+    } else {
+        let requestDictionary = ["token":request.token!,"accepted":accept,"messageId":request._id!]
+        makeRequest(true, route: "answerfriendrequest", type: "clientAnswerFriendRequest", payload: requestDictionary, completion: {
+            data, response, error in
+            processResponse(error, data: data, completion: {
+                _error, _payload in
+                if _error != nil {
+                    completion(error: _error, updatedFriends: nil)
+                } else if let payload = _payload as? Dictionary<String,AnyObject> {
+                    if let updatedFriends = payload["friends"] as? Array<Dictionary<String,AnyObject>> {
+                        var gStackFriends = Array<gStackFriend>()
+                        for friend in updatedFriends {
+                            gStackFriends.append(gStackFriend(dictionary: friend))
+                        }
+                        completion(error: nil, updatedFriends: gStackFriends)
+                    } else {
+                        let missingError = NSError(domain: "Missing Updated Friends", code: 1111, userInfo: nil)
+                        completion(error: missingError, updatedFriends: nil)
+                    }
+                } else {
+                    completion(error: gStackMissingPayloadError, updatedFriends: nil)
+                }
+            })
+        })
+    }
+}
+
+//nq
+public func gStackUnfriend(friendDisplayName: String, completion: (error: NSError?, updatedFriends: Array<gStackFriend>?) -> Void) {
+    makeRequest(true, route: "unfriend", type: "clientUnfriend", payload: ["friendName":friendDisplayName], completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _payload in
+            if _error != nil {
+                completion(error: _error, updatedFriends: nil)
+            } else if let payload = _payload as? Dictionary<String,AnyObject> {
+                if let updatedFriends = payload["friends"] as? Array<Dictionary<String,AnyObject>> {
+                    var gStackFriends = Array<gStackFriend>()
+                    for friend in updatedFriends {
+                        gStackFriends.append(gStackFriend(dictionary: friend))
+                    }
+                    completion(error: nil, updatedFriends: gStackFriends)
+                } else {
+                    let missingError = NSError(domain: "Missing Updated Friends", code: 1111, userInfo: nil)
+                    completion(error: missingError, updatedFriends: nil)
+                }
+            } else {
+                completion(error: gStackMissingPayloadError, updatedFriends: nil)
+            }
+        })
+    })
+}
+
+//nq
+public func gStackSendMessage(message: gStackMessage, completion: (error: NSError?, updatedInbox: triviaUserInbox?) -> Void) {
+    if message.recipient == nil || message.body == nil {
+        let error = NSError(domain: "Message recipient and/or body is missing", code: 2222, userInfo: nil)
+        completion(error: error, updatedInbox: nil)
+    } else {
+        let payloadDictionary = ["recipientName":message.recipient!,"message":message.body!]
+        makeRequest(true, route: "sendmessage", type: "clientSendMessage", payload: payloadDictionary, completion: {
+            data, response, error in
+            processResponse(error, data: data, completion: {
+                _error, _payload in
+                if _error != nil {
+                    completion(error: _error, updatedInbox: nil)
+                } else if let payload = _payload as? Dictionary<String,AnyObject> {
+                    if let updatedInboxDictionary = payload["userInbox"] as? Dictionary<String,AnyObject> {
+                        completion(error: nil, updatedInbox: triviaUserInbox(dictionary: updatedInboxDictionary))
+                    } else {
+                        let missingError = NSError(domain: "Missing updated inbox", code: 1111, userInfo: nil)
+                        completion(error: missingError, updatedInbox: nil)
+                    }
+                } else {
+                    completion(error: gStackMissingPayloadError, updatedInbox: nil)
+                }
+            })
+        })
+    }
+}
+
+
+//nq
+public func gStackDeleteCommunique(communique: gStackCommunique, completion: (error: NSError?, updatedInbox: triviaUserInbox?) -> Void) {
+    if communique._id == nil || communique.type == nil {
+        let error = NSError(domain: "_id and/or type is missing", code: 2222, userInfo: nil)
+        completion(error: error, updatedInbox: nil)
+    } else if communique.type == "finishedAsyncChallenge" || communique.type == "incomingAsyncChallenge" {
+        let error = NSError(domain: "Finished or incoming challenges cannot be deleted", code: 2223, userInfo: nil)
+        completion(error: error, updatedInbox: nil)
+    } else {
+        var requestDictionary = ["messageId":communique._id!,"messageType":communique.type!]
+        if communique.isKindOfClass(gStackAsyncChallengeMessage) {
+            requestDictionary["challengeId"] = communique._id!
+        }
+        makeRequest(true, route: "deletemessage", type: "clientDeleteMessage", payload: requestDictionary, completion: {
+            data, response, error in
+            processResponse(error, data: data, completion: {
+                _error, _payload in
+                if _error != nil {
+                    completion(error: _error, updatedInbox: nil)
+                } else if let payload = _payload as? Dictionary<String,AnyObject> {
+                    completion(error: nil, updatedInbox: triviaUserInbox(dictionary: payload))
+                } else {
+                    completion(error: gStackMissingPayloadError, updatedInbox: nil)
+                }
+            })
+        })
+    }
+}
+
+//nq
+public func gStackDeleteMessage(message: gStackMessage, completion: (error: NSError?, updatedInbox: triviaUserInbox?) -> Void) {
+    gStackDeleteCommunique(message, completion: completion)
+}
+
+//nq
+public func gStackDeleteFriendRequest(request: gStackFriendRequest, completion: (error: NSError?, updatedInbox: triviaUserInbox?) -> Void) {
+    gStackDeleteCommunique(request, completion: completion)
+}
+
+//nq
+public func gStackMarkCommuniqueRead(communique: gStackCommunique, completion: (error: NSError?, updatedInbox: triviaUserInbox?) -> Void) {
+    if communique._id == nil || communique.type == nil {
+        let error = NSError(domain: "_id and/or type is missing", code: 2222, userInfo: nil)
+        completion(error: error, updatedInbox: nil)
+    } else if communique.isKindOfClass(gStackFriendRequest) {
+        let error = NSError(domain: "Friend requests cannot be marked read", code: 2223, userInfo: nil)
+        completion(error: error, updatedInbox: nil)
+    } else if communique.type == "incomingAsyncChallenge" {
+        let error = NSError(domain: "Incoming challenges cannot be marked read", code: 2223, userInfo: nil)
+        completion(error: error, updatedInbox: nil)
+    } else if communique.type == "outgoingAsyncChallenge" || communique.type == "outgoing" {
+        let error = NSError(domain: "Outgoing messages/challenges cannot be marked read", code: 2223, userInfo: nil)
+        completion(error: error, updatedInbox: nil)
+    } else {
+        var requestDictionary = ["messageId":communique._id!,"messageType":communique.type!]
+        if communique.isKindOfClass(gStackAsyncChallengeMessage) {
+            requestDictionary["challengeId"] = communique._id!
+        }
+        makeRequest(true, route: "markread", type: "clientMarkRead", payload: requestDictionary, completion: {
+            data, response, error in
+            processResponse(error, data: data, completion: {
+                _error, _payload in
+                if _error != nil {
+                    completion(error: _error, updatedInbox: nil)
+                } else if let payload = _payload as? Dictionary<String,AnyObject> {
+                    completion(error: nil, updatedInbox: triviaUserInbox(dictionary: payload))
+                } else {
+                    completion(error: gStackMissingPayloadError, updatedInbox: nil)
+                }
+            })
+        })
+    }
+}
+
+//nq
+public func gStackMarkMessageRead(message: gStackMessage, completion: (error: NSError?, updatedInbox: triviaUserInbox?) -> Void) {
+    gStackMarkCommuniqueRead(message, completion: completion)
+}
+
+
+
+//nq
+public func gStackVerifyInAppPurchase(itemId: String, receipt: NSData, completion: (error: NSError?) -> Void) {
+    let payloadDictionary = ["itemId":itemId,"type":"APPLE","receipt":receipt]
+    makeRequest(true, route: "inapppurchase", type: "clientPurchase", payload: payloadDictionary, completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _payload in
+            if _error != nil {
+                if let payload = _payload as? Dictionary<String,AnyObject> {
+                    if let userDictionary = payload["user"] as? Dictionary<String,AnyObject> {
+                        if let id = userDictionary["_id"] as? String {
+                            triviaCurrentUser?._id = id
+                        }
+                        if let adFreeExpire = userDictionary["adFreeExpire"] as? NSNumber {
+                            triviaCurrentUser?.adFreeExpire = adFreeExpire
+                        }
+                        if let ticketBalance = userDictionary["ticketBalance"] as? NSNumber {
+                            triviaCurrentUser?.ticketBalance = ticketBalance
+                        }
+                        if let multiplier = userDictionary["multiplier"] as? NSNumber {
+                            triviaCurrentUser?.multiplier = multiplier
+                        }
+                        if let multiplierExpireString = userDictionary["multiplierExpire"] as? String {
+                            triviaCurrentUser?.multiplierExpire = dateForString(multiplierExpireString)
+                        }
+                    }
+                }
+            } else {
+                completion(error: gStackMissingPayloadError)
+            }
+            completion(error: _error)
+        })
+    })
+}
+
+//nq
+public func gStackGetReferralBonus(completion: (error: NSError?, bonus: NSNumber?) -> Void) {
+    makeRequest(true, route: "getreferralbonus", type: "referralBonus", payload: true, completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, payload in
+            if _error != nil {
+                completion(error: _error, bonus: nil)
+            } else {
+                completion(error: nil, bonus: payload as? NSNumber)
+            }
+        })
+    })
+}
+
+//nq  we need to change this for just favorite tournaments, this needs to be added to the backend because it currently does not exist
+public func gStackGetTournamentsForCurrentUser(completion: (error: NSError?, tournaments: Array<gStackTournament>?) -> Void) {
+    var payloadDictionary = Dictionary<String,AnyObject>()
+    if let userLocation = triviaCurrentUser?.location {
+        payloadDictionary["location"] = userLocation.dictionary()
+    }
+    if let tournamentsWon = triviaCurrentUser?.tournamentsWon {
+        payloadDictionary["tournamentsWon"] = tournamentsWon.count
+    }
+    makeRequest(true, route: "getusertournaments", type: "getUserTournaments", payload: payloadDictionary, completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _payload in
+            if _error != nil {
+                completion(error: _error, tournaments: nil)
+            } else {
+                var tournaments = Array<gStackTournament>()
+                if let payload = _payload as? Dictionary<String,AnyObject> {
+                    if let tournamentsDict = payload["tournaments"] as? Array<Dictionary<String,AnyObject>> {
+                        for tournament in tournamentsDict {
+                            tournaments.append(gStackTournament(tournament: tournament))
+                        }
+                    }
+                    if let favoritesDict = payload["favorites"] as? Dictionary<String,AnyObject> {
+                        if let favoriteTournaments = favoritesDict["tournaments"] as? Array<Dictionary<String,AnyObject>> {
+                            triviaCurrentUser!.favoriteTournaments = Array<gStackTournament>()
+                            for tournament in favoriteTournaments {
+                                triviaCurrentUser!.favoriteTournaments!.append(gStackTournament(tournament: tournament))
+                            }
+                        }
+                    }
+                }
+                gStackCachedTournaments = tournaments
+                completion(error: nil, tournaments: tournaments)
+            }
+        })
+    })
+}
+
+//nq
+public func gStackSetFavoriteTournament(favorite: Bool, tournament: gStackTournament, completion: (error: NSError?) -> Void) {
+    if tournament.uuid == nil {
+        let error = NSError(domain: "uuid is missing", code: 2222, userInfo: nil)
+        completion(error: error)
+    } else {
+        var type = "addFavoriteTournament"
+        if favorite == false {
+            type = "unfavoriteTournament"
+        }
+        makeRequest(true, route: "favoritetournament", type: type, payload: ["uuid":tournament.uuid!], completion: {
+            data, response, error in
+            processResponse(error, data: data, completion: {
+                _error, payload in
+                completion(error: _error)
+            })
+        })
+    }
+}
+
+//nq
+public func gStackRedeemScratcher(completion: (error: NSError?) -> Void) {
+    makeRequest(true, route: "scratcher", type: "redeemScratcher", payload: true, completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, payload in
+            if _error == nil {
+                if let userDictionary = payload as? Dictionary<String,AnyObject> {
+                    if let id = userDictionary["_id"] as? String {
+                        triviaCurrentUser?._id = id
+                    }
+                    if let adFreeExpire = userDictionary["adFreeExpire"] as? NSNumber {
+                        triviaCurrentUser?.adFreeExpire = adFreeExpire
+                    }
+                    if let ticketBalance = userDictionary["ticketBalance"] as? NSNumber {
+                        triviaCurrentUser?.ticketBalance = ticketBalance
+                    }
+                    if let multiplier = userDictionary["multiplier"] as? NSNumber {
+                        triviaCurrentUser?.multiplier = multiplier
+                    }
+                    if let multiplierExpireString = userDictionary["multiplierExpire"] as? String {
+                        triviaCurrentUser?.multiplierExpire = dateForString(multiplierExpireString)
+                    }
+                }
+            }
+            completion(error: _error)
+        })
+    })
+}
+
+//nq
+public func gStackGetScratcher(completion: (error: NSError?, scratcher: gStackScratcher?) -> Void) {
+    makeRequest(true, route: "scratcher", type: "getScratcher", payload: true, completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _payload in
+            if _error != nil {
+                completion(error: _error, scratcher: nil)
+            } else if let payload = _payload as? Dictionary<String,AnyObject> {
+                completion(error: nil, scratcher: gStackScratcher(dictionary: payload))
+            } else {
+                completion(error: gStackMissingPayloadError, scratcher: nil)
+            }
+        })
+    })
+}
+
+
+
+//nq
+public func gStackRegisterForPushNotifications(token: String, completion: (error: NSError?) -> Void) {
+    makeRequest(true, route: "registerpush", type: "registerPush", payload: ["plat":"iOS","token":token], completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _ in
+            completion(error: _error)
+        })
+    })
+}
+
+//nq
+public func gStackUnregisterForPushNotifications(completion: (error: NSError?) -> Void) {
+    makeRequest(true, route: "unregisterpush", type: "unregisterPush", payload: ["plat":"iOS"], completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _ in
+            completion(error: _error)
+        })
+    })
+}
+
+//nq
+public func gStackChangeUserPushSettings(pushSettings: gStackPushSettings, completion: (error: NSError?) -> Void) {
+    makeRequest(true, route: "pushsettings", type: "changePushSetting", payload: pushSettings.dictionary(), completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _ in
+            completion(error: _error)
+        })
+    })
+}
+
+
+
+
+
+//nq
+public func gStackUpVoteChatMessageInTournament(tournament: gStackTournament, message: triviaTournamentChatMessage, completion: (error: NSError?, message: triviaTournamentChatMessage?) -> Void) {
+    if tournament.uuid == nil || message.uuid == nil {
+        let error = NSError(domain: "tournament uuid or message uuid is missing", code: 2222, userInfo: nil)
+        completion(error: error, message: nil)
+    } else {
+        makeRequest(true, route: "upVoteMessage", type: "clientUpVoteMessage", payload: ["messageID":message.uuid!,"tournamentID":tournament.uuid!,"displayName":triviaCurrentUser!.displayName!], completion: {
+            data, response, error in
+            processResponse(error, data: data, completion: {
+                _error, _payload in
+                if _error != nil {
+                    completion(error: _error, message: nil)
+                } else if let payload = _payload as? Dictionary<String,AnyObject> {
+                    if let message = payload["message"] as? Dictionary<String,AnyObject> {
+                        completion(error: nil, message: triviaTournamentChatMessage(dictionary: message))
+                    } else {
+                        let missingError = NSError(domain: "Missing message", code: 1111, userInfo: nil)
+                        completion(error: missingError, message: nil)
+                    }
+                } else {
+                    completion(error: gStackMissingPayloadError, message: nil)
+                }
+            })
+        })
+    }
+}
+
+//nq
+public func gStackDownVoteChatMessageInTournament(tournament: gStackTournament, message: triviaTournamentChatMessage, completion: (error: NSError?, message: triviaTournamentChatMessage?) -> Void) {
+    if tournament.uuid == nil || message.uuid == nil {
+        let error = NSError(domain: "tournament uuid or message uuid is missing", code: 2222, userInfo: nil)
+        completion(error: error, message: nil)
+    } else {
+        makeRequest(true, route: "downVoteMessage", type: "clientDownVoteMessage", payload: ["messageID":message.uuid!,"tournamentID":tournament.uuid!,"displayName":triviaCurrentUser!.displayName!], completion: {
+            data, response, error in
+            processResponse(error, data: data, completion: {
+                _error, _payload in
+                if _error != nil {
+                    completion(error: _error, message: nil)
+                } else if let payload = _payload as? Dictionary<String,AnyObject> {
+                    if let message = payload["message"] as? Dictionary<String,AnyObject> {
+                        completion(error: nil, message: triviaTournamentChatMessage(dictionary: message))
+                    } else {
+                        let missingError = NSError(domain: "Missing message", code: 1111, userInfo: nil)
+                        completion(error: missingError, message: nil)
+                    }
+                } else {
+                    completion(error: gStackMissingPayloadError, message: nil)
+                }
+            })
+        })
+    }
+}
+
+
+
+//nq
+
+
+//public part
+
+
+
+//nq
+public func gStackLoginWithFacebook(accessToken: String, facebookID: String, completion: (error: NSError?) -> Void) {
+    let requestPayload = ["accessToken":accessToken,"fbId":facebookID]
+    makeRequest(false, route: "loginfacebook", type: "clientFacebookLogin", payload: requestPayload, completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _payload in
+            if _error != nil {
+                completion(error: _error)
+            } else {
+                if let payload = _payload as? Dictionary<String,AnyObject> {
+                    triviaCurrentUser = triviaUser(payload: payload)
+                    completion(error: nil)
+                } else {
+                    completion(error: gStackMissingPayloadError)
+                }
+            }
+        })
+    })
+}
+
+
+
+
+//nq
+
+
+//nq
+public func gStackFetchProfileForDisplayName(displayName: String, completion: (user: triviaUser?, error: NSError?) -> Void) {
+    makeRequest(false, route: "getprofile", type: "clientRequestProfile", payload: ["displayName":displayName], completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _payload in
+            if _error != nil {
+                completion(user: nil, error: _error)
+            } else if let payload = _payload as? Dictionary<String,AnyObject> {
+                completion(user: triviaUser(payload: payload), error: nil)
+            } else {
+                completion(user: nil, error: gStackMissingPayloadError)
+            }
+        })
+    })
+}
+
+//nq
+public func gStackRequestPasswordReset(email: String, completion: (error: NSError?) -> Void) {
+    makeRequest(false, route: "reset", type: "clientRequestReset", payload: ["email":email], completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _ in
+            completion(error: _error)
+        })
+    })
+}
+
+//nq
+public func gStackResetPassword(email: String, resetcode: String, completion: (error: NSError?) -> Void) {
+    makeRequest(false, route: "reset", type: "clientResetPassword", payload: ["email":email,"resetcode":resetcode], completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _ in
+            completion(error: _error)
+        })
+    })
+}
+
+
+
+
+
+

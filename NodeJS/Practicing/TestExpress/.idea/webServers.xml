@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e0ab9263-e0a3-45fd-85c8-0169d5fdd6ff" name="User Server" url="http://54.187.156.166">
+        <fileTransfer host="54.187.156.166" port="22" privateKey="$USER_HOME$/Downloads/Qiankey.pem" rootFolder="/home/ubuntu" accessType="SFTP" username="ubuntu" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
