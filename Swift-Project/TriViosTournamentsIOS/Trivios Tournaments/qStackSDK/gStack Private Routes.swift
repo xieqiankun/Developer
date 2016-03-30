@@ -19,7 +19,7 @@ public class gStackPrizeWinner : NSObject {
     public var tournament: gStackTournament?
 }
 
-
+//Make sure gstack func should use gStackMakeRequest and gStackProcessResponse
 //qstack works
 public func gStackFetchTournaments(completion: (error: NSError?, tournaments: Array<gStackTournament>?) -> Void) {
     gStackMakeRequest(true, route: "gettournaments", type: "getUserTournaments", payload: [String : AnyObject](), completion: {
@@ -68,56 +68,14 @@ public func gStackStartGameForTournament(tournament: gStackTournament, completio
 
 
 //qstack
-public func gStackFetchPrizeWinners(completion: (error: NSError?, winners: Array<gStackPrizeWinner>?) -> Void) {
-    makeRequest(false, route: "getPrizeTicker", type: "getPrizeTicker", payload: true, completion: {
-        data, response, error in
-        if error != nil {
-            completion(error: error, winners: nil)
-        } else {
-            let winnersArray: Array<Dictionary<String,AnyObject>>?
-            do {
-                winnersArray = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as? Array<Dictionary<String,AnyObject>>
-                var returnWinners = Array<gStackPrizeWinner>()
-                for winner in winnersArray! {
-                    let returnWinner = gStackPrizeWinner()
-                    returnWinner.prize = winner["prize"] as? String
-                    returnWinner.displayName = winner["displayName"] as? String
-                    returnWinner.avatar = winner["avatar"] as? String
-                    if let imageDict = winner["image"] as? Dictionary<String,AnyObject> {
-                        returnWinner.image = imageDict["image"] as? String
-                        returnWinner.color = imageDict["color"] as? String
-                    }
-                    if let dateString = winner["date"] as? String {
-                        returnWinner.date = dateForString(dateString)
-                    }
-                    returnWinner.isTournament = winner["isTournament"] as? Bool
-                    if let tournamentDictionary = winner["tournament"] as? Dictionary<String,AnyObject> {
-                        returnWinner.tournament = gStackTournament(tournament: tournamentDictionary)
-                    }
-                    returnWinners.append(returnWinner)
-                }
-                completion(error: nil, winners: returnWinners)
-            }
-            catch let parseError as NSError {
-                completion(error: parseError, winners: nil)
-            }
-            catch {
-                completion(error: NSError(domain: "Unexpected results", code: 5551, userInfo: nil), winners:nil)
-            }
-        }
-    })
-}
-
-
-//qstack
 public func gStackFetchLeaderboardForTournament(tournament: gStackTournament, completion: (error: NSError?, leaderboard: gStackTournamentLeaderboard?) -> Void) {
     if tournament.uuid == nil {
         let error = NSError(domain: "tournament uuid is missing", code: 2222, userInfo: nil)
         completion(error: error, leaderboard: nil)
     } else {
-        makeRequest(false, route: "gettournaments", type: "clientGetTournamentLeaderboard", payload: ["uuid":tournament.uuid!], completion: {
+        gStackMakeRequest(false, route: "gettournaments", type: "clientGetTournamentLeaderboard", payload: ["uuid":tournament.uuid!], completion: {
             data, response, error in
-            processResponse(error, data: data, completion: {
+            gStackProcessResponse(error, data: data, successType: nil, completion: {
                 _error, _payload in
                 if _error != nil {
                     completion(error: _error, leaderboard: nil)
@@ -131,19 +89,32 @@ public func gStackFetchLeaderboardForTournament(tournament: gStackTournament, co
     }
 }
 
+//qstack
+public func gStackSubmitQuestion(question: gStackQuestion, completion: (error: NSError?) -> Void) {
+    gStackMakeRequest(true, route: "submitquestion", type: "submitQuestion", payload: question.submitDictionary(), completion: {
+        data, response, error in
+        gStackProcessResponse(error, data: data,successType: "submitQuestionSuccess", completion: {
+            _error, _ in
+            completion(error: _error)
+        })
+    })
+}
 
 
+
+
+//NOT USE FOR NOW
 
 
 //qstack
 public func gStackDeleteChallenge(challenge: gStackAsyncChallengeMessage, completion: (error: NSError?, updatedInbox: triviaUserInbox?) -> Void) {
-    gStackDeleteCommunique(challenge, completion: completion)
+    triviaDeleteCommunique(challenge, completion: completion)
 }
 
 
 //qstack
 public func gStackMarkChallengeRead(challenge: gStackAsyncChallengeMessage, completion: (error: NSError?, updatedInbox: triviaUserInbox?) -> Void) {
-    gStackMarkCommuniqueRead(challenge, completion: completion)
+    triviaMarkCommuniqueRead(challenge, completion: completion)
 }
 
 
@@ -190,17 +161,6 @@ public func gStackDownVoteQuestion(tournament: gStackTournament, question: gStac
     }
 }
 
-
-//qstack
-public func gStackSubmitQuestion(question: gStackQuestion, completion: (error: NSError?) -> Void) {
-    makeRequest(true, route: "submitquestion", type: "submitQuestion", payload: question.submitDictionary(), completion: {
-        data, response, error in
-        processResponse(error, data: data, completion: {
-            _error, _ in
-            completion(error: _error)
-        })
-    })
-}
 
 
 //qstack

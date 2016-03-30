@@ -78,6 +78,7 @@ public func triviaResendVerificationEmail(completion: (error: NSError?) -> Void)
     }
 }
 
+
 //nq
 public func triviaChangeUserPassword(oldPassword: String, newPassword: String, completion: (error: NSError?) -> Void) {
     makeRequest(true, route: "changepass", type: "changePassword", payload: ["passwordOld":oldPassword,"password":newPassword], completion: {
@@ -89,6 +90,136 @@ public func triviaChangeUserPassword(oldPassword: String, newPassword: String, c
     })
 }
 
+
+//MARK: - User messages
+//nq
+public func triviaGetCurrentUserInbox(completion: (error: NSError?, inbox: triviaUserInbox?) -> Void) {
+    makeRequest(true, route: "getinbox", type: "clientGetInbox", payload: true, completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _payload in
+            if _error != nil {
+                completion(error: _error, inbox: nil)
+            } else if let payload = _payload as? Dictionary<String,AnyObject> {
+                if let userInbox = payload["userInbox"] as? Dictionary<String,AnyObject> {
+                    completion(error: nil, inbox: triviaUserInbox(dictionary: userInbox))
+                } else {
+                    let missingError = NSError(domain: "Missing User Inbox", code: 1111, userInfo: nil)
+                    completion(error: missingError, inbox: nil)
+                }
+            } else {
+                completion(error: gStackMissingPayloadError, inbox: nil)
+            }
+        })
+    })
+}
+
+//nq
+public func triviaDeleteCommunique(communique: triviaCommunique, completion: (error: NSError?, updatedInbox: triviaUserInbox?) -> Void) {
+    if communique._id == nil || communique.type == nil {
+        let error = NSError(domain: "_id and/or type is missing", code: 2222, userInfo: nil)
+        completion(error: error, updatedInbox: nil)
+    } else if communique.type == "finishedAsyncChallenge" || communique.type == "incomingAsyncChallenge" {
+        let error = NSError(domain: "Finished or incoming challenges cannot be deleted", code: 2223, userInfo: nil)
+        completion(error: error, updatedInbox: nil)
+    } else {
+        var requestDictionary = ["messageId":communique._id!,"messageType":communique.type!]
+        if communique.isKindOfClass(gStackAsyncChallengeMessage) {
+            requestDictionary["challengeId"] = communique._id!
+        }
+        makeRequest(true, route: "deletemessage", type: "clientDeleteMessage", payload: requestDictionary, completion: {
+            data, response, error in
+            processResponse(error, data: data, completion: {
+                _error, _payload in
+                if _error != nil {
+                    completion(error: _error, updatedInbox: nil)
+                } else if let payload = _payload as? Dictionary<String,AnyObject> {
+                    completion(error: nil, updatedInbox: triviaUserInbox(dictionary: payload))
+                } else {
+                    completion(error: gStackMissingPayloadError, updatedInbox: nil)
+                }
+            })
+        })
+    }
+}
+
+//nq
+public func triviaDeleteMessage(message: triviaMessage, completion: (error: NSError?, updatedInbox: triviaUserInbox?) -> Void) {
+    triviaDeleteCommunique(message, completion: completion)
+}
+
+//nq
+public func triviaDeleteFriendRequest(request: gStackFriendRequest, completion: (error: NSError?, updatedInbox: triviaUserInbox?) -> Void) {
+    triviaDeleteCommunique(request, completion: completion)
+}
+
+//nq
+public func triviaMarkCommuniqueRead(communique: triviaCommunique, completion: (error: NSError?, updatedInbox: triviaUserInbox?) -> Void) {
+    if communique._id == nil || communique.type == nil {
+        let error = NSError(domain: "_id and/or type is missing", code: 2222, userInfo: nil)
+        completion(error: error, updatedInbox: nil)
+    } else if communique.isKindOfClass(gStackFriendRequest) {
+        let error = NSError(domain: "Friend requests cannot be marked read", code: 2223, userInfo: nil)
+        completion(error: error, updatedInbox: nil)
+    } else if communique.type == "incomingAsyncChallenge" {
+        let error = NSError(domain: "Incoming challenges cannot be marked read", code: 2223, userInfo: nil)
+        completion(error: error, updatedInbox: nil)
+    } else if communique.type == "outgoingAsyncChallenge" || communique.type == "outgoing" {
+        let error = NSError(domain: "Outgoing messages/challenges cannot be marked read", code: 2223, userInfo: nil)
+        completion(error: error, updatedInbox: nil)
+    } else {
+        var requestDictionary = ["messageId":communique._id!,"messageType":communique.type!]
+        if communique.isKindOfClass(gStackAsyncChallengeMessage) {
+            requestDictionary["challengeId"] = communique._id!
+        }
+        makeRequest(true, route: "markread", type: "clientMarkRead", payload: requestDictionary, completion: {
+            data, response, error in
+            processResponse(error, data: data, completion: {
+                _error, _payload in
+                if _error != nil {
+                    completion(error: _error, updatedInbox: nil)
+                } else if let payload = _payload as? Dictionary<String,AnyObject> {
+                    completion(error: nil, updatedInbox: triviaUserInbox(dictionary: payload))
+                } else {
+                    completion(error: gStackMissingPayloadError, updatedInbox: nil)
+                }
+            })
+        })
+    }
+}
+
+//nq
+public func triviaMarkMessageRead(message: triviaMessage, completion: (error: NSError?, updatedInbox: triviaUserInbox?) -> Void) {
+    triviaMarkCommuniqueRead(message, completion: completion)
+}
+
+//nq
+public func triviaSendMessage(message: triviaMessage, completion: (error: NSError?, updatedInbox: triviaUserInbox?) -> Void) {
+    if message.recipient == nil || message.body == nil {
+        let error = NSError(domain: "Message recipient and/or body is missing", code: 2222, userInfo: nil)
+        completion(error: error, updatedInbox: nil)
+    } else {
+        let payloadDictionary = ["recipientName":message.recipient!,"message":message.body!]
+        makeRequest(true, route: "sendmessage", type: "clientSendMessage", payload: payloadDictionary, completion: {
+            data, response, error in
+            processResponse(error, data: data, completion: {
+                _error, _payload in
+                if _error != nil {
+                    completion(error: _error, updatedInbox: nil)
+                } else if let payload = _payload as? Dictionary<String,AnyObject> {
+                    if let updatedInboxDictionary = payload["userInbox"] as? Dictionary<String,AnyObject> {
+                        completion(error: nil, updatedInbox: triviaUserInbox(dictionary: updatedInboxDictionary))
+                    } else {
+                        let missingError = NSError(domain: "Missing updated inbox", code: 1111, userInfo: nil)
+                        completion(error: missingError, updatedInbox: nil)
+                    }
+                } else {
+                    completion(error: gStackMissingPayloadError, updatedInbox: nil)
+                }
+            })
+        })
+    }
+}
 
 
 //MARK: - Tournament Talk

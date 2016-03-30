@@ -10,7 +10,7 @@ import UIKit
 
 class ThreadViewController: JSQMessagesViewController, UIGestureRecognizerDelegate {
     
-    var messages = Array<gStackMessage>()
+    var messages = Array<triviaMessage>()
     var jsqMessages = Array<JSQMessage>()
     var sender = ""
     var senderAvatarString = ""
@@ -36,13 +36,13 @@ class ThreadViewController: JSQMessagesViewController, UIGestureRecognizerDelega
         
         
         //Dismiss keyboard on tap
-        let tapGR = UITapGestureRecognizer(target: self, action: "collectionViewTapped")
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(ThreadViewController.collectionViewTapped))
         tapGR.delegate = self
         collectionView!.addGestureRecognizer(tapGR)
         
         
         //Register for notifications
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "receivedNewMessage", name: "NewMessageReceived", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ThreadViewController.receivedNewMessage), name: "NewMessageReceived", object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,7 +81,7 @@ class ThreadViewController: JSQMessagesViewController, UIGestureRecognizerDelega
     //Do not call this outside of viewDidLoad, because it sorts messages, not jsqMessages
     func sortMessages() {
         messages.sortInPlace({
-            (message1: gStackMessage, message2: gStackMessage) -> Bool in
+            (message1: triviaMessage, message2: triviaMessage) -> Bool in
             return message1.date!.compare(message2.date!) == NSComparisonResult.OrderedAscending //Note: messages must have date
         })
     }
@@ -93,7 +93,7 @@ class ThreadViewController: JSQMessagesViewController, UIGestureRecognizerDelega
         }
     }
     
-    func loadMessageIntoJSQMessages(message: gStackMessage) {
+    func loadMessageIntoJSQMessages(message: triviaMessage) {
         var senderName = senderId
         if let sender = message.sender {
             senderName = sender
@@ -103,7 +103,7 @@ class ThreadViewController: JSQMessagesViewController, UIGestureRecognizerDelega
     }
     
     func loadSenderProfileData() {
-        gStackFetchProfileForDisplayName(sender, completion: {
+        triviaFetchProfileForDisplayName(sender, completion: {
             user, error in
             if error != nil {
                 print("Error fetching profile: \(error!)")
@@ -132,20 +132,20 @@ class ThreadViewController: JSQMessagesViewController, UIGestureRecognizerDelega
     // MARK: - JSQMessagesViewController method overrides
     
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
-        let message = gStackMessage(recipientName: sender, message: text)
-        gStackSendMessage(message, completion: {
+        let message = triviaMessage(recipientName: sender, message: text)
+        triviaSendMessage(message, completion: {
             error, updatedInbox in
             if error != nil {
                 print("There was an error sending the message: \(error!)")
             } else {
-                let jsqMessage = JSQMessage(senderId: senderId, senderDisplayName: senderDisplayName, date: date, text: text)
-                self.jsqMessages.append(jsqMessage)
-                //Note: We are NOT updating messages here, it will get updated ONLY when first initialized via segue
                 dispatch_async(dispatch_get_main_queue(), {
+                    let jsqMessage = JSQMessage(senderId: senderId, senderDisplayName: senderDisplayName, date: date, text: text)
+                    self.jsqMessages.append(jsqMessage)
                     self.finishSendingMessageAnimated(true)
                 })
             }
         })
+        self.finishSendingMessageAnimated(false)
     }
 
     override func didPressAccessoryButton(sender: UIButton!) {
@@ -258,27 +258,31 @@ class ThreadViewController: JSQMessagesViewController, UIGestureRecognizerDelega
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, didTapAvatarImageView avatarImageView: UIImageView!, atIndexPath indexPath: NSIndexPath!) {
         //Go to profile
+        
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, didTapMessageBubbleAtIndexPath indexPath: NSIndexPath!) {
         if sender == "Purple Gator" {
             //Show the full message in another page(?) if it has HTML
         }
+        
     }
     
     
     // MARK: - New Messages
     func receivedNewMessage() {
-        gStackGetCurrentUserInbox({
+        triviaGetCurrentUserInbox({
             error, inbox in
             if error != nil {
                 print("Error getting user inbox: \(error!)")
             } else {
                 if let thread = inbox!.threads[self.sender] where thread.count > self.messages.count {
-                    self.messages = thread
-                    self.sortMessages()
-                    self.loadMessageIntoJSQMessages(self.messages[self.messages.count-1])
-                    self.finishReceivingMessageAnimated(true)
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.messages = thread
+                        self.sortMessages()
+                        self.loadMessageIntoJSQMessages(self.messages[self.messages.count-1])
+                        self.finishReceivingMessageAnimated(true)
+                    })
                 }
             }
         })

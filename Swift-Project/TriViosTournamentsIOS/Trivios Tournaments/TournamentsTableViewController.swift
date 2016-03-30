@@ -35,8 +35,11 @@ class TournamentTableViewCell: UITableViewCell {
                     print("Error starting game: \(error!)")
                 } else {
                     let tournamentsTVC = (self.superview?.superview as? UITableView)?.dataSource
-                    (tournamentsTVC as? TournamentsTableViewController)?.selectedTournament = self.tournament
-                    (tournamentsTVC as? TournamentsTableViewController)?.performSegueWithIdentifier("gamePlaySegue", sender: game)
+                    dispatch_async(dispatch_get_main_queue(), { 
+                        (tournamentsTVC as? TournamentsTableViewController)?.selectedTournament = self.tournament
+                        (tournamentsTVC as? TournamentsTableViewController)?.performSegueWithIdentifier("gamePlaySegue", sender: game)
+                    })
+
                 }
             })
         }

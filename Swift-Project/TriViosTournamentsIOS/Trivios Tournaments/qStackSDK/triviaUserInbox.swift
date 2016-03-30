@@ -9,7 +9,7 @@
 import UIKit
 
 public class triviaUserInbox: NSObject {
-    public var threads = Dictionary<String,Array<gStackMessage>>()
+    public var threads = Dictionary<String,Array<triviaMessage>>()
     public var numUnread: NSNumber?
     public var friendRequests = Array<gStackFriendRequest>()
     public var pendingFriendRequests = Array<gStackFriendRequest>()
@@ -65,20 +65,20 @@ public class triviaUserInbox: NSObject {
             finishedAsyncChallenges = gStackFinishedAsyncs
         }
         if let incoming = dictionary["incoming"] as? Array<Dictionary<String,AnyObject>> {
-            var allMessages = Array<gStackMessage>()
+            var allMessages = Array<triviaMessage>()
             for message in incoming {
-                let incomingMessage = gStackMessage(dictionary: message)
+                let incomingMessage = triviaMessage(dictionary: message)
                 incomingMessage.type = "incoming"
                 allMessages.append(incomingMessage)
             }
             if let outgoing = dictionary["outgoing"] as? Array<Dictionary<String,AnyObject>> {
                 for message in outgoing {
-                    let outgoingMessage = gStackMessage(dictionary: message)
+                    let outgoingMessage = triviaMessage(dictionary: message)
                     outgoingMessage.type = "outgoing"
                     allMessages.append(outgoingMessage)
                 }
             }
-            threads = Dictionary<String,Array<gStackMessage>>()
+            threads = Dictionary<String,Array<triviaMessage>>()
             for message in allMessages {
                 var name = message.sender
                 if message.recipient != nil && message.recipient! != triviaCurrentUser!.displayName {
@@ -86,7 +86,7 @@ public class triviaUserInbox: NSObject {
                 }
                 var thread = threads[name!]
                 if thread == nil {
-                    thread = Array<gStackMessage>()
+                    thread = Array<triviaMessage>()
                 }
                 thread!.append(message)
                 threads[name!] = thread
@@ -98,8 +98,8 @@ public class triviaUserInbox: NSObject {
         let senders = threads.keys
         let sortedSenders = senders.sort({
             (sender1: String, sender2: String) -> Bool in
-            let date1 = gStackMessage.latestDateForMessagesInArray(self.threads[sender1]!)
-            let date2 = gStackMessage.latestDateForMessagesInArray(self.threads[sender2]!)
+            let date1 = triviaMessage.latestDateForMessagesInArray(self.threads[sender1]!)
+            let date2 = triviaMessage.latestDateForMessagesInArray(self.threads[sender2]!)
             return date1.compare(date2) == NSComparisonResult.OrderedDescending
         })
         return sortedSenders
@@ -107,7 +107,7 @@ public class triviaUserInbox: NSObject {
 }
 
 
-public class gStackCommunique: NSObject {
+public class triviaCommunique: NSObject {
     var _id: String?
     var type: String?
     public var sender: String?
@@ -124,7 +124,7 @@ public class gStackCommunique: NSObject {
     }
 }
 
-public class gStackMessage: gStackCommunique {
+public class triviaMessage: triviaCommunique {
     public var dateRead: NSDate?
     public var body: String?
     public var bodyHTML: String?
@@ -152,9 +152,9 @@ public class gStackMessage: gStackCommunique {
         body = message
     }
     
-    public class func latestMessageInArray(messages: Array<gStackMessage>) -> gStackMessage? {
+    public class func latestMessageInArray(messages: Array<triviaMessage>) -> triviaMessage? {
         var latestDate = NSDate(timeIntervalSince1970: 0)
-        var latestMessage: gStackMessage?
+        var latestMessage: triviaMessage?
         for message in messages {
             if let date = message.date {
                 if date.compare(latestDate) == NSComparisonResult.OrderedDescending {
@@ -166,7 +166,7 @@ public class gStackMessage: gStackCommunique {
         return latestMessage
     }
     
-    public class func latestDateForMessagesInArray(messages: Array<gStackMessage>) -> NSDate {
+    public class func latestDateForMessagesInArray(messages: Array<triviaMessage>) -> NSDate {
         var latestDate = NSDate(timeIntervalSince1970: 0)
         for message in messages {
             if let date = message.date {
@@ -179,7 +179,7 @@ public class gStackMessage: gStackCommunique {
     }
 }
 
-public class gStackFriendRequest: gStackCommunique {
+public class gStackFriendRequest: triviaCommunique {
     public var senderAvatar: String?
     public var body: String?
     var token: String?
@@ -192,7 +192,7 @@ public class gStackFriendRequest: gStackCommunique {
     }
 }
 
-public class gStackAsyncChallengeMessage: gStackCommunique {
+public class gStackAsyncChallengeMessage: triviaCommunique {
     public var challengeId: String?
     public var _zone: String?
     public var category: String?
@@ -215,7 +215,7 @@ public class gStackAsyncChallengeMessage: gStackCommunique {
     }
 }
 
-public class gStackFinishedChallengeMessage: gStackCommunique {
+public class gStackFinishedChallengeMessage: triviaCommunique {
     public var challengeId: String?
     public var _zone: String?
     public var category: String?

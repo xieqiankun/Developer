@@ -523,7 +523,7 @@
 				TargetAttributes = {
 					203B2C361B680F0F00B862C7 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = A4KK8R4439;
+						DevelopmentTeam = UUUA77DZ8A;
 					};
 					203B2C4D1B680F0F00B862C7 = {
 						CreatedOnToolsVersion = 6.4;
@@ -826,7 +826,7 @@
 				);
 				INFOPLIST_FILE = "Trivios Tournaments/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.purplegator.qiankun.triviostournaments;
+				PRODUCT_BUNDLE_IDENTIFIER = net.purplegator.triviostournaments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Trivios Tournaments/Trivios-Tournaments-Bridging-Header.h";
@@ -847,7 +847,7 @@
 				);
 				INFOPLIST_FILE = "Trivios Tournaments/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.purplegator.qiankun.triviostournaments;
+				PRODUCT_BUNDLE_IDENTIFIER = net.purplegator.triviostournaments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Trivios Tournaments/Trivios-Tournaments-Bridging-Header.h";

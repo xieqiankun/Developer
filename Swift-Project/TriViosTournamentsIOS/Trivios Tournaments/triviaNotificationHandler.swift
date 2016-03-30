@@ -21,6 +21,7 @@ class NotificationHandler: NSObject, PTPusherDelegate, PTPusherPresenceChannelDe
     var pusherClient = PTPusher()
     
     func connectToPushServerWithChannel(channel: String, userID: String) {
+        
         pusherClient = PTPusher.pusherWithKey("4779f1bf61be1bc819da", delegate: self, encrypted: true) as! PTPusher
         pusherClient.authorizationURL = NSURL(string: serverPrefix().stringByAppendingString("pusher/auth"))
         
@@ -28,11 +29,10 @@ class NotificationHandler: NSObject, PTPusherDelegate, PTPusherPresenceChannelDe
         pusherClient.connect()
         
         let newNameWithoutPresence = channel.substringFromIndex(channel.startIndex.advancedBy(9))
-        print(newNameWithoutPresence)
         pusherClient.subscribeToPresenceChannelNamed(newNameWithoutPresence, delegate: self)
         
         NSNotificationCenter.defaultCenter().removeObserver(self)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didReceiveEventNotification:", name: PTPusherEventReceivedNotification, object: pusherClient)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NotificationHandler.didReceiveEventNotification(_:)), name: PTPusherEventReceivedNotification, object: pusherClient)
     }
     
     func connectToPusherServer() {
@@ -54,6 +54,9 @@ class NotificationHandler: NSObject, PTPusherDelegate, PTPusherPresenceChannelDe
             let newConnection = gStackGameConnection(_serverIp: serverIp, _serverPort: serverPort, _gameToken: gameToken)
             
             NSNotificationCenter.defaultCenter().postNotificationName(gStackGameStartedNotificationName, object: nil, userInfo: [gStackConnectionUserInfoKey:newConnection])
+        } else if event.name == "newInboxReceived"{
+            //Post Notification when receive the message
+            NSNotificationCenter.defaultCenter().postNotificationName("NewMessageReceived", object: nil)
         }
     }
     

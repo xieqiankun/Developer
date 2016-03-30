@@ -139,3 +139,20 @@ public func triviaGetChatMessagesForTournament(tournament: gStackTournament, com
 }
 
 
+//MARK: - Other User Info
+public func triviaFetchProfileForDisplayName(displayName: String, completion: (user: triviaUser?, error: NSError?) -> Void) {
+    makeRequest(false, route: "getprofile", type: "clientRequestProfile", payload: ["displayName":displayName], completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _payload in
+            if _error != nil {
+                completion(user: nil, error: _error)
+            } else if let payload = _payload as? Dictionary<String,AnyObject> {
+                completion(user: triviaUser(payload: payload), error: nil)
+            } else {
+                completion(user: nil, error: gStackMissingPayloadError)
+            }
+        })
+    })
+}
+

@@ -18,22 +18,25 @@ class ThreadTableViewCell: UITableViewCell {
 
 class ThreadsTableViewController: UITableViewController {
     
-    var threads = Dictionary<String,Array<gStackMessage>>()
+    var threads = Dictionary<String,Array<triviaMessage>>()
     var senders = Array<String>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        navigationItem.leftBarButtonItem = editButtonItem()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        //Register for notifications
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshMessages", name: "NewMessageReceived", object: nil)
+        
         //Refresh Control
         refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: "refreshMessages", forControlEvents: .ValueChanged)
-        tableView.addSubview(refreshControl!)
+        refreshControl?.addTarget(self, action: #selector(ThreadsTableViewController.refreshMessages), forControlEvents: .ValueChanged)
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,6 +51,8 @@ class ThreadsTableViewController: UITableViewController {
         
         if isCurrentUserLoggedIn() {
             refreshMessages()
+            self.tableView.reloadData()
+
         } else {
             if attemptedLogin == false {
                 performSegueWithIdentifier("LoginSegue", sender: nil)
@@ -83,7 +88,7 @@ class ThreadsTableViewController: UITableViewController {
         cell.senderLabel.text = sender
         cell.senderName = sender
         
-        if let latestMessage = gStackMessage.latestMessageInArray(threads[sender]!) {
+        if let latestMessage = triviaMessage.latestMessageInArray(threads[sender]!) {
             cell.messagePreviewLabel.text = latestMessage.body
             
             var dateString = latestMessage.date!.shortDateString
@@ -146,24 +151,60 @@ class ThreadsTableViewController: UITableViewController {
             destinationVc.sender = senderName
         }
     }
-    
 
+
+ 
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            
+            let title = "Delete "
+            let message = "Are you sure"
+            
+            let ac = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            ac.addAction(cancelAction)
+            
+            let deleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: { (action) -> Void in
+ 
+                let name = self.senders[indexPath.row]
+                let messages = self.threads[name]
+                for m in messages! {
+                    triviaDeleteMessage(m, completion: { (error, updatedInbox) in
+                        self.refreshMessages()
+                    })
+                }
+            })
+            
+            ac.addAction(deleteAction)
+            //present the alert controller
+            presentViewController(ac, animated: true, completion: nil)
+            
+            
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }    
+
+    }
+    
+    
     // MARK: - Refresh
     func refreshMessages() {
-        gStackGetCurrentUserInbox({
+        triviaGetCurrentUserInbox({
             error, inbox in
             if error != nil {
                 print("Error getting user inbox: \(error!)")
             } else {
-                self.threads = inbox!.threads
-                self.senders = inbox!.messageSendersByDate()
-                self.tableView.reloadData()
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.threads = inbox!.threads
+                    self.senders = inbox!.messageSendersByDate()
+                    self.tableView.reloadData()
+                }
             }
             self.refreshControl?.endRefreshing()
         })
     }
-    
-    
     
     @IBAction func composeMessage() {
         performSegueWithIdentifier("ComposeMessageSegue", sender: nil)

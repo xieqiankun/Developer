@@ -53,7 +53,7 @@ class ProfileViewController: UIViewController {
     */
     
     func refreshData() {
-        gStackFetchProfileForDisplayName(displayName, completion: {
+        triviaFetchProfileForDisplayName(displayName, completion: {
             _user, error in
             if error != nil {
                 print("Error fetching profile: \(error!)")

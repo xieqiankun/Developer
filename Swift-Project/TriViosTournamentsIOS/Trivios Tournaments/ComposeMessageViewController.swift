@@ -70,8 +70,8 @@ class ComposeMessageViewController: UIViewController, UITextFieldDelegate, UITex
             else if recipientTextField.isFirstResponder() {
                 recipientTextField.resignFirstResponder()
             }
-            let message = gStackMessage(recipientName: recipientTextField.text!, message: messageTextView.text)
-            gStackSendMessage(message, completion: {
+            let message = triviaMessage(recipientName: recipientTextField.text!, message: messageTextView.text)
+            triviaSendMessage(message, completion: {
                 error, updatedInbox in
                 if error != nil {
                     let alert = UIAlertController(title: "Error", message: "There was an error when we tried to send the message (check the logs)", preferredStyle: .Alert)

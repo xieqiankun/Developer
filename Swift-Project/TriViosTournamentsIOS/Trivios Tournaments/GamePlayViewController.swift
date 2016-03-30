@@ -238,7 +238,6 @@ class GamePlayViewController: UIViewController, UITableViewDataSource, UITableVi
     
 
     
-    
     func onGameTimer() {
         if numberOfSecondsRemaining == 0 {
             gameTimer?.invalidate()

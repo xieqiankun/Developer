@@ -20,8 +20,6 @@ func makeRequest(isPrivate: Bool, route: String, type: String, payload: AnyObjec
     if isPrivate {
         requestSuffix = "api/" + route
     }
-    print(requestSuffix)
-    print(serverPrefix())
     
     let url = NSURL(string: serverPrefix() + requestSuffix)!
     let request = NSMutableURLRequest(URL: url)

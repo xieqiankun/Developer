@@ -67,3 +67,10 @@ func saveLogInToken(token: String) {
     NSUserDefaults.standardUserDefaults().synchronize()
 }
 
+
+//MARK: - Handle Trivia User Inbox
+public var triviaCurrentUserInbox: triviaUserInbox?
+
+
+
+
