@@ -50,6 +50,22 @@ class TableContainerViewController: UIViewController, UIPageViewControllerDelega
             break
         }
     }
+    
+    func setPageDotColor(){
+        
+        switch pageControl.currentPage {
+        case 1:
+            pageControl.currentPageIndicatorTintColor = UIColor.greenColor()
+        case 0:
+            pageControl.currentPageIndicatorTintColor = UIColor.redColor()
+        case 2:
+            pageControl.currentPageIndicatorTintColor = UIColor.yellowColor()
+        default:
+            break
+        }
+        
+    }
+
 
     func setPageTitle(){
         
@@ -74,6 +90,7 @@ class TableContainerViewController: UIViewController, UIPageViewControllerDelega
         pageControl.currentPage = currentIndex
         
         setPageTitle()
+        setPageDotColor()
         
     }
     

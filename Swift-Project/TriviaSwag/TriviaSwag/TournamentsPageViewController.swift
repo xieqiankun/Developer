@@ -36,7 +36,8 @@ class TournamentsPageViewController: UIPageViewController, UIPageViewControllerD
         if currentPage < 0 {
             currentPage = 1
         }
-        
+        print("current page")
+        print(currentPage)
         let storyboardID = "TournamentsTableID"
         
         let expiredViewController = storyboard?.instantiateViewControllerWithIdentifier(storyboardID)

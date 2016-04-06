@@ -12,8 +12,17 @@ class DetailedTournamentViewController: UIViewController {
 
     var tournamet: gStackTournament?
     
+    @IBOutlet weak var tournamentNameLabel: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Add Notification Center
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(DetailedTournamentViewController.updateTournamentInfo(_:)), name: TournamentDidSelectNotificationName, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(DetailedTournamentViewController.updateTournamentInfo(_:)), name: TournamentWillAppearNotificationName, object: nil)
         
         setCornerEdge()
         // Do any additional setup after loading the view.
@@ -53,6 +62,25 @@ class DetailedTournamentViewController: UIViewController {
         view.layer.borderWidth = 2.0
         
     }
+    
+    
+    // Update the UI with new Tournament
+    func updateTournamentInfo(notification: NSNotification) {
+        
+        if let info = notification.userInfo {
+            let temp = info["currentTournament"] as! gStackTournament
+            self.tournamet = temp
+            
+            self.tournamentNameLabel.text = self.tournamet?.name
+        }
+        
+        
+
+        
+        
+        
+    }
+    
 
     /*
     // MARK: - Navigation

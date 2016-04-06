@@ -202,7 +202,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CuC-I4-e0t">
                                         <rect key="frame" x="61" y="0.0" width="97" height="34"/>
                                     </imageView>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="xUG-It-VKu">
+                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="xUG-It-VKu">
                                         <rect key="frame" x="85" y="23" width="39" height="37"/>
                                     </pageControl>
                                 </subviews>
@@ -250,16 +250,25 @@
                                 <rect key="frame" x="286" y="4" width="30" height="31"/>
                                 <state key="normal" title="Button" image="infoButtonUntouched"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYn-Mh-N6Y">
-                                <rect key="frame" x="352" y="4" width="30" height="31"/>
-                                <state key="normal" title="Button" image="ShareButtonUntouched"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obH-nU-LmT">
                                 <rect key="frame" x="319" y="4" width="30" height="31"/>
                                 <state key="normal" title="Button" image="FavoriteButtonUntouched"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYn-Mh-N6Y">
+                                <rect key="frame" x="352" y="4" width="30" height="31"/>
+                                <state key="normal" title="Button" image="ShareButtonUntouched"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6V-ZY-Jgy">
+                                <rect key="frame" x="9" y="4" width="230" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="tournamentNameLabel" destination="c6V-ZY-Jgy" id="rNR-r6-RYD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OFP-MN-3d1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

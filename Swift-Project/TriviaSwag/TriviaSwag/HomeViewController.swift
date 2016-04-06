@@ -23,7 +23,16 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupContainer()
         self.addBackground()
+        
+    }
+    
+    func setupContainer(){
+        
+        self.leaderboardViewContainer.hidden = false
+        self.mapViewContainer.hidden = true
+        self.tourneyTalkViewContainer.hidden = true
         
     }
     
