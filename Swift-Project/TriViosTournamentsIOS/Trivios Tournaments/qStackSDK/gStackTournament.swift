@@ -126,6 +126,7 @@ public class gStackTournament: NSObject {
 //    public convenience override init() {
 //        self.init(tournament: Dictionary<String,AnyObject>())
 //    }
+    
 }
 
 public class gStackTournamentLeaderboard: NSObject {

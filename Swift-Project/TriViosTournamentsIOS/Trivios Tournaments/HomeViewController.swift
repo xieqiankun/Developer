@@ -187,7 +187,7 @@ class HomeViewController: UIViewController, UIPageViewControllerDelegate {
     @IBAction func changeToGrid() {
         embeddedPageViewController?.layoutStyleIsTable = false
         
-        let changeToTableButton = UIBarButtonItem(image: UIImage(named: "ListIcon"), style: .Plain, target: self, action: "changeToTable")
+        let changeToTableButton = UIBarButtonItem(image: UIImage(named: "ListIcon"), style: .Plain, target: self, action: #selector(HomeViewController.changeToTable))
         navigationItem.setRightBarButtonItem(changeToTableButton, animated: true)
     }
     

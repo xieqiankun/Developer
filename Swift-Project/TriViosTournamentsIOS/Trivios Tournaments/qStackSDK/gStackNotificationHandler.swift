@@ -21,6 +21,7 @@ class gStackNotificationHandler: NSObject, PTPusherDelegate, PTPusherPresenceCha
     var pusherClient = PTPusher()
     
     func connectToPushServerWithChannel(channel: String) {
+        //pusherClient = PTPusher(key: "4779f1bf61be1bc819da", delegate: self, encrypted: true)
         pusherClient = PTPusher.pusherWithKey("4779f1bf61be1bc819da", delegate: self, encrypted: true) as! PTPusher
         //pusherClient.authorizationURL = NSURL(string: serverPrefix().stringByAppendingString("pusher/auth"))
         pusherClient.connect()
