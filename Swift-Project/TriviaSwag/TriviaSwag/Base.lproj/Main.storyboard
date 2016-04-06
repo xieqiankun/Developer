@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TY1-R2-Rgs">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="YUg-C7-xfW">
+            <objects>
+                <viewController id="TY1-R2-Rgs" customClass="HomeViewController" customModule="TriviaSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WFY-6F-kUm"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Az-yc-DhK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kGl-ma-3kS">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HHZ-ti-WiP">
+                                <rect key="frame" x="11" y="60" width="218" height="307"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eMs-KK-dHS">
+                                        <rect key="frame" x="0.0" y="0.0" width="218" height="307"/>
+                                        <connections>
+                                            <segue destination="Lfg-1L-jS3" kind="embed" id="9dk-IV-s5u"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XDU-G5-GRd">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="52"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Gi-kj-yhJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="667" height="52"/>
+                                        <connections>
+                                            <segue destination="RHI-eo-0k1" kind="embed" id="81w-Vr-6cl"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wr5-uK-tOx">
+                                <rect key="frame" x="246" y="60" width="407" height="307"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="awZ-Ag-I7z">
+                                        <rect key="frame" x="8" y="8" width="391" height="106"/>
+                                        <connections>
+                                            <segue destination="zzt-Th-VA3" kind="embed" identifier="EmbedDetailedTournametSegue" id="KBV-nQ-DPt"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dBp-uT-M5C">
+                                        <rect key="frame" x="8" y="160" width="391" height="140"/>
+                                        <connections>
+                                            <segue destination="ndm-O5-EjM" kind="embed" id="Ke1-UX-okF"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dqj-8F-yO0">
+                                        <rect key="frame" x="8" y="160" width="391" height="140"/>
+                                        <connections>
+                                            <segue destination="ISD-0A-gzW" kind="embed" id="Syr-6J-PcY"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FOj-Z6-Srl">
+                                        <rect key="frame" x="8" y="160" width="391" height="140"/>
+                                        <connections>
+                                            <segue destination="IYF-X7-fgQ" kind="embed" id="rCD-jz-Ya7"/>
+                                        </connections>
+                                    </containerView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D26-N7-Kne" customClass="SegementedControlUI" customModule="TriviaSwag" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="122" width="391" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="segementIndexChanged:" destination="TY1-R2-Rgs" eventType="valueChanged" id="Z0o-gM-YKA"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="detailContainerView" destination="wr5-uK-tOx" id="nnU-zA-9hm"/>
+                        <outlet property="leaderboardViewContainer" destination="dBp-uT-M5C" id="33j-jT-SuR"/>
+                        <outlet property="mapViewContainer" destination="Dqj-8F-yO0" id="zFp-XF-jku"/>
+                        <outlet property="tableContainerView" destination="HHZ-ti-WiP" id="IfA-dd-fig"/>
+                        <outlet property="topbarContainerView" destination="XDU-G5-GRd" id="h6X-54-lBe"/>
+                        <outlet property="tourneyTalkViewContainer" destination="FOj-Z6-Srl" id="fPn-xG-q17"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xdc-UJ-inD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="514.5" y="477.5"/>
+        </scene>
+        <!--Tournaments Table View Controller-->
+        <scene sceneID="Yqm-rm-ery">
+            <objects>
+                <tableViewController storyboardIdentifier="TournamentsTableID" id="dg8-jp-q46" customClass="TournamentsTableViewController" customModule="TriviaSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="28" sectionFooterHeight="28" id="U9N-Qj-Ke8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TournamentCell" rowHeight="97" id="wMY-aQ-5bX" customClass="TournamentTableViewCell" customModule="TriviaSwag" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="97"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wMY-aQ-5bX" id="ClW-eC-SZp">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="97"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qs4-1r-dFW">
+                                            <rect key="frame" x="12" y="0.0" width="576" height="97"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="amazon-gift-card" translatesAutoresizingMaskIntoConstraints="NO" id="hEz-dx-3F4">
+                                                    <rect key="frame" x="4" y="4" width="89" height="89"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="hEz-dx-3F4" secondAttribute="height" id="dFx-nq-lsN"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZb-I3-gDp">
+                                                    <rect key="frame" x="100" y="19" width="191" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWa-Sp-Xdh">
+                                                    <rect key="frame" x="100" y="52" width="191" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2e-wq-ZpL">
+                                                    <rect key="frame" x="469" y="49" width="107" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="f2e-wq-ZpL" secondAttribute="height" multiplier="2.2" id="Qg1-Bm-n8E"/>
+                                                    </constraints>
+                                                    <state key="normal" image="Play-Untouched"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="f2e-wq-ZpL" secondAttribute="bottom" id="25N-pX-hk0"/>
+                                                <constraint firstItem="hEz-dx-3F4" firstAttribute="centerY" secondItem="qs4-1r-dFW" secondAttribute="centerY" id="Bi1-B4-pEn"/>
+                                                <constraint firstAttribute="trailing" secondItem="f2e-wq-ZpL" secondAttribute="trailing" id="WL9-vy-jqV"/>
+                                                <constraint firstItem="hEz-dx-3F4" firstAttribute="leading" secondItem="qs4-1r-dFW" secondAttribute="leading" constant="4" id="YqH-zr-epA"/>
+                                                <constraint firstAttribute="bottom" secondItem="hEz-dx-3F4" secondAttribute="bottom" constant="4" id="pMx-bL-vq1"/>
+                                                <constraint firstItem="hEz-dx-3F4" firstAttribute="top" secondItem="qs4-1r-dFW" secondAttribute="top" constant="4" id="tBQ-aT-Je3"/>
+                                                <constraint firstItem="CZb-I3-gDp" firstAttribute="top" secondItem="qs4-1r-dFW" secondAttribute="top" constant="4" id="veT-uV-fo3"/>
+                                                <constraint firstItem="f2e-wq-ZpL" firstAttribute="height" secondItem="qs4-1r-dFW" secondAttribute="height" multiplier="0.5" id="wAp-yP-FRx"/>
+                                                <constraint firstItem="CZb-I3-gDp" firstAttribute="leading" secondItem="hEz-dx-3F4" secondAttribute="trailing" constant="4" id="xbT-Nd-GyW"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qs4-1r-dFW" firstAttribute="leading" secondItem="ClW-eC-SZp" secondAttribute="leadingMargin" constant="4" id="B9g-MS-YS6"/>
+                                        <constraint firstAttribute="bottom" secondItem="qs4-1r-dFW" secondAttribute="bottom" id="Lko-WF-doY"/>
+                                        <constraint firstItem="qs4-1r-dFW" firstAttribute="top" secondItem="ClW-eC-SZp" secondAttribute="top" id="pap-1Q-psg"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="qs4-1r-dFW" secondAttribute="trailing" constant="4" id="xox-4Z-1Z9"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="myLabel" destination="CZb-I3-gDp" id="Hui-sn-hke"/>
+                                    <outlet property="prizeImageView" destination="hEz-dx-3F4" id="ni9-w2-AKt"/>
+                                    <outlet property="tableCellView" destination="qs4-1r-dFW" id="QTl-ro-clM"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dg8-jp-q46" id="X6t-ja-Lps"/>
+                            <outlet property="delegate" destination="dg8-jp-q46" id="ODn-rh-gkq"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7wF-AI-b8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-112" y="1568"/>
+        </scene>
+        <!--Table Container View Controller-->
+        <scene sceneID="22I-2s-yqC">
+            <objects>
+                <viewController id="Lfg-1L-jS3" customClass="TableContainerViewController" customModule="TriviaSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sJr-Xk-Ywk"/>
+                        <viewControllerLayoutGuide type="bottom" id="gfG-KD-1lx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R1Q-1h-VmI">
+                        <rect key="frame" x="0.0" y="0.0" width="218" height="307"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gra-Aw-Kj7">
+                                <rect key="frame" x="0.0" y="48" width="218" height="259"/>
+                                <connections>
+                                    <segue destination="a8z-cm-meh" kind="embed" identifier="EmbedTournamentTableSegue" id="eGi-El-Tsw"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o37-Zn-Fmf">
+                                <rect key="frame" x="0.0" y="0.0" width="218" height="49"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CuC-I4-e0t">
+                                        <rect key="frame" x="61" y="0.0" width="97" height="34"/>
+                                    </imageView>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="xUG-It-VKu">
+                                        <rect key="frame" x="85" y="23" width="39" height="37"/>
+                                    </pageControl>
+                                </subviews>
+                            </view>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="imageLable" destination="CuC-I4-e0t" id="wMT-Ab-OTa"/>
+                        <outlet property="pageControl" destination="xUG-It-VKu" id="31N-gS-5cL"/>
+                        <outlet property="viewBar" destination="o37-Zn-Fmf" id="mpU-R8-7WR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t6R-kc-qYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5" y="1000.5"/>
+        </scene>
+        <!--Tournaments Page View Controller-->
+        <scene sceneID="ltw-Eh-LfY">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="a8z-cm-meh" customClass="TournamentsPageViewController" customModule="TriviaSwag" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sLH-Fc-AaW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="488" y="1008"/>
+        </scene>
+        <!--Detailed Tournament View Controller-->
+        <scene sceneID="hQs-nW-Mq0">
+            <objects>
+                <viewController id="zzt-Th-VA3" customClass="DetailedTournamentViewController" customModule="TriviaSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hmQ-c3-ZQn"/>
+                        <viewControllerLayoutGuide type="bottom" id="AYK-wd-d3r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ih0-9R-wbV">
+                        <rect key="frame" x="0.0" y="0.0" width="391" height="106"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TournamentInfoBar" translatesAutoresizingMaskIntoConstraints="NO" id="IzD-Gk-rPm">
+                                <rect key="frame" x="9" y="80" width="373" height="18"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fr-xu-Abv">
+                                <rect key="frame" x="151" y="32" width="88" height="41"/>
+                                <state key="normal" title="Button" image="Play-Untouched"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQK-HR-jED">
+                                <rect key="frame" x="286" y="4" width="30" height="31"/>
+                                <state key="normal" title="Button" image="infoButtonUntouched"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYn-Mh-N6Y">
+                                <rect key="frame" x="352" y="4" width="30" height="31"/>
+                                <state key="normal" title="Button" image="ShareButtonUntouched"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obH-nU-LmT">
+                                <rect key="frame" x="319" y="4" width="30" height="31"/>
+                                <state key="normal" title="Button" image="FavoriteButtonUntouched"/>
+                            </button>
+                        </subviews>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OFP-MN-3d1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1068.5" y="1001"/>
+        </scene>
+        <!--Leaderboard Image View Controller-->
+        <scene sceneID="B3L-GZ-5ss">
+            <objects>
+                <viewController id="ndm-O5-EjM" customClass="LeaderboardImageViewController" customModule="TriviaSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nc9-pf-K9E"/>
+                        <viewControllerLayoutGuide type="bottom" id="ugz-py-4Zs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ing-Xn-Scp">
+                        <rect key="frame" x="0.0" y="0.0" width="391" height="140"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Leaderboard" translatesAutoresizingMaskIntoConstraints="NO" id="GcV-la-vfI">
+                                <rect key="frame" x="0.0" y="0.0" width="391" height="140"/>
+                            </imageView>
+                        </subviews>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ofQ-AV-gc3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1376.5" y="266"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mPl-21-DDK">
+            <objects>
+                <viewController id="ISD-0A-gzW" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="chc-xk-8Bx"/>
+                        <viewControllerLayoutGuide type="bottom" id="LYg-T5-sz5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zQy-yU-1KU">
+                        <rect key="frame" x="0.0" y="0.0" width="391" height="140"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Br7-HL-97K">
+                                <rect key="frame" x="153" y="44" width="10" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AXt-pR-4Am" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1376.5" y="451"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gP7-vl-eSI">
+            <objects>
+                <viewController id="IYF-X7-fgQ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rU5-If-cpC"/>
+                        <viewControllerLayoutGuide type="bottom" id="4ib-06-6cW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VkF-mA-x6w">
+                        <rect key="frame" x="0.0" y="0.0" width="391" height="140"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waN-Kh-Cfw">
+                                <rect key="frame" x="184" y="61" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L5w-f2-hZ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1376.5" y="636"/>
+        </scene>
+        <!--Nav Bar View Controller-->
+        <scene sceneID="D8u-Va-QLc">
+            <objects>
+                <viewController id="RHI-eo-0k1" customClass="NavBarViewController" customModule="TriviaSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7ic-AL-muq"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nl3-Iq-Kkc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vzq-JN-3N1">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="52"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Title-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Vrl-mz-iAA">
+                                <rect key="frame" x="0.0" y="0.0" width="239" height="52"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIc-rN-g87">
+                                <rect key="frame" x="463" y="4" width="74" height="44"/>
+                                <state key="normal" image="RankingsButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5W-X4-eaS">
+                                <rect key="frame" x="377" y="4" width="85" height="44"/>
+                                <state key="normal" image="BuyButton-Untouched"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iuo-hU-nRB">
+                                <rect key="frame" x="535" y="4" width="74" height="44"/>
+                                <state key="normal" image="FriendsButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nkl-bu-r8R">
+                                <rect key="frame" x="602" y="4" width="65" height="44"/>
+                                <state key="normal" image="SettingsButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8I-z2-eHl">
+                                <rect key="frame" x="291" y="4" width="85" height="44"/>
+                                <state key="normal" image="ProfileButton"/>
+                            </button>
+                        </subviews>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ujL-ad-fBn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="514.5" y="137"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BuyButton-Untouched" width="200" height="80"/>
+        <image name="FavoriteButtonUntouched" width="56" height="56"/>
+        <image name="FriendsButton" width="180" height="80"/>
+        <image name="Leaderboard" width="784" height="264"/>
+        <image name="Play-Untouched" width="283" height="123"/>
+        <image name="ProfileButton" width="180" height="80"/>
+        <image name="RankingsButton" width="180" height="80"/>
+        <image name="SettingsButton" width="80" height="80"/>
+        <image name="ShareButtonUntouched" width="56" height="56"/>
+        <image name="Title-Logo" width="412" height="80"/>
+        <image name="TournamentInfoBar" width="754" height="30"/>
+        <image name="amazon-gift-card" width="288" height="288"/>
+        <image name="infoButtonUntouched" width="56" height="56"/>
+    </resources>
+</document>

@@ -1,0 +1,44 @@
+PODS:
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - CSStickyHeaderFlowLayout (0.2.10)
+  - Emitter (0.0.9):
+    - BlocksKit/DynamicDelegate
+  - GCDTimer (1.1.0)
+  - JSQMessagesViewController (7.2.0):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
+  - libextobjc/EXTScope (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.4.1)
+  - libPusher (1.6.1):
+    - libPusher/Core (= 1.6.1)
+  - libPusher/Core (1.6.1):
+    - SocketRocket (= 0.4.1)
+  - Primus (0.0.8):
+    - Emitter
+    - GCDTimer
+    - libextobjc/EXTScope
+    - Reachability
+  - Reachability (3.2)
+  - SocketRocket (0.4.1)
+
+DEPENDENCIES:
+  - CSStickyHeaderFlowLayout
+  - JSQMessagesViewController
+  - libPusher (~> 1.6)
+  - Primus (~> 0.0.7)
+
+SPEC CHECKSUMS:
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  CSStickyHeaderFlowLayout: 5366582779d8b7c9ba9b9cc729c218cc23888776
+  Emitter: cf50bf44fc8817535018fbd6c4fd576b87803e78
+  GCDTimer: 5837a5d70a464f86cbc9c56d75efc68f7e7c2fb8
+  JSQMessagesViewController: 73cab48aa92fc2d512f3b6724f3425cc47a19eb5
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+  libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
+  libPusher: 5ea58aeb83fa4ac1f5d8ef8543b1def6ace997b8
+  Primus: bd06a36e721ab850942b08cce4ce161c45376cf0
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SocketRocket: ee0b5c34182d37bb4f1f8d628bbe737718126daa
+
+COCOAPODS: 0.39.0

@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2847592A1CB3618900DCFE6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284759291CB3618900DCFE6A /* AppDelegate.swift */; };
+		2847592C1CB3618900DCFE6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847592B1CB3618900DCFE6A /* ViewController.swift */; };
+		2847592F1CB3618900DCFE6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2847592D1CB3618900DCFE6A /* Main.storyboard */; };
+		284759311CB3618900DCFE6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 284759301CB3618900DCFE6A /* Assets.xcassets */; };
+		284759341CB3618900DCFE6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 284759321CB3618900DCFE6A /* LaunchScreen.storyboard */; };
+		2847593F1CB3618900DCFE6A /* KunCaPetPetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847593E1CB3618900DCFE6A /* KunCaPetPetTests.swift */; };
+		2847594A1CB3618900DCFE6A /* KunCaPetPetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284759491CB3618900DCFE6A /* KunCaPetPetUITests.swift */; };
+		284759581CB364F000DCFE6A /* GardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284759571CB364F000DCFE6A /* GardenViewController.swift */; };
+		2847595A1CB364F900DCFE6A /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284759591CB364F900DCFE6A /* StoreViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2847593B1CB3618900DCFE6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2847591E1CB3618900DCFE6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 284759251CB3618900DCFE6A;
+			remoteInfo = KunCaPetPet;
+		};
+		284759461CB3618900DCFE6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2847591E1CB3618900DCFE6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 284759251CB3618900DCFE6A;
+			remoteInfo = KunCaPetPet;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		284759261CB3618900DCFE6A /* KunCaPetPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KunCaPetPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		284759291CB3618900DCFE6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2847592B1CB3618900DCFE6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2847592E1CB3618900DCFE6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		284759301CB3618900DCFE6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		284759331CB3618900DCFE6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		284759351CB3618900DCFE6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2847593A1CB3618900DCFE6A /* KunCaPetPetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KunCaPetPetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2847593E1CB3618900DCFE6A /* KunCaPetPetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KunCaPetPetTests.swift; sourceTree = "<group>"; };
+		284759401CB3618900DCFE6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		284759451CB3618900DCFE6A /* KunCaPetPetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KunCaPetPetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		284759491CB3618900DCFE6A /* KunCaPetPetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KunCaPetPetUITests.swift; sourceTree = "<group>"; };
+		2847594B1CB3618900DCFE6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		284759571CB364F000DCFE6A /* GardenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenViewController.swift; sourceTree = "<group>"; };
+		284759591CB364F900DCFE6A /* StoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		284759231CB3618900DCFE6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		284759371CB3618900DCFE6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		284759421CB3618900DCFE6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2847591D1CB3618900DCFE6A = {
+			isa = PBXGroup;
+			children = (
+				284759281CB3618900DCFE6A /* KunCaPetPet */,
+				2847593D1CB3618900DCFE6A /* KunCaPetPetTests */,
+				284759481CB3618900DCFE6A /* KunCaPetPetUITests */,
+				284759271CB3618900DCFE6A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		284759271CB3618900DCFE6A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				284759261CB3618900DCFE6A /* KunCaPetPet.app */,
+				2847593A1CB3618900DCFE6A /* KunCaPetPetTests.xctest */,
+				284759451CB3618900DCFE6A /* KunCaPetPetUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		284759281CB3618900DCFE6A /* KunCaPetPet */ = {
+			isa = PBXGroup;
+			children = (
+				284759291CB3618900DCFE6A /* AppDelegate.swift */,
+				2847592B1CB3618900DCFE6A /* ViewController.swift */,
+				2847592D1CB3618900DCFE6A /* Main.storyboard */,
+				284759301CB3618900DCFE6A /* Assets.xcassets */,
+				284759321CB3618900DCFE6A /* LaunchScreen.storyboard */,
+				284759351CB3618900DCFE6A /* Info.plist */,
+				284759571CB364F000DCFE6A /* GardenViewController.swift */,
+				284759591CB364F900DCFE6A /* StoreViewController.swift */,
+			);
+			path = KunCaPetPet;
+			sourceTree = "<group>";
+		};
+		2847593D1CB3618900DCFE6A /* KunCaPetPetTests */ = {
+			isa = PBXGroup;
+			children = (
+				2847593E1CB3618900DCFE6A /* KunCaPetPetTests.swift */,
+				284759401CB3618900DCFE6A /* Info.plist */,
+			);
+			path = KunCaPetPetTests;
+			sourceTree = "<group>";
+		};
+		284759481CB3618900DCFE6A /* KunCaPetPetUITests */ = {
+			isa = PBXGroup;
+			children = (
+				284759491CB3618900DCFE6A /* KunCaPetPetUITests.swift */,
+				2847594B1CB3618900DCFE6A /* Info.plist */,
+			);
+			path = KunCaPetPetUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		284759251CB3618900DCFE6A /* KunCaPetPet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2847594E1CB3618900DCFE6A /* Build configuration list for PBXNativeTarget "KunCaPetPet" */;
+			buildPhases = (
+				284759221CB3618900DCFE6A /* Sources */,
+				284759231CB3618900DCFE6A /* Frameworks */,
+				284759241CB3618900DCFE6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KunCaPetPet;
+			productName = KunCaPetPet;
+			productReference = 284759261CB3618900DCFE6A /* KunCaPetPet.app */;
+			productType = "com.apple.product-type.application";
+		};
+		284759391CB3618900DCFE6A /* KunCaPetPetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 284759511CB3618900DCFE6A /* Build configuration list for PBXNativeTarget "KunCaPetPetTests" */;
+			buildPhases = (
+				284759361CB3618900DCFE6A /* Sources */,
+				284759371CB3618900DCFE6A /* Frameworks */,
+				284759381CB3618900DCFE6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2847593C1CB3618900DCFE6A /* PBXTargetDependency */,
+			);
+			name = KunCaPetPetTests;
+			productName = KunCaPetPetTests;
+			productReference = 2847593A1CB3618900DCFE6A /* KunCaPetPetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		284759441CB3618900DCFE6A /* KunCaPetPetUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 284759541CB3618900DCFE6A /* Build configuration list for PBXNativeTarget "KunCaPetPetUITests" */;
+			buildPhases = (
+				284759411CB3618900DCFE6A /* Sources */,
+				284759421CB3618900DCFE6A /* Frameworks */,
+				284759431CB3618900DCFE6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				284759471CB3618900DCFE6A /* PBXTargetDependency */,
+			);
+			name = KunCaPetPetUITests;
+			productName = KunCaPetPetUITests;
+			productReference = 284759451CB3618900DCFE6A /* KunCaPetPetUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2847591E1CB3618900DCFE6A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = QiankunXie;
+				TargetAttributes = {
+					284759251CB3618900DCFE6A = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					284759391CB3618900DCFE6A = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 284759251CB3618900DCFE6A;
+					};
+					284759441CB3618900DCFE6A = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 284759251CB3618900DCFE6A;
+					};
+				};
+			};
+			buildConfigurationList = 284759211CB3618900DCFE6A /* Build configuration list for PBXProject "KunCaPetPet" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2847591D1CB3618900DCFE6A;
+			productRefGroup = 284759271CB3618900DCFE6A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				284759251CB3618900DCFE6A /* KunCaPetPet */,
+				284759391CB3618900DCFE6A /* KunCaPetPetTests */,
+				284759441CB3618900DCFE6A /* KunCaPetPetUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		284759241CB3618900DCFE6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				284759341CB3618900DCFE6A /* LaunchScreen.storyboard in Resources */,
+				284759311CB3618900DCFE6A /* Assets.xcassets in Resources */,
+				2847592F1CB3618900DCFE6A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		284759381CB3618900DCFE6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		284759431CB3618900DCFE6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		284759221CB3618900DCFE6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2847595A1CB364F900DCFE6A /* StoreViewController.swift in Sources */,
+				2847592C1CB3618900DCFE6A /* ViewController.swift in Sources */,
+				2847592A1CB3618900DCFE6A /* AppDelegate.swift in Sources */,
+				284759581CB364F000DCFE6A /* GardenViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		284759361CB3618900DCFE6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2847593F1CB3618900DCFE6A /* KunCaPetPetTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		284759411CB3618900DCFE6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2847594A1CB3618900DCFE6A /* KunCaPetPetUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2847593C1CB3618900DCFE6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 284759251CB3618900DCFE6A /* KunCaPetPet */;
+			targetProxy = 2847593B1CB3618900DCFE6A /* PBXContainerItemProxy */;
+		};
+		284759471CB3618900DCFE6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 284759251CB3618900DCFE6A /* KunCaPetPet */;
+			targetProxy = 284759461CB3618900DCFE6A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2847592D1CB3618900DCFE6A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2847592E1CB3618900DCFE6A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		284759321CB3618900DCFE6A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				284759331CB3618900DCFE6A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2847594C1CB3618900DCFE6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2847594D1CB3618900DCFE6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2847594F1CB3618900DCFE6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KunCaPetPet/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.purplegator.qiankunxie.KunCaPetPet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		284759501CB3618900DCFE6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KunCaPetPet/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.purplegator.qiankunxie.KunCaPetPet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		284759521CB3618900DCFE6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = KunCaPetPetTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.purplegator.qiankunxie.KunCaPetPetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KunCaPetPet.app/KunCaPetPet";
+			};
+			name = Debug;
+		};
+		284759531CB3618900DCFE6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = KunCaPetPetTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.purplegator.qiankunxie.KunCaPetPetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KunCaPetPet.app/KunCaPetPet";
+			};
+			name = Release;
+		};
+		284759551CB3618900DCFE6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KunCaPetPetUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.purplegator.qiankunxie.KunCaPetPetUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KunCaPetPet;
+			};
+			name = Debug;
+		};
+		284759561CB3618900DCFE6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KunCaPetPetUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.purplegator.qiankunxie.KunCaPetPetUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KunCaPetPet;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		284759211CB3618900DCFE6A /* Build configuration list for PBXProject "KunCaPetPet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2847594C1CB3618900DCFE6A /* Debug */,
+				2847594D1CB3618900DCFE6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2847594E1CB3618900DCFE6A /* Build configuration list for PBXNativeTarget "KunCaPetPet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2847594F1CB3618900DCFE6A /* Debug */,
+				284759501CB3618900DCFE6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		284759511CB3618900DCFE6A /* Build configuration list for PBXNativeTarget "KunCaPetPetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				284759521CB3618900DCFE6A /* Debug */,
+				284759531CB3618900DCFE6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		284759541CB3618900DCFE6A /* Build configuration list for PBXNativeTarget "KunCaPetPetUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				284759551CB3618900DCFE6A /* Debug */,
+				284759561CB3618900DCFE6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2847591E1CB3618900DCFE6A /* Project object */;
+}
