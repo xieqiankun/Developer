@@ -11,4 +11,3 @@ type http://localhost:3000 in the address bar
 
 You should at that point have the qStack SDK demo app running
 
-Any questions or concerns please reach out to me at james@purplegator.net
