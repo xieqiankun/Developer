@@ -32,7 +32,7 @@ class gStackNotificationHandler: NSObject, PTPusherDelegate, PTPusherPresenceCha
         //pusherClient.subscribeToPresenceChannelNamed(newNameWithoutPresence, delegate: self)
         
         NSNotificationCenter.defaultCenter().removeObserver(self)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didReceiveEventNotification:", name: PTPusherEventReceivedNotification, object: pusherClient)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(gStackNotificationHandler.didReceiveEventNotification(_:)), name: PTPusherEventReceivedNotification, object: pusherClient)
     }
     
     func connectToPusherServer() {

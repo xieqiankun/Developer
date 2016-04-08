@@ -225,7 +225,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="a8z-cm-meh" customClass="TournamentsPageViewController" customModule="TriviaSwag" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sLH-Fc-AaW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="488" y="1008"/>
+            <point key="canvasLocation" x="489" y="1000.5"/>
         </scene>
         <!--Detailed Tournament View Controller-->
         <scene sceneID="hQs-nW-Mq0">
@@ -245,6 +245,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fr-xu-Abv">
                                 <rect key="frame" x="151" y="32" width="88" height="41"/>
                                 <state key="normal" title="Button" image="Play-Untouched"/>
+                                <connections>
+                                    <action selector="startToPlayGame:" destination="zzt-Th-VA3" eventType="touchUpInside" id="NmR-m7-QRn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQK-HR-jED">
                                 <rect key="frame" x="286" y="4" width="30" height="31"/>
@@ -268,6 +271,7 @@
                     </view>
                     <connections>
                         <outlet property="tournamentNameLabel" destination="c6V-ZY-Jgy" id="rNR-r6-RYD"/>
+                        <segue destination="Gds-JQ-FgX" kind="presentation" identifier="GamePlaySegue" id="VMl-ln-bMI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OFP-MN-3d1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -348,6 +352,159 @@
             </objects>
             <point key="canvasLocation" x="1376.5" y="636"/>
         </scene>
+        <!--Game Play View Controller-->
+        <scene sceneID="RUi-gN-JCS">
+            <objects>
+                <viewController id="Gds-JQ-FgX" customClass="GamePlayViewController" customModule="TriviaSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IK4-HE-zzG"/>
+                        <viewControllerLayoutGuide type="bottom" id="fhg-1y-crT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nzf-qY-mM0">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Py8-Qc-t0o">
+                                <rect key="frame" x="69" y="16" width="528" height="24"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XM0-Tr-0p8">
+                                        <rect key="frame" x="0.0" y="0.0" width="528" height="24"/>
+                                        <connections>
+                                            <segue destination="7Hd-8z-30j" kind="embed" id="4ZH-Is-pya"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K3j-zL-31f">
+                                <rect key="frame" x="20" y="52" width="57" height="282"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8nE-y4-Tai">
+                                        <rect key="frame" x="0.0" y="0.0" width="57" height="282"/>
+                                        <connections>
+                                            <segue destination="lJ8-ZN-lMG" kind="embed" id="Kne-Ls-q0w"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lvX-Zf-Ii5">
+                                <rect key="frame" x="590" y="52" width="57" height="282"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sfo-aK-4em">
+                                        <rect key="frame" x="0.0" y="0.0" width="57" height="282"/>
+                                        <connections>
+                                            <segue destination="lJ8-ZN-lMG" kind="embed" id="ghd-gK-QWg"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nWs-de-ES3">
+                                <rect key="frame" x="92" y="73" width="478" height="193"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4fu-Io-270">
+                                        <rect key="frame" x="16" y="80" width="454" height="105"/>
+                                        <connections>
+                                            <segue destination="1ee-o8-2gM" kind="embed" identifier="EmbedAnswersDisplaySegue" id="00B-4p-Bp4"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JP5-7n-Ygm">
+                                        <rect key="frame" x="16" y="8" width="454" height="64"/>
+                                        <connections>
+                                            <segue destination="jnh-Fd-DCG" kind="embed" identifier="EmbedQuestionDisplaySegue" id="S8w-Zf-j2o"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E30-uf-Xgx">
+                                <rect key="frame" x="92" y="274" width="169" height="81"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlayerScore" translatesAutoresizingMaskIntoConstraints="NO" id="MBG-7c-CZA">
+                                        <rect key="frame" x="0.0" y="0.0" width="169" height="81"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdZ-Or-WX7">
+                                        <rect key="frame" x="20" y="13" width="141" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ivl-lz-k94">
+                                        <rect key="frame" x="20" y="51" width="141" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xN7-Ih-Om9">
+                                <rect key="frame" x="411" y="274" width="159" height="81"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlayerScore" translatesAutoresizingMaskIntoConstraints="NO" id="8s1-St-ERH">
+                                        <rect key="frame" x="0.0" y="0.0" width="159" height="81"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLU-Ig-PIa">
+                                        <rect key="frame" x="10" y="10" width="141" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DD8-N0-v88">
+                                        <rect key="frame" x="10" y="46" width="141" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N5g-4r-kYr">
+                                <rect key="frame" x="277" y="274" width="117" height="81"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="QuestionProgress" translatesAutoresizingMaskIntoConstraints="NO" id="PFG-qF-WgO">
+                                        <rect key="frame" x="-2" y="0.0" width="119" height="81"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxq-AJ-aee">
+                                        <rect key="frame" x="8" y="10" width="95" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7F-ra-x0q">
+                                        <rect key="frame" x="11" y="51" width="92" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ksy-ND-BhD">
+                                <rect key="frame" x="13" y="303" width="71" height="64"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oha-8g-VpP">
+                                <rect key="frame" x="583" y="299" width="71" height="64"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="centerControlContainerView" destination="nWs-de-ES3" id="ZZV-cl-FRb"/>
+                        <outlet property="gameInfoView" destination="N5g-4r-kYr" id="H8x-4c-Tci"/>
+                        <outlet property="leftAvatarView" destination="ksy-ND-BhD" id="Rgy-H7-QVi"/>
+                        <outlet property="leftScoreBarContainerView" destination="K3j-zL-31f" id="91A-VN-dqS"/>
+                        <outlet property="leftScoreBoardView" destination="E30-uf-Xgx" id="04M-6U-0p7"/>
+                        <outlet property="rightAvatorView" destination="oha-8g-VpP" id="fmt-i1-3cf"/>
+                        <outlet property="rightScoreBarContainerView" destination="lvX-Zf-Ii5" id="vRs-jH-42H"/>
+                        <outlet property="rightScoreBoardView" destination="xN7-Ih-Om9" id="hz5-Go-4aO"/>
+                        <outlet property="timebarContainerView" destination="Py8-Qc-t0o" id="mpJ-lp-Hb3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a3i-6d-2Ce" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="514.5" y="-550.5"/>
+        </scene>
         <!--Nav Bar View Controller-->
         <scene sceneID="D8u-Va-QLc">
             <objects>
@@ -390,6 +547,104 @@
             </objects>
             <point key="canvasLocation" x="514.5" y="137"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Yrk-hR-Xrd">
+            <objects>
+                <viewController id="7Hd-8z-30j" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TwN-vR-mUb"/>
+                        <viewControllerLayoutGuide type="bottom" id="YbU-qv-dFu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RHm-Bb-vwk">
+                        <rect key="frame" x="0.0" y="0.0" width="528" height="24"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uPL-gw-o3A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="534" y="-867.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eZn-hT-kYX">
+            <objects>
+                <viewController id="lJ8-ZN-lMG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V8n-Q1-tBy"/>
+                        <viewControllerLayoutGuide type="bottom" id="CyC-mj-Ap5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l6w-aD-2dx">
+                        <rect key="frame" x="0.0" y="0.0" width="57" height="282"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5cr-aj-OFE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1185.5" y="-475"/>
+        </scene>
+        <!--Answers Display View Controller-->
+        <scene sceneID="6fg-9g-Mb8">
+            <objects>
+                <viewController id="1ee-o8-2gM" customClass="AnswersDisplayViewController" customModule="TriviaSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DbV-uo-jzn"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ocu-WP-zGE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="12S-W7-aVu">
+                        <rect key="frame" x="0.0" y="0.0" width="454" height="105"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhU-t6-Apf">
+                                <rect key="frame" x="46" y="20" width="185" height="31"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTu-gd-cWz">
+                                <rect key="frame" x="239" y="20" width="185" height="31"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYm-Xc-WlM">
+                                <rect key="frame" x="46" y="66" width="185" height="31"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1J-xB-74g">
+                                <rect key="frame" x="239" y="66" width="185" height="31"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IhX-Sc-Cct" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1201" y="-827.5"/>
+        </scene>
+        <!--Question Display View Controller-->
+        <scene sceneID="GIj-Sm-K6x">
+            <objects>
+                <viewController id="jnh-Fd-DCG" customClass="QuestionDisplayViewController" customModule="TriviaSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DPP-qv-zYk"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z24-sc-9mm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F9m-FG-84a">
+                        <rect key="frame" x="0.0" y="0.0" width="454" height="64"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plH-KP-DPe">
+                                <rect key="frame" x="20" y="8" width="414" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6B9-NI-9Sx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1201" y="-957"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BuyButton-Untouched" width="200" height="80"/>
@@ -397,7 +652,9 @@
         <image name="FriendsButton" width="180" height="80"/>
         <image name="Leaderboard" width="784" height="264"/>
         <image name="Play-Untouched" width="283" height="123"/>
+        <image name="PlayerScore" width="335" height="115"/>
         <image name="ProfileButton" width="180" height="80"/>
+        <image name="QuestionProgress" width="234" height="113"/>
         <image name="RankingsButton" width="180" height="80"/>
         <image name="SettingsButton" width="80" height="80"/>
         <image name="ShareButtonUntouched" width="56" height="56"/>
@@ -406,4 +663,7 @@
         <image name="amazon-gift-card" width="288" height="288"/>
         <image name="infoButtonUntouched" width="56" height="56"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Kne-Ls-q0w"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -40,6 +40,10 @@
 		2847591C1CB310E800DCFE6A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847591B1CB310E800DCFE6A /* HomeViewController.swift */; };
 		2847595D1CB43E2800DCFE6A /* DetailedTournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847595C1CB43E2800DCFE6A /* DetailedTournamentViewController.swift */; };
 		284759611CB4524000DCFE6A /* NavBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284759601CB4524000DCFE6A /* NavBarViewController.swift */; };
+		28A978D81CB6B30D006F6218 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A978D71CB6B30D006F6218 /* GamePlayViewController.swift */; };
+		28A978DB1CB6F764006F6218 /* ProgressBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A978DA1CB6F764006F6218 /* ProgressBarViewController.swift */; };
+		28A978DD1CB80A82006F6218 /* QuestionDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A978DC1CB80A82006F6218 /* QuestionDisplayViewController.swift */; };
+		28A978DF1CB80A91006F6218 /* AnswersDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A978DE1CB80A91006F6218 /* AnswersDisplayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +103,10 @@
 		2847591B1CB310E800DCFE6A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2847595C1CB43E2800DCFE6A /* DetailedTournamentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedTournamentViewController.swift; sourceTree = "<group>"; };
 		284759601CB4524000DCFE6A /* NavBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarViewController.swift; sourceTree = "<group>"; };
+		28A978D71CB6B30D006F6218 /* GamePlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
+		28A978DA1CB6F764006F6218 /* ProgressBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarViewController.swift; sourceTree = "<group>"; };
+		28A978DC1CB80A82006F6218 /* QuestionDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDisplayViewController.swift; sourceTree = "<group>"; };
+		28A978DE1CB80A91006F6218 /* AnswersDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersDisplayViewController.swift; sourceTree = "<group>"; };
 		40B8AD281A1186F6866DF4DC /* Pods-TriviaSwag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriviaSwag.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriviaSwag/Pods-TriviaSwag.release.xcconfig"; sourceTree = "<group>"; };
 		C76CDDB4F42A12922984AB32 /* Pods-TriviaSwag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriviaSwag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TriviaSwag/Pods-TriviaSwag.debug.xcconfig"; sourceTree = "<group>"; };
 		FDF86463B0CAD609B9C80919 /* libPods-TriviaSwag.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TriviaSwag.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				284759151CB2F4FF00DCFE6A /* Main */,
+				28A978D91CB6B31B006F6218 /* GamePlay */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -256,6 +265,17 @@
 				281285BD1CB592EA00D0D72E /* LeaderboardImageViewController.swift */,
 			);
 			name = DetailContainer;
+			sourceTree = "<group>";
+		};
+		28A978D91CB6B31B006F6218 /* GamePlay */ = {
+			isa = PBXGroup;
+			children = (
+				28A978D71CB6B30D006F6218 /* GamePlayViewController.swift */,
+				28A978DA1CB6F764006F6218 /* ProgressBarViewController.swift */,
+				28A978DC1CB80A82006F6218 /* QuestionDisplayViewController.swift */,
+				28A978DE1CB80A91006F6218 /* AnswersDisplayViewController.swift */,
+			);
+			name = GamePlay;
 			sourceTree = "<group>";
 		};
 		6AA72EF5C7530897ED57D020 /* Frameworks */ = {
@@ -466,8 +486,10 @@
 				281285A21CB57BBD00D0D72E /* triviaDataFetcher.swift in Sources */,
 				281285A41CB57BBD00D0D72E /* triviaTournamentTalk.swift in Sources */,
 				281285B71CB57C2100D0D72E /* gStackNotificationHandler.swift in Sources */,
+				28A978DF1CB80A91006F6218 /* AnswersDisplayViewController.swift in Sources */,
 				281285B21CB57C2100D0D72E /* gStack Info.swift in Sources */,
 				284759131CB2F4DD00DCFE6A /* TableContainerViewController.swift in Sources */,
+				28A978D81CB6B30D006F6218 /* GamePlayViewController.swift in Sources */,
 				2847595D1CB43E2800DCFE6A /* DetailedTournamentViewController.swift in Sources */,
 				2847591C1CB310E800DCFE6A /* HomeViewController.swift in Sources */,
 				281285A61CB57BBD00D0D72E /* triviaUserInbox.swift in Sources */,
@@ -475,6 +497,8 @@
 				284758BF1CB2EE3500DCFE6A /* AppDelegate.swift in Sources */,
 				281285B81CB57C2100D0D72E /* gStackQuestion.swift in Sources */,
 				281285911CB563F000D0D72E /* SegementedControlUI.swift in Sources */,
+				28A978DD1CB80A82006F6218 /* QuestionDisplayViewController.swift in Sources */,
+				28A978DB1CB6F764006F6218 /* ProgressBarViewController.swift in Sources */,
 				281285A31CB57BBD00D0D72E /* triviaNotificationHandler.swift in Sources */,
 				281285BC1CB57CBD00D0D72E /* App Info.swift in Sources */,
 				281285A11CB57BBD00D0D72E /* trivia Public Routes.swift in Sources */,

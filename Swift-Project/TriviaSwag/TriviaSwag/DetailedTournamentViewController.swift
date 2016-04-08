@@ -74,22 +74,35 @@ class DetailedTournamentViewController: UIViewController {
             self.tournamentNameLabel.text = self.tournamet?.name
         }
         
-        
-
-        
-        
-        
     }
     
 
-    /*
+    @IBAction func startToPlayGame(sender: UIButton) {
+        
+        
+        self.performSegueWithIdentifier("GamePlaySegue", sender: self)
+        
+
+    }
+    
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "GamePlaySegue" {
+            
+            let vc = segue.destinationViewController as! GamePlayViewController
+            vc.tournament = self.tournamet
+            print("I am in segue \(vc.tournament?.name)")
+        }
+        
+        
     }
-    */
+    
 
 }

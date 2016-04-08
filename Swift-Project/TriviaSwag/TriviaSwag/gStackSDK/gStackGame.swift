@@ -37,7 +37,7 @@ public class gStackGame: NSObject {
     
     override init() {
         super.init()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "gameStarted:", name: gStackGameStartedNotificationName, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(gStackGame.gameStarted(_:)), name: gStackGameStartedNotificationName, object: nil)
     }
     
     deinit {
