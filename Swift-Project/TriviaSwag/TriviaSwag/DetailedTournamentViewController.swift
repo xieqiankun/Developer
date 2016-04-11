@@ -28,6 +28,11 @@ class DetailedTournamentViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    deinit{
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     override func viewWillAppear(animated: Bool) {
         //call here to change the background
         setBackground("Tournament-Image-Placeholder")

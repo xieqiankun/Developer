@@ -8,11 +8,15 @@
 
 import UIKit
 
-class GamePlayViewController: UIViewController,gStackGameDelegate {
+class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubmitAnswerDelegate {
 
     var tournament: gStackTournament?
     var game: gStackGame?
     
+    // for submit answer
+    var isAllowSubmit = false
+    var currentQuestion: gStackGameQuestion?
+
     
     // Outlets from storyboard
     @IBOutlet weak var timebarContainerView: UIView!
@@ -29,9 +33,12 @@ class GamePlayViewController: UIViewController,gStackGameDelegate {
     //references for all parts of controllers
     var embedQuestionDisplayController: QuestionDisplayViewController?
     var embedAnswersDisplayController: AnswersDisplayViewController?
+    var embedTimeBarController: TimeBarViewController?
     
-    
-    
+    deinit{
+        
+        print("deinit the game view controller")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,7 +124,7 @@ class GamePlayViewController: UIViewController,gStackGameDelegate {
         self.setupAnimation(self.rightScoreBarContainerView)
         self.setupAnimation(self.timebarContainerView)
         self.setupAnimation(self.leftScoreBoardView)
-        self.setupAnimation(self.leftScoreBoardView)
+        self.setupAnimation(self.rightScoreBoardView)
         self.setupAnimation(self.gameInfoView)
         
     }
@@ -136,12 +143,35 @@ class GamePlayViewController: UIViewController,gStackGameDelegate {
             
             }, completion: nil)
         
-        
     }
 
     
     
+    @IBAction func testButton(sender: AnyObject) {
+        
+            game?.endGame()
+        
+            self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
     
+    
+    // triviaGameSubmitAnswerDelegate function
+    
+    func submitAnswer(num: Int){
+        
+        if self.isAllowSubmit {
+            
+            self.game?.submitAnswerForQuestion(self.currentQuestion!, answerIndex: num)
+            
+            // stop time bar
+            self.embedTimeBarController?.invalidateTimer()
+            
+            self.isAllowSubmit = false
+        }
+        
+    }
+ 
     
     
     // gStackGame Delegate Functions
@@ -172,14 +202,12 @@ class GamePlayViewController: UIViewController,gStackGameDelegate {
     }
     func didReceiveTimer(timer:gStackGameTimer){
         //for helping the ui
+        
     }
     func didReceiveErrorMsg(error:gStackGameErrorMsg){
         print("Receive an error: \(error.error)")
     }
     func didReceiveStartRound( round: gStackGameStartRound) {
-        
-        //clear all the ui
-
         
     }
     func didReceiveRoundResult( win: gStackGameRoundResult) {
@@ -187,6 +215,28 @@ class GamePlayViewController: UIViewController,gStackGameDelegate {
     }
     func didReceiveQuestion(question: gStackGameQuestion){
         
+        // reset submit value
+        self.currentQuestion = question
+        self.isAllowSubmit = true
+        
+        let questionText = question.formattedQuestion()
+        
+        self.embedQuestionDisplayController?.readyForDisplayQuestionLabel(questionText!)
+        
+        let answers = question.formattedAnswers()
+        
+        let delayInSeconds = Double(question.promptTime!)
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds / 1000 * Double(NSEC_PER_SEC)))
+        
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            
+            self.embedTimeBarController?.initTimeBar()
+
+            self.embedAnswersDisplayController?.readyForDisplayAnswerViews(answers)
+            
+            self.embedTimeBarController?.startTiming((question.timer?.integerValue)!)
+            
+        }
         
     }
     func didReceivePlayerInfo(playerInfo: gStackGamePlayerInfo){
@@ -195,10 +245,27 @@ class GamePlayViewController: UIViewController,gStackGameDelegate {
     }
     func didReceiveCorrectAnswer(correctAnswer: gStackGameCorrectAnswer){
         
+        let timer = correctAnswer.timer?.integerValue
+        
+        // display right answer
+        let correct = correctAnswer.correctAnswer?.integerValue
+        self.embedAnswersDisplayController?.displayForRightAnswer(correct!)
+        
+        // Display correct for a while before fade out
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(Double(timer! - 2000) / 1000 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+        
+            self.embedQuestionDisplayController?.questionLabelFadeOut()
+            self.embedAnswersDisplayController?.answerButtonsFadeOut()
+            self.embedTimeBarController?.clearTimebar()
+        }
     }
     
     func didReceiveUpdatedScore(updatedScore: gStackGameUpdatedScore){
-        //implement latter
+
+        if updatedScore.rightOrWrong?.integerValue == 0 {
+            self.embedAnswersDisplayController?.displayForWrongAnswer((updatedScore.answerNumber?.integerValue)!)
+        }
     }
     
     func didReceiveGameResult(result: gStackGameResult){
@@ -225,6 +292,10 @@ class GamePlayViewController: UIViewController,gStackGameDelegate {
             self.embedQuestionDisplayController = embeddedViewController
         } else if let embeddedViewController = segue.destinationViewController as? AnswersDisplayViewController where segue.identifier == "EmbedAnswersDisplaySegue" {
             self.embedAnswersDisplayController = embeddedViewController
+            embeddedViewController.delegate = self
+        } else if let embeddedViewController = segue.destinationViewController as? TimeBarViewController where segue.identifier == "EmbedFirstTimeBarSegue" {
+            self.embedTimeBarController = embeddedViewController
+            embeddedViewController.playerNum = "TimePlayer1"
         }
         
     }

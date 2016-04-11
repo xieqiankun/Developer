@@ -44,6 +44,7 @@
 		28A978DB1CB6F764006F6218 /* ProgressBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A978DA1CB6F764006F6218 /* ProgressBarViewController.swift */; };
 		28A978DD1CB80A82006F6218 /* QuestionDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A978DC1CB80A82006F6218 /* QuestionDisplayViewController.swift */; };
 		28A978DF1CB80A91006F6218 /* AnswersDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A978DE1CB80A91006F6218 /* AnswersDisplayViewController.swift */; };
+		28A978E11CB8565A006F6218 /* TimeBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A978E01CB8565A006F6218 /* TimeBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		28A978DA1CB6F764006F6218 /* ProgressBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarViewController.swift; sourceTree = "<group>"; };
 		28A978DC1CB80A82006F6218 /* QuestionDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDisplayViewController.swift; sourceTree = "<group>"; };
 		28A978DE1CB80A91006F6218 /* AnswersDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersDisplayViewController.swift; sourceTree = "<group>"; };
+		28A978E01CB8565A006F6218 /* TimeBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeBarViewController.swift; sourceTree = "<group>"; };
 		40B8AD281A1186F6866DF4DC /* Pods-TriviaSwag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriviaSwag.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriviaSwag/Pods-TriviaSwag.release.xcconfig"; sourceTree = "<group>"; };
 		C76CDDB4F42A12922984AB32 /* Pods-TriviaSwag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriviaSwag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TriviaSwag/Pods-TriviaSwag.debug.xcconfig"; sourceTree = "<group>"; };
 		FDF86463B0CAD609B9C80919 /* libPods-TriviaSwag.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TriviaSwag.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,6 +276,7 @@
 				28A978DA1CB6F764006F6218 /* ProgressBarViewController.swift */,
 				28A978DC1CB80A82006F6218 /* QuestionDisplayViewController.swift */,
 				28A978DE1CB80A91006F6218 /* AnswersDisplayViewController.swift */,
+				28A978E01CB8565A006F6218 /* TimeBarViewController.swift */,
 			);
 			name = GamePlay;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				281285B31CB57C2100D0D72E /* gStack Private Routes.swift in Sources */,
 				281285B51CB57C2100D0D72E /* gStackGame.swift in Sources */,
 				281285A01CB57BBD00D0D72E /* trivia Private Routes.swift in Sources */,
+				28A978E11CB8565A006F6218 /* TimeBarViewController.swift in Sources */,
 				284759191CB2FFB000DCFE6A /* TournamentsTableViewController.swift in Sources */,
 				284759171CB2F57600DCFE6A /* TournamentsPageViewController.swift in Sources */,
 				284759111CB2F13E00DCFE6A /* TempFileForRoutesFunctions.swift in Sources */,

@@ -90,6 +90,10 @@ class TournamentsTableViewController: UITableViewController, gStackTournamentLis
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TournamentsTableViewController.refreshTournaments), name: gStackLoginWithAppIDNotificationName, object: nil)
     }
     
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -112,9 +116,6 @@ class TournamentsTableViewController: UITableViewController, gStackTournamentLis
         
     }
     
-    deinit{
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
     
     override func viewWillAppear(animated: Bool) {
         

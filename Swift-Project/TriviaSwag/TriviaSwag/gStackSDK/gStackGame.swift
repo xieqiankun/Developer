@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol gStackGameDelegate {
+public protocol gStackGameDelegate: class {
     func gameDidStart()
     func willAttemptToReconnect(options: PrimusReconnectOptions)
     func didReconnect()
@@ -31,9 +31,12 @@ public protocol gStackGameDelegate {
 
 //Note: this implementation allows only one game to be played at a time. If two game objects are valid concurrently, they will both set their connections to the latest game and receive its notifications
 public class gStackGame: NSObject {
+    
+    static var sharedGame = gStackGame()
+    
     var connection: gStackGameConnection?
     var primus: Primus?
-    public var delegate: gStackGameDelegate?
+    public weak var delegate: gStackGameDelegate?
     
     override init() {
         super.init()
@@ -41,6 +44,7 @@ public class gStackGame: NSObject {
     }
     
     deinit {
+        print("gStack game deinit")
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
@@ -222,6 +226,7 @@ public class gStackGameCorrectAnswer: NSObject {
     public var dead: NSNumber?
     //public var lifelines: gStackLifelines?
     public var questionNum: NSNumber?
+    public var timer: NSNumber?
     
     init(dictionary: Dictionary<String,AnyObject>) {
         correctAnswer = dictionary["correctAnswer"] as? NSNumber
@@ -230,6 +235,7 @@ public class gStackGameCorrectAnswer: NSObject {
 //            lifelines = gStackLifelines(dictionary: lifelinesDict)
 //        }
         questionNum = dictionary["questionNum"] as? NSNumber
+        timer = dictionary["timer"] as? NSNumber
     }
 }
 
@@ -237,11 +243,13 @@ public class gStackGameCorrectAnswer: NSObject {
 public class gStackGameUpdatedScore: NSObject {
     public var teamAnswersTime: Array<Array<NSNumber>>?
     public var answerNumber: NSNumber?
+    public var rightOrWrong: NSNumber?
     //Others probably...
     
     init(dictionary: Dictionary<String,AnyObject>) {
         teamAnswersTime = dictionary["teamAnswersTime"] as? Array<Array<NSNumber>>
         answerNumber = dictionary["answerNumber"] as? NSNumber
+        rightOrWrong = dictionary["rightOrWrong"] as? NSNumber
         //Others probably...
     }
 }

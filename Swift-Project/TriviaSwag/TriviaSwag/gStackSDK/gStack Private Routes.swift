@@ -60,7 +60,7 @@ public func gStackStartGameForTournament(tournament: gStackTournament, completio
             if _error != nil {
                 completion(error: _error, game: nil)
             } else {
-                completion(error: nil, game: gStackGame())
+                completion(error: nil, game: gStackGame.sharedGame)
             }
         })
     })

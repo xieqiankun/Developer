@@ -281,7 +281,7 @@ class PlayTraditionalViewController: UIViewController,GStackGameDelegate {
             
             let ans = question.formattedAnswers()
             //set answers' labels
-            for var i = 0; i < 4; i++ {
+            for i in 0 ..< 4 {
                 self.answers[i].setTitle(ans[i], forState: .Normal)
             }
             self.isAllowSubmit = true
