@@ -34,6 +34,8 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
     var embedQuestionDisplayController: QuestionDisplayViewController?
     var embedAnswersDisplayController: AnswersDisplayViewController?
     var embedTimeBarController: TimeBarViewController?
+    var embedProcessBarController: ProgressBarViewController?
+    
     
     deinit{
         
@@ -262,10 +264,14 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
     }
     
     func didReceiveUpdatedScore(updatedScore: gStackGameUpdatedScore){
-
+        
+        //update the progressbar
+        self.embedProcessBarController?.updateProgressBarScore(updatedScore.teamScores!)
+        
         if updatedScore.rightOrWrong?.integerValue == 0 {
             self.embedAnswersDisplayController?.displayForWrongAnswer((updatedScore.answerNumber?.integerValue)!)
         }
+        
     }
     
     func didReceiveGameResult(result: gStackGameResult){
@@ -296,6 +302,9 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
         } else if let embeddedViewController = segue.destinationViewController as? TimeBarViewController where segue.identifier == "EmbedFirstTimeBarSegue" {
             self.embedTimeBarController = embeddedViewController
             embeddedViewController.playerNum = "TimePlayer1"
+        } else if let embeddedViewController = segue.destinationViewController as? ProgressBarViewController where segue.identifier == "EmbedFirstProgressBarSegue" {
+            self.embedProcessBarController = embeddedViewController
+            
         }
         
     }

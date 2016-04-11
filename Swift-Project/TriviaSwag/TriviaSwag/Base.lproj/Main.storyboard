@@ -109,7 +109,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wMY-aQ-5bX" id="ClW-eC-SZp">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="96.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="97"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qs4-1r-dFW">
@@ -571,10 +571,10 @@
             </objects>
             <point key="canvasLocation" x="548" y="-1017"/>
         </scene>
-        <!--View Controller-->
+        <!--Progress Bar View Controller-->
         <scene sceneID="eZn-hT-kYX">
             <objects>
-                <viewController id="lJ8-ZN-lMG" sceneMemberID="viewController">
+                <viewController id="lJ8-ZN-lMG" customClass="ProgressBarViewController" customModule="TriviaSwag" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="V8n-Q1-tBy"/>
                         <viewControllerLayoutGuide type="bottom" id="CyC-mj-Ap5"/>
