@@ -25,6 +25,8 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
     @IBOutlet weak var rightScoreBarContainerView: UIView!
     @IBOutlet weak var leftAvatarView: UIView!
     @IBOutlet weak var rightAvatorView: UIView!
+    @IBOutlet weak var clockContainView: UIView!
+    
     
     @IBOutlet weak var leftScoreBoardView: UIView!
     @IBOutlet weak var rightScoreBoardView: UIView!
@@ -35,6 +37,7 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
     var embedAnswersDisplayController: AnswersDisplayViewController?
     var embedTimeBarController: TimeBarViewController?
     var embedProcessBarController: ProgressBarViewController?
+    var embedClockController: ClockViewController?
     
     
     deinit{
@@ -97,6 +100,8 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
         // time bar
         self.addBackgroundForUIView(self.timebarContainerView, figureName: "TimeBar.png")
         
+        // clock
+        self.addBackgroundForUIView(self.clockContainView, figureName: "TimeClock")
     }
     
     func addBackgroundForUIView(view: UIView, figureName: String){
@@ -128,7 +133,7 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
         self.setupAnimation(self.leftScoreBoardView)
         self.setupAnimation(self.rightScoreBoardView)
         self.setupAnimation(self.gameInfoView)
-        
+        self.setupAnimation(self.clockContainView)
     }
     
     func setupAnimation(view: UIView){
@@ -168,6 +173,8 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
             
             // stop time bar
             self.embedTimeBarController?.invalidateTimer()
+            //stop clock
+            self.embedClockController?.invalidateClockTimer()
             
             self.isAllowSubmit = false
         }
@@ -233,11 +240,10 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
         dispatch_after(delayTime, dispatch_get_main_queue()) {
             
             self.embedTimeBarController?.initTimeBar()
-
             self.embedAnswersDisplayController?.readyForDisplayAnswerViews(answers)
             
             self.embedTimeBarController?.startTiming((question.timer?.integerValue)!)
-            
+            self.embedClockController?.startTimerForClock((question.timer?.integerValue)!)
         }
         
     }
@@ -246,6 +252,10 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
         
     }
     func didReceiveCorrectAnswer(correctAnswer: gStackGameCorrectAnswer){
+        
+        //stop all timers
+        self.embedClockController?.invalidateClockTimer()
+        self.embedTimeBarController?.invalidateTimer()
         
         let timer = correctAnswer.timer?.integerValue
         
@@ -260,6 +270,7 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
             self.embedQuestionDisplayController?.questionLabelFadeOut()
             self.embedAnswersDisplayController?.answerButtonsFadeOut()
             self.embedTimeBarController?.clearTimebar()
+            self.embedClockController?.clearClock()
         }
     }
     
@@ -270,6 +281,7 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
         
         if updatedScore.rightOrWrong?.integerValue == 0 {
             self.embedAnswersDisplayController?.displayForWrongAnswer((updatedScore.answerNumber?.integerValue)!)
+            self.embedProcessBarController?.animationForGetIncorrectAnswer()
         }
         
     }
@@ -305,8 +317,9 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
         } else if let embeddedViewController = segue.destinationViewController as? ProgressBarViewController where segue.identifier == "EmbedFirstProgressBarSegue" {
             self.embedProcessBarController = embeddedViewController
             
+        } else if let embeddedViewController = segue.destinationViewController as? ClockViewController where segue.identifier == "EmbedClockSegue" {
+            self.embedClockController = embeddedViewController
         }
-        
     }
     
 

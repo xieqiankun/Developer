@@ -367,6 +367,12 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Py8-Qc-t0o">
                                 <rect key="frame" x="69" y="16" width="528" height="24"/>
                                 <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f1Q-Qj-C6I">
+                                        <rect key="frame" x="0.0" y="0.0" width="528" height="24"/>
+                                        <connections>
+                                            <segue destination="7Hd-8z-30j" kind="embed" id="4vF-bs-TTe"/>
+                                        </connections>
+                                    </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XM0-Tr-0p8">
                                         <rect key="frame" x="0.0" y="0.0" width="528" height="24"/>
                                         <connections>
@@ -401,16 +407,16 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nWs-de-ES3">
                                 <rect key="frame" x="92" y="73" width="478" height="193"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4fu-Io-270">
-                                        <rect key="frame" x="16" y="56" width="454" height="129"/>
-                                        <connections>
-                                            <segue destination="1ee-o8-2gM" kind="embed" identifier="EmbedAnswersDisplaySegue" id="00B-4p-Bp4"/>
-                                        </connections>
-                                    </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JP5-7n-Ygm">
                                         <rect key="frame" x="16" y="8" width="454" height="40"/>
                                         <connections>
                                             <segue destination="jnh-Fd-DCG" kind="embed" identifier="EmbedQuestionDisplaySegue" id="S8w-Zf-j2o"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4fu-Io-270">
+                                        <rect key="frame" x="16" y="56" width="454" height="129"/>
+                                        <connections>
+                                            <segue destination="1ee-o8-2gM" kind="embed" identifier="EmbedAnswersDisplaySegue" id="00B-4p-Bp4"/>
                                         </connections>
                                     </containerView>
                                 </subviews>
@@ -491,6 +497,18 @@
                                     <action selector="testButton:" destination="Gds-JQ-FgX" eventType="touchUpInside" id="nHV-IO-QEh"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gfb-Mm-BbQ">
+                                <rect key="frame" x="304" y="5" width="53" height="47"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zs1-oR-87Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="53" height="47"/>
+                                        <connections>
+                                            <segue destination="sU4-KA-8p6" kind="embed" identifier="EmbedClockSegue" id="UDl-2q-vtt"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -498,6 +516,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="centerControlContainerView" destination="nWs-de-ES3" id="ZZV-cl-FRb"/>
+                        <outlet property="clockContainView" destination="gfb-Mm-BbQ" id="vyB-Q0-Z10"/>
                         <outlet property="gameInfoView" destination="N5g-4r-kYr" id="H8x-4c-Tci"/>
                         <outlet property="leftAvatarView" destination="ksy-ND-BhD" id="Rgy-H7-QVi"/>
                         <outlet property="leftScoreBarContainerView" destination="K3j-zL-31f" id="91A-VN-dqS"/>
@@ -705,6 +724,30 @@
             </objects>
             <point key="canvasLocation" x="1201" y="-957"/>
         </scene>
+        <!--Clock View Controller-->
+        <scene sceneID="Ksa-dL-2Jl">
+            <objects>
+                <viewController id="sU4-KA-8p6" customClass="ClockViewController" customModule="TriviaSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mvf-0J-fgC">
+                        <rect key="frame" x="0.0" y="0.0" width="53" height="47"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nD-co-EJB">
+                                <rect key="frame" x="7" y="15" width="39" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="timeLabel" destination="6nD-co-EJB" id="amQ-vj-xQ4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nsI-HV-L2T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304.5" y="-827.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BuyButton-Untouched" width="200" height="80"/>
@@ -724,6 +767,7 @@
         <image name="infoButtonUntouched" width="56" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="4ZH-Is-pya"/>
         <segue reference="Kne-Ls-q0w"/>
     </inferredMetricsTieBreakers>
 </document>

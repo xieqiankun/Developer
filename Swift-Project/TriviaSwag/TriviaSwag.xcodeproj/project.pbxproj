@@ -27,6 +27,7 @@
 		281285BA1CB57C2100D0D72E /* ServerInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 281285B11CB57C2100D0D72E /* ServerInfo.plist */; };
 		281285BC1CB57CBD00D0D72E /* App Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281285BB1CB57CBD00D0D72E /* App Info.swift */; };
 		281285BE1CB592EA00D0D72E /* LeaderboardImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281285BD1CB592EA00D0D72E /* LeaderboardImageViewController.swift */; };
+		283408A91CBC53F70068D070 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283408A81CBC53F70068D070 /* ClockViewController.swift */; };
 		284758BF1CB2EE3500DCFE6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284758BE1CB2EE3500DCFE6A /* AppDelegate.swift */; };
 		284758C41CB2EE3500DCFE6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 284758C21CB2EE3500DCFE6A /* Main.storyboard */; };
 		284758C61CB2EE3500DCFE6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 284758C51CB2EE3500DCFE6A /* Assets.xcassets */; };
@@ -84,6 +85,7 @@
 		281285B11CB57C2100D0D72E /* ServerInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServerInfo.plist; sourceTree = "<group>"; };
 		281285BB1CB57CBD00D0D72E /* App Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "App Info.swift"; sourceTree = "<group>"; };
 		281285BD1CB592EA00D0D72E /* LeaderboardImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardImageViewController.swift; sourceTree = "<group>"; };
+		283408A81CBC53F70068D070 /* ClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 		284758BB1CB2EE3500DCFE6A /* TriviaSwag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriviaSwag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		284758BE1CB2EE3500DCFE6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		284758C31CB2EE3500DCFE6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				28A978DC1CB80A82006F6218 /* QuestionDisplayViewController.swift */,
 				28A978DE1CB80A91006F6218 /* AnswersDisplayViewController.swift */,
 				28A978E01CB8565A006F6218 /* TimeBarViewController.swift */,
+				283408A81CBC53F70068D070 /* ClockViewController.swift */,
 			);
 			name = GamePlay;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				284759111CB2F13E00DCFE6A /* TempFileForRoutesFunctions.swift in Sources */,
 				281285BE1CB592EA00D0D72E /* LeaderboardImageViewController.swift in Sources */,
 				281285B41CB57C2100D0D72E /* gStack Public Routes.swift in Sources */,
+				283408A91CBC53F70068D070 /* ClockViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

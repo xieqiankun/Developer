@@ -24,7 +24,7 @@ class ProgressBarViewController: UIViewController {
 
     var totalNum: Int?
     
-    var totalScore = 40.0
+    var totalScore = 60.0
     
     var imageView: UIImageView?
     
@@ -35,6 +35,7 @@ class ProgressBarViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        // init processBar here!!!
         initProcessBar()
 
     }
@@ -48,7 +49,6 @@ class ProgressBarViewController: UIViewController {
         
         let width = view.bounds.size.width
         let height = view.bounds.size.height
-        print(height)
         
         let imageViewBackground = UIImageView(frame: CGRectMake(0, 0, width, height))
         
@@ -84,16 +84,41 @@ class ProgressBarViewController: UIViewController {
                 let asDouble = Double(asString as! Double)
                 temp += asDouble
         }
-        let h = (self.totalScore - temp) / self.totalScore * Double(view.frame.size.height)
+        let h = temp / self.totalScore * Double(view.frame.size.height)
         let height = CGFloat(h)
         
-        let newFrame = CGRectMake(0, height, view.bounds.width, height)
+        let newFrame = CGRectMake(0, self.view.bounds.height - height, view.bounds.width, height)
         
         UIView.animateWithDuration(0.25, delay: 0, options: [], animations: {
             self.imageView?.maskView?.frame = newFrame
             }, completion: nil)
     
     }
+    
+    func animationForGetIncorrectAnswer() {
+        
+        let width = view.bounds.size.width
+        let height = view.bounds.size.height
+        
+        let imageView = UIImageView(frame: CGRectMake(0, 0, width, height))
+        let image = UIImage(named: "ProgressIncorrect")
+        imageView.image = image
+        imageView.alpha = 0;
+        
+        self.view.addSubview(imageView)
+        self.view.bringSubviewToFront(imageView)
+        
+        UIView.animateWithDuration(0.15, delay: 0, options: [], animations: { 
+            imageView.alpha = 0.7
+            }, completion: nil)
+        UIView.animateWithDuration(0.15, delay: 0.15, options: [], animations: { 
+            imageView.alpha = 0
+            }) { (true) in
+                imageView.removeFromSuperview()
+        }
+        
+    }
+    
     
     
     /*
