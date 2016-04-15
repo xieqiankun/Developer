@@ -28,6 +28,7 @@
 		281285BC1CB57CBD00D0D72E /* App Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281285BB1CB57CBD00D0D72E /* App Info.swift */; };
 		281285BE1CB592EA00D0D72E /* LeaderboardImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281285BD1CB592EA00D0D72E /* LeaderboardImageViewController.swift */; };
 		283408A91CBC53F70068D070 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283408A81CBC53F70068D070 /* ClockViewController.swift */; };
+		283408AF1CBDB2B90068D070 /* GamePlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 283408AD1CBDB2B90068D070 /* GamePlay.storyboard */; };
 		284758BF1CB2EE3500DCFE6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284758BE1CB2EE3500DCFE6A /* AppDelegate.swift */; };
 		284758C41CB2EE3500DCFE6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 284758C21CB2EE3500DCFE6A /* Main.storyboard */; };
 		284758C61CB2EE3500DCFE6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 284758C51CB2EE3500DCFE6A /* Assets.xcassets */; };
@@ -86,6 +87,7 @@
 		281285BB1CB57CBD00D0D72E /* App Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "App Info.swift"; sourceTree = "<group>"; };
 		281285BD1CB592EA00D0D72E /* LeaderboardImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardImageViewController.swift; sourceTree = "<group>"; };
 		283408A81CBC53F70068D070 /* ClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
+		283408AE1CBDB2B90068D070 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GamePlay.storyboard; sourceTree = "<group>"; };
 		284758BB1CB2EE3500DCFE6A /* TriviaSwag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriviaSwag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		284758BE1CB2EE3500DCFE6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		284758C31CB2EE3500DCFE6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				281285A81CB57C2100D0D72E /* GStackAPI */,
 				284759141CB2F4E500DCFE6A /* Controller */,
 				284758C21CB2EE3500DCFE6A /* Main.storyboard */,
+				283408AD1CBDB2B90068D070 /* GamePlay.storyboard */,
 				284758C51CB2EE3500DCFE6A /* Assets.xcassets */,
 				284758C71CB2EE3500DCFE6A /* LaunchScreen.storyboard */,
 				284758BE1CB2EE3500DCFE6A /* AppDelegate.swift */,
@@ -415,6 +418,7 @@
 				281285BA1CB57C2100D0D72E /* ServerInfo.plist in Resources */,
 				284758C61CB2EE3500DCFE6A /* Assets.xcassets in Resources */,
 				284758C41CB2EE3500DCFE6A /* Main.storyboard in Resources */,
+				283408AF1CBDB2B90068D070 /* GamePlay.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +558,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		283408AD1CBDB2B90068D070 /* GamePlay.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				283408AE1CBDB2B90068D070 /* Base */,
+			);
+			name = GamePlay.storyboard;
+			sourceTree = "<group>";
+		};
 		284758C21CB2EE3500DCFE6A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -663,10 +675,13 @@
 			baseConfigurationReference = C76CDDB4F42A12922984AB32 /* Pods-TriviaSwag.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TriviaSwag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.purplegator.qiankunxie.TriviaSwag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/xieqiankun/Developer/Swift-Project/TriviaSwag/TriviaSwag/Trivios-Tournaments-Bridging-Header.h";
 			};
 			name = Debug;
@@ -676,10 +691,13 @@
 			baseConfigurationReference = 40B8AD281A1186F6866DF4DC /* Pods-TriviaSwag.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TriviaSwag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.purplegator.qiankunxie.TriviaSwag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/xieqiankun/Developer/Swift-Project/TriviaSwag/TriviaSwag/Trivios-Tournaments-Bridging-Header.h";
 			};
 			name = Release;

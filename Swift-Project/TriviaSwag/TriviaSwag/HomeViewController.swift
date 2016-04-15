@@ -19,9 +19,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tourneyTalkViewContainer: UIView!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
         
         setupContainer()
         self.addBackground()
@@ -113,11 +114,15 @@ class HomeViewController: UIViewController {
         }
     }
     
+    struct Fahrenheit {
+        var temperature: Double = 32.0
+        var m: Int = 5
+
+    }
     
     // Not use for now
     func setContainerView()
     {
-        
         tableContainerView.layer.borderColor = UIColor.whiteColor().CGColor
         tableContainerView.layer.cornerRadius = 8
         tableContainerView.layer.masksToBounds = true

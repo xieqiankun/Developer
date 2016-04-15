@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TriviaSwag/HomeViewController.swift"
-            timestampString = "481665666.160022"
+            timestampString = "482192149.929756"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "HomeViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -96,6 +96,23 @@
             startingLineNumber = "77"
             endingLineNumber = "77"
             landmarkName = "layoutSubviews()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            condition = "height == nil"
+            continueAfterRunningActions = "No"
+            filePath = "TriviaSwag/GamePlayViewController.swift"
+            timestampString = "482167336.429836"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "addBackgroundForUIView(_:figureName:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

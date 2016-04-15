@@ -111,10 +111,19 @@ class ProgressBarViewController: UIViewController {
         UIView.animateWithDuration(0.15, delay: 0, options: [], animations: { 
             imageView.alpha = 0.7
             }, completion: nil)
-        UIView.animateWithDuration(0.15, delay: 0.15, options: [], animations: { 
+        UIView.animateWithDuration(0.15, delay: 0.15, options: [], animations: {
             imageView.alpha = 0
             }) { (true) in
-                imageView.removeFromSuperview()
+                UIView.animateWithDuration(0.15, delay: 0, options: [], animations: {
+                    imageView.alpha = 0.7
+                    }, completion: nil)
+                UIView.animateWithDuration(0.15, delay: 0, options: [], animations: {
+                    imageView.alpha = 0
+                }){
+                    (true) in
+                    imageView.removeFromSuperview()
+
+                }
         }
         
     }

@@ -116,6 +116,7 @@ class TournamentsTableViewController: UITableViewController, gStackTournamentLis
         
     }
     
+
     
     override func viewWillAppear(animated: Bool) {
         

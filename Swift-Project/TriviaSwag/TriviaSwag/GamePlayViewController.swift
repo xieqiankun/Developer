@@ -316,7 +316,6 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
             embeddedViewController.playerNum = "TimePlayer1"
         } else if let embeddedViewController = segue.destinationViewController as? ProgressBarViewController where segue.identifier == "EmbedFirstProgressBarSegue" {
             self.embedProcessBarController = embeddedViewController
-            
         } else if let embeddedViewController = segue.destinationViewController as? ClockViewController where segue.identifier == "EmbedClockSegue" {
             self.embedClockController = embeddedViewController
         }
