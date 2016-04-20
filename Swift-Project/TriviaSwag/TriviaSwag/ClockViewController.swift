@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ClockViewController: UIViewController {
 
@@ -14,14 +15,42 @@ class ClockViewController: UIViewController {
     
     var timer: NSTimer?
     
+    // sound for timing
+    var soundCountdown: AVAudioPlayer?
+
+    
     @IBOutlet weak var timeLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if let soundcount = self.setupAudioPlayerWithFile("Countdown_Clock", type: "wav"){
+            self.soundCountdown = soundcount
+            self.soundCountdown?.prepareToPlay()
+        }
+        
         // Do any additional setup after loading the view.
     }
+    
+    func setupAudioPlayerWithFile(file:NSString, type:NSString) -> AVAudioPlayer?  {
+        //1
+        let path = NSBundle.mainBundle().pathForResource(file as String, ofType: type as String)
+        let url = NSURL.fileURLWithPath(path!)
+        
+        //2
+        var audioPlayer:AVAudioPlayer?
+        
+        // 3
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOfURL: url)
+        } catch {
+            print("Player not available")
+        }
+        
+        return audioPlayer
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -61,7 +90,8 @@ class ClockViewController: UIViewController {
         UIView.transitionWithView(self.timeLabel, duration: 0.2, options: .TransitionCrossDissolve, animations: {
             self.timeLabel.text = String(self.time)
             }, completion: nil)
-   
+        
+        self.soundCountdown?.play()
     }
     
     // Stop the timer

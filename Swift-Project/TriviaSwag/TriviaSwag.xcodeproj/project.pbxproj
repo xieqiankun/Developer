@@ -42,6 +42,10 @@
 		2847591C1CB310E800DCFE6A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847591B1CB310E800DCFE6A /* HomeViewController.swift */; };
 		2847595D1CB43E2800DCFE6A /* DetailedTournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847595C1CB43E2800DCFE6A /* DetailedTournamentViewController.swift */; };
 		284759611CB4524000DCFE6A /* NavBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284759601CB4524000DCFE6A /* NavBarViewController.swift */; };
+		289A87421CC7EE5300C30D8A /* Button Right answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 289A873E1CC7EE5300C30D8A /* Button Right answer.wav */; };
+		289A87431CC7EE5300C30D8A /* Button Wrong answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 289A873F1CC7EE5300C30D8A /* Button Wrong answer.wav */; };
+		289A87441CC7EE5300C30D8A /* Win Sound Effect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 289A87401CC7EE5300C30D8A /* Win Sound Effect.wav */; };
+		289A87461CC7FFD500C30D8A /* Countdown_Clock.wav in Resources */ = {isa = PBXBuildFile; fileRef = 289A87451CC7FFD400C30D8A /* Countdown_Clock.wav */; };
 		28A978D81CB6B30D006F6218 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A978D71CB6B30D006F6218 /* GamePlayViewController.swift */; };
 		28A978DB1CB6F764006F6218 /* ProgressBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A978DA1CB6F764006F6218 /* ProgressBarViewController.swift */; };
 		28A978DD1CB80A82006F6218 /* QuestionDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A978DC1CB80A82006F6218 /* QuestionDisplayViewController.swift */; };
@@ -108,6 +112,10 @@
 		2847591B1CB310E800DCFE6A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2847595C1CB43E2800DCFE6A /* DetailedTournamentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedTournamentViewController.swift; sourceTree = "<group>"; };
 		284759601CB4524000DCFE6A /* NavBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarViewController.swift; sourceTree = "<group>"; };
+		289A873E1CC7EE5300C30D8A /* Button Right answer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Button Right answer.wav"; sourceTree = "<group>"; };
+		289A873F1CC7EE5300C30D8A /* Button Wrong answer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Button Wrong answer.wav"; sourceTree = "<group>"; };
+		289A87401CC7EE5300C30D8A /* Win Sound Effect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Win Sound Effect.wav"; sourceTree = "<group>"; };
+		289A87451CC7FFD400C30D8A /* Countdown_Clock.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Countdown_Clock.wav; sourceTree = "<group>"; };
 		28A978D71CB6B30D006F6218 /* GamePlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
 		28A978DA1CB6F764006F6218 /* ProgressBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarViewController.swift; sourceTree = "<group>"; };
 		28A978DC1CB80A82006F6218 /* QuestionDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDisplayViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +215,7 @@
 				284759141CB2F4E500DCFE6A /* Controller */,
 				284758C21CB2EE3500DCFE6A /* Main.storyboard */,
 				283408AD1CBDB2B90068D070 /* GamePlay.storyboard */,
+				289A873C1CC7EE5300C30D8A /* TriviaSound */,
 				284758C51CB2EE3500DCFE6A /* Assets.xcassets */,
 				284758C71CB2EE3500DCFE6A /* LaunchScreen.storyboard */,
 				284758BE1CB2EE3500DCFE6A /* AppDelegate.swift */,
@@ -272,6 +281,17 @@
 				281285BD1CB592EA00D0D72E /* LeaderboardImageViewController.swift */,
 			);
 			name = DetailContainer;
+			sourceTree = "<group>";
+		};
+		289A873C1CC7EE5300C30D8A /* TriviaSound */ = {
+			isa = PBXGroup;
+			children = (
+				289A873E1CC7EE5300C30D8A /* Button Right answer.wav */,
+				289A873F1CC7EE5300C30D8A /* Button Wrong answer.wav */,
+				289A87451CC7FFD400C30D8A /* Countdown_Clock.wav */,
+				289A87401CC7EE5300C30D8A /* Win Sound Effect.wav */,
+			);
+			path = TriviaSound;
 			sourceTree = "<group>";
 		};
 		28A978D91CB6B31B006F6218 /* GamePlay */ = {
@@ -414,9 +434,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				289A87421CC7EE5300C30D8A /* Button Right answer.wav in Resources */,
 				284758C91CB2EE3500DCFE6A /* LaunchScreen.storyboard in Resources */,
 				281285BA1CB57C2100D0D72E /* ServerInfo.plist in Resources */,
 				284758C61CB2EE3500DCFE6A /* Assets.xcassets in Resources */,
+				289A87461CC7FFD500C30D8A /* Countdown_Clock.wav in Resources */,
+				289A87441CC7EE5300C30D8A /* Win Sound Effect.wav in Resources */,
+				289A87431CC7EE5300C30D8A /* Button Wrong answer.wav in Resources */,
 				284758C41CB2EE3500DCFE6A /* Main.storyboard in Resources */,
 				283408AF1CBDB2B90068D070 /* GamePlay.storyboard in Resources */,
 			);

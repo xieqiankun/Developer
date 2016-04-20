@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubmitAnswerDelegate {
 
@@ -40,6 +41,11 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
     var embedClockController: ClockViewController?
     
     
+    // sound effect
+    var soundWrongAnswer: AVAudioPlayer?
+    var soundCorrectAnswer: AVAudioPlayer?
+    var soundGameover: AVAudioPlayer?
+    
     deinit{
         
         print("deinit the game view controller")
@@ -47,7 +53,9 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
+        self.setupSounds()
         self.addBackground()
         
         //start the game
@@ -120,7 +128,6 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
     }
 
     
-    
     // Doing Animation for setup
     
     func setupAnimations() {
@@ -152,6 +159,41 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
         
     }
 
+    // sound effect
+    func setupSounds(){
+        if let soundWrong = self.setupAudioPlayerWithFile("Button Wrong answer", type: "wav") {
+            self.soundWrongAnswer = soundWrong
+            self.soundWrongAnswer?.prepareToPlay()
+        }
+        if let soundCorrect = self.setupAudioPlayerWithFile("Button Right answer", type: "wav"){
+            self.soundCorrectAnswer = soundCorrect
+            self.soundCorrectAnswer?.prepareToPlay()
+        }
+        if let soundgameover = self.setupAudioPlayerWithFile("Win Sound Effect", type: "wav"){
+            self.soundGameover = soundgameover
+            self.soundGameover?.prepareToPlay()
+        }
+    }
+    
+    func setupAudioPlayerWithFile(file:NSString, type:NSString) -> AVAudioPlayer?  {
+        //1
+        let path = NSBundle.mainBundle().pathForResource(file as String, ofType: type as String)
+        let url = NSURL.fileURLWithPath(path!)
+        
+        //2
+        var audioPlayer:AVAudioPlayer?
+        
+        // 3
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOfURL: url)
+        } catch {
+            print("Player not available")
+        }
+        
+        return audioPlayer
+    }
+
+    
     
     
     @IBAction func testButton(sender: AnyObject) {
@@ -163,7 +205,7 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
     }
     
     
-    // triviaGameSubmitAnswerDelegate function
+    // MARK: - triviaGameSubmitAnswerDelegate function
     
     func submitAnswer(num: Int){
         
@@ -183,7 +225,7 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
  
     
     
-    // gStackGame Delegate Functions
+    // MARK: - gStackGame Delegate Functions
     
     func gameDidStart(){
         print("Game did start")
@@ -282,12 +324,15 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
         if updatedScore.rightOrWrong?.integerValue == 0 {
             self.embedAnswersDisplayController?.displayForWrongAnswer((updatedScore.answerNumber?.integerValue)!)
             self.embedProcessBarController?.animationForGetIncorrectAnswer()
+            self.soundWrongAnswer?.play()
+        } else {
+            self.soundCorrectAnswer?.play()
         }
         
     }
     
     func didReceiveGameResult(result: gStackGameResult){
-        
+        self.soundGameover?.play()
     }
     
     func didReceiveOtherGameFinished(alive:gStackGameOtherGameFinished){

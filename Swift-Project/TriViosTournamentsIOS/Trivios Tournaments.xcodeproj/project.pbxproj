@@ -58,8 +58,6 @@
 		20CD9B011B878314002FD7FD /* gStackGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9AF61B878314002FD7FD /* gStackGame.swift */; };
 		20CD9B021B878314002FD7FD /* gStackQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9AF71B878314002FD7FD /* gStackQuestion.swift */; };
 		20CD9B031B878314002FD7FD /* gStackTournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9AF81B878314002FD7FD /* gStackTournament.swift */; };
-		20CD9B041B878314002FD7FD /* triviaUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9AF91B878314002FD7FD /* triviaUser.swift */; };
-		20CD9B051B878314002FD7FD /* triviaUserInbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9AFA1B878314002FD7FD /* triviaUserInbox.swift */; };
 		20CD9B081B878504002FD7FD /* Facebook Data Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9B071B878504002FD7FD /* Facebook Data Fetcher.swift */; };
 		20E4EDEE1B7502D000A769B3 /* TournamentsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E4EDED1B7502D000A769B3 /* TournamentsCollectionViewController.swift */; };
 		20F3F8A61B7E3D8300963FA6 /* ThreadsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3F8A51B7E3D8300963FA6 /* ThreadsTableViewController.swift */; };
@@ -72,6 +70,8 @@
 		289950FF1CA4A81E002A33F9 /* trivia Public Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289950FE1CA4A81E002A33F9 /* trivia Public Routes.swift */; };
 		289951011CA5B66C002A33F9 /* trivia Private Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289951001CA5B66C002A33F9 /* trivia Private Routes.swift */; };
 		289951031CA5F61A002A33F9 /* triviaTournamentTalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289951021CA5F61A002A33F9 /* triviaTournamentTalk.swift */; };
+		289A87371CC7DCCD00C30D8A /* triviaUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289A87351CC7DCCD00C30D8A /* triviaUser.swift */; };
+		289A87381CC7DCCD00C30D8A /* triviaUserInbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289A87361CC7DCCD00C30D8A /* triviaUserInbox.swift */; };
 		28F4D2631CA321AB00BAF8A9 /* ServerInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28F4D2621CA321AB00BAF8A9 /* ServerInfo.plist */; };
 		28F4D2651CA3513E00BAF8A9 /* TempFileForRoutesFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F4D2641CA3513E00BAF8A9 /* TempFileForRoutesFunctions.swift */; };
 		28F4D2671CA3539D00BAF8A9 /* triviaDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F4D2661CA3539D00BAF8A9 /* triviaDataFetcher.swift */; };
@@ -152,8 +152,6 @@
 		20CD9AF61B878314002FD7FD /* gStackGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gStackGame.swift; sourceTree = "<group>"; };
 		20CD9AF71B878314002FD7FD /* gStackQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gStackQuestion.swift; sourceTree = "<group>"; };
 		20CD9AF81B878314002FD7FD /* gStackTournament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gStackTournament.swift; sourceTree = "<group>"; };
-		20CD9AF91B878314002FD7FD /* triviaUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = triviaUser.swift; path = qStackSDK/triviaUser.swift; sourceTree = "<group>"; };
-		20CD9AFA1B878314002FD7FD /* triviaUserInbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = triviaUserInbox.swift; path = qStackSDK/triviaUserInbox.swift; sourceTree = "<group>"; };
 		20CD9B071B878504002FD7FD /* Facebook Data Fetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Facebook Data Fetcher.swift"; sourceTree = "<group>"; };
 		20E4EDED1B7502D000A769B3 /* TournamentsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentsCollectionViewController.swift; sourceTree = "<group>"; };
 		20F3F8A51B7E3D8300963FA6 /* ThreadsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadsTableViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +166,8 @@
 		289950FE1CA4A81E002A33F9 /* trivia Public Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "trivia Public Routes.swift"; sourceTree = "<group>"; };
 		289951001CA5B66C002A33F9 /* trivia Private Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "trivia Private Routes.swift"; sourceTree = "<group>"; };
 		289951021CA5F61A002A33F9 /* triviaTournamentTalk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = triviaTournamentTalk.swift; sourceTree = "<group>"; };
+		289A87351CC7DCCD00C30D8A /* triviaUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = triviaUser.swift; sourceTree = "<group>"; };
+		289A87361CC7DCCD00C30D8A /* triviaUserInbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = triviaUserInbox.swift; sourceTree = "<group>"; };
 		28F4D2621CA321AB00BAF8A9 /* ServerInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServerInfo.plist; sourceTree = "<group>"; };
 		28F4D2641CA3513E00BAF8A9 /* TempFileForRoutesFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempFileForRoutesFunctions.swift; sourceTree = "<group>"; };
 		28F4D2661CA3539D00BAF8A9 /* triviaDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = triviaDataFetcher.swift; sourceTree = "<group>"; };
@@ -437,11 +437,11 @@
 		289950FD1CA4A59B002A33F9 /* TriviaSwagAPI */ = {
 			isa = PBXGroup;
 			children = (
+				289A87351CC7DCCD00C30D8A /* triviaUser.swift */,
+				289A87361CC7DCCD00C30D8A /* triviaUserInbox.swift */,
 				28F4D2681CA3552100BAF8A9 /* App Info.swift */,
 				28F4D2661CA3539D00BAF8A9 /* triviaDataFetcher.swift */,
-				20CD9AF91B878314002FD7FD /* triviaUser.swift */,
 				28F4D26E1CA46C9E00BAF8A9 /* triviaNotificationHandler.swift */,
-				20CD9AFA1B878314002FD7FD /* triviaUserInbox.swift */,
 				289951021CA5F61A002A33F9 /* triviaTournamentTalk.swift */,
 				289950FE1CA4A81E002A33F9 /* trivia Public Routes.swift */,
 				289951001CA5B66C002A33F9 /* trivia Private Routes.swift */,
@@ -633,6 +633,7 @@
 				204221FF1B8E59EF006B457B /* EmbeddedWebPageViewController.swift in Sources */,
 				20CD9AFE1B878314002FD7FD /* gStackNotificationHandler.swift in Sources */,
 				289951031CA5F61A002A33F9 /* triviaTournamentTalk.swift in Sources */,
+				289A87371CC7DCCD00C30D8A /* triviaUser.swift in Sources */,
 				204221F91B8E04EE006B457B /* ChangePasswordTableViewController.swift in Sources */,
 				2068379E1B8BBD0200BBC8AC /* ReviewQuestionsPageViewController.swift in Sources */,
 				206EB95B1B8D0D0F00C32873 /* AccountInformationTableViewController.swift in Sources */,
@@ -644,7 +645,6 @@
 				20F3F8AC1B7E454300963FA6 /* ThreadViewController.swift in Sources */,
 				206F8EBB1B7BC1F8001AACD3 /* Avatars.swift in Sources */,
 				20CD9AFC1B878314002FD7FD /* gStack Info.swift in Sources */,
-				20CD9B041B878314002FD7FD /* triviaUser.swift in Sources */,
 				20F3F8B51B7E900700963FA6 /* NSString+USStateMap.m in Sources */,
 				20F3F8B21B7E7FDE00963FA6 /* ProfileViewController.swift in Sources */,
 				20CD9B011B878314002FD7FD /* gStackGame.swift in Sources */,
@@ -662,7 +662,6 @@
 				200DE1931B7A6E5100505013 /* SettingsViewController.swift in Sources */,
 				28F4D2691CA3552100BAF8A9 /* App Info.swift in Sources */,
 				20F3F8AA1B7E440100963FA6 /* NSDate+Utilities.m in Sources */,
-				20CD9B051B878314002FD7FD /* triviaUserInbox.swift in Sources */,
 				20CD9AFF1B878314002FD7FD /* gStack Private Routes.swift in Sources */,
 				2048E1261B90F543006974E4 /* GlobalFeedTableViewController.swift in Sources */,
 				206294B51B7D017400DDA901 /* CorrectAnswerDotsView.swift in Sources */,
@@ -681,6 +680,7 @@
 				206F8EB11B7B946F001AACD3 /* LoginEmailViewController.swift in Sources */,
 				206EB9591B8CFB5200C32873 /* OtherSettingsTableViewController.swift in Sources */,
 				20252FB11B94C7AA00F66652 /* UIButton+tintImage.m in Sources */,
+				289A87381CC7DCCD00C30D8A /* triviaUserInbox.swift in Sources */,
 				289951011CA5B66C002A33F9 /* trivia Private Routes.swift in Sources */,
 				20CD9B001B878314002FD7FD /* gStack Public Routes.swift in Sources */,
 				20E4EDEE1B7502D000A769B3 /* TournamentsCollectionViewController.swift in Sources */,
