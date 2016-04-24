@@ -109,7 +109,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wMY-aQ-5bX" id="ClW-eC-SZp">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="97"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="96.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qs4-1r-dFW">
@@ -382,6 +382,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nkl-bu-r8R">
                                 <rect key="frame" x="602" y="4" width="65" height="44"/>
                                 <state key="normal" image="SettingsButton"/>
+                                <connections>
+                                    <segue destination="Sx5-pi-WLM" kind="presentation" id="HNG-Ub-YJv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8I-z2-eHl">
                                 <rect key="frame" x="291" y="4" width="85" height="44"/>
@@ -389,6 +392,9 @@
                             </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <segue destination="wDq-Zl-I7d" kind="presentation" id="odG-pv-hos"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ujL-ad-fBn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -401,6 +407,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hvc-bi-pH6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1554.5" y="1001"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="3ER-E9-cvO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="Sx5-pi-WLM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zmd-36-S5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1026.5" y="164"/>
+        </scene>
+        <!--LoginSignUp-->
+        <scene sceneID="LhN-lw-i3g">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LoginSignUp" id="wDq-Zl-I7d" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Oj-m6-kPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1039.5" y="111"/>
         </scene>
     </scenes>
     <resources>

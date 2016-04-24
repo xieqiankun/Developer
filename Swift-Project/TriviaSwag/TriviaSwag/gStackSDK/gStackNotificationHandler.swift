@@ -45,7 +45,8 @@ class gStackNotificationHandler: NSObject, PTPusherDelegate, PTPusherPresenceCha
     
     func didReceiveEventNotification(notificaiton: NSNotification) {
         let event = notificaiton.userInfo![PTPusherEventUserInfoKey] as! PTPusherEvent
-        print("Received event: \(event)")
+        print("Pusher Channel:\(event.channel)")
+        print("Received event: \(event.name)")
         
         if event.name == "newGameSuccess" {
             let serverIp = event.data["serverIp"] as! String

@@ -14,8 +14,9 @@
 #import <Primus/Primus.h>
 #import <Primus/SocketRocketClient.h>
 //#import "TextFieldValidator.h"
-//#import <FBSDKCoreKit/FBSDKCoreKit.h>
-//#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <JSQMessagesViewController/JSQMessages.h>
 //#import "NSDate+Utilities.h"
 //#import "CSStickyHeaderFlowLayout.h"

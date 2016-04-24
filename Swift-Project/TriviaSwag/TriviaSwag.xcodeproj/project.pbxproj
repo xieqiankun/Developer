@@ -46,6 +46,20 @@
 		289A87431CC7EE5300C30D8A /* Button Wrong answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 289A873F1CC7EE5300C30D8A /* Button Wrong answer.wav */; };
 		289A87441CC7EE5300C30D8A /* Win Sound Effect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 289A87401CC7EE5300C30D8A /* Win Sound Effect.wav */; };
 		289A87461CC7FFD500C30D8A /* Countdown_Clock.wav in Resources */ = {isa = PBXBuildFile; fileRef = 289A87451CC7FFD400C30D8A /* Countdown_Clock.wav */; };
+		289A874B1CC8181500C30D8A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289A874A1CC8181500C30D8A /* SettingsTableViewController.swift */; };
+		289A874D1CC831DF00C30D8A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289A874C1CC831DF00C30D8A /* SettingsViewController.swift */; };
+		289A874F1CC8337700C30D8A /* SettingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289A874E1CC8337700C30D8A /* SettingDetailViewController.swift */; };
+		289A87541CC9301400C30D8A /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289A87521CC9301400C30D8A /* Settings.storyboard */; };
+		289A87561CC955EB00C30D8A /* GeneralTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289A87551CC955EB00C30D8A /* GeneralTableViewController.swift */; };
+		289A87581CC95E1200C30D8A /* AccountInfomationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289A87571CC95E1200C30D8A /* AccountInfomationTableViewController.swift */; };
+		289A875B1CC9741600C30D8A /* LoginSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289A87591CC9741600C30D8A /* LoginSignUp.storyboard */; };
+		289A875D1CC9746F00C30D8A /* LoginSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289A875C1CC9746F00C30D8A /* LoginSignUpViewController.swift */; };
+		289A87601CC978DF00C30D8A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289A875F1CC978DF00C30D8A /* SignUpViewController.swift */; };
+		289A87681CCA8B0500C30D8A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289A87671CCA8B0500C30D8A /* LoginViewController.swift */; };
+		289A876C1CCABD4600C30D8A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 289A87691CCABD4600C30D8A /* FBSDKCoreKit.framework */; };
+		289A876D1CCABD4600C30D8A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 289A876A1CCABD4600C30D8A /* FBSDKLoginKit.framework */; };
+		289A876E1CCABD4600C30D8A /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 289A876B1CCABD4600C30D8A /* FBSDKShareKit.framework */; };
+		289A87701CCC3DEA00C30D8A /* FacebookFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289A876F1CCC3DEA00C30D8A /* FacebookFunctions.swift */; };
 		28A978D81CB6B30D006F6218 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A978D71CB6B30D006F6218 /* GamePlayViewController.swift */; };
 		28A978DB1CB6F764006F6218 /* ProgressBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A978DA1CB6F764006F6218 /* ProgressBarViewController.swift */; };
 		28A978DD1CB80A82006F6218 /* QuestionDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A978DC1CB80A82006F6218 /* QuestionDisplayViewController.swift */; };
@@ -116,6 +130,20 @@
 		289A873F1CC7EE5300C30D8A /* Button Wrong answer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Button Wrong answer.wav"; sourceTree = "<group>"; };
 		289A87401CC7EE5300C30D8A /* Win Sound Effect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Win Sound Effect.wav"; sourceTree = "<group>"; };
 		289A87451CC7FFD400C30D8A /* Countdown_Clock.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Countdown_Clock.wav; sourceTree = "<group>"; };
+		289A874A1CC8181500C30D8A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		289A874C1CC831DF00C30D8A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		289A874E1CC8337700C30D8A /* SettingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingDetailViewController.swift; sourceTree = "<group>"; };
+		289A87531CC9301400C30D8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
+		289A87551CC955EB00C30D8A /* GeneralTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralTableViewController.swift; sourceTree = "<group>"; };
+		289A87571CC95E1200C30D8A /* AccountInfomationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfomationTableViewController.swift; sourceTree = "<group>"; };
+		289A875A1CC9741600C30D8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginSignUp.storyboard; sourceTree = "<group>"; };
+		289A875C1CC9746F00C30D8A /* LoginSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignUpViewController.swift; sourceTree = "<group>"; };
+		289A875F1CC978DF00C30D8A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		289A87671CCA8B0500C30D8A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		289A87691CCABD4600C30D8A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		289A876A1CCABD4600C30D8A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		289A876B1CCABD4600C30D8A /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		289A876F1CCC3DEA00C30D8A /* FacebookFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookFunctions.swift; sourceTree = "<group>"; };
 		28A978D71CB6B30D006F6218 /* GamePlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
 		28A978DA1CB6F764006F6218 /* ProgressBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarViewController.swift; sourceTree = "<group>"; };
 		28A978DC1CB80A82006F6218 /* QuestionDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDisplayViewController.swift; sourceTree = "<group>"; };
@@ -131,7 +159,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				289A876E1CCABD4600C30D8A /* FBSDKShareKit.framework in Frameworks */,
 				01FCBF41966131766755FE2E /* libPods-TriviaSwag.a in Frameworks */,
+				289A876C1CCABD4600C30D8A /* FBSDKCoreKit.framework in Frameworks */,
+				289A876D1CCABD4600C30D8A /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,7 +245,7 @@
 				281285A81CB57C2100D0D72E /* GStackAPI */,
 				284759141CB2F4E500DCFE6A /* Controller */,
 				284758C21CB2EE3500DCFE6A /* Main.storyboard */,
-				283408AD1CBDB2B90068D070 /* GamePlay.storyboard */,
+				289A87711CCC3DF300C30D8A /* Helper */,
 				289A873C1CC7EE5300C30D8A /* TriviaSound */,
 				284758C51CB2EE3500DCFE6A /* Assets.xcassets */,
 				284758C71CB2EE3500DCFE6A /* LaunchScreen.storyboard */,
@@ -248,6 +279,8 @@
 			children = (
 				284759151CB2F4FF00DCFE6A /* Main */,
 				28A978D91CB6B31B006F6218 /* GamePlay */,
+				289A87491CC817ED00C30D8A /* Settings */,
+				289A875E1CC9747300C30D8A /* Login/SignUp */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -294,6 +327,38 @@
 			path = TriviaSound;
 			sourceTree = "<group>";
 		};
+		289A87491CC817ED00C30D8A /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				289A874C1CC831DF00C30D8A /* SettingsViewController.swift */,
+				289A874A1CC8181500C30D8A /* SettingsTableViewController.swift */,
+				289A874E1CC8337700C30D8A /* SettingDetailViewController.swift */,
+				289A87551CC955EB00C30D8A /* GeneralTableViewController.swift */,
+				289A87571CC95E1200C30D8A /* AccountInfomationTableViewController.swift */,
+				289A87521CC9301400C30D8A /* Settings.storyboard */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		289A875E1CC9747300C30D8A /* Login/SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				289A87591CC9741600C30D8A /* LoginSignUp.storyboard */,
+				289A875C1CC9746F00C30D8A /* LoginSignUpViewController.swift */,
+				289A875F1CC978DF00C30D8A /* SignUpViewController.swift */,
+				289A87671CCA8B0500C30D8A /* LoginViewController.swift */,
+			);
+			name = Login/SignUp;
+			sourceTree = "<group>";
+		};
+		289A87711CCC3DF300C30D8A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				289A876F1CCC3DEA00C30D8A /* FacebookFunctions.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		28A978D91CB6B31B006F6218 /* GamePlay */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +368,7 @@
 				28A978DE1CB80A91006F6218 /* AnswersDisplayViewController.swift */,
 				28A978E01CB8565A006F6218 /* TimeBarViewController.swift */,
 				283408A81CBC53F70068D070 /* ClockViewController.swift */,
+				283408AD1CBDB2B90068D070 /* GamePlay.storyboard */,
 			);
 			name = GamePlay;
 			sourceTree = "<group>";
@@ -311,6 +377,9 @@
 			isa = PBXGroup;
 			children = (
 				FDF86463B0CAD609B9C80919 /* libPods-TriviaSwag.a */,
+				289A87691CCABD4600C30D8A /* FBSDKCoreKit.framework */,
+				289A876A1CCABD4600C30D8A /* FBSDKLoginKit.framework */,
+				289A876B1CCABD4600C30D8A /* FBSDKShareKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -395,7 +464,7 @@
 				TargetAttributes = {
 					284758BA1CB2EE3500DCFE6A = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = A4KK8R4439;
+						DevelopmentTeam = UUUA77DZ8A;
 					};
 					284758CE1CB2EE3500DCFE6A = {
 						CreatedOnToolsVersion = 7.3;
@@ -434,6 +503,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				289A875B1CC9741600C30D8A /* LoginSignUp.storyboard in Resources */,
 				289A87421CC7EE5300C30D8A /* Button Right answer.wav in Resources */,
 				284758C91CB2EE3500DCFE6A /* LaunchScreen.storyboard in Resources */,
 				281285BA1CB57C2100D0D72E /* ServerInfo.plist in Resources */,
@@ -443,6 +513,7 @@
 				289A87431CC7EE5300C30D8A /* Button Wrong answer.wav in Resources */,
 				284758C41CB2EE3500DCFE6A /* Main.storyboard in Resources */,
 				283408AF1CBDB2B90068D070 /* GamePlay.storyboard in Resources */,
+				289A87541CC9301400C30D8A /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,8 +586,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				289A87561CC955EB00C30D8A /* GeneralTableViewController.swift in Sources */,
 				281285B91CB57C2100D0D72E /* gStackTournament.swift in Sources */,
 				281285B61CB57C2100D0D72E /* gStackMasterDataFetcher.swift in Sources */,
+				289A87701CCC3DEA00C30D8A /* FacebookFunctions.swift in Sources */,
 				281285A21CB57BBD00D0D72E /* triviaDataFetcher.swift in Sources */,
 				281285A41CB57BBD00D0D72E /* triviaTournamentTalk.swift in Sources */,
 				281285B71CB57C2100D0D72E /* gStackNotificationHandler.swift in Sources */,
@@ -524,25 +597,32 @@
 				281285B21CB57C2100D0D72E /* gStack Info.swift in Sources */,
 				284759131CB2F4DD00DCFE6A /* TableContainerViewController.swift in Sources */,
 				28A978D81CB6B30D006F6218 /* GamePlayViewController.swift in Sources */,
+				289A875D1CC9746F00C30D8A /* LoginSignUpViewController.swift in Sources */,
 				2847595D1CB43E2800DCFE6A /* DetailedTournamentViewController.swift in Sources */,
+				289A874F1CC8337700C30D8A /* SettingDetailViewController.swift in Sources */,
 				2847591C1CB310E800DCFE6A /* HomeViewController.swift in Sources */,
 				281285A61CB57BBD00D0D72E /* triviaUserInbox.swift in Sources */,
 				284759611CB4524000DCFE6A /* NavBarViewController.swift in Sources */,
 				284758BF1CB2EE3500DCFE6A /* AppDelegate.swift in Sources */,
+				289A874B1CC8181500C30D8A /* SettingsTableViewController.swift in Sources */,
 				281285B81CB57C2100D0D72E /* gStackQuestion.swift in Sources */,
 				281285911CB563F000D0D72E /* SegementedControlUI.swift in Sources */,
 				28A978DD1CB80A82006F6218 /* QuestionDisplayViewController.swift in Sources */,
 				28A978DB1CB6F764006F6218 /* ProgressBarViewController.swift in Sources */,
 				281285A31CB57BBD00D0D72E /* triviaNotificationHandler.swift in Sources */,
 				281285BC1CB57CBD00D0D72E /* App Info.swift in Sources */,
+				289A87601CC978DF00C30D8A /* SignUpViewController.swift in Sources */,
 				281285A11CB57BBD00D0D72E /* trivia Public Routes.swift in Sources */,
 				281285A51CB57BBD00D0D72E /* triviaUser.swift in Sources */,
 				281285B31CB57C2100D0D72E /* gStack Private Routes.swift in Sources */,
+				289A87681CCA8B0500C30D8A /* LoginViewController.swift in Sources */,
+				289A87581CC95E1200C30D8A /* AccountInfomationTableViewController.swift in Sources */,
 				281285B51CB57C2100D0D72E /* gStackGame.swift in Sources */,
 				281285A01CB57BBD00D0D72E /* trivia Private Routes.swift in Sources */,
 				28A978E11CB8565A006F6218 /* TimeBarViewController.swift in Sources */,
 				284759191CB2FFB000DCFE6A /* TournamentsTableViewController.swift in Sources */,
 				284759171CB2F57600DCFE6A /* TournamentsPageViewController.swift in Sources */,
+				289A874D1CC831DF00C30D8A /* SettingsViewController.swift in Sources */,
 				284759111CB2F13E00DCFE6A /* TempFileForRoutesFunctions.swift in Sources */,
 				281285BE1CB592EA00D0D72E /* LeaderboardImageViewController.swift in Sources */,
 				281285B41CB57C2100D0D72E /* gStack Public Routes.swift in Sources */,
@@ -604,6 +684,22 @@
 				284758C81CB2EE3500DCFE6A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		289A87521CC9301400C30D8A /* Settings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				289A87531CC9301400C30D8A /* Base */,
+			);
+			name = Settings.storyboard;
+			sourceTree = "<group>";
+		};
+		289A87591CC9741600C30D8A /* LoginSignUp.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				289A875A1CC9741600C30D8A /* Base */,
+			);
+			name = LoginSignUp.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -701,6 +797,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TriviaSwag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.purplegator.qiankunxie.TriviaSwag;
@@ -717,6 +817,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TriviaSwag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.purplegator.qiankunxie.TriviaSwag;

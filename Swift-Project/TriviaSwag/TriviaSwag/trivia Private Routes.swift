@@ -28,10 +28,9 @@ public func triviaGetCurrentUserInfo(completion: (error: NSError?) -> Void) {
 }
 
 //Updata Address Info
-public func triviaUpdateAddress(var name: String?, phone: String, address: triviaUserAddress, completion: (error: NSError?) -> Void) {
-    if name == nil {
-        name = ""
-    }
+//regulate use before submit the address
+public func triviaUpdateAddress(name: String?, phone: String, address: triviaUserAddress, completion: (error: NSError?) -> Void) {
+
     if address.line1 == nil {
         address.line1 = ""
     }

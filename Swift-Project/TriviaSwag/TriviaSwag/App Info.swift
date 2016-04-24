@@ -48,24 +48,29 @@ func isCurrentUserLoggedIn() -> Bool {
 */
 
 //MARK: - Handle Trivia User
+
+let triviaUserLogInTokenKey = "triviaUserLoginToken"
+let triviaUserSuccessfullyLoggedIn = "triviaUserSuccessfullyLoggedIn"
+
 public var triviaCurrentUser: triviaUser?
 func retrieveLogInToken() {
     if triviaCurrentUser == nil {
         triviaCurrentUser = triviaUser()
     }
     triviaCurrentUser!._id = NSUserDefaults.standardUserDefaults().stringForKey(triviaUserLogInTokenKey)
+    print(triviaCurrentUser?._id)
 }
 
 func isCurrentUserLoggedIn() -> Bool {
     return triviaCurrentUser?.displayName != nil
 }
 
-let triviaUserLogInTokenKey = "triviaUserLoginToken"
-
 func saveLogInToken(token: String) {
     NSUserDefaults.standardUserDefaults().setObject(token, forKey: triviaUserLogInTokenKey)
     NSUserDefaults.standardUserDefaults().synchronize()
 }
+
+// MARK: - default
 
 
 //MARK: - Handle Trivia User Inbox

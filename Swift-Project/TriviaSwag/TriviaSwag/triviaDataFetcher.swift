@@ -32,6 +32,7 @@ func makeRequest(isPrivate: Bool, route: String, type: String, payload: AnyObjec
                 completion(data: nil, response: nil, error: error)
                 return
             }
+            //print("Authorization id:\(userToken)")
             request.setValue(userToken, forHTTPHeaderField: "Authorization")
         }
         else {

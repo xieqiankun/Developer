@@ -28,6 +28,26 @@ public func triviaUserLogin(email: String, password: String, completion: (error:
     })
 }
 
+public func triviaUserLoginWithFacebook(fbToken: String, fbID: String, completion:(error: NSError?) -> Void) {
+    
+    makeRequest(false, route: "loginfacebook", type: "clientFacebookLogin", payload: ["accessToken":fbToken,"fbId":fbID], completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _payload in
+            if _error != nil {
+                completion(error: _error)
+            } else if let payload = _payload as? Dictionary<String,AnyObject> {
+                triviaCurrentUser = triviaUser(payload: payload)
+                completion(error: nil)
+            } else {
+                completion(error: triviaMissingPayloadError)
+            }
+        })
+    })
+    
+    
+}
+
 //Verify email
 public func triviaVerifyEmail(email: String, completion: (error: NSError?) -> Void) {
     makeRequest(false, route: "verifyemail", type: "verifyEmail", payload: ["email":email], completion: {
@@ -75,16 +95,7 @@ public func triviaFacebookSignUp(displayName: String, email: String, password: S
 }
 
 // workds
-public func triviaSignUp(displayName: String, email: String, password: String, var avatar: String?, var deviceId: String?,var referralCode: String?, completion: (error: NSError?) -> Void) {
-    if avatar == nil {
-        avatar = ""
-    }
-    if deviceId == nil {
-        deviceId = ""
-    }
-    if referralCode == nil {
-        referralCode = ""
-    }
+public func triviaSignUp(displayName: String, email: String, password: String, avatar: String?, deviceId: String?, referralCode: String?, completion: (error: NSError?) -> Void) {
 
     let payloadDictionary = ["displayName":displayName,"email":email,"password":password,"avatar":avatar!,"deviceId":deviceId!,"referralCode":referralCode!]
     makeRequest(false, route: "signup", type: "clientSignUp", payload: payloadDictionary, completion: {

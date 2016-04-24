@@ -72,8 +72,7 @@
                                                     <exclude reference="R0C-rg-C31"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="341" y="8" width="52" height="52"/>
+                                            <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="constraints">
                                                     <include reference="R0C-rg-C31"/>
                                                 </mask>
@@ -172,8 +171,7 @@
                                                     <exclude reference="Ad2-Na-bTt"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="302" y="29" width="31" height="31"/>
+                                            <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="constraints">
                                                     <include reference="Ad2-Na-bTt"/>
                                                 </mask>
@@ -6360,7 +6358,7 @@ Up to four</string>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="96" y="11" width="45" height="21"/>
+                                                <rect key="frame" x="94.5" y="11" width="45" height="21"/>
                                                 <mask key="constraints">
                                                     <exclude reference="1bu-EA-US5"/>
                                                     <exclude reference="Q21-rb-5T2"/>
@@ -6585,7 +6583,7 @@ Up to four</string>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="113" y="12" width="17" height="21"/>
+                                                <rect key="frame" x="113" y="11" width="17" height="21"/>
                                                 <mask key="constraints">
                                                     <include reference="ocx-cJ-uB1"/>
                                                 </mask>
@@ -6605,7 +6603,7 @@ Up to four</string>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="164" y="12" width="28" height="21"/>
+                                                <rect key="frame" x="164" y="11" width="28" height="21"/>
                                                 <mask key="constraints">
                                                     <include reference="jct-gG-1M4"/>
                                                 </mask>
@@ -6625,7 +6623,7 @@ Up to four</string>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="215" y="12" width="17" height="21"/>
+                                                <rect key="frame" x="215" y="11" width="17" height="21"/>
                                                 <mask key="constraints">
                                                     <include reference="jVq-7D-xma"/>
                                                 </mask>
@@ -6848,7 +6846,7 @@ Up to four</string>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="87" y="15" width="48" height="16"/>
+                                                <rect key="frame" x="87" y="14" width="48" height="16"/>
                                                 <mask key="constraints">
                                                     <include reference="GRG-cM-U8E"/>
                                                 </mask>
@@ -6873,7 +6871,7 @@ Up to four</string>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="143" y="15" width="51" height="16"/>
+                                                <rect key="frame" x="143" y="14" width="51" height="16"/>
                                                 <mask key="constraints">
                                                     <include reference="brk-0x-EMe"/>
                                                 </mask>
@@ -6898,7 +6896,7 @@ Up to four</string>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="196" y="15" width="41" height="16"/>
+                                                <rect key="frame" x="196" y="14" width="41" height="16"/>
                                                 <mask key="constraints">
                                                     <include reference="XCK-NK-wFE"/>
                                                 </mask>
@@ -8025,9 +8023,9 @@ Second line</string>
     <inferredMetricsTieBreakers>
         <segue reference="Axh-jQ-g6B"/>
         <segue reference="yta-wN-Q1q"/>
+        <segue reference="SDe-0X-9tF"/>
         <segue reference="IBN-J4-zrP"/>
         <segue reference="IgO-MH-KhK"/>
         <segue reference="rfc-iS-cV7"/>
-        <segue reference="SDe-0X-9tF"/>
     </inferredMetricsTieBreakers>
 </document>
