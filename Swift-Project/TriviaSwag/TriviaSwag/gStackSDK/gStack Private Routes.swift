@@ -73,9 +73,9 @@ public func gStackFetchLeaderboardForTournament(tournament: gStackTournament, co
         let error = NSError(domain: "tournament uuid is missing", code: 2222, userInfo: nil)
         completion(error: error, leaderboard: nil)
     } else {
-        gStackMakeRequest(false, route: "gettournaments", type: "clientGetTournamentLeaderboard", payload: ["uuid":tournament.uuid!], completion: {
+        gStackMakeRequest(true, route: "gettournaments", type: "clientGetTournamentLeaderboard", payload: ["uuid":tournament.uuid!], completion: {
             data, response, error in
-            gStackProcessResponse(error, data: data, successType: nil, completion: {
+            gStackProcessResponse(error, data: data, successType: "getTournamentLeaderboardSuccess", completion: {
                 _error, _payload in
                 if _error != nil {
                     completion(error: _error, leaderboard: nil)

@@ -123,7 +123,7 @@ class ProgressBarViewController: UIViewController {
                     (true) in
                     imageView.removeFromSuperview()
 
-                }
+            }
         }
         
     }

@@ -10,9 +10,25 @@ import UIKit
 
 class LeaderboardImageViewController: UIViewController {
 
+    
+    var leaderboard: gStackTournamentLeaderboard?
+    
+    var currentTournament: gStackTournament? {
+        didSet{
+            gStackFetchLeaderboardForTournament(currentTournament!) { (error, leaderboard) in
+                self.leaderboard = leaderboard
+                print(leaderboard?.leaders)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
     
+        // Add Notification Center
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LeaderboardImageViewController.updateTournamentLeaderboard(_:)), name: TournamentDidSelectNotificationName, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LeaderboardImageViewController.updateTournamentLeaderboard(_:)), name: TournamentWillAppearNotificationName, object: nil)
     
     }
 
@@ -22,6 +38,15 @@ class LeaderboardImageViewController: UIViewController {
     }
     
 
+    func updateTournamentLeaderboard(notification: NSNotification){
+        
+        if let info = notification.userInfo {
+            let temp = info["currentTournament"] as! gStackTournament
+            self.currentTournament = temp
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 

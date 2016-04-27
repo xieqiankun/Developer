@@ -133,6 +133,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 })
             } else if let fbtoken = self.fbToken, fbdata = self.fbData {
                 
+                // need to verify if user gives the permission of email
                 triviaFacebookSignUp(usernameTextField.text!, email: fbdata["email"] as! String, password: passwordTextField.text!, avatar: "", deviceId: UIDevice.currentDevice().identifierForVendor?.UUIDString, referralCode: referralTextField.text!, fbToken: fbtoken, fbData: fbdata, completion: { (error) in
                     
                     if error != nil {

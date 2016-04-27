@@ -561,29 +561,6 @@ public func gStackFetchPrizeWinners(completion: (error: NSError?, winners: Array
 //public part
 
 
-
-//nq
-public func gStackLoginWithFacebook(accessToken: String, facebookID: String, completion: (error: NSError?) -> Void) {
-    let requestPayload = ["accessToken":accessToken,"fbId":facebookID]
-    makeRequest(false, route: "loginfacebook", type: "clientFacebookLogin", payload: requestPayload, completion: {
-        data, response, error in
-        processResponse(error, data: data, completion: {
-            _error, _payload in
-            if _error != nil {
-                completion(error: _error)
-            } else {
-                if let payload = _payload as? Dictionary<String,AnyObject> {
-                    triviaCurrentUser = triviaUser(payload: payload)
-                    completion(error: nil)
-                } else {
-                    completion(error: gStackMissingPayloadError)
-                }
-            }
-        })
-    })
-}
-
-
 //nq
 public func gStackRequestPasswordReset(email: String, completion: (error: NSError?) -> Void) {
     makeRequest(false, route: "reset", type: "clientRequestReset", payload: ["email":email], completion: {
