@@ -79,7 +79,7 @@ class TournamentsTableViewController: UITableViewController, gStackTournamentLis
     
     var selectedTournament: gStackTournament?{
         didSet{
-            // Contain the concurrency between different views
+            // maintain the concurrency between different views
             NSNotificationCenter.defaultCenter().postNotificationName(TournamentDidSelectNotificationName, object: self, userInfo: ["currentTournament": selectedTournament!])
         }
     }
@@ -286,7 +286,5 @@ class TournamentsTableViewController: UITableViewController, gStackTournamentLis
         }
         
     }
-    
-    
-    
+
 }

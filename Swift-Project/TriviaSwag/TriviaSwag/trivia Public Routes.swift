@@ -61,22 +61,8 @@ public func triviaVerifyEmail(email: String, completion: (error: NSError?) -> Vo
 
 
 //not sure if the function will work
-public func triviaFacebookSignUp(displayName: String, email: String, password: String, var avatar: String?, var deviceId: String?, var referralCode: String?, var fbToken: String?, var fbData: [NSObject: AnyObject]?, completion: (error: NSError?) -> Void) {
-    if avatar == nil {
-        avatar = ""
-    }
-    if deviceId == nil {
-        deviceId = ""
-    }
-    if referralCode == nil {
-        referralCode = ""
-    }
-    if fbToken == nil {
-        fbToken = ""
-    }
-    if fbData == nil {
-        fbData = Dictionary<NSObject,AnyObject>()
-    }
+public func triviaFacebookSignUp(displayName: String, email: String, password: String, avatar: String?, deviceId: String?, referralCode: String?, fbToken: String?, fbData: [NSObject: AnyObject]?, completion: (error: NSError?) -> Void) {
+
     let payloadDictionary = ["displayName":displayName,"email":email,"password":password,"avatar":avatar!,"deviceId":deviceId!,"referralCode":referralCode!,"fbToken":fbToken!,"fbData":fbData!]
     makeRequest(false, route: "signup", type: "clientSignUp", payload: payloadDictionary, completion: {
         data, response, error in
