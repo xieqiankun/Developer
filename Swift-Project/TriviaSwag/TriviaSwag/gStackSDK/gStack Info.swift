@@ -29,5 +29,4 @@ public var gStackCachedTournaments = Array<gStackTournament>()
 public var gStackAppIDToken: String?
 public var gStackPusherChannel: String?
 
-
-
+public var gStackCachedLeaderBoard = [String: gStackTournamentLeaderboard]()

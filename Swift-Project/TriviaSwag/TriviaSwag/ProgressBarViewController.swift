@@ -28,6 +28,11 @@ class ProgressBarViewController: UIViewController {
     
     var imageView: UIImageView?
     
+    deinit{
+        
+        print("deinit the progress bar view controller")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 

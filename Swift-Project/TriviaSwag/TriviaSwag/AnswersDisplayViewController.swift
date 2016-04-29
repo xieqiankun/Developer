@@ -19,6 +19,11 @@ class AnswersDisplayViewController: UIViewController {
     
     weak var delegate: triviaGameSubmitAnswerDelegate?
     
+    deinit{
+        
+        print("deinit the answer view controller")
+    }
+    
     @IBOutlet var answerViews: [UIView]!
     
     @IBOutlet var answerButtons: [UIButton]!

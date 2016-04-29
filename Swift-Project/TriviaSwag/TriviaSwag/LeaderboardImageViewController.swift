@@ -29,7 +29,17 @@ class LeaderboardImageViewController: UIViewController {
         // Add Notification Center
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LeaderboardImageViewController.updateTournamentLeaderboard(_:)), name: TournamentDidSelectNotificationName, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LeaderboardImageViewController.updateTournamentLeaderboard(_:)), name: TournamentWillAppearNotificationName, object: nil)
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(LeaderboardImageViewController.showDetailLeaderboard))
+        gesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(gesture)
     
+    }
+    
+    func showDetailLeaderboard() {
+        
+        performSegueWithIdentifier("DetailLeaderboard", sender: self)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,14 +57,25 @@ class LeaderboardImageViewController: UIViewController {
         
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if let des = segue.destinationViewController as? DetailedLeaderboardViewController where segue.identifier == "DetailLeaderboard" {
+            print("I am here")
+            if let lb = self.leaderboard{
+                des.leaderboard = lb
+            } else {
+                des.leaderboard = gStackTournamentLeaderboard(array: [[String:AnyObject]]())
+            }
+            
+        }
+        
     }
-    */
+    
 
 }

@@ -139,6 +139,7 @@
                     <connections>
                         <segue destination="6Yc-1F-JBY" kind="show" identifier="AccountInfomation" animates="NO" id="eS4-Ve-9v8"/>
                         <segue destination="Gzc-3f-ynN" kind="show" identifier="General" animates="NO" id="hgM-EO-Kat"/>
+                        <segue destination="p5W-qv-Hbr" kind="show" identifier="SubmitQuestion" animates="NO" id="6db-n0-guZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bCI-nB-S4d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -549,6 +550,152 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vDM-ZU-dvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2705.5" y="3374.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Bq3-W3-Wxt">
+            <objects>
+                <viewController id="p5W-qv-Hbr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0UH-w9-dJe"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZI7-ZA-90N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xRp-xz-4ve">
+                        <rect key="frame" x="0.0" y="0.0" width="427" height="331"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ybo-o3-Fyw">
+                                <rect key="frame" x="20" y="0.0" width="387" height="336"/>
+                                <connections>
+                                    <segue destination="mGl-pJ-gLa" kind="embed" id="Z0N-lZ-Ltf"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lk7-nS-NGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1720.5" y="2878.5"/>
+        </scene>
+        <!--Submit Question Table View Controller-->
+        <scene sceneID="wf4-Dy-LL3">
+            <objects>
+                <tableViewController id="mGl-pJ-gLa" customClass="SubmitQuestionTableViewController" customModule="TriviaSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5HT-CV-LrK">
+                        <rect key="frame" x="0.0" y="0.0" width="387" height="336"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="inputCell" id="hSS-m6-r1K" customClass="AnswerCellTableViewCell" customModule="TriviaSwag" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="387" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hSS-m6-r1K" id="d1b-oX-D1Z">
+                                    <rect key="frame" x="0.0" y="0.0" width="387" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vQv-ju-baz">
+                                            <rect key="frame" x="8" y="7" width="371" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        </textField>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="answerText" destination="vQv-ju-baz" id="Kyx-Qu-GK8"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="submitCell" id="TvR-JO-Udu" customClass="SubmitQuestionButtonTableViewCell" customModule="TriviaSwag" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="387" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TvR-JO-Udu" id="3dW-dM-VBc">
+                                    <rect key="frame" x="0.0" y="0.0" width="387" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TuX-vl-oMW">
+                                            <rect key="frame" x="8" y="7" width="371" height="30"/>
+                                            <state key="normal" title="Submit"/>
+                                            <connections>
+                                                <action selector="sumbit" destination="TvR-JO-Udu" eventType="touchUpInside" id="eKz-oM-aw5"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="categoryCell" textLabel="aXY-eb-STB" detailTextLabel="mgO-ao-3ma" style="IBUITableViewCellStyleValue1" id="WFE-ij-FiJ">
+                                <rect key="frame" x="0.0" y="116" width="387" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WFE-ij-FiJ" id="Cib-Fu-EpU">
+                                    <rect key="frame" x="0.0" y="0.0" width="354" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aXY-eb-STB">
+                                            <rect key="frame" x="15" y="12" width="67" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="General Knowledge" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mgO-ao-3ma">
+                                            <rect key="frame" x="210.5" y="12" width="141.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryPickerCell" rowHeight="119" id="jJ7-kj-daD" customClass="CategoryPickerTableViewCell" customModule="TriviaSwag" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="160" width="387" height="119"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jJ7-kj-daD" id="eSh-az-Uk4">
+                                    <rect key="frame" x="0.0" y="0.0" width="387" height="119"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3w-25-UfQ">
+                                            <rect key="frame" x="8" y="2" width="371" height="115"/>
+                                        </pickerView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="I3w-25-UfQ" secondAttribute="bottom" constant="2" id="8Mi-X5-Nna"/>
+                                        <constraint firstItem="I3w-25-UfQ" firstAttribute="top" secondItem="eSh-az-Uk4" secondAttribute="top" constant="2" id="sm3-zT-fX9"/>
+                                        <constraint firstItem="I3w-25-UfQ" firstAttribute="leading" secondItem="eSh-az-Uk4" secondAttribute="leading" constant="8" id="zZs-5E-Ufl"/>
+                                        <constraint firstAttribute="trailing" secondItem="I3w-25-UfQ" secondAttribute="trailing" constant="8" id="zkJ-cD-ngL"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="categoryPicker" destination="I3w-25-UfQ" id="Tye-Qa-qIA"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="questionBodyCell" rowHeight="106" id="JwY-UR-LGQ" customClass="QuestionCellTableViewCell" customModule="TriviaSwag" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="279" width="387" height="106"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JwY-UR-LGQ" id="kjm-eG-mNM">
+                                    <rect key="frame" x="0.0" y="0.0" width="387" height="106"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cdc-yy-uPC">
+                                            <rect key="frame" x="8" y="8" width="371" height="90"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textView" destination="cdc-yy-uPC" id="fMX-K2-nx0"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="mGl-pJ-gLa" id="sCn-Qd-4T8"/>
+                            <outlet property="delegate" destination="mGl-pJ-gLa" id="nWF-Qn-tTE"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="McD-Sy-0qq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1720.5" y="3466"/>
         </scene>
     </scenes>
 </document>

@@ -8,6 +8,9 @@
 
 import Foundation
 
+var gStackFetchTournamentsNotificationName = "gStackFetchTournamentsNotification"
+
+
 public class gStackPrizeWinner : NSObject {
     public var prize: String?
     public var displayName: String?
@@ -42,8 +45,10 @@ public func gStackFetchTournaments(completion: (error: NSError?, tournaments: Ar
             }
         }
         gStackCachedTournaments = returnTournaments
+        // Post notification for successfully fetch the tournaments
+        NSNotificationCenter.defaultCenter().postNotificationName(gStackFetchTournamentsNotificationName, object: nil)
+        
         completion(error: nil, tournaments: returnTournaments)
-
     })
 }
 

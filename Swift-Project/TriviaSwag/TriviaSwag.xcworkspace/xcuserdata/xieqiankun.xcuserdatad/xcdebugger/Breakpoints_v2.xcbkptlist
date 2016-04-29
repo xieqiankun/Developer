@@ -107,11 +107,11 @@
             condition = "height == nil"
             continueAfterRunningActions = "No"
             filePath = "TriviaSwag/GamePlayViewController.swift"
-            timestampString = "482868637.952183"
+            timestampString = "483553900.839489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "addBackgroundForUIView(_:figureName:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -123,11 +123,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TriviaSwag/SettingsViewController.swift"
-            timestampString = "482949141.526416"
+            timestampString = "483565312.922374"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -156,6 +156,30 @@
             endingLineNumber = "64"
             landmarkName = "triviaFacebookSignUp(_:email:password:avatar:deviceId:referralCode:fbToken:fbData:completion:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SwiftErrorBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TriviaSwag/SubmitQuestionButtonTableViewCell.swift"
+            timestampString = "483648965.415052"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "SubmitQuestionButtonTableViewCell"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -21,6 +21,10 @@ class ClockViewController: UIViewController {
     
     @IBOutlet weak var timeLabel: UILabel!
     
+    deinit{
+        
+        print("deinit the clock view controller")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +76,7 @@ class ClockViewController: UIViewController {
             timer = nil
         }
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ClockViewController.timerFireMethod), userInfo: nil, repeats: true)
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ClockViewController.timerFireMethod), userInfo: nil, repeats: true)
         
     }
     
@@ -98,6 +102,7 @@ class ClockViewController: UIViewController {
     func invalidateClockTimer() {
         
         if self.timer != nil {
+            print("invaildate")
             self.timer?.invalidate()
             self.timer = nil
         }

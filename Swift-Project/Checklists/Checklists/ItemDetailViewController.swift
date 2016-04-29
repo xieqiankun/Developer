@@ -71,7 +71,8 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
 
     }
     
-    func hideDatePicker() { if datePickerVisible {
+    func hideDatePicker() {
+        if datePickerVisible {
         datePickerVisible = false
         let indexPathDateRow = NSIndexPath(forRow: 1, inSection: 1)
         let indexPathDatePicker = NSIndexPath(forRow: 2, inSection: 1)

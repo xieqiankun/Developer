@@ -3,9 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Home View Controller-->
@@ -104,70 +101,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TournamentCell" rowHeight="97" id="wMY-aQ-5bX" customClass="TournamentTableViewCell" customModule="TriviaSwag" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="97"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wMY-aQ-5bX" id="ClW-eC-SZp">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="97"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qs4-1r-dFW">
-                                            <rect key="frame" x="12" y="0.0" width="576" height="97"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="amazon-gift-card" translatesAutoresizingMaskIntoConstraints="NO" id="hEz-dx-3F4">
-                                                    <rect key="frame" x="4" y="4" width="89" height="89"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="hEz-dx-3F4" secondAttribute="height" id="dFx-nq-lsN"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZb-I3-gDp">
-                                                    <rect key="frame" x="100" y="19" width="191" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWa-Sp-Xdh">
-                                                    <rect key="frame" x="100" y="52" width="191" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2e-wq-ZpL">
-                                                    <rect key="frame" x="469" y="49" width="107" height="48"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="f2e-wq-ZpL" secondAttribute="height" multiplier="2.2" id="Qg1-Bm-n8E"/>
-                                                    </constraints>
-                                                    <state key="normal" image="Play-Untouched"/>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="f2e-wq-ZpL" secondAttribute="bottom" id="25N-pX-hk0"/>
-                                                <constraint firstItem="hEz-dx-3F4" firstAttribute="centerY" secondItem="qs4-1r-dFW" secondAttribute="centerY" id="Bi1-B4-pEn"/>
-                                                <constraint firstAttribute="trailing" secondItem="f2e-wq-ZpL" secondAttribute="trailing" id="WL9-vy-jqV"/>
-                                                <constraint firstItem="hEz-dx-3F4" firstAttribute="leading" secondItem="qs4-1r-dFW" secondAttribute="leading" constant="4" id="YqH-zr-epA"/>
-                                                <constraint firstAttribute="bottom" secondItem="hEz-dx-3F4" secondAttribute="bottom" constant="4" id="pMx-bL-vq1"/>
-                                                <constraint firstItem="hEz-dx-3F4" firstAttribute="top" secondItem="qs4-1r-dFW" secondAttribute="top" constant="4" id="tBQ-aT-Je3"/>
-                                                <constraint firstItem="CZb-I3-gDp" firstAttribute="top" secondItem="qs4-1r-dFW" secondAttribute="top" constant="4" id="veT-uV-fo3"/>
-                                                <constraint firstItem="f2e-wq-ZpL" firstAttribute="height" secondItem="qs4-1r-dFW" secondAttribute="height" multiplier="0.5" id="wAp-yP-FRx"/>
-                                                <constraint firstItem="CZb-I3-gDp" firstAttribute="leading" secondItem="hEz-dx-3F4" secondAttribute="trailing" constant="4" id="xbT-Nd-GyW"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="qs4-1r-dFW" firstAttribute="leading" secondItem="ClW-eC-SZp" secondAttribute="leadingMargin" constant="4" id="B9g-MS-YS6"/>
-                                        <constraint firstAttribute="bottom" secondItem="qs4-1r-dFW" secondAttribute="bottom" id="Lko-WF-doY"/>
-                                        <constraint firstItem="qs4-1r-dFW" firstAttribute="top" secondItem="ClW-eC-SZp" secondAttribute="top" id="pap-1Q-psg"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="qs4-1r-dFW" secondAttribute="trailing" constant="4" id="xox-4Z-1Z9"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="myLabel" destination="CZb-I3-gDp" id="Hui-sn-hke"/>
-                                    <outlet property="prizeImageView" destination="hEz-dx-3F4" id="ni9-w2-AKt"/>
-                                    <outlet property="tableCellView" destination="qs4-1r-dFW" id="QTl-ro-clM"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="dg8-jp-q46" id="X6t-ja-Lps"/>
                             <outlet property="delegate" destination="dg8-jp-q46" id="ODn-rh-gkq"/>
@@ -295,6 +228,9 @@
                             </imageView>
                         </subviews>
                     </view>
+                    <connections>
+                        <segue destination="QJe-w5-yDs" kind="presentation" identifier="DetailLeaderboard" id="2Wx-xK-ctX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ofQ-AV-gc3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -424,6 +360,14 @@
             </objects>
             <point key="canvasLocation" x="1039.5" y="111"/>
         </scene>
+        <!--DetailLeaderboard-->
+        <scene sceneID="m29-zX-iEb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DetailLeaderboard" id="QJe-w5-yDs" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ho-tG-d6H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2005" y="266"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BuyButton-Untouched" width="200" height="80"/>
@@ -437,7 +381,6 @@
         <image name="ShareButtonUntouched" width="56" height="56"/>
         <image name="Title-Logo" width="412" height="80"/>
         <image name="TournamentInfoBar" width="754" height="30"/>
-        <image name="amazon-gift-card" width="288" height="288"/>
         <image name="infoButtonUntouched" width="56" height="56"/>
     </resources>
 </document>

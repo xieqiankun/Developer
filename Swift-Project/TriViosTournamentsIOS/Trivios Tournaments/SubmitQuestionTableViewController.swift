@@ -119,11 +119,13 @@ class SubmitQuestionTableViewController: UITableViewController, UITextFieldDeleg
             if indexPath.section == 1 {
                 identifier = "QuestionBodyCell"
             }
-            cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! EnterQuestionDataTableViewCell
+            
+             cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! EnterQuestionDataTableViewCell
             
             // Configure the cell...
             
-            let inputTextField = (cell as! EnterQuestionDataTableViewCell).inputTextField //We have to cast again for some stupid fucking reason
+            let inputTextField = (cell as! EnterQuestionDataTableViewCell).inputTextField
+            //We have to cast again for some stupid fucking reason
             let inputTextView = (cell as! EnterQuestionDataTableViewCell).inputTextView
             
             let inputToolbar = UIToolbar(frame: CGRectMake(0, 0, view.frame.width, 50))

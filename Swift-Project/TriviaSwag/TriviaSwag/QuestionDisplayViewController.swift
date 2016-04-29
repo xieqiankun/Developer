@@ -12,6 +12,11 @@ class QuestionDisplayViewController: UIViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
     
+    deinit{
+        
+        print("deinit the question display view controller")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

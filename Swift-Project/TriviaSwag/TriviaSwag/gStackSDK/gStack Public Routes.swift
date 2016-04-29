@@ -10,6 +10,9 @@ import Foundation
 
 var gStackLoginWithAppIDNotificationName = "gStackLoginWithAppID"
 
+let gStackAppIdTokenKey = "gStackAppIdTokenKey"
+let gStackPusherChannelKey = "gStackPusherChannelKey"
+
 //login with app key and app id
 //works
 
@@ -26,6 +29,12 @@ func gStackLoginWithAppID(appId: String, appKey: String, completion:(error: NSEr
                 gStackPusherChannel = payload!["channel"] as? String
                 print(gStackPusherChannel)
                 print(gStackAppIDToken)
+                
+                NSUserDefaults.standardUserDefaults().setObject(gStackAppIDToken, forKey: gStackAppIdTokenKey)
+                NSUserDefaults.standardUserDefaults().setObject(gStackPusherChannel, forKey: gStackPusherChannelKey)
+
+                NSUserDefaults.standardUserDefaults().synchronize()
+                
                 
                 gStackNotificationHandler.sharedInstance.connectToPushServerWithChannel(gStackPusherChannel!);
                 NSNotificationCenter.defaultCenter().postNotificationName(gStackLoginWithAppIDNotificationName, object: nil)

@@ -29,6 +29,14 @@
 		281285BE1CB592EA00D0D72E /* LeaderboardImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281285BD1CB592EA00D0D72E /* LeaderboardImageViewController.swift */; };
 		283408A91CBC53F70068D070 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283408A81CBC53F70068D070 /* ClockViewController.swift */; };
 		283408AF1CBDB2B90068D070 /* GamePlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 283408AD1CBDB2B90068D070 /* GamePlay.storyboard */; };
+		2837CCAC1CD286B3002E407F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2837CCAB1CD286B3002E407F /* GradientView.swift */; };
+		2837CCAE1CD286FD002E407F /* BounceAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2837CCAD1CD286FD002E407F /* BounceAnimationController.swift */; };
+		2837CCB01CD28720002E407F /* SlideOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2837CCAF1CD28720002E407F /* SlideOutAnimationController.swift */; };
+		2837CCB21CD28743002E407F /* FadeOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2837CCB11CD28743002E407F /* FadeOutAnimationController.swift */; };
+		2837CCB41CD28802002E407F /* FadeInAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2837CCB31CD28802002E407F /* FadeInAnimationController.swift */; };
+		283AAA4E1CD3BED50081E8A2 /* QuestionCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283AAA4D1CD3BED50081E8A2 /* QuestionCellTableViewCell.swift */; };
+		283AAA501CD3BFEB0081E8A2 /* AnswerCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283AAA4F1CD3BFEB0081E8A2 /* AnswerCellTableViewCell.swift */; };
+		283AAA521CD3E4F30081E8A2 /* SubmitQuestionButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283AAA511CD3E4F30081E8A2 /* SubmitQuestionButtonTableViewCell.swift */; };
 		284758BF1CB2EE3500DCFE6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284758BE1CB2EE3500DCFE6A /* AppDelegate.swift */; };
 		284758C41CB2EE3500DCFE6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 284758C21CB2EE3500DCFE6A /* Main.storyboard */; };
 		284758C61CB2EE3500DCFE6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 284758C51CB2EE3500DCFE6A /* Assets.xcassets */; };
@@ -65,6 +73,14 @@
 		28A978DD1CB80A82006F6218 /* QuestionDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A978DC1CB80A82006F6218 /* QuestionDisplayViewController.swift */; };
 		28A978DF1CB80A91006F6218 /* AnswersDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A978DE1CB80A91006F6218 /* AnswersDisplayViewController.swift */; };
 		28A978E11CB8565A006F6218 /* TimeBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A978E01CB8565A006F6218 /* TimeBarViewController.swift */; };
+		28AEC7231CD1399C001E181F /* TournamentTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AEC7221CD1399C001E181F /* TournamentTableCell.swift */; };
+		28AEC7251CD13C20001E181F /* TournamentResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AEC7241CD13C20001E181F /* TournamentResultCell.xib */; };
+		28AEC7271CD145BC001E181F /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AEC7261CD145BC001E181F /* NothingFoundCell.xib */; };
+		28AEC7291CD14D10001E181F /* DetailedLeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AEC7281CD14D10001E181F /* DetailedLeaderboardViewController.swift */; };
+		28AEC72B1CD15016001E181F /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AEC72A1CD15016001E181F /* DimmingPresentationController.swift */; };
+		28AEC72E1CD15169001E181F /* DetailLeaderboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28AEC72C1CD15169001E181F /* DetailLeaderboard.storyboard */; };
+		28C31EC71CD2B1AB007D76D2 /* SubmitQuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C31EC61CD2B1AB007D76D2 /* SubmitQuestionTableViewController.swift */; };
+		28C31ECA1CD2C437007D76D2 /* CategoryPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C31EC91CD2C437007D76D2 /* CategoryPickerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +122,14 @@
 		281285BD1CB592EA00D0D72E /* LeaderboardImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardImageViewController.swift; sourceTree = "<group>"; };
 		283408A81CBC53F70068D070 /* ClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 		283408AE1CBDB2B90068D070 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GamePlay.storyboard; sourceTree = "<group>"; };
+		2837CCAB1CD286B3002E407F /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		2837CCAD1CD286FD002E407F /* BounceAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimationController.swift; sourceTree = "<group>"; };
+		2837CCAF1CD28720002E407F /* SlideOutAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideOutAnimationController.swift; sourceTree = "<group>"; };
+		2837CCB11CD28743002E407F /* FadeOutAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeOutAnimationController.swift; sourceTree = "<group>"; };
+		2837CCB31CD28802002E407F /* FadeInAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInAnimationController.swift; sourceTree = "<group>"; };
+		283AAA4D1CD3BED50081E8A2 /* QuestionCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCellTableViewCell.swift; sourceTree = "<group>"; };
+		283AAA4F1CD3BFEB0081E8A2 /* AnswerCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerCellTableViewCell.swift; sourceTree = "<group>"; };
+		283AAA511CD3E4F30081E8A2 /* SubmitQuestionButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitQuestionButtonTableViewCell.swift; sourceTree = "<group>"; };
 		284758BB1CB2EE3500DCFE6A /* TriviaSwag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriviaSwag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		284758BE1CB2EE3500DCFE6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		284758C31CB2EE3500DCFE6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -149,6 +173,14 @@
 		28A978DC1CB80A82006F6218 /* QuestionDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDisplayViewController.swift; sourceTree = "<group>"; };
 		28A978DE1CB80A91006F6218 /* AnswersDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersDisplayViewController.swift; sourceTree = "<group>"; };
 		28A978E01CB8565A006F6218 /* TimeBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeBarViewController.swift; sourceTree = "<group>"; };
+		28AEC7221CD1399C001E181F /* TournamentTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentTableCell.swift; sourceTree = "<group>"; };
+		28AEC7241CD13C20001E181F /* TournamentResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TournamentResultCell.xib; sourceTree = "<group>"; };
+		28AEC7261CD145BC001E181F /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
+		28AEC7281CD14D10001E181F /* DetailedLeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedLeaderboardViewController.swift; sourceTree = "<group>"; };
+		28AEC72A1CD15016001E181F /* DimmingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
+		28AEC72D1CD15169001E181F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DetailLeaderboard.storyboard; sourceTree = "<group>"; };
+		28C31EC61CD2B1AB007D76D2 /* SubmitQuestionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitQuestionTableViewController.swift; sourceTree = "<group>"; };
+		28C31EC91CD2C437007D76D2 /* CategoryPickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPickerTableViewCell.swift; sourceTree = "<group>"; };
 		40B8AD281A1186F6866DF4DC /* Pods-TriviaSwag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriviaSwag.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriviaSwag/Pods-TriviaSwag.release.xcconfig"; sourceTree = "<group>"; };
 		C76CDDB4F42A12922984AB32 /* Pods-TriviaSwag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriviaSwag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TriviaSwag/Pods-TriviaSwag.debug.xcconfig"; sourceTree = "<group>"; };
 		FDF86463B0CAD609B9C80919 /* libPods-TriviaSwag.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TriviaSwag.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,6 +247,19 @@
 			path = gStackSDK;
 			sourceTree = "<group>";
 		};
+		2837CCAA1CD2865D002E407F /* Transition Animation */ = {
+			isa = PBXGroup;
+			children = (
+				28AEC72A1CD15016001E181F /* DimmingPresentationController.swift */,
+				2837CCAB1CD286B3002E407F /* GradientView.swift */,
+				2837CCAD1CD286FD002E407F /* BounceAnimationController.swift */,
+				2837CCAF1CD28720002E407F /* SlideOutAnimationController.swift */,
+				2837CCB11CD28743002E407F /* FadeOutAnimationController.swift */,
+				2837CCB31CD28802002E407F /* FadeInAnimationController.swift */,
+			);
+			name = "Transition Animation";
+			sourceTree = "<group>";
+		};
 		284758B21CB2EE3500DCFE6A = {
 			isa = PBXGroup;
 			children = (
@@ -244,14 +289,14 @@
 				281285981CB57BA400D0D72E /* TriviaSwagAPI */,
 				281285A81CB57C2100D0D72E /* GStackAPI */,
 				284759141CB2F4E500DCFE6A /* Controller */,
-				284758C21CB2EE3500DCFE6A /* Main.storyboard */,
+				2837CCAA1CD2865D002E407F /* Transition Animation */,
 				289A87711CCC3DF300C30D8A /* Helper */,
 				289A873C1CC7EE5300C30D8A /* TriviaSound */,
-				284758C51CB2EE3500DCFE6A /* Assets.xcassets */,
 				284758C71CB2EE3500DCFE6A /* LaunchScreen.storyboard */,
 				284758BE1CB2EE3500DCFE6A /* AppDelegate.swift */,
 				2847591A1CB3031E00DCFE6A /* Trivios-Tournaments-Bridging-Header.h */,
 				284758CA1CB2EE3500DCFE6A /* Info.plist */,
+				284758C51CB2EE3500DCFE6A /* Assets.xcassets */,
 			);
 			path = TriviaSwag;
 			sourceTree = "<group>";
@@ -290,6 +335,7 @@
 			children = (
 				2847591B1CB310E800DCFE6A /* HomeViewController.swift */,
 				284759601CB4524000DCFE6A /* NavBarViewController.swift */,
+				284758C21CB2EE3500DCFE6A /* Main.storyboard */,
 				2847595B1CB421E500DCFE6A /* TableContainer */,
 				284759641CB4793700DCFE6A /* DetailContainer */,
 			);
@@ -302,6 +348,9 @@
 				284759121CB2F4DD00DCFE6A /* TableContainerViewController.swift */,
 				284759161CB2F57600DCFE6A /* TournamentsPageViewController.swift */,
 				284759181CB2FFB000DCFE6A /* TournamentsTableViewController.swift */,
+				28AEC7221CD1399C001E181F /* TournamentTableCell.swift */,
+				28AEC7241CD13C20001E181F /* TournamentResultCell.xib */,
+				28AEC7261CD145BC001E181F /* NothingFoundCell.xib */,
 			);
 			name = TableContainer;
 			sourceTree = "<group>";
@@ -312,6 +361,8 @@
 				2847595C1CB43E2800DCFE6A /* DetailedTournamentViewController.swift */,
 				281285901CB563F000D0D72E /* SegementedControlUI.swift */,
 				281285BD1CB592EA00D0D72E /* LeaderboardImageViewController.swift */,
+				28AEC7281CD14D10001E181F /* DetailedLeaderboardViewController.swift */,
+				28AEC72C1CD15169001E181F /* DetailLeaderboard.storyboard */,
 			);
 			name = DetailContainer;
 			sourceTree = "<group>";
@@ -330,12 +381,13 @@
 		289A87491CC817ED00C30D8A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				289A87521CC9301400C30D8A /* Settings.storyboard */,
 				289A874C1CC831DF00C30D8A /* SettingsViewController.swift */,
 				289A874A1CC8181500C30D8A /* SettingsTableViewController.swift */,
 				289A874E1CC8337700C30D8A /* SettingDetailViewController.swift */,
 				289A87551CC955EB00C30D8A /* GeneralTableViewController.swift */,
 				289A87571CC95E1200C30D8A /* AccountInfomationTableViewController.swift */,
-				289A87521CC9301400C30D8A /* Settings.storyboard */,
+				28C31EC81CD2C40B007D76D2 /* SubmitQustion */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -371,6 +423,18 @@
 				283408AD1CBDB2B90068D070 /* GamePlay.storyboard */,
 			);
 			name = GamePlay;
+			sourceTree = "<group>";
+		};
+		28C31EC81CD2C40B007D76D2 /* SubmitQustion */ = {
+			isa = PBXGroup;
+			children = (
+				28C31EC61CD2B1AB007D76D2 /* SubmitQuestionTableViewController.swift */,
+				28C31EC91CD2C437007D76D2 /* CategoryPickerTableViewCell.swift */,
+				283AAA4D1CD3BED50081E8A2 /* QuestionCellTableViewCell.swift */,
+				283AAA4F1CD3BFEB0081E8A2 /* AnswerCellTableViewCell.swift */,
+				283AAA511CD3E4F30081E8A2 /* SubmitQuestionButtonTableViewCell.swift */,
+			);
+			name = SubmitQustion;
 			sourceTree = "<group>";
 		};
 		6AA72EF5C7530897ED57D020 /* Frameworks */ = {
@@ -464,7 +528,7 @@
 				TargetAttributes = {
 					284758BA1CB2EE3500DCFE6A = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = UUUA77DZ8A;
+						DevelopmentTeam = A4KK8R4439;
 					};
 					284758CE1CB2EE3500DCFE6A = {
 						CreatedOnToolsVersion = 7.3;
@@ -507,11 +571,14 @@
 				289A87421CC7EE5300C30D8A /* Button Right answer.wav in Resources */,
 				284758C91CB2EE3500DCFE6A /* LaunchScreen.storyboard in Resources */,
 				281285BA1CB57C2100D0D72E /* ServerInfo.plist in Resources */,
+				28AEC7271CD145BC001E181F /* NothingFoundCell.xib in Resources */,
 				284758C61CB2EE3500DCFE6A /* Assets.xcassets in Resources */,
 				289A87461CC7FFD500C30D8A /* Countdown_Clock.wav in Resources */,
 				289A87441CC7EE5300C30D8A /* Win Sound Effect.wav in Resources */,
 				289A87431CC7EE5300C30D8A /* Button Wrong answer.wav in Resources */,
+				28AEC72E1CD15169001E181F /* DetailLeaderboard.storyboard in Resources */,
 				284758C41CB2EE3500DCFE6A /* Main.storyboard in Resources */,
+				28AEC7251CD13C20001E181F /* TournamentResultCell.xib in Resources */,
 				283408AF1CBDB2B90068D070 /* GamePlay.storyboard in Resources */,
 				289A87541CC9301400C30D8A /* Settings.storyboard in Resources */,
 			);
@@ -591,30 +658,40 @@
 				281285B61CB57C2100D0D72E /* gStackMasterDataFetcher.swift in Sources */,
 				289A87701CCC3DEA00C30D8A /* FacebookFunctions.swift in Sources */,
 				281285A21CB57BBD00D0D72E /* triviaDataFetcher.swift in Sources */,
+				283AAA4E1CD3BED50081E8A2 /* QuestionCellTableViewCell.swift in Sources */,
 				281285A41CB57BBD00D0D72E /* triviaTournamentTalk.swift in Sources */,
 				281285B71CB57C2100D0D72E /* gStackNotificationHandler.swift in Sources */,
+				28C31EC71CD2B1AB007D76D2 /* SubmitQuestionTableViewController.swift in Sources */,
+				28AEC7291CD14D10001E181F /* DetailedLeaderboardViewController.swift in Sources */,
 				28A978DF1CB80A91006F6218 /* AnswersDisplayViewController.swift in Sources */,
 				281285B21CB57C2100D0D72E /* gStack Info.swift in Sources */,
 				284759131CB2F4DD00DCFE6A /* TableContainerViewController.swift in Sources */,
 				28A978D81CB6B30D006F6218 /* GamePlayViewController.swift in Sources */,
+				28AEC7231CD1399C001E181F /* TournamentTableCell.swift in Sources */,
 				289A875D1CC9746F00C30D8A /* LoginSignUpViewController.swift in Sources */,
+				2837CCB21CD28743002E407F /* FadeOutAnimationController.swift in Sources */,
 				2847595D1CB43E2800DCFE6A /* DetailedTournamentViewController.swift in Sources */,
 				289A874F1CC8337700C30D8A /* SettingDetailViewController.swift in Sources */,
 				2847591C1CB310E800DCFE6A /* HomeViewController.swift in Sources */,
+				2837CCAC1CD286B3002E407F /* GradientView.swift in Sources */,
 				281285A61CB57BBD00D0D72E /* triviaUserInbox.swift in Sources */,
 				284759611CB4524000DCFE6A /* NavBarViewController.swift in Sources */,
+				2837CCAE1CD286FD002E407F /* BounceAnimationController.swift in Sources */,
 				284758BF1CB2EE3500DCFE6A /* AppDelegate.swift in Sources */,
 				289A874B1CC8181500C30D8A /* SettingsTableViewController.swift in Sources */,
 				281285B81CB57C2100D0D72E /* gStackQuestion.swift in Sources */,
 				281285911CB563F000D0D72E /* SegementedControlUI.swift in Sources */,
 				28A978DD1CB80A82006F6218 /* QuestionDisplayViewController.swift in Sources */,
+				283AAA521CD3E4F30081E8A2 /* SubmitQuestionButtonTableViewCell.swift in Sources */,
 				28A978DB1CB6F764006F6218 /* ProgressBarViewController.swift in Sources */,
 				281285A31CB57BBD00D0D72E /* triviaNotificationHandler.swift in Sources */,
 				281285BC1CB57CBD00D0D72E /* App Info.swift in Sources */,
 				289A87601CC978DF00C30D8A /* SignUpViewController.swift in Sources */,
 				281285A11CB57BBD00D0D72E /* trivia Public Routes.swift in Sources */,
+				283AAA501CD3BFEB0081E8A2 /* AnswerCellTableViewCell.swift in Sources */,
 				281285A51CB57BBD00D0D72E /* triviaUser.swift in Sources */,
 				281285B31CB57C2100D0D72E /* gStack Private Routes.swift in Sources */,
+				28C31ECA1CD2C437007D76D2 /* CategoryPickerTableViewCell.swift in Sources */,
 				289A87681CCA8B0500C30D8A /* LoginViewController.swift in Sources */,
 				289A87581CC95E1200C30D8A /* AccountInfomationTableViewController.swift in Sources */,
 				281285B51CB57C2100D0D72E /* gStackGame.swift in Sources */,
@@ -623,10 +700,13 @@
 				284759191CB2FFB000DCFE6A /* TournamentsTableViewController.swift in Sources */,
 				284759171CB2F57600DCFE6A /* TournamentsPageViewController.swift in Sources */,
 				289A874D1CC831DF00C30D8A /* SettingsViewController.swift in Sources */,
+				28AEC72B1CD15016001E181F /* DimmingPresentationController.swift in Sources */,
 				284759111CB2F13E00DCFE6A /* TempFileForRoutesFunctions.swift in Sources */,
 				281285BE1CB592EA00D0D72E /* LeaderboardImageViewController.swift in Sources */,
 				281285B41CB57C2100D0D72E /* gStack Public Routes.swift in Sources */,
+				2837CCB01CD28720002E407F /* SlideOutAnimationController.swift in Sources */,
 				283408A91CBC53F70068D070 /* ClockViewController.swift in Sources */,
+				2837CCB41CD28802002E407F /* FadeInAnimationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,6 +780,14 @@
 				289A875A1CC9741600C30D8A /* Base */,
 			);
 			name = LoginSignUp.storyboard;
+			sourceTree = "<group>";
+		};
+		28AEC72C1CD15169001E181F /* DetailLeaderboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28AEC72D1CD15169001E181F /* Base */,
+			);
+			name = DetailLeaderboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

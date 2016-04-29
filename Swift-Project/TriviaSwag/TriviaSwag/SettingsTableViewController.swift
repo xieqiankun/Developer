@@ -25,9 +25,10 @@ class SettingsTableViewController: UITableViewController {
     
     var delegate: SettingCellChangeDelegate?
     
-    var settings = ["General", "Account Infomation", "Change Password", "Tutorials", "Help", "Contact Support", "Rate The App", "Legal Stuff", "Log Out"]
-    var segueNames = ["General", "AccountInfomation", "ChangePassword", "Tutorials", "Help", "ContactSupport", "RateTheApp", "LegalStuff", "LogOut"]
+    var settings = ["General", "Account Infomation", "Change Password", "Submit Question","Tutorials", "Help", "Contact Support", "Rate The App", "Legal Stuff", "Log Out"]
+    var segueNames = ["General", "AccountInfomation", "ChangePassword","SubmitQuestion", "Tutorials", "Help", "ContactSupport", "RateTheApp", "LegalStuff", "LogOut"]
     
+    var lastIndexPath: NSIndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +79,12 @@ class SettingsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if indexPath == self.lastIndexPath {
+            //delegate?.dismissCurrentViewController()
+            return
+        }
+        self.lastIndexPath = indexPath
         delegate?.showDetailSettingController(segueNames[indexPath.row])
     }
 

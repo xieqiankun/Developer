@@ -17,6 +17,10 @@ class TimeBarViewController: UIViewController {
     
     var timer: NSTimer?
     
+    deinit{
+        
+        print("deinit the time bar view controller")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

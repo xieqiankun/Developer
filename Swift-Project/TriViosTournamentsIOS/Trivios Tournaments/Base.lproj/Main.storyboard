@@ -1116,12 +1116,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gh-bw-zrX">
-                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="General Knowledge" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rol-3W-HoQ">
                                             <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                             <constraints>
@@ -1143,30 +1137,22 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="centerY" secondItem="Rol-3W-HoQ" secondAttribute="centerY" constant="-0.5" id="5RB-9T-IfJ"/>
-                                        <constraint firstItem="7gh-bw-zrX" firstAttribute="leading" secondItem="p9S-b9-8tU" secondAttribute="leadingMargin" id="Ygd-uh-cDu"/>
-                                        <constraint firstAttribute="centerY" secondItem="7gh-bw-zrX" secondAttribute="centerY" id="bGy-Ru-UtM"/>
                                         <constraint firstItem="Rol-3W-HoQ" firstAttribute="trailing" secondItem="p9S-b9-8tU" secondAttribute="trailingMargin" id="zzv-tc-U1b"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="subviews">
-                                            <exclude reference="7gh-bw-zrX"/>
                                             <exclude reference="Rol-3W-HoQ"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="Ygd-uh-cDu"/>
-                                            <exclude reference="bGy-Ru-UtM"/>
                                             <exclude reference="5RB-9T-IfJ"/>
                                             <exclude reference="zzv-tc-U1b"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
                                         <mask key="subviews">
-                                            <include reference="7gh-bw-zrX"/>
                                             <include reference="Rol-3W-HoQ"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="Ygd-uh-cDu"/>
-                                            <include reference="bGy-Ru-UtM"/>
                                             <include reference="5RB-9T-IfJ"/>
                                             <include reference="zzv-tc-U1b"/>
                                         </mask>
@@ -6358,7 +6344,7 @@ Up to four</string>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="94.5" y="11" width="45" height="21"/>
+                                                <rect key="frame" x="94" y="11" width="45" height="21"/>
                                                 <mask key="constraints">
                                                     <exclude reference="1bu-EA-US5"/>
                                                     <exclude reference="Q21-rb-5T2"/>
@@ -8022,10 +8008,10 @@ Second line</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Axh-jQ-g6B"/>
-        <segue reference="yta-wN-Q1q"/>
+        <segue reference="vSa-et-EIt"/>
         <segue reference="SDe-0X-9tF"/>
-        <segue reference="IBN-J4-zrP"/>
         <segue reference="IgO-MH-KhK"/>
+        <segue reference="IBN-J4-zrP"/>
         <segue reference="rfc-iS-cV7"/>
     </inferredMetricsTieBreakers>
 </document>

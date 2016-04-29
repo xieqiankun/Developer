@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="O5O-KJ-DBr" customClass="TournamentTableViewCell" customModule="TriviaSwag" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O5O-KJ-DBr" id="WlC-dq-V8H">
+                <rect key="frame" x="0.0" y="0.0" width="500" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NAO-rD-5lp">
+                        <rect key="frame" x="25" y="0.0" width="450" height="80"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="amazon-gift-card" translatesAutoresizingMaskIntoConstraints="NO" id="hNl-BZ-dQ8">
+                                <rect key="frame" x="8" y="8" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hNl-BZ-dQ8" secondAttribute="height" id="yIC-Kh-0oF"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1v6-4U-dax">
+                                <rect key="frame" x="80" y="29" width="134" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="hNl-BZ-dQ8" firstAttribute="leading" secondItem="NAO-rD-5lp" secondAttribute="leading" constant="8" id="7rP-z9-gUD"/>
+                            <constraint firstItem="hNl-BZ-dQ8" firstAttribute="top" secondItem="NAO-rD-5lp" secondAttribute="top" constant="8" id="Ky9-au-HYC"/>
+                            <constraint firstAttribute="bottom" secondItem="hNl-BZ-dQ8" secondAttribute="bottom" constant="8" id="biI-Z3-rmW"/>
+                            <constraint firstItem="1v6-4U-dax" firstAttribute="leading" secondItem="hNl-BZ-dQ8" secondAttribute="trailing" constant="8" id="iUp-MV-Ely"/>
+                            <constraint firstItem="1v6-4U-dax" firstAttribute="centerY" secondItem="NAO-rD-5lp" secondAttribute="centerY" id="lji-ah-lLr"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="NAO-rD-5lp" firstAttribute="top" secondItem="WlC-dq-V8H" secondAttribute="top" id="7AU-k2-Gcg"/>
+                    <constraint firstAttribute="bottom" secondItem="NAO-rD-5lp" secondAttribute="bottom" id="Ano-Jn-jjS"/>
+                    <constraint firstItem="NAO-rD-5lp" firstAttribute="width" secondItem="WlC-dq-V8H" secondAttribute="width" multiplier="0.9" id="BYc-0e-Wy9"/>
+                    <constraint firstItem="NAO-rD-5lp" firstAttribute="centerX" secondItem="WlC-dq-V8H" secondAttribute="centerX" id="T3Z-Hz-g5z"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="myLabel" destination="1v6-4U-dax" id="OKf-lP-jAr"/>
+                <outlet property="prizeImageView" destination="hNl-BZ-dQ8" id="qGg-px-cQu"/>
+                <outlet property="tableCellView" destination="NAO-rD-5lp" id="R9p-bM-gtr"/>
+            </connections>
+            <point key="canvasLocation" x="932" y="392"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="amazon-gift-card" width="288" height="288"/>
+    </resources>
+</document>

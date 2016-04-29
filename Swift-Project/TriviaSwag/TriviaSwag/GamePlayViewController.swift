@@ -69,6 +69,15 @@ class GamePlayViewController: UIViewController,gStackGameDelegate,triviaGameSubm
         }
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(true)
+        self.soundGameover?.stop()
+        self.embedTimeBarController?.invalidateTimer()
+        self.embedClockController?.invalidateClockTimer()
+        self.embedClockController = nil
+        
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         

@@ -13,6 +13,10 @@ class SettingsViewController: UIViewController {
     var settingsTableController: SettingsTableViewController!
     var settingDetailController: SettingDetailViewController!
 
+    deinit{
+        print("deinit the setting tabs")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // init the view

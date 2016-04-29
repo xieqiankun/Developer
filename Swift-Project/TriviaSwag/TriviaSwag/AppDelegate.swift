@@ -17,14 +17,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        gStackLoginWithAppID("308189542", appKey: "/o3I3goKCQ==") { (error) -> Void in
-           
+        
+        if let appId = NSUserDefaults.standardUserDefaults().stringForKey(gStackAppIdTokenKey), pusherChannel = NSUserDefaults.standardUserDefaults().stringForKey(gStackPusherChannelKey) {
+            gStackAppIDToken = appId
+            gStackPusherChannel = pusherChannel
+            gStackNotificationHandler.sharedInstance.connectToPushServerWithChannel(gStackPusherChannel!)
+            
+            gStackFetchTournaments({ (error, tournaments) in
+                if error != nil {
+                    
+                }
+            })
             
             triviaUser.logInFromSavedToken { (error) in
                 
             }
+        } else {
+        
+            gStackLoginWithAppID("308189542", appKey: "/o3I3goKCQ==") { (error) -> Void in
+           
+                triviaUser.logInFromSavedToken { (error) in
+                
+                }
             
-            
+            }
         }
         
         //Set up default settings
