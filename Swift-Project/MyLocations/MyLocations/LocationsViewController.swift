@@ -137,7 +137,8 @@ extension LocationsViewController: NSFetchedResultsControllerDelegate {
     
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
         print("*** controllerWillChangeContent")
-        tableView.beginUpdates() }
+        tableView.beginUpdates()
+    }
     func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?,
                     forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         switch type {

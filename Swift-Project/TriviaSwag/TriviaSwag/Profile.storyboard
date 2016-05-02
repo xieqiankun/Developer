@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="C27-Vf-v6g">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="GROBOLD.ttf">
+            <string>GROBOLD</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Profile View Controller-->
+        <scene sceneID="GsQ-PR-wDO">
+            <objects>
+                <viewController id="C27-Vf-v6g" customClass="ProfileViewController" customModule="TriviaSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Qf-bc-vtq"/>
+                        <viewControllerLayoutGuide type="bottom" id="2w1-8h-8VV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xU3-GB-vde">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQY-Gx-s6A">
+                                <rect key="frame" x="180" y="266" width="240" height="67"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sam Zoll" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.55000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="Pya-3x-Uk8">
+                                        <rect key="frame" x="0.0" y="-30" width="240" height="128"/>
+                                        <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="60"/>
+                                        <color key="textColor" red="1" green="0.38721676649999998" blue="0.42280229320000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sam Zoll" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="w0n-kK-UWT">
+                                        <rect key="frame" x="3" y="-30" width="235" height="128"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="60"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Pya-3x-Uk8" firstAttribute="leading" secondItem="zQY-Gx-s6A" secondAttribute="leading" id="8TY-pn-rpc"/>
+                                    <constraint firstItem="w0n-kK-UWT" firstAttribute="top" secondItem="zQY-Gx-s6A" secondAttribute="top" id="DE9-u2-U7Z"/>
+                                    <constraint firstItem="w0n-kK-UWT" firstAttribute="centerX" secondItem="zQY-Gx-s6A" secondAttribute="centerX" id="M8o-RN-2zS"/>
+                                    <constraint firstItem="Pya-3x-Uk8" firstAttribute="centerX" secondItem="zQY-Gx-s6A" secondAttribute="centerX" id="VLv-Ij-fG8"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pya-3x-Uk8" secondAttribute="bottom" id="WGp-99-dIb"/>
+                                    <constraint firstAttribute="width" constant="240" id="XLU-hU-phq"/>
+                                    <constraint firstItem="Pya-3x-Uk8" firstAttribute="top" secondItem="zQY-Gx-s6A" secondAttribute="top" id="bQN-BM-8Hb"/>
+                                    <constraint firstItem="w0n-kK-UWT" firstAttribute="height" secondItem="Pya-3x-Uk8" secondAttribute="height" multiplier="0.98" id="fx7-yM-0aQ"/>
+                                    <constraint firstAttribute="height" constant="128" id="ojx-xe-Vpg"/>
+                                    <constraint firstAttribute="height" constant="67" id="pCW-xo-2XE"/>
+                                    <constraint firstAttribute="width" constant="240" id="sqB-Ag-2Fl"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pya-3x-Uk8" secondAttribute="trailing" id="v8Y-UU-Kah"/>
+                                    <constraint firstItem="w0n-kK-UWT" firstAttribute="width" secondItem="Pya-3x-Uk8" secondAttribute="width" multiplier="0.98" id="we3-yG-bFz"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ojx-xe-Vpg"/>
+                                        <exclude reference="sqB-Ag-2Fl"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="khV-3r-ZBE" customClass="DoubleLabelStrokeLabelView" customModule="TriviaSwag" customModuleProvider="target">
+                                <rect key="frame" x="180" y="347" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="HKw-R1-vLg"/>
+                                    <constraint firstAttribute="height" constant="128" id="QQH-k1-zeF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.38721676649999998" blue="0.42280229320000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="khV-3r-ZBE" firstAttribute="top" secondItem="zQY-Gx-s6A" secondAttribute="bottom" constant="14" id="W1x-jj-J2k"/>
+                            <constraint firstItem="zQY-Gx-s6A" firstAttribute="centerX" secondItem="xU3-GB-vde" secondAttribute="centerX" id="buV-nx-2aG"/>
+                            <constraint firstItem="zQY-Gx-s6A" firstAttribute="centerY" secondItem="xU3-GB-vde" secondAttribute="centerY" id="c9h-R2-MWU"/>
+                            <constraint firstItem="khV-3r-ZBE" firstAttribute="centerX" secondItem="xU3-GB-vde" secondAttribute="centerX" id="tWF-AN-2s3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="w0n-kK-UWT" id="hAT-zf-N3L"/>
+                        <outlet property="label1" destination="Pya-3x-Uk8" id="tic-oy-4JT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XzS-tO-Yzj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-160" y="570"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="H3T-v2-2Qw">
+            <objects>
+                <viewController id="Cxx-lk-6tA" customClass="ProfileViewController" customModule="TriviaSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RmZ-bY-rAn"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Up-i2-7gr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HiV-pR-hoV">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hkq-zE-OpA">
+                                <rect key="frame" x="38" y="40" width="591" height="327"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="83" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NgO-o8-VrA">
+                                        <rect key="frame" x="20" y="73" width="240" height="235"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="83" id="TbG-ku-L13">
+                                                <rect key="frame" x="0.0" y="28" width="240" height="83"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TbG-ku-L13" id="TSw-cy-uvx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="82.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W8K-2d-F7P">
+                                                            <rect key="frame" x="8" y="8" width="72" height="67"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="brq-VV-Exl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="523.5" y="457.5"/>
+        </scene>
+    </scenes>
+</document>

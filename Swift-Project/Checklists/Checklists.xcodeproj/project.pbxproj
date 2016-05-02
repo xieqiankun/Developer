@@ -310,6 +310,7 @@
 				28E646341CBEC73E002B81C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

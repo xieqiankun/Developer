@@ -81,7 +81,6 @@ class SettingsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         if indexPath == self.lastIndexPath {
-            //delegate?.dismissCurrentViewController()
             return
         }
         self.lastIndexPath = indexPath

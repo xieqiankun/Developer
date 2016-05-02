@@ -25,6 +25,8 @@ import UIKit
     var selectedIndex: Int = 0 {
         didSet {
             displayNewSelectedIndex()
+            print("I select the index:")
+            print(selectedIndex)
         }
     }
     override init(frame: CGRect){

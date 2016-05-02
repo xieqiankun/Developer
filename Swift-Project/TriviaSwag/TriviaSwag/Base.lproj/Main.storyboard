@@ -4,6 +4,11 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="GROBOLD.ttf">
+            <string>GROBOLD</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Home View Controller-->
         <scene sceneID="YUg-C7-xfW">
@@ -188,7 +193,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obH-nU-LmT">
                                 <rect key="frame" x="319" y="4" width="30" height="31"/>
-                                <state key="normal" title="Button" image="FavoriteButtonUntouched"/>
+                                <state key="normal" title="Button" image="FavoriteButtonTouched"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYn-Mh-N6Y">
                                 <rect key="frame" x="352" y="4" width="30" height="31"/>
@@ -196,8 +201,8 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6V-ZY-Jgy">
                                 <rect key="frame" x="9" y="4" width="230" height="25"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                                <color key="textColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -248,14 +253,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="391" height="140"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Br7-HL-97K">
-                                <rect key="frame" x="153" y="44" width="10" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Map-ComingSoon" translatesAutoresizingMaskIntoConstraints="NO" id="CAC-dV-PSp">
+                                <rect key="frame" x="0.0" y="0.0" width="391" height="140"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CAC-dV-PSp" firstAttribute="top" secondItem="chc-xk-8Bx" secondAttribute="bottom" id="Fjd-32-Pxz"/>
+                            <constraint firstAttribute="trailing" secondItem="CAC-dV-PSp" secondAttribute="trailing" id="HAW-wN-pIG"/>
+                            <constraint firstItem="LYg-T5-sz5" firstAttribute="top" secondItem="CAC-dV-PSp" secondAttribute="bottom" id="HXY-eG-Nik"/>
+                            <constraint firstItem="CAC-dV-PSp" firstAttribute="leading" secondItem="zQy-yU-1KU" secondAttribute="leading" id="XTd-c8-VaE"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AXt-pR-4Am" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -274,14 +281,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="391" height="140"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waN-Kh-Cfw">
-                                <rect key="frame" x="184" y="61" width="11" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeFirstToEnter" translatesAutoresizingMaskIntoConstraints="NO" id="nTb-Dg-ZVT">
+                                <rect key="frame" x="0.0" y="0.0" width="391" height="140"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="nTb-Dg-ZVT" secondAttribute="trailing" id="ClD-nV-ilB"/>
+                            <constraint firstItem="4ib-06-6cW" firstAttribute="top" secondItem="nTb-Dg-ZVT" secondAttribute="bottom" id="dWC-Xf-Xdi"/>
+                            <constraint firstItem="nTb-Dg-ZVT" firstAttribute="leading" secondItem="VkF-mA-x6w" secondAttribute="leading" id="kjD-Mh-gZx"/>
+                            <constraint firstItem="nTb-Dg-ZVT" firstAttribute="top" secondItem="rU5-If-cpC" secondAttribute="bottom" id="ugS-o8-0mX"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5w-f2-hZ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -370,17 +379,19 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BuyButton-Untouched" width="200" height="80"/>
-        <image name="FavoriteButtonUntouched" width="56" height="56"/>
+        <image name="BeFirstToEnter" width="780" height="257"/>
+        <image name="BuyButton-Untouched" width="100" height="40"/>
+        <image name="FavoriteButtonTouched" width="112" height="112"/>
         <image name="FriendsButton" width="180" height="80"/>
         <image name="Leaderboard" width="784" height="264"/>
-        <image name="Play-Untouched" width="283" height="123"/>
+        <image name="Map-ComingSoon" width="780" height="257"/>
+        <image name="Play-Untouched" width="283" height="124"/>
         <image name="ProfileButton" width="180" height="80"/>
         <image name="RankingsButton" width="180" height="80"/>
         <image name="SettingsButton" width="80" height="80"/>
-        <image name="ShareButtonUntouched" width="56" height="56"/>
+        <image name="ShareButtonUntouched" width="112" height="112"/>
         <image name="Title-Logo" width="412" height="80"/>
-        <image name="TournamentInfoBar" width="754" height="30"/>
-        <image name="infoButtonUntouched" width="56" height="56"/>
+        <image name="TournamentInfoBar" width="754" height="31"/>
+        <image name="infoButtonUntouched" width="112" height="112"/>
     </resources>
 </document>

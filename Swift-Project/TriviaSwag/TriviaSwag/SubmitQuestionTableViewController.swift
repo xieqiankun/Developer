@@ -52,7 +52,7 @@ class SubmitQuestionTableViewController: UITableViewController, SubmitQuestionBu
     }
     
     func hideKeyboard(gesture: UIGestureRecognizer) {
-        print("I am here")
+
         let point = gesture.locationInView(tableView)
         let indexPath = tableView.indexPathForRowAtPoint(point)
         

@@ -24,7 +24,9 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    override func viewDidAppear(animated: Bool) { super.viewDidAppear(animated)
+    override func viewDidAppear(animated: Bool) {
+        
+        super.viewDidAppear(animated)
         
         navigationController?.delegate = self
         

@@ -17,15 +17,7 @@ public class triviaUser: NSObject {
     public var gamesPlayed: NSNumber?
     public var registered: NSDate?
     public var isSuspended: gStackSuspension?
-    public var versusGamesWon: NSNumber?
-    public var versusGamesPlayed: NSNumber?
-    public var versusWinStreak: NSNumber?
-    public var versusLossStreak: NSNumber?
-    public var versusTokensEarned: NSNumber?
-    public var versusQuestionsSeen: NSNumber?
-    public var versusQuestionTime: NSNumber?
-    public var versusQuestionCorTime: NSNumber?
-    public var versusQuestionCor: NSNumber?
+
     public var adFreeExpire: NSNumber?
     public var tournamentsPlayed: NSNumber?
     public var tournamentsWon: Array<triviaUserTournament>?
@@ -33,15 +25,7 @@ public class triviaUser: NSObject {
     public var tournamentQuestionTime: NSNumber?
     public var tournamentQuestionCorTime: NSNumber?
     public var tournamentQuestionCor: NSNumber?
-    public var singleGamesPlayed: NSNumber?
-    public var singleTokensEarned: NSNumber?
-    public var singleQuestionsSeen: NSNumber?
-    public var singleQuestionTime: NSNumber?
-    public var singleQuestionCorTime: NSNumber?
-    public var singleQuestionCor: NSNumber?
-    public var singleBonusQuestionsSeen: NSNumber?
-    public var singleBonusQuestionCor: NSNumber?
-    public var singleQuestionNum: NSNumber?
+
     public var questionsSeen: NSNumber?
     public var questionsCorrect: NSNumber?
     public var correctTime: NSNumber?
@@ -64,6 +48,8 @@ public class triviaUser: NSObject {
     public var name: String?
     public var phone: String?
     public var email: String?
+    
+    //recentActivity
     
     init(payload: Dictionary<String,AnyObject>) {
         _id = payload["_id"] as? String
@@ -94,14 +80,6 @@ public class triviaUser: NSObject {
             registered = dateForString(dateString)
         }
         gamesPlayed = payload["gamesPlayed"] as? NSNumber
-        versusGamesWon = payload["versusGamesWon"] as? NSNumber
-        versusGamesPlayed = payload["versusGamesPlayed"] as? NSNumber
-        versusLossStreak = payload["versusLossStreak"] as? NSNumber
-        versusTokensEarned = payload["versusTokensEarned"] as? NSNumber
-        versusQuestionsSeen = payload["versusQuestionsSeen"] as? NSNumber
-        versusQuestionTime = payload["versusQuestionTime"] as? NSNumber
-        versusQuestionCorTime = payload["versusQuestionCorTime"] as? NSNumber
-        versusQuestionCor = payload["versusQuestionCor"] as? NSNumber
         adFreeExpire = payload["adFreeExpire"] as? NSNumber
         tournamentsPlayed = payload["tournamentsPlayed"] as? NSNumber
         if let tournamentsWonArray = payload["tournamentsWon"] as? Array<Dictionary<String,AnyObject>> {
@@ -122,15 +100,6 @@ public class triviaUser: NSObject {
         tournamentQuestionTime = payload["tournamentQuestionTime"] as? NSNumber
         tournamentQuestionCorTime = payload["tournamentQuestionCorTime"] as? NSNumber
         tournamentQuestionCor = payload["tournamentQuestionCor"] as? NSNumber
-        singleGamesPlayed = payload["singleGamesPlayed"] as? NSNumber
-        singleTokensEarned = payload["singleTokensEarned"] as? NSNumber
-        singleQuestionsSeen = payload["singleQuestionSeen"] as? NSNumber
-        singleQuestionTime = payload["singleQuestionTime"] as? NSNumber
-        singleQuestionCorTime = payload["singleQuestionCorTime"] as? NSNumber
-        singleQuestionCor = payload["singleQuestionCor"] as? NSNumber
-        singleBonusQuestionsSeen = payload["singleBonusQuestionsSeen"] as? NSNumber
-        singleBonusQuestionCor = payload["singleBonusQuestionCor"] as? NSNumber
-        singleQuestionNum = payload["singleQuestionNum"] as? NSNumber
         questionsSeen = payload["questionsSeen"] as? NSNumber
         questionsCorrect = payload["questionsCorrect"] as? NSNumber
         correctTime = payload["correctTime"] as? NSNumber
