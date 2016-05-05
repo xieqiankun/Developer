@@ -10,10 +10,10 @@ import UIKit
 
 class DetailedTournamentViewController: UIViewController {
 
-    var tournamet: gStackTournament?
+    var tournament: gStackTournament?
     
     @IBOutlet weak var tournamentNameLabel: UILabel!
-    
+    @IBOutlet weak var startBtn: UIButton!
     
     
     override func viewDidLoad() {
@@ -57,6 +57,7 @@ class DetailedTournamentViewController: UIViewController {
         
         self.view.addSubview(imageViewBackground)
         self.view.sendSubviewToBack(imageViewBackground)
+        imageViewBackground.autoresizingMask = [.FlexibleWidth,.FlexibleHeight]
     }
     
     func setCornerEdge(){
@@ -74,9 +75,14 @@ class DetailedTournamentViewController: UIViewController {
         
         if let info = notification.userInfo {
             let temp = info["currentTournament"] as! gStackTournament
-            self.tournamet = temp
+            self.tournament = temp
             
-            self.tournamentNameLabel.text = self.tournamet?.name
+            self.tournamentNameLabel.text = self.tournament?.name
+            if self.tournament?.status() == gStackTournamentStatus.Active {
+                self.startBtn.hidden = false
+            } else {
+                self.startBtn.hidden = true
+            }
         }
         
     }
@@ -102,7 +108,7 @@ class DetailedTournamentViewController: UIViewController {
         if segue.identifier == "GamePlaySegue" {
             
             let vc = segue.destinationViewController as! GamePlayViewController
-            vc.tournament = self.tournamet
+            vc.tournament = self.tournament
             print("I am in segue \(vc.tournament?.name)")
         }
         

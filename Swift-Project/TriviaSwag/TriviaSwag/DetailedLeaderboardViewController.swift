@@ -10,7 +10,11 @@ import UIKit
 
 class DetailedLeaderboardViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     var leaderboard:gStackTournamentLeaderboard!
+
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -30,7 +34,6 @@ class DetailedLeaderboardViewController: UIViewController {
     }
     
     @IBAction func close() {
-
 
         dismissViewControllerAnimated(true, completion: nil)
         
@@ -70,29 +73,56 @@ extension DetailedLeaderboardViewController: UIViewControllerTransitioningDelega
 extension DetailedLeaderboardViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.leaderboard.leaders.count
+        return 1
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        
+        if let leads = self.leaderboard {
+            return leads.leaders.count
+        }
+        return 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("LeaderboardCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("LeaderboardCell", forIndexPath: indexPath) as! LeaderboardTableViewCell
         
-        let leader = self.leaderboard.leaders[indexPath.row]
+        let leader = self.leaderboard!.leaders[indexPath.section]
+     
+        let dictionary: [LeaderboardLabels: String] = [LeaderboardLabels.nameLabel: leader.displayName!,
+                          LeaderboardLabels.timeLabel: String(leader.correctTime!.doubleValue),
+                          LeaderboardLabels.rankLabel: String(indexPath.section + 1)+"."]
         
-        cell.textLabel?.text = leader.displayName
-        
+        cell.setupLabels(dictionary)
+        cell.setNeedsLayout()
         return cell
     }
     
     
-    
-    
 }
 
-extension DetailedTournamentViewController: UITableViewDelegate {
+extension DetailedLeaderboardViewController: UITableViewDelegate {
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        let height = tableView.frame.height * 0.18
+        return CGFloat(height)
+    }
     
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        let view = UIView()
+        view.backgroundColor = UIColor.clearColor()
+        return view
+        
+    }
     
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        let height = tableView.frame.height * 0.012
+        return CGFloat(height)
+    }
+
     
 }
 

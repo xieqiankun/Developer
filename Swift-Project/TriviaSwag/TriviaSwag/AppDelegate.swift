@@ -30,14 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
             
             triviaUser.logInFromSavedToken { (error) in
-                
+                print(error?.domain)
+
             }
         } else {
         
             gStackLoginWithAppID("308189542", appKey: "/o3I3goKCQ==") { (error) -> Void in
            
                 triviaUser.logInFromSavedToken { (error) in
-                
+                    
                 }
             
             }

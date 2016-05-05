@@ -17,7 +17,7 @@ class LeaderboardImageViewController: UIViewController {
         didSet{
             gStackFetchLeaderboardForTournament(currentTournament!) { (error, leaderboard) in
                 self.leaderboard = leaderboard
-                print(leaderboard?.leaders)
+                print("set leaderboard")
             }
         }
     }

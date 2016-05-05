@@ -54,8 +54,8 @@
 		286E7C371CD7D3F800F462FF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 286E7C361CD7D3F800F462FF /* Profile.storyboard */; };
 		286E7C391CD7D41400F462FF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286E7C381CD7D41400F462FF /* ProfileViewController.swift */; };
 		286E7C3C1CD7D88E00F462FF /* GROBOLD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 286E7C3B1CD7D88E00F462FF /* GROBOLD.ttf */; };
-		286E7C401CD7FCF300F462FF /* DoubleLabelStrokeLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286E7C3F1CD7FCF300F462FF /* DoubleLabelStrokeLabelView.swift */; };
 		286E7C441CD7FFE900F462FF /* DoubleLabelStrokeLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286E7C431CD7FFE900F462FF /* DoubleLabelStrokeLabelView.xib */; };
+		286E7C471CDA933100F462FF /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286E7C461CDA933100F462FF /* LeaderboardTableViewCell.swift */; };
 		289A87421CC7EE5300C30D8A /* Button Right answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 289A873E1CC7EE5300C30D8A /* Button Right answer.wav */; };
 		289A87431CC7EE5300C30D8A /* Button Wrong answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 289A873F1CC7EE5300C30D8A /* Button Wrong answer.wav */; };
 		289A87441CC7EE5300C30D8A /* Win Sound Effect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 289A87401CC7EE5300C30D8A /* Win Sound Effect.wav */; };
@@ -160,8 +160,8 @@
 		286E7C361CD7D3F800F462FF /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		286E7C381CD7D41400F462FF /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		286E7C3B1CD7D88E00F462FF /* GROBOLD.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GROBOLD.ttf; sourceTree = "<group>"; };
-		286E7C3F1CD7FCF300F462FF /* DoubleLabelStrokeLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleLabelStrokeLabelView.swift; sourceTree = "<group>"; };
 		286E7C431CD7FFE900F462FF /* DoubleLabelStrokeLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoubleLabelStrokeLabelView.xib; sourceTree = "<group>"; };
+		286E7C461CDA933100F462FF /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
 		289A873E1CC7EE5300C30D8A /* Button Right answer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Button Right answer.wav"; sourceTree = "<group>"; };
 		289A873F1CC7EE5300C30D8A /* Button Wrong answer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Button Wrong answer.wav"; sourceTree = "<group>"; };
 		289A87401CC7EE5300C30D8A /* Win Sound Effect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Win Sound Effect.wav"; sourceTree = "<group>"; };
@@ -375,8 +375,7 @@
 				2847595C1CB43E2800DCFE6A /* DetailedTournamentViewController.swift */,
 				281285901CB563F000D0D72E /* SegementedControlUI.swift */,
 				281285BD1CB592EA00D0D72E /* LeaderboardImageViewController.swift */,
-				28AEC7281CD14D10001E181F /* DetailedLeaderboardViewController.swift */,
-				28AEC72C1CD15169001E181F /* DetailLeaderboard.storyboard */,
+				286E7C451CDA893500F462FF /* Leaderboard */,
 			);
 			name = DetailContainer;
 			sourceTree = "<group>";
@@ -386,7 +385,6 @@
 			children = (
 				286E7C361CD7D3F800F462FF /* Profile.storyboard */,
 				286E7C381CD7D41400F462FF /* ProfileViewController.swift */,
-				286E7C3F1CD7FCF300F462FF /* DoubleLabelStrokeLabelView.swift */,
 				286E7C431CD7FFE900F462FF /* DoubleLabelStrokeLabelView.xib */,
 			);
 			name = Profile;
@@ -399,6 +397,16 @@
 			);
 			name = Font;
 			path = TriviaSound;
+			sourceTree = "<group>";
+		};
+		286E7C451CDA893500F462FF /* Leaderboard */ = {
+			isa = PBXGroup;
+			children = (
+				28AEC72C1CD15169001E181F /* DetailLeaderboard.storyboard */,
+				28AEC7281CD14D10001E181F /* DetailedLeaderboardViewController.swift */,
+				286E7C461CDA933100F462FF /* LeaderboardTableViewCell.swift */,
+			);
+			name = Leaderboard;
 			sourceTree = "<group>";
 		};
 		289A873C1CC7EE5300C30D8A /* TriviaSound */ = {
@@ -691,6 +699,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				286E7C471CDA933100F462FF /* LeaderboardTableViewCell.swift in Sources */,
 				289A87561CC955EB00C30D8A /* GeneralTableViewController.swift in Sources */,
 				281285B91CB57C2100D0D72E /* gStackTournament.swift in Sources */,
 				281285B61CB57C2100D0D72E /* gStackMasterDataFetcher.swift in Sources */,
@@ -709,7 +718,6 @@
 				289A875D1CC9746F00C30D8A /* LoginSignUpViewController.swift in Sources */,
 				2837CCB21CD28743002E407F /* FadeOutAnimationController.swift in Sources */,
 				2847595D1CB43E2800DCFE6A /* DetailedTournamentViewController.swift in Sources */,
-				286E7C401CD7FCF300F462FF /* DoubleLabelStrokeLabelView.swift in Sources */,
 				289A874F1CC8337700C30D8A /* SettingDetailViewController.swift in Sources */,
 				2847591C1CB310E800DCFE6A /* HomeViewController.swift in Sources */,
 				2837CCAC1CD286B3002E407F /* GradientView.swift in Sources */,
@@ -936,6 +944,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/xieqiankun/Developer/Swift-Project/TriviaSwag/TriviaSwag/Trivios-Tournaments-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -956,6 +965,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/xieqiankun/Developer/Swift-Project/TriviaSwag/TriviaSwag/Trivios-Tournaments-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

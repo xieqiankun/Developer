@@ -22,11 +22,15 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        
-        setupContainer()
         self.addBackground()
+        setupContainer()
         
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        print("view did appear")
+       // self.addBackground()
     }
     
     func setupContainer(){
@@ -66,6 +70,7 @@ class HomeViewController: UIViewController {
         
         detailContainerView.addSubview(detailImageViewBackground)
         detailContainerView.sendSubviewToBack(detailImageViewBackground)
+        detailImageViewBackground.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         
         // For table container
         let tableWidth = tableContainerView.bounds.size.width
@@ -77,6 +82,7 @@ class HomeViewController: UIViewController {
         
         tableContainerView.addSubview(tableImageViewBackground)
         tableContainerView.sendSubviewToBack(tableImageViewBackground)
+        tableImageViewBackground.autoresizingMask = [.FlexibleHeight,.FlexibleWidth]
         
         // For Top Bar View
         let topbarWidth = topbarContainerView.bounds.size.width
@@ -88,10 +94,21 @@ class HomeViewController: UIViewController {
         
         topbarContainerView.addSubview(topbarImageViewBackground)
         topbarContainerView.sendSubviewToBack(topbarImageViewBackground)
-        
- 
+        topbarImageViewBackground.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
         
     }
+    
+    // Not use
+    func addConstrains(aView: UIView) {
+    
+        let topContraint = NSLayoutConstraint(item: aView, attribute: .Top, relatedBy: .Equal, toItem: aView.superview!, attribute: .Top, multiplier: 1, constant: 0)
+        let leftContraint = NSLayoutConstraint(item: aView, attribute: .Leading, relatedBy: .Equal, toItem: aView.superview!, attribute: .Leading, multiplier: 1, constant: 0)
+        let rightContraint = NSLayoutConstraint(item: aView, attribute: .Width, relatedBy: .Equal, toItem: aView.superview!, attribute: .Width, multiplier: 1, constant: 0)
+        let downContraint = NSLayoutConstraint(item: aView, attribute: .Height, relatedBy: .Equal, toItem: aView.superview!, attribute: .Height, multiplier: 1, constant: 0)
+        
+        aView.superview!.addConstraints([topContraint,leftContraint,rightContraint,downContraint])
+    }
+    
     
     
     @IBAction func segementIndexChanged(sender: SegementedControlUI) {

@@ -22,7 +22,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NAO-rD-5lp">
-                        <rect key="frame" x="25" y="0.0" width="450" height="80"/>
+                        <rect key="frame" x="17" y="0.0" width="465" height="80"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="amazon-gift-card" translatesAutoresizingMaskIntoConstraints="NO" id="hNl-BZ-dQ8">
                                 <rect key="frame" x="8" y="8" width="64" height="64"/>
@@ -30,8 +30,8 @@
                                     <constraint firstAttribute="width" secondItem="hNl-BZ-dQ8" secondAttribute="height" id="yIC-Kh-0oF"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1v6-4U-dax">
-                                <rect key="frame" x="80" y="29" width="134" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1v6-4U-dax">
+                                <rect key="frame" x="80" y="31" width="46" height="17"/>
                                 <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
                                 <color key="textColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -49,7 +49,7 @@
                 <constraints>
                     <constraint firstItem="NAO-rD-5lp" firstAttribute="top" secondItem="WlC-dq-V8H" secondAttribute="top" id="7AU-k2-Gcg"/>
                     <constraint firstAttribute="bottom" secondItem="NAO-rD-5lp" secondAttribute="bottom" id="Ano-Jn-jjS"/>
-                    <constraint firstItem="NAO-rD-5lp" firstAttribute="width" secondItem="WlC-dq-V8H" secondAttribute="width" multiplier="0.9" id="BYc-0e-Wy9"/>
+                    <constraint firstItem="NAO-rD-5lp" firstAttribute="width" secondItem="WlC-dq-V8H" secondAttribute="width" multiplier="0.93" id="BYc-0e-Wy9"/>
                     <constraint firstItem="NAO-rD-5lp" firstAttribute="centerX" secondItem="WlC-dq-V8H" secondAttribute="centerX" id="T3Z-Hz-g5z"/>
                 </constraints>
             </tableViewCellContentView>
