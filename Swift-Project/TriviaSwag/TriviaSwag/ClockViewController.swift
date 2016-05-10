@@ -95,7 +95,10 @@ class ClockViewController: UIViewController {
             self.timeLabel.text = String(self.time)
             }, completion: nil)
         
-        self.soundCountdown?.play()
+        dispatch_async(dispatch_get_main_queue()) {
+            self.soundCountdown?.play()
+        }
+        
     }
     
     // Stop the timer

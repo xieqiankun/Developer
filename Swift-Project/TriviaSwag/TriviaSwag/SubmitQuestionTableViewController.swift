@@ -138,6 +138,16 @@ class SubmitQuestionTableViewController: UITableViewController, SubmitQuestionBu
         }
     }
     
+    // Change cell color
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        // TODO: - Change the color to background color
+        view.tintColor = SettingSlaveTintColor
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        // Change the color of all cells
+        cell.backgroundColor = SettingSlaveCellColor
+    }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
@@ -152,6 +162,7 @@ class SubmitQuestionTableViewController: UITableViewController, SubmitQuestionBu
             return ""
         }
     }
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 

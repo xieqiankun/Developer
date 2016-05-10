@@ -31,6 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             triviaUser.logInFromSavedToken { (error) in
                 print(error?.domain)
+                
+                if error != nil {
+                    print(triviaCurrentUser)
+                    triviaCurrentUser = nil
+                }
 
             }
         } else {

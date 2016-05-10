@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="00F-Dj-3o1">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="GROBOLD.ttf">
+            <string>GROBOLD</string>
+            <string>GROBOLD</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Test View Controller-->
+        <scene sceneID="wIw-OR-hto">
+            <objects>
+                <viewController id="00F-Dj-3o1" customClass="TestViewController" customModule="TriviaSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ud3-hL-kZG"/>
+                        <viewControllerLayoutGuide type="bottom" id="gHu-Cs-rdH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VaI-SH-wWV">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8a0-nO-eyS">
+                                <rect key="frame" x="310" y="173" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="test" destination="00F-Dj-3o1" eventType="touchUpInside" id="qHU-au-NTY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BMS-Nf-DYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2303" y="-177"/>
+        </scene>
+        <!--Alert View Controller-->
+        <scene sceneID="wQm-ux-naJ">
+            <objects>
+                <viewController storyboardIdentifier="AlertViewController" id="4Zm-c3-ope" customClass="AlertViewController" customModule="TriviaSwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mpr-2F-INU"/>
+                        <viewControllerLayoutGuide type="bottom" id="2y1-5e-aNF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="O4c-nC-AfI">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7uC-gu-hZA" userLabel="PopupBackground">
+                                <rect key="frame" x="107" y="37" width="454" height="302"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlertBackground" translatesAutoresizingMaskIntoConstraints="NO" id="TcI-WJ-Ne3" userLabel="PopupbackgroundImage">
+                                        <rect key="frame" x="0.0" y="0.0" width="454" height="303"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt;TITLE&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bST-ig-508">
+                                        <rect key="frame" x="125" y="31" width="199" height="42"/>
+                                        <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ik8-UF-DII">
+                                        <rect key="frame" x="81" y="86" width="303" height="130"/>
+                                        <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vMJ-4h-j9e">
+                                        <rect key="frame" x="33" y="240" width="187" height="54"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ti-Lw-47J">
+                                        <rect key="frame" x="228" y="240" width="188" height="54"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="vMJ-4h-j9e" firstAttribute="bottom" secondItem="7uC-gu-hZA" secondAttribute="bottomMargin" id="8oJ-by-8QJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="3ti-Lw-47J" secondAttribute="trailing" constant="38" id="ELt-bv-XRK"/>
+                                    <constraint firstItem="TcI-WJ-Ne3" firstAttribute="leading" secondItem="7uC-gu-hZA" secondAttribute="leading" id="IbQ-NB-cHl"/>
+                                    <constraint firstItem="vMJ-4h-j9e" firstAttribute="top" secondItem="Ik8-UF-DII" secondAttribute="bottom" constant="24" id="Iih-ng-rZd"/>
+                                    <constraint firstAttribute="width" secondItem="7uC-gu-hZA" secondAttribute="height" multiplier="1.5" id="JGe-3f-Ame"/>
+                                    <constraint firstItem="vMJ-4h-j9e" firstAttribute="top" secondItem="3ti-Lw-47J" secondAttribute="top" id="Jm8-vN-W3G"/>
+                                    <constraint firstItem="3ti-Lw-47J" firstAttribute="leading" secondItem="vMJ-4h-j9e" secondAttribute="trailing" constant="8" symbolic="YES" id="Kfn-DY-scJ"/>
+                                    <constraint firstItem="vMJ-4h-j9e" firstAttribute="top" secondItem="7uC-gu-hZA" secondAttribute="top" constant="240" id="RCV-Tf-bbQ"/>
+                                    <constraint firstItem="3ti-Lw-47J" firstAttribute="leading" secondItem="7uC-gu-hZA" secondAttribute="leading" constant="228" id="XJn-kn-yOl"/>
+                                    <constraint firstItem="TcI-WJ-Ne3" firstAttribute="top" secondItem="7uC-gu-hZA" secondAttribute="top" id="aUm-Tf-wKF"/>
+                                    <constraint firstItem="vMJ-4h-j9e" firstAttribute="bottom" secondItem="3ti-Lw-47J" secondAttribute="bottom" id="jIX-lp-Tum"/>
+                                    <constraint firstItem="vMJ-4h-j9e" firstAttribute="leading" secondItem="7uC-gu-hZA" secondAttribute="leading" constant="33" id="q1W-mG-Y0T"/>
+                                    <constraint firstAttribute="trailing" secondItem="TcI-WJ-Ne3" secondAttribute="trailing" id="tUE-9u-TXn"/>
+                                    <constraint firstAttribute="bottom" secondItem="TcI-WJ-Ne3" secondAttribute="bottom" id="wKu-fp-qPN"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9C-jB-dOW">
+                                <rect key="frame" x="536" y="72" width="56" height="56"/>
+                                <state key="normal" title="Close" image="Close-Big"/>
+                                <state key="disabled" image="Close-Small"/>
+                                <state key="selected" image="Close-Big"/>
+                                <state key="highlighted" image="Close-Small"/>
+                                <connections>
+                                    <action selector="close" destination="4Zm-c3-ope" eventType="touchUpInside" id="ewo-Wh-cm4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="7uC-gu-hZA" firstAttribute="centerX" secondItem="O4c-nC-AfI" secondAttribute="centerX" id="5zA-kP-JRZ"/>
+                            <constraint firstItem="7uC-gu-hZA" firstAttribute="centerY" secondItem="O4c-nC-AfI" secondAttribute="centerY" id="di9-1v-S7u"/>
+                            <constraint firstItem="7uC-gu-hZA" firstAttribute="width" secondItem="O4c-nC-AfI" secondAttribute="width" multiplier="0.68" id="lTH-48-qEp"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="buttonView1" destination="vMJ-4h-j9e" id="aZo-ga-Hjw"/>
+                        <outlet property="buttonView2" destination="3ti-Lw-47J" id="vgZ-RD-au4"/>
+                        <outlet property="s_message" destination="Ik8-UF-DII" id="ZKY-Dp-EgB"/>
+                        <outlet property="s_title" destination="bST-ig-508" id="nXq-jE-i20"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aZt-rr-Ll8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2296.5" y="265.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="AlertBackground" width="895" height="613"/>
+        <image name="Close-Big" width="108" height="108"/>
+        <image name="Close-Small" width="108" height="108"/>
+    </resources>
+</document>

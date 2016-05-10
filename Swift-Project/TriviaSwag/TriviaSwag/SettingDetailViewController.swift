@@ -13,23 +13,33 @@ class SettingDetailViewController: UIViewController, SettingCellChangeDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = SettingSlaveTintColor
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
+        
     }
-    
 
     // MARK: - SettingCellChange Delegate
     
     func dismissCurrentViewController() {
-        navigationController?.popViewControllerAnimated(false)
+        //navigationController?.popViewControllerAnimated(false)
+        dismissViewControllerAnimated(false, completion: nil)
     }
     
     func showDetailSettingController(name: String) {
-        performSegueWithIdentifier(name, sender: nil)
+
+        let storyboard = UIStoryboard(name: "SettingTabs", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier(name)
+        vc.view.backgroundColor = SettingSlaveTintColor
+        dispatch_async(dispatch_get_main_queue()) {
+            self.presentViewController(vc, animated: false, completion: nil)
+        }
+        //performSegueWithIdentifier(name, sender: nil)
         
     }
     

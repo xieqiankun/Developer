@@ -17,7 +17,62 @@ protocol SettingCellChangeDelegate {
 class SettingsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var settingLabel: UILabel!
+    @IBOutlet weak var settingImage: UIImageView!
     
+    var currentLable: String?
+    
+    func setIconImage(str: String) {
+        settingImage.tintColor = SettingSlaveImageTintColor
+        
+        if let image = UIImage(named: str+"Icon"){
+            settingImage.image = image
+        } else {
+            settingImage.image = UIImage(named: "GeneralIcon")
+        }
+    }
+    
+    func setLabel(str: String){
+        currentLable = str
+        
+        let strokeTextAttributes = [
+            NSStrokeColorAttributeName : SettingSlaveImageTintColor,
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSStrokeWidthAttributeName : -3.0
+        ]
+
+        settingLabel.attributedText = NSAttributedString(string: str, attributes: strokeTextAttributes)
+    }
+    
+    func didSelectCell(){
+        let strokeTextAttributes = [
+            NSStrokeColorAttributeName : SettingSlaveImageTintColor,
+            NSForegroundColorAttributeName : SettingSlaveImageTintColor,
+            NSStrokeWidthAttributeName : -3.0
+        ]
+        
+        if let str = currentLable {
+            settingLabel.attributedText = NSAttributedString(string: str, attributes: strokeTextAttributes)
+        } else {
+            settingLabel.attributedText = NSAttributedString(string: "", attributes: strokeTextAttributes)
+        }
+        
+    }
+    
+    func didDeselectCell(){
+        
+        let strokeTextAttributes = [
+            NSStrokeColorAttributeName : SettingSlaveImageTintColor,
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSStrokeWidthAttributeName : -3.0
+        ]
+        
+        if let str = currentLable {
+            settingLabel.attributedText = NSAttributedString(string: str, attributes: strokeTextAttributes)
+        } else {
+            settingLabel.attributedText = NSAttributedString(string: "", attributes: strokeTextAttributes)
+        }
+        
+    }
     
 }
 
@@ -25,29 +80,52 @@ class SettingsTableViewController: UITableViewController {
     
     var delegate: SettingCellChangeDelegate?
     
-    var settings = ["General", "Account Infomation", "Change Password", "Submit Question","Tutorials", "Help", "Contact Support", "Rate The App", "Legal Stuff", "Log Out"]
-    var segueNames = ["General", "AccountInfomation", "ChangePassword","SubmitQuestion", "Tutorials", "Help", "ContactSupport", "RateTheApp", "LegalStuff", "LogOut"]
+    var settings = ["General", "Account Infomation", "Change Password", "Submit Questions","Tutorials", "Help", "Contact Support", "Rate The App", "Legal Stuff", "Log Out"]
+    var segueNames = ["General", "AccountInfomation", "ChangePassword","SubmitQuestions", "Tutorials", "Help", "ContactSupport", "RateTheApp", "LegalStuff", "LogOut"]
     
     var lastIndexPath: NSIndexPath?
+    var isFirstInit = true
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.backgroundColor = SettingMasterBackgroundColor
+        tableView.separatorColor = SettingMasterSelectedCellColor
+        
         tableView.reloadData()
         
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
-        let indexpath = NSIndexPath(forRow: 0,inSection: 0)
-        self.tableView.selectRowAtIndexPath(indexpath, animated: false, scrollPosition: UITableViewScrollPosition.Top)
-        delegate?.showDetailSettingController("General")
+        if isFirstInit {
+            isFirstInit = false
+            // Init the cell for selected one
+            //TODO:- A bug here need to fix
+            let indexpath = NSIndexPath(forRow: 0,inSection: 0)
+            self.tableView.selectRowAtIndexPath(indexpath, animated: false, scrollPosition: UITableViewScrollPosition.None)
+            delegate?.showDetailSettingController("General")
+            let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! SettingsTableViewCell
+            cell.backgroundColor = SettingMasterSelectedCellColor
+            cell.didSelectCell()
+        }
+
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
     }
-
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -68,14 +146,27 @@ class SettingsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("SettingCell", forIndexPath: indexPath) as! SettingsTableViewCell
-
-        cell.settingLabel.text = settings[indexPath.row]
         
+        cell.setLabel(settings[indexPath.row])
+        cell.setIconImage(segueNames[indexPath.row])
+        
+        if lastIndexPath?.row == indexPath.row {
+            cell.backgroundColor = SettingMasterSelectedCellColor
+            cell.didSelectCell()
+        } else {
+            cell.backgroundColor = UIColor.clearColor()
+        }
+        
+
         return cell
     }
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+
         delegate?.dismissCurrentViewController()
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! SettingsTableViewCell
+        cell.backgroundColor = UIColor.clearColor()
+        cell.didDeselectCell()
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -85,52 +176,22 @@ class SettingsTableViewController: UITableViewController {
         }
         self.lastIndexPath = indexPath
         delegate?.showDetailSettingController(segueNames[indexPath.row])
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! SettingsTableViewCell
+        cell.backgroundColor = SettingMasterSelectedCellColor
+        cell.didSelectCell()
     }
+    
 
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+
+
+
+
+
+
+
+
+
+

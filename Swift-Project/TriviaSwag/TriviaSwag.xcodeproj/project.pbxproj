@@ -56,6 +56,13 @@
 		286E7C3C1CD7D88E00F462FF /* GROBOLD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 286E7C3B1CD7D88E00F462FF /* GROBOLD.ttf */; };
 		286E7C441CD7FFE900F462FF /* DoubleLabelStrokeLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286E7C431CD7FFE900F462FF /* DoubleLabelStrokeLabelView.xib */; };
 		286E7C471CDA933100F462FF /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286E7C461CDA933100F462FF /* LeaderboardTableViewCell.swift */; };
+		286E7C521CDD320300F462FF /* MainSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286E7C511CDD320300F462FF /* MainSettingViewController.swift */; };
+		286E7C551CDD932400F462FF /* SettingTabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 286E7C531CDD932400F462FF /* SettingTabs.storyboard */; };
+		286E7C671CE1293700F462FF /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286E7C661CE1293700F462FF /* AlertViewController.swift */; };
+		286E7C691CE1294D00F462FF /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 286E7C681CE1294D00F462FF /* Alert.storyboard */; };
+		286E7C6C1CE13B1A00F462FF /* AlertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286E7C6B1CE13B1A00F462FF /* AlertButton.swift */; };
+		286E7C6E1CE1484900F462FF /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286E7C6D1CE1484900F462FF /* TestViewController.swift */; };
+		286E7C721CE172E400F462FF /* AlertViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286E7C711CE172E400F462FF /* AlertViewControllerFactory.swift */; };
 		289A87421CC7EE5300C30D8A /* Button Right answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 289A873E1CC7EE5300C30D8A /* Button Right answer.wav */; };
 		289A87431CC7EE5300C30D8A /* Button Wrong answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 289A873F1CC7EE5300C30D8A /* Button Wrong answer.wav */; };
 		289A87441CC7EE5300C30D8A /* Win Sound Effect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 289A87401CC7EE5300C30D8A /* Win Sound Effect.wav */; };
@@ -162,6 +169,13 @@
 		286E7C3B1CD7D88E00F462FF /* GROBOLD.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GROBOLD.ttf; sourceTree = "<group>"; };
 		286E7C431CD7FFE900F462FF /* DoubleLabelStrokeLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoubleLabelStrokeLabelView.xib; sourceTree = "<group>"; };
 		286E7C461CDA933100F462FF /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
+		286E7C511CDD320300F462FF /* MainSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSettingViewController.swift; sourceTree = "<group>"; };
+		286E7C541CDD932400F462FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SettingTabs.storyboard; sourceTree = "<group>"; };
+		286E7C661CE1293700F462FF /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		286E7C681CE1294D00F462FF /* Alert.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
+		286E7C6B1CE13B1A00F462FF /* AlertButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertButton.swift; sourceTree = "<group>"; };
+		286E7C6D1CE1484900F462FF /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		286E7C711CE172E400F462FF /* AlertViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewControllerFactory.swift; sourceTree = "<group>"; };
 		289A873E1CC7EE5300C30D8A /* Button Right answer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Button Right answer.wav"; sourceTree = "<group>"; };
 		289A873F1CC7EE5300C30D8A /* Button Wrong answer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Button Wrong answer.wav"; sourceTree = "<group>"; };
 		289A87401CC7EE5300C30D8A /* Win Sound Effect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Win Sound Effect.wav"; sourceTree = "<group>"; };
@@ -301,7 +315,6 @@
 				281285981CB57BA400D0D72E /* TriviaSwagAPI */,
 				281285A81CB57C2100D0D72E /* GStackAPI */,
 				284759141CB2F4E500DCFE6A /* Controller */,
-				2837CCAA1CD2865D002E407F /* Transition Animation */,
 				286E7C3A1CD7D80D00F462FF /* Font */,
 				289A87711CCC3DF300C30D8A /* Helper */,
 				289A873C1CC7EE5300C30D8A /* TriviaSound */,
@@ -340,6 +353,8 @@
 				286E7C351CD7D36000F462FF /* Profile */,
 				289A87491CC817ED00C30D8A /* Settings */,
 				289A875E1CC9747300C30D8A /* Login/SignUp */,
+				2837CCAA1CD2865D002E407F /* Transition Animation */,
+				286E7C6A1CE12FA300F462FF /* Alert */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -409,6 +424,18 @@
 			name = Leaderboard;
 			sourceTree = "<group>";
 		};
+		286E7C6A1CE12FA300F462FF /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				286E7C661CE1293700F462FF /* AlertViewController.swift */,
+				286E7C681CE1294D00F462FF /* Alert.storyboard */,
+				286E7C6B1CE13B1A00F462FF /* AlertButton.swift */,
+				286E7C6D1CE1484900F462FF /* TestViewController.swift */,
+				286E7C711CE172E400F462FF /* AlertViewControllerFactory.swift */,
+			);
+			name = Alert;
+			sourceTree = "<group>";
+		};
 		289A873C1CC7EE5300C30D8A /* TriviaSound */ = {
 			isa = PBXGroup;
 			children = (
@@ -424,6 +451,8 @@
 			isa = PBXGroup;
 			children = (
 				289A87521CC9301400C30D8A /* Settings.storyboard */,
+				286E7C531CDD932400F462FF /* SettingTabs.storyboard */,
+				286E7C511CDD320300F462FF /* MainSettingViewController.swift */,
 				289A874C1CC831DF00C30D8A /* SettingsViewController.swift */,
 				289A874A1CC8181500C30D8A /* SettingsTableViewController.swift */,
 				289A874E1CC8337700C30D8A /* SettingDetailViewController.swift */,
@@ -621,6 +650,8 @@
 				286E7C441CD7FFE900F462FF /* DoubleLabelStrokeLabelView.xib in Resources */,
 				289A87441CC7EE5300C30D8A /* Win Sound Effect.wav in Resources */,
 				289A87431CC7EE5300C30D8A /* Button Wrong answer.wav in Resources */,
+				286E7C551CDD932400F462FF /* SettingTabs.storyboard in Resources */,
+				286E7C691CE1294D00F462FF /* Alert.storyboard in Resources */,
 				28AEC72E1CD15169001E181F /* DetailLeaderboard.storyboard in Resources */,
 				284758C41CB2EE3500DCFE6A /* Main.storyboard in Resources */,
 				28AEC7251CD13C20001E181F /* TournamentResultCell.xib in Resources */,
@@ -699,6 +730,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				286E7C6E1CE1484900F462FF /* TestViewController.swift in Sources */,
 				286E7C471CDA933100F462FF /* LeaderboardTableViewCell.swift in Sources */,
 				289A87561CC955EB00C30D8A /* GeneralTableViewController.swift in Sources */,
 				281285B91CB57C2100D0D72E /* gStackTournament.swift in Sources */,
@@ -710,6 +742,7 @@
 				281285B71CB57C2100D0D72E /* gStackNotificationHandler.swift in Sources */,
 				28C31EC71CD2B1AB007D76D2 /* SubmitQuestionTableViewController.swift in Sources */,
 				28AEC7291CD14D10001E181F /* DetailedLeaderboardViewController.swift in Sources */,
+				286E7C721CE172E400F462FF /* AlertViewControllerFactory.swift in Sources */,
 				28A978DF1CB80A91006F6218 /* AnswersDisplayViewController.swift in Sources */,
 				281285B21CB57C2100D0D72E /* gStack Info.swift in Sources */,
 				284759131CB2F4DD00DCFE6A /* TableContainerViewController.swift in Sources */,
@@ -730,6 +763,7 @@
 				281285B81CB57C2100D0D72E /* gStackQuestion.swift in Sources */,
 				281285911CB563F000D0D72E /* SegementedControlUI.swift in Sources */,
 				28A978DD1CB80A82006F6218 /* QuestionDisplayViewController.swift in Sources */,
+				286E7C6C1CE13B1A00F462FF /* AlertButton.swift in Sources */,
 				283AAA521CD3E4F30081E8A2 /* SubmitQuestionButtonTableViewCell.swift in Sources */,
 				28A978DB1CB6F764006F6218 /* ProgressBarViewController.swift in Sources */,
 				281285A31CB57BBD00D0D72E /* triviaNotificationHandler.swift in Sources */,
@@ -737,6 +771,7 @@
 				289A87601CC978DF00C30D8A /* SignUpViewController.swift in Sources */,
 				281285A11CB57BBD00D0D72E /* trivia Public Routes.swift in Sources */,
 				283AAA501CD3BFEB0081E8A2 /* AnswerCellTableViewCell.swift in Sources */,
+				286E7C671CE1293700F462FF /* AlertViewController.swift in Sources */,
 				281285A51CB57BBD00D0D72E /* triviaUser.swift in Sources */,
 				281285B31CB57C2100D0D72E /* gStack Private Routes.swift in Sources */,
 				28C31ECA1CD2C437007D76D2 /* CategoryPickerTableViewCell.swift in Sources */,
@@ -749,6 +784,7 @@
 				286E7C391CD7D41400F462FF /* ProfileViewController.swift in Sources */,
 				284759171CB2F57600DCFE6A /* TournamentsPageViewController.swift in Sources */,
 				289A874D1CC831DF00C30D8A /* SettingsViewController.swift in Sources */,
+				286E7C521CDD320300F462FF /* MainSettingViewController.swift in Sources */,
 				28AEC72B1CD15016001E181F /* DimmingPresentationController.swift in Sources */,
 				284759111CB2F13E00DCFE6A /* TempFileForRoutesFunctions.swift in Sources */,
 				281285BE1CB592EA00D0D72E /* LeaderboardImageViewController.swift in Sources */,
@@ -813,6 +849,14 @@
 				284758C81CB2EE3500DCFE6A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		286E7C531CDD932400F462FF /* SettingTabs.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				286E7C541CDD932400F462FF /* Base */,
+			);
+			name = SettingTabs.storyboard;
 			sourceTree = "<group>";
 		};
 		289A87521CC9301400C30D8A /* Settings.storyboard */ = {

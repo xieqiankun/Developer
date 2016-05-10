@@ -126,7 +126,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login/Sign up" id="YzS-fM-g3C">
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="Vb6-69-DIv"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="Vb6-69-DIv">
+                            <connections>
+                                <action selector="close" destination="H2B-Ie-gnw" id="1BO-Ba-re7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

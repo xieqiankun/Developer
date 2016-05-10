@@ -145,7 +145,17 @@ class ChangePasswordTableViewController: UITableViewController, UITextFieldDeleg
             })
         }
         
-        
+    
+    
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        // TODO: - Change the color to background color
+        view.tintColor = SettingSlaveTintColor
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        // Change the color of all cells
+        cell.backgroundColor = SettingSlaveCellColor
+    }
 }
 
     

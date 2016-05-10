@@ -59,13 +59,17 @@ class ProfileViewController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    
         modalPresentationStyle = .Custom
         transitioningDelegate = self
+
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
 
+        super.viewDidLoad()
+        view.backgroundColor = UIColor.clearColor()
+        
         // Do any additional setup after loading the view.
         currentSelectedButton = statisticsButton
         currentSelectedButton.enabled = false
@@ -74,20 +78,20 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         setCurrentUserInfo()
         
         //setupRoundBackgrounds()
         setupLabelStrokes()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+        
         self.profileImageView.layer.borderWidth = 4
         self.profileImageView.layer.borderColor = kProfileCellBackgroundColor.CGColor
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.height/2
         self.profileImageView.layer.masksToBounds = true
-        
     }
     
     func setCurrentUserInfo() {
@@ -219,10 +223,12 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UIViewControllerTransitioningDelegate {
     func presentationControllerForPresentedViewController( presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController?
     {
+
         return DimmingPresentationController( presentedViewController: presented, presentingViewController: presenting)
     }
     
     func animationControllerForPresentedController( presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
         return FadeInAnimationController()
     }
     

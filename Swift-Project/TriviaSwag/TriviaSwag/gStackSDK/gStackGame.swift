@@ -32,7 +32,12 @@ public protocol gStackGameDelegate: class {
 //Note: this implementation allows only one game to be played at a time. If two game objects are valid concurrently, they will both set their connections to the latest game and receive its notifications
 public class gStackGame: NSObject {
     
-    static var sharedGame = gStackGame()
+    class var sharedGame: gStackGame {
+        struct Singleton {
+            static let instance = gStackGame()
+        }
+        return Singleton.instance
+    }
     
     var connection: gStackGameConnection?
     var primus: Primus?

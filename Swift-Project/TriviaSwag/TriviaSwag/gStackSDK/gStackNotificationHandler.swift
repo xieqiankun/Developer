@@ -12,7 +12,14 @@ var gStackGameStartedNotificationName = "gStackGameStarted"
 var gStackConnectionUserInfoKey = "Connection"
 
 class gStackNotificationHandler: NSObject, PTPusherDelegate, PTPusherPresenceChannelDelegate {
-    static let sharedInstance = gStackNotificationHandler()
+    
+    class var sharedInstance: gStackNotificationHandler {
+        struct Singleton {
+            static let instance = gStackNotificationHandler()
+        }
+        return Singleton.instance
+    }
+
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)

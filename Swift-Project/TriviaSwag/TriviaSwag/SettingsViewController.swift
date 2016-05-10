@@ -21,7 +21,10 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         // init the view
         settingsTableController.delegate = settingDetailController
+        
         // Do any additional setup after loading the view.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +37,8 @@ class SettingsViewController: UIViewController {
         
     }
 
+
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -42,9 +47,8 @@ class SettingsViewController: UIViewController {
         if let embeddedViewController = segue.destinationViewController as? SettingsTableViewController where segue.identifier == "EmbededSettingTableSegue" {
             self.settingsTableController = embeddedViewController
             
-        } else if let embeddedViewController = segue.destinationViewController as? UINavigationController where segue.identifier == "EmbededSettingDetailView" {
-            let vc = embeddedViewController.topViewController as! SettingDetailViewController
-            self.settingDetailController = vc
+        } else if let embeddedViewController = segue.destinationViewController as? SettingDetailViewController where segue.identifier == "EmbededSettingDetailView" {
+            self.settingDetailController = embeddedViewController
         }
         
     }

@@ -15,7 +15,7 @@ class DimmingPresentationController: UIPresentationController {
         dimmingView.frame = containerView!.bounds
         containerView!.insertSubview(dimmingView, atIndex: 0)
         dimmingView.alpha = 0
-        
+
         if let transitionCoordinator = presentedViewController.transitionCoordinator() { transitionCoordinator.animateAlongsideTransition({ _ in
             self.dimmingView.alpha = 1
             }, completion: nil)

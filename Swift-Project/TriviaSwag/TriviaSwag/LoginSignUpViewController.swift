@@ -21,7 +21,11 @@ class LoginSignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func close() {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

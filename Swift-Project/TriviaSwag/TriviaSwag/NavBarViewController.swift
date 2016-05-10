@@ -20,7 +20,16 @@ class NavBarViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBAction func profileAction(sender: UIButton){
+        
+        if triviaCurrentUser != nil {
+            performSegueWithIdentifier("MyProfile", sender: self)
+        } else {
+            performSegueWithIdentifier("Login", sender: self)
+        }
+        
+    }
     
     
     // MARK: - Navigation

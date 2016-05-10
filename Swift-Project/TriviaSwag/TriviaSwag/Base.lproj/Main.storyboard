@@ -509,7 +509,7 @@
                                         </constraints>
                                         <state key="normal" image="ProfileButton"/>
                                         <connections>
-                                            <segue destination="NMG-7t-PCV" kind="presentation" identifier="MyProfile" id="NLs-gI-mkC"/>
+                                            <action selector="profileAction:" destination="RHI-eo-0k1" eventType="touchUpInside" id="Lbe-rm-LHn"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6F-xZ-eDL">
@@ -558,7 +558,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="wDq-Zl-I7d" kind="presentation" id="odG-pv-hos"/>
+                        <segue destination="wDq-Zl-I7d" kind="presentation" identifier="Login" id="odG-pv-hos"/>
+                        <segue destination="NMG-7t-PCV" kind="presentation" identifier="MyProfile" id="DTh-Vu-iOo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ujL-ad-fBn" userLabel="First Responder" sceneMemberID="firstResponder"/>
