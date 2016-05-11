@@ -151,18 +151,18 @@
                                         <rect key="frame" x="0.0" y="0.0" width="614" height="356"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRa-oe-QRY" userLabel="placeholder">
-                                        <rect key="frame" x="187" y="47.5" width="240" height="28"/>
+                                        <rect key="frame" x="187" y="48" width="240" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="KS2-UN-zaI"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOl-hP-Z8A">
-                                        <rect key="frame" x="16" y="75.5" width="583" height="270.5"/>
+                                        <rect key="frame" x="16" y="76" width="583" height="270"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A0V-yo-35S">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A0V-yo-35S">
                                                 <rect key="frame" x="0.0" y="0.0" width="583" height="271"/>
                                             </imageView>
-                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QoK-vR-ln8">
+                                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QoK-vR-ln8">
                                                 <rect key="frame" x="0.0" y="0.0" width="583" height="271"/>
                                                 <connections>
                                                     <segue destination="piJ-lx-m9t" kind="embed" id="qG8-aF-0a6"/>
@@ -213,7 +213,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMR-Pu-mab">
-                                <rect key="frame" x="610" y="43.5" width="56" height="56"/>
+                                <rect key="frame" x="610" y="44" width="56" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hMR-Pu-mab" secondAttribute="height" id="8m4-lo-ibA"/>
                                 </constraints>

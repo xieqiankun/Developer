@@ -50,6 +50,9 @@
 		2847591C1CB310E800DCFE6A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847591B1CB310E800DCFE6A /* HomeViewController.swift */; };
 		2847595D1CB43E2800DCFE6A /* DetailedTournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847595C1CB43E2800DCFE6A /* DetailedTournamentViewController.swift */; };
 		284759611CB4524000DCFE6A /* NavBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284759601CB4524000DCFE6A /* NavBarViewController.swift */; };
+		286658221CE2876E0013B004 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286658211CE2876E0013B004 /* Reachability.swift */; };
+		286658241CE29BC10013B004 /* SimplePingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286658231CE29BC10013B004 /* SimplePingClient.swift */; };
+		286658271CE29F9D0013B004 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 286658261CE29F9D0013B004 /* SimplePing.m */; };
 		286E7C191CD3F3B700F462FF /* ChangePasswordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286E7C181CD3F3B700F462FF /* ChangePasswordTableViewController.swift */; };
 		286E7C371CD7D3F800F462FF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 286E7C361CD7D3F800F462FF /* Profile.storyboard */; };
 		286E7C391CD7D41400F462FF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286E7C381CD7D41400F462FF /* ProfileViewController.swift */; };
@@ -163,6 +166,10 @@
 		2847591B1CB310E800DCFE6A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2847595C1CB43E2800DCFE6A /* DetailedTournamentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedTournamentViewController.swift; sourceTree = "<group>"; };
 		284759601CB4524000DCFE6A /* NavBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarViewController.swift; sourceTree = "<group>"; };
+		286658211CE2876E0013B004 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		286658231CE29BC10013B004 /* SimplePingClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplePingClient.swift; sourceTree = "<group>"; };
+		286658251CE29F9D0013B004 /* SimplePing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePing.h; sourceTree = "<group>"; };
+		286658261CE29F9D0013B004 /* SimplePing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePing.m; sourceTree = "<group>"; };
 		286E7C181CD3F3B700F462FF /* ChangePasswordTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordTableViewController.swift; sourceTree = "<group>"; };
 		286E7C361CD7D3F800F462FF /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		286E7C381CD7D41400F462FF /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -395,6 +402,16 @@
 			name = DetailContainer;
 			sourceTree = "<group>";
 		};
+		286658281CE29FAA0013B004 /* SimplePing */ = {
+			isa = PBXGroup;
+			children = (
+				286658231CE29BC10013B004 /* SimplePingClient.swift */,
+				286658251CE29F9D0013B004 /* SimplePing.h */,
+				286658261CE29F9D0013B004 /* SimplePing.m */,
+			);
+			name = SimplePing;
+			sourceTree = "<group>";
+		};
 		286E7C351CD7D36000F462FF /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,6 +496,8 @@
 			isa = PBXGroup;
 			children = (
 				289A876F1CCC3DEA00C30D8A /* FacebookFunctions.swift */,
+				286658211CE2876E0013B004 /* Reachability.swift */,
+				286658281CE29FAA0013B004 /* SimplePing */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -738,12 +757,14 @@
 				289A87701CCC3DEA00C30D8A /* FacebookFunctions.swift in Sources */,
 				281285A21CB57BBD00D0D72E /* triviaDataFetcher.swift in Sources */,
 				283AAA4E1CD3BED50081E8A2 /* QuestionCellTableViewCell.swift in Sources */,
+				286658241CE29BC10013B004 /* SimplePingClient.swift in Sources */,
 				281285A41CB57BBD00D0D72E /* triviaTournamentTalk.swift in Sources */,
 				281285B71CB57C2100D0D72E /* gStackNotificationHandler.swift in Sources */,
 				28C31EC71CD2B1AB007D76D2 /* SubmitQuestionTableViewController.swift in Sources */,
 				28AEC7291CD14D10001E181F /* DetailedLeaderboardViewController.swift in Sources */,
 				286E7C721CE172E400F462FF /* AlertViewControllerFactory.swift in Sources */,
 				28A978DF1CB80A91006F6218 /* AnswersDisplayViewController.swift in Sources */,
+				286658221CE2876E0013B004 /* Reachability.swift in Sources */,
 				281285B21CB57C2100D0D72E /* gStack Info.swift in Sources */,
 				284759131CB2F4DD00DCFE6A /* TableContainerViewController.swift in Sources */,
 				28A978D81CB6B30D006F6218 /* GamePlayViewController.swift in Sources */,
@@ -751,6 +772,7 @@
 				289A875D1CC9746F00C30D8A /* LoginSignUpViewController.swift in Sources */,
 				2837CCB21CD28743002E407F /* FadeOutAnimationController.swift in Sources */,
 				2847595D1CB43E2800DCFE6A /* DetailedTournamentViewController.swift in Sources */,
+				286658271CE29F9D0013B004 /* SimplePing.m in Sources */,
 				289A874F1CC8337700C30D8A /* SettingDetailViewController.swift in Sources */,
 				2847591C1CB310E800DCFE6A /* HomeViewController.swift in Sources */,
 				2837CCAC1CD286B3002E407F /* GradientView.swift in Sources */,

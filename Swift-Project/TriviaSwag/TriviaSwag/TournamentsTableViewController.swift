@@ -188,6 +188,10 @@ class TournamentsTableViewController: UITableViewController, gStackTournamentLis
             cell.setupCellBackground()
             cell.selectionStyle = UITableViewCellSelectionStyle.None
             
+            if tournaments[indexPath.section] == selectedTournament{
+                cell.changeColorWhenSelect()
+            }
+            
             return cell
         }
     }
@@ -195,16 +199,32 @@ class TournamentsTableViewController: UITableViewController, gStackTournamentLis
     // MARK: - Refresh Control
     func refreshTournaments() {
         //Load tournaments
-        gStackFetchTournaments({
-            error, _ in
-            if error != nil {
-                print("Error fetching tournaments: \(error!)")
-            } else {
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.refreshControl?.endRefreshing()
+        
+        if gStackAppIDToken == nil {
+            gStackLoginWithAppID() { (error) -> Void in
+                gStackFetchTournaments({
+                    error, _ in
+                    if error != nil {
+                        print("Error fetching tournaments: \(error!)")
+                    } else {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            self.refreshControl?.endRefreshing()
+                        })
+                    }
                 })
             }
-        })
+        } else {
+            gStackFetchTournaments({
+                error, _ in
+                if error != nil {
+                    print("Error fetching tournaments: \(error!)")
+                } else {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.refreshControl?.endRefreshing()
+                    })
+                }
+            })
+        }
     }
     
     func autoFocusOnFirstItem(cell: TournamentTableViewCell){

@@ -8,11 +8,17 @@
 
 import UIKit
 
+let kAlertLabelStrokeColor = UIColor(red: 27/255, green: 20/255, blue: 100/255, alpha: 1)
+let kAlertTitleColor =  UIColor(red: 213/255, green: 220/255, blue: 33/255, alpha: 1)
+
+
 class AlertViewController: UIViewController {
     
     var alertButtons:[AlertButton]!
     var alertTitle: String!
     var alertMessage: String!
+    
+    var error: NSError!
     
     @IBOutlet weak var s_message: UILabel!
     @IBOutlet weak var s_title: UILabel!
@@ -32,20 +38,12 @@ class AlertViewController: UIViewController {
     
     override func viewDidLoad() {
 
+        print(self.alertMessage)
+        configureAlert()
     }
     override func viewWillAppear(animated: Bool) {
         
-        s_message.text = alertMessage
-
-        buttonView1.addSubview(alertButtons[0])
         
-        addConstrains(alertButtons[0], toView: buttonView1)
-        //buttonView1.setNeedsLayout()
-        
-
-        buttonView2.addSubview(alertButtons[1])
-        addConstrains(alertButtons[1], toView: buttonView2)
- 
     }
     
     func addConstrains(aView: UIView, toView:UIView) {
@@ -60,8 +58,65 @@ class AlertViewController: UIViewController {
         rightContraint.active = true
         downContraint.active = true
         
-        // aView.superview!.addConstraints([topContraint,leftContraint,rightContraint,downContraint])
     }
+    
+    func configureAlert(){
+        
+        // Generate by myself
+        if error.code == -1 {
+            // one button only
+            if alertButtons.count == 1{
+                
+                s_message.attributedText = configureAlertMessage(alertMessage)
+                s_title.attributedText = configureAlertTitle(alertTitle)
+                
+                buttonView1.addSubview(alertButtons[0])
+                addConstrains(alertButtons[0], toView: buttonView1)
+
+                buttonView2.removeFromSuperview()
+                
+            } else {
+                s_message.attributedText = configureAlertMessage(alertMessage)
+                s_title.attributedText = configureAlertTitle(alertTitle)
+                
+                buttonView1.addSubview(alertButtons[0])
+                addConstrains(alertButtons[0], toView: buttonView1)
+
+                buttonView2.addSubview(alertButtons[1])
+                addConstrains(alertButtons[1], toView: buttonView2)
+            }
+        } else {
+            
+            
+            
+        }
+        
+        
+    }
+    
+    
+    func configureAlertTitle(str: String) -> NSAttributedString{
+        
+        let strokeTextAttributes = [
+            NSStrokeColorAttributeName : kAlertLabelStrokeColor,
+            NSForegroundColorAttributeName : kAlertTitleColor,
+            NSStrokeWidthAttributeName : -3.0
+        ]
+        return NSAttributedString(string:str, attributes: strokeTextAttributes)
+        
+    }
+    
+    func configureAlertMessage(str: String) -> NSAttributedString{
+        
+        let strokeTextAttributes = [
+            NSStrokeColorAttributeName : kAlertLabelStrokeColor,
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSStrokeWidthAttributeName : -3.0
+        ]
+        return NSAttributedString(string:str, attributes: strokeTextAttributes)
+        
+    }
+    
     
     @IBAction func close() {
         

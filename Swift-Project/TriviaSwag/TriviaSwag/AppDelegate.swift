@@ -18,36 +18,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
-        if let appId = NSUserDefaults.standardUserDefaults().stringForKey(gStackAppIdTokenKey), pusherChannel = NSUserDefaults.standardUserDefaults().stringForKey(gStackPusherChannelKey) {
-            gStackAppIDToken = appId
-            gStackPusherChannel = pusherChannel
-            gStackNotificationHandler.sharedInstance.connectToPushServerWithChannel(gStackPusherChannel!)
-            
-            gStackFetchTournaments({ (error, tournaments) in
-                if error != nil {
-                    
-                }
-            })
-            
-            triviaUser.logInFromSavedToken { (error) in
-                print(error?.domain)
-                
-                if error != nil {
-                    print(triviaCurrentUser)
-                    triviaCurrentUser = nil
-                }
-
-            }
-        } else {
-        
-            gStackLoginWithAppID("308189542", appKey: "/o3I3goKCQ==") { (error) -> Void in
-           
-                triviaUser.logInFromSavedToken { (error) in
-                    
-                }
-            
-            }
-        }
+//        if let appId = NSUserDefaults.standardUserDefaults().stringForKey(gStackAppIdTokenKey), pusherChannel = NSUserDefaults.standardUserDefaults().stringForKey(gStackPusherChannelKey) {
+//            gStackAppIDToken = appId
+//            gStackPusherChannel = pusherChannel
+//            gStackNotificationHandler.sharedInstance.connectToPushServerWithChannel(gStackPusherChannel!)
+//            
+//            gStackFetchTournaments({ (error, tournaments) in
+//                if error == nil {
+//                    
+//                } else {
+//                    gStackAppIDToken = nil
+//                    gStackPusherChannel = nil
+//                    // Maybe token expire
+//                    self.fetchTournamentWithAppID()
+//                }
+//            })
+//            
+//            triviaUser.logInFromSavedToken { (error) in
+//                print(error?.domain)
+//                
+//                if error != nil {
+//                    print(triviaCurrentUser)
+//                    triviaCurrentUser = nil
+//                }
+//
+//            }
+//        } else {
+//        
+//            fetchTournamentWithAppID()
+//            
+//            triviaUser.logInFromSavedToken { (error) in
+//                
+//            }
+//        }
         
         //Set up default settings
         if NSUserDefaults.standardUserDefaults().boolForKey("SetupDefaults") == false {
@@ -61,6 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         
+               
         //Facebook
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
@@ -96,8 +100,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
     }
+    
 
-
+    func fetchTournamentWithAppID() {
+        
+        gStackLoginWithAppID() { (error) -> Void in
+            
+            gStackFetchTournaments({ (error, tournaments) in
+                if error != nil {
+                    
+                }
+            })
+            
+        }
+    }
 
 }
 

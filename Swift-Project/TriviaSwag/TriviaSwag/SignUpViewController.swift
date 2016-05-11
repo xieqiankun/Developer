@@ -118,11 +118,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                         })
                     } else {
                         dispatch_async(dispatch_get_main_queue(), {
-                            let alert = UIAlertController(title: "Sign up successfully", message: "Hello I am Qiankun", preferredStyle: .Alert)
-                            // TODO: Change completion handler later
-                            let okAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
-                            alert.addAction(okAction)
-                            self.presentViewController(alert, animated: true, completion: {self.emailTextField.text = ""})
+                            
+                            
+                            let button = AlertButton(title: "", imageNames: [], style: .Cancel,action: nil)
+                            
+                            let vc = StoryboardAlertViewControllerFactory().createAlertViewController([button], title: "Successful!", message: "You sign up successfully")
+                            self.presentViewController(vc, animated: true, completion: nil)
+
                             print("save token \(retrieveLogInToken())")
                         })
 

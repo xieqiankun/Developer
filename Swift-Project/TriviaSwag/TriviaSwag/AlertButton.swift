@@ -9,21 +9,26 @@
 import UIKit
 
 enum AlertButtonStyle {
-    case Custom, Normal
+    case Custom, Normal,Cancel
 }
 
 class AlertButton: UIButton {
     
-    init(title: String, imageNames images:[String], style: AlertButtonStyle) {
+    var function: (() -> ())?
+    
+    init(title: String, imageNames images:[String], style: AlertButtonStyle, action:(() -> ())?) {
         super.init(frame: CGRectZero)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.autoresizingMask = [.FlexibleHeight,.FlexibleWidth]
+        
+        function = action
         
         switch style {
         case .Custom:
             configureCustom(images)
         case .Normal:
             configureNormal(title)
+        case .Cancel:
+            configureCancel()
         }
     }
     
@@ -38,7 +43,9 @@ class AlertButton: UIButton {
     
         self.setImage(imageTouch, forState: .Highlighted)
         self.setImage(imageUntouch, forState: .Normal)
-    
+        // add action
+        self.addTarget(self, action: #selector(AlertButton.handleTap), forControlEvents: UIControlEvents.TouchUpInside)
+
     }
     
     func configureNormal(title: String){
@@ -48,6 +55,23 @@ class AlertButton: UIButton {
         self.setImage(imageUntouch, forState: .Normal)
         
         self.setTitle(title, forState: .Normal)
+        self.addTarget(self, action: #selector(AlertButton.handleTap), forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    func configureCancel(){
+        let imageUntouch = UIImage(named:"DismissButton-Untouched")
+        let imageTouch = UIImage(named: "DismissButton-Touched")
+        self.setImage(imageTouch, forState: .Highlighted)
+        self.setImage(imageUntouch, forState: .Normal)
+        
+        self.addTarget(nil, action: #selector(AlertViewController.close), forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    
+    func handleTap() {
+        
+        function?()
+        print("tap")
     }
     
 }

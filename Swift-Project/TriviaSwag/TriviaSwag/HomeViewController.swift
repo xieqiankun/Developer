@@ -18,13 +18,19 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var mapViewContainer: UIView!
     @IBOutlet weak var tourneyTalkViewContainer: UIView!
     
+    var reachability: Reachability?
+    
+    deinit{
+        reachability?.stopNotifier()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // set the reachability checker
         
         self.addBackground()
         setupContainer()
-        
+        setupNetworkChecker()
     }
     
     
@@ -98,18 +104,6 @@ class HomeViewController: UIViewController {
         
     }
     
-    // Not use
-    func addConstrains(aView: UIView) {
-    
-        let topContraint = NSLayoutConstraint(item: aView, attribute: .Top, relatedBy: .Equal, toItem: aView.superview!, attribute: .Top, multiplier: 1, constant: 0)
-        let leftContraint = NSLayoutConstraint(item: aView, attribute: .Leading, relatedBy: .Equal, toItem: aView.superview!, attribute: .Leading, multiplier: 1, constant: 0)
-        let rightContraint = NSLayoutConstraint(item: aView, attribute: .Width, relatedBy: .Equal, toItem: aView.superview!, attribute: .Width, multiplier: 1, constant: 0)
-        let downContraint = NSLayoutConstraint(item: aView, attribute: .Height, relatedBy: .Equal, toItem: aView.superview!, attribute: .Height, multiplier: 1, constant: 0)
-        
-        aView.superview!.addConstraints([topContraint,leftContraint,rightContraint,downContraint])
-    }
-    
-    
     
     @IBAction func segementIndexChanged(sender: SegementedControlUI) {
         
@@ -137,6 +131,17 @@ class HomeViewController: UIViewController {
 
     }
     
+    // Not use
+    func addConstrains(aView: UIView) {
+        
+        let topContraint = NSLayoutConstraint(item: aView, attribute: .Top, relatedBy: .Equal, toItem: aView.superview!, attribute: .Top, multiplier: 1, constant: 0)
+        let leftContraint = NSLayoutConstraint(item: aView, attribute: .Leading, relatedBy: .Equal, toItem: aView.superview!, attribute: .Leading, multiplier: 1, constant: 0)
+        let rightContraint = NSLayoutConstraint(item: aView, attribute: .Width, relatedBy: .Equal, toItem: aView.superview!, attribute: .Width, multiplier: 1, constant: 0)
+        let downContraint = NSLayoutConstraint(item: aView, attribute: .Height, relatedBy: .Equal, toItem: aView.superview!, attribute: .Height, multiplier: 1, constant: 0)
+        
+        aView.superview!.addConstraints([topContraint,leftContraint,rightContraint,downContraint])
+    }
+    
     // Not use for now
     func setContainerView()
     {
@@ -147,17 +152,38 @@ class HomeViewController: UIViewController {
         
     }
     
-    
+    // network checking 
+    func setupNetworkChecker() {
+        do {
+            reachability = try Reachability.reachabilityForInternetConnection()
+            reachability!.whenUnreachable = { reachability in
+                // this is called on a background thread, but UI updates must
+                // be on the main thread
+                dispatch_async(dispatch_get_main_queue()) {
+                    let button = AlertButton(title: "", imageNames: [], style: .Cancel,action: nil)
+                    
+                    let vc = StoryboardAlertViewControllerFactory().createAlertViewController([button], title: "No Connection!", message: "You should check your internet connection!")
+                    self.presentViewController(vc, animated: true, completion: nil)
+                }
+            }
+            do {
+                try reachability!.startNotifier()
+            } catch {
+                print("Unable to start notifier")
+            }
+            
+        } catch {
+            print("Unable to create Reachability")
+            
+        }
+    }
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
-
-        
         
      }
-    
-    
+
 }

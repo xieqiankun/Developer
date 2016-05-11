@@ -16,11 +16,9 @@ let gStackPusherChannelKey = "gStackPusherChannelKey"
 //login with app key and app id
 //works
 
-func gStackLoginWithAppID(appId: String, appKey: String, completion:(error: NSError?)-> Void){
+func gStackLoginWithAppID(completion:(error: NSError?)-> Void){
     
-    print("appId" + appId)
-    
-    gStackMakeRequest(false, route: "register", type: "apiRegister", payload: ["appId":appId, "appKey":appKey]) {(data, response, error) -> Void in
+    gStackMakeRequest(false, route: "register", type: "apiRegister", payload: ["appId":"308189542", "appKey":"/o3I3goKCQ=="]) {(data, response, error) -> Void in
         
         gStackProcessResponse(error, data: data, successType: "apiRegisterSuccess", completion: {(error, payload) -> Void in
             
