@@ -151,7 +151,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="614" height="356"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRa-oe-QRY" userLabel="placeholder">
-                                        <rect key="frame" x="187" y="48" width="240" height="28"/>
+                                        <rect key="frame" x="187" y="53" width="240" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="KS2-UN-zaI"/>
                                         </constraints>
@@ -185,7 +185,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="614" height="356"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings" translatesAutoresizingMaskIntoConstraints="NO" id="KFk-UA-pOS">
-                                        <rect key="frame" x="200" y="5" width="214" height="43"/>
+                                        <rect key="frame" x="200" y="10" width="214" height="43"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="KFk-UA-pOS" secondAttribute="height" multiplier="5" id="sP4-hT-LeO"/>
                                         </constraints>
@@ -209,11 +209,11 @@
                                     <constraint firstAttribute="bottom" secondItem="QOl-hP-Z8A" secondAttribute="bottom" constant="10" id="dOg-KZ-NQR"/>
                                     <constraint firstItem="QOl-hP-Z8A" firstAttribute="centerX" secondItem="zOY-lH-w8l" secondAttribute="centerX" id="fui-ZN-W8R"/>
                                     <constraint firstItem="QOl-hP-Z8A" firstAttribute="width" secondItem="zOY-lH-w8l" secondAttribute="width" multiplier="0.95" id="ipV-Vl-8hS"/>
-                                    <constraint firstItem="uRa-oe-QRY" firstAttribute="height" secondItem="bEP-CS-Ti0" secondAttribute="height" multiplier="0.08" id="sVS-Wg-x0A"/>
+                                    <constraint firstItem="uRa-oe-QRY" firstAttribute="height" secondItem="bEP-CS-Ti0" secondAttribute="height" multiplier="0.065" id="sVS-Wg-x0A"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMR-Pu-mab">
-                                <rect key="frame" x="610" y="44" width="56" height="56"/>
+                                <rect key="frame" x="608" y="46" width="58" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hMR-Pu-mab" secondAttribute="height" id="8m4-lo-ibA"/>
                                 </constraints>
@@ -233,7 +233,7 @@
                             <constraint firstItem="zOY-lH-w8l" firstAttribute="width" secondItem="6k7-yj-RTO" secondAttribute="width" multiplier="0.92" id="Ozp-iH-d8A"/>
                             <constraint firstItem="zOY-lH-w8l" firstAttribute="centerY" secondItem="6k7-yj-RTO" secondAttribute="centerY" id="ekb-Q4-W4o"/>
                             <constraint firstItem="zOY-lH-w8l" firstAttribute="centerX" secondItem="6k7-yj-RTO" secondAttribute="centerX" id="h2u-UA-ekV"/>
-                            <constraint firstItem="hMR-Pu-mab" firstAttribute="height" secondItem="uRa-oe-QRY" secondAttribute="height" multiplier="2" id="hSd-YU-Mny"/>
+                            <constraint firstItem="hMR-Pu-mab" firstAttribute="height" secondItem="uRa-oe-QRY" secondAttribute="height" multiplier="2.5" id="hSd-YU-Mny"/>
                             <constraint firstAttribute="trailing" secondItem="hMR-Pu-mab" secondAttribute="trailing" constant="1" id="syC-U3-hO2"/>
                         </constraints>
                     </view>

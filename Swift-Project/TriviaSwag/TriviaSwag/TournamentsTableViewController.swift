@@ -38,7 +38,7 @@ class TournamentsTableViewController: UITableViewController, gStackTournamentLis
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        //NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TournamentsTableViewController.refreshTournaments), name: gStackLoginWithAppIDNotificationName, object: nil)
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TournamentsTableViewController.refreshTournamentsFromCache), name: gStackFetchTournamentsNotificationName, object: nil)
     }
     
@@ -58,11 +58,6 @@ class TournamentsTableViewController: UITableViewController, gStackTournamentLis
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        //prepare data in viewdidload time
-//        if gStackCachedTournaments.count == 0 {
-//            refreshTournaments()
-//        }
         
         //Refresh control
         refreshControl = UIRefreshControl()

@@ -203,7 +203,7 @@ public func gStackRequestFriend(friendDisplayName: String, completion: (error: N
 }
 
 //nq
-public func gStackAnswerFriendRequest(request: gStackFriendRequest, accept: Bool, completion: (error: NSError?, updatedFriends: Array<gStackFriend>?) -> Void) {
+public func gStackAnswerFriendRequest(request: gStackFriendRequest, accept: Bool, completion: (error: NSError?, updatedFriends: Array<triviaFriend>?) -> Void) {
     if request.token == nil || request._id == nil {
         let error = NSError(domain: "Request missing token and/or _id", code: 2222, userInfo: nil)
         completion(error: error, updatedFriends: nil)
@@ -217,9 +217,9 @@ public func gStackAnswerFriendRequest(request: gStackFriendRequest, accept: Bool
                     completion(error: _error, updatedFriends: nil)
                 } else if let payload = _payload as? Dictionary<String,AnyObject> {
                     if let updatedFriends = payload["friends"] as? Array<Dictionary<String,AnyObject>> {
-                        var gStackFriends = Array<gStackFriend>()
+                        var gStackFriends = Array<triviaFriend>()
                         for friend in updatedFriends {
-                            gStackFriends.append(gStackFriend(dictionary: friend))
+                            gStackFriends.append(triviaFriend(dictionary: friend))
                         }
                         completion(error: nil, updatedFriends: gStackFriends)
                     } else {
@@ -235,7 +235,7 @@ public func gStackAnswerFriendRequest(request: gStackFriendRequest, accept: Bool
 }
 
 //nq
-public func gStackUnfriend(friendDisplayName: String, completion: (error: NSError?, updatedFriends: Array<gStackFriend>?) -> Void) {
+public func gStackUnfriend(friendDisplayName: String, completion: (error: NSError?, updatedFriends: Array<triviaFriend>?) -> Void) {
     makeRequest(true, route: "unfriend", type: "clientUnfriend", payload: ["friendName":friendDisplayName], completion: {
         data, response, error in
         processResponse(error, data: data, completion: {
@@ -244,9 +244,9 @@ public func gStackUnfriend(friendDisplayName: String, completion: (error: NSErro
                 completion(error: _error, updatedFriends: nil)
             } else if let payload = _payload as? Dictionary<String,AnyObject> {
                 if let updatedFriends = payload["friends"] as? Array<Dictionary<String,AnyObject>> {
-                    var gStackFriends = Array<gStackFriend>()
+                    var gStackFriends = Array<triviaFriend>()
                     for friend in updatedFriends {
-                        gStackFriends.append(gStackFriend(dictionary: friend))
+                        gStackFriends.append(triviaFriend(dictionary: friend))
                     }
                     completion(error: nil, updatedFriends: gStackFriends)
                 } else {

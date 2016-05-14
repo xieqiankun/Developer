@@ -70,11 +70,10 @@ func gStackMakeRequest(isPrivate: Bool, route: String, type: String, payload: An
     session.dataTaskWithRequest(request, completionHandler: completion).resume()
 }
 
-func gStackParseJSONReply(data: NSData) throws -> Dictionary<String,AnyObject> {
-    var value: Dictionary<String,AnyObject>?
+func gStackParseJSONReply(data: NSData) throws -> AnyObject {
     do {
-        value = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as? Dictionary<String,AnyObject>
-        return value!
+        let value = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
+        return value
     } catch let error as NSError {
         throw error
     }
@@ -89,7 +88,7 @@ func gStackDateForString(dateString: String) -> NSDate {
 }
 
 
-func gStackProcessResponse(error: NSError?, data: NSData?, successType: String?, completion: (error: NSError?, payload: AnyObject?) -> Void) {
+func gStackProcessResponse(error: NSError?, data: NSData?, completion: (error: NSError?, payload: AnyObject?) -> Void) {
     
     if error != nil {
         completion(error: error, payload: nil)
@@ -97,24 +96,26 @@ func gStackProcessResponse(error: NSError?, data: NSData?, successType: String?,
         var parseError: NSError?
         do {
             let reply = try gStackParseJSONReply(data!)
-            if((reply["type"] as! String == successType!) || successType == "" ){ // verify the success type
-                
-                if let payload = reply["payload"] as? Dictionary<String,AnyObject> {
-                    if let errorString = payload["error"] as? String {
-                        let apiError = NSError(domain: errorString, code: 1111, userInfo: nil)
-                        completion(error: apiError, payload: nil)
-                    }
-                    else {
-                        completion(error: nil, payload: payload)
-                    }
-                } else if let payload = reply["payload"] as? Array<Dictionary<String,AnyObject>> {
-                    completion(error: nil, payload: payload)
-                } else if let payload: AnyObject = reply["payload"] {
-                    completion(error: nil, payload: payload)
-                } else {
-                    completion(error: nil, payload: nil) //Some calls can succeed and receive no payload
+            //print(reply)
+            if let payload = reply["payload"] as? Dictionary<String,AnyObject> {
+                if let errorString = payload["error"] as? String {
+                    // control api error, like token expire
+                    let apiError = NSError(domain: errorString, code: 1111, userInfo: nil)
+                    completion(error: apiError, payload: nil)
                 }
+                else {
+                    completion(error: nil, payload: payload)
+                }
+            } else if let payload = reply["payload"] as? Array<Dictionary<String,AnyObject>> {
+                completion(error: nil, payload: payload)
+            } else if let payload: AnyObject = reply["payload"] {
+                completion(error: nil, payload: payload)
+            } else if let payload = reply as?  Array<Dictionary<String,AnyObject>>{
+                completion(error: nil, payload: payload) // Only fetch tournaments will get here for now
+            } else {
+                completion(error: nil, payload: nil) //Some calls can succeed and receive no payload
             }
+
         } catch let error1 as NSError {
             parseError = error1
             completion(error: parseError, payload: nil)

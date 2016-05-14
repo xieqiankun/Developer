@@ -27,30 +27,32 @@ public class gStackPrizeWinner : NSObject {
 public func gStackFetchTournaments(completion: (error: NSError?, tournaments: Array<gStackTournament>?) -> Void) {
     gStackMakeRequest(true, route: "gettournaments", type: "getUserTournaments", payload: [String : AnyObject](), completion: {
         data, response, error in
-        
-        var parsedData: [Dictionary<String, AnyObject>]?
-        do{
-            if data != nil{
-                parsedData = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as? [[String: AnyObject]]
+        gStackProcessResponse(error, data: data, completion: { (error, payload) in
+            
+            if error == nil {
+                if let _payload = payload as? [[String: AnyObject]] {
+                    var returnTournaments = Array<gStackTournament>()
+                    
+                    for tournament in _payload {
+                        returnTournaments.append(gStackTournament(tournament: tournament))
+                    }
+                    
+                    gStackCachedTournaments = returnTournaments
+                    // Post notification for successfully fetch the tournaments
+                    NSNotificationCenter.defaultCenter().postNotificationName(gStackFetchTournamentsNotificationName, object: nil)
+                    
+                    completion(error: nil, tournaments: returnTournaments)
+                } else {
+                    completion(error: error, tournaments: nil)
+                }
+                
+            } else {
+                completion(error: error, tournaments: nil)
             }
-        } catch {
-            // do something to catch the error
-        }
-        
-        print(parsedData)
-        var returnTournaments = Array<gStackTournament>()
-        if let payload = parsedData  {
-            for tournament in payload {
-                returnTournaments.append(gStackTournament(tournament: tournament))
-            }
-        }
-        gStackCachedTournaments = returnTournaments
-        // Post notification for successfully fetch the tournaments
-        NSNotificationCenter.defaultCenter().postNotificationName(gStackFetchTournamentsNotificationName, object: nil)
-        
-        completion(error: nil, tournaments: returnTournaments)
+        })
     })
 }
+
 
 //qstack works
 public func gStackStartGameForTournament(tournament: gStackTournament, completion: (error: NSError?, game: gStackGame?) -> Void) {
@@ -60,7 +62,7 @@ public func gStackStartGameForTournament(tournament: gStackTournament, completio
     let requestDictionary = ["teams":[["displayName":"yyy", "channel": gStackPusherChannel!, "avatar": "yyy"]],"gameMode":["type":"tournament","uuid":tournament.uuid!]]
     gStackMakeRequest(true, route: "startgame", type: "clientStartGame", payload: requestDictionary, completion: {
         data, reply, error in
-        gStackProcessResponse(error, data: data, successType: "startGameSuccess" ,completion: {
+        gStackProcessResponse(error, data: data ,completion: {
             _error, _ in
             if _error != nil {
                 completion(error: _error, game: nil)
@@ -80,7 +82,7 @@ public func gStackFetchLeaderboardForTournament(tournament: gStackTournament, co
     } else {
         gStackMakeRequest(true, route: "gettournaments", type: "clientGetTournamentLeaderboard", payload: ["uuid":tournament.uuid!], completion: {
             data, response, error in
-            gStackProcessResponse(error, data: data, successType: "getTournamentLeaderboardSuccess", completion: {
+            gStackProcessResponse(error, data: data, completion: {
                 _error, _payload in
                 if _error != nil {
                     completion(error: _error, leaderboard: nil)
@@ -98,7 +100,7 @@ public func gStackFetchLeaderboardForTournament(tournament: gStackTournament, co
 public func gStackSubmitQuestion(question: gStackQuestion, completion: (error: NSError?) -> Void) {
     gStackMakeRequest(true, route: "submitquestion", type: "submitQuestion", payload: question.submitDictionary(), completion: {
         data, response, error in
-        gStackProcessResponse(error, data: data,successType: "submitQuestionSuccess", completion: {
+        gStackProcessResponse(error, data: data, completion: {
             _error, _ in
             completion(error: _error)
         })

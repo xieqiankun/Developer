@@ -27,11 +27,19 @@ class gStackNotificationHandler: NSObject, PTPusherDelegate, PTPusherPresenceCha
     
     var pusherClient = PTPusher()
     
-    func connectToPushServerWithChannel(channel: String) {
+    override init() {
+        super.init()
+        
         pusherClient = PTPusher(key: "4779f1bf61be1bc819da", delegate: self, encrypted: true)
+        pusherClient.connect()
+        
+    }
+    
+    func connectToPushServerWithChannel(channel: String) {
+        //pusherClient = PTPusher(key: "4779f1bf61be1bc819da", delegate: self, encrypted: true)
         //pusherClient = PTPusher.pusherWithKey("4779f1bf61be1bc819da", delegate: self, encrypted: true) as! PTPusher
         //pusherClient.authorizationURL = NSURL(string: serverPrefix().stringByAppendingString("pusher/auth"))
-        pusherClient.connect()
+        //pusherClient.connect()
         
         pusherClient.subscribeToChannelNamed(channel)
         
@@ -54,7 +62,7 @@ class gStackNotificationHandler: NSObject, PTPusherDelegate, PTPusherPresenceCha
         let event = notificaiton.userInfo![PTPusherEventUserInfoKey] as! PTPusherEvent
         print("Pusher Channel:\(event.channel)")
         print("Received event: \(event.name)")
-        
+        print("Data: \(event.data)")
         if event.name == "newGameSuccess" {
             let serverIp = event.data["serverIp"] as! String
             let serverPort = (event.data["serverPort"] as! NSNumber).stringValue
@@ -88,8 +96,6 @@ class gStackNotificationHandler: NSObject, PTPusherDelegate, PTPusherPresenceCha
     }
     
     func pusher(pusher: PTPusher!, willAuthorizeChannel channel: PTPusherChannel!, withRequest request: NSMutableURLRequest!) {
-        //request.setValue(triviaCurrentUser?._id, forHTTPHeaderField: "_id")
-        //request.setValue("haha", forHTTPHeaderField: "displayName") //???
         print("pusher will authorize channel \(channel.name)")
     }
     

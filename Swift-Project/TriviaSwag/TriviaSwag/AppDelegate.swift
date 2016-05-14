@@ -17,40 +17,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        //TODO - change the message thing
+        // preload tournaments
+        if let appId = NSUserDefaults.standardUserDefaults().stringForKey(gStackAppIdTokenKey), pusherChannel = NSUserDefaults.standardUserDefaults().stringForKey(gStackPusherChannelKey) {
+            gStackAppIDToken = appId//"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHBJZCI6MzA4MTg5NTQyLCJpYXQiOjE0NjIyMjk0MzksImV4cCI6MTQ2MjgzNDIzOX0.kaoMIzqFCwUtl5Y8zSZDyDmK1yEe85LIvQ2xUWwkCDs"
+            gStackPusherChannel = pusherChannel
+            gStackNotificationHandler.sharedInstance.connectToPushServerWithChannel(gStackPusherChannel!)
+            gStackFetchTournaments({ (error, tournaments) in
+                if error == nil {
+                    print("fetch tournamnet without error")
+                } else {
+                    gStackAppIDToken = nil
+                    gStackPusherChannel = nil
+                    // Maybe token expire
+                    self.fetchTournamentWithAppID()
+                    print("refetch the tournament")
+                }
+            })
+            
+            triviaUser.logInFromSavedToken { (error) in
+                print("-------------------------")
+                print(triviaCurrentUser?.channel)
+                print("-------------------------")
+
+                if error != nil {
+                    print(triviaCurrentUser)
+                    triviaCurrentUser = nil
+                }
+            }
+        } else {
         
-//        if let appId = NSUserDefaults.standardUserDefaults().stringForKey(gStackAppIdTokenKey), pusherChannel = NSUserDefaults.standardUserDefaults().stringForKey(gStackPusherChannelKey) {
-//            gStackAppIDToken = appId
-//            gStackPusherChannel = pusherChannel
-//            gStackNotificationHandler.sharedInstance.connectToPushServerWithChannel(gStackPusherChannel!)
-//            
-//            gStackFetchTournaments({ (error, tournaments) in
-//                if error == nil {
-//                    
-//                } else {
-//                    gStackAppIDToken = nil
-//                    gStackPusherChannel = nil
-//                    // Maybe token expire
-//                    self.fetchTournamentWithAppID()
-//                }
-//            })
-//            
-//            triviaUser.logInFromSavedToken { (error) in
-//                print(error?.domain)
-//                
-//                if error != nil {
-//                    print(triviaCurrentUser)
-//                    triviaCurrentUser = nil
-//                }
-//
-//            }
-//        } else {
-//        
-//            fetchTournamentWithAppID()
-//            
-//            triviaUser.logInFromSavedToken { (error) in
-//                
-//            }
-//        }
+            fetchTournamentWithAppID()
+            
+            triviaUser.logInFromSavedToken { (error) in
+
+            }
+        }
+
+
+        
+        //preload shop
+        triviaFetchPurchesItems { (items, error) in
+            
+        }
         
         //Set up default settings
         if NSUserDefaults.standardUserDefaults().boolForKey("SetupDefaults") == false {
@@ -106,12 +115,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         gStackLoginWithAppID() { (error) -> Void in
             
-            gStackFetchTournaments({ (error, tournaments) in
-                if error != nil {
-                    
-                }
-            })
-            
+            if error == nil {
+                gStackFetchTournaments({ (error, tournaments) in
+                    if error != nil {
+                        
+                    }
+                })
+            }
         }
     }
 

@@ -45,17 +45,26 @@ class TestViewController: UIViewController,SimplePingDelegate {
         presentViewController(vc, animated: true, completion: nil)
         */
         print("I am here")
-        
+        triviaCurrentUser = nil
 //        let pinger = SimplePing(hostName: self.hostName)
 //        self.pinger = pinger
 //
 //        pinger.delegate = self
 //        pinger.start()
-        SimplePingClient.pingHostname() { latency in
-            
-            print("Your latency is \(latency ?? "unknown")")
-        }
+//        SimplePingClient.pingHost() { latency in
+//            
+//            print("Your latency is \(latency ?? "unknown")")
+//        }
+        
+//        triviaFetchPurchesItems { (items, error) in
+//            
+//        }
     }
+    
+    
+    
+    
+    
     
     func sendPing() {
         self.pinger!.sendPingWithData(nil)

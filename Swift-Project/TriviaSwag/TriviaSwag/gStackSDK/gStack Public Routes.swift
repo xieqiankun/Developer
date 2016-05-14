@@ -20,7 +20,7 @@ func gStackLoginWithAppID(completion:(error: NSError?)-> Void){
     
     gStackMakeRequest(false, route: "register", type: "apiRegister", payload: ["appId":"308189542", "appKey":"/o3I3goKCQ=="]) {(data, response, error) -> Void in
         
-        gStackProcessResponse(error, data: data, successType: "apiRegisterSuccess", completion: {(error, payload) -> Void in
+        gStackProcessResponse(error, data: data, completion: {(error, payload) -> Void in
             
             if error == nil {
                 gStackAppIDToken = payload!["token"] as? String

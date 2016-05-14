@@ -85,13 +85,13 @@ class ProfileViewController: UIViewController {
     }
     
 
-    override func updateViewConstraints() {
-        super.updateViewConstraints()
-        
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         self.profileImageView.layer.borderWidth = 4
         self.profileImageView.layer.borderColor = kProfileCellBackgroundColor.CGColor
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.height/2
         self.profileImageView.layer.masksToBounds = true
+        
     }
     
     func setCurrentUserInfo() {

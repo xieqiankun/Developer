@@ -100,7 +100,9 @@ func processResponse(error: NSError?, data: NSData?, completion: (error: NSError
         var parseError: NSError?
         do {
             let reply = try parseJSONReply(data!)
+            //print(reply)
             if let payload = reply["payload"] as? Dictionary<String,AnyObject> {
+                //print(payload)
                 if let errorString = payload["error"] as? String {
                     let apiError = NSError(domain: errorString, code: 1111, userInfo: nil)
                     completion(error: apiError, payload: nil)

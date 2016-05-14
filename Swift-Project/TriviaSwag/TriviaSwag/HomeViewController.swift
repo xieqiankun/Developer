@@ -152,7 +152,20 @@ class HomeViewController: UIViewController {
         
     }
     
-    // network checking 
+    // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+        
+     }
+
+}
+
+extension HomeViewController {
+    
+    // network checking
     func setupNetworkChecker() {
         do {
             reachability = try Reachability.reachabilityForInternetConnection()
@@ -166,6 +179,34 @@ class HomeViewController: UIViewController {
                     self.presentViewController(vc, animated: true, completion: nil)
                 }
             }
+            reachability!.whenReachable = {
+                reachability in
+                
+                if gStackCachedTournaments.count == 0 {
+                    
+                    if gStackAppIDToken == nil {
+                        gStackLoginWithAppID() { (error) -> Void in
+                            gStackFetchTournaments({
+                                error, _ in
+                                if error != nil {
+                                    print("Error fetching tournaments: \(error!)")
+                                } else {
+                                    
+                                }
+                            })
+                        }
+                    } else {
+                        gStackFetchTournaments({
+                            error, _ in
+                            if error != nil {
+                                print("Error fetching tournaments: \(error!)")
+                            } else {
+                                
+                            }
+                        })
+                    }
+                }
+            }
             do {
                 try reachability!.startNotifier()
             } catch {
@@ -177,13 +218,8 @@ class HomeViewController: UIViewController {
             
         }
     }
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-        
-     }
 
+    
+    
 }
+

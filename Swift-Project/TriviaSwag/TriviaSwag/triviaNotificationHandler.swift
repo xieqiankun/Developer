@@ -1,5 +1,5 @@
 //
-//  NotificationHandler.swift
+//  triviaNotificationHandler.swift
 //  gStack Client Framework
 //
 //  Created by Qiankun Xie on 3/24/16.
@@ -8,50 +8,61 @@
 
 import UIKit
 
-//var gStackGameStartedNotificationName = "gStackGameStarted"
-//var gStackConnectionUserInfoKey = "Connection"
+var triviaUserFriendOnlineNotificationName = "triviaUserFriendOnline"
+var triviaUserFriendOfflineNotificationName = "triviaUserFriendOffline"
 
-class NotificationHandler: NSObject, PTPusherDelegate, PTPusherPresenceChannelDelegate {
-    static let sharedInstance = NotificationHandler()
+class triviaNotificationHandler: NSObject {
+    static let sharedInstance = triviaNotificationHandler()
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    var pusherClient = PTPusher()
+    var pusherClient:PTPusher!
     
-    func connectToPushServerWithChannel(channel: String, userID: String) {
-        
-        
-        
+    override init() {
+        super.init()
+
         pusherClient = PTPusher(key: "4779f1bf61be1bc819da", delegate: self, encrypted: true)
-        //pusherClient = PTPusher.pusherWithKey("4779f1bf61be1bc819da", delegate: self, encrypted: true) as! PTPusher
         pusherClient.authorizationURL = NSURL(string: serverPrefix().stringByAppendingString("pusher/auth"))
-        
-        print(pusherClient.authorizationURL)
         pusherClient.connect()
+
+    }
+    
+    func subscribeToPushPresentChannel(channel: String ) {
         
         let newNameWithoutPresence = channel.substringFromIndex(channel.startIndex.advancedBy(9))
+
         pusherClient.subscribeToPresenceChannelNamed(newNameWithoutPresence, delegate: self)
         
         NSNotificationCenter.defaultCenter().removeObserver(self)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NotificationHandler.didReceiveEventNotification(_:)), name: PTPusherEventReceivedNotification, object: pusherClient)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(triviaNotificationHandler.didReceiveEventNotification(_:)), name: PTPusherEventReceivedNotification, object: pusherClient)
     }
     
-    func connectToPusherServer() {
-        if let channel = triviaCurrentUser?.channel, userID = triviaCurrentUser?._id {
-            connectToPushServerWithChannel(channel, userID: userID)
-        } else {
-            print("No channel: cannot connect to pusher server !")
-        }
+    func unsubscribeToPusherChannel(channel: String){
+        
+        let pusherChannel = pusherClient.channelNamed(channel)
+        pusherChannel.unsubscribe()
     }
+    
+    func isFriendOnline(friend:triviaFriend) -> Bool{
+        let channel = pusherClient.channelNamed(friend.channel!) as! PTPusherPresenceChannel
+        
+        let name = channel.members.memberWithID(friend.displayName!)
+        if name != nil{
+            return true
+        }
+        return false
+    }
+    
     
     func didReceiveEventNotification(notificaiton: NSNotification) {
         let event = notificaiton.userInfo![PTPusherEventUserInfoKey] as! PTPusherEvent
         
         print("Pusher Channel:\(event.channel)")
         print("Received event: \(event.name)")
-        
+        print("Data: \(event.data)")
+
         if event.name == "newGameSuccess" {
             let serverIp = event.data["serverIp"] as! String
             let serverPort = (event.data["serverPort"] as! NSNumber).stringValue
@@ -64,6 +75,13 @@ class NotificationHandler: NSObject, PTPusherDelegate, PTPusherPresenceChannelDe
             NSNotificationCenter.defaultCenter().postNotificationName("NewMessageReceived", object: nil)
         }
     }
+    
+    
+    
+}
+
+
+extension triviaNotificationHandler: PTPusherDelegate, PTPusherPresenceChannelDelegate{
     
     //MARK: - Pusher Delegates
     
@@ -81,10 +99,12 @@ class NotificationHandler: NSObject, PTPusherDelegate, PTPusherPresenceChannelDe
     
     func presenceChannel(channel: PTPusherPresenceChannel!, memberAdded member: PTPusherChannelMember!) {
         print("added presence member \(member)")
+        NSNotificationCenter.defaultCenter().postNotificationName(triviaUserFriendOnlineNotificationName, object: nil)
     }
     
     func presenceChannel(channel: PTPusherPresenceChannel!, memberRemoved member: PTPusherChannelMember!) {
         print("removed presence member \(member)")
+        NSNotificationCenter.defaultCenter().postNotificationName(triviaUserFriendOfflineNotificationName, object: nil)
     }
     
     func pusher(pusher: PTPusher!, willAuthorizeChannel channel: PTPusherChannel!, withRequest request: NSMutableURLRequest!) {
@@ -100,4 +120,12 @@ class NotificationHandler: NSObject, PTPusherDelegate, PTPusherPresenceChannelDe
     func pusher(pusher: PTPusher!, connection: PTPusherConnection!, failedWithError error: NSError!) {
         print("pusher connection failed with error \(error)")
     }
+
+    
+    
+    
+    
 }
+
+
+

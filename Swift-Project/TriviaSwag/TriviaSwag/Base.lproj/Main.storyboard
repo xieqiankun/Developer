@@ -518,6 +518,9 @@
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="S6F-xZ-eDL" secondAttribute="height" multiplier="2.5" id="ReK-21-6yf"/>
                                         </constraints>
                                         <state key="normal" image="BuyButton-Touched"/>
+                                        <connections>
+                                            <segue destination="mkQ-eH-cO3" kind="presentation" id="qff-Oy-0u0"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIc-rN-g87">
                                         <rect key="frame" x="160" y="0.0" width="76" height="38"/>
@@ -532,6 +535,9 @@
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="Iuo-hU-nRB" secondAttribute="height" multiplier="2" id="sFp-d4-EqV"/>
                                         </constraints>
                                         <state key="normal" image="FriendsButton"/>
+                                        <connections>
+                                            <action selector="friendsAction:" destination="RHI-eo-0k1" eventType="touchUpInside" id="SNq-Nt-yMb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nkl-bu-r8R">
                                         <rect key="frame" x="308" y="0.0" width="38" height="38"/>
@@ -560,6 +566,7 @@
                     <connections>
                         <segue destination="wDq-Zl-I7d" kind="presentation" identifier="Login" id="odG-pv-hos"/>
                         <segue destination="NMG-7t-PCV" kind="presentation" identifier="MyProfile" id="DTh-Vu-iOo"/>
+                        <segue destination="Oab-Sa-dy0" kind="presentation" identifier="MyFriends" id="veG-KC-E9t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ujL-ad-fBn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -573,6 +580,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hvc-bi-pH6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1554.5" y="1001"/>
+        </scene>
+        <!--Friends-->
+        <scene sceneID="aoA-yv-Ymb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Friends" id="Oab-Sa-dy0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xqR-Lj-s28" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="835.5" y="-20"/>
         </scene>
         <!--Settings-->
         <scene sceneID="3ER-E9-cvO">
@@ -597,6 +612,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xif-pT-s63" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1058" y="196"/>
+        </scene>
+        <!--Shop-->
+        <scene sceneID="tkB-ka-w6p">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Shop" id="mkQ-eH-cO3" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U1t-um-vYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1011.5" y="243"/>
         </scene>
         <!--DetailLeaderboard-->
         <scene sceneID="m29-zX-iEb">

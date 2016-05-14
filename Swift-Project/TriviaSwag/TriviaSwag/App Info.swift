@@ -15,6 +15,7 @@ let triviaUserLogInTokenKey = "triviaUserLoginToken"
 let triviaUserSuccessfullyLoggedIn = "triviaUserSuccessfullyLoggedIn"
 
 public var triviaCurrentUser: triviaUser?
+
 func retrieveLogInToken() {
     if triviaCurrentUser == nil {
         triviaCurrentUser = triviaUser()
@@ -38,6 +39,6 @@ func saveLogInToken(token: String) {
 //MARK: - Handle Trivia User Inbox
 public var triviaCurrentUserInbox: triviaUserInbox?
 
+//MARK: - Handle Trivia Shop
 
-
-
+public var triviaCurrentShop: triviaShop?

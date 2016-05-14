@@ -22,11 +22,11 @@ class SimplePingClient: NSObject {
     var pinger: SimplePing?
     var sendTimer: NSTimer?
     
-    static func pingHostname(resultCallback callback: SimplePingClientCallback?) {
-        singletonPC.pingHostname(resultCallback: callback)
+    static func pingHost(resultCallback callback: SimplePingClientCallback?) {
+        singletonPC.pingHost(resultCallback: callback)
     }
     
-    func pingHostname(resultCallback callback: SimplePingClientCallback?) {
+    private func pingHost(resultCallback callback: SimplePingClientCallback?) {
         resultCallback = callback
         let pinger = SimplePing(hostName: self.hostName)
         self.pinger = pinger

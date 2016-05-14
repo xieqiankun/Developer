@@ -23,7 +23,7 @@ class NavBarViewController: UIViewController {
     
     @IBAction func profileAction(sender: UIButton){
         
-        if triviaCurrentUser != nil {
+        if isCurrentUserLoggedIn() {
             performSegueWithIdentifier("MyProfile", sender: self)
         } else {
             performSegueWithIdentifier("Login", sender: self)
@@ -31,6 +31,15 @@ class NavBarViewController: UIViewController {
         
     }
     
+    @IBAction func friendsAction(sender: UIButton) {
+        
+        if isCurrentUserLoggedIn() {
+            performSegueWithIdentifier("MyFriends", sender: self)
+        } else {
+            performSegueWithIdentifier("Login", sender: self)
+        }
+        
+    }
     
     // MARK: - Navigation
 

@@ -90,13 +90,36 @@ class DetailedTournamentViewController: UIViewController {
 
     @IBAction func startToPlayGame(sender: UIButton) {
         
-        
-        self.performSegueWithIdentifier("GamePlaySegue", sender: self)
+        prepareTStartTheGame()
         
 
     }
     
-    
+    func prepareTStartTheGame(){
+        
+        SimplePingClient.pingHost { latency in
+            print("latency is: \(latency)")
+            
+            if let lat = latency {
+                let num = Int(lat)
+                // set the max delay to 3 seconds
+                if num <= 3000 {
+                    dispatch_async(dispatch_get_main_queue(), { 
+                        self.performSegueWithIdentifier("GamePlaySegue", sender: self)
+                    })
+                } else {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        let button1 = AlertButton(title: "", imageNames: ["PlayNowButton-Untouched","PlayNowButton-Touched"], style: .Custom,action: {
+                            self.performSegueWithIdentifier("GamePlaySegue", sender: self)
+                        })
+                        let button2 = AlertButton(title: "", imageNames: [], style: .Cancel, action: nil)
+                        let vc = StoryboardAlertViewControllerFactory().createAlertViewController([button1,button2], title: "Slimmy Internet!", message: "Are you sure you want to play?")
+                        self.presentViewController(vc, animated: true, completion: nil)
+                    }
+                }
+            }
+        }
+    }
     
     // MARK: - Navigation
 

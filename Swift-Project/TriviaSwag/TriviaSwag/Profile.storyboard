@@ -47,7 +47,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sam Zoll" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="w0n-kK-UWT">
                                         <rect key="frame" x="3" y="-30" width="235" height="128"/>
                                         <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="60"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -94,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XzS-tO-Yzj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-160" y="570"/>
+            <point key="canvasLocation" x="-390" y="570"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="H3T-v2-2Qw">
@@ -138,11 +138,11 @@
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sam Zoll" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="JZc-Kn-K5L">
                                                                         <rect key="frame" x="0.0" y="2" width="154" height="34"/>
                                                                         <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="100"/>
-                                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sam Zoll" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="vBi-l7-TK6">
-                                                                        <rect key="frame" x="5" y="2" width="146" height="35"/>
+                                                                        <rect key="frame" x="4" y="2" width="147" height="35"/>
                                                                         <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="100"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
@@ -174,10 +174,13 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beijing, China" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="5wv-It-3GA">
                                                                                 <rect key="frame" x="21" y="0.0" width="131" height="16"/>
                                                                                 <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="100"/>
-                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="trailing" secondItem="5wv-It-3GA" secondAttribute="trailing" id="N6Z-4j-sl1"/>
+                                                                        </constraints>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="C1E-eg-h9Z">
                                                                         <rect key="frame" x="0.0" y="19" width="151" height="15"/>
@@ -188,7 +191,7 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legend Status" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="xjl-GM-Tiv">
                                                                                 <rect key="frame" x="21" y="0.0" width="131" height="15"/>
                                                                                 <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="100"/>
-                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
@@ -202,7 +205,7 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friends Number" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="ucd-U3-8tC">
                                                                                 <rect key="frame" x="21" y="0.0" width="131" height="16"/>
                                                                                 <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="100"/>
-                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
@@ -482,13 +485,13 @@
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Label-Profile" translatesAutoresizingMaskIntoConstraints="NO" id="icW-W3-67Q">
-                                        <rect key="frame" x="200" y="15" width="215" height="43"/>
+                                        <rect key="frame" x="200" y="20" width="215" height="43"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="icW-W3-67Q" secondAttribute="height" multiplier="5" id="0Nq-VE-Oqa"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oqk-eg-TOo" userLabel="PlaceholderView">
-                                        <rect key="frame" x="187" y="58" width="240" height="28"/>
+                                        <rect key="frame" x="187" y="63" width="240" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="8s9-Bc-eZl"/>
                                         </constraints>
@@ -507,12 +510,12 @@
                                     <constraint firstItem="VDA-Sn-Tk0" firstAttribute="width" secondItem="hkq-zE-OpA" secondAttribute="width" multiplier="0.95" id="jQB-Ee-Q9j"/>
                                     <constraint firstItem="oz0-hX-BvY" firstAttribute="leading" secondItem="hkq-zE-OpA" secondAttribute="leading" id="nas-q1-oUr"/>
                                     <constraint firstItem="VDA-Sn-Tk0" firstAttribute="centerX" secondItem="hkq-zE-OpA" secondAttribute="centerX" id="rHB-AZ-zcG"/>
-                                    <constraint firstItem="Oqk-eg-TOo" firstAttribute="height" secondItem="oz0-hX-BvY" secondAttribute="height" multiplier="0.08" id="sTk-jr-fbg"/>
+                                    <constraint firstItem="Oqk-eg-TOo" firstAttribute="height" secondItem="oz0-hX-BvY" secondAttribute="height" multiplier="0.065" id="sTk-jr-fbg"/>
                                     <constraint firstItem="icW-W3-67Q" firstAttribute="centerX" secondItem="hkq-zE-OpA" secondAttribute="centerX" id="v70-4B-k7c"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAO-Uh-POt">
-                                <rect key="frame" x="610" y="53" width="56" height="56"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAO-Uh-POt">
+                                <rect key="frame" x="609" y="56" width="57" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZAO-Uh-POt" secondAttribute="height" id="0lN-UQ-6oc"/>
                                 </constraints>
@@ -532,7 +535,7 @@
                             <constraint firstAttribute="right" secondItem="ZAO-Uh-POt" secondAttribute="right" constant="1" id="WGt-jb-Wgq"/>
                             <constraint firstItem="hkq-zE-OpA" firstAttribute="width" secondItem="HiV-pR-hoV" secondAttribute="width" multiplier="0.92" id="bCG-gz-68r"/>
                             <constraint firstItem="hkq-zE-OpA" firstAttribute="height" secondItem="HiV-pR-hoV" secondAttribute="height" multiplier="0.95" id="jBU-NG-YCy"/>
-                            <constraint firstItem="ZAO-Uh-POt" firstAttribute="height" secondItem="Oqk-eg-TOo" secondAttribute="height" multiplier="2:1" id="me6-rm-Zcg"/>
+                            <constraint firstItem="ZAO-Uh-POt" firstAttribute="height" secondItem="Oqk-eg-TOo" secondAttribute="height" multiplier="2.5" id="me6-rm-Zcg"/>
                             <constraint firstItem="hkq-zE-OpA" firstAttribute="centerY" secondItem="HiV-pR-hoV" secondAttribute="centerY" id="r5n-7d-FOv"/>
                         </constraints>
                     </view>

@@ -36,7 +36,7 @@ public class triviaUser: NSObject {
     public var multiplierExpire: NSDate?
     public var tokensEarned: NSNumber?
     public var timePlayed: NSNumber?
-    public var friends: Array<gStackFriend>?
+    public var friends: Array<triviaFriend>?
     public var avatar: String?
     public var cover: String?
     public var status: String?
@@ -49,7 +49,10 @@ public class triviaUser: NSObject {
     public var phone: String?
     public var email: String?
     
-    //recentActivity
+    deinit{
+        
+        
+    }
     
     init(payload: Dictionary<String,AnyObject>) {
         _id = payload["_id"] as? String
@@ -136,9 +139,9 @@ public class triviaUser: NSObject {
         tokensEarned = payload["tokensEarned"] as? NSNumber
         timePlayed = payload["timePlayed"] as? NSNumber
         if let friendsArray = payload["friends"] as? Array<Dictionary<String,AnyObject>> {
-            friends = Array<gStackFriend>()
+            friends = Array<triviaFriend>()
             for friendDictionary in friendsArray {
-                friends!.append(gStackFriend(dictionary: friendDictionary))
+                friends!.append(triviaFriend(dictionary: friendDictionary))
             }
         }
         avatar = payload["avatar"] as? String
@@ -154,7 +157,7 @@ public class triviaUser: NSObject {
         email = payload["email"] as? String
         
         if channel != nil {
-            NotificationHandler.sharedInstance.connectToPushServerWithChannel(channel!, userID: _id!)
+            triviaNotificationHandler.sharedInstance.subscribeToPushPresentChannel(channel!)
         } else {
             print("No channel: cannot connect to pusher server")
         }
@@ -168,6 +171,7 @@ public class triviaUser: NSObject {
         self.init(payload: Dictionary<String,AnyObject>())
     }
     
+
     
     public class func logInFromSavedToken(completion: (error: NSError?) -> Void) {
         retrieveLogInToken()
@@ -180,6 +184,11 @@ public class triviaUser: NSObject {
     
     
     public class func logOutCurrentUser() {
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(triviaUserLogInTokenKey)
+        NSUserDefaults.standardUserDefaults().synchronize()
+        if let _channel = triviaCurrentUser?.channel{
+            triviaNotificationHandler.sharedInstance.unsubscribeToPusherChannel(_channel)
+        }
         triviaCurrentUser = nil
     }
     
@@ -318,16 +327,34 @@ public class gStackCategory: NSObject {
     public var versusTokens: NSNumber?
 }
 
-public class gStackFriend: NSObject {
+public class triviaFriend: NSObject {
     var channel: String?
     public var displayName: String?
     public var facebookName: String?
+    public var avatar:String?
     
+    // dynamic variable for Friends display
+    public var isOnline: Bool{
+        return triviaNotificationHandler.sharedInstance.isFriendOnline(self)
+    }
+    
+    deinit{
+        if let _channel = channel {
+            triviaNotificationHandler.sharedInstance.unsubscribeToPusherChannel(_channel)
+        }
+    }
     init(dictionary: Dictionary<String,AnyObject>) {
         channel = dictionary["channel"] as? String
         displayName = dictionary["displayName"] as? String
         facebookName = dictionary["facebookName"] as? String
+        avatar = dictionary["avatar"] as? String
+        
+        if let _channel = channel {
+            triviaNotificationHandler.sharedInstance.subscribeToPushPresentChannel(_channel)
+        }
     }
+    
+    
 }
 
 public class triviaUserAddress: NSObject {
@@ -366,3 +393,4 @@ public class gStackScratcher: NSObject {
         prizeDescription = dictionary["prizeDescription"] as? String
     }
 }
+

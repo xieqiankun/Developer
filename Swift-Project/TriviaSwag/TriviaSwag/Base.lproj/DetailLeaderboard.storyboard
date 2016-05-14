@@ -49,7 +49,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Rank&gt;" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="O97-Xw-LgX">
                                                                     <rect key="frame" x="0.0" y="0.0" width="85" height="41"/>
                                                                     <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="100"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenMan" translatesAutoresizingMaskIntoConstraints="NO" id="yya-0j-8Wt">
@@ -61,13 +61,13 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Name&gt;" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="6AB-78-Cm2">
                                                                     <rect key="frame" x="179" y="0.0" width="225" height="41"/>
                                                                     <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="100"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Score&gt;" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="2m3-9T-mZa">
                                                                     <rect key="frame" x="430" y="0.0" width="133" height="41"/>
                                                                     <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="100"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -103,7 +103,7 @@
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hb7-9W-iu6" userLabel="placeholder">
-                                        <rect key="frame" x="187" y="58" width="240" height="28"/>
+                                        <rect key="frame" x="187" y="63" width="240" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="KNo-wo-xH6"/>
                                         </constraints>
@@ -113,7 +113,7 @@
                                     <constraint firstItem="wvA-tv-iJk" firstAttribute="top" secondItem="Tux-E0-1C8" secondAttribute="top" id="0Ma-80-7ig"/>
                                     <constraint firstItem="yZP-rT-JVf" firstAttribute="width" secondItem="wvA-tv-iJk" secondAttribute="width" multiplier="0.35" id="34Q-rM-dmr"/>
                                     <constraint firstItem="vxr-es-4JA" firstAttribute="height" secondItem="wvA-tv-iJk" secondAttribute="height" multiplier="0.73" id="89i-8n-6kF"/>
-                                    <constraint firstItem="hb7-9W-iu6" firstAttribute="height" secondItem="wvA-tv-iJk" secondAttribute="height" multiplier="0.08" id="9r7-iq-hmK"/>
+                                    <constraint firstItem="hb7-9W-iu6" firstAttribute="height" secondItem="wvA-tv-iJk" secondAttribute="height" multiplier="0.065" id="9r7-iq-hmK"/>
                                     <constraint firstAttribute="bottom" secondItem="wvA-tv-iJk" secondAttribute="bottom" id="Bu8-vQ-Y7B"/>
                                     <constraint firstItem="hb7-9W-iu6" firstAttribute="top" secondItem="yZP-rT-JVf" secondAttribute="bottom" id="KSU-ji-Ell"/>
                                     <constraint firstItem="vxr-es-4JA" firstAttribute="top" secondItem="hb7-9W-iu6" secondAttribute="bottom" id="Qhc-Cy-m3J"/>
@@ -127,7 +127,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4N-oA-eJ3">
-                                <rect key="frame" x="610" y="54" width="56" height="56"/>
+                                <rect key="frame" x="608" y="56" width="58" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="N4N-oA-eJ3" secondAttribute="height" id="siB-L7-yh4"/>
                                 </constraints>
@@ -144,7 +144,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="N4N-oA-eJ3" secondAttribute="trailing" constant="1" id="C6z-nJ-4Kn"/>
                             <constraint firstItem="N4N-oA-eJ3" firstAttribute="centerY" secondItem="hb7-9W-iu6" secondAttribute="centerY" id="EeD-ix-Vnz"/>
-                            <constraint firstItem="N4N-oA-eJ3" firstAttribute="height" secondItem="hb7-9W-iu6" secondAttribute="height" multiplier="2" id="MH1-nw-QPH"/>
+                            <constraint firstItem="N4N-oA-eJ3" firstAttribute="height" secondItem="hb7-9W-iu6" secondAttribute="height" multiplier="2.5" id="MH1-nw-QPH"/>
                             <constraint firstItem="Tux-E0-1C8" firstAttribute="width" secondItem="UVy-mK-TXO" secondAttribute="width" multiplier="0.92" id="Vad-nl-KAJ"/>
                             <constraint firstItem="Tux-E0-1C8" firstAttribute="height" secondItem="UVy-mK-TXO" secondAttribute="height" multiplier="0.95" id="a1K-DD-zmH"/>
                             <constraint firstItem="Tux-E0-1C8" firstAttribute="centerX" secondItem="UVy-mK-TXO" secondAttribute="centerX" id="hXu-1D-XFe"/>

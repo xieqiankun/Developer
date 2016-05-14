@@ -153,3 +153,41 @@ public func triviaFetchProfileForDisplayName(displayName: String, completion: (u
     })
 }
 
+
+public func triviaFetchPurchesItems(completion:(shop:triviaShop?, error: NSError? ) -> Void) {
+    
+    makeRequest(false, route: "triviamonster", type: "getGameData", payload: true, completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _payload in
+            if _error == nil {
+                if let payload = _payload as? [String: AnyObject]{
+                    let shop = triviaShop(payload: (payload))
+                    triviaCurrentShop = shop
+                    completion(shop: shop, error: nil)
+                    
+                }
+             // Handle error
+            }
+        })
+    })
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

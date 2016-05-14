@@ -83,7 +83,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ik8-UF-DII">
                                         <rect key="frame" x="50" y="94" width="300" height="93"/>
                                         <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DmV-OB-VDU" userLabel="Placeholder">
@@ -99,7 +99,7 @@
                                             <constraint firstAttribute="height" secondItem="bST-ig-508" secondAttribute="width" multiplier="0.25" id="1Fx-9c-BpX"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="100"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
