@@ -63,20 +63,14 @@ class triviaNotificationHandler: NSObject {
         print("Received event: \(event.name)")
         print("Data: \(event.data)")
 
-        if event.name == "newGameSuccess" {
-            let serverIp = event.data["serverIp"] as! String
-            let serverPort = (event.data["serverPort"] as! NSNumber).stringValue
-            let gameToken = event.data["token"] as! String
-            let newConnection = gStackGameConnection(_serverIp: serverIp, _serverPort: serverPort, _gameToken: gameToken)
-            
-            NSNotificationCenter.defaultCenter().postNotificationName(gStackGameStartedNotificationName, object: nil, userInfo: [gStackConnectionUserInfoKey:newConnection])
-        } else if event.name == "newInboxReceived"{
-            //Post Notification when receive the message
-            NSNotificationCenter.defaultCenter().postNotificationName("NewMessageReceived", object: nil)
+        if event.name == "newInboxReceived"{
+            //Refetch the user inbox
+            triviaGetCurrentUserInbox({ (error, inbox) in
+                
+            })
         }
+    
     }
-    
-    
     
 }
 
@@ -99,12 +93,16 @@ extension triviaNotificationHandler: PTPusherDelegate, PTPusherPresenceChannelDe
     
     func presenceChannel(channel: PTPusherPresenceChannel!, memberAdded member: PTPusherChannelMember!) {
         print("added presence member \(member)")
-        NSNotificationCenter.defaultCenter().postNotificationName(triviaUserFriendOnlineNotificationName, object: nil)
+        if member.userID != nil {
+            NSNotificationCenter.defaultCenter().postNotificationName(triviaUserFriendOnlineNotificationName, object: nil,userInfo: ["displayName": member.userID])
+        }
     }
     
     func presenceChannel(channel: PTPusherPresenceChannel!, memberRemoved member: PTPusherChannelMember!) {
         print("removed presence member \(member)")
-        NSNotificationCenter.defaultCenter().postNotificationName(triviaUserFriendOfflineNotificationName, object: nil)
+        if member.userID != nil {
+            NSNotificationCenter.defaultCenter().postNotificationName(triviaUserFriendOfflineNotificationName, object: self, userInfo: ["displayName": member.userID])
+        }
     }
     
     func pusher(pusher: PTPusher!, willAuthorizeChannel channel: PTPusherChannel!, withRequest request: NSMutableURLRequest!) {

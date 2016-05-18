@@ -10,12 +10,14 @@ import UIKit
 
 class FriendsViewController: UIViewController {
     
-    var friends:[triviaFriend]{
-        get {
-            if let temp = triviaCurrentUser?.friends{
-                return temp
-            }
-            return [triviaFriend]()
+
+    var manager = FriendsScreenManager()//.sharedManager
+    
+    var selectedIndexpath = NSIndexPath(forRow: 0, inSection: 0)
+    
+    var list:[ListMessageBean]! {
+        didSet{
+            tableView.reloadData()
         }
     }
     
@@ -26,16 +28,13 @@ class FriendsViewController: UIViewController {
         modalPresentationStyle = .Custom
         transitioningDelegate = self
     }
-    deinit{
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.clearColor()
-        // Do any additional setup after loading the view.
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(FriendsViewController.refresh), name: triviaUserFriendOnlineNotificationName, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(FriendsViewController.refresh), name: triviaUserFriendOfflineNotificationName, object: nil)
+        manager.listDelegate = self
+        list = manager.list
+
     }
 
     func refresh() {
@@ -54,15 +53,20 @@ class FriendsViewController: UIViewController {
     }
     
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let vc = segue.destinationViewController as? ChatViewController where segue.identifier == "Chat" {
+            vc.friend = list[selectedIndexpath.section].displayName!
+        }
+        
+        
     }
-    */
+    
 
 }
 
@@ -85,7 +89,7 @@ extension FriendsViewController: UIViewControllerTransitioningDelegate {
     
 }
 
-
+// MARK:- UITable Datasource
 extension FriendsViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -94,7 +98,7 @@ extension FriendsViewController: UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
        
-        return friends.count
+        return list.count
         
     }
     
@@ -102,9 +106,9 @@ extension FriendsViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath: indexPath) as! FriendsTableViewCell
         
-        let friend = self.friends[indexPath.section]
+        let item = self.list[indexPath.section]
         
-        cell.configueCell(friend)
+        cell.configueCell(item)
         
         return cell
     }
@@ -112,6 +116,7 @@ extension FriendsViewController: UITableViewDataSource {
     
 }
 
+// MARK:- UITable Delegator
 extension FriendsViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -133,8 +138,31 @@ extension FriendsViewController: UITableViewDelegate {
         return CGFloat(height)
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedIndexpath = indexPath
+        performSegueWithIdentifier("Chat", sender: self)
+    }
     
 }
+
+// MARK:- FriendListDelegate
+extension FriendsViewController: FriendsListDelegate{
+    
+    
+    func update() {
+        self.list = manager.list
+    }
+
+    
+}
+
+
+
+
+
+
+
+
 
 
 

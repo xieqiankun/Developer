@@ -37,6 +37,7 @@ class Location: NSManagedObject, MKAnnotation {
         let filename = "Photo-\(photoID!.integerValue).jpg"
         return (applicationDocumentsDirectory as NSString).stringByAppendingPathComponent(filename)
     }
+    
     var photoImage: UIImage? {
         return UIImage(contentsOfFile: photoPath)
     }

@@ -8,6 +8,8 @@
 
 import Foundation
 
+let triviaFetchInboxNotificationName = "triviaFetchUserInbox"
+
 //MARK: - User
 //Get Trivia User Info
 public func triviaGetCurrentUserInfo(completion: (error: NSError?) -> Void) {
@@ -101,7 +103,15 @@ public func triviaGetCurrentUserInbox(completion: (error: NSError?, inbox: trivi
                 completion(error: _error, inbox: nil)
             } else if let payload = _payload as? Dictionary<String,AnyObject> {
                 if let userInbox = payload["userInbox"] as? Dictionary<String,AnyObject> {
-                    completion(error: nil, inbox: triviaUserInbox(dictionary: userInbox))
+                    
+                    let currentInbox = triviaUserInbox(dictionary: userInbox)
+                    
+                    triviaCurrentUserInbox = currentInbox
+                    
+                    completion(error: nil, inbox: currentInbox)
+                    // post fetch trivia inbox success notification
+                    NSNotificationCenter.defaultCenter().postNotificationName(triviaFetchInboxNotificationName, object: nil)
+                    
                 } else {
                     let missingError = NSError(domain: "Missing User Inbox", code: 1111, userInfo: nil)
                     completion(error: missingError, inbox: nil)

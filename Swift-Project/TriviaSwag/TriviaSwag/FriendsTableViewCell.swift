@@ -53,16 +53,16 @@ class FriendsTableViewCell: UITableViewCell {
         onlineLabel.hidden = true
     }
     
-    func configueCell(friend:triviaFriend) {
+    func configueCell(item:ListMessageBean) {
     
         let attributes = [NSStrokeColorAttributeName: kFriendListBorderColor,
                           NSStrokeWidthAttributeName : -3.0,
                           NSForegroundColorAttributeName: UIColor.whiteColor()]
         
-        let str = NSAttributedString(string: friend.displayName!, attributes: attributes)
+        let str = NSAttributedString(string: item.displayName!, attributes: attributes)
         friendName.attributedText = str
         
-        if friend.isOnline{
+        if item.isOnline{
             onlineLabel.hidden = false
         }
         

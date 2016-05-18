@@ -75,11 +75,11 @@
                                                     <constraint firstItem="ATM-TV-aSz" firstAttribute="width" secondItem="yrx-wf-GdX" secondAttribute="width" multiplier="0.13" id="xQN-7K-S3P"/>
                                                 </constraints>
                                             </stackView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="51" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ecW-fn-ZHC">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="51" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ecW-fn-ZHC">
                                                 <rect key="frame" x="0.0" y="31" width="553" height="229"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <prototypes>
-                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" id="Jf4-bJ-lbD" customClass="FriendsTableViewCell" customModule="TriviaSwag" customModuleProvider="target">
+                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FriendCell" id="Jf4-bJ-lbD" customClass="FriendsTableViewCell" customModule="TriviaSwag" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="553" height="51"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jf4-bJ-lbD" id="L5Z-yU-wPd">
@@ -90,7 +90,7 @@
                                                                     <rect key="frame" x="69" y="1" width="415" height="48"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jv1-8v-ZE6" userLabel="Placeholder">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="16.5" height="48"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="17" height="48"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         </view>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="f1d-Mo-H7B">
@@ -170,7 +170,7 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="OGB-vH-OWb" customClass="CustomBadge" customModule="TriviaSwag" customModuleProvider="target">
-                                                                    <rect key="frame" x="61" y="0.0" width="24.5" height="24.5"/>
+                                                                    <rect key="frame" x="61" y="0.0" width="25" height="25"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="OGB-vH-OWb" secondAttribute="height" multiplier="1:1" id="jLq-gJ-WVN"/>
                                                                     </constraints>
@@ -292,11 +292,20 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="ecW-fn-ZHC" id="7Dp-B9-RsF"/>
+                        <segue destination="HIZ-qw-uh3" kind="presentation" identifier="Chat" id="Y2g-M7-dUW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BfT-yf-tZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2296.5" y="265.5"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="lD9-Zc-6sb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Chat" id="HIZ-qw-uh3" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bgx-AS-4uh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2794.5" y="265"/>
         </scene>
     </scenes>
     <resources>
