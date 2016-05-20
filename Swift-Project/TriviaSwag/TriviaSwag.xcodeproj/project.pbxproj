@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		01FCBF41966131766755FE2E /* libPods-TriviaSwag.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF86463B0CAD609B9C80919 /* libPods-TriviaSwag.a */; };
+		2805DB331CEE764E004EEDAC /* FriendRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2805DB321CEE764E004EEDAC /* FriendRequestTableViewCell.swift */; };
+		2805DB361CEE7879004EEDAC /* FriendSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2805DB351CEE7879004EEDAC /* FriendSearch.storyboard */; };
 		281285911CB563F000D0D72E /* SegementedControlUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281285901CB563F000D0D72E /* SegementedControlUI.swift */; };
 		281285A01CB57BBD00D0D72E /* trivia Private Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281285991CB57BBD00D0D72E /* trivia Private Routes.swift */; };
 		281285A11CB57BBD00D0D72E /* trivia Public Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2812859A1CB57BBD00D0D72E /* trivia Public Routes.swift */; };
@@ -32,6 +34,9 @@
 		2825D2401CEBA9E3006B8567 /* ChatScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825D23F1CEBA9E3006B8567 /* ChatScreenManager.swift */; };
 		2825D2421CEBD140006B8567 /* FriendMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825D2411CEBD140006B8567 /* FriendMessageTableViewCell.swift */; };
 		2825D2441CEBD1CD006B8567 /* MyMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825D2431CEBD1CD006B8567 /* MyMessageTableViewCell.swift */; };
+		2825D2791CECFEB7006B8567 /* CoreDataUtlis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825D2781CECFEB7006B8567 /* CoreDataUtlis.swift */; };
+		2825D2AB1CED1A4B006B8567 /* triviaMessageMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825D2A91CED1A4B006B8567 /* triviaMessageMO+CoreDataProperties.swift */; };
+		2825D2AC1CED1A4B006B8567 /* triviaMessageMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825D2AA1CED1A4B006B8567 /* triviaMessageMO.swift */; };
 		283408A91CBC53F70068D070 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283408A81CBC53F70068D070 /* ClockViewController.swift */; };
 		283408AF1CBDB2B90068D070 /* GamePlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 283408AD1CBDB2B90068D070 /* GamePlay.storyboard */; };
 		2837CCAC1CD286B3002E407F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2837CCAB1CD286B3002E407F /* GradientView.swift */; };
@@ -133,6 +138,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2805DB321CEE764E004EEDAC /* FriendRequestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRequestTableViewCell.swift; sourceTree = "<group>"; };
+		2805DB351CEE7879004EEDAC /* FriendSearch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FriendSearch.storyboard; sourceTree = "<group>"; };
 		281285901CB563F000D0D72E /* SegementedControlUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegementedControlUI.swift; sourceTree = "<group>"; };
 		281285991CB57BBD00D0D72E /* trivia Private Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "trivia Private Routes.swift"; sourceTree = "<group>"; };
 		2812859A1CB57BBD00D0D72E /* trivia Public Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "trivia Public Routes.swift"; sourceTree = "<group>"; };
@@ -157,6 +164,9 @@
 		2825D23F1CEBA9E3006B8567 /* ChatScreenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatScreenManager.swift; sourceTree = "<group>"; };
 		2825D2411CEBD140006B8567 /* FriendMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendMessageTableViewCell.swift; sourceTree = "<group>"; };
 		2825D2431CEBD1CD006B8567 /* MyMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMessageTableViewCell.swift; sourceTree = "<group>"; };
+		2825D2781CECFEB7006B8567 /* CoreDataUtlis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataUtlis.swift; sourceTree = "<group>"; };
+		2825D2A91CED1A4B006B8567 /* triviaMessageMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "triviaMessageMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2825D2AA1CED1A4B006B8567 /* triviaMessageMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = triviaMessageMO.swift; sourceTree = "<group>"; };
 		283408A81CBC53F70068D070 /* ClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 		283408AE1CBDB2B90068D070 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GamePlay.storyboard; sourceTree = "<group>"; };
 		2837CCAB1CD286B3002E407F /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -280,6 +290,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2805DB341CEE781C004EEDAC /* Friend Search */ = {
+			isa = PBXGroup;
+			children = (
+				2805DB351CEE7879004EEDAC /* FriendSearch.storyboard */,
+			);
+			name = "Friend Search";
+			sourceTree = "<group>";
+		};
 		281285981CB57BA400D0D72E /* TriviaSwagAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,14 +335,26 @@
 		281521BA1CE5098D00B2B4E5 /* Friends&Chat */ = {
 			isa = PBXGroup;
 			children = (
+				2805DB341CEE781C004EEDAC /* Friend Search */,
 				28CBBD101CEA218D0070A23D /* Chat Screen */,
 				281521BB1CE509B200B2B4E5 /* Friends.storyboard */,
 				286C64DE1CE52E0B00A37ECC /* FriendsViewController.swift */,
 				286C64E01CE5438900A37ECC /* FriendsTableViewCell.swift */,
+				2805DB321CEE764E004EEDAC /* FriendRequestTableViewCell.swift */,
 				286C64E21CE5785200A37ECC /* CustomBadge.swift */,
 				28B1930D1CE7BEE300BC7FCF /* FriendsScreenManager.swift */,
 			);
 			name = "Friends&Chat";
+			sourceTree = "<group>";
+		};
+		2825D2531CECEC06006B8567 /* CoreData ManagedObject */ = {
+			isa = PBXGroup;
+			children = (
+				2825D2781CECFEB7006B8567 /* CoreDataUtlis.swift */,
+				2825D2A91CED1A4B006B8567 /* triviaMessageMO+CoreDataProperties.swift */,
+				2825D2AA1CED1A4B006B8567 /* triviaMessageMO.swift */,
+			);
+			name = "CoreData ManagedObject";
 			sourceTree = "<group>";
 		};
 		2837CCAA1CD2865D002E407F /* Transition Animation */ = {
@@ -369,6 +399,7 @@
 				281285981CB57BA400D0D72E /* TriviaSwagAPI */,
 				281285A81CB57C2100D0D72E /* GStackAPI */,
 				284759141CB2F4E500DCFE6A /* Controller */,
+				2825D2531CECEC06006B8567 /* CoreData ManagedObject */,
 				286E7C3A1CD7D80D00F462FF /* Font */,
 				289A87711CCC3DF300C30D8A /* Helper */,
 				289A873C1CC7EE5300C30D8A /* TriviaSound */,
@@ -747,6 +778,7 @@
 				28AEC72E1CD15169001E181F /* DetailLeaderboard.storyboard in Resources */,
 				284758C41CB2EE3500DCFE6A /* Main.storyboard in Resources */,
 				281521BC1CE509B200B2B4E5 /* Friends.storyboard in Resources */,
+				2805DB361CEE7879004EEDAC /* FriendSearch.storyboard in Resources */,
 				28AEC7251CD13C20001E181F /* TournamentResultCell.xib in Resources */,
 				28FB3FC21CE3B0D800E6A32E /* Shop.storyboard in Resources */,
 				286E7C371CD7D3F800F462FF /* Profile.storyboard in Resources */,
@@ -831,12 +863,14 @@
 				289A87561CC955EB00C30D8A /* GeneralTableViewController.swift in Sources */,
 				281285B91CB57C2100D0D72E /* gStackTournament.swift in Sources */,
 				281285B61CB57C2100D0D72E /* gStackMasterDataFetcher.swift in Sources */,
+				2825D2791CECFEB7006B8567 /* CoreDataUtlis.swift in Sources */,
 				289A87701CCC3DEA00C30D8A /* FacebookFunctions.swift in Sources */,
 				281285A21CB57BBD00D0D72E /* triviaDataFetcher.swift in Sources */,
 				283AAA4E1CD3BED50081E8A2 /* QuestionCellTableViewCell.swift in Sources */,
 				286658241CE29BC10013B004 /* SimplePingClient.swift in Sources */,
 				281285A41CB57BBD00D0D72E /* triviaTournamentTalk.swift in Sources */,
 				281285B71CB57C2100D0D72E /* gStackNotificationHandler.swift in Sources */,
+				2825D2AB1CED1A4B006B8567 /* triviaMessageMO+CoreDataProperties.swift in Sources */,
 				28C31EC71CD2B1AB007D76D2 /* SubmitQuestionTableViewController.swift in Sources */,
 				28AEC7291CD14D10001E181F /* DetailedLeaderboardViewController.swift in Sources */,
 				286E7C721CE172E400F462FF /* AlertViewControllerFactory.swift in Sources */,
@@ -853,6 +887,7 @@
 				289A874F1CC8337700C30D8A /* SettingDetailViewController.swift in Sources */,
 				2847591C1CB310E800DCFE6A /* HomeViewController.swift in Sources */,
 				2837CCAC1CD286B3002E407F /* GradientView.swift in Sources */,
+				2825D2AC1CED1A4B006B8567 /* triviaMessageMO.swift in Sources */,
 				28B3A38A1CEB92FA000863A7 /* ChatMessagesModel.xcdatamodeld in Sources */,
 				281285A61CB57BBD00D0D72E /* triviaUserInbox.swift in Sources */,
 				284759611CB4524000DCFE6A /* NavBarViewController.swift in Sources */,
@@ -901,6 +936,7 @@
 				2837CCB01CD28720002E407F /* SlideOutAnimationController.swift in Sources */,
 				2825D2441CEBD1CD006B8567 /* MyMessageTableViewCell.swift in Sources */,
 				283408A91CBC53F70068D070 /* ClockViewController.swift in Sources */,
+				2805DB331CEE764E004EEDAC /* FriendRequestTableViewCell.swift in Sources */,
 				2837CCB41CD28802002E407F /* FadeInAnimationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

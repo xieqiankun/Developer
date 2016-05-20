@@ -17,7 +17,9 @@ class FriendsViewController: UIViewController {
     
     var list:[ListMessageBean]! {
         didSet{
-            tableView.reloadData()
+            dispatch_async(dispatch_get_main_queue()) { 
+                self.tableView.reloadData()
+            }
         }
     }
     
@@ -36,6 +38,7 @@ class FriendsViewController: UIViewController {
         list = manager.list
 
     }
+    
 
     func refresh() {
         tableView.reloadData()
@@ -51,7 +54,7 @@ class FriendsViewController: UIViewController {
     @IBAction func close () {
         dismissViewControllerAnimated(true, completion: nil)
     }
-    
+
     
     
     // MARK: - Navigation
