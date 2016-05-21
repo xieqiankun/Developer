@@ -20,12 +20,18 @@ class FriendsScreenManager: NSObject {
     // inbox message quantity
     var newMessages = [String: Int]()
     
+    
     // out going data
     var list:[ListMessageBean]{
         NSLog("prepare data")
         var res = [ListMessageBean]()
         
         // sort messages and send to client
+        print(requestFriend.count)
+        for request in requestFriend{
+            print("get friend request")
+            res.append(ListMessageBean(request: request))
+        }
         for friend in messageFriend {
             if let num = newMessages[friend.displayName!]{
                 res.append(ListMessageBean(friend: friend, messageNum: num ))
@@ -55,6 +61,7 @@ class FriendsScreenManager: NSObject {
         }
     }
     
+    private var requestFriend = [triviaFriendRequest]()
     private var messageFriend = [triviaFriend]()
     
     private var onlineFriend  = [triviaFriend]()
@@ -82,15 +89,25 @@ class FriendsScreenManager: NSObject {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(FriendsScreenManager.updateUserInbox), name: triviaUpdateInboxNotificationName, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(FriendsScreenManager.updateUserInbox), name: triviaDidDeleteMessageNotificationName, object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(FriendsScreenManager.updateUserInbox), name: triviaDidUpdateFriendsNotificationName, object: nil)
     }
     
     func configureList() {
         
+        requestFriend.removeAll()
         messageFriend.removeAll()
         onlineFriend.removeAll()
         offlineFriend.removeAll()
         
-        //sort online/offline friend
+        //sort online/offline friend and friendrequest
+        if let inbox = triviaCurrentUserInbox{
+            print("In triavia in box")
+            print("\(inbox.friendRequests.count)")
+            for request in inbox.friendRequests{
+                requestFriend.append(request)
+            }
+        }
+        
         for friend in friends{
             if let _ = newMessages[friend.displayName!]{
                 messageFriend.append(friend)
@@ -107,7 +124,7 @@ class FriendsScreenManager: NSObject {
     
     
     
-    // sorted by sended date
+    // sort messages by sended date
     func setNewMessagesQuantity() {
         
         if let inbox = triviaCurrentUserInbox {
@@ -119,14 +136,23 @@ class FriendsScreenManager: NSObject {
                 }
             }
         }
-        
     }
+    
     
     // sort part
     func sortAll(){
+        sortRequest()
         sortMessageFriends()
         sortOnlineFriends()
         sortOfflineFriends()
+    }
+    
+    func sortRequest() {
+        requestFriend.sortInPlace { (request1, request2) -> Bool in
+            
+            return request1.date!.compare(request2.date!) == NSComparisonResult.OrderedAscending
+            
+        }
     }
     
     func sortMessageFriends() {
@@ -135,7 +161,7 @@ class FriendsScreenManager: NSObject {
         
         messageFriend.sortInPlace { (friend1, friend2) -> Bool in
             
-            return names.indexOf(friend1.displayName!) > names.indexOf(friend2.displayName!)
+            return names.indexOf(friend1.displayName!) < names.indexOf(friend2.displayName!)
             
         }
         
@@ -206,10 +232,14 @@ class FriendsScreenManager: NSObject {
     }
     
     func updateUserInbox() {
-        
+        print("part 1")
         setNewMessagesQuantity()
+        print("part 2")
         configureList()
+        print("part 3")
         listDelegate?.update()
+        print("part 4")
+
     }
     
     deinit{
@@ -226,14 +256,21 @@ class ListMessageBean {
     
     var displayName: String?
     var isOnline: Bool = false
-    var messageTyep: FriendsScreenManager.MessageType
+    var messageType: FriendsScreenManager.MessageType
     var newMessageNumber: Int = 0
+    
+    var friendRequest: triviaFriendRequest?
     
     init(friend: triviaFriend, messageNum: Int){
         displayName = friend.displayName
         isOnline = friend.isOnline
-        messageTyep = FriendsScreenManager.MessageType.FriendMessage
+        messageType = FriendsScreenManager.MessageType.FriendMessage
         newMessageNumber = messageNum
+    }
+    
+    init(request: triviaFriendRequest){
+        friendRequest = request
+        messageType = FriendsScreenManager.MessageType.FriendRequest
     }
     
 }

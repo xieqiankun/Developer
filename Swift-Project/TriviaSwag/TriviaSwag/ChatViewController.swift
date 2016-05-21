@@ -26,18 +26,19 @@ class ChatViewController: UIViewController,UITextViewDelegate {
     }
     
     @IBOutlet weak var constraint: NSLayoutConstraint!
-    
     @IBOutlet weak var heightconstraint: NSLayoutConstraint!
     
     // For send message text
     @IBOutlet weak var textview: UITextView!
     @IBOutlet weak var textBackground: UIView!
+    @IBOutlet weak var sendButton: UIButton!
     
     // For table view
     @IBOutlet weak var tableview: UITableView!
     
     var refreshControl: UIRefreshControl!
     
+    // TODO- need to do something for refresh control for DARASTEP
     let DATASTEP = 10
     var currentMessageNum = 0
     var shouldPrescroll = false
@@ -68,6 +69,9 @@ class ChatViewController: UIViewController,UITextViewDelegate {
         // congfigure the tableview
         tableview.estimatedRowHeight = 80
         tableview.rowHeight = UITableViewAutomaticDimension
+        
+        // set button
+        sendButton.enabled = false
         
         //Refresh control
         refreshControl = UIRefreshControl()
@@ -177,6 +181,11 @@ class ChatViewController: UIViewController,UITextViewDelegate {
     // MARK:- Textview delegate
     func textViewDidChange(textView: UITextView) {
         
+        if textView.text == "" {
+            sendButton.enabled = false
+        } else {
+            sendButton.enabled = true
+        }
         let fixedWidth: CGFloat = textView.frame.size.width
         let newSize: CGSize = textView.sizeThatFits(CGSizeMake(fixedWidth, CGFloat.max))
         
@@ -185,10 +194,17 @@ class ChatViewController: UIViewController,UITextViewDelegate {
     }
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if textView.text.characters.count >= 150 {
+            return false
+        }
         if text == "\n" {
+            if textView.text != ""{
+                sendMessage()
+            }
             textview.resignFirstResponder()
             return false
         }
+        
         return true
     }
     
@@ -211,8 +227,10 @@ class ChatViewController: UIViewController,UITextViewDelegate {
         let message = triviaMessage(recipientName: friend, message: textview.text!)
         self.chatManager.sendMessage(message)
         textview.text = ""
-
-    }
+        sendButton.enabled = false
+        // recover the height of text view if we got multiple lines
+        heightconstraint.constant = 33
+}
     
     @IBAction func close() {
         dismissViewControllerAnimated(true) { 

@@ -52,7 +52,7 @@ class FriendRequestTableViewCell: UITableViewCell {
                           NSStrokeWidthAttributeName : -3.0,
                           NSForegroundColorAttributeName: UIColor.whiteColor()]
         
-        let str = NSAttributedString(string: item.displayName!, attributes: attributes)
+        let str = NSAttributedString(string: item.friendRequest!.sender!, attributes: attributes)
         friendName.attributedText = str
 
         if item.newMessageNumber != 0 {

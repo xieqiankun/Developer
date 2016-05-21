@@ -28,9 +28,16 @@ func isCurrentUserLoggedIn() -> Bool {
     return triviaCurrentUser?.displayName != nil
 }
 
-func saveLogInToken(token: String) {
-    NSUserDefaults.standardUserDefaults().setObject(token, forKey: triviaUserLogInTokenKey)
-    NSUserDefaults.standardUserDefaults().synchronize()
+//func saveLogInToken(token: String) {
+//    NSUserDefaults.standardUserDefaults().setObject(token, forKey: triviaUserLogInTokenKey)
+//    NSUserDefaults.standardUserDefaults().synchronize()
+//}
+
+func saveLogInTokenForCurrentUser(){
+    if let token = triviaCurrentUser?._id {
+        NSUserDefaults.standardUserDefaults().setObject(token, forKey: triviaUserLogInTokenKey)
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
 }
 
 // MARK: - default

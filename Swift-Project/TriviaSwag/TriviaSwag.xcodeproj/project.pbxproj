@@ -31,6 +31,8 @@
 		281285BE1CB592EA00D0D72E /* LeaderboardImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281285BD1CB592EA00D0D72E /* LeaderboardImageViewController.swift */; };
 		281521B91CE4FF2600B2B4E5 /* gStackCacheDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281521B81CE4FF2600B2B4E5 /* gStackCacheDataManager.swift */; };
 		281521BC1CE509B200B2B4E5 /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281521BB1CE509B200B2B4E5 /* Friends.storyboard */; };
+		2817E1BF1CEF645C008962E8 /* FriendSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2817E1BE1CEF645C008962E8 /* FriendSearchViewController.swift */; };
+		2817E1C11CEF6FC7008962E8 /* FriendSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2817E1C01CEF6FC7008962E8 /* FriendSearchTableViewCell.swift */; };
 		2825D2401CEBA9E3006B8567 /* ChatScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825D23F1CEBA9E3006B8567 /* ChatScreenManager.swift */; };
 		2825D2421CEBD140006B8567 /* FriendMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825D2411CEBD140006B8567 /* FriendMessageTableViewCell.swift */; };
 		2825D2441CEBD1CD006B8567 /* MyMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825D2431CEBD1CD006B8567 /* MyMessageTableViewCell.swift */; };
@@ -161,6 +163,8 @@
 		281285BD1CB592EA00D0D72E /* LeaderboardImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardImageViewController.swift; sourceTree = "<group>"; };
 		281521B81CE4FF2600B2B4E5 /* gStackCacheDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gStackCacheDataManager.swift; sourceTree = "<group>"; };
 		281521BB1CE509B200B2B4E5 /* Friends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
+		2817E1BE1CEF645C008962E8 /* FriendSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearchViewController.swift; sourceTree = "<group>"; };
+		2817E1C01CEF6FC7008962E8 /* FriendSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearchTableViewCell.swift; sourceTree = "<group>"; };
 		2825D23F1CEBA9E3006B8567 /* ChatScreenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatScreenManager.swift; sourceTree = "<group>"; };
 		2825D2411CEBD140006B8567 /* FriendMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendMessageTableViewCell.swift; sourceTree = "<group>"; };
 		2825D2431CEBD1CD006B8567 /* MyMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMessageTableViewCell.swift; sourceTree = "<group>"; };
@@ -294,6 +298,8 @@
 			isa = PBXGroup;
 			children = (
 				2805DB351CEE7879004EEDAC /* FriendSearch.storyboard */,
+				2817E1BE1CEF645C008962E8 /* FriendSearchViewController.swift */,
+				2817E1C01CEF6FC7008962E8 /* FriendSearchTableViewCell.swift */,
 			);
 			name = "Friend Search";
 			sourceTree = "<group>";
@@ -858,6 +864,7 @@
 			files = (
 				281521B91CE4FF2600B2B4E5 /* gStackCacheDataManager.swift in Sources */,
 				286E7C6E1CE1484900F462FF /* TestViewController.swift in Sources */,
+				2817E1BF1CEF645C008962E8 /* FriendSearchViewController.swift in Sources */,
 				286C64E31CE5785200A37ECC /* CustomBadge.swift in Sources */,
 				286E7C471CDA933100F462FF /* LeaderboardTableViewCell.swift in Sources */,
 				289A87561CC955EB00C30D8A /* GeneralTableViewController.swift in Sources */,
@@ -906,6 +913,7 @@
 				281285A31CB57BBD00D0D72E /* triviaNotificationHandler.swift in Sources */,
 				28FB3FC81CE3E41E00E6A32E /* UIImageView+DownloadImage.swift in Sources */,
 				281285BC1CB57CBD00D0D72E /* App Info.swift in Sources */,
+				2817E1C11CEF6FC7008962E8 /* FriendSearchTableViewCell.swift in Sources */,
 				28FB3FC61CE3E34800E6A32E /* ShopViewController.swift in Sources */,
 				289A87601CC978DF00C30D8A /* SignUpViewController.swift in Sources */,
 				281285A11CB57BBD00D0D72E /* trivia Public Routes.swift in Sources */,

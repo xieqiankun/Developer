@@ -149,11 +149,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TriviaSwag/trivia Public Routes.swift"
-            timestampString = "483406123.270508"
+            timestampString = "485460733.173162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "triviaFacebookSignUp(_:email:password:avatar:deviceId:referralCode:fbToken:fbData:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -344,13 +344,77 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TriviaSwag/FriendsScreenManager.swift"
-            timestampString = "485386969.009107"
+            timestampString = "485476986.799765"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "FriendsScreenManager"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TriviaSwag/triviaUserInbox.swift"
+            timestampString = "485493206.744395"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "init(dictionary:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriviaSwag.triviaUserInbox.init (dictionary : Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; TriviaSwag.triviaUserInbox"
+                  moduleName = "TriviaSwag"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xieqiankun/Developer/Swift-Project/TriviaSwag/TriviaSwag/triviaUserInbox.swift"
+                  timestampString = "485493444.811197"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "746">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TriviaSwag.triviaUserInbox.init (dictionary : Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; TriviaSwag.triviaUserInbox"
+                  moduleName = "TriviaSwag"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xieqiankun/Developer/Swift-Project/TriviaSwag/TriviaSwag/triviaUserInbox.swift"
+                  timestampString = "485493444.811328"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "1040">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TriviaSwag/triviaUserInbox.swift"
+            timestampString = "485493208.090284"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "init(dictionary:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

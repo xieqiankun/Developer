@@ -41,7 +41,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="583" height="262"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="51" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B1c-c9-ydx">
-                                                        <rect key="frame" x="0.0" y="0.0" width="583" height="220"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="583" height="217"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendMessage" rowHeight="80" id="MrJ-Mz-HvG" userLabel="FriendMessage Cell" customClass="FriendMessageTableViewCell" customModule="TriviaSwag" customModuleProvider="target">
@@ -57,7 +57,7 @@
                                                                                 <constraint firstAttribute="width" secondItem="iSl-kr-UMh" secondAttribute="height" id="6aY-K7-GGM"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SHh-J5-EWa">
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SHh-J5-EWa">
                                                                             <rect key="frame" x="57" y="5" width="99" height="70"/>
                                                                             <subviews>
                                                                                 <view contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YUg-Nn-b0m" userLabel="LabelBackground">
@@ -176,27 +176,38 @@
                                                         </connections>
                                                     </tableView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iaM-f0-lzK" userLabel="Text Super View">
-                                                        <rect key="frame" x="0.0" y="220" width="583" height="40"/>
+                                                        <rect key="frame" x="0.0" y="217" width="583" height="43"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gmx-Qb-L4A">
-                                                                <rect key="frame" x="515" y="0.0" width="36" height="40"/>
-                                                                <state key="normal" title="Send"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gmx-Qb-L4A">
+                                                                <rect key="frame" x="489" y="5.5" width="86" height="37.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="Kql-mt-kvO"/>
+                                                                    <constraint firstAttribute="width" secondItem="Gmx-Qb-L4A" secondAttribute="height" multiplier="2.3" id="L0V-Is-o5P"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Send" image="SendButton-Untouched"/>
+                                                                <state key="disabled" image="SendButton-Disabled"/>
+                                                                <state key="highlighted" image="SendButton-Touched"/>
+                                                                <variation key="default">
+                                                                    <mask key="constraints">
+                                                                        <exclude reference="Kql-mt-kvO"/>
+                                                                    </mask>
+                                                                </variation>
                                                                 <connections>
                                                                     <action selector="sendMessage" destination="FyC-BZ-6KI" eventType="touchUpInside" id="3fO-Ag-ZSg"/>
                                                                 </connections>
                                                             </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQr-gQ-LtC" userLabel="Send Message Content View">
-                                                                <rect key="frame" x="88" y="0.0" width="408" height="40"/>
+                                                                <rect key="frame" x="102" y="0.0" width="379" height="43"/>
                                                                 <subviews>
                                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" scrollEnabled="NO" text="Reply..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pxj-Gx-Xy6">
-                                                                        <rect key="frame" x="20" y="5" width="368" height="30"/>
+                                                                        <rect key="frame" x="20" y="5" width="339" height="33"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="30" id="uOe-NL-JhH"/>
+                                                                            <constraint firstAttribute="height" constant="33" id="uOe-NL-JhH"/>
                                                                         </constraints>
                                                                         <color key="textColor" red="0.10588235294117647" green="0.078431372549019607" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
-                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="send"/>
                                                                         <connections>
                                                                             <outlet property="delegate" destination="FyC-BZ-6KI" id="rUi-il-t1g"/>
                                                                         </connections>
@@ -213,12 +224,12 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstItem="eQr-gQ-LtC" firstAttribute="width" secondItem="iaM-f0-lzK" secondAttribute="width" multiplier="0.7" id="3Q1-0C-HbX"/>
-                                                            <constraint firstItem="Gmx-Qb-L4A" firstAttribute="top" secondItem="iaM-f0-lzK" secondAttribute="top" id="3rx-Qk-uyk"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Gmx-Qb-L4A" secondAttribute="trailing" constant="32" id="DtV-Qn-6LS"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Gmx-Qb-L4A" secondAttribute="bottom" id="EGj-ZN-obU"/>
+                                                            <constraint firstItem="eQr-gQ-LtC" firstAttribute="width" secondItem="iaM-f0-lzK" secondAttribute="width" multiplier="0.65" id="3Q1-0C-HbX"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Gmx-Qb-L4A" secondAttribute="bottom" id="Csk-1d-9Tf"/>
                                                             <constraint firstAttribute="bottom" secondItem="eQr-gQ-LtC" secondAttribute="bottom" id="Fjh-t1-CJh"/>
                                                             <constraint firstItem="eQr-gQ-LtC" firstAttribute="top" secondItem="iaM-f0-lzK" secondAttribute="top" id="Ygv-Lp-oEK"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Gmx-Qb-L4A" secondAttribute="trailing" constant="8" id="pk3-hA-6FJ"/>
+                                                            <constraint firstItem="Gmx-Qb-L4A" firstAttribute="leading" secondItem="eQr-gQ-LtC" secondAttribute="trailing" constant="8" id="swL-aJ-F6J"/>
                                                             <constraint firstItem="eQr-gQ-LtC" firstAttribute="centerX" secondItem="iaM-f0-lzK" secondAttribute="centerX" id="zZR-T5-V81"/>
                                                         </constraints>
                                                     </view>
@@ -304,6 +315,7 @@
                     <connections>
                         <outlet property="constraint" destination="qiP-pF-1MF" id="G4c-iH-Vxc"/>
                         <outlet property="heightconstraint" destination="uOe-NL-JhH" id="fKU-Im-h0o"/>
+                        <outlet property="sendButton" destination="Gmx-Qb-L4A" id="7yf-Nh-F8p"/>
                         <outlet property="tableview" destination="B1c-c9-ydx" id="JDj-3K-EC1"/>
                         <outlet property="textBackground" destination="eQr-gQ-LtC" id="uxG-ol-rPH"/>
                         <outlet property="textview" destination="Pxj-Gx-Xy6" id="QPj-Bi-MqQ"/>
@@ -320,6 +332,9 @@
         <image name="Close-Big" width="108" height="108"/>
         <image name="Close-Small" width="108" height="108"/>
         <image name="Label-Leaderboard" width="546" height="94"/>
+        <image name="SendButton-Disabled" width="165" height="70"/>
+        <image name="SendButton-Touched" width="165" height="70"/>
+        <image name="SendButton-Untouched" width="165" height="70"/>
         <image name="YellowMan" width="250" height="250"/>
     </resources>
 </document>

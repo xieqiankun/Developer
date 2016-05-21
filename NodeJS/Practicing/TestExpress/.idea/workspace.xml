@@ -22,47 +22,23 @@
     <favorites_list name="TestExpress" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file leaf-file-name="privateRoutes.js" pinned="true" current-in-tab="false">
         <entry file="REMOTE_DEPLOYMENT_FS://&lt;e0ab9263-e0a3-45fd-85c8-0169d5fdd6ff&gt;/TriviaUserServer/incoming/privateRoutes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.84375">
-              <caret line="388" column="9" selection-start-line="388" selection-start-column="9" selection-end-line="388" selection-end-column="9" />
+            <state vertical-scroll-proportion="-1.171875">
+              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mailman.js" pinned="true" current-in-tab="false">
-        <entry file="REMOTE_DEPLOYMENT_FS://&lt;e0ab9263-e0a3-45fd-85c8-0169d5fdd6ff&gt;/TriviaUserServer/incoming/mailman.js">
+      <file leaf-file-name="friendRequests.js" pinned="true" current-in-tab="true">
+        <entry file="REMOTE_DEPLOYMENT_FS://&lt;e0ab9263-e0a3-45fd-85c8-0169d5fdd6ff&gt;/TriviaUserServer/incoming/friendRequests.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.0540543">
-              <caret line="84" column="16" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.8608696">
+              <caret line="120" column="19" selection-start-line="120" selection-start-column="19" selection-end-line="120" selection-end-column="19" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userInboxAPI.js" pinned="true" current-in-tab="false">
-        <entry file="REMOTE_DEPLOYMENT_FS://&lt;e0ab9263-e0a3-45fd-85c8-0169d5fdd6ff&gt;/userInboxModule/userInboxAPI.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.78125">
-              <caret line="427" column="25" selection-start-line="427" selection-start-column="25" selection-end-line="427" selection-end-column="25" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.js" pinned="true" current-in-tab="true">
-        <entry file="REMOTE_DEPLOYMENT_FS://&lt;e0ab9263-e0a3-45fd-85c8-0169d5fdd6ff&gt;/userInboxModule/models.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31304348">
-              <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -148,6 +124,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
       <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
@@ -158,9 +137,6 @@
             </PATH_ELEMENT>
           </PATH>
         </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane />
       </pane>
     </panes>
   </component>
@@ -710,11 +686,14 @@
       <workItem from="1463068826919" duration="168000" />
       <workItem from="1463089247880" duration="1160000" />
       <workItem from="1463686830131" duration="1347000" />
+      <workItem from="1463763230810" duration="611000" />
+      <workItem from="1463767539629" duration="80000" />
+      <workItem from="1463772794386" duration="782000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22411000" />
+    <option name="totallyTimeSpent" value="23884000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="709" extended-state="6" />

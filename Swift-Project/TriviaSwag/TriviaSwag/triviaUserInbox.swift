@@ -11,27 +11,29 @@ import UIKit
 public class triviaUserInbox: NSObject {
     public var threads = Dictionary<String,Array<triviaMessage>>()
     public var numUnread: NSNumber?
-    public var friendRequests = Array<gStackFriendRequest>()
-    public var pendingFriendRequests = Array<gStackFriendRequest>()
+    public var friendRequests = Array<triviaFriendRequest>()
+    public var pendingFriendRequests = Array<triviaFriendRequest>()
     public var incomingAsyncChallenges = Array<gStackAsyncChallengeMessage>()
     public var outgoingAsyncChallenges = Array<gStackAsyncChallengeMessage>()
     public var finishedAsyncChallenges = Array<gStackFinishedChallengeMessage>()
     
     init(dictionary: Dictionary<String,AnyObject>) {
+        print("trivia user inbox")
         numUnread = dictionary["numUnread"] as? NSNumber
         if let _friendRequests = dictionary["friendRequests"] as? Array<Dictionary<String,AnyObject>> {
-            var gStackFriendRequests = Array<gStackFriendRequest>()
+            print("set friend request")
+            var gStackFriendRequests = Array<triviaFriendRequest>()
             for friendRequest in _friendRequests {
-                let request = gStackFriendRequest(dictionary: friendRequest)
+                let request = triviaFriendRequest(dictionary: friendRequest)
                 request.type = "friendrequest"
                 gStackFriendRequests.append(request)
             }
             friendRequests = gStackFriendRequests
         }
         if let _pendingFriendRequests = dictionary["pendingFRs"] as? Array<Dictionary<String,AnyObject>> {
-            var gStackPendingFriendRequests = Array<gStackFriendRequest>()
+            var gStackPendingFriendRequests = Array<triviaFriendRequest>()
             for pendingFriendRequest in _pendingFriendRequests {
-                let pendingRequest = gStackFriendRequest(dictionary: pendingFriendRequest)
+                let pendingRequest = triviaFriendRequest(dictionary: pendingFriendRequest)
                 pendingRequest.type = "pendingFR"
                 gStackPendingFriendRequests.append(pendingRequest)
             }
@@ -179,10 +181,11 @@ public class triviaMessage: triviaCommunique {
     }
 }
 
-public class gStackFriendRequest: triviaCommunique {
+public class triviaFriendRequest: triviaCommunique {
     public var senderAvatar: String?
     public var body: String?
     var token: String?
+    
     
     override init(dictionary: Dictionary<String,AnyObject>) {
         super.init(dictionary: dictionary)

@@ -20,6 +20,8 @@ public func triviaUserLogin(email: String, password: String, completion: (error:
                 completion(error: _error)
             } else if let payload = _payload as? Dictionary<String,AnyObject> {
                 triviaCurrentUser = triviaUser(payload: payload)
+                // store user login token
+                saveLogInTokenForCurrentUser()
                 completion(error: nil)
             } else {
                 completion(error: triviaMissingPayloadError)
