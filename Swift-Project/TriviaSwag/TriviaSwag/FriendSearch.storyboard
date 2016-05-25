@@ -108,10 +108,10 @@
                                                                             </subviews>
                                                                         </stackView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ECi-ND-2AL">
-                                                                            <rect key="frame" x="269" y="12" width="151" height="24"/>
+                                                                            <rect key="frame" x="283" y="12" width="138" height="24"/>
                                                                             <subviews>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmw-Yx-ZwK">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="151" height="24"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="138" height="24"/>
                                                                                     <state key="normal" image="AddFriends-Untouched"/>
                                                                                     <state key="highlighted" image="AddFriends-Touched"/>
                                                                                     <connections>
@@ -132,7 +132,7 @@
                                                                         <constraint firstItem="t4k-cb-73d" firstAttribute="width" secondItem="gCK-GT-Xt6" secondAttribute="width" multiplier="0.4" id="KeU-iy-vdx"/>
                                                                         <constraint firstItem="t4k-cb-73d" firstAttribute="height" secondItem="gCK-GT-Xt6" secondAttribute="height" multiplier="0.9" id="Lt7-ww-6JZ"/>
                                                                         <constraint firstItem="t4k-cb-73d" firstAttribute="leading" secondItem="Bkk-kf-qAZ" secondAttribute="trailing" id="Mtb-Za-KED"/>
-                                                                        <constraint firstItem="ECi-ND-2AL" firstAttribute="width" secondItem="gCK-GT-Xt6" secondAttribute="width" multiplier="0.35" id="RtR-14-Fnp"/>
+                                                                        <constraint firstItem="ECi-ND-2AL" firstAttribute="width" secondItem="gCK-GT-Xt6" secondAttribute="width" multiplier="0.32" id="RtR-14-Fnp"/>
                                                                         <constraint firstItem="Bkk-kf-qAZ" firstAttribute="leading" secondItem="gCK-GT-Xt6" secondAttribute="leading" id="Uf7-XV-9Dd"/>
                                                                         <constraint firstItem="t4k-cb-73d" firstAttribute="centerY" secondItem="gCK-GT-Xt6" secondAttribute="centerY" id="Wd4-4H-BBa"/>
                                                                         <constraint firstAttribute="trailing" secondItem="ECi-ND-2AL" secondAttribute="trailing" constant="10" id="hTP-lc-0t6"/>

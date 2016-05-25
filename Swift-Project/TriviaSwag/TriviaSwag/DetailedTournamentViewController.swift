@@ -130,9 +130,9 @@ class DetailedTournamentViewController: UIViewController {
         
         if segue.identifier == "GamePlaySegue" {
             
-            let vc = segue.destinationViewController as! GamePlayViewController
-            vc.tournament = self.tournament
-            print("I am in segue \(vc.tournament?.name)")
+            let vc = segue.destinationViewController as! GameViewController
+            vc.currentTournament = self.tournament
+            print("I am in segue \(vc.currentTournament?.name)")
         }
         
         

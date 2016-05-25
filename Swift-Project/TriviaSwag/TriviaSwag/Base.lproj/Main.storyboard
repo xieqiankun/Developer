@@ -573,10 +573,10 @@
             </objects>
             <point key="canvasLocation" x="508.5" y="72"/>
         </scene>
-        <!--GamePlay-->
+        <!--Game-->
         <scene sceneID="bVF-0L-H4e">
             <objects>
-                <viewControllerPlaceholder storyboardName="GamePlay" id="MHa-AQ-TWQ" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Game" id="MHa-AQ-TWQ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hvc-bi-pH6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1554.5" y="1001"/>

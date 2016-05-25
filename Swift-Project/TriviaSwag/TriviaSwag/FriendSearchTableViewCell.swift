@@ -55,14 +55,14 @@ class FriendSearchTableViewCell: UITableViewCell {
         switch userStatus {
         case .Friend:
             status.enabled = false
-            status.setImage(UIImage(named:"Friended"), forState: .Disabled)
+            status.setImage(UIImage(named:"Friended2"), forState: .Disabled)
         case .Nonfriend:
             status.enabled = true
             status.setImage(UIImage(named:"AddFriends-Untouched"), forState: .Normal)
             status.setImage(UIImage(named:"AddFriends-Touched"), forState: .Highlighted)
         case .Pending:
             status.enabled = false
-            status.setImage(UIImage(named:"Pending"), forState: .Disabled)
+            status.setImage(UIImage(named:"Pending2"), forState: .Disabled)
         }
     }
     

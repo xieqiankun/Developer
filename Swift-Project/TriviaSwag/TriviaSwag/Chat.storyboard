@@ -57,7 +57,7 @@
                                                                                 <constraint firstAttribute="width" secondItem="iSl-kr-UMh" secondAttribute="height" id="6aY-K7-GGM"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SHh-J5-EWa">
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SHh-J5-EWa">
                                                                             <rect key="frame" x="57" y="5" width="99" height="70"/>
                                                                             <subviews>
                                                                                 <view contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YUg-Nn-b0m" userLabel="LabelBackground">
@@ -179,7 +179,7 @@
                                                         <rect key="frame" x="0.0" y="217" width="583" height="43"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gmx-Qb-L4A">
-                                                                <rect key="frame" x="489" y="5.5" width="86" height="37.5"/>
+                                                                <rect key="frame" x="489" y="6" width="86" height="37"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="Kql-mt-kvO"/>
                                                                     <constraint firstAttribute="width" secondItem="Gmx-Qb-L4A" secondAttribute="height" multiplier="2.3" id="L0V-Is-o5P"/>

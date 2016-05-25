@@ -52,6 +52,9 @@
                                                         <rect key="frame" x="22" y="0.0" width="172" height="26"/>
                                                         <state key="normal" image="InviteFriends-Untouched"/>
                                                         <state key="highlighted" image="InviteFriends-Touched"/>
+                                                        <connections>
+                                                            <action selector="shareButtonClicked:" destination="Zdb-Tl-1cM" eventType="touchUpInside" id="wUA-Rg-woV"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFU-4e-6O6">
                                                         <rect key="frame" x="194" y="0.0" width="43" height="26"/>

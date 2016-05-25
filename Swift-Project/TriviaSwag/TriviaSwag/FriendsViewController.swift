@@ -56,6 +56,19 @@ class FriendsViewController: UIViewController {
     }
 
     
+    @IBAction func shareButtonClicked(sender: UIButton) {
+        let textToShare = "Swift is awesome!  Check out this website about it!"
+        
+        if let myWebsite = NSURL(string: "http://www.codingexplorer.com/"),let image : UIImage = UIImage(named: "BlueMan")!
+ {
+            let objectsToShare = [textToShare, myWebsite, image]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+            activityVC.popoverPresentationController?.sourceView = sender
+            self.presentViewController(activityVC, animated: true, completion: nil)
+        }
+    }
+    
     
     // MARK: - Navigation
 
