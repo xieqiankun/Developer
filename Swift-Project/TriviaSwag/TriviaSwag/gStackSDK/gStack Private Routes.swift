@@ -53,13 +53,18 @@ public func gStackFetchTournaments(completion: (error: NSError?, tournaments: Ar
     })
 }
 
+public func gStackSetCurrentUserInfo(displayName: String, avator: String){
+    gStackAvator = avator
+    gStackDisplayName = displayName
+    
+}
 
 //qstack works
 public func gStackStartGameForTournament(tournament: gStackTournament, completion: (error: NSError?, game: gStackGame?) -> Void) {
     if tournament.uuid == nil {
         tournament.uuid = ""
     }
-    let requestDictionary = ["teams":[["displayName":"yyy", "channel": gStackPusherChannel!, "avatar": "yyy"]],"gameMode":["type":"tournament","uuid":tournament.uuid!]]
+    let requestDictionary = ["teams":[["displayName":gStackDisplayName, "channel": gStackPusherChannel!, "avatar": gStackAvator]],"gameMode":["type":"tournament","uuid":tournament.uuid!]]
     gStackMakeRequest(true, route: "startgame", type: "clientStartGame", payload: requestDictionary, completion: {
         data, reply, error in
         gStackProcessResponse(error, data: data ,completion: {
@@ -87,7 +92,13 @@ public func gStackFetchLeaderboardForTournament(tournament: gStackTournament, co
                 if _error != nil {
                     completion(error: _error, leaderboard: nil)
                 } else if let payload = _payload as? Array<Dictionary<String,AnyObject>> {
-                    completion(error: nil, leaderboard: gStackTournamentLeaderboard(array: payload))
+                    let leaderboard = gStackTournamentLeaderboard(array: payload)
+                    completion(error: nil, leaderboard: leaderboard)
+                    //store the leaderboard locally
+                    if let id = tournament.uuid {
+                        gStackCachedLeaderBoard[id] = leaderboard
+                    }
+                    
                 } else {
                     completion(error: gStackMissingPayloadError, leaderboard: nil)
                 }

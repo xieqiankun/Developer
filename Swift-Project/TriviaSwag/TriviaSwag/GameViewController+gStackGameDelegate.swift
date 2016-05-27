@@ -56,6 +56,9 @@ extension GameViewController: gStackGameDelegate{
         
         setQuestionLabelWithCurrentQuestion()
         setCurrentQuestionNumber()
+        if let num = question.questionNum?.integerValue{
+            setCurrentQuestionMarker(num)
+        }
         
         self.prepareState(true, completion:{
             (true) in
@@ -68,7 +71,6 @@ extension GameViewController: gStackGameDelegate{
         
         // need to minus animation time for preparing aniamtin
         delay(delayInSeconds - 0.5) {
-
             self.playingState(true,completion: {
                 (true) in
                 // Timer
@@ -76,6 +78,7 @@ extension GameViewController: gStackGameDelegate{
                 self.startCountdown()
             })
         }
+
         
     }
     func didReceivePlayerInfo(playerInfo: gStackGamePlayerInfo){
@@ -85,6 +88,8 @@ extension GameViewController: gStackGameDelegate{
     func didReceiveCorrectAnswer(correctAnswer: gStackGameCorrectAnswer){
         // in case user didn't answer
         stopCountdown()
+        resultState(true)
+        
         let correct = correctAnswer.correctAnswer?.integerValue
         // reuse for displaying the right answer
         startRightOrWrongAnimation(1, selected: correct!)
@@ -100,21 +105,36 @@ extension GameViewController: gStackGameDelegate{
         
         stopCountdown()
         
-        resultState(true)
-        
         let seleted = updatedScore.answerNumber?.integerValue
-
+        
         // 0 means wrong 1 means right
         if (updatedScore.rightOrWrong?.integerValue)! == 0 {
             if let num = seleted {
                 startRightOrWrongAnimation(0, selected: num)
                 setIncorrectResult()
+                if let num = updatedScore.questionNum?.integerValue{
+                    setIncorrectQuestionMarker(num)
+                }
             }
         } else {
             if let num = seleted {
                 startRightOrWrongAnimation(1, selected: num)
                 setCorrectResult()
+                if let num = updatedScore.questionNum?.integerValue{
+                    setCorrectQuestionMarker(num)
+                }
             }
+        }
+        
+        // update score
+        if let scores = updatedScore.teamScores {
+            var temp = [Double]()
+            for item in scores {
+                if let score = item as? Double {
+                    temp.append(score)
+                }
+            }
+            updateUserScore(temp)
         }
         
         

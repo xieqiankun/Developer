@@ -31,6 +31,18 @@
 		281285BE1CB592EA00D0D72E /* LeaderboardImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281285BD1CB592EA00D0D72E /* LeaderboardImageViewController.swift */; };
 		281521B91CE4FF2600B2B4E5 /* gStackCacheDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281521B81CE4FF2600B2B4E5 /* gStackCacheDataManager.swift */; };
 		281521BC1CE509B200B2B4E5 /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281521BB1CE509B200B2B4E5 /* Friends.storyboard */; };
+		2816502E1CF7B53000114837 /* lahoosaher.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281650281CF7B53000114837 /* lahoosaher.gif */; };
+		2816502F1CF7B53000114837 /* mutumbo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281650291CF7B53000114837 /* mutumbo.gif */; };
+		281650301CF7B53000114837 /* powerrangers.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2816502A1CF7B53000114837 /* powerrangers.gif */; };
+		281650311CF7B53000114837 /* steveharvey.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2816502B1CF7B53000114837 /* steveharvey.gif */; };
+		281650321CF7B53000114837 /* vincevaughn.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2816502C1CF7B53000114837 /* vincevaughn.gif */; };
+		281650331CF7B53000114837 /* yousucksimpsons.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2816502D1CF7B53000114837 /* yousucksimpsons.gif */; };
+		2816503B1CF7B53800114837 /* ifhedies.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281650351CF7B53800114837 /* ifhedies.gif */; };
+		2816503C1CF7B53800114837 /* jackblack.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281650361CF7B53800114837 /* jackblack.gif */; };
+		2816503D1CF7B53800114837 /* jimmykimmel.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281650371CF7B53800114837 /* jimmykimmel.gif */; };
+		2816503E1CF7B53800114837 /* rockyvictory.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281650381CF7B53800114837 /* rockyvictory.gif */; };
+		2816503F1CF7B53800114837 /* shooterMcGavin.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281650391CF7B53800114837 /* shooterMcGavin.gif */; };
+		281650401CF7B53800114837 /* solitair.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2816503A1CF7B53800114837 /* solitair.gif */; };
 		2817E1BF1CEF645C008962E8 /* FriendSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2817E1BE1CEF645C008962E8 /* FriendSearchViewController.swift */; };
 		2817E1C11CEF6FC7008962E8 /* FriendSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2817E1C01CEF6FC7008962E8 /* FriendSearchTableViewCell.swift */; };
 		281B7E0D1CF4A33D00355B5F /* QKRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B7E0C1CF4A33D00355B5F /* QKRipple.swift */; };
@@ -80,10 +92,8 @@
 		281B7E671CF50DBF00355B5F /* testRippleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B7E661CF50DBF00355B5F /* testRippleViewController.swift */; };
 		281B7E691CF632FB00355B5F /* DispatchUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B7E681CF632FB00355B5F /* DispatchUtils.swift */; };
 		281B7E6C1CF6450900355B5F /* UIImage+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B7E6B1CF6450900355B5F /* UIImage+GIF.swift */; };
-		281B7E6E1CF6453600355B5F /* shooterMcGavin.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281B7E6D1CF6453600355B5F /* shooterMcGavin.gif */; };
 		281B7E711CF64AE100355B5F /* Lose-BlueMonster.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281B7E701CF64AE100355B5F /* Lose-BlueMonster.gif */; };
 		281B7E731CF64AE900355B5F /* Win-BlueMonster.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281B7E721CF64AE900355B5F /* Win-BlueMonster.gif */; };
-		281B7E751CF64AF600355B5F /* powerrangers.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281B7E741CF64AF600355B5F /* powerrangers.gif */; };
 		2825D2401CEBA9E3006B8567 /* ChatScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825D23F1CEBA9E3006B8567 /* ChatScreenManager.swift */; };
 		2825D2421CEBD140006B8567 /* FriendMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825D2411CEBD140006B8567 /* FriendMessageTableViewCell.swift */; };
 		2825D2441CEBD1CD006B8567 /* MyMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825D2431CEBD1CD006B8567 /* MyMessageTableViewCell.swift */; };
@@ -216,6 +226,18 @@
 		281285BD1CB592EA00D0D72E /* LeaderboardImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardImageViewController.swift; sourceTree = "<group>"; };
 		281521B81CE4FF2600B2B4E5 /* gStackCacheDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gStackCacheDataManager.swift; sourceTree = "<group>"; };
 		281521BB1CE509B200B2B4E5 /* Friends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
+		281650281CF7B53000114837 /* lahoosaher.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lahoosaher.gif; sourceTree = "<group>"; };
+		281650291CF7B53000114837 /* mutumbo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = mutumbo.gif; sourceTree = "<group>"; };
+		2816502A1CF7B53000114837 /* powerrangers.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = powerrangers.gif; sourceTree = "<group>"; };
+		2816502B1CF7B53000114837 /* steveharvey.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = steveharvey.gif; sourceTree = "<group>"; };
+		2816502C1CF7B53000114837 /* vincevaughn.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = vincevaughn.gif; sourceTree = "<group>"; };
+		2816502D1CF7B53000114837 /* yousucksimpsons.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = yousucksimpsons.gif; sourceTree = "<group>"; };
+		281650351CF7B53800114837 /* ifhedies.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ifhedies.gif; sourceTree = "<group>"; };
+		281650361CF7B53800114837 /* jackblack.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = jackblack.gif; sourceTree = "<group>"; };
+		281650371CF7B53800114837 /* jimmykimmel.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = jimmykimmel.gif; sourceTree = "<group>"; };
+		281650381CF7B53800114837 /* rockyvictory.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rockyvictory.gif; sourceTree = "<group>"; };
+		281650391CF7B53800114837 /* shooterMcGavin.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = shooterMcGavin.gif; sourceTree = "<group>"; };
+		2816503A1CF7B53800114837 /* solitair.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = solitair.gif; sourceTree = "<group>"; };
 		2817E1BE1CEF645C008962E8 /* FriendSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearchViewController.swift; sourceTree = "<group>"; };
 		2817E1C01CEF6FC7008962E8 /* FriendSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearchTableViewCell.swift; sourceTree = "<group>"; };
 		281B7E0C1CF4A33D00355B5F /* QKRipple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QKRipple.swift; sourceTree = "<group>"; };
@@ -265,10 +287,8 @@
 		281B7E661CF50DBF00355B5F /* testRippleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRippleViewController.swift; sourceTree = "<group>"; };
 		281B7E681CF632FB00355B5F /* DispatchUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchUtils.swift; sourceTree = "<group>"; };
 		281B7E6B1CF6450900355B5F /* UIImage+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+GIF.swift"; sourceTree = "<group>"; };
-		281B7E6D1CF6453600355B5F /* shooterMcGavin.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = shooterMcGavin.gif; sourceTree = "<group>"; };
 		281B7E701CF64AE100355B5F /* Lose-BlueMonster.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Lose-BlueMonster.gif"; sourceTree = "<group>"; };
 		281B7E721CF64AE900355B5F /* Win-BlueMonster.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Win-BlueMonster.gif"; sourceTree = "<group>"; };
-		281B7E741CF64AF600355B5F /* powerrangers.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = powerrangers.gif; sourceTree = "<group>"; };
 		2825D23F1CEBA9E3006B8567 /* ChatScreenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatScreenManager.swift; sourceTree = "<group>"; };
 		2825D2411CEBD140006B8567 /* FriendMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendMessageTableViewCell.swift; sourceTree = "<group>"; };
 		2825D2431CEBD1CD006B8567 /* MyMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMessageTableViewCell.swift; sourceTree = "<group>"; };
@@ -459,6 +479,32 @@
 			name = "Friends&Chat";
 			sourceTree = "<group>";
 		};
+		281650271CF7B53000114837 /* Incorrect */ = {
+			isa = PBXGroup;
+			children = (
+				281650281CF7B53000114837 /* lahoosaher.gif */,
+				281650291CF7B53000114837 /* mutumbo.gif */,
+				2816502A1CF7B53000114837 /* powerrangers.gif */,
+				2816502B1CF7B53000114837 /* steveharvey.gif */,
+				2816502C1CF7B53000114837 /* vincevaughn.gif */,
+				2816502D1CF7B53000114837 /* yousucksimpsons.gif */,
+			);
+			path = Incorrect;
+			sourceTree = "<group>";
+		};
+		281650341CF7B53800114837 /* Correct */ = {
+			isa = PBXGroup;
+			children = (
+				281650351CF7B53800114837 /* ifhedies.gif */,
+				281650361CF7B53800114837 /* jackblack.gif */,
+				281650371CF7B53800114837 /* jimmykimmel.gif */,
+				281650381CF7B53800114837 /* rockyvictory.gif */,
+				281650391CF7B53800114837 /* shooterMcGavin.gif */,
+				2816503A1CF7B53800114837 /* solitair.gif */,
+			);
+			path = Correct;
+			sourceTree = "<group>";
+		};
 		281B7E0E1CF4CA2200355B5F /* SF-Compact */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,10 +564,10 @@
 		281B7E6F1CF6480100355B5F /* GIF */ = {
 			isa = PBXGroup;
 			children = (
+				281650341CF7B53800114837 /* Correct */,
+				281650271CF7B53000114837 /* Incorrect */,
 				281B7E701CF64AE100355B5F /* Lose-BlueMonster.gif */,
 				281B7E721CF64AE900355B5F /* Win-BlueMonster.gif */,
-				281B7E741CF64AF600355B5F /* powerrangers.gif */,
-				281B7E6D1CF6453600355B5F /* shooterMcGavin.gif */,
 			);
 			name = GIF;
 			sourceTree = "<group>";
@@ -972,12 +1018,13 @@
 				289A87421CC7EE5300C30D8A /* Button Right answer.wav in Resources */,
 				281B7E471CF4CA2200355B5F /* SF-Compact-Text-Light.otf in Resources */,
 				284758C91CB2EE3500DCFE6A /* LaunchScreen.storyboard in Resources */,
+				2816502E1CF7B53000114837 /* lahoosaher.gif in Resources */,
 				281B7E531CF4CA2200355B5F /* SF-UI-Display-Medium.otf in Resources */,
 				281285BA1CB57C2100D0D72E /* ServerInfo.plist in Resources */,
 				28AEC7271CD145BC001E181F /* NothingFoundCell.xib in Resources */,
 				281B7E3E1CF4CA2200355B5F /* SF-Compact-Display-Medium.otf in Resources */,
 				281B7E631CF4CA2200355B5F /* SF-UI-Text-SemiboldItalic.otf in Resources */,
-				281B7E751CF64AF600355B5F /* powerrangers.gif in Resources */,
+				2816503F1CF7B53800114837 /* shooterMcGavin.gif in Resources */,
 				281B7E731CF64AE900355B5F /* Win-BlueMonster.gif in Resources */,
 				284758C61CB2EE3500DCFE6A /* Assets.xcassets in Resources */,
 				289A87461CC7FFD500C30D8A /* Countdown_Clock.wav in Resources */,
@@ -996,20 +1043,28 @@
 				281B7E4A1CF4CA2200355B5F /* SF-Compact-Text-MediumItalic.otf in Resources */,
 				281B7E5C1CF4CA2200355B5F /* SF-UI-Text-Light.otf in Resources */,
 				28CBBD121CEA21AE0070A23D /* Chat.storyboard in Resources */,
+				2816503B1CF7B53800114837 /* ifhedies.gif in Resources */,
 				281B7E441CF4CA2200355B5F /* SF-Compact-Text-BoldItalic.otf in Resources */,
+				2816502F1CF7B53000114837 /* mutumbo.gif in Resources */,
+				2816503D1CF7B53800114837 /* jimmykimmel.gif in Resources */,
 				286E7C691CE1294D00F462FF /* Alert.storyboard in Resources */,
 				281B7E521CF4CA2200355B5F /* SF-UI-Display-Light.otf in Resources */,
 				281B7E481CF4CA2200355B5F /* SF-Compact-Text-LightItalic.otf in Resources */,
 				281B7E711CF64AE100355B5F /* Lose-BlueMonster.gif in Resources */,
+				281650301CF7B53000114837 /* powerrangers.gif in Resources */,
 				281B7E511CF4CA2200355B5F /* SF-UI-Display-Heavy.otf in Resources */,
+				281650321CF7B53000114837 /* vincevaughn.gif in Resources */,
+				281650401CF7B53800114837 /* solitair.gif in Resources */,
+				281650311CF7B53000114837 /* steveharvey.gif in Resources */,
 				28AEC72E1CD15169001E181F /* DetailLeaderboard.storyboard in Resources */,
 				281B7E3B1CF4CA2200355B5F /* SF-Compact-Display-Bold.otf in Resources */,
 				281B7E3F1CF4CA2200355B5F /* SF-Compact-Display-Regular.otf in Resources */,
-				281B7E6E1CF6453600355B5F /* shooterMcGavin.gif in Resources */,
 				281B7E5B1CF4CA2200355B5F /* SF-UI-Text-HeavyItalic.otf in Resources */,
+				281650331CF7B53000114837 /* yousucksimpsons.gif in Resources */,
 				281B7E461CF4CA2200355B5F /* SF-Compact-Text-HeavyItalic.otf in Resources */,
 				284758C41CB2EE3500DCFE6A /* Main.storyboard in Resources */,
 				281B7E581CF4CA2200355B5F /* SF-UI-Text-Bold.otf in Resources */,
+				2816503E1CF7B53800114837 /* rockyvictory.gif in Resources */,
 				281521BC1CE509B200B2B4E5 /* Friends.storyboard in Resources */,
 				281B7E3A1CF4CA2200355B5F /* SF-Compact-Display-Black.otf in Resources */,
 				281B7E601CF4CA2200355B5F /* SF-UI-Text-Regular.otf in Resources */,
@@ -1024,6 +1079,7 @@
 				281B7E5E1CF4CA2200355B5F /* SF-UI-Text-Medium.otf in Resources */,
 				281B7E591CF4CA2200355B5F /* SF-UI-Text-BoldItalic.otf in Resources */,
 				281B7E561CF4CA2200355B5F /* SF-UI-Display-Thin.otf in Resources */,
+				2816503C1CF7B53800114837 /* jackblack.gif in Resources */,
 				283408AF1CBDB2B90068D070 /* GamePlay.storyboard in Resources */,
 				281B7E491CF4CA2200355B5F /* SF-Compact-Text-Medium.otf in Resources */,
 				289A87541CC9301400C30D8A /* Settings.storyboard in Resources */,

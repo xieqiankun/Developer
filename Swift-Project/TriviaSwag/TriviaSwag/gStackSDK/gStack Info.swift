@@ -30,3 +30,7 @@ public var gStackAppIDToken: String?
 public var gStackPusherChannel: String?
 
 public var gStackCachedLeaderBoard = [String: gStackTournamentLeaderboard]()
+
+// user info
+public var gStackDisplayName: String  = "yyy"
+public var gStackAvator: String = ""

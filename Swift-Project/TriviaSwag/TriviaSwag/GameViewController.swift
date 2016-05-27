@@ -14,6 +14,15 @@ let kAnswerBorderColor = UIColor.blueColor()
 let kAnswerBackgroundColor = UIColor.darkGrayColor()
 let kRightAnswerColor = UIColor.greenColor()
 let kWrongAnswerColor = UIColor.redColor()
+let kQuestionMarkerNormalColor = UIColor.blueColor()
+let kQuestionMarkerAnsweringColor = UIColor.yellowColor()
+let kQuestionMarkerCorrectColor = UIColor.greenColor()
+let kQuestionMarkerIncorrectColor = UIColor.redColor()
+let kTimebarNormalColor = UIColor.yellowColor()
+let kResultCorrectColor = UIColor.greenColor()
+let kResultIncorrectColor = UIColor.redColor()
+
+let kTimebarColor = UIColor.yellowColor()
 
 class GameViewController: UIViewController {
     
@@ -75,13 +84,24 @@ class GameViewController: UIViewController {
     @IBOutlet weak var clockView: UIView!
     @IBOutlet weak var ballView: UIView!
     @IBOutlet weak var clockLabel: UILabel!
+    @IBOutlet weak var clockbar: UIView!
     
     // result part
+    @IBOutlet weak var resultBackgroundView: UIView!
     @IBOutlet weak var avatorGif: UIImageView!
     @IBOutlet weak var funnyGif: UIImageView!
     @IBOutlet weak var funnyLabel: UILabel!
 
-
+    // botton part
+    @IBOutlet weak var userDisplayName: UILabel!
+    @IBOutlet weak var userScore: UILabel!
+    
+    @IBOutlet weak var leaderDisplayName: UILabel!
+    @IBOutlet weak var leaderScore: UILabel!
+    
+    @IBOutlet var questionMarkers: [UIView]!
+    @IBOutlet var questionMarkerIndicators: [UIImageView]!
+    @IBOutlet var questionMakerLabels: [UILabel]!
     
     // MARK: - prepare the ui and labels
     deinit{
@@ -94,8 +114,8 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        prepareState(false,completion:nil)
         initGamePlayUI()
+        prepareState(false,completion:nil)
         
         
         //start the game
@@ -109,8 +129,16 @@ class GameViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
         
+        ballView.layer.cornerRadius = ballView.bounds.height / 2
+        ballView.backgroundColor = kTimebarColor
         
+        clockView.layer.cornerRadius = clockView.bounds.height / 2
+        clockView.layer.borderColor = kTimebarColor.CGColor
+        clockView.layer.borderWidth = 1.5
     }
     
     override func didReceiveMemoryWarning() {
@@ -121,16 +149,21 @@ class GameViewController: UIViewController {
     func initGamePlayUI() {
         
         // clear container background
-        //        questionView.backgroundColor = UIColor.clearColor()
-        //        resultView.backgroundColor = UIColor.clearColor()
-        //        answersView.backgroundColor = UIColor.clearColor()
-        //        headerView.backgroundColor = UIColor.clearColor()
-        //        statusView.backgroundColor = UIColor.clearColor()
+        questionView.backgroundColor = UIColor.blackColor()
+        resultView.backgroundColor = UIColor.blackColor()
+        answersView.backgroundColor = UIColor.blackColor()
+        headerView.backgroundColor = UIColor.blackColor()
+        statusView.backgroundColor = UIColor.blackColor()
         
+        for view in questionMarkers {
+            view.backgroundColor = UIColor.clearColor()
+        }
+
         // setup
         questionBackgroundView.layer.cornerRadius = 15
         questionBackgroundView.layer.borderColor = kQuestionBorderColor.CGColor
         questionBackgroundView.layer.borderWidth = 3.0
+        
         
         answer1.layer.cornerRadius = 20
         answer1.layer.borderColor = kQuestionBorderColor.CGColor
@@ -150,15 +183,53 @@ class GameViewController: UIViewController {
         
         questionBackgroundView.backgroundColor = kQuestionBackgroundColor
         
-        //setup tournament Name
+        //setup tournament Name and colors
         if currentTournament != nil {
             tournamentNameLabel.text = currentTournament!.name
+            tournamentNameLabel.textColor = kQuestionMarkerNormalColor
+        }
+        tournamentQuestionNumberLabel.textColor = kTimebarColor
+        funnyLabel.textColor = kTimebarColor
+        
+        //clock part
+        
+        clockbar.backgroundColor = kTimebarColor
+        clockView.backgroundColor = UIColor.blackColor()
+        
+        clock.alpha = 0
+
+        //user score part
+        userDisplayName.text = gStackDisplayName
+        userScore.text = "$0.0"
+        
+        if let num = currentTournament?.questions?.num?.integerValue {
+            for index in num...9 {
+                print(index)
+                questionMarkers[num].removeFromSuperview()
+                questionMarkers.removeAtIndex(num)
+                questionMakerLabels.removeAtIndex(num)
+                questionMarkerIndicators.removeAtIndex(num)
+            }
+            
+            self.view.layoutIfNeeded()
+            
+            for view in questionMarkers {
+                view.layer.cornerRadius = view.bounds.height / 2
+                view.layer.borderColor = kQuestionMarkerNormalColor.CGColor
+                view.layer.borderWidth = 3.0
+            }
+            
         }
         
-        //hide clock
-        clock.alpha = 0
+        for label in questionMakerLabels {
+            label.textColor = kQuestionMarkerNormalColor
+        }
+        for imageview in questionMarkerIndicators{
+            imageview.hidden = true
+        }
     }
     
+
     @IBAction func test () {
         
         if headerHeightConstrain.active {
@@ -224,12 +295,13 @@ class GameViewController: UIViewController {
         if animate {
             UIView.animateWithDuration(0.3) {
                 self.questionLabel.alpha = 0
-                self.clock.alpha = 1
+               
                 self.view.layoutIfNeeded()
             }
             UIView.animateWithDuration(0.25, delay: 0.25, options: [], animations: {
                 self.timebarWidthConstrain.constant = self.questionBackgroundView.frame.width - self.ballView.frame.width - self.clockView.frame.width
                 self.questionLabel.alpha = 1
+                self.clock.alpha = 1
                 }, completion: completion)
             
         } else {
@@ -396,6 +468,12 @@ class GameViewController: UIViewController {
     
     func setCorrectResult() {
         
+        resultBackgroundView.layer.cornerRadius = 15
+        resultBackgroundView.layer.borderColor = kResultCorrectColor.CGColor
+        resultBackgroundView.layer.borderWidth = 3.0
+        
+        resultBackgroundView.backgroundColor = kResultCorrectColor
+        
         avatorGif.image = UIImage.gifWithName("Win-BlueMonster")
         funnyGif.image = UIImage.gifWithName("shooterMcGavin")
         funnyLabel.text = "You eat pieces of 💩 for breakfast?"
@@ -403,10 +481,63 @@ class GameViewController: UIViewController {
     
     func setIncorrectResult() {
         
+        resultBackgroundView.layer.cornerRadius = 15
+        resultBackgroundView.layer.borderColor = kResultIncorrectColor.CGColor
+        resultBackgroundView.layer.borderWidth = 3.0
+        
+        resultBackgroundView.backgroundColor = kResultIncorrectColor
+        
         avatorGif.image = UIImage.gifWithName("Lose-BlueMonster")
-        funnyGif.image = UIImage.gifWithName("powerrangers")
-        funnyLabel.text = "Ahhhhh my brain!"
+        funnyGif.image = UIImage.gifWithName("mutumbo")
+        funnyLabel.text = "No No Noooo!"
 
+    }
+    
+    func setCurrentQuestionMarker(num: Int) {
+
+        let v = questionMarkers[num]
+        v.layer.borderColor = kQuestionMarkerAnsweringColor.CGColor
+        let l = questionMakerLabels[num]
+        l.textColor = kQuestionMarkerAnsweringColor
+        
+    }
+    func setCorrectQuestionMarker(num: Int) {
+        
+        let v = questionMarkers[num]
+        v.layer.borderColor = kQuestionMarkerCorrectColor.CGColor
+        let l = questionMakerLabels[num]
+        l.hidden = true
+    
+        let i = questionMarkerIndicators[num]
+        if let image = UIImage(named: "CorrectIcon"){
+            i.image = image
+            i.hidden = false
+        }
+        
+    }
+    func setIncorrectQuestionMarker(num: Int) {
+        
+        let v = questionMarkers[num]
+        v.layer.borderColor = kQuestionMarkerIncorrectColor.CGColor
+        let l = questionMakerLabels[num]
+        l.hidden = true
+        let i = questionMarkerIndicators[num]
+        if let image = UIImage(named: "IncorrectIcon"){
+            i.image = image
+            i.hidden = false
+        }
+        
+    }
+    
+    func updateUserScore(scores:[Double]) {
+        
+        var res = 0.0
+        
+        for val in scores {
+            res = val + res
+        }
+        
+        userScore.text = "$\(res)"
     }
     
     func startRightOrWrongAnimation(correct: Int, selected: Int) {

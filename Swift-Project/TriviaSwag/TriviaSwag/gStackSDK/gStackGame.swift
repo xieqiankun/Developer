@@ -250,6 +250,8 @@ public class gStackGameUpdatedScore: NSObject {
     public var answerNumber: NSNumber?
     public var rightOrWrong: NSNumber?
     public var teamScores: [AnyObject]?
+    public var questionNum: NSNumber?
+    
     //Others probably...
     
     init(dictionary: Dictionary<String,AnyObject>) {
@@ -257,6 +259,8 @@ public class gStackGameUpdatedScore: NSObject {
         answerNumber = dictionary["answerNumber"] as? NSNumber
         rightOrWrong = dictionary["rightOrWrong"] as? NSNumber
         teamScores = (dictionary["teamScores"] as? [[AnyObject]])?.first
+        questionNum = dictionary["questionNum"] as? NSNumber
+
         //Others probably...
     }
 }

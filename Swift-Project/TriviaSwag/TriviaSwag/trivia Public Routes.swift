@@ -23,6 +23,10 @@ public func triviaUserLogin(email: String, password: String, completion: (error:
                 // store user login token
                 saveLogInTokenForCurrentUser()
                 completion(error: nil)
+                // save info for gStack
+                if let displayName = triviaCurrentUser?.displayName, avator = triviaCurrentUser?.avatar {
+                    gStackSetCurrentUserInfo(displayName, avator: avator)
+                }
             } else {
                 completion(error: triviaMissingPayloadError)
             }

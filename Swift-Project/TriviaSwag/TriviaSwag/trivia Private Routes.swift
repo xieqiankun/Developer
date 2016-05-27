@@ -27,6 +27,10 @@ public func triviaGetCurrentUserInfo(completion: (error: NSError?) -> Void) {
                 // update token every time user open the app
                 saveLogInTokenForCurrentUser()
                 completion(error: nil)
+                if let displayName = triviaCurrentUser?.displayName, avator = triviaCurrentUser?.avatar {
+                    gStackSetCurrentUserInfo(displayName, avator: avator)
+                }
+                
             } else {
                 completion(error: gStackMissingPayloadError)
             }

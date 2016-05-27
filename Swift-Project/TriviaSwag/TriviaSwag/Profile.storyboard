@@ -269,10 +269,10 @@
                                                             <constraint firstAttribute="bottom" secondItem="CBh-DJ-3zF" secondAttribute="bottom" constant="1" id="jdy-Su-rMf"/>
                                                         </constraints>
                                                     </view>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="90h-Ep-Q2e">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="90h-Ep-Q2e">
                                                         <rect key="frame" x="0.0" y="28" width="251" height="23"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yc5-3X-xaM">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yc5-3X-xaM">
                                                                 <rect key="frame" x="0.0" y="0.0" width="113" height="23"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNO-GY-Zwu">
@@ -281,7 +281,7 @@
                                                                         <state key="selected" image="BigButtonUnselectedTouched"/>
                                                                         <state key="highlighted" image="SmallButtonUnselectedTouched"/>
                                                                     </button>
-                                                                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wG4-eg-0Mt">
+                                                                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wG4-eg-0Mt">
                                                                         <rect key="frame" x="10" y="1" width="102" height="21"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddFriendsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="7jN-Ua-DKw">
@@ -290,7 +290,7 @@
                                                                                     <constraint firstAttribute="width" secondItem="7jN-Ua-DKw" secondAttribute="height" id="va1-Ck-6PH"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Aij-qz-0BZ">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Aij-qz-0BZ">
                                                                                 <rect key="frame" x="26" y="0.0" width="76" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="100"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -310,7 +310,7 @@
                                                                     <constraint firstAttribute="trailing" secondItem="SNO-GY-Zwu" secondAttribute="trailing" id="t8z-r8-fbv"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4EB-7B-wZB">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4EB-7B-wZB">
                                                                 <rect key="frame" x="138" y="0.0" width="113" height="23"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sws-Z4-vsl">
@@ -319,7 +319,7 @@
                                                                         <state key="selected" image="BigButtonUnselectedTouched"/>
                                                                         <state key="highlighted" image="SmallButtonUnselectedTouched"/>
                                                                     </button>
-                                                                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Osv-LT-AS4">
+                                                                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Osv-LT-AS4">
                                                                         <rect key="frame" x="10" y="1" width="102" height="21"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatIcon" translatesAutoresizingMaskIntoConstraints="NO" id="edT-3P-2mc">
@@ -328,7 +328,7 @@
                                                                                     <constraint firstAttribute="width" secondItem="edT-3P-2mc" secondAttribute="height" id="bXi-DY-SZs"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ZUb-z3-HQv">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ZUb-z3-HQv">
                                                                                 <rect key="frame" x="26" y="0.0" width="76" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="100"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

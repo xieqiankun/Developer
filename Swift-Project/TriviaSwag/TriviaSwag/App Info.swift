@@ -47,5 +47,13 @@ func saveLogInTokenForCurrentUser(){
 public var triviaCurrentUserInbox: triviaUserInbox?
 
 //MARK: - Handle Trivia Shop
-
 public var triviaCurrentShop: triviaShop?
+
+
+
+
+
+
+
+
+
