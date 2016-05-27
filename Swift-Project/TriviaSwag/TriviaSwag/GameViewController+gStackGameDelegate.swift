@@ -64,6 +64,7 @@ extension GameViewController: gStackGameDelegate{
             (true) in
             self.setAnswerLabelsWithCurrentQuestion()
             self.clearAnswerBackground()
+            self.setUntouchButtons()
         })
 
 
@@ -92,6 +93,7 @@ extension GameViewController: gStackGameDelegate{
         
         let correct = correctAnswer.correctAnswer?.integerValue
         // reuse for displaying the right answer
+        setCorrectButton(correct!)
         startRightOrWrongAnimation(1, selected: correct!)
         
         let timer = correctAnswer.timer?.integerValue
@@ -112,6 +114,8 @@ extension GameViewController: gStackGameDelegate{
             if let num = seleted {
                 startRightOrWrongAnimation(0, selected: num)
                 setIncorrectResult()
+                // change button border for incorrect
+                setIncorrectButton(num)
                 if let num = updatedScore.questionNum?.integerValue{
                     setIncorrectQuestionMarker(num)
                 }

@@ -43,6 +43,8 @@
 		2816503E1CF7B53800114837 /* rockyvictory.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281650381CF7B53800114837 /* rockyvictory.gif */; };
 		2816503F1CF7B53800114837 /* shooterMcGavin.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281650391CF7B53800114837 /* shooterMcGavin.gif */; };
 		281650401CF7B53800114837 /* solitair.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2816503A1CF7B53800114837 /* solitair.gif */; };
+		281650431CF8973B00114837 /* GameplayColorMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281650421CF8973B00114837 /* GameplayColorMapping.swift */; };
+		281650451CF8A45800114837 /* GIFStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281650441CF8A45800114837 /* GIFStore.swift */; };
 		2817E1BF1CEF645C008962E8 /* FriendSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2817E1BE1CEF645C008962E8 /* FriendSearchViewController.swift */; };
 		2817E1C11CEF6FC7008962E8 /* FriendSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2817E1C01CEF6FC7008962E8 /* FriendSearchTableViewCell.swift */; };
 		281B7E0D1CF4A33D00355B5F /* QKRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B7E0C1CF4A33D00355B5F /* QKRipple.swift */; };
@@ -238,6 +240,8 @@
 		281650381CF7B53800114837 /* rockyvictory.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rockyvictory.gif; sourceTree = "<group>"; };
 		281650391CF7B53800114837 /* shooterMcGavin.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = shooterMcGavin.gif; sourceTree = "<group>"; };
 		2816503A1CF7B53800114837 /* solitair.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = solitair.gif; sourceTree = "<group>"; };
+		281650421CF8973B00114837 /* GameplayColorMapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameplayColorMapping.swift; sourceTree = "<group>"; };
+		281650441CF8A45800114837 /* GIFStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFStore.swift; sourceTree = "<group>"; };
 		2817E1BE1CEF645C008962E8 /* FriendSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearchViewController.swift; sourceTree = "<group>"; };
 		2817E1C01CEF6FC7008962E8 /* FriendSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearchTableViewCell.swift; sourceTree = "<group>"; };
 		281B7E0C1CF4A33D00355B5F /* QKRipple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QKRipple.swift; sourceTree = "<group>"; };
@@ -505,6 +509,14 @@
 			path = Correct;
 			sourceTree = "<group>";
 		};
+		281650411CF896AE00114837 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				281650421CF8973B00114837 /* GameplayColorMapping.swift */,
+			);
+			name = Colors;
+			sourceTree = "<group>";
+		};
 		281B7E0E1CF4CA2200355B5F /* SF-Compact */ = {
 			isa = PBXGroup;
 			children = (
@@ -625,12 +637,13 @@
 				281285A81CB57C2100D0D72E /* GStackAPI */,
 				284759141CB2F4E500DCFE6A /* Controller */,
 				2825D2531CECEC06006B8567 /* CoreData ManagedObject */,
+				281650411CF896AE00114837 /* Colors */,
 				286E7C3A1CD7D80D00F462FF /* Font */,
 				289A87711CCC3DF300C30D8A /* Helper */,
 				289A873C1CC7EE5300C30D8A /* TriviaSound */,
+				281B7E6F1CF6480100355B5F /* GIF */,
 				284758C71CB2EE3500DCFE6A /* LaunchScreen.storyboard */,
 				284758BE1CB2EE3500DCFE6A /* AppDelegate.swift */,
-				281B7E6F1CF6480100355B5F /* GIF */,
 				28B3A3881CEB92FA000863A7 /* ChatMessagesModel.xcdatamodeld */,
 				2847591A1CB3031E00DCFE6A /* Trivios-Tournaments-Bridging-Header.h */,
 				284758CA1CB2EE3500DCFE6A /* Info.plist */,
@@ -837,6 +850,7 @@
 				281B7E641CF4D95400355B5F /* GameViewController+gStackGameDelegate.swift */,
 				281B7E0C1CF4A33D00355B5F /* QKRipple.swift */,
 				281B7E661CF50DBF00355B5F /* testRippleViewController.swift */,
+				281650441CF8A45800114837 /* GIFStore.swift */,
 			);
 			name = GamePlayNew;
 			sourceTree = "<group>";
@@ -1165,6 +1179,7 @@
 				289A87561CC955EB00C30D8A /* GeneralTableViewController.swift in Sources */,
 				281285B91CB57C2100D0D72E /* gStackTournament.swift in Sources */,
 				281285B61CB57C2100D0D72E /* gStackMasterDataFetcher.swift in Sources */,
+				281650431CF8973B00114837 /* GameplayColorMapping.swift in Sources */,
 				2825D2791CECFEB7006B8567 /* CoreDataUtlis.swift in Sources */,
 				281B7E6C1CF6450900355B5F /* UIImage+GIF.swift in Sources */,
 				289A87701CCC3DEA00C30D8A /* FacebookFunctions.swift in Sources */,
@@ -1227,6 +1242,7 @@
 				289A87681CCA8B0500C30D8A /* LoginViewController.swift in Sources */,
 				289A87581CC95E1200C30D8A /* AccountInfomationTableViewController.swift in Sources */,
 				281285B51CB57C2100D0D72E /* gStackGame.swift in Sources */,
+				281650451CF8A45800114837 /* GIFStore.swift in Sources */,
 				281285A01CB57BBD00D0D72E /* trivia Private Routes.swift in Sources */,
 				28A978E11CB8565A006F6218 /* TimeBarViewController.swift in Sources */,
 				281B7E0D1CF4A33D00355B5F /* QKRipple.swift in Sources */,

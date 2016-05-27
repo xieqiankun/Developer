@@ -136,6 +136,10 @@ public class gStackGame: NSObject {
         primus?.write(answer)
     }
     
+    public func sendForfeitMessage() {
+        let info = ["type": "clientForfeit","payload":["":""]] as [String: AnyObject]
+        primus?.write(info)
+    }
     
     public func endGame() {
         primus?.end()

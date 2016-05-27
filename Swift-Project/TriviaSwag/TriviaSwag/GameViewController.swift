@@ -8,19 +8,19 @@
 
 import UIKit
 
-let kQuestionBorderColor = UIColor.blueColor()
-let kQuestionBackgroundColor = UIColor.blueColor()
-let kAnswerBorderColor = UIColor.blueColor()
-let kAnswerBackgroundColor = UIColor.darkGrayColor()
-let kRightAnswerColor = UIColor.greenColor()
-let kWrongAnswerColor = UIColor.redColor()
-let kQuestionMarkerNormalColor = UIColor.blueColor()
-let kQuestionMarkerAnsweringColor = UIColor.yellowColor()
-let kQuestionMarkerCorrectColor = UIColor.greenColor()
-let kQuestionMarkerIncorrectColor = UIColor.redColor()
-let kTimebarNormalColor = UIColor.yellowColor()
-let kResultCorrectColor = UIColor.greenColor()
-let kResultIncorrectColor = UIColor.redColor()
+//let kQuestionBorderColor = UIColor.blueColor()
+//let kQuestionBackgroundColor = UIColor.blueColor()
+//let kAnswerBorderColor = UIColor.blueColor()
+//let kAnswerBackgroundColor = UIColor.darkGrayColor()
+//let kRightAnswerColor = UIColor.greenColor()
+//let kWrongAnswerColor = UIColor.redColor()
+//let kQuestionMarkerNormalColor = UIColor.blueColor()
+//let kQuestionMarkerAnsweringColor = UIColor.yellowColor()
+//let kQuestionMarkerCorrectColor = UIColor.greenColor()
+//let kQuestionMarkerIncorrectColor = UIColor.redColor()
+//let kTimebarNormalColor = UIColor.yellowColor()
+//let kResultCorrectColor = UIColor.greenColor()
+//let kResultIncorrectColor = UIColor.redColor()
 
 let kTimebarColor = UIColor.yellowColor()
 
@@ -161,32 +161,32 @@ class GameViewController: UIViewController {
 
         // setup
         questionBackgroundView.layer.cornerRadius = 15
-        questionBackgroundView.layer.borderColor = kQuestionBorderColor.CGColor
-        questionBackgroundView.layer.borderWidth = 3.0
+//        questionBackgroundView.layer.borderColor = kQuestionBorderColor.CGColor
+//        questionBackgroundView.layer.borderWidth = 3.0
         
         
         answer1.layer.cornerRadius = 20
-        answer1.layer.borderColor = kQuestionBorderColor.CGColor
+        answer1.layer.borderColor = kGameplayAnswerButtonUntouchedStroke.CGColor
         answer1.layer.borderWidth = 3.0
         
         answer2.layer.cornerRadius = 20
-        answer2.layer.borderColor = kQuestionBorderColor.CGColor
+        answer2.layer.borderColor = kGameplayAnswerButtonUntouchedStroke.CGColor
         answer2.layer.borderWidth = 3.0
         
         answer3.layer.cornerRadius = 20
-        answer3.layer.borderColor = kQuestionBorderColor.CGColor
+        answer3.layer.borderColor = kGameplayAnswerButtonUntouchedStroke.CGColor
         answer3.layer.borderWidth = 3.0
         
         answer4.layer.cornerRadius = 20
-        answer4.layer.borderColor = kQuestionBorderColor.CGColor
+        answer4.layer.borderColor = kGameplayAnswerButtonUntouchedStroke.CGColor
         answer4.layer.borderWidth = 3.0
         
-        questionBackgroundView.backgroundColor = kQuestionBackgroundColor
+        questionBackgroundView.backgroundColor = kGameplayQuestionAreaFill
         
         //setup tournament Name and colors
         if currentTournament != nil {
             tournamentNameLabel.text = currentTournament!.name
-            tournamentNameLabel.textColor = kQuestionMarkerNormalColor
+            tournamentNameLabel.textColor = kGameplayFutureQuestionCircleStroke
         }
         tournamentQuestionNumberLabel.textColor = kTimebarColor
         funnyLabel.textColor = kTimebarColor
@@ -215,17 +215,27 @@ class GameViewController: UIViewController {
             
             for view in questionMarkers {
                 view.layer.cornerRadius = view.bounds.height / 2
-                view.layer.borderColor = kQuestionMarkerNormalColor.CGColor
+                view.layer.borderColor = kGameplayFutureQuestionCircleStroke.CGColor
                 view.layer.borderWidth = 3.0
             }
             
         }
         
         for label in questionMakerLabels {
-            label.textColor = kQuestionMarkerNormalColor
+            label.textColor = kGameplayFutureQuestionCircleStroke
         }
         for imageview in questionMarkerIndicators{
             imageview.hidden = true
+        }
+        
+        // set game leader
+        if let uuid = currentTournament?.uuid, let leaderboard = gStackCachedLeaderBoard[uuid]{
+            if let leader = leaderboard.leaders.first{
+                leaderDisplayName.text = leader.displayName
+                if let score = leader.correctTime?.doubleValue{
+                    leaderScore.text = String(score / 1000)
+                }
+            }
         }
     }
     
@@ -243,7 +253,7 @@ class GameViewController: UIViewController {
     @IBAction func test2() {
         
         //resultState(true)
-        rippleAnimation(answer2, relativeLoaction: CGPointZero, color: kRightAnswerColor)
+        rippleAnimation(answer2, relativeLoaction: CGPointZero, color: kGameplayAnswerButtonTouchedCorrectStroke)
         
         
     }
@@ -252,6 +262,13 @@ class GameViewController: UIViewController {
         //resultState(true)
         //rippleAnimation(answer3, relativeLoaction: CGPointZero, color: UIColor.blackColor())
         self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    func stopPlaying() {
+        
+        game?.sendForfeitMessage()
+        dismissViewControllerAnimated(true, completion: nil)
         
     }
     
@@ -343,7 +360,13 @@ class GameViewController: UIViewController {
             let t: UITouch = touch as! UITouch
             let location = t.locationInView(self.view)
             
+            if view.hitTest(location, withEvent: nil) == clockView{
+                stopPlaying()
+            }
+            
             if isAllowSubmit {
+                
+                setNotTouchButtons()
                 // a little bit complicated, test tapping and submit answer
                 if view.hitTest(location, withEvent: nil) == answer1 {
                     let relativeLocation = t.locationInView(answer1)
@@ -421,10 +444,10 @@ class GameViewController: UIViewController {
     // MARK: - Game logic part
     
     func clearAnswerBackground() {
-        answer1.backgroundColor = kAnswerBackgroundColor
-        answer2.backgroundColor = kAnswerBackgroundColor
-        answer3.backgroundColor = kAnswerBackgroundColor
-        answer4.backgroundColor = kAnswerBackgroundColor
+        answer1.backgroundColor = kGameplayAnswerButtonUntouchedFill
+        answer2.backgroundColor = kGameplayAnswerButtonUntouchedFill
+        answer3.backgroundColor = kGameplayAnswerButtonUntouchedFill
+        answer4.backgroundColor = kGameplayAnswerButtonUntouchedFill
     }
     
     func clearLabels() {
@@ -466,45 +489,101 @@ class GameViewController: UIViewController {
         
     }
     
+    
+    
     func setCorrectResult() {
         
         resultBackgroundView.layer.cornerRadius = 15
-        resultBackgroundView.layer.borderColor = kResultCorrectColor.CGColor
+        resultBackgroundView.layer.borderColor = kGameplayAnswerButtonTouchedCorrectStroke.CGColor
         resultBackgroundView.layer.borderWidth = 3.0
         
-        resultBackgroundView.backgroundColor = kResultCorrectColor
+        resultBackgroundView.backgroundColor = kGameplayAnswerButtonTouchedCorrectFill
+        
+        let (str, img) = GIFStore.sharedInstance.getRandomGif(true)
         
         avatorGif.image = UIImage.gifWithName("Win-BlueMonster")
-        funnyGif.image = UIImage.gifWithName("shooterMcGavin")
-        funnyLabel.text = "You eat pieces of 💩 for breakfast?"
+        funnyGif.image = img
+        funnyLabel.text = str
     }
     
     func setIncorrectResult() {
         
         resultBackgroundView.layer.cornerRadius = 15
-        resultBackgroundView.layer.borderColor = kResultIncorrectColor.CGColor
+        resultBackgroundView.layer.borderColor = kGameplayAnswerButtonTouchedIncorrectStroke.CGColor
         resultBackgroundView.layer.borderWidth = 3.0
         
-        resultBackgroundView.backgroundColor = kResultIncorrectColor
+        resultBackgroundView.backgroundColor = kGameplayAnswerButtonTouchedIncorrectFill
         
+        let (str, img) = GIFStore.sharedInstance.getRandomGif(false)
+
         avatorGif.image = UIImage.gifWithName("Lose-BlueMonster")
-        funnyGif.image = UIImage.gifWithName("mutumbo")
-        funnyLabel.text = "No No Noooo!"
+        funnyGif.image = img
+        funnyLabel.text = str
 
     }
+    
+    func setIncorrectButton(num: Int){
+        switch num {
+        case 0:
+            answer1.layer.borderColor = kGameplayAnswerButtonTouchedIncorrectStroke.CGColor
+        case 1:
+            answer2.layer.borderColor = kGameplayAnswerButtonTouchedIncorrectStroke.CGColor
+        case 2:
+            answer3.layer.borderColor = kGameplayAnswerButtonTouchedIncorrectStroke.CGColor
+        case 3:
+            answer4.layer.borderColor = kGameplayAnswerButtonTouchedIncorrectStroke.CGColor
+        default:
+            break
+        }
+    }
+    
+    func setCorrectButton(num: Int){
+        
+        switch num {
+        case 0:
+            answer1.layer.borderColor = kGameplayAnswerButtonTouchedCorrectStroke.CGColor
+        case 1:
+            answer2.layer.borderColor = kGameplayAnswerButtonTouchedCorrectStroke.CGColor
+        case 2:
+            answer3.layer.borderColor = kGameplayAnswerButtonTouchedCorrectStroke.CGColor
+        case 3:
+            answer4.layer.borderColor = kGameplayAnswerButtonTouchedCorrectStroke.CGColor
+        default:
+            break
+        }
+    }
+    
+    func setUntouchButtons(){
+        
+        answer1.layer.borderColor = kGameplayAnswerButtonUntouchedStroke.CGColor
+        answer2.layer.borderColor = kGameplayAnswerButtonUntouchedStroke.CGColor
+        answer3.layer.borderColor = kGameplayAnswerButtonUntouchedStroke.CGColor
+        answer4.layer.borderColor = kGameplayAnswerButtonUntouchedStroke.CGColor
+
+    }
+    
+    func setNotTouchButtons(){
+        
+        answer1.layer.borderColor = kGameplayAnswerButtonNotTouchedIncorrectStroke.CGColor
+        answer2.layer.borderColor = kGameplayAnswerButtonNotTouchedIncorrectStroke.CGColor
+        answer3.layer.borderColor = kGameplayAnswerButtonNotTouchedIncorrectStroke.CGColor
+        answer4.layer.borderColor = kGameplayAnswerButtonNotTouchedIncorrectStroke.CGColor
+        
+    }
+    
     
     func setCurrentQuestionMarker(num: Int) {
 
         let v = questionMarkers[num]
-        v.layer.borderColor = kQuestionMarkerAnsweringColor.CGColor
+        v.layer.borderColor = kGameplayCurrentQuestionCircleStroke.CGColor
         let l = questionMakerLabels[num]
-        l.textColor = kQuestionMarkerAnsweringColor
+        l.textColor = kGameplayCurrentQuestionCircleStroke
         
     }
     func setCorrectQuestionMarker(num: Int) {
         
         let v = questionMarkers[num]
-        v.layer.borderColor = kQuestionMarkerCorrectColor.CGColor
+        v.layer.borderColor = kGameplayAnswerButtonTouchedCorrectStroke.CGColor
         let l = questionMakerLabels[num]
         l.hidden = true
     
@@ -518,7 +597,7 @@ class GameViewController: UIViewController {
     func setIncorrectQuestionMarker(num: Int) {
         
         let v = questionMarkers[num]
-        v.layer.borderColor = kQuestionMarkerIncorrectColor.CGColor
+        v.layer.borderColor = kGameplayAnswerButtonTouchedIncorrectStroke.CGColor
         let l = questionMakerLabels[num]
         l.hidden = true
         let i = questionMarkerIndicators[num]
@@ -554,26 +633,26 @@ class GameViewController: UIViewController {
         if correct == 1 {
             switch selected {
             case 0:
-                rippleAnimation(answer1, relativeLoaction: location, color: kRightAnswerColor)
+                rippleAnimation(answer1, relativeLoaction: location, color: kGameplayAnswerButtonTouchedCorrectFill)
             case 1:
-                rippleAnimation(answer2, relativeLoaction: location, color: kRightAnswerColor)
+                rippleAnimation(answer2, relativeLoaction: location, color: kGameplayAnswerButtonTouchedCorrectFill)
             case 2:
-                rippleAnimation(answer3, relativeLoaction: location, color: kRightAnswerColor)
+                rippleAnimation(answer3, relativeLoaction: location, color: kGameplayAnswerButtonTouchedCorrectFill)
             case 3:
-                rippleAnimation(answer4, relativeLoaction: location, color: kRightAnswerColor)
+                rippleAnimation(answer4, relativeLoaction: location, color: kGameplayAnswerButtonTouchedCorrectFill)
             default:
                 break
             }
         } else {
             switch selected {
             case 0:
-                rippleAnimation(answer1, relativeLoaction: location, color: kWrongAnswerColor)
+                rippleAnimation(answer1, relativeLoaction: location, color: kGameplayAnswerButtonTouchedIncorrectFill)
             case 1:
-                rippleAnimation(answer2, relativeLoaction: location, color: kWrongAnswerColor)
+                rippleAnimation(answer2, relativeLoaction: location, color: kGameplayAnswerButtonTouchedIncorrectFill)
             case 2:
-                rippleAnimation(answer3, relativeLoaction: location, color: kWrongAnswerColor)
+                rippleAnimation(answer3, relativeLoaction: location, color: kGameplayAnswerButtonTouchedIncorrectFill)
             case 3:
-                rippleAnimation(answer4, relativeLoaction: location, color: kWrongAnswerColor)
+                rippleAnimation(answer4, relativeLoaction: location, color: kGameplayAnswerButtonTouchedIncorrectFill)
             default:
                 break
             }
