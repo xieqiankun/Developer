@@ -204,6 +204,23 @@ extension FriendSearchViewController: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+        let sb = UIStoryboard(name: "Profile", bundle: nil)
+        let vc = sb.instantiateInitialViewController() as! ProfileViewController
+        vc.userName = users[indexPath.section].displayName!
+        self.presentViewController(vc, animated: true, completion: nil)
+        
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+

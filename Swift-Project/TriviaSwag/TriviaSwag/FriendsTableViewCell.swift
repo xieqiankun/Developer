@@ -22,11 +22,18 @@ class FriendsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var badge: CustomBadge!
     
+    @IBOutlet weak var userinfoStack: UIStackView!
+    weak var delegate: ShowProfile?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         initFriendCell()
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(FriendsTableViewCell.tap))
+        gesture.delegate = self
+        userinfoStack.addGestureRecognizer(gesture)
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -79,6 +86,12 @@ class FriendsTableViewCell: UITableViewCell {
         }
         
     }
+    
+    
+    func tap() {
+        delegate?.showProfile(friendName.text!)
+    }
+    
     
 }
 

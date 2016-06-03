@@ -8,8 +8,10 @@
 
 import UIKit
 
-class TableContainerViewController: UIViewController, UIPageViewControllerDelegate {
+var currentActiveTableStatus: gStackTournamentStatus = gStackTournamentStatus.Active
 
+class TableContainerViewController: UIViewController, UIPageViewControllerDelegate {
+    
     @IBOutlet weak var imageLable: UIImageView!
     
     @IBOutlet weak var viewBar: UIView!
@@ -30,7 +32,7 @@ class TableContainerViewController: UIViewController, UIPageViewControllerDelega
         setPageTitle()
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -65,18 +67,18 @@ class TableContainerViewController: UIViewController, UIPageViewControllerDelega
         }
         
     }
-
-
+    
+    
     func setPageTitle(){
         
         setColorsAndTitleText()
-
+        
         let image = UIImage(named: titleName)
         self.imageLable.image = image
         
-
+        
         //viewBar.addSubview(pageControl)
-
+        
     }
     
     // MARK:- UIPageViewControllerDelegate
@@ -92,6 +94,19 @@ class TableContainerViewController: UIViewController, UIPageViewControllerDelega
         setPageTitle()
         setPageDotColor()
         
+        //        print("----------")
+        //        print(pageControl.currentPage)
+        //        print("----------")
+        let index = pageControl.currentPage
+        
+        switch index {
+        case 0:
+            currentActiveTableStatus = gStackTournamentStatus.Expired
+        case 1:
+            currentActiveTableStatus = gStackTournamentStatus.Active
+        default:
+            currentActiveTableStatus = gStackTournamentStatus.Upcoming
+        }
     }
     
     
@@ -114,7 +129,7 @@ class TableContainerViewController: UIViewController, UIPageViewControllerDelega
         // Pass the selected object to the new view controller.
         
         if let embeddedViewController = segue.destinationViewController as? TournamentsPageViewController where segue.identifier == "EmbedTournamentTableSegue" {
-
+            
             embeddedViewController.embeddingViewController = self
             embeddedPageViewController = embeddedViewController
         }

@@ -30,19 +30,32 @@
                                     <constraint firstAttribute="width" secondItem="hNl-BZ-dQ8" secondAttribute="height" id="yIC-Kh-0oF"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1v6-4U-dax">
-                                <rect key="frame" x="80" y="31" width="46" height="17"/>
-                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="1v6-4U-dax">
+                                <rect key="frame" x="80" y="8" width="375" height="32"/>
+                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="18"/>
                                 <color key="textColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkA-TE-DTW">
+                                <rect key="frame" x="384" y="44" width="73" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bkA-TE-DTW" secondAttribute="height" multiplier="2.3" id="up3-UI-xyl"/>
+                                </constraints>
+                                <state key="normal" image="Play-Untouched"/>
+                                <state key="selected" image="Play-Touched"/>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="hNl-BZ-dQ8" firstAttribute="leading" secondItem="NAO-rD-5lp" secondAttribute="leading" constant="8" id="7rP-z9-gUD"/>
+                            <constraint firstItem="bkA-TE-DTW" firstAttribute="height" secondItem="NAO-rD-5lp" secondAttribute="height" multiplier="0.4" id="AUh-77-ltX"/>
+                            <constraint firstAttribute="bottom" secondItem="bkA-TE-DTW" secondAttribute="bottom" constant="4" id="AZj-ge-RF0"/>
+                            <constraint firstItem="1v6-4U-dax" firstAttribute="leading" secondItem="hNl-BZ-dQ8" secondAttribute="trailing" constant="8" id="DxZ-Az-Qe9"/>
+                            <constraint firstItem="1v6-4U-dax" firstAttribute="top" secondItem="NAO-rD-5lp" secondAttribute="top" constant="8" id="IvO-Dt-LzD"/>
+                            <constraint firstItem="1v6-4U-dax" firstAttribute="height" secondItem="NAO-rD-5lp" secondAttribute="height" multiplier="0.4" id="JAC-mU-QBv"/>
+                            <constraint firstAttribute="trailing" secondItem="1v6-4U-dax" secondAttribute="trailing" constant="10" id="KRa-IA-acu"/>
                             <constraint firstItem="hNl-BZ-dQ8" firstAttribute="top" secondItem="NAO-rD-5lp" secondAttribute="top" constant="8" id="Ky9-au-HYC"/>
+                            <constraint firstAttribute="trailing" secondItem="bkA-TE-DTW" secondAttribute="trailing" constant="8" id="LDS-vQ-034"/>
                             <constraint firstAttribute="bottom" secondItem="hNl-BZ-dQ8" secondAttribute="bottom" constant="8" id="biI-Z3-rmW"/>
-                            <constraint firstItem="1v6-4U-dax" firstAttribute="leading" secondItem="hNl-BZ-dQ8" secondAttribute="trailing" constant="8" id="iUp-MV-Ely"/>
-                            <constraint firstItem="1v6-4U-dax" firstAttribute="centerY" secondItem="NAO-rD-5lp" secondAttribute="centerY" id="lji-ah-lLr"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -56,12 +69,15 @@
             <connections>
                 <outlet property="myLabel" destination="1v6-4U-dax" id="OKf-lP-jAr"/>
                 <outlet property="prizeImageView" destination="hNl-BZ-dQ8" id="qGg-px-cQu"/>
+                <outlet property="startbtn" destination="bkA-TE-DTW" id="MzF-7V-JfD"/>
                 <outlet property="tableCellView" destination="NAO-rD-5lp" id="R9p-bM-gtr"/>
             </connections>
             <point key="canvasLocation" x="932" y="392"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Play-Touched" width="283" height="124"/>
+        <image name="Play-Untouched" width="283" height="124"/>
         <image name="amazon-gift-card" width="288" height="288"/>
     </resources>
 </document>

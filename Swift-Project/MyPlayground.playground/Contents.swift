@@ -1,42 +1,40 @@
-//: Playground - noun: a place where people can play
 
 import UIKit
 
-var str = "Hello, playground"
+let userCalendar = NSCalendar.currentCalendar()
+
+// Let's create an NSDate for Valentine's Day
+// using NSDateComponents
+let valentinesDayComponents = NSDateComponents()
+valentinesDayComponents.year = 2015
+valentinesDayComponents.month = 2
+valentinesDayComponents.day = 14
+let valentinesDay = userCalendar.dateFromComponents(valentinesDayComponents)!
+
+// Let's create an NSDate for St. Patrick's Day
+// using NSDateFormatter
+let dateMakerFormatter = NSDateFormatter()
+dateMakerFormatter.calendar = userCalendar
+dateMakerFormatter.dateFormat = "yyyy/MM/dd"
+let stPatricksDay = dateMakerFormatter.dateFromString("2015/03/17")!
 
 
-class MediaItem {
-    var name: String
-    init(name: String) {
-        self.name = name
-    }
-}
+valentinesDay.earlierDate(stPatricksDay)
+valentinesDay.laterDate(stPatricksDay)
 
-class Movie: MediaItem {
-    var director: String
-    init(name: String, director: String) {
-        self.director = director
-        super.init(name: name)
-    }
-}
+valentinesDay.timeIntervalSinceDate(stPatricksDay)
+stPatricksDay.timeIntervalSinceDate(valentinesDay)
 
-class Song: MediaItem {
-    var artist: String
-    init(name: String, artist: String) {
-        self.artist = artist
-        super.init(name: name)
-    }
-}
-let someObjects: [AnyObject] = [
-    Movie(name: "2001: A Space Odyssey", director: "Stanley Kubrick"),
-    Movie(name: "Moon", director: "Duncan Jones"),
-    Movie(name: "Alien", director: "Ridley Scott")
-]
+// How many days between Valentine's Day and St. Patrick's Day?
+let dayCalendarUnit: NSCalendarUnit = [.Month, .Day, .Hour, .Minute]
+let stPatricksValentinesDayDifference = userCalendar.components(
+    dayCalendarUnit,
+    fromDate: valentinesDay,
+    toDate: stPatricksDay,
+    options: [])
+// The result should be 31
+stPatricksValentinesDayDifference.month
+stPatricksValentinesDayDifference.day
 
-let m = someObjects as AnyObject
-
-let mm = m[0] as? Song
-
-
-
+valentinesDay.compare(stPatricksDay) == .OrderedAscending
 

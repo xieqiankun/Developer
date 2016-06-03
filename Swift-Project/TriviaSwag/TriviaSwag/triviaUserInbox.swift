@@ -106,6 +106,17 @@ public class triviaUserInbox: NSObject {
         })
         return sortedSenders
     }
+    
+    
+    public func isSentFriendRequestToUser(name: String) -> Bool {
+        
+        for request in pendingFriendRequests {
+            if request.sender == name {
+                return true
+            }
+        }
+        return false
+    }
 }
 
 

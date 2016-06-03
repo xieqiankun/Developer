@@ -8,16 +8,16 @@
 
 import UIKit
 
-class FriendsViewController: UIViewController {
+class FriendsViewController: UIViewController, ShowProfile {
     
-
+    
     var manager = FriendsScreenManager()//.sharedManager
     
     var selectedIndexpath = NSIndexPath(forRow: 0, inSection: 0)
     
     var list:[ListMessageBean]! {
         didSet{
-            dispatch_async(dispatch_get_main_queue()) { 
+            dispatch_async(dispatch_get_main_queue()) {
                 self.tableView.reloadData()
             }
         }
@@ -30,16 +30,16 @@ class FriendsViewController: UIViewController {
         modalPresentationStyle = .Custom
         transitioningDelegate = self
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.clearColor()
         manager.listDelegate = self
         list = manager.list
-
+        
     }
     
-
+    
     func refresh() {
         tableView.reloadData()
     }
@@ -49,18 +49,17 @@ class FriendsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     
     @IBAction func close () {
         dismissViewControllerAnimated(true, completion: nil)
     }
-
+    
     
     @IBAction func shareButtonClicked(sender: UIButton) {
         let textToShare = "Swift is awesome!  Check out this website about it!"
         
         if let myWebsite = NSURL(string: "http://www.codingexplorer.com/"),let image : UIImage = UIImage(named: "BlueMan")!
- {
+        {
             let objectsToShare = [textToShare, myWebsite, image]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
             
@@ -69,21 +68,30 @@ class FriendsViewController: UIViewController {
         }
     }
     
+    // Show Profile Delegate
+    var selectedName = ""
+    
+    func showProfile(name: String) {
+        selectedName = name
+        performSegueWithIdentifier("Profile", sender: self)
+    }
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if let vc = segue.destinationViewController as? ChatViewController where segue.identifier == "Chat" {
             vc.friend = list[selectedIndexpath.section].displayName!
+        } else if let vc = segue.destinationViewController as? ProfileViewController where segue.identifier == "Profile" {
+            vc.userName = selectedName
         }
         
         
     }
     
-
+    
 }
 
 
@@ -113,7 +121,7 @@ extension FriendsViewController: UITableViewDataSource {
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-       
+        
         return list.count
         
     }
@@ -124,17 +132,19 @@ extension FriendsViewController: UITableViewDataSource {
         
         if item.messageType == FriendsScreenManager.MessageType.FriendRequest{
             let cell = tableView.dequeueReusableCellWithIdentifier("RequestCell", forIndexPath: indexPath) as! FriendRequestTableViewCell
+            cell.delegate = self
             cell.configueCell(item)
             return cell
-
+            
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath: indexPath) as! FriendsTableViewCell
+            cell.delegate = self
             cell.configueCell(item)
             return cell
-
+            
         }
-
-
+        
+        
         
     }
     
@@ -158,7 +168,7 @@ extension FriendsViewController: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-
+        
         let height = tableView.frame.height * 0.02
         return CGFloat(height)
     }
@@ -170,7 +180,7 @@ extension FriendsViewController: UITableViewDelegate {
             selectedIndexpath = indexPath
             performSegueWithIdentifier("Chat", sender: self)
         }
-
+        
     }
     
 }
@@ -182,7 +192,7 @@ extension FriendsViewController: FriendsListDelegate{
     func update() {
         self.list = manager.list
     }
-
+    
     
 }
 

@@ -49,6 +49,8 @@ public var triviaCurrentUserInbox: triviaUserInbox?
 //MARK: - Handle Trivia Shop
 public var triviaCurrentShop: triviaShop?
 
+//MARK: - Handke Trivia Gif stroe
+public var triviaCurrentGifStore: triviaGifStore?
 
 
 

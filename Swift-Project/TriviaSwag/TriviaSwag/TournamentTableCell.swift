@@ -11,6 +11,8 @@ import Foundation
 
 class TournamentTableViewCell: UITableViewCell {
     
+    var tournamentStatus = gStackTournamentStatus.Active
+    
     //For UI
     @IBOutlet weak var tableCellView: UIView!
     @IBOutlet weak var prizeImageView: UIImageView!
@@ -24,14 +26,44 @@ class TournamentTableViewCell: UITableViewCell {
     
     var backgroundImageView: UIImageView?
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        myLabel.textColor = kMainScreenLeaderboardFillColor
+        
+    }
+    
     func changeColorWhenSelect(){
         let view = tableCellView.subviews[0] as! UIImageView
         view.image = UIImage(named: "TournamentItemTouched.png")
+        startbtn.hidden = true
     }
     
     func changeCorlorWhenDeselect(){
         let view = tableCellView.subviews[0] as! UIImageView
         view.image = UIImage(named: "TournamentItemUntouched.png")
+        
+        if tournamentStatus == gStackTournamentStatus.Active {
+            startbtn.hidden = false
+        }
+    }
+    
+    func setupCell(tournament: gStackTournament) {
+        
+        self.backgroundColor = UIColor.clearColor()
+        self.myLabel.text = tournament.name
+        self.setRoundCorner()
+        self.setupCellBackground()
+        self.selectionStyle = UITableViewCellSelectionStyle.None
+        
+        if tournamentStatus != gStackTournamentStatus.Active {
+            startbtn.hidden = true
+        } else {
+            startbtn.hidden = false
+        }
+    }
+    
+    override func prepareForReuse() {
+        
     }
     
     func setupCellBackground(){
@@ -39,9 +71,6 @@ class TournamentTableViewCell: UITableViewCell {
         if backgroundImageView != nil{
             backgroundImageView?.removeFromSuperview()
         }
-        
-        //let tableWidth = tableCellView.bounds.size.width
-        //let tableHeight = tableCellView.bounds.size.height
         
         let tableImageViewBackground = UIImageView(frame: CGRectMake(0, 0, 0, 0))
         tableImageViewBackground.translatesAutoresizingMaskIntoConstraints = false
@@ -59,10 +88,8 @@ class TournamentTableViewCell: UITableViewCell {
         //Fixed
         addConstrains(tableImageViewBackground,toView: self.tableCellView)
         
-        //self.backgroundImageView.image = UIImage(named: "TournamentItemUntouched.png")
-        
-        
     }
+    
     // Auto layout
     func addConstrains(aView: UIView, toView:UIView) {
         
@@ -87,6 +114,7 @@ class TournamentTableViewCell: UITableViewCell {
         prizeImageView.layer.borderWidth = 2.0
         
     }
+    
     
     
 }

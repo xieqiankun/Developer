@@ -50,7 +50,7 @@ extension GameViewController: gStackGameDelegate{
         
     }
     func didReceiveQuestion(question: gStackGameQuestion){
-
+        setGifs()
         self.currentQuestion = question
         self.isAllowSubmit = true
         
@@ -79,7 +79,6 @@ extension GameViewController: gStackGameDelegate{
                 self.startCountdown()
             })
         }
-
         
     }
     func didReceivePlayerInfo(playerInfo: gStackGamePlayerInfo){
@@ -88,6 +87,7 @@ extension GameViewController: gStackGameDelegate{
     }
     func didReceiveCorrectAnswer(correctAnswer: gStackGameCorrectAnswer){
         // in case user didn't answer
+        NSLog("receive correct answer")
         stopCountdown()
         resultState(true)
         
@@ -105,6 +105,8 @@ extension GameViewController: gStackGameDelegate{
     
     func didReceiveUpdatedScore(updatedScore: gStackGameUpdatedScore){
         
+        NSLog("receive update scores")
+
         stopCountdown()
         
         let seleted = updatedScore.answerNumber?.integerValue

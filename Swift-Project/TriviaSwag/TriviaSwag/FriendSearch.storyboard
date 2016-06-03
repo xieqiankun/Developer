@@ -61,7 +61,7 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="51" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Njt-n1-69i">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="51" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Njt-n1-69i">
                                                 <rect key="frame" x="0.0" y="44" width="430" height="216"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <prototypes>
@@ -75,12 +75,12 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCK-GT-Xt6" userLabel="Content">
                                                                     <rect key="frame" x="0.0" y="2" width="430" height="48"/>
                                                                     <subviews>
-                                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bkk-kf-qAZ" userLabel="Placeholder">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="14" height="48"/>
+                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bkk-kf-qAZ" userLabel="Placeholder">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="13" height="48"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         </view>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="t4k-cb-73d">
-                                                                            <rect key="frame" x="19" y="3" width="172" height="43"/>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="t4k-cb-73d">
+                                                                            <rect key="frame" x="13" y="3" width="172" height="43"/>
                                                                             <subviews>
                                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenMan" translatesAutoresizingMaskIntoConstraints="NO" id="uKK-v0-m27">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="43" height="43"/>
@@ -97,8 +97,8 @@
                                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;Location&gt;" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5v8-Sx-nyd">
-                                                                                            <rect key="frame" x="0.0" y="29" width="124" height="14"/>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Location&gt;" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5v8-Sx-nyd">
+                                                                                            <rect key="frame" x="0.0" y="31" width="124" height="12"/>
                                                                                             <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="12"/>
                                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                             <nil key="highlightedColor"/>
@@ -107,12 +107,13 @@
                                                                                 </stackView>
                                                                             </subviews>
                                                                         </stackView>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ECi-ND-2AL">
-                                                                            <rect key="frame" x="283" y="12" width="138" height="24"/>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ECi-ND-2AL">
+                                                                            <rect key="frame" x="296" y="9" width="124" height="31"/>
                                                                             <subviews>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmw-Yx-ZwK">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="138" height="24"/>
-                                                                                    <state key="normal" image="AddFriends-Untouched"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="124" height="31"/>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                                    <state key="normal" image="AddFriends-Touched"/>
                                                                                     <state key="highlighted" image="AddFriends-Touched"/>
                                                                                     <connections>
                                                                                         <action selector="addFriend" destination="4EY-HP-Yq8" eventType="touchUpInside" id="p1l-Mj-TP1"/>
@@ -122,6 +123,7 @@
                                                                             <constraints>
                                                                                 <constraint firstAttribute="bottom" secondItem="lmw-Yx-ZwK" secondAttribute="bottom" id="K5V-Sw-CMJ"/>
                                                                                 <constraint firstItem="lmw-Yx-ZwK" firstAttribute="top" secondItem="ECi-ND-2AL" secondAttribute="top" id="TnV-5A-5bw"/>
+                                                                                <constraint firstAttribute="height" secondItem="ECi-ND-2AL" secondAttribute="width" multiplier="0.25" id="uLZ-o1-ftr"/>
                                                                             </constraints>
                                                                         </stackView>
                                                                     </subviews>
@@ -132,13 +134,12 @@
                                                                         <constraint firstItem="t4k-cb-73d" firstAttribute="width" secondItem="gCK-GT-Xt6" secondAttribute="width" multiplier="0.4" id="KeU-iy-vdx"/>
                                                                         <constraint firstItem="t4k-cb-73d" firstAttribute="height" secondItem="gCK-GT-Xt6" secondAttribute="height" multiplier="0.9" id="Lt7-ww-6JZ"/>
                                                                         <constraint firstItem="t4k-cb-73d" firstAttribute="leading" secondItem="Bkk-kf-qAZ" secondAttribute="trailing" id="Mtb-Za-KED"/>
-                                                                        <constraint firstItem="ECi-ND-2AL" firstAttribute="width" secondItem="gCK-GT-Xt6" secondAttribute="width" multiplier="0.32" id="RtR-14-Fnp"/>
+                                                                        <constraint firstItem="ECi-ND-2AL" firstAttribute="height" secondItem="gCK-GT-Xt6" secondAttribute="height" multiplier="0.65" id="RtR-14-Fnp"/>
                                                                         <constraint firstItem="Bkk-kf-qAZ" firstAttribute="leading" secondItem="gCK-GT-Xt6" secondAttribute="leading" id="Uf7-XV-9Dd"/>
                                                                         <constraint firstItem="t4k-cb-73d" firstAttribute="centerY" secondItem="gCK-GT-Xt6" secondAttribute="centerY" id="Wd4-4H-BBa"/>
                                                                         <constraint firstAttribute="trailing" secondItem="ECi-ND-2AL" secondAttribute="trailing" constant="10" id="hTP-lc-0t6"/>
                                                                         <constraint firstItem="Bkk-kf-qAZ" firstAttribute="top" secondItem="gCK-GT-Xt6" secondAttribute="top" id="i4L-8j-GRy"/>
                                                                         <constraint firstItem="t4k-cb-73d" firstAttribute="width" secondItem="gCK-GT-Xt6" secondAttribute="width" multiplier="0.4" id="sy3-wL-vmF"/>
-                                                                        <constraint firstItem="ECi-ND-2AL" firstAttribute="height" secondItem="gCK-GT-Xt6" secondAttribute="height" multiplier="0.5" id="yGR-fX-5kc"/>
                                                                         <constraint firstItem="qkp-6y-3d2" firstAttribute="height" secondItem="gCK-GT-Xt6" secondAttribute="height" multiplier="0.6" id="zNe-CT-Jzo"/>
                                                                     </constraints>
                                                                 </view>
@@ -258,7 +259,6 @@
     <resources>
         <image name="AddFriends" width="546" height="94"/>
         <image name="AddFriends-Touched" width="398" height="58"/>
-        <image name="AddFriends-Untouched" width="398" height="58"/>
         <image name="Close-Big" width="108" height="108"/>
         <image name="Close-Small" width="108" height="108"/>
         <image name="GreenMan" width="250" height="250"/>

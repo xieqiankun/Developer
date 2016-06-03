@@ -69,7 +69,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         triviaFetchPurchesItems { (items, error) in
             
         }
-        
+        //preload gifs
+        triviaFetchGifs { (store, error) in
+            
+        }
         //Set up default settings
         if NSUserDefaults.standardUserDefaults().boolForKey("SetupDefaults") == false {
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "SetupDefaults")

@@ -14,11 +14,41 @@ let kProfileLabelStrokeColor = UIColor(red: 27/255, green: 20/255, blue: 100/255
 
 class ProfileViewController: UIViewController {
     
-    var currentUser: triviaUser!
+    var userName: String!
 
+    var isLogin:Bool {
+        return triviaCurrentUser != nil
+    }
+    
+    var isMyProfile: Bool {
+        return isLogin && triviaCurrentUser!.displayName! == userName
+    }
+    
+    var user: triviaUser? {
+        didSet{
+            dispatch_async(dispatch_get_main_queue()) {
+                self.setCurrentUserInfo()
+            }
+        }
+    }
+    
+    enum UserStatus{
+        case Friend, Pending, Nonfriend
+    }
+    
+    var userStatus = UserStatus.Nonfriend {
+        didSet{
+            // only update userInfo when user already been set
+            if user != nil {
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.setCurrentUserInfo()
+                }
+            }
+        }
+    }
+    
     // User Info
-    @IBOutlet weak var nameLabelUp: UILabel!
-    @IBOutlet weak var nameLabelDown: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel:UILabel!
     @IBOutlet weak var badgeLabel:UILabel!
     @IBOutlet weak var friendsNumberLabel:UILabel!
@@ -26,14 +56,12 @@ class ProfileViewController: UIViewController {
     // User avatar
     @IBOutlet weak var profileImageView: UIImageView!
     
-    // Round Backgound
+    // place holder views
     @IBOutlet weak var statusBackground: UIView!
     @IBOutlet weak var statisticsBackground: UIView!
     @IBOutlet weak var activityBackground: UIView!
     @IBOutlet weak var achievementsBackground: UIView!
-    // will change when view other people's profile
-    @IBOutlet weak var addFriendBackground: UIView!
-    @IBOutlet weak var chatBackground: UIView!
+    @IBOutlet weak var addFriendStack: UIStackView!
     
     //labels
     @IBOutlet weak var statusLabel: UILabel!
@@ -41,9 +69,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var activityLabel: UILabel!
     @IBOutlet weak var achievementsLabel: UILabel!
     // will change when view other people's profile
-    @IBOutlet weak var addFriendLabel: UILabel!
-    @IBOutlet weak var chatLabel: UILabel!
-    
+//    @IBOutlet weak var addFriendLabel: UILabel!
+//    @IBOutlet weak var chatLabel: UILabel!
+//    
     //buttons
     @IBOutlet weak var statusButton: UIButton!
     @IBOutlet weak var statisticsButton: UIButton!
@@ -66,22 +94,44 @@ class ProfileViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-
+        
         super.viewDidLoad()
         view.backgroundColor = UIColor.clearColor()
+        setupLabelStrokes()
+
+        
+        if isMyProfile {
+            addFriendStack.removeFromSuperview()
+            user = triviaCurrentUser
+        } else {
+            // Not able to hide this before fetching user's data
+            //statusBackground.removeFromSuperview()
+            if !isLogin {
+                addFriendStack.removeFromSuperview()
+            } else {
+                // set add friend button label
+                setUserStatus()
+                updateAddFriendBtn()
+            }
+            triviaFetchProfileForDisplayName(userName, completion: {[weak self] (user, error) in
+                if let strongSelf = self {
+                    print(user?.displayName)
+                    strongSelf.user = user
+                }
+            })
+        }
         
         // Do any additional setup after loading the view.
         currentSelectedButton = statisticsButton
         currentSelectedButton.enabled = false
     }
-
+    
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        setCurrentUserInfo()
         
         //setupRoundBackgrounds()
-        setupLabelStrokes()
     }
     
 
@@ -91,28 +141,26 @@ class ProfileViewController: UIViewController {
         self.profileImageView.layer.borderColor = kProfileCellBackgroundColor.CGColor
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.height/2
         self.profileImageView.layer.masksToBounds = true
-        
     }
     
     func setCurrentUserInfo() {
-
-        if let name = currentUser.displayName {
+//        print("Setting user info")
+//        print(user?.friends?.count)
+        if let name = user!.displayName {
             let strokeTextAttributes = [
                 NSStrokeColorAttributeName : kProfileCellBackgroundColor,
                 NSForegroundColorAttributeName : UIColor.whiteColor(),
                 NSStrokeWidthAttributeName : -3.0
             ]
-            nameLabelUp.adjustsFontSizeToFitWidth = true
-            nameLabelDown.adjustsFontSizeToFitWidth = true
+            nameLabel.adjustsFontSizeToFitWidth = true
             
-            nameLabelUp.attributedText = NSAttributedString(string: name, attributes: strokeTextAttributes)
-            nameLabelDown.attributedText = NSAttributedString(string: name, attributes: strokeTextAttributes)
+            nameLabel.attributedText = NSAttributedString(string: name, attributes: strokeTextAttributes)
         }
         
-        if let friends = currentUser.friends {
+        if let friends = user!.friends {
             friendsNumberLabel.text = "Friends: \(friends.count)"
         }
-        if let location = currentUser.location {
+        if let location = user!.location {
             var country: String = ""
             var region: String = ""
             if let _ = location.country{
@@ -126,15 +174,54 @@ class ProfileViewController: UIViewController {
         
     }
     
-    // Make round corner
+    // verify the user status
+    func setUserStatus() {
+        
+        if let inbox = triviaCurrentUserInbox {
+            if inbox.isSentFriendRequestToUser(self.userName) {
+                userStatus = .Pending
+                return
+            }
+        }
+        
+        if let me = triviaCurrentUser {
+            if me.isFriendOfCurrentUser(self.userName){
+                userStatus = .Friend
+                return
+            }
+        }
+    }
+    
+    // use user status to update friend btn
+    func updateAddFriendBtn() {
+        switch userStatus {
+        case .Friend:
+            if let image = UIImage(named: "UnfriendButton-Untouched") {
+                addFriendButton.setImage(image, forState: .Normal)
+            }
+            if let image = UIImage(named: "UnfriendButton-Touched") {
+                addFriendButton.setImage(image, forState: .Highlighted)
+            }
+        case .Pending:
+            if let image = UIImage(named: "PendingButton") {
+                addFriendButton.setImage(image, forState: .Disabled)
+                addFriendButton.enabled = false
+            }
+        default:
+            break
+        }
+        
+        
+    }
+    
+    // MARK: - Init set
+    // Set round corner
     func setupRoundBackgrounds() {
         
         setupBackground(statusBackground)
         setupBackground(statisticsBackground)
         setupBackground(activityBackground)
         setupBackground(achievementsBackground)
-        setupBackground(addFriendBackground)
-        setupBackground(chatBackground)
     }
     
     func setupBackground(aView: UIView) {
@@ -143,6 +230,7 @@ class ProfileViewController: UIViewController {
         aView.layer.cornerRadius = aView.frame.size.height/2
         aView.layer.masksToBounds = true
     }
+    
     // Set Labels
     func setupLabelStrokes() {
         
@@ -151,8 +239,8 @@ class ProfileViewController: UIViewController {
         setupLabelStroke(activityLabel, str: "ACTIVITY")
         setupLabelStroke(achievementsLabel, str: "ACHIEVEMENTS")
         //TODO: -- May Change
-        setupLabelStroke(addFriendLabel, str: "ADD FRIEND")
-        setupLabelStroke(chatLabel, str: "CHAT")
+//        setupLabelStroke(addFriendLabel, str: "ADD FRIEND")
+//        setupLabelStroke(chatLabel, str: "CHAT")
     }
     
     func setupLabelStroke(aLabel: UILabel, str: String) {
@@ -165,10 +253,10 @@ class ProfileViewController: UIViewController {
         aLabel.attributedText = NSAttributedString(string: str, attributes: strokeTextAttributes)
         aLabel.adjustsFontSizeToFitWidth = true
         aLabel.adjustsFontSizeToFitWidth = true
-
     }
     
     
+    // MARK: - IBAction
     // Last three button selected action
     @IBAction func selectStatisticsButton(sender: UIButton) {
         changeButtonStatus(sender)
@@ -182,7 +270,6 @@ class ProfileViewController: UIViewController {
         changeButtonStatus(sender)
         
     }
-    
     
     
     func changeButtonStatus(btn: UIButton) {

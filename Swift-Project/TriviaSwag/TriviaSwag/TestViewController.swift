@@ -59,6 +59,10 @@ class TestViewController: UIViewController,SimplePingDelegate {
 //        triviaFetchPurchesItems { (items, error) in
 //            
 //        }
+        
+        triviaFetchGifs { (store, error) in
+            print(store?.correctGifs?[0].image)
+        }
     }
     
     

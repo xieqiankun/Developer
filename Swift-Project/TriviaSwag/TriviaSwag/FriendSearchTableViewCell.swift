@@ -43,6 +43,8 @@ class FriendSearchTableViewCell: UITableViewCell {
         content.layer.borderWidth = 2
         content.layer.borderColor = kFriendListBorderColor.CGColor
         
+        self.selectionStyle = UITableViewCellSelectionStyle.None
+
         friendRegion.textColor = kFriendListBorderColor
     }
     
@@ -55,35 +57,36 @@ class FriendSearchTableViewCell: UITableViewCell {
         switch userStatus {
         case .Friend:
             status.enabled = false
-            status.setImage(UIImage(named:"Friended2"), forState: .Disabled)
+            status.setImage(UIImage(named:"Friended"), forState: .Disabled)
         case .Nonfriend:
             status.enabled = true
             status.setImage(UIImage(named:"AddFriends-Untouched"), forState: .Normal)
             status.setImage(UIImage(named:"AddFriends-Touched"), forState: .Highlighted)
         case .Pending:
             status.enabled = false
-            status.setImage(UIImage(named:"Pending2"), forState: .Disabled)
+            status.setImage(UIImage(named:"Pending"), forState: .Disabled)
         }
     }
     
     
     func setUserStatus(displayName: String){
         
-        if let friends = triviaCurrentUser?.friends{
-            
-            for friend in friends {
-                if friend.displayName == displayName{
-                    userStatus = .Friend
-                    return
-                }
+        
+        //if let triviaCurrentUser
+        if let inbox = triviaCurrentUserInbox {
+            if inbox.isSentFriendRequestToUser(displayName) {
+                userStatus = .Pending
+                return
             }
         }
-        if let requests = triviaCurrentUserInbox?.friendRequests{
-            for request in requests{
-                // TODO: -
-                //if request.
+        
+        if let me = triviaCurrentUser {
+            if me.isFriendOfCurrentUser(displayName){
+                userStatus = .Friend
+                return
             }
         }
+
         
     }
     

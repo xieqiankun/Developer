@@ -17,7 +17,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <JSQMessagesViewController/JSQMessages.h>
-
+#import "UIImage+animatedGIF.h"
 
 //#import "NSDate+Utilities.h"
 //#import "CSStickyHeaderFlowLayout.h"

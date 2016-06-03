@@ -11,7 +11,6 @@ import UIKit
 var TournamentWillAppearNotificationName = "triviaTournamentWillAppear"
 var TournamentDidSelectNotificationName = "triviaTournamentDidSelect"
 
-
 class TournamentsTableViewController: UITableViewController, gStackTournamentListProtocol {
     
     struct TableViewCellIdentifiers {
@@ -24,14 +23,14 @@ class TournamentsTableViewController: UITableViewController, gStackTournamentLis
     
     var tournaments: [gStackTournament] = [gStackTournament]()
     
-    //for display logic control
-    var isFirstShow = false
-    var isNeedChangeForFirstCell = false
-    
     var selectedTournament: gStackTournament?{
         didSet{
             // maintain the concurrency between different views
-            NSNotificationCenter.defaultCenter().postNotificationName(TournamentDidSelectNotificationName, object: self, userInfo: ["currentTournament": selectedTournament!])
+            // using this if statement aims to control multipe refresh leaderboard when refresh tournaments
+            // using a globle var to store current active page and compare the status with the pages
+            if tournamentStatus == currentActiveTableStatus {
+                NSNotificationCenter.defaultCenter().postNotificationName(TournamentDidSelectNotificationName, object: self, userInfo: ["currentTournament": selectedTournament!])
+            }
         }
     }
     
@@ -46,9 +45,12 @@ class TournamentsTableViewController: UITableViewController, gStackTournamentLis
     func refreshTournamentsFromCache() {
         self.tournaments = gStackTournament.tournamentsForStatusInArray(self.tournamentStatus, filter: self.tournamentFilter, array: gStackCachedTournaments)
         dispatch_async(dispatch_get_main_queue()) { 
-            self.isFirstShow = true
-            self.isNeedChangeForFirstCell = true
+
             self.tableView.reloadData()
+            
+            let rowToSelect:NSIndexPath = NSIndexPath(forRow: 0, inSection: 0) //slecting 0th row with 0th section
+            self.tableView.selectRowAtIndexPath(rowToSelect, animated: true, scrollPosition: UITableViewScrollPosition.None)
+            self.tableView(self.tableView, didSelectRowAtIndexPath: rowToSelect)
         }
     }
     
@@ -109,7 +111,7 @@ class TournamentsTableViewController: UITableViewController, gStackTournamentLis
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        let height = self.tableView.frame.height * 0.18
+        let height = self.tableView.frame.height * 0.2
         
         return CGFloat(height)
     }
@@ -123,7 +125,7 @@ class TournamentsTableViewController: UITableViewController, gStackTournamentLis
     }
     
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        let height = self.tableView.frame.height * 0.02
+        let height = self.tableView.frame.height * 0.01
         return CGFloat(height)
     }
     
@@ -137,30 +139,17 @@ class TournamentsTableViewController: UITableViewController, gStackTournamentLis
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        // make the auto focus cell's UI disappear
-        if self.isNeedChangeForFirstCell && indexPath.section != 0 {
-            let temp = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! TournamentTableViewCell
-            temp.changeCorlorWhenDeselect()
-        }
-        self.isNeedChangeForFirstCell = false
-        
+      
         //Change UI when select the cell
         self.selectedTournament = tournaments[indexPath.section]
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! TournamentTableViewCell
         cell.changeColorWhenSelect()
+        print("did select")
     }
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! TournamentTableViewCell
-        cell.changeCorlorWhenDeselect()
-    }
-    
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 0 && tournaments.count != 0 && self.isFirstShow {
-            let temp = cell as! TournamentTableViewCell
-            self.autoFocusOnFirstItem(temp)
-            self.isFirstShow = false
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? TournamentTableViewCell{
+            cell.changeCorlorWhenDeselect()
         }
     }
     
@@ -174,14 +163,13 @@ class TournamentsTableViewController: UITableViewController, gStackTournamentLis
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier(TableViewCellIdentifiers.tournamentResultCell, forIndexPath: indexPath) as! TournamentTableViewCell
+            cell.tournamentStatus = self.tournamentStatus
             
             // Configure the cell...
             let tournament = tournaments[indexPath.section]
-            cell.backgroundColor = UIColor.clearColor()
-            cell.myLabel.text = tournament.name
-            cell.setRoundCorner()
-            cell.setupCellBackground()
-            cell.selectionStyle = UITableViewCellSelectionStyle.None
+
+            cell.setupCell(tournament)
+            cell.startbtn.addTarget(self, action: #selector(TournamentsTableViewController.startgame(_:)), forControlEvents: .TouchUpInside)
             
             if tournaments[indexPath.section] == selectedTournament{
                 cell.changeColorWhenSelect()
@@ -189,6 +177,17 @@ class TournamentsTableViewController: UITableViewController, gStackTournamentLis
             
             return cell
         }
+    }
+    
+    private var selectedPlayBtn:NSIndexPath?
+    func startgame(sender: UIButton) {
+        
+        let point = sender.convertPoint(CGPointZero, toView: self.tableView)
+        let indexpath = self.tableView.indexPathForRowAtPoint(point)
+        selectedPlayBtn = indexpath
+        self.performSegueWithIdentifier("GamePlaySegue", sender: self)
+        
+        
     }
     
     // MARK: - Refresh Control
@@ -232,5 +231,30 @@ class TournamentsTableViewController: UITableViewController, gStackTournamentLis
         }
         
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "GamePlaySegue" {
+            
+            let vc = segue.destinationViewController as! GameViewController
+            if let indexpath = selectedPlayBtn {
+                vc.currentTournament = self.tournaments[indexpath.section]
+            }
+            print("I am in segue \(vc.currentTournament?.name)")
+        }
+        
+    }
 
 }
+
+
+
+
+
+
+
+
+
+

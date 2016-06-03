@@ -31,18 +31,6 @@
 		281285BE1CB592EA00D0D72E /* LeaderboardImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281285BD1CB592EA00D0D72E /* LeaderboardImageViewController.swift */; };
 		281521B91CE4FF2600B2B4E5 /* gStackCacheDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281521B81CE4FF2600B2B4E5 /* gStackCacheDataManager.swift */; };
 		281521BC1CE509B200B2B4E5 /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281521BB1CE509B200B2B4E5 /* Friends.storyboard */; };
-		2816502E1CF7B53000114837 /* lahoosaher.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281650281CF7B53000114837 /* lahoosaher.gif */; };
-		2816502F1CF7B53000114837 /* mutumbo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281650291CF7B53000114837 /* mutumbo.gif */; };
-		281650301CF7B53000114837 /* powerrangers.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2816502A1CF7B53000114837 /* powerrangers.gif */; };
-		281650311CF7B53000114837 /* steveharvey.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2816502B1CF7B53000114837 /* steveharvey.gif */; };
-		281650321CF7B53000114837 /* vincevaughn.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2816502C1CF7B53000114837 /* vincevaughn.gif */; };
-		281650331CF7B53000114837 /* yousucksimpsons.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2816502D1CF7B53000114837 /* yousucksimpsons.gif */; };
-		2816503B1CF7B53800114837 /* ifhedies.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281650351CF7B53800114837 /* ifhedies.gif */; };
-		2816503C1CF7B53800114837 /* jackblack.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281650361CF7B53800114837 /* jackblack.gif */; };
-		2816503D1CF7B53800114837 /* jimmykimmel.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281650371CF7B53800114837 /* jimmykimmel.gif */; };
-		2816503E1CF7B53800114837 /* rockyvictory.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281650381CF7B53800114837 /* rockyvictory.gif */; };
-		2816503F1CF7B53800114837 /* shooterMcGavin.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281650391CF7B53800114837 /* shooterMcGavin.gif */; };
-		281650401CF7B53800114837 /* solitair.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2816503A1CF7B53800114837 /* solitair.gif */; };
 		281650431CF8973B00114837 /* GameplayColorMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281650421CF8973B00114837 /* GameplayColorMapping.swift */; };
 		281650451CF8A45800114837 /* GIFStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281650441CF8A45800114837 /* GIFStore.swift */; };
 		2817E1BF1CEF645C008962E8 /* FriendSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2817E1BE1CEF645C008962E8 /* FriendSearchViewController.swift */; };
@@ -94,8 +82,6 @@
 		281B7E671CF50DBF00355B5F /* testRippleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B7E661CF50DBF00355B5F /* testRippleViewController.swift */; };
 		281B7E691CF632FB00355B5F /* DispatchUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B7E681CF632FB00355B5F /* DispatchUtils.swift */; };
 		281B7E6C1CF6450900355B5F /* UIImage+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B7E6B1CF6450900355B5F /* UIImage+GIF.swift */; };
-		281B7E711CF64AE100355B5F /* Lose-BlueMonster.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281B7E701CF64AE100355B5F /* Lose-BlueMonster.gif */; };
-		281B7E731CF64AE900355B5F /* Win-BlueMonster.gif in Resources */ = {isa = PBXBuildFile; fileRef = 281B7E721CF64AE900355B5F /* Win-BlueMonster.gif */; };
 		2825D2401CEBA9E3006B8567 /* ChatScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825D23F1CEBA9E3006B8567 /* ChatScreenManager.swift */; };
 		2825D2421CEBD140006B8567 /* FriendMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825D2411CEBD140006B8567 /* FriendMessageTableViewCell.swift */; };
 		2825D2441CEBD1CD006B8567 /* MyMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825D2431CEBD1CD006B8567 /* MyMessageTableViewCell.swift */; };
@@ -112,6 +98,9 @@
 		283AAA4E1CD3BED50081E8A2 /* QuestionCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283AAA4D1CD3BED50081E8A2 /* QuestionCellTableViewCell.swift */; };
 		283AAA501CD3BFEB0081E8A2 /* AnswerCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283AAA4F1CD3BFEB0081E8A2 /* AnswerCellTableViewCell.swift */; };
 		283AAA521CD3E4F30081E8A2 /* SubmitQuestionButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283AAA511CD3E4F30081E8A2 /* SubmitQuestionButtonTableViewCell.swift */; };
+		283C361D1CFDF9AC00E8A5AF /* GameViewController+RippleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C361C1CFDF9AC00E8A5AF /* GameViewController+RippleAnimation.swift */; };
+		283C361F1CFE4D2100E8A5AF /* triviaGifStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C361E1CFE4D2100E8A5AF /* triviaGifStore.swift */; };
+		283C36221CFF2C8900E8A5AF /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 283C36211CFF2C8900E8A5AF /* UIImage+animatedGIF.m */; };
 		284758BF1CB2EE3500DCFE6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284758BE1CB2EE3500DCFE6A /* AppDelegate.swift */; };
 		284758C41CB2EE3500DCFE6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 284758C21CB2EE3500DCFE6A /* Main.storyboard */; };
 		284758C61CB2EE3500DCFE6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 284758C51CB2EE3500DCFE6A /* Assets.xcassets */; };
@@ -144,6 +133,8 @@
 		286E7C6C1CE13B1A00F462FF /* AlertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286E7C6B1CE13B1A00F462FF /* AlertButton.swift */; };
 		286E7C6E1CE1484900F462FF /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286E7C6D1CE1484900F462FF /* TestViewController.swift */; };
 		286E7C721CE172E400F462FF /* AlertViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286E7C711CE172E400F462FF /* AlertViewControllerFactory.swift */; };
+		2885AA651D00B2AB00834D50 /* Lose-BlueMonster.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2885AA461D00B2AB00834D50 /* Lose-BlueMonster.gif */; };
+		2885AA761D00B2AB00834D50 /* Win-BlueMonster.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2885AA581D00B2AB00834D50 /* Win-BlueMonster.gif */; };
 		289A87421CC7EE5300C30D8A /* Button Right answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 289A873E1CC7EE5300C30D8A /* Button Right answer.wav */; };
 		289A87431CC7EE5300C30D8A /* Button Wrong answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 289A873F1CC7EE5300C30D8A /* Button Wrong answer.wav */; };
 		289A87441CC7EE5300C30D8A /* Win Sound Effect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 289A87401CC7EE5300C30D8A /* Win Sound Effect.wav */; };
@@ -228,18 +219,6 @@
 		281285BD1CB592EA00D0D72E /* LeaderboardImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardImageViewController.swift; sourceTree = "<group>"; };
 		281521B81CE4FF2600B2B4E5 /* gStackCacheDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gStackCacheDataManager.swift; sourceTree = "<group>"; };
 		281521BB1CE509B200B2B4E5 /* Friends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
-		281650281CF7B53000114837 /* lahoosaher.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lahoosaher.gif; sourceTree = "<group>"; };
-		281650291CF7B53000114837 /* mutumbo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = mutumbo.gif; sourceTree = "<group>"; };
-		2816502A1CF7B53000114837 /* powerrangers.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = powerrangers.gif; sourceTree = "<group>"; };
-		2816502B1CF7B53000114837 /* steveharvey.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = steveharvey.gif; sourceTree = "<group>"; };
-		2816502C1CF7B53000114837 /* vincevaughn.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = vincevaughn.gif; sourceTree = "<group>"; };
-		2816502D1CF7B53000114837 /* yousucksimpsons.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = yousucksimpsons.gif; sourceTree = "<group>"; };
-		281650351CF7B53800114837 /* ifhedies.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ifhedies.gif; sourceTree = "<group>"; };
-		281650361CF7B53800114837 /* jackblack.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = jackblack.gif; sourceTree = "<group>"; };
-		281650371CF7B53800114837 /* jimmykimmel.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = jimmykimmel.gif; sourceTree = "<group>"; };
-		281650381CF7B53800114837 /* rockyvictory.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rockyvictory.gif; sourceTree = "<group>"; };
-		281650391CF7B53800114837 /* shooterMcGavin.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = shooterMcGavin.gif; sourceTree = "<group>"; };
-		2816503A1CF7B53800114837 /* solitair.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = solitair.gif; sourceTree = "<group>"; };
 		281650421CF8973B00114837 /* GameplayColorMapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameplayColorMapping.swift; sourceTree = "<group>"; };
 		281650441CF8A45800114837 /* GIFStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFStore.swift; sourceTree = "<group>"; };
 		2817E1BE1CEF645C008962E8 /* FriendSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearchViewController.swift; sourceTree = "<group>"; };
@@ -291,8 +270,6 @@
 		281B7E661CF50DBF00355B5F /* testRippleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRippleViewController.swift; sourceTree = "<group>"; };
 		281B7E681CF632FB00355B5F /* DispatchUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchUtils.swift; sourceTree = "<group>"; };
 		281B7E6B1CF6450900355B5F /* UIImage+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+GIF.swift"; sourceTree = "<group>"; };
-		281B7E701CF64AE100355B5F /* Lose-BlueMonster.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Lose-BlueMonster.gif"; sourceTree = "<group>"; };
-		281B7E721CF64AE900355B5F /* Win-BlueMonster.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Win-BlueMonster.gif"; sourceTree = "<group>"; };
 		2825D23F1CEBA9E3006B8567 /* ChatScreenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatScreenManager.swift; sourceTree = "<group>"; };
 		2825D2411CEBD140006B8567 /* FriendMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendMessageTableViewCell.swift; sourceTree = "<group>"; };
 		2825D2431CEBD1CD006B8567 /* MyMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMessageTableViewCell.swift; sourceTree = "<group>"; };
@@ -309,6 +286,10 @@
 		283AAA4D1CD3BED50081E8A2 /* QuestionCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCellTableViewCell.swift; sourceTree = "<group>"; };
 		283AAA4F1CD3BFEB0081E8A2 /* AnswerCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerCellTableViewCell.swift; sourceTree = "<group>"; };
 		283AAA511CD3E4F30081E8A2 /* SubmitQuestionButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitQuestionButtonTableViewCell.swift; sourceTree = "<group>"; };
+		283C361C1CFDF9AC00E8A5AF /* GameViewController+RippleAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameViewController+RippleAnimation.swift"; sourceTree = "<group>"; };
+		283C361E1CFE4D2100E8A5AF /* triviaGifStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = triviaGifStore.swift; sourceTree = "<group>"; };
+		283C36201CFF2C8900E8A5AF /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
+		283C36211CFF2C8900E8A5AF /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
 		284758BB1CB2EE3500DCFE6A /* TriviaSwag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriviaSwag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		284758BE1CB2EE3500DCFE6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		284758C31CB2EE3500DCFE6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -349,6 +330,8 @@
 		286E7C6B1CE13B1A00F462FF /* AlertButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertButton.swift; sourceTree = "<group>"; };
 		286E7C6D1CE1484900F462FF /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		286E7C711CE172E400F462FF /* AlertViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewControllerFactory.swift; sourceTree = "<group>"; };
+		2885AA461D00B2AB00834D50 /* Lose-BlueMonster.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Lose-BlueMonster.gif"; sourceTree = "<group>"; };
+		2885AA581D00B2AB00834D50 /* Win-BlueMonster.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Win-BlueMonster.gif"; sourceTree = "<group>"; };
 		289A873E1CC7EE5300C30D8A /* Button Right answer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Button Right answer.wav"; sourceTree = "<group>"; };
 		289A873F1CC7EE5300C30D8A /* Button Wrong answer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Button Wrong answer.wav"; sourceTree = "<group>"; };
 		289A87401CC7EE5300C30D8A /* Win Sound Effect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Win Sound Effect.wav"; sourceTree = "<group>"; };
@@ -446,6 +429,7 @@
 				2812859E1CB57BBD00D0D72E /* triviaUser.swift */,
 				2812859F1CB57BBD00D0D72E /* triviaUserInbox.swift */,
 				28FB3FC31CE3D00400E6A32E /* triviaShop.swift */,
+				283C361E1CFE4D2100E8A5AF /* triviaGifStore.swift */,
 			);
 			name = TriviaSwagAPI;
 			sourceTree = "<group>";
@@ -481,32 +465,6 @@
 				28B1930D1CE7BEE300BC7FCF /* FriendsScreenManager.swift */,
 			);
 			name = "Friends&Chat";
-			sourceTree = "<group>";
-		};
-		281650271CF7B53000114837 /* Incorrect */ = {
-			isa = PBXGroup;
-			children = (
-				281650281CF7B53000114837 /* lahoosaher.gif */,
-				281650291CF7B53000114837 /* mutumbo.gif */,
-				2816502A1CF7B53000114837 /* powerrangers.gif */,
-				2816502B1CF7B53000114837 /* steveharvey.gif */,
-				2816502C1CF7B53000114837 /* vincevaughn.gif */,
-				2816502D1CF7B53000114837 /* yousucksimpsons.gif */,
-			);
-			path = Incorrect;
-			sourceTree = "<group>";
-		};
-		281650341CF7B53800114837 /* Correct */ = {
-			isa = PBXGroup;
-			children = (
-				281650351CF7B53800114837 /* ifhedies.gif */,
-				281650361CF7B53800114837 /* jackblack.gif */,
-				281650371CF7B53800114837 /* jimmykimmel.gif */,
-				281650381CF7B53800114837 /* rockyvictory.gif */,
-				281650391CF7B53800114837 /* shooterMcGavin.gif */,
-				2816503A1CF7B53800114837 /* solitair.gif */,
-			);
-			path = Correct;
 			sourceTree = "<group>";
 		};
 		281650411CF896AE00114837 /* Colors */ = {
@@ -573,17 +531,6 @@
 			path = "SF-UI";
 			sourceTree = "<group>";
 		};
-		281B7E6F1CF6480100355B5F /* GIF */ = {
-			isa = PBXGroup;
-			children = (
-				281650341CF7B53800114837 /* Correct */,
-				281650271CF7B53000114837 /* Incorrect */,
-				281B7E701CF64AE100355B5F /* Lose-BlueMonster.gif */,
-				281B7E721CF64AE900355B5F /* Win-BlueMonster.gif */,
-			);
-			name = GIF;
-			sourceTree = "<group>";
-		};
 		2825D2531CECEC06006B8567 /* CoreData ManagedObject */ = {
 			isa = PBXGroup;
 			children = (
@@ -641,7 +588,7 @@
 				286E7C3A1CD7D80D00F462FF /* Font */,
 				289A87711CCC3DF300C30D8A /* Helper */,
 				289A873C1CC7EE5300C30D8A /* TriviaSound */,
-				281B7E6F1CF6480100355B5F /* GIF */,
+				2885AA371D00B2AB00834D50 /* GIF */,
 				284758C71CB2EE3500DCFE6A /* LaunchScreen.storyboard */,
 				284758BE1CB2EE3500DCFE6A /* AppDelegate.swift */,
 				28B3A3881CEB92FA000863A7 /* ChatMessagesModel.xcdatamodeld */,
@@ -770,10 +717,19 @@
 				286E7C661CE1293700F462FF /* AlertViewController.swift */,
 				286E7C681CE1294D00F462FF /* Alert.storyboard */,
 				286E7C6B1CE13B1A00F462FF /* AlertButton.swift */,
-				286E7C6D1CE1484900F462FF /* TestViewController.swift */,
 				286E7C711CE172E400F462FF /* AlertViewControllerFactory.swift */,
+				286E7C6D1CE1484900F462FF /* TestViewController.swift */,
 			);
 			name = Alert;
+			sourceTree = "<group>";
+		};
+		2885AA371D00B2AB00834D50 /* GIF */ = {
+			isa = PBXGroup;
+			children = (
+				2885AA461D00B2AB00834D50 /* Lose-BlueMonster.gif */,
+				2885AA581D00B2AB00834D50 /* Win-BlueMonster.gif */,
+			);
+			path = GIF;
 			sourceTree = "<group>";
 		};
 		289A873C1CC7EE5300C30D8A /* TriviaSound */ = {
@@ -824,6 +780,8 @@
 				286658281CE29FAA0013B004 /* SimplePing */,
 				281B7E681CF632FB00355B5F /* DispatchUtils.swift */,
 				281B7E6B1CF6450900355B5F /* UIImage+GIF.swift */,
+				283C36201CFF2C8900E8A5AF /* UIImage+animatedGIF.h */,
+				283C36211CFF2C8900E8A5AF /* UIImage+animatedGIF.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -848,9 +806,10 @@
 				28B9CB081CF3882E00880138 /* Game.storyboard */,
 				28B9CB0A1CF3893500880138 /* GameViewController.swift */,
 				281B7E641CF4D95400355B5F /* GameViewController+gStackGameDelegate.swift */,
-				281B7E0C1CF4A33D00355B5F /* QKRipple.swift */,
-				281B7E661CF50DBF00355B5F /* testRippleViewController.swift */,
+				283C361C1CFDF9AC00E8A5AF /* GameViewController+RippleAnimation.swift */,
 				281650441CF8A45800114837 /* GIFStore.swift */,
+				281B7E661CF50DBF00355B5F /* testRippleViewController.swift */,
+				281B7E0C1CF4A33D00355B5F /* QKRipple.swift */,
 			);
 			name = GamePlayNew;
 			sourceTree = "<group>";
@@ -1032,17 +991,15 @@
 				289A87421CC7EE5300C30D8A /* Button Right answer.wav in Resources */,
 				281B7E471CF4CA2200355B5F /* SF-Compact-Text-Light.otf in Resources */,
 				284758C91CB2EE3500DCFE6A /* LaunchScreen.storyboard in Resources */,
-				2816502E1CF7B53000114837 /* lahoosaher.gif in Resources */,
 				281B7E531CF4CA2200355B5F /* SF-UI-Display-Medium.otf in Resources */,
 				281285BA1CB57C2100D0D72E /* ServerInfo.plist in Resources */,
 				28AEC7271CD145BC001E181F /* NothingFoundCell.xib in Resources */,
 				281B7E3E1CF4CA2200355B5F /* SF-Compact-Display-Medium.otf in Resources */,
 				281B7E631CF4CA2200355B5F /* SF-UI-Text-SemiboldItalic.otf in Resources */,
-				2816503F1CF7B53800114837 /* shooterMcGavin.gif in Resources */,
-				281B7E731CF64AE900355B5F /* Win-BlueMonster.gif in Resources */,
 				284758C61CB2EE3500DCFE6A /* Assets.xcassets in Resources */,
 				289A87461CC7FFD500C30D8A /* Countdown_Clock.wav in Resources */,
 				286E7C441CD7FFE900F462FF /* DoubleLabelStrokeLabelView.xib in Resources */,
+				2885AA761D00B2AB00834D50 /* Win-BlueMonster.gif in Resources */,
 				281B7E571CF4CA2200355B5F /* SF-UI-Display-Ultralight.otf in Resources */,
 				281B7E431CF4CA2200355B5F /* SF-Compact-Text-Bold.otf in Resources */,
 				281B7E5D1CF4CA2200355B5F /* SF-UI-Text-LightItalic.otf in Resources */,
@@ -1057,28 +1014,19 @@
 				281B7E4A1CF4CA2200355B5F /* SF-Compact-Text-MediumItalic.otf in Resources */,
 				281B7E5C1CF4CA2200355B5F /* SF-UI-Text-Light.otf in Resources */,
 				28CBBD121CEA21AE0070A23D /* Chat.storyboard in Resources */,
-				2816503B1CF7B53800114837 /* ifhedies.gif in Resources */,
 				281B7E441CF4CA2200355B5F /* SF-Compact-Text-BoldItalic.otf in Resources */,
-				2816502F1CF7B53000114837 /* mutumbo.gif in Resources */,
-				2816503D1CF7B53800114837 /* jimmykimmel.gif in Resources */,
 				286E7C691CE1294D00F462FF /* Alert.storyboard in Resources */,
 				281B7E521CF4CA2200355B5F /* SF-UI-Display-Light.otf in Resources */,
 				281B7E481CF4CA2200355B5F /* SF-Compact-Text-LightItalic.otf in Resources */,
-				281B7E711CF64AE100355B5F /* Lose-BlueMonster.gif in Resources */,
-				281650301CF7B53000114837 /* powerrangers.gif in Resources */,
 				281B7E511CF4CA2200355B5F /* SF-UI-Display-Heavy.otf in Resources */,
-				281650321CF7B53000114837 /* vincevaughn.gif in Resources */,
-				281650401CF7B53800114837 /* solitair.gif in Resources */,
-				281650311CF7B53000114837 /* steveharvey.gif in Resources */,
+				2885AA651D00B2AB00834D50 /* Lose-BlueMonster.gif in Resources */,
 				28AEC72E1CD15169001E181F /* DetailLeaderboard.storyboard in Resources */,
 				281B7E3B1CF4CA2200355B5F /* SF-Compact-Display-Bold.otf in Resources */,
 				281B7E3F1CF4CA2200355B5F /* SF-Compact-Display-Regular.otf in Resources */,
 				281B7E5B1CF4CA2200355B5F /* SF-UI-Text-HeavyItalic.otf in Resources */,
-				281650331CF7B53000114837 /* yousucksimpsons.gif in Resources */,
 				281B7E461CF4CA2200355B5F /* SF-Compact-Text-HeavyItalic.otf in Resources */,
 				284758C41CB2EE3500DCFE6A /* Main.storyboard in Resources */,
 				281B7E581CF4CA2200355B5F /* SF-UI-Text-Bold.otf in Resources */,
-				2816503E1CF7B53800114837 /* rockyvictory.gif in Resources */,
 				281521BC1CE509B200B2B4E5 /* Friends.storyboard in Resources */,
 				281B7E3A1CF4CA2200355B5F /* SF-Compact-Display-Black.otf in Resources */,
 				281B7E601CF4CA2200355B5F /* SF-UI-Text-Regular.otf in Resources */,
@@ -1093,7 +1041,6 @@
 				281B7E5E1CF4CA2200355B5F /* SF-UI-Text-Medium.otf in Resources */,
 				281B7E591CF4CA2200355B5F /* SF-UI-Text-BoldItalic.otf in Resources */,
 				281B7E561CF4CA2200355B5F /* SF-UI-Display-Thin.otf in Resources */,
-				2816503C1CF7B53800114837 /* jackblack.gif in Resources */,
 				283408AF1CBDB2B90068D070 /* GamePlay.storyboard in Resources */,
 				281B7E491CF4CA2200355B5F /* SF-Compact-Text-Medium.otf in Resources */,
 				289A87541CC9301400C30D8A /* Settings.storyboard in Resources */,
@@ -1223,6 +1170,7 @@
 				2825D2421CEBD140006B8567 /* FriendMessageTableViewCell.swift in Sources */,
 				283AAA521CD3E4F30081E8A2 /* SubmitQuestionButtonTableViewCell.swift in Sources */,
 				28A978DB1CB6F764006F6218 /* ProgressBarViewController.swift in Sources */,
+				283C36221CFF2C8900E8A5AF /* UIImage+animatedGIF.m in Sources */,
 				281B7E691CF632FB00355B5F /* DispatchUtils.swift in Sources */,
 				281285A31CB57BBD00D0D72E /* triviaNotificationHandler.swift in Sources */,
 				28FB3FC81CE3E41E00E6A32E /* UIImageView+DownloadImage.swift in Sources */,
@@ -1235,6 +1183,7 @@
 				283AAA501CD3BFEB0081E8A2 /* AnswerCellTableViewCell.swift in Sources */,
 				28B1930E1CE7BEE300BC7FCF /* FriendsScreenManager.swift in Sources */,
 				286E7C671CE1293700F462FF /* AlertViewController.swift in Sources */,
+				283C361D1CFDF9AC00E8A5AF /* GameViewController+RippleAnimation.swift in Sources */,
 				286C64E11CE5438900A37ECC /* FriendsTableViewCell.swift in Sources */,
 				281285A51CB57BBD00D0D72E /* triviaUser.swift in Sources */,
 				281285B31CB57C2100D0D72E /* gStack Private Routes.swift in Sources */,
@@ -1242,6 +1191,7 @@
 				289A87681CCA8B0500C30D8A /* LoginViewController.swift in Sources */,
 				289A87581CC95E1200C30D8A /* AccountInfomationTableViewController.swift in Sources */,
 				281285B51CB57C2100D0D72E /* gStackGame.swift in Sources */,
+				283C361F1CFE4D2100E8A5AF /* triviaGifStore.swift in Sources */,
 				281650451CF8A45800114837 /* GIFStore.swift in Sources */,
 				281285A01CB57BBD00D0D72E /* trivia Private Routes.swift in Sources */,
 				28A978E11CB8565A006F6218 /* TimeBarViewController.swift in Sources */,

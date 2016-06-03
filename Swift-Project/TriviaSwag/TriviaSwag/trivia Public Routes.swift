@@ -180,6 +180,26 @@ public func triviaFetchPurchesItems(completion:(shop:triviaShop?, error: NSError
     
 }
 
+public func triviaFetchGifs(completion:(store:triviaGifStore?, error: NSError? ) -> Void) {
+    
+    makeRequest(false, route: "triviamonster", type: "getGameData", payload: true, completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _payload in
+            if _error == nil {
+                if let payload = _payload as? [String: AnyObject]{
+                    let store = triviaGifStore(payload: (payload))
+                    triviaCurrentGifStore = store
+                    completion(store: store, error: nil)
+                }
+                // Handle error
+            }
+        })
+    })
+    
+}
+
+
 
 
 

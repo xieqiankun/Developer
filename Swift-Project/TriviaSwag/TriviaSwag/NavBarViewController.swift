@@ -51,9 +51,9 @@ class NavBarViewController: UIViewController {
         if let des = segue.destinationViewController as? ProfileViewController where segue.identifier == "MyProfile" {
             
             if let user = triviaCurrentUser {
-                des.currentUser = user
+                des.userName = user.displayName!
             } else {
-                des.currentUser = triviaUser()
+                des.userName = ""
             }
             
         }

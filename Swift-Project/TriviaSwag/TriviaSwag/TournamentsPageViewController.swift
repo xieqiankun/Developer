@@ -8,11 +8,12 @@
 
 import UIKit
 
+
 class TournamentsPageViewController: UIPageViewController, UIPageViewControllerDataSource {
     
     var tournamentViewControllers = [UIViewController]()
     
-    var embeddingViewController: TableContainerViewController?
+    weak var embeddingViewController: TableContainerViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +75,18 @@ class TournamentsPageViewController: UIPageViewController, UIPageViewControllerD
         }
         return nil
     }
+    
+    
+    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool)
+    {
+        if (!completed)
+        {
+            return
+        }
+        embeddingViewController?.pageControl.currentPage = pageViewController.viewControllers!.first!.view.tag //Page Index
+
+    }
+    
     
 //    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
 //        return tournamentViewControllers.count

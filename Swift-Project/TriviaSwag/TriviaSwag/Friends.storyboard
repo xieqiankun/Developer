@@ -120,7 +120,7 @@
                                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Location&gt;" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ga4-Jd-4Az">
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;Location&gt;" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ga4-Jd-4Az">
                                                                                             <rect key="frame" x="0.0" y="31" width="112" height="12"/>
                                                                                             <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="12"/>
                                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -129,6 +129,7 @@
                                                                                     </subviews>
                                                                                 </stackView>
                                                                             </subviews>
+                                                                            <gestureRecognizers/>
                                                                         </stackView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j2p-Do-qZW">
                                                                             <rect key="frame" x="325" y="12" width="80" height="24"/>
@@ -218,6 +219,7 @@
                                                             <outlet property="friendName" destination="EQ9-n7-7Uf" id="ADL-ab-yq0"/>
                                                             <outlet property="friendRegion" destination="Ga4-Jd-4Az" id="IrN-YQ-b27"/>
                                                             <outlet property="onlineLabel" destination="vlE-vm-xe5" id="dfe-Gu-PaW"/>
+                                                            <outlet property="userinfoStack" destination="f1d-Mo-H7B" id="vKH-Xh-Z2h"/>
                                                         </connections>
                                                     </tableViewCell>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RequestCell" id="ZVf-gI-f1Z" userLabel="Request Cell" customClass="FriendRequestTableViewCell" customModule="TriviaSwag" customModuleProvider="target">
@@ -252,7 +254,7 @@
                                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Location&gt;" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIQ-uO-sqq">
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;Location&gt;" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIQ-uO-sqq">
                                                                                             <rect key="frame" x="0.0" y="31" width="112" height="12"/>
                                                                                             <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="12"/>
                                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -261,6 +263,7 @@
                                                                                     </subviews>
                                                                                 </stackView>
                                                                             </subviews>
+                                                                            <gestureRecognizers/>
                                                                         </stackView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="l3x-6m-q5R">
                                                                             <rect key="frame" x="243" y="8" width="160" height="34"/>
@@ -333,6 +336,7 @@
                                                             <outlet property="content" destination="2fj-nf-m64" id="hYT-0o-aqV"/>
                                                             <outlet property="friendName" destination="Csa-qC-iXy" id="4jo-iy-PVA"/>
                                                             <outlet property="friendRegion" destination="IIQ-uO-sqq" id="beU-HM-vFw"/>
+                                                            <outlet property="userinfoStack" destination="Kju-5F-JWd" id="aNz-37-U23"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
@@ -416,6 +420,7 @@
                     <connections>
                         <outlet property="tableView" destination="ecW-fn-ZHC" id="7Dp-B9-RsF"/>
                         <segue destination="HIZ-qw-uh3" kind="presentation" identifier="Chat" id="Y2g-M7-dUW"/>
+                        <segue destination="QXl-Vn-4QV" kind="presentation" identifier="Profile" id="leK-JJ-egY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BfT-yf-tZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -429,6 +434,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bgx-AS-4uh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2794.5" y="265"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="AbP-eQ-GBL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="QXl-Vn-4QV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zgc-zQ-len" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2795.5" y="442"/>
         </scene>
         <!--FriendSearch-->
         <scene sceneID="PQy-c2-Hzs">

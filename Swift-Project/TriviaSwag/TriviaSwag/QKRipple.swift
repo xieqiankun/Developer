@@ -9,33 +9,33 @@
 import Foundation
 import UIKit
 
-public extension UIView {
-    
-    public func rippleBorder(location:CGPoint, color:UIColor) {
-        rippleBorder(location, color: color){}
-    }
-    
-    public func rippleBorder(location:CGPoint, color:UIColor, then: ()->() ) {
-        Ripple.border(self, locationInView: location, color: color, then: then)
-    }
-    
-    public func rippleFill(location:CGPoint, color:UIColor) {
-        rippleFill(location, color: color){}
-    }
-    
-    public func rippleFill(location:CGPoint, color:UIColor, then: ()->() ) {
-        Ripple.fill(self, locationInView: location, color: color, then: then)
-    }
-    
-    public func rippleStop() {
-        Ripple.stop(self)
-    }
-    
-}
+//public extension UIView {
+//    
+//    public func rippleBorder(location:CGPoint, color:UIColor) {
+//        rippleBorder(location, color: color){}
+//    }
+//    
+//    public func rippleBorder(location:CGPoint, color:UIColor, then: ()->() ) {
+//        Ripple.border(self, locationInView: location, color: color, then: then)
+//    }
+//    
+//    public func rippleFill(location:CGPoint, color:UIColor) {
+//        rippleFill(location, color: color){}
+//    }
+//    
+//    public func rippleFill(location:CGPoint, color:UIColor, then: ()->() ) {
+//        Ripple.fill(self, locationInView: location, color: color, then: then)
+//    }
+//    
+//    public func rippleStop() {
+//        Ripple.stop(self)
+//    }
+//    
+//}
 
 public class Ripple {
     
-    private static var targetLayer: CALayer?
+    private var targetLayer: CALayer?
     
     public struct Option {
         public var borderWidth = CGFloat(5.0)
@@ -47,69 +47,69 @@ public class Ripple {
         public var isRunSuperView = false
     }
     
-    public class func option () -> Option {
+    public func option () -> Option {
         return Option()
     }
     
-    public class func run(view:UIView, locationInView:CGPoint, option:Ripple.Option) {
+    public func run(view:UIView, locationInView:CGPoint, option:Ripple.Option) {
         run(view, locationInView: locationInView, option: option){}
     }
     
-    public class func run(view:UIView, locationInView:CGPoint, option:Ripple.Option, then: ()->() ) {
+    public func run(view:UIView, locationInView:CGPoint, option:Ripple.Option, then: ()->() ) {
         prePreform(view, point: locationInView, option: option, isLocationInView: true, then: then)
     }
     
-    public class func run(view:UIView, absolutePosition:CGPoint, option:Ripple.Option) {
+    public func run(view:UIView, absolutePosition:CGPoint, option:Ripple.Option) {
         run(view, absolutePosition: absolutePosition, option: option){}
     }
     
-    public class func run(view:UIView, absolutePosition:CGPoint, option:Ripple.Option, then: ()->() ) {
+    public func run(view:UIView, absolutePosition:CGPoint, option:Ripple.Option, then: ()->() ) {
         prePreform(view, point: absolutePosition, option: option, isLocationInView: false, then: then)
     }
     
-    public class func border(view:UIView, locationInView:CGPoint, color:UIColor) {
+    public func border(view:UIView, locationInView:CGPoint, color:UIColor) {
         border(view, locationInView: locationInView, color: color){}
     }
     
-    public class func border(view:UIView, locationInView:CGPoint, color:UIColor, then: ()->() ) {
+    public func border(view:UIView, locationInView:CGPoint, color:UIColor, then: ()->() ) {
         var opt = Ripple.Option()
         opt.borderColor = color
         prePreform(view, point: locationInView, option: opt, isLocationInView: true, then: then)
     }
     
-    public class func border(view:UIView, absolutePosition:CGPoint, color:UIColor) {
+    public func border(view:UIView, absolutePosition:CGPoint, color:UIColor) {
         border(view, absolutePosition: absolutePosition, color: color){}
     }
     
-    public class func border(view:UIView, absolutePosition:CGPoint, color:UIColor, then: ()->() ) {
+    public func border(view:UIView, absolutePosition:CGPoint, color:UIColor, then: ()->() ) {
         var opt = Ripple.Option()
         opt.borderColor = color
         prePreform(view, point: absolutePosition, option: opt, isLocationInView: false, then: then)
     }
     
-    public class func fill(view:UIView, locationInView:CGPoint, color:UIColor) {
+    public func fill(view:UIView, locationInView:CGPoint, color:UIColor) {
         fill(view, locationInView: locationInView, color: color){}
     }
     
-    public class func fill(view:UIView, locationInView:CGPoint, color:UIColor, then: ()->() ) {
+    public func fill(view:UIView, locationInView:CGPoint, color:UIColor, then: ()->() ) {
         var opt = Ripple.Option()
         opt.borderColor = color
         opt.fillColor = color
         prePreform(view, point: locationInView, option: opt, isLocationInView: true, then: then)
     }
     
-    public class func fill(view:UIView, absolutePosition:CGPoint, color:UIColor) {
+    public func fill(view:UIView, absolutePosition:CGPoint, color:UIColor) {
         fill(view, absolutePosition: absolutePosition, color: color){}
     }
     
-    public class func fill(view:UIView, absolutePosition:CGPoint, color:UIColor, then: ()->() ) {
+    public func fill(view:UIView, absolutePosition:CGPoint, color:UIColor, then: ()->() ) {
         var opt = Ripple.Option()
         opt.borderColor = color
         opt.fillColor = color
         prePreform(view, point: absolutePosition, option: opt, isLocationInView: false, then: then)
     }
     
-    private class func prePreform(view:UIView, point:CGPoint, option: Ripple.Option, isLocationInView:Bool, then: ()->() ) {
+    private func prePreform(view:UIView, point:CGPoint, option: Ripple.Option, isLocationInView:Bool, then: ()->() ) {
         
         let p = isLocationInView ? CGPointMake(point.x + view.frame.origin.x, point.y + view.frame.origin.y) : point
         if option.isRunSuperView, let superview = view.superview {
@@ -130,7 +130,7 @@ public class Ripple {
         }
     }
     
-    private class func perform(view:UIView, point:CGPoint, option: Ripple.Option, then: ()->() ) {
+    private func perform(view:UIView, point:CGPoint, option: Ripple.Option, then: ()->() ) {
         UIGraphicsBeginImageContextWithOptions (
             CGSizeMake((option.radius + option.borderWidth) * 2, (option.radius + option.borderWidth) * 2), false, 3.0)
         let path = UIBezierPath(
@@ -179,7 +179,7 @@ public class Ripple {
             targetLayer = rippleLayer
             targetLayer?.addSublayer(CALayer())//Temporary, CALayer.sublayers is Implicitly Unwrapped Optional
         //}
-        
+        NSLog("trying to run animation")
         dispatch_async(dispatch_get_main_queue()) {
             [weak rippleLayer] in
             if let target = rippleLayer {
@@ -193,6 +193,8 @@ public class Ripple {
                     layer.contents = nil
                     layer.removeAllAnimations()
                     layer.removeFromSuperlayer()
+                    target.removeFromSuperlayer()
+                    NSLog("finish running aniamtion")
                     then()
                 }
                 //layer.addAnimation(opacity, forKey:nil)
@@ -202,7 +204,7 @@ public class Ripple {
         }
     }
     
-    public class func stop(view:UIView) {
+    public func stop(view:UIView) {
         
         guard let sublayers = targetLayer?.sublayers else {
             return

@@ -162,11 +162,6 @@ public class triviaUser: NSObject {
             print("No channel: cannot connect to pusher server")
         }
         
-//        if _id != nil {
-//            print("save Login token")
-//            print(_id!)
-//            saveLogInToken(_id!)
-//        }
     }
     
     convenience override init() {
@@ -192,6 +187,16 @@ public class triviaUser: NSObject {
             triviaNotificationHandler.sharedInstance.unsubscribeToPusherChannel(_channel)
         }
         triviaCurrentUser = nil
+    }
+    
+    public func isFriendOfCurrentUser(name: String) -> Bool {
+        
+        for friend in friends! {
+            if name == friend.displayName {
+                return true
+            }
+        }
+        return false
     }
     
 }

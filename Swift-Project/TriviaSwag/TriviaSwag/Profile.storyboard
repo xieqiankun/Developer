@@ -17,9 +17,6 @@
             <string>GROBOLD</string>
             <string>GROBOLD</string>
             <string>GROBOLD</string>
-            <string>GROBOLD</string>
-            <string>GROBOLD</string>
-            <string>GROBOLD</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -120,7 +117,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileContainer" translatesAutoresizingMaskIntoConstraints="NO" id="eIp-ts-UzX">
                                                 <rect key="frame" x="0.0" y="0.0" width="583" height="260"/>
                                             </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UP6-XW-WKN">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UP6-XW-WKN">
                                                 <rect key="frame" x="15" y="15" width="251" height="90"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AvatarPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="lnp-dJ-xMX">
@@ -129,41 +126,31 @@
                                                             <constraint firstAttribute="width" secondItem="lnp-dJ-xMX" secondAttribute="height" id="qbn-UU-f3Q"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="uzQ-kO-KCq">
-                                                        <rect key="frame" x="90" y="0.0" width="161" height="90"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uzQ-kO-KCq">
+                                                        <rect key="frame" x="95" y="0.0" width="156" height="90"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="df0-hs-fkG">
-                                                                <rect key="frame" x="3" y="0.0" width="155" height="36"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="df0-hs-fkG">
+                                                                <rect key="frame" x="0.0" y="0.0" width="156" height="36"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sam Zoll" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="JZc-Kn-K5L">
-                                                                        <rect key="frame" x="0.0" y="2" width="154" height="34"/>
-                                                                        <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="100"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="James" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="JZc-Kn-K5L">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="156" height="36"/>
+                                                                        <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="35"/>
                                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sam Zoll" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="vBi-l7-TK6">
-                                                                        <rect key="frame" x="4" y="2" width="147" height="35"/>
-                                                                        <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="100"/>
-                                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstItem="JZc-Kn-K5L" firstAttribute="top" secondItem="df0-hs-fkG" secondAttribute="top" constant="2" id="DGg-xr-i7W"/>
+                                                                    <constraint firstItem="JZc-Kn-K5L" firstAttribute="top" secondItem="df0-hs-fkG" secondAttribute="top" id="DGg-xr-i7W"/>
                                                                     <constraint firstItem="JZc-Kn-K5L" firstAttribute="leading" secondItem="df0-hs-fkG" secondAttribute="leading" id="GUn-Qn-loo"/>
                                                                     <constraint firstAttribute="bottom" secondItem="JZc-Kn-K5L" secondAttribute="bottom" id="Hxy-Vx-dUw"/>
-                                                                    <constraint firstItem="vBi-l7-TK6" firstAttribute="top" secondItem="df0-hs-fkG" secondAttribute="top" constant="2" id="RYZ-DE-enz"/>
-                                                                    <constraint firstItem="vBi-l7-TK6" firstAttribute="centerX" secondItem="df0-hs-fkG" secondAttribute="centerX" id="Usb-Tb-a97"/>
-                                                                    <constraint firstItem="vBi-l7-TK6" firstAttribute="width" secondItem="df0-hs-fkG" secondAttribute="width" multiplier="0.95" id="fYR-lt-CF3"/>
                                                                     <constraint firstAttribute="trailing" secondItem="JZc-Kn-K5L" secondAttribute="trailing" id="p2h-JQ-Q3M"/>
-                                                                    <constraint firstItem="vBi-l7-TK6" firstAttribute="height" secondItem="df0-hs-fkG" secondAttribute="height" multiplier="0.95" id="x2e-Ns-Snf"/>
                                                                 </constraints>
                                                             </view>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="WYl-5q-SOC">
-                                                                <rect key="frame" x="5" y="38" width="151" height="52"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="WYl-5q-SOC">
+                                                                <rect key="frame" x="0.0" y="36" width="156" height="54"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="q54-iO-Frb">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="151" height="16"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="156" height="16"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="United States" translatesAutoresizingMaskIntoConstraints="NO" id="MuL-xP-T5K">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
@@ -172,7 +159,7 @@
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beijing, China" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="5wv-It-3GA">
-                                                                                <rect key="frame" x="21" y="0.0" width="131" height="16"/>
+                                                                                <rect key="frame" x="21" y="0.0" width="135" height="16"/>
                                                                                 <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="100"/>
                                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
@@ -181,15 +168,20 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="trailing" secondItem="5wv-It-3GA" secondAttribute="trailing" id="N6Z-4j-sl1"/>
                                                                         </constraints>
+                                                                        <variation key="default">
+                                                                            <mask key="constraints">
+                                                                                <exclude reference="N6Z-4j-sl1"/>
+                                                                            </mask>
+                                                                        </variation>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="C1E-eg-h9Z">
-                                                                        <rect key="frame" x="0.0" y="19" width="151" height="15"/>
+                                                                        <rect key="frame" x="0.0" y="19" width="156" height="16"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RankIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Y3g-wV-qfF">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="16" height="15"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legend Status" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="xjl-GM-Tiv">
-                                                                                <rect key="frame" x="21" y="0.0" width="131" height="15"/>
+                                                                                <rect key="frame" x="21" y="0.0" width="135" height="16"/>
                                                                                 <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="100"/>
                                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
@@ -197,13 +189,13 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mLF-dt-VFQ">
-                                                                        <rect key="frame" x="0.0" y="37" width="151" height="16"/>
+                                                                        <rect key="frame" x="0.0" y="38" width="156" height="16"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FriendsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Vsn-oA-xSc">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friends Number" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="ucd-U3-8tC">
-                                                                                <rect key="frame" x="21" y="0.0" width="131" height="16"/>
+                                                                                <rect key="frame" x="21" y="0.0" width="135" height="16"/>
                                                                                 <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="100"/>
                                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
@@ -221,6 +213,11 @@
                                                                     <constraint firstAttribute="trailing" secondItem="mLF-dt-VFQ" secondAttribute="trailing" id="sMY-HT-bcX"/>
                                                                     <constraint firstAttribute="trailing" secondItem="C1E-eg-h9Z" secondAttribute="trailing" id="tMn-Dx-Y18"/>
                                                                 </constraints>
+                                                                <variation key="default">
+                                                                    <mask key="constraints">
+                                                                        <exclude reference="cE0-ix-gDI"/>
+                                                                    </mask>
+                                                                </variation>
                                                             </stackView>
                                                         </subviews>
                                                         <constraints>
@@ -229,6 +226,7 @@
                                                         </constraints>
                                                         <variation key="default">
                                                             <mask key="constraints">
+                                                                <exclude reference="Zk2-TB-fZM"/>
                                                                 <exclude reference="tfn-FH-EQU"/>
                                                             </mask>
                                                         </variation>
@@ -239,134 +237,66 @@
                                                     <constraint firstItem="df0-hs-fkG" firstAttribute="height" secondItem="lnp-dJ-xMX" secondAttribute="height" multiplier="0.4" id="UJb-s3-yrB"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zPp-YE-94Z">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zPp-YE-94Z">
                                                 <rect key="frame" x="15" y="115" width="251" height="135"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4EE-xi-8pi">
+                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4EE-xi-8pi">
                                                         <rect key="frame" x="0.0" y="0.0" width="251" height="23"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGe-r8-R1j">
-                                                                <rect key="frame" x="0.0" y="0.0" width="251" height="21"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGe-r8-R1j">
+                                                                <rect key="frame" x="0.0" y="0.0" width="251" height="23"/>
                                                                 <state key="normal" image="BigButtonUnselectedUntouched"/>
                                                                 <state key="selected" image="BigButtonUnselectedTouched"/>
                                                                 <state key="highlighted" image="BigButtonUnselectedTouched"/>
                                                             </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="clip" numberOfLines="0" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="CBh-DJ-3zF">
-                                                                <rect key="frame" x="1" y="1" width="249" height="19"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="100"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="clip" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="CBh-DJ-3zF">
+                                                                <rect key="frame" x="10" y="1" width="231" height="21"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="18"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="DGe-r8-R1j" firstAttribute="leading" secondItem="4EE-xi-8pi" secondAttribute="leading" id="4Kb-u6-afs"/>
-                                                            <constraint firstAttribute="bottom" secondItem="DGe-r8-R1j" secondAttribute="bottom" id="8XQ-iT-0Gj"/>
                                                             <constraint firstItem="DGe-r8-R1j" firstAttribute="top" secondItem="4EE-xi-8pi" secondAttribute="top" id="DXy-CT-QnZ"/>
-                                                            <constraint firstItem="CBh-DJ-3zF" firstAttribute="leading" secondItem="4EE-xi-8pi" secondAttribute="leading" constant="1" id="VUj-pp-h5P"/>
+                                                            <constraint firstItem="CBh-DJ-3zF" firstAttribute="leading" secondItem="4EE-xi-8pi" secondAttribute="leading" constant="10" id="VUj-pp-h5P"/>
                                                             <constraint firstItem="CBh-DJ-3zF" firstAttribute="top" secondItem="4EE-xi-8pi" secondAttribute="top" constant="1" id="WgE-bm-ilO"/>
                                                             <constraint firstAttribute="trailing" secondItem="DGe-r8-R1j" secondAttribute="trailing" id="ZfA-3D-UZR"/>
-                                                            <constraint firstAttribute="trailing" secondItem="CBh-DJ-3zF" secondAttribute="trailing" constant="1" id="gt8-h6-nxY"/>
+                                                            <constraint firstAttribute="trailing" secondItem="CBh-DJ-3zF" secondAttribute="trailing" constant="10" id="gt8-h6-nxY"/>
                                                             <constraint firstAttribute="bottom" secondItem="CBh-DJ-3zF" secondAttribute="bottom" constant="1" id="jdy-Su-rMf"/>
+                                                            <constraint firstAttribute="bottom" secondItem="DGe-r8-R1j" secondAttribute="bottom" id="xkh-aJ-Ima"/>
                                                         </constraints>
                                                     </view>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="90h-Ep-Q2e">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90h-Ep-Q2e">
                                                         <rect key="frame" x="0.0" y="28" width="251" height="23"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yc5-3X-xaM">
-                                                                <rect key="frame" x="0.0" y="0.0" width="113" height="23"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNO-GY-Zwu">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="113" height="21"/>
-                                                                        <state key="normal" image="SmallButtonUnselectedUntouched"/>
-                                                                        <state key="selected" image="BigButtonUnselectedTouched"/>
-                                                                        <state key="highlighted" image="SmallButtonUnselectedTouched"/>
-                                                                    </button>
-                                                                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wG4-eg-0Mt">
-                                                                        <rect key="frame" x="10" y="1" width="102" height="21"/>
-                                                                        <subviews>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddFriendsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="7jN-Ua-DKw">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="width" secondItem="7jN-Ua-DKw" secondAttribute="height" id="va1-Ck-6PH"/>
-                                                                                </constraints>
-                                                                            </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Aij-qz-0BZ">
-                                                                                <rect key="frame" x="26" y="0.0" width="76" height="21"/>
-                                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="100"/>
-                                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="wG4-eg-0Mt" secondAttribute="trailing" constant="1" id="8KS-cC-Jgt"/>
-                                                                    <constraint firstItem="SNO-GY-Zwu" firstAttribute="top" secondItem="Yc5-3X-xaM" secondAttribute="top" id="AUg-8S-RgF"/>
-                                                                    <constraint firstItem="wG4-eg-0Mt" firstAttribute="leading" secondItem="Yc5-3X-xaM" secondAttribute="leading" constant="10" id="L2f-vU-8uS"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="wG4-eg-0Mt" secondAttribute="bottom" constant="1" id="Nqp-bz-eXh"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="SNO-GY-Zwu" secondAttribute="bottom" id="hbN-Zz-dpX"/>
-                                                                    <constraint firstItem="wG4-eg-0Mt" firstAttribute="top" secondItem="Yc5-3X-xaM" secondAttribute="top" constant="1" id="kb7-ju-5KY"/>
-                                                                    <constraint firstItem="SNO-GY-Zwu" firstAttribute="leading" secondItem="Yc5-3X-xaM" secondAttribute="leading" id="mKg-DA-PJQ"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="SNO-GY-Zwu" secondAttribute="trailing" id="t8z-r8-fbv"/>
-                                                                </constraints>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNO-GY-Zwu">
+                                                                <rect key="frame" x="0.0" y="0.0" width="88" height="23"/>
+                                                                <state key="normal" image="AddFriendButton-Untouched"/>
+                                                                <state key="selected" image="BigButtonUnselectedTouched"/>
+                                                                <state key="highlighted" image="AddFriendButton-Touched"/>
+                                                            </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3Q-NK-IWM">
+                                                                <rect key="frame" x="88" y="0.0" width="75" height="23"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4EB-7B-wZB">
-                                                                <rect key="frame" x="138" y="0.0" width="113" height="23"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sws-Z4-vsl">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="113" height="21"/>
-                                                                        <state key="normal" image="SmallButtonUnselectedUntouched"/>
-                                                                        <state key="selected" image="BigButtonUnselectedTouched"/>
-                                                                        <state key="highlighted" image="SmallButtonUnselectedTouched"/>
-                                                                    </button>
-                                                                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Osv-LT-AS4">
-                                                                        <rect key="frame" x="10" y="1" width="102" height="21"/>
-                                                                        <subviews>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatIcon" translatesAutoresizingMaskIntoConstraints="NO" id="edT-3P-2mc">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="width" secondItem="edT-3P-2mc" secondAttribute="height" id="bXi-DY-SZs"/>
-                                                                                </constraints>
-                                                                            </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ZUb-z3-HQv">
-                                                                                <rect key="frame" x="26" y="0.0" width="76" height="21"/>
-                                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="100"/>
-                                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="Osv-LT-AS4" secondAttribute="trailing" constant="1" id="0wf-ct-Xfu"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="sws-Z4-vsl" secondAttribute="bottom" id="CAL-lf-Py4"/>
-                                                                    <constraint firstItem="Osv-LT-AS4" firstAttribute="leading" secondItem="4EB-7B-wZB" secondAttribute="leading" constant="10" id="NS1-cM-x6G"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="Osv-LT-AS4" secondAttribute="bottom" constant="1" id="NpQ-bC-aXs"/>
-                                                                    <constraint firstItem="Osv-LT-AS4" firstAttribute="top" secondItem="4EB-7B-wZB" secondAttribute="top" constant="1" id="W8W-Vy-VXH"/>
-                                                                    <constraint firstItem="sws-Z4-vsl" firstAttribute="leading" secondItem="4EB-7B-wZB" secondAttribute="leading" id="XbP-TB-4Oe"/>
-                                                                    <constraint firstItem="sws-Z4-vsl" firstAttribute="top" secondItem="4EB-7B-wZB" secondAttribute="top" id="iF5-Tt-jka"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="sws-Z4-vsl" secondAttribute="trailing" id="vBc-c0-Bcf"/>
-                                                                </constraints>
-                                                            </view>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sws-Z4-vsl">
+                                                                <rect key="frame" x="163" y="0.0" width="88" height="23"/>
+                                                                <state key="normal" image="ChatButton-Untouched"/>
+                                                                <state key="selected" image="BigButtonUnselectedTouched"/>
+                                                                <state key="highlighted" image="ChatButton-Touched"/>
+                                                            </button>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="4EB-7B-wZB" secondAttribute="trailing" id="GLS-Qf-Iov"/>
-                                                            <constraint firstItem="4EB-7B-wZB" firstAttribute="leading" secondItem="Yc5-3X-xaM" secondAttribute="trailing" id="RGF-xO-4dq"/>
-                                                            <constraint firstItem="4EB-7B-wZB" firstAttribute="leading" secondItem="Yc5-3X-xaM" secondAttribute="trailing" id="i4b-Pc-6hT"/>
-                                                            <constraint firstItem="Yc5-3X-xaM" firstAttribute="leading" secondItem="90h-Ep-Q2e" secondAttribute="leading" id="rrU-YH-Ae9"/>
+                                                            <constraint firstItem="sws-Z4-vsl" firstAttribute="width" secondItem="SNO-GY-Zwu" secondAttribute="width" id="FtI-us-2cn"/>
+                                                            <constraint firstItem="X3Q-NK-IWM" firstAttribute="width" secondItem="90h-Ep-Q2e" secondAttribute="width" multiplier="0.3" id="IYj-Pj-UDO"/>
                                                         </constraints>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="RGF-xO-4dq"/>
-                                                                <exclude reference="i4b-Pc-6hT"/>
-                                                            </mask>
-                                                        </variation>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMD-xf-4Ec">
                                                         <rect key="frame" x="0.0" y="56" width="251" height="23"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtQ-IC-cZS">
-                                                                <rect key="frame" x="0.0" y="0.0" width="251" height="21"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtQ-IC-cZS">
+                                                                <rect key="frame" x="0.0" y="0.0" width="251" height="23"/>
                                                                 <state key="normal" image="BigButtonSelectedUntouched"/>
                                                                 <state key="disabled" image="BigButtonSelectedUntouched"/>
                                                                 <state key="selected" image="BigButtonUnselectedTouched"/>
@@ -375,29 +305,29 @@
                                                                     <action selector="selectStatisticsButton:" destination="Cxx-lk-6tA" eventType="touchUpInside" id="heU-3F-JOs"/>
                                                                 </connections>
                                                             </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Mxo-La-5cl">
-                                                                <rect key="frame" x="1" y="1" width="249" height="19"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="100"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Mxo-La-5cl">
+                                                                <rect key="frame" x="13" y="3" width="226" height="18"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="Mxo-La-5cl" secondAttribute="trailing" constant="1" id="Ld5-kp-bpi"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Mxo-La-5cl" secondAttribute="bottom" constant="1" id="N8F-aW-Nyr"/>
-                                                            <constraint firstItem="Mxo-La-5cl" firstAttribute="leading" secondItem="pMD-xf-4Ec" secondAttribute="leading" constant="1" id="Wuy-Bg-EbD"/>
+                                                            <constraint firstItem="Mxo-La-5cl" firstAttribute="centerX" secondItem="pMD-xf-4Ec" secondAttribute="centerX" id="QGq-sI-MPW"/>
                                                             <constraint firstAttribute="trailing" secondItem="XtQ-IC-cZS" secondAttribute="trailing" id="Xdq-Kp-lYd"/>
                                                             <constraint firstItem="XtQ-IC-cZS" firstAttribute="top" secondItem="pMD-xf-4Ec" secondAttribute="top" id="a3F-Sq-wCO"/>
-                                                            <constraint firstItem="Mxo-La-5cl" firstAttribute="top" secondItem="pMD-xf-4Ec" secondAttribute="top" constant="1" id="aCy-6g-LYC"/>
+                                                            <constraint firstItem="Mxo-La-5cl" firstAttribute="height" secondItem="pMD-xf-4Ec" secondAttribute="height" multiplier="0.75" id="iWV-s4-0N5"/>
                                                             <constraint firstAttribute="bottom" secondItem="XtQ-IC-cZS" secondAttribute="bottom" id="mAZ-KZ-iq3"/>
+                                                            <constraint firstItem="Mxo-La-5cl" firstAttribute="width" secondItem="pMD-xf-4Ec" secondAttribute="width" multiplier="0.9" id="pv5-wR-5cK"/>
                                                             <constraint firstItem="XtQ-IC-cZS" firstAttribute="leading" secondItem="pMD-xf-4Ec" secondAttribute="leading" id="xCz-Gq-6Ux"/>
+                                                            <constraint firstItem="Mxo-La-5cl" firstAttribute="centerY" secondItem="pMD-xf-4Ec" secondAttribute="centerY" id="zPu-Wy-Qsd"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xjf-qi-q8P">
                                                         <rect key="frame" x="0.0" y="84" width="251" height="23"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Koc-A1-7da">
-                                                                <rect key="frame" x="0.0" y="0.0" width="251" height="21"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Koc-A1-7da">
+                                                                <rect key="frame" x="0.0" y="0.0" width="251" height="23"/>
                                                                 <state key="normal" image="BigButtonUnselectedUntouched"/>
                                                                 <state key="disabled" image="BigButtonSelectedUntouched"/>
                                                                 <state key="selected" image="BigButtonUnselectedTouched"/>
@@ -406,29 +336,29 @@
                                                                     <action selector="selectActivityButton:" destination="Cxx-lk-6tA" eventType="touchUpInside" id="8pn-mC-791"/>
                                                                 </connections>
                                                             </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="yEZ-Zy-qeX">
-                                                                <rect key="frame" x="1" y="1" width="249" height="19"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="100"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="yEZ-Zy-qeX">
+                                                                <rect key="frame" x="13" y="3" width="226" height="17"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="yEZ-Zy-qeX" secondAttribute="trailing" constant="1" id="8QU-dC-Wnf"/>
+                                                            <constraint firstItem="yEZ-Zy-qeX" firstAttribute="width" secondItem="xjf-qi-q8P" secondAttribute="width" multiplier="0.9" id="ClF-r9-wuE"/>
                                                             <constraint firstItem="Koc-A1-7da" firstAttribute="leading" secondItem="xjf-qi-q8P" secondAttribute="leading" id="FGP-W3-g6K"/>
                                                             <constraint firstAttribute="trailing" secondItem="Koc-A1-7da" secondAttribute="trailing" id="Hjm-P0-zMM"/>
                                                             <constraint firstItem="Koc-A1-7da" firstAttribute="top" secondItem="xjf-qi-q8P" secondAttribute="top" id="LxG-eZ-xO8"/>
-                                                            <constraint firstItem="yEZ-Zy-qeX" firstAttribute="top" secondItem="xjf-qi-q8P" secondAttribute="top" constant="1" id="ZFi-R9-UG4"/>
+                                                            <constraint firstItem="yEZ-Zy-qeX" firstAttribute="centerY" secondItem="xjf-qi-q8P" secondAttribute="centerY" id="UW4-Mv-Klf"/>
+                                                            <constraint firstItem="yEZ-Zy-qeX" firstAttribute="centerX" secondItem="xjf-qi-q8P" secondAttribute="centerX" id="aT2-vE-rhR"/>
                                                             <constraint firstAttribute="bottom" secondItem="Koc-A1-7da" secondAttribute="bottom" id="h3Z-Ul-CCR"/>
-                                                            <constraint firstItem="yEZ-Zy-qeX" firstAttribute="leading" secondItem="xjf-qi-q8P" secondAttribute="leading" constant="1" id="ttz-eI-xEE"/>
-                                                            <constraint firstAttribute="bottom" secondItem="yEZ-Zy-qeX" secondAttribute="bottom" constant="1" id="yiN-Fo-Ng0"/>
+                                                            <constraint firstItem="yEZ-Zy-qeX" firstAttribute="height" secondItem="xjf-qi-q8P" secondAttribute="height" multiplier="0.75" id="sAR-lw-Fuc"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hzw-Jz-ZVP">
                                                         <rect key="frame" x="0.0" y="112" width="251" height="23"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJB-ti-GnY">
-                                                                <rect key="frame" x="0.0" y="0.0" width="251" height="21"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJB-ti-GnY">
+                                                                <rect key="frame" x="0.0" y="0.0" width="251" height="23"/>
                                                                 <state key="normal" image="BigButtonUnselectedUntouched"/>
                                                                 <state key="disabled" image="BigButtonSelectedUntouched"/>
                                                                 <state key="selected" image="BigButtonUnselectedTouched"/>
@@ -437,21 +367,21 @@
                                                                     <action selector="selectAchievementsButton:" destination="Cxx-lk-6tA" eventType="touchUpInside" id="tU0-Af-NAo"/>
                                                                 </connections>
                                                             </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="vhU-Wy-OlK">
-                                                                <rect key="frame" x="1" y="1" width="249" height="19"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="vhU-Wy-OlK">
+                                                                <rect key="frame" x="13" y="3" width="226" height="17"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="vhU-Wy-OlK" secondAttribute="bottom" constant="1" id="9nc-Lf-hNd"/>
                                                             <constraint firstItem="UJB-ti-GnY" firstAttribute="leading" secondItem="Hzw-Jz-ZVP" secondAttribute="leading" id="CgG-cc-vob"/>
+                                                            <constraint firstItem="vhU-Wy-OlK" firstAttribute="width" secondItem="Hzw-Jz-ZVP" secondAttribute="width" multiplier="0.9" id="EwX-M6-Gfe"/>
                                                             <constraint firstAttribute="bottom" secondItem="UJB-ti-GnY" secondAttribute="bottom" id="G2N-K2-GQY"/>
                                                             <constraint firstAttribute="trailing" secondItem="UJB-ti-GnY" secondAttribute="trailing" id="IR5-fb-7Nf"/>
-                                                            <constraint firstItem="vhU-Wy-OlK" firstAttribute="leading" secondItem="Hzw-Jz-ZVP" secondAttribute="leading" constant="1" id="YZA-cB-gs8"/>
-                                                            <constraint firstItem="vhU-Wy-OlK" firstAttribute="top" secondItem="Hzw-Jz-ZVP" secondAttribute="top" constant="1" id="iT8-kG-Xsq"/>
-                                                            <constraint firstAttribute="trailing" secondItem="vhU-Wy-OlK" secondAttribute="trailing" constant="1" id="oWH-Ki-F4W"/>
+                                                            <constraint firstItem="vhU-Wy-OlK" firstAttribute="height" secondItem="Hzw-Jz-ZVP" secondAttribute="height" multiplier="0.75" id="ITW-sW-iDf"/>
+                                                            <constraint firstItem="vhU-Wy-OlK" firstAttribute="centerX" secondItem="Hzw-Jz-ZVP" secondAttribute="centerX" id="Z2n-Pk-hvw"/>
+                                                            <constraint firstItem="vhU-Wy-OlK" firstAttribute="centerY" secondItem="Hzw-Jz-ZVP" secondAttribute="centerY" id="bJb-Od-6s7"/>
                                                             <constraint firstItem="UJB-ti-GnY" firstAttribute="top" secondItem="Hzw-Jz-ZVP" secondAttribute="top" id="ryt-dz-6sH"/>
                                                         </constraints>
                                                     </view>
@@ -460,11 +390,9 @@
                                                     <constraint firstItem="90h-Ep-Q2e" firstAttribute="leading" secondItem="zPp-YE-94Z" secondAttribute="leading" id="4a2-Hd-9a9"/>
                                                     <constraint firstAttribute="trailing" secondItem="90h-Ep-Q2e" secondAttribute="trailing" id="5aF-uX-mQr"/>
                                                     <constraint firstAttribute="trailing" secondItem="pMD-xf-4Ec" secondAttribute="trailing" id="6ZF-Cr-aOd"/>
-                                                    <constraint firstAttribute="trailing" secondItem="4EE-xi-8pi" secondAttribute="trailing" id="ERU-jp-QmB"/>
                                                     <constraint firstItem="pMD-xf-4Ec" firstAttribute="leading" secondItem="zPp-YE-94Z" secondAttribute="leading" id="QTG-3J-Z29"/>
                                                     <constraint firstItem="Hzw-Jz-ZVP" firstAttribute="leading" secondItem="zPp-YE-94Z" secondAttribute="leading" id="RQk-Z5-PhJ"/>
                                                     <constraint firstAttribute="trailing" secondItem="Hzw-Jz-ZVP" secondAttribute="trailing" id="U8v-ON-CNy"/>
-                                                    <constraint firstItem="4EE-xi-8pi" firstAttribute="leading" secondItem="zPp-YE-94Z" secondAttribute="leading" id="dod-Z0-CZF"/>
                                                     <constraint firstItem="xjf-qi-q8P" firstAttribute="leading" secondItem="zPp-YE-94Z" secondAttribute="leading" id="jfZ-ob-2jf"/>
                                                     <constraint firstAttribute="trailing" secondItem="xjf-qi-q8P" secondAttribute="trailing" id="mre-AP-J1I"/>
                                                 </constraints>
@@ -514,8 +442,8 @@
                                     <constraint firstItem="icW-W3-67Q" firstAttribute="centerX" secondItem="hkq-zE-OpA" secondAttribute="centerX" id="v70-4B-k7c"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAO-Uh-POt">
-                                <rect key="frame" x="609" y="56" width="57" height="57"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAO-Uh-POt">
+                                <rect key="frame" x="609" y="55" width="57" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZAO-Uh-POt" secondAttribute="height" id="0lN-UQ-6oc"/>
                                 </constraints>
@@ -548,17 +476,13 @@
                         <outlet property="activityBackground" destination="xjf-qi-q8P" id="JXF-YH-c15"/>
                         <outlet property="activityButton" destination="Koc-A1-7da" id="Trl-7L-n2O"/>
                         <outlet property="activityLabel" destination="yEZ-Zy-qeX" id="Wb0-eU-IzL"/>
-                        <outlet property="addFriendBackground" destination="Yc5-3X-xaM" id="2Ev-WU-J86"/>
                         <outlet property="addFriendButton" destination="SNO-GY-Zwu" id="Afm-JY-Uia"/>
-                        <outlet property="addFriendLabel" destination="Aij-qz-0BZ" id="WHp-Bh-nOE"/>
+                        <outlet property="addFriendStack" destination="90h-Ep-Q2e" id="Mgv-sm-GuD"/>
                         <outlet property="badgeLabel" destination="xjl-GM-Tiv" id="HgR-hg-yLt"/>
-                        <outlet property="chatBackground" destination="4EB-7B-wZB" id="wYg-0o-kO0"/>
                         <outlet property="chatButton" destination="sws-Z4-vsl" id="Ggp-zn-jEg"/>
-                        <outlet property="chatLabel" destination="ZUb-z3-HQv" id="9Sy-g8-Qbm"/>
                         <outlet property="friendsNumberLabel" destination="ucd-U3-8tC" id="wjL-qy-Lq7"/>
                         <outlet property="locationLabel" destination="5wv-It-3GA" id="4kT-up-Hqs"/>
-                        <outlet property="nameLabelDown" destination="JZc-Kn-K5L" id="oC0-IP-kyQ"/>
-                        <outlet property="nameLabelUp" destination="vBi-l7-TK6" id="1QP-fg-gHN"/>
+                        <outlet property="nameLabel" destination="JZc-Kn-K5L" id="RNN-Sz-P44"/>
                         <outlet property="profileImageView" destination="lnp-dJ-xMX" id="Eim-Hj-zn2"/>
                         <outlet property="statisticsBackground" destination="pMD-xf-4Ec" id="Wdg-yB-kPb"/>
                         <outlet property="statisticsButton" destination="XtQ-IC-cZS" id="5rz-lt-h7o"/>
@@ -574,21 +498,21 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AddFriendsIcon" width="70" height="70"/>
+        <image name="AddFriendButton-Touched" width="198" height="68"/>
+        <image name="AddFriendButton-Untouched" width="198" height="68"/>
         <image name="AvatarPlaceholder" width="100" height="100"/>
-        <image name="BigButtonSelectedUntouched" width="464" height="48"/>
+        <image name="BigButtonSelectedUntouched" width="462" height="44"/>
         <image name="BigButtonUnselectedTouched" width="464" height="48"/>
         <image name="BigButtonUnselectedUntouched" width="464" height="48"/>
         <image name="BigPopUp" width="1216" height="696"/>
-        <image name="ChatIcon" width="70" height="70"/>
+        <image name="ChatButton-Touched" width="198" height="68"/>
+        <image name="ChatButton-Untouched" width="198" height="68"/>
         <image name="Close-Big" width="108" height="108"/>
         <image name="Close-Small" width="108" height="108"/>
         <image name="FriendsIcon" width="70" height="70"/>
         <image name="Label-Profile" width="546" height="94"/>
         <image name="ProfileContainer" width="1148" height="522"/>
         <image name="RankIcon" width="70" height="70"/>
-        <image name="SmallButtonUnselectedTouched" width="218" height="48"/>
-        <image name="SmallButtonUnselectedUntouched" width="218" height="48"/>
         <image name="United States" width="48" height="48"/>
     </resources>
 </document>

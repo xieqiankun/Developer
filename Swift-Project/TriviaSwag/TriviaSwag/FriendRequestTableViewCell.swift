@@ -8,20 +8,30 @@
 
 import UIKit
 
+@objc protocol ShowProfile {
+    func showProfile(name: String)
+}
+
 class FriendRequestTableViewCell: UITableViewCell {
 
     @IBOutlet weak var content: UIView!
     
     @IBOutlet weak var friendName: UILabel!
     @IBOutlet weak var friendRegion: UILabel!
-    
-    
     @IBOutlet weak var badge: CustomBadge!
+    
+    @IBOutlet weak var userinfoStack: UIStackView!
+    weak var delegate: ShowProfile?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         initFriendRequestCell()
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(FriendRequestTableViewCell.tap))
+        gesture.delegate = self
+        userinfoStack.addGestureRecognizer(gesture)
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -65,6 +75,20 @@ class FriendRequestTableViewCell: UITableViewCell {
         }
         
     }
-
+    
+    func tap() {
+        delegate?.showProfile(friendName.text!)
+    }
+    
 
 }
+
+
+
+
+
+
+
+
+
+

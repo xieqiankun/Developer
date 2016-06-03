@@ -36,6 +36,10 @@ class ChatViewController: UIViewController,UITextViewDelegate {
     // For table view
     @IBOutlet weak var tableview: UITableView!
     
+    // For header
+    @IBOutlet weak var headerName: UILabel!
+    @IBOutlet weak var headerAvator: UIImageView!
+    
     var refreshControl: UIRefreshControl!
     
     // TODO- need to do something for refresh control for DARASTEP
@@ -60,6 +64,14 @@ class ChatViewController: UIViewController,UITextViewDelegate {
         print("========== view did load -----------")
         self.view.backgroundColor = UIColor.clearColor()
         configureTextView()
+        
+        // set header
+        let attributes = [NSStrokeColorAttributeName: kFriendListBorderColor,
+                          NSStrokeWidthAttributeName : -3.0,
+                          NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+        let str = NSAttributedString(string: friend, attributes: attributes)
+        headerName.attributedText = str
         
         // set data source manager
         chatManager = ChatScreenManager(displayName: friend)

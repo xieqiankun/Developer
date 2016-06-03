@@ -269,6 +269,7 @@ class ListMessageBean {
     }
     
     init(request: triviaFriendRequest){
+        displayName = request.sender!
         friendRequest = request
         messageType = FriendsScreenManager.MessageType.FriendRequest
     }

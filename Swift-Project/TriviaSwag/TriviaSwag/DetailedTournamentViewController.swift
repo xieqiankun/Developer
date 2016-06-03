@@ -10,11 +10,20 @@ import UIKit
 
 class DetailedTournamentViewController: UIViewController {
 
-    var tournament: gStackTournament?
+    var tournament: gStackTournament? {
+        didSet {
+            hideUI()
+            setupTournamentInfo()
+            showUI()
+        }
+    }
     
     @IBOutlet weak var tournamentNameLabel: UILabel!
     @IBOutlet weak var startBtn: UIButton!
     
+    @IBOutlet weak var questionNum: UILabel!
+    @IBOutlet weak var timeRemaining: UILabel!
+    @IBOutlet weak var tickets: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +79,165 @@ class DetailedTournamentViewController: UIViewController {
     }
     
     
+    func setupTournamentInfo() {
+        
+        let strokeTextAttributes = [
+            NSStrokeColorAttributeName : kMainScreenLeaderboardStrokeColor,
+            NSForegroundColorAttributeName : kMainScreenLeaderboardFillColor,
+            NSStrokeWidthAttributeName : -2.0
+        ]
+        
+        self.tournamentNameLabel.attributedText = NSAttributedString(string: (tournament?.name!)!, attributes: strokeTextAttributes)
+        
+        if self.tournament?.status() == gStackTournamentStatus.Active {
+            self.startBtn.hidden = false
+        } else {
+            self.startBtn.hidden = true
+        }
+        
+        if let num = tournament?.questions?.num?.integerValue{
+            questionNum.text = "\(num) questions"
+        }
+        if let num = tournament?.buyin?.integerValue{
+            if num == 0 || num == 1 {
+                tickets.text = "\(num) ticket"
+            } else {
+                tickets.text = "\(num) tickets"
+            }
+        }
+        calculateRemainDate()
+    }
+    
+    func calculateRemainDate() {
+        
+        let userCalendar = NSCalendar.currentCalendar()
+
+        // here we set the current date
+        let nowDate = NSDate()
+        let startDate = tournament!.startTime
+        let endDate = tournament!.stopTime
+        
+        let dayCalendarUnit: NSCalendarUnit = [.Day, .Hour, .Minute]
+        
+        if nowDate.compare(startDate!) == .OrderedAscending {
+        // future tournament
+            let dayDifference = userCalendar.components(
+                dayCalendarUnit,
+                fromDate: nowDate,
+                toDate: startDate!,
+                options: [])
+            
+            var res = ""
+            var hasDay = true
+            if dayDifference.day > 1 {
+                res = res + "\(dayDifference.day) days "
+            } else {
+                if dayDifference.day == 0 {
+                    hasDay = false
+                } else {
+                    res = res + "\(dayDifference.day) day "
+                }
+            }
+            if dayDifference.hour > 1 {
+                res = res + "\(dayDifference.hour) hours "
+            } else {
+                res = res + "\(dayDifference.hour) hour "
+            }
+            if !hasDay {
+                if dayDifference.minute > 1{
+                    res = res + "\(dayDifference.minute) mins "
+                } else {
+                    res = res + "\(dayDifference.minute) min "
+                }
+            }
+            
+            timeRemaining.text = "starting in " + res
+
+            
+        } else if nowDate.compare(endDate!) == .OrderedDescending {
+        // past tournament
+            let dayDifference = userCalendar.components(
+                dayCalendarUnit,
+                fromDate: endDate!,
+                toDate: nowDate,
+                options: [])
+            
+            if dayDifference.day > 1 {
+                timeRemaining.text = "\(dayDifference.day) days ago"
+            } else {
+                timeRemaining.text = "\(dayDifference.day) day ago"
+
+            }
+            
+        } else {
+            
+            let dayDifference = userCalendar.components(
+                dayCalendarUnit,
+                fromDate: nowDate,
+                toDate: endDate!,
+                options: [])
+            
+            var res = ""
+            var hasDay = true
+            if dayDifference.day > 1 {
+                res = res + "\(dayDifference.day) days "
+            } else {
+                if dayDifference.day == 0 {
+                    hasDay = false
+                } else {
+                    res = res + "\(dayDifference.day) day "
+                }
+            }
+            if dayDifference.hour > 1 {
+                res = res + "\(dayDifference.hour) hours "
+            } else {
+                res = res + "\(dayDifference.hour) hour "
+            }
+            if !hasDay {
+                if dayDifference.minute > 1{
+                    res = res + "\(dayDifference.minute) mins "
+                } else {
+                    res = res + "\(dayDifference.minute) min "
+                }
+            }
+            
+            timeRemaining.text = res + "remaining"
+            
+        }
+        
+        
+        
+        
+        
+    }
+    
+    func hideUI() {
+        
+        UIView.animateWithDuration(0.05) {
+            
+            self.tournamentNameLabel.alpha = 0
+            self.questionNum.alpha = 0
+            self.tickets.alpha = 0
+            self.timeRemaining.alpha = 0
+        }
+        
+    }
+    
+    func showUI() {
+        
+        UIView.animateWithDuration(0.1) {
+            
+            self.tournamentNameLabel.alpha = 1
+            self.questionNum.alpha = 1
+            self.tickets.alpha = 1
+            self.timeRemaining.alpha = 1
+        }
+        
+        
+        
+    }
+    
+    
     // Update the UI with new Tournament
     func updateTournamentInfo(notification: NSNotification) {
         
@@ -77,12 +245,6 @@ class DetailedTournamentViewController: UIViewController {
             let temp = info["currentTournament"] as! gStackTournament
             self.tournament = temp
             
-            self.tournamentNameLabel.text = self.tournament?.name
-            if self.tournament?.status() == gStackTournamentStatus.Active {
-                self.startBtn.hidden = false
-            } else {
-                self.startBtn.hidden = true
-            }
         }
         
     }
@@ -97,28 +259,8 @@ class DetailedTournamentViewController: UIViewController {
     
     func prepareTStartTheGame(){
         
-        SimplePingClient.pingHost { latency in
-            print("latency is: \(latency)")
-            
-            if let lat = latency {
-                let num = Int(lat)
-                // set the max delay to 3 seconds
-                if num <= 3000 {
-                    dispatch_async(dispatch_get_main_queue(), { 
-                        self.performSegueWithIdentifier("GamePlaySegue", sender: self)
-                    })
-                } else {
-                    dispatch_async(dispatch_get_main_queue()) {
-                        let button1 = AlertButton(title: "", imageNames: ["PlayNowButton-Untouched","PlayNowButton-Touched"], style: .Custom,action: {
-                            self.performSegueWithIdentifier("GamePlaySegue", sender: self)
-                        })
-                        let button2 = AlertButton(title: "", imageNames: [], style: .Cancel, action: nil)
-                        let vc = StoryboardAlertViewControllerFactory().createAlertViewController([button1,button2], title: "Slimmy Internet!", message: "Are you sure you want to play?")
-                        self.presentViewController(vc, animated: true, completion: nil)
-                    }
-                }
-            }
-        }
+        self.performSegueWithIdentifier("GamePlaySegue", sender: self)
+
     }
     
     // MARK: - Navigation
