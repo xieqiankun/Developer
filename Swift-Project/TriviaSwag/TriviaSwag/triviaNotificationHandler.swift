@@ -63,11 +63,27 @@ class triviaNotificationHandler: NSObject {
         print("Received event: \(event.name)")
         print("Data: \(event.data)")
 
-        if event.name == "newInboxReceived"{
+        if event.name == "newInboxReceived" || event.name == "friendRequestReceived"{
             //Refetch the user inbox
             triviaGetCurrentUserInbox({ (error, inbox) in
                 
             })
+        } else if event.name == "unfriended" {
+            triviaFetchFriends({ (error, updatedFriends) in
+                
+            })
+        } else if event.name == "friendRequestAccepted" {
+            triviaFetchFriends({ (error, updatedFriends) in
+            
+            })
+            triviaGetCurrentUserInbox({ (error, inbox) in
+
+            })
+        } else if event.name == "friendRequestDenied"{
+            triviaGetCurrentUserInbox({ (error, inbox) in
+                
+            })
+            
         }
     
     }

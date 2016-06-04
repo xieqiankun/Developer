@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -21,13 +21,18 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        email.delegate = self
+        password.delegate = self
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     @IBAction func login() {
@@ -78,6 +83,34 @@ class LoginViewController: UIViewController {
             }
             
         }
+    }
+    
+    
+    //UITextFieldDelegate Functions for Text Fields
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        textField.resignFirstResponder()
+//        UIView.animateWithDuration(0.5, animations: {
+//            
+//            
+//            UIView.beginAnimations(nil, context: nil)
+//            UIView.setAnimationDuration(0.5)
+//            UIView.setAnimationDelay(0)
+//            UIView.setAnimationCurve(.EaseOut)
+//            
+//            self.view.bounds.origin.y = 80
+//            
+//            UIView.commitAnimations()
+//        })
     }
 
 

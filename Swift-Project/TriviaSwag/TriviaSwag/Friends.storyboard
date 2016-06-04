@@ -120,7 +120,7 @@
                                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;Location&gt;" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ga4-Jd-4Az">
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Location&gt;" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ga4-Jd-4Az">
                                                                                             <rect key="frame" x="0.0" y="31" width="112" height="12"/>
                                                                                             <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="12"/>
                                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -254,7 +254,7 @@
                                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;Location&gt;" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIQ-uO-sqq">
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Location&gt;" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIQ-uO-sqq">
                                                                                             <rect key="frame" x="0.0" y="31" width="112" height="12"/>
                                                                                             <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="12"/>
                                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -272,11 +272,17 @@
                                                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="34"/>
                                                                                     <state key="normal" image="Accept-Untouched"/>
                                                                                     <state key="highlighted" image="Accept-Touched"/>
+                                                                                    <connections>
+                                                                                        <action selector="accept" destination="ZVf-gI-f1Z" eventType="touchUpInside" id="2hf-0R-ldW"/>
+                                                                                    </connections>
                                                                                 </button>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gE3-5N-gIz">
                                                                                     <rect key="frame" x="80" y="0.0" width="80" height="34"/>
                                                                                     <state key="normal" image="Ignore-Untouched"/>
                                                                                     <state key="highlighted" image="Ignore-Touched"/>
+                                                                                    <connections>
+                                                                                        <action selector="ignore" destination="ZVf-gI-f1Z" eventType="touchUpInside" id="SL8-Cf-7M5"/>
+                                                                                    </connections>
                                                                                 </button>
                                                                             </subviews>
                                                                         </stackView>

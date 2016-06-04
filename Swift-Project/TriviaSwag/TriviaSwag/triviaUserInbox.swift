@@ -110,8 +110,8 @@ public class triviaUserInbox: NSObject {
     
     public func isSentFriendRequestToUser(name: String) -> Bool {
         
-        for request in pendingFriendRequests {
-            if request.sender == name {
+        for request in self.pendingFriendRequests {
+            if request.recipient == name {
                 return true
             }
         }

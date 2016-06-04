@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Sign up-->
@@ -19,20 +20,12 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDu-nH-15v">
                                 <rect key="frame" x="20" y="77" width="182" height="30"/>
+                                <color key="backgroundColor" red="0.80885074013157898" green="1" blue="0.82200863486842102" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Sign up with Facebook"/>
                                 <connections>
                                     <action selector="signUpWithFacebook" destination="bIg-vZ-K2f" eventType="touchUpInside" id="Qbk-6H-dA9"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sign up with email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zcF-zm-A2A">
-                                <rect key="frame" x="27" y="138" width="168" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <action selector="verifyEmailAddress:" destination="bIg-vZ-K2f" eventType="editingDidEndOnExit" id="olU-so-SN1"/>
-                                    <outlet property="delegate" destination="bIg-vZ-K2f" id="DoF-k2-x4W"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mgj-3G-Vb2">
                                 <rect key="frame" x="27" y="202" width="168" height="30"/>
                                 <state key="normal" title="Verify Email Address"/>
@@ -43,15 +36,15 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pick your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DEf-6P-Lh8">
                                 <rect key="frame" x="268" y="78" width="171" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="bIg-vZ-K2f" id="c99-vn-pXP"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Referral Code(Optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U8J-MB-YAe">
-                                <rect key="frame" x="268" y="197" width="171" height="30"/>
+                                <rect key="frame" x="268" y="196" width="171" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="bIg-vZ-K2f" id="dMs-25-xc1"/>
                                 </connections>
@@ -59,14 +52,15 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Set password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ksN-K0-a0f">
                                 <rect key="frame" x="268" y="138" width="171" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="bIg-vZ-K2f" id="y44-tA-iU2"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nK1-yU-fbi">
-                                <rect key="frame" x="310" y="260" width="47" height="30"/>
-                                <state key="normal" title="submit"/>
+                                <rect key="frame" x="274" y="252" width="159" height="38"/>
+                                <color key="backgroundColor" red="0.80885074013157898" green="1" blue="0.82200863486842102" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="signup" destination="bIg-vZ-K2f" eventType="touchUpInside" id="uwZ-jL-jt9"/>
                                 </connections>
@@ -77,6 +71,15 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sign up with email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zcF-zm-A2A">
+                                <rect key="frame" x="27" y="138" width="168" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="verifyEmailAddress:" destination="bIg-vZ-K2f" eventType="editingDidEndOnExit" id="olU-so-SN1"/>
+                                    <outlet property="delegate" destination="bIg-vZ-K2f" id="DoF-k2-x4W"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -109,14 +112,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2z-Wi-USe">
-                                <rect key="frame" x="101" y="173" width="145" height="30"/>
+                                <rect key="frame" x="143" y="120" width="145" height="30"/>
+                                <color key="backgroundColor" red="0.66873972039473684" green="1" blue="0.68189761513157898" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Sign up"/>
                                 <connections>
                                     <segue destination="bIg-vZ-K2f" kind="show" id="qGM-jM-V8i"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fO2-Gc-gRv">
-                                <rect key="frame" x="462" y="173" width="38" height="30"/>
+                                <rect key="frame" x="387" y="120" width="145" height="30"/>
+                                <color key="backgroundColor" red="0.68189761513157898" green="1" blue="0.68189761513157898" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <segue destination="lcc-8S-dzz" kind="show" id="xa5-VA-Hrq"/>
@@ -151,32 +158,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ImA-Vz-Xfx">
-                                <rect key="frame" x="50" y="135" width="207" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oit-FX-2Y8">
-                                <rect key="frame" x="50" y="193" width="207" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydr-0p-D0o">
-                                <rect key="frame" x="129" y="264" width="49" height="30"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="login" destination="lcc-8S-dzz" eventType="touchUpInside" id="hRO-MG-oQO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qeh-h4-98V">
-                                <rect key="frame" x="423" y="173" width="181" height="30"/>
-                                <state key="normal" title="Login with Facebook"/>
-                                <connections>
-                                    <action selector="loginWithFacebook:" destination="lcc-8S-dzz" eventType="touchUpInside" id="QOs-w9-yi9"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UKG-IU-xeb">
+                                <rect key="frame" x="0.0" y="44" width="667" height="331"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BOU-vj-Q04">
+                                        <rect key="frame" x="0.0" y="0.0" width="667" height="442"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ImA-Vz-Xfx">
+                                                <rect key="frame" x="55" y="52" width="207" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qeh-h4-98V">
+                                                <rect key="frame" x="382" y="115" width="251" height="58"/>
+                                                <color key="backgroundColor" red="0.77921977796052633" green="1" blue="0.75948293585526316" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <state key="normal" title="Login with Facebook"/>
+                                                <connections>
+                                                    <action selector="loginWithFacebook:" destination="lcc-8S-dzz" eventType="touchUpInside" id="QOs-w9-yi9"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oit-FX-2Y8">
+                                                <rect key="frame" x="55" y="106" width="207" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydr-0p-D0o">
+                                                <rect key="frame" x="79" y="160" width="159" height="40"/>
+                                                <color key="backgroundColor" red="0.77921977796052633" green="1" blue="0.75948293585526316" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <state key="normal" title="Submit"/>
+                                                <connections>
+                                                    <action selector="login" destination="lcc-8S-dzz" eventType="touchUpInside" id="hRO-MG-oQO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="BOU-vj-Q04" secondAttribute="bottom" id="DqG-f2-yMM"/>
+                                    <constraint firstItem="BOU-vj-Q04" firstAttribute="top" secondItem="UKG-IU-xeb" secondAttribute="top" id="LmA-fe-iqs"/>
+                                    <constraint firstAttribute="trailing" secondItem="BOU-vj-Q04" secondAttribute="trailing" id="PbX-yP-O8f"/>
+                                    <constraint firstItem="BOU-vj-Q04" firstAttribute="leading" secondItem="UKG-IU-xeb" secondAttribute="leading" id="cfM-F4-8YU"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I0M-vB-xqE" firstAttribute="top" secondItem="UKG-IU-xeb" secondAttribute="bottom" id="JE9-9B-Ibg"/>
+                            <constraint firstItem="UKG-IU-xeb" firstAttribute="top" secondItem="DAl-bt-HpW" secondAttribute="bottom" constant="-20" id="Q6s-2b-rej"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UKG-IU-xeb" secondAttribute="trailing" id="ZYo-la-8oN"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="1Ou-JH-xYx"/>
                     <connections>
@@ -186,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a68-St-HLt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1562.5" y="-722.5"/>
+            <point key="canvasLocation" x="1541.5" y="-844.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="91Z-IP-m04">

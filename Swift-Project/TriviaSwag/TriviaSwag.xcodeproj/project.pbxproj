@@ -938,7 +938,7 @@
 				TargetAttributes = {
 					284758BA1CB2EE3500DCFE6A = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = A4KK8R4439;
+						DevelopmentTeam = UUUA77DZ8A;
 					};
 					284758CE1CB2EE3500DCFE6A = {
 						CreatedOnToolsVersion = 7.3;
@@ -1407,7 +1407,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.purplegator.qiankunxie.TriviaSwag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/xieqiankun/Developer/Swift-Project/TriviaSwag/TriviaSwag/Trivios-Tournaments-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "./TriviaSwag/Trivios-Tournaments-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1428,7 +1428,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.purplegator.qiankunxie.TriviaSwag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/xieqiankun/Developer/Swift-Project/TriviaSwag/TriviaSwag/Trivios-Tournaments-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "./TriviaSwag/Trivios-Tournaments-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

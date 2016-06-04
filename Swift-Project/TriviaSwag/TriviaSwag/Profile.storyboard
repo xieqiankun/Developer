@@ -237,20 +237,20 @@
                                                     <constraint firstItem="df0-hs-fkG" firstAttribute="height" secondItem="lnp-dJ-xMX" secondAttribute="height" multiplier="0.4" id="UJb-s3-yrB"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zPp-YE-94Z">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="zPp-YE-94Z">
                                                 <rect key="frame" x="15" y="115" width="251" height="135"/>
                                                 <subviews>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4EE-xi-8pi">
-                                                        <rect key="frame" x="0.0" y="0.0" width="251" height="23"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="251" height="26"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGe-r8-R1j">
-                                                                <rect key="frame" x="0.0" y="0.0" width="251" height="23"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="251" height="26"/>
                                                                 <state key="normal" image="BigButtonUnselectedUntouched"/>
                                                                 <state key="selected" image="BigButtonUnselectedTouched"/>
                                                                 <state key="highlighted" image="BigButtonUnselectedTouched"/>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="clip" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="CBh-DJ-3zF">
-                                                                <rect key="frame" x="10" y="1" width="231" height="21"/>
+                                                                <rect key="frame" x="10" y="1" width="231" height="24"/>
                                                                 <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="18"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -268,20 +268,23 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90h-Ep-Q2e">
-                                                        <rect key="frame" x="0.0" y="28" width="251" height="23"/>
+                                                        <rect key="frame" x="0.0" y="28" width="251" height="26"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNO-GY-Zwu">
-                                                                <rect key="frame" x="0.0" y="0.0" width="88" height="23"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="119" height="26"/>
                                                                 <state key="normal" image="AddFriendButton-Untouched"/>
                                                                 <state key="selected" image="BigButtonUnselectedTouched"/>
                                                                 <state key="highlighted" image="AddFriendButton-Touched"/>
+                                                                <connections>
+                                                                    <action selector="addFriendAction" destination="Cxx-lk-6tA" eventType="touchUpInside" id="E9E-FI-zWv"/>
+                                                                </connections>
                                                             </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3Q-NK-IWM">
-                                                                <rect key="frame" x="88" y="0.0" width="75" height="23"/>
+                                                                <rect key="frame" x="119" y="0.0" width="13" height="26"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sws-Z4-vsl">
-                                                                <rect key="frame" x="163" y="0.0" width="88" height="23"/>
+                                                                <rect key="frame" x="132" y="0.0" width="119" height="26"/>
                                                                 <state key="normal" image="ChatButton-Untouched"/>
                                                                 <state key="selected" image="BigButtonUnselectedTouched"/>
                                                                 <state key="highlighted" image="ChatButton-Touched"/>
@@ -289,14 +292,14 @@
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="sws-Z4-vsl" firstAttribute="width" secondItem="SNO-GY-Zwu" secondAttribute="width" id="FtI-us-2cn"/>
-                                                            <constraint firstItem="X3Q-NK-IWM" firstAttribute="width" secondItem="90h-Ep-Q2e" secondAttribute="width" multiplier="0.3" id="IYj-Pj-UDO"/>
+                                                            <constraint firstItem="X3Q-NK-IWM" firstAttribute="width" secondItem="90h-Ep-Q2e" secondAttribute="width" multiplier="0.05" id="IYj-Pj-UDO"/>
                                                         </constraints>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMD-xf-4Ec">
-                                                        <rect key="frame" x="0.0" y="56" width="251" height="23"/>
+                                                        <rect key="frame" x="0.0" y="55" width="251" height="25"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtQ-IC-cZS">
-                                                                <rect key="frame" x="0.0" y="0.0" width="251" height="23"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="251" height="25"/>
                                                                 <state key="normal" image="BigButtonSelectedUntouched"/>
                                                                 <state key="disabled" image="BigButtonSelectedUntouched"/>
                                                                 <state key="selected" image="BigButtonUnselectedTouched"/>
@@ -324,10 +327,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xjf-qi-q8P">
-                                                        <rect key="frame" x="0.0" y="84" width="251" height="23"/>
+                                                        <rect key="frame" x="0.0" y="82" width="251" height="26"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Koc-A1-7da">
-                                                                <rect key="frame" x="0.0" y="0.0" width="251" height="23"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="251" height="26"/>
                                                                 <state key="normal" image="BigButtonUnselectedUntouched"/>
                                                                 <state key="disabled" image="BigButtonSelectedUntouched"/>
                                                                 <state key="selected" image="BigButtonUnselectedTouched"/>
@@ -337,7 +340,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="yEZ-Zy-qeX">
-                                                                <rect key="frame" x="13" y="3" width="226" height="17"/>
+                                                                <rect key="frame" x="13" y="4" width="226" height="19"/>
                                                                 <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -355,10 +358,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hzw-Jz-ZVP">
-                                                        <rect key="frame" x="0.0" y="112" width="251" height="23"/>
+                                                        <rect key="frame" x="0.0" y="110" width="251" height="26"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJB-ti-GnY">
-                                                                <rect key="frame" x="0.0" y="0.0" width="251" height="23"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="251" height="26"/>
                                                                 <state key="normal" image="BigButtonUnselectedUntouched"/>
                                                                 <state key="disabled" image="BigButtonSelectedUntouched"/>
                                                                 <state key="selected" image="BigButtonUnselectedTouched"/>
@@ -368,7 +371,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="vhU-Wy-OlK">
-                                                                <rect key="frame" x="13" y="3" width="226" height="17"/>
+                                                                <rect key="frame" x="13" y="4" width="226" height="19"/>
                                                                 <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>

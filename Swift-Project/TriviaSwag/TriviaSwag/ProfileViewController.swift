@@ -41,7 +41,7 @@ class ProfileViewController: UIViewController {
             // only update userInfo when user already been set
             if user != nil {
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.setCurrentUserInfo()
+                    self.updateAddFriendBtn()
                 }
             }
         }
@@ -96,6 +96,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         view.backgroundColor = UIColor.clearColor()
         setupLabelStrokes()
 
@@ -121,12 +122,23 @@ class ProfileViewController: UIViewController {
             })
         }
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ProfileViewController.refresh), name: triviaDidUpdateFriendsNotificationName, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ProfileViewController.refresh), name: triviaUpdateInboxNotificationName, object: nil)
+        
         // Do any additional setup after loading the view.
         currentSelectedButton = statisticsButton
         currentSelectedButton.enabled = false
     }
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
     
+    func refresh() {
+        
+        setUserStatus()
+        
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -176,20 +188,19 @@ class ProfileViewController: UIViewController {
     
     // verify the user status
     func setUserStatus() {
-        
+
         if let inbox = triviaCurrentUserInbox {
             if inbox.isSentFriendRequestToUser(self.userName) {
                 userStatus = .Pending
-                return
             }
         }
         
         if let me = triviaCurrentUser {
             if me.isFriendOfCurrentUser(self.userName){
                 userStatus = .Friend
-                return
             }
         }
+        userStatus = .Nonfriend
     }
     
     // use user status to update friend btn
@@ -257,6 +268,27 @@ class ProfileViewController: UIViewController {
     
     
     // MARK: - IBAction
+    
+    @IBAction func addFriendAction() {
+        
+        switch userStatus {
+        case .Friend:
+            triviaUnfriend(userName, completion: { [weak self](error, updatedFriends) in
+                if let strongSelf = self {
+                    strongSelf.dismissViewControllerAnimated(true, completion: nil)
+                }
+            })
+        case .Nonfriend:
+            triviaRequestFriend(userName, completion: { (error, newInbox) in
+                
+            })
+        default:
+            break
+        }
+        
+        
+    }
+    
     // Last three button selected action
     @IBAction func selectStatisticsButton(sender: UIButton) {
         changeButtonStatus(sender)

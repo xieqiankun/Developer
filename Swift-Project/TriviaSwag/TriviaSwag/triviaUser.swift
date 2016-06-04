@@ -345,11 +345,11 @@ public class triviaFriend: NSObject {
         return triviaNotificationHandler.sharedInstance.isFriendOnline(self)
     }
     
-    deinit{
-        if let _channel = channel {
-            triviaNotificationHandler.sharedInstance.unsubscribeToPusherChannel(_channel)
-        }
-    }
+//    deinit{
+//        if let _channel = channel {
+//            triviaNotificationHandler.sharedInstance.unsubscribeToPusherChannel(_channel)
+//        }
+//    }
     init(dictionary: Dictionary<String,AnyObject>) {
         channel = dictionary["channel"] as? String
         displayName = dictionary["displayName"] as? String

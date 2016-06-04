@@ -86,6 +86,8 @@ class FriendSearchTableViewCell: UITableViewCell {
                 return
             }
         }
+        
+        userStatus = .Nonfriend
 
         
     }

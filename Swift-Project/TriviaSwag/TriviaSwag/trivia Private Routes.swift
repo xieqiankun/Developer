@@ -41,7 +41,7 @@ public func triviaGetCurrentUserInfo(completion: (error: NSError?) -> Void) {
 //Updata Address Info
 //regulate use before submit the address
 public func triviaUpdateAddress(name: String?, phone: String, address: triviaUserAddress, completion: (error: NSError?) -> Void) {
-
+    
     if address.line1 == nil {
         address.line1 = ""
     }
@@ -116,11 +116,11 @@ public func triviaGetCurrentUserInbox(completion: (error: NSError?, inbox: trivi
                     let currentInbox = triviaUserInbox(dictionary: userInbox)
                     
                     triviaCurrentUserInbox = currentInbox
-
-//                    print("In fetching message ------")
-//                    print(currentInbox.friendRequests.count)
-//                    print("In fetching message ------")
-//                    
+                    
+                    //                    print("In fetching message ------")
+                    //                    print(currentInbox.friendRequests.count)
+                    //                    print("In fetching message ------")
+                    //
                     completion(error: nil, inbox: currentInbox)
                     // post fetch trivia inbox success notification
                     NSNotificationCenter.defaultCenter().postNotificationName(triviaUpdateInboxNotificationName, object: nil)
@@ -146,7 +146,7 @@ public func triviaDeleteCommunique(communique: triviaCommunique, completion: (er
         completion(error: error, updatedInbox: nil)
     } else {
         var requestDictionary = ["messageId":communique._id!,"messageType":communique.type!]
-
+        
         if communique.isKindOfClass(gStackAsyncChallengeMessage) {
             requestDictionary["challengeId"] = communique._id!
         }
@@ -158,16 +158,16 @@ public func triviaDeleteCommunique(communique: triviaCommunique, completion: (er
                     completion(error: _error, updatedInbox: nil)
                 } else if let payload = _payload as? Dictionary<String,AnyObject> {
                     if let updatedInboxDictionary = payload["userInbox"] as? Dictionary<String,AnyObject> {
-                    print(_payload)
-                    let inbox = triviaUserInbox(dictionary: updatedInboxDictionary)
-                    //update the trivia current user inbox
-                    triviaCurrentUserInbox = inbox
-//                    print("In deleting message ------")
-//                    print(inbox.friendRequests.count)
-//                    print("In deleting message ------")
-
-                    completion(error: nil, updatedInbox: inbox)
-                    NSNotificationCenter.defaultCenter().postNotificationName(triviaDidDeleteMessageNotificationName, object: nil)
+                        print(_payload)
+                        let inbox = triviaUserInbox(dictionary: updatedInboxDictionary)
+                        //update the trivia current user inbox
+                        triviaCurrentUserInbox = inbox
+                        //                    print("In deleting message ------")
+                        //                    print(inbox.friendRequests.count)
+                        //                    print("In deleting message ------")
+                        
+                        completion(error: nil, updatedInbox: inbox)
+                        NSNotificationCenter.defaultCenter().postNotificationName(triviaDidDeleteMessageNotificationName, object: nil)
                     }
                 } else {
                     completion(error: gStackMissingPayloadError, updatedInbox: nil)
@@ -395,7 +395,11 @@ public func triviaRequestFriend(friendDisplayName: String, completion: (error: N
                 completion(error: _error, newInbox: nil)
             } else if let payload = _payload as? Dictionary<String,AnyObject> {
                 if let updatedInboxDictionary = payload["userInbox"] as? Dictionary<String,AnyObject> {
-                    completion(error: nil, newInbox: triviaUserInbox(dictionary: updatedInboxDictionary))
+                    
+                    let inbox = triviaUserInbox(dictionary: updatedInboxDictionary)
+                    completion(error: nil, newInbox: inbox )
+                    triviaCurrentUserInbox = inbox
+                    NSNotificationCenter.defaultCenter().postNotificationName(triviaUpdateInboxNotificationName, object: nil, userInfo: nil)
                 } else {
                     let missingError = NSError(domain: "Missing updated inbox", code: 1111, userInfo: nil)
                     completion(error: missingError, newInbox: nil)
@@ -407,13 +411,47 @@ public func triviaRequestFriend(friendDisplayName: String, completion: (error: N
     })
 }
 
+public func triviaFetchFriends(completion:(error: NSError?, updatedFriends: Array<triviaFriend>?) -> Void) {
+    
+    makeRequest(true, route: "getfriends", type: "clientGetFriends", payload: true, completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _payload in
+            if _error != nil {
+                completion(error: _error, updatedFriends: nil)
+            } else if let payload = _payload as? Dictionary<String,AnyObject> {
+                if let updatedFriends = payload["friends"] as? [[String: AnyObject]] {
+                    
+                    var friends = Array<triviaFriend>()
+                    for friend in updatedFriends {
+                        friends.append(triviaFriend(dictionary: friend))
+                    }
+                    if let currentUser = triviaCurrentUser {
+                        currentUser.friends = friends
+                    }
+                    completion(error: nil, updatedFriends: friends)
+                    
+                    NSNotificationCenter.defaultCenter().postNotificationName(triviaDidUpdateFriendsNotificationName, object: nil, userInfo: nil)
+                } else {
+                    let missingError = NSError(domain: "Missing updated inbox", code: 1111, userInfo: nil)
+                    completion(error: missingError, updatedFriends: nil)
+                }
+            } else {
+                completion(error: gStackMissingPayloadError, updatedFriends: nil)
+            }
+        })
+    })
 
+    
+    
+    
+}
 
 //nq
-public func triviaAnswerFriendRequest(request: triviaFriendRequest, accept: Bool, completion: (error: NSError?, updatedFriends: Array<triviaFriend>?) -> Void) {
+public func triviaAnswerFriendRequest(request: triviaFriendRequest, accept: Bool, completion: (error: NSError?, updatedFriends: Array<triviaFriend>?, updateUserInbox: triviaUserInbox?) -> Void) {
     if request.token == nil || request._id == nil {
         let error = NSError(domain: "Request missing token and/or _id", code: 2222, userInfo: nil)
-        completion(error: error, updatedFriends: nil)
+        completion(error: error, updatedFriends: nil, updateUserInbox: nil)
     } else {
         let requestDictionary = ["token":request.token!,"accepted":accept,"messageId":request._id!]
         makeRequest(true, route: "answerfriendrequest", type: "clientAnswerFriendRequest", payload: requestDictionary, completion: {
@@ -421,25 +459,30 @@ public func triviaAnswerFriendRequest(request: triviaFriendRequest, accept: Bool
             processResponse(error, data: data, completion: {
                 _error, _payload in
                 if _error != nil {
-                    completion(error: _error, updatedFriends: nil)
+                    completion(error: _error, updatedFriends: nil, updateUserInbox:  nil)
                 } else if let payload = _payload as? Dictionary<String,AnyObject> {
-                    if let updatedFriends = payload["friends"] as? Array<Dictionary<String,AnyObject>> {
+                    if let updatedFriends = payload["friends"] as? Array<Dictionary<String,AnyObject>>, let updatedInboxDictionary = payload["userInbox"] as? Dictionary<String,AnyObject> {
                         var friends = Array<triviaFriend>()
                         for friend in updatedFriends {
                             friends.append(triviaFriend(dictionary: friend))
                         }
-                        completion(error: nil, updatedFriends: friends)
+                        let inbox =  triviaUserInbox(dictionary: updatedInboxDictionary)
+                        triviaCurrentUserInbox = inbox
+                        completion(error: nil, updatedFriends: friends, updateUserInbox: inbox)
                         if let currentUser = triviaCurrentUser {
                             currentUser.friends = friends
                         }
                         NSNotificationCenter.defaultCenter().postNotificationName(triviaDidUpdateFriendsNotificationName, object: nil, userInfo: nil)
+                        NSNotificationCenter.defaultCenter().postNotificationName(triviaUpdateInboxNotificationName, object: nil, userInfo: nil)
                         
                     } else {
                         let missingError = NSError(domain: "Missing Updated Friends", code: 1111, userInfo: nil)
-                        completion(error: missingError, updatedFriends: nil)
+                        completion(error: missingError, updatedFriends: nil, updateUserInbox: nil)
                     }
+                    
+
                 } else {
-                    completion(error: gStackMissingPayloadError, updatedFriends: nil)
+                    completion(error: gStackMissingPayloadError, updatedFriends: nil, updateUserInbox:  nil)
                 }
             })
         })

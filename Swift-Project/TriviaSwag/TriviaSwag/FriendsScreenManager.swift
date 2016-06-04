@@ -232,13 +232,9 @@ class FriendsScreenManager: NSObject {
     }
     
     func updateUserInbox() {
-        print("part 1")
         setNewMessagesQuantity()
-        print("part 2")
         configureList()
-        print("part 3")
         listDelegate?.update()
-        print("part 4")
 
     }
     

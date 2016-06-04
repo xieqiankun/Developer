@@ -10,6 +10,7 @@ import UIKit
 
 class FriendsViewController: UIViewController, ShowProfile {
     
+
     
     var manager = FriendsScreenManager()//.sharedManager
     

@@ -48,8 +48,25 @@ class FriendSearchViewController: UIViewController {
             })
         }
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(FriendSearchViewController.refresh), name: triviaUpdateInboxNotificationName, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(FriendSearchViewController.refresh), name: triviaDidUpdateFriendsNotificationName, object: nil)
+
+    }
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
+    
+    func refresh() {
+        
+        dispatch_async(dispatch_get_main_queue()) { 
+            self.tableView.reloadData()
+        }
+        
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -56,6 +56,8 @@ class FriendRequestTableViewCell: UITableViewCell {
         badge.hidden = true
     }
 
+    var request: triviaFriendRequest?
+    
     func configueCell(item:ListMessageBean) {
         
         let attributes = [NSStrokeColorAttributeName: kFriendListBorderColor,
@@ -73,14 +75,31 @@ class FriendRequestTableViewCell: UITableViewCell {
                 badge.text = "..."
             }
         }
-        
+        request = item.friendRequest
     }
     
     func tap() {
         delegate?.showProfile(friendName.text!)
     }
     
-
+    @IBAction func accept() {
+        if let request = request {
+            triviaAnswerFriendRequest(request, accept: true, completion: { (error, updatedFriends, updateUserInbox) in
+                
+            })
+        }
+    }
+    
+    @IBAction func ignore() {
+        
+        if let request = request {
+            triviaAnswerFriendRequest(request, accept: false, completion: { (error, updatedFriends, updateUserInbox) in
+                
+            })
+        }
+        
+    }
+    
 }
 
 
