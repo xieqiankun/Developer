@@ -192,12 +192,14 @@ class ProfileViewController: UIViewController {
         if let inbox = triviaCurrentUserInbox {
             if inbox.isSentFriendRequestToUser(self.userName) {
                 userStatus = .Pending
+                return
             }
         }
         
         if let me = triviaCurrentUser {
             if me.isFriendOfCurrentUser(self.userName){
                 userStatus = .Friend
+                return
             }
         }
         userStatus = .Nonfriend

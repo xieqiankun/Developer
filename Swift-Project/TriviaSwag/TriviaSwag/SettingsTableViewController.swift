@@ -161,16 +161,29 @@ class SettingsTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if let lastPath = self.lastIndexPath{
+            if (indexPath.row != lastPath.row){
+                let nextCell = cell as! SettingsTableViewCell
+                nextCell.backgroundColor = UIColor.clearColor()
+                nextCell.didDeselectCell()
+            }
+        }
+        
+    }
+    
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
 
         delegate?.dismissCurrentViewController()
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! SettingsTableViewCell
-        cell.backgroundColor = UIColor.clearColor()
-        cell.didDeselectCell()
+        if let pendingCell = tableView.cellForRowAtIndexPath(indexPath){
+            let cell = pendingCell as! SettingsTableViewCell
+            cell.backgroundColor = UIColor.clearColor()
+            cell.didDeselectCell()
+        }
+      
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
         if indexPath == self.lastIndexPath {
             return
         }
@@ -179,6 +192,12 @@ class SettingsTableViewController: UITableViewController {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! SettingsTableViewCell
         cell.backgroundColor = SettingMasterSelectedCellColor
         cell.didSelectCell()
+        if (settings[indexPath.row] == "Log Out"){
+            triviaUser.logOutCurrentUser()
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        
     }
     
 

@@ -35,6 +35,8 @@ class GameViewController: UIViewController {
     
     var currentQuestion: gStackGameQuestion?
     
+    var questions = [gStackGameQuestion]()
+    var answers = [gStackGameCorrectAnswer]()
     
     // MARK: - IBOutlet
     // constraints for animations
@@ -221,7 +223,6 @@ class GameViewController: UIViewController {
         funnyLabel_Incorrect.textColor = kTimebarColor
 
         //clock part
-        
         clockbar.backgroundColor = kTimebarColor
         clockView.backgroundColor = UIColor.blackColor()
         
@@ -272,6 +273,7 @@ class GameViewController: UIViewController {
         
         
         // set game leader
+        // TODO: - there be may a bug for not caching the leaderboard
         if let uuid = currentTournament?.uuid, let leaderboard = gStackCachedLeaderBoard[uuid]{
             if let leader = leaderboard.leaders.first{
                 leaderDisplayName.text = leader.displayName
@@ -530,13 +532,31 @@ class GameViewController: UIViewController {
         if let store = triviaCurrentGifStore {
             
             let correct = store.getRandomGif(true)
-            let correctURL = NSURL(string: correct.image!)
-            funnyGif.image = UIImage.animatedImageWithAnimatedGIFURL(correctURL!)
+            if let correctURL = NSURL(string: correct.image!){
+                UIImage.gifWithRemoteUrl(correctURL, completion: { [weak self](image) in
+                    if let strongSelf = self {
+                        dispatch_async(dispatch_get_main_queue(), { 
+                            strongSelf.funnyGif.image = image
+                        })
+                    }
+                })
+            }
+            //funnyGif.image = UIImage.animatedImageWithAnimatedGIFURL(correctURL!)
+
             funnyLabel.text = correct.text!
             
             let incorrect = store.getRandomGif(false)
-            let incorrectURL = NSURL(string: incorrect.image!)
-            funnyGif_Incorrect.image = UIImage.animatedImageWithAnimatedGIFURL(incorrectURL!)
+            if let incorrectURL = NSURL(string: incorrect.image!){
+                UIImage.gifWithRemoteUrl(incorrectURL, completion: { [weak self](image) in
+                    if let strongSelf = self {
+                        dispatch_async(dispatch_get_main_queue(), { 
+                            strongSelf.funnyGif_Incorrect.image = image
+                        })
+                    }
+                })
+            }
+            //funnyGif_Incorrect.image = UIImage.animatedImageWithAnimatedGIFURL(incorrectURL!)
+            
             funnyLabel_Incorrect.text = incorrect.text!
 
         }
@@ -789,9 +809,6 @@ class GameViewController: UIViewController {
             timebarWidthConstrain.constant = timebarWidthConstrain.constant - step
         }
     }
-    
-    
-
 }
 
 

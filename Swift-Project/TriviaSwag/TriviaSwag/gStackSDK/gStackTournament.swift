@@ -131,6 +131,7 @@ public class gStackTournament: NSObject {
 
 public class gStackTournamentLeaderboard: NSObject {
     public var leaders = Array<gStackTournamentLeader>()
+    public var rank = -1
     
     init(array: Array<Dictionary<String,AnyObject>>) {
         for leaderDictionary in array {

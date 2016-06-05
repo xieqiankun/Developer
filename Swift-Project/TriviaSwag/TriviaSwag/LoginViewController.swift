@@ -36,10 +36,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func login() {
-        
         triviaUserLogin(self.email.text!, password: self.password.text!) { (error) in
             
-            
+            if (error == nil){
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
         }
         
     }

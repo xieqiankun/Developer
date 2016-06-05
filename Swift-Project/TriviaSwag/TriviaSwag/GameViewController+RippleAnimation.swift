@@ -39,7 +39,9 @@ extension GameViewController {
             }, completion: {
                 (true) in
                 newView.removeFromSuperview()
-                view.backgroundColor = option.fillColor
+                dispatch_async(dispatch_get_main_queue(), { 
+                    view.backgroundColor = option.fillColor
+                })
         })
         
         

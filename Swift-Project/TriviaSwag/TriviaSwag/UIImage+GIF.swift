@@ -11,6 +11,19 @@ import ImageIO
 
 extension UIImage {
     
+    public class func gifWithRemoteUrl(url:NSURL, completion:(image: UIImage?) -> Void) {
+        
+        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
+            
+            guard let data = data where error == nil else { return }
+
+            let im = gifWithData(data)
+            completion(image: im)
+            
+            }.resume()
+
+    }
+    
     public class func gifWithData(data: NSData) -> UIImage? {
         // Create source from data
         guard let source = CGImageSourceCreateWithData(data, nil) else {

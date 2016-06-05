@@ -85,14 +85,28 @@ public func gStackFetchLeaderboardForTournament(tournament: gStackTournament, co
         let error = NSError(domain: "tournament uuid is missing", code: 2222, userInfo: nil)
         completion(error: error, leaderboard: nil)
     } else {
-        gStackMakeRequest(true, route: "gettournaments", type: "clientGetTournamentLeaderboard", payload: ["uuid":tournament.uuid!], completion: {
+        var payload: [String: String]!
+        if let userName = triviaCurrentUser?.displayName {
+            payload = ["uuid":tournament.uuid!, "displayName":userName]
+        } else {
+            payload = ["uuid":tournament.uuid!]
+        }
+        gStackMakeRequest(true, route: "gettournaments", type: "clientGetTournamentLeaderboard", payload: payload, completion: {
             data, response, error in
             gStackProcessResponse(error, data: data, completion: {
                 _error, _payload in
                 if _error != nil {
                     completion(error: _error, leaderboard: nil)
-                } else if let payload = _payload as? Array<Dictionary<String,AnyObject>> {
-                    let leaderboard = gStackTournamentLeaderboard(array: payload)
+                } else if let payload = _payload as? Dictionary<String,AnyObject> {
+                    var leaderboard: gStackTournamentLeaderboard?
+                    if let leaderboardPayload = payload["leaderboard"] as? [[String: AnyObject]] {
+                        leaderboard = gStackTournamentLeaderboard(array: leaderboardPayload)
+                    }
+                    if let rank = payload["rank"] as? Int{
+                        if leaderboard != nil {
+                            leaderboard?.rank = rank
+                        }
+                    }
                     completion(error: nil, leaderboard: leaderboard)
                     //store the leaderboard locally
                     if let id = tournament.uuid {

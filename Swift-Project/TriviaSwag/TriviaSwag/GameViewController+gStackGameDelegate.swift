@@ -50,8 +50,9 @@ extension GameViewController: gStackGameDelegate{
         
     }
     func didReceiveQuestion(question: gStackGameQuestion){
-        setGifs()
         self.currentQuestion = question
+        //cache the question
+        self.questions.append(question)
         self.isAllowSubmit = true
         
         setQuestionLabelWithCurrentQuestion()
@@ -62,9 +63,12 @@ extension GameViewController: gStackGameDelegate{
         
         self.prepareState(true, completion:{
             (true) in
-            self.setAnswerLabelsWithCurrentQuestion()
-            self.clearAnswerBackground()
-            self.setUntouchButtons()
+            dispatch_async(dispatch_get_main_queue(), { 
+                self.setGifs()
+                self.setAnswerLabelsWithCurrentQuestion()
+                self.clearAnswerBackground()
+                self.setUntouchButtons()
+            })
         })
 
 
@@ -86,9 +90,13 @@ extension GameViewController: gStackGameDelegate{
         
     }
     func didReceiveCorrectAnswer(correctAnswer: gStackGameCorrectAnswer){
+        //cache answers
+        answers.append(correctAnswer)
         // in case user didn't answer
-        NSLog("receive correct answer")
         stopCountdown()
+        if isAllowSubmit {
+            setIncorrectResult()
+        }
         resultState(true)
         
         let correct = correctAnswer.correctAnswer?.integerValue
@@ -149,6 +157,30 @@ extension GameViewController: gStackGameDelegate{
     func didReceiveGameResult(result: gStackGameResult){
         //        self.soundGameover?.play()
         stopCountdown()
+        let sb = UIStoryboard(name: "GameOver", bundle: nil)
+        let vc = sb.instantiateInitialViewController() as! GameOverViewController
+        
+        vc.tournament = self.currentTournament
+        vc.answers = self.answers
+        vc.questions = self.questions
+        vc.numOfQuestion = (result.teamScores?[0].count)!
+        var correct = 0
+        for num in result.teamScores![0] {
+            let score = num.doubleValue
+            if score != 0 {
+                correct  = correct + 1
+            }
+        }
+        vc.numOfCorrect = correct
+        var time = 0.0
+        for num in result.teamAnswersTime![0] {
+            let score = num.doubleValue
+            if score != 0 {
+                time  = time + score
+            }
+        }
+        vc.totalTime = time
+        self.presentViewController(vc, animated: true, completion: nil)
     }
     
     func didReceiveOtherGameFinished(alive:gStackGameOtherGameFinished){

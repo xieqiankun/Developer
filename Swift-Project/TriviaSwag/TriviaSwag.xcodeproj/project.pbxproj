@@ -114,6 +114,8 @@
 		2847591C1CB310E800DCFE6A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847591B1CB310E800DCFE6A /* HomeViewController.swift */; };
 		2847595D1CB43E2800DCFE6A /* DetailedTournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847595C1CB43E2800DCFE6A /* DetailedTournamentViewController.swift */; };
 		284759611CB4524000DCFE6A /* NavBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284759601CB4524000DCFE6A /* NavBarViewController.swift */; };
+		285C07EB1D0339D2009E3371 /* GameOver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 285C07EA1D0339D2009E3371 /* GameOver.storyboard */; };
+		285C07ED1D033D1B009E3371 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C07EC1D033D1B009E3371 /* GameOverViewController.swift */; };
 		286658221CE2876E0013B004 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286658211CE2876E0013B004 /* Reachability.swift */; };
 		286658241CE29BC10013B004 /* SimplePingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286658231CE29BC10013B004 /* SimplePingClient.swift */; };
 		286658271CE29F9D0013B004 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 286658261CE29F9D0013B004 /* SimplePing.m */; };
@@ -176,6 +178,7 @@
 		28FB3FC41CE3D00400E6A32E /* triviaShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB3FC31CE3D00400E6A32E /* triviaShop.swift */; };
 		28FB3FC61CE3E34800E6A32E /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB3FC51CE3E34800E6A32E /* ShopViewController.swift */; };
 		28FB3FC81CE3E41E00E6A32E /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB3FC71CE3E41E00E6A32E /* UIImageView+DownloadImage.swift */; };
+		7F008C3E1D0372A400932A21 /* StatusUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F008C3D1D0372A400932A21 /* StatusUpdateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -310,6 +313,8 @@
 		2847591B1CB310E800DCFE6A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2847595C1CB43E2800DCFE6A /* DetailedTournamentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedTournamentViewController.swift; sourceTree = "<group>"; };
 		284759601CB4524000DCFE6A /* NavBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarViewController.swift; sourceTree = "<group>"; };
+		285C07EA1D0339D2009E3371 /* GameOver.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameOver.storyboard; sourceTree = "<group>"; };
+		285C07EC1D033D1B009E3371 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		286658211CE2876E0013B004 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		286658231CE29BC10013B004 /* SimplePingClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplePingClient.swift; sourceTree = "<group>"; };
 		286658251CE29F9D0013B004 /* SimplePing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePing.h; sourceTree = "<group>"; };
@@ -374,6 +379,7 @@
 		28FB3FC51CE3E34800E6A32E /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		28FB3FC71CE3E41E00E6A32E /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
 		40B8AD281A1186F6866DF4DC /* Pods-TriviaSwag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriviaSwag.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriviaSwag/Pods-TriviaSwag.release.xcconfig"; sourceTree = "<group>"; };
+		7F008C3D1D0372A400932A21 /* StatusUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusUpdateViewController.swift; sourceTree = "<group>"; };
 		C76CDDB4F42A12922984AB32 /* Pods-TriviaSwag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriviaSwag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TriviaSwag/Pods-TriviaSwag.debug.xcconfig"; sourceTree = "<group>"; };
 		FDF86463B0CAD609B9C80919 /* libPods-TriviaSwag.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TriviaSwag.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -670,6 +676,15 @@
 			name = DetailContainer;
 			sourceTree = "<group>";
 		};
+		285C07E91D0339B0009E3371 /* Gameover */ = {
+			isa = PBXGroup;
+			children = (
+				285C07EA1D0339D2009E3371 /* GameOver.storyboard */,
+				285C07EC1D033D1B009E3371 /* GameOverViewController.swift */,
+			);
+			name = Gameover;
+			sourceTree = "<group>";
+		};
 		286658281CE29FAA0013B004 /* SimplePing */ = {
 			isa = PBXGroup;
 			children = (
@@ -686,6 +701,7 @@
 				286E7C361CD7D3F800F462FF /* Profile.storyboard */,
 				286E7C381CD7D41400F462FF /* ProfileViewController.swift */,
 				286E7C431CD7FFE900F462FF /* DoubleLabelStrokeLabelView.xib */,
+				7F008C3D1D0372A400932A21 /* StatusUpdateViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -803,6 +819,7 @@
 		28B9CB071CF387A300880138 /* GamePlayNew */ = {
 			isa = PBXGroup;
 			children = (
+				285C07E91D0339B0009E3371 /* Gameover */,
 				28B9CB081CF3882E00880138 /* Game.storyboard */,
 				28B9CB0A1CF3893500880138 /* GameViewController.swift */,
 				281B7E641CF4D95400355B5F /* GameViewController+gStackGameDelegate.swift */,
@@ -938,7 +955,7 @@
 				TargetAttributes = {
 					284758BA1CB2EE3500DCFE6A = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = UUUA77DZ8A;
+						DevelopmentTeam = A4KK8R4439;
 					};
 					284758CE1CB2EE3500DCFE6A = {
 						CreatedOnToolsVersion = 7.3;
@@ -1025,6 +1042,7 @@
 				281B7E3F1CF4CA2200355B5F /* SF-Compact-Display-Regular.otf in Resources */,
 				281B7E5B1CF4CA2200355B5F /* SF-UI-Text-HeavyItalic.otf in Resources */,
 				281B7E461CF4CA2200355B5F /* SF-Compact-Text-HeavyItalic.otf in Resources */,
+				285C07EB1D0339D2009E3371 /* GameOver.storyboard in Resources */,
 				284758C41CB2EE3500DCFE6A /* Main.storyboard in Resources */,
 				281B7E581CF4CA2200355B5F /* SF-UI-Text-Bold.otf in Resources */,
 				281521BC1CE509B200B2B4E5 /* Friends.storyboard in Resources */,
@@ -1119,6 +1137,7 @@
 			files = (
 				281521B91CE4FF2600B2B4E5 /* gStackCacheDataManager.swift in Sources */,
 				286E7C6E1CE1484900F462FF /* TestViewController.swift in Sources */,
+				7F008C3E1D0372A400932A21 /* StatusUpdateViewController.swift in Sources */,
 				2817E1BF1CEF645C008962E8 /* FriendSearchViewController.swift in Sources */,
 				286C64E31CE5785200A37ECC /* CustomBadge.swift in Sources */,
 				281B7E671CF50DBF00355B5F /* testRippleViewController.swift in Sources */,
@@ -1161,6 +1180,7 @@
 				286E7C191CD3F3B700F462FF /* ChangePasswordTableViewController.swift in Sources */,
 				284758BF1CB2EE3500DCFE6A /* AppDelegate.swift in Sources */,
 				289A874B1CC8181500C30D8A /* SettingsTableViewController.swift in Sources */,
+				285C07ED1D033D1B009E3371 /* GameOverViewController.swift in Sources */,
 				28B9CB0B1CF3893500880138 /* GameViewController.swift in Sources */,
 				281285B81CB57C2100D0D72E /* gStackQuestion.swift in Sources */,
 				2825D2401CEBA9E3006B8567 /* ChatScreenManager.swift in Sources */,
