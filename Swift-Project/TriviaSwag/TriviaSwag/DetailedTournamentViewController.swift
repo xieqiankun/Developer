@@ -25,6 +25,8 @@ class DetailedTournamentViewController: UIViewController {
     @IBOutlet weak var timeRemaining: UILabel!
     @IBOutlet weak var tickets: UILabel!
     
+    @IBOutlet weak var awardview: AwardView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,7 +46,7 @@ class DetailedTournamentViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         //call here to change the background
-        setBackground("Tournament-Image-Placeholder")
+        //setBackground("Tournament-Image-Placeholder")
 
     }
 
@@ -72,7 +74,7 @@ class DetailedTournamentViewController: UIViewController {
     func setCornerEdge(){
         
         view.layer.borderColor = UIColor.darkGrayColor().CGColor
-        view.layer.cornerRadius = 8
+        view.layer.cornerRadius = 12
         view.layer.masksToBounds = true
         view.layer.borderWidth = 2.0
         
@@ -106,6 +108,23 @@ class DetailedTournamentViewController: UIViewController {
             }
         }
         calculateRemainDate()
+        
+        if let prizes = tournament?.prizes{
+            
+            for (index, prize) in prizes.enumerate(){
+                
+                switch index {
+                case 0:
+                    if let url = prize.image, let nsurl = NSURL(string: url){
+                        //task1 = award_1.loadImageWithURL(nsurl)
+                        awardview.setImage(nsurl)
+                    }
+                default:
+                    break
+                }
+            }
+        }
+
     }
     
     func calculateRemainDate() {
@@ -249,17 +268,43 @@ class DetailedTournamentViewController: UIViewController {
         
     }
     
+    @IBAction func viewTourneyDetails(sender: UIButton) {
+        let pvc = parentViewController as! HomeViewController
+        if let tourney = tournament{
+            pvc.viewTournamentDetails(tourney, sender: sender)
+        }
+    }
 
     @IBAction func startToPlayGame(sender: UIButton) {
         
         prepareTStartTheGame()
-        
+//        let sb = UIStoryboard(name: "GameOver", bundle: nil)
+//        let vc = sb.instantiateInitialViewController() as! GameOverViewController
+//        vc.tournament = tournament
+//        presentViewController(vc, animated: true, completion: nil)
 
     }
     
     func prepareTStartTheGame(){
         
-        self.performSegueWithIdentifier("GamePlaySegue", sender: self)
+        
+        if isCurrentUserLoggedIn() {
+            self.performSegueWithIdentifier("GamePlaySegue", sender: self)
+        } else {
+            let button1 = AlertButton(title: "Login", imageNames: [], style: .Normal, action: {
+                self.dismissViewControllerAnimated(true, completion: { 
+                    self.performSegueWithIdentifier("Login", sender: self)
+                })
+            })
+            let button2 = AlertButton(title: "Practice", imageNames: [], style: .Normal, action: {
+                self.dismissViewControllerAnimated(true, completion: {
+                    self.performSegueWithIdentifier("GamePlaySegue", sender: self)
+                })
+            })
+            let vc = StoryboardAlertViewControllerFactory().createAlertViewController([button2,button1], title: "Oh Snap!", message: "Please login for your score to be recorded! You will be rewarded with free tickets to start winning prizes!")
+            self.presentViewController(vc, animated: true, completion: nil)
+            
+        }
 
     }
     
@@ -273,11 +318,15 @@ class DetailedTournamentViewController: UIViewController {
         if segue.identifier == "GamePlaySegue" {
             
             let vc = segue.destinationViewController as! GameViewController
-            vc.currentTournament = self.tournament
-            print("I am in segue \(vc.currentTournament?.name)")
+            if isCurrentUserLoggedIn() {
+                vc.currentTournament = self.tournament
+            } else {
+                if let center = triviaCurrentDataCenter{
+                    vc.currentTournament = center.practiceTournament
+                }
+            }
         }
-        
-        
+
     }
     
 

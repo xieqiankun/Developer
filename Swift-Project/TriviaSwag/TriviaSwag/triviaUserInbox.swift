@@ -117,6 +117,16 @@ public class triviaUserInbox: NSObject {
         }
         return false
     }
+    
+    public func isReceiveFriendRequestFromUser(name: String) -> Bool {
+        
+        for request in self.friendRequests {
+            if request.sender == name {
+                return true
+            }
+        }
+        return false
+    }
 }
 
 

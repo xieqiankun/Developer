@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
+        print(NSBundle.mainBundle())
         //TODO - change the message thing
         // preload tournaments
         if let appId = NSUserDefaults.standardUserDefaults().stringForKey(gStackAppIdTokenKey), pusherChannel = NSUserDefaults.standardUserDefaults().stringForKey(gStackPusherChannelKey) {
@@ -45,10 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
             
             triviaUser.logInFromSavedToken { (error) in
-                print("-------------------------")
-                print(triviaCurrentUser?.channel)
-                print("-------------------------")
-
                 if error != nil {
                     print(triviaCurrentUser)
                     triviaCurrentUser = nil
@@ -66,13 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         //preload shop
-        triviaFetchPurchesItems { (items, error) in
+        triviaFetchDataCenter({ (center, error) in
             
-        }
-        //preload gifs
-        triviaFetchGifs { (store, error) in
-            
-        }
+        })
         //Set up default settings
         if NSUserDefaults.standardUserDefaults().boolForKey("SetupDefaults") == false {
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "SetupDefaults")
@@ -89,7 +81,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Facebook
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-
+        // Cache
+        let URLCache = NSURLCache(memoryCapacity: 50 * 1024 * 1024, diskCapacity: 200 * 1024 * 1024, diskPath: nil)
+        NSURLCache.setSharedURLCache(URLCache)
         
         return true
     }
@@ -102,6 +96,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        clearTmpDirectory()
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
@@ -137,12 +132,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    
+    // MARK: - Cache management
+    
+    // clear temp files
+    
+    func clearTmpDirectory() {
+        do {
+            let tmpDirectory = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(NSTemporaryDirectory())
+            try tmpDirectory.forEach { file in
+                let path = String.init(format: "%@%@", NSTemporaryDirectory(), file)
+                try NSFileManager.defaultManager().removeItemAtPath(path)
+            }
+        } catch {
+            print(error)
+        }
+    }
 
     // MARK: - Core Data stack
     
     lazy var applicationDocumentsDirectory: NSURL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "net.purplegator.qiankunxie.jjgjkhg" in the application's documents Application Support directory.
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        print("xqk")
         print(urls[urls.count-1])
         return urls[urls.count-1]
     }()
@@ -203,4 +216,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
 

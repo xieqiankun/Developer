@@ -43,12 +43,12 @@ class TournamentsTableViewController: UITableViewController, gStackTournamentLis
     
     
     func refreshTournamentsFromCache() {
-        self.tournaments = gStackTournament.tournamentsForStatusInArray(self.tournamentStatus, filter: self.tournamentFilter, array: gStackCachedTournaments)
+        self.tournaments = gStackTournament.tournamentsForStatusInArray(self.tournamentStatus, filter: self.tournamentFilter, array: gStackCacheDataManager.sharedInstance.getTournaments())
         dispatch_async(dispatch_get_main_queue()) { 
 
             self.tableView.reloadData()
             
-            let rowToSelect:NSIndexPath = NSIndexPath(forRow: 0, inSection: 0) //slecting 0th row with 0th section
+            let rowToSelect:NSIndexPath = NSIndexPath(forRow: 0, inSection: 0) //selcting 0th row with 0th section
             self.tableView.selectRowAtIndexPath(rowToSelect, animated: true, scrollPosition: UITableViewScrollPosition.None)
             self.tableView(self.tableView, didSelectRowAtIndexPath: rowToSelect)
         }
@@ -185,7 +185,11 @@ class TournamentsTableViewController: UITableViewController, gStackTournamentLis
         let point = sender.convertPoint(CGPointZero, toView: self.tableView)
         let indexpath = self.tableView.indexPathForRowAtPoint(point)
         selectedPlayBtn = indexpath
-        self.performSegueWithIdentifier("GamePlaySegue", sender: self)
+        if let _ = triviaCurrentUser{
+            self.performSegueWithIdentifier("GamePlaySegue", sender: self)
+        } else {
+            self.performSegueWithIdentifier("Login", sender: self)
+        }
         
         
     }

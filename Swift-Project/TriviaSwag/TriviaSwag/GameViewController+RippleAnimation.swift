@@ -12,7 +12,7 @@ extension GameViewController {
     
     struct Option {
         var radius = CGFloat(30.0)
-        var duration = 0.4
+        var duration = 1.0
         var fillColor = UIColor.clearColor()
         var scale = CGFloat(3.0)
     }
@@ -23,7 +23,7 @@ extension GameViewController {
         newView.frame = CGRectMake(location.x - 100, location.y - 100, 200.0, 200.0)
         newView.layer.cornerRadius = 100
         newView.backgroundColor = option.fillColor
-        
+
         if view.subviews.count > 0 {
             view.insertSubview(newView, belowSubview: view.subviews[0])
         } else {
@@ -32,22 +32,19 @@ extension GameViewController {
         
         newView.transform = CGAffineTransformMakeScale(0.01, 0.01)
         
-        UIView.animateWithDuration(option.duration, delay: 0, options: [], animations: {
+        UIView.animateWithDuration(option.duration, delay: 0.0, options: [], animations: {
             
             newView.transform = CGAffineTransformMakeScale(3, 3)
             
             }, completion: {
-                (true) in
+                finished in
+                if finished {
+                view.backgroundColor = option.fillColor
                 newView.removeFromSuperview()
-                dispatch_async(dispatch_get_main_queue(), { 
-                    view.backgroundColor = option.fillColor
-                })
+                }
         })
         
-        
     }
-
-    
     
     
     

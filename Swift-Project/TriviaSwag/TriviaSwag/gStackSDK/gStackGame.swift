@@ -85,32 +85,34 @@ public class gStackGame: NSObject {
         
         let onData: @convention(block) (NSDictionary, AnyObject) -> () = { (data: NSDictionary, raw: AnyObject) -> () in
             if let payload = data["payload"] as? Dictionary<String,AnyObject> {
+                NSLog("a")
                 print("Data : \(data)")
+        
                 if let type = data["type"] as? String {
-                    switch type {
-                    case "sendQuestion":
-                        self.delegate?.didReceiveQuestion(gStackGameQuestion(dictionary: payload))
-                    case "timer":
-                        self.delegate?.didReceiveTimer(gStackGameTimer(dictionary: payload))
-                    case "startRound":
-                        self.delegate?.didReceiveStartRound(gStackGameStartRound(dictionary: payload))
-                    case "roundResult":
-                        self.delegate?.didReceiveRoundResult(gStackGameRoundResult(dictionary: payload))
-                    case "sendPlayerInfo":
-                        self.delegate?.didReceivePlayerInfo(gStackGamePlayerInfo(dictionary: payload))
-                    case "correctAnswer":
-                        self.delegate?.didReceiveCorrectAnswer(gStackGameCorrectAnswer(dictionary: payload))
-                    case "updateScore":
-                        self.delegate?.didReceiveUpdatedScore(gStackGameUpdatedScore(dictionary: payload))
-                    case "gameResult":
-                        self.delegate?.didReceiveGameResult(gStackGameResult(dictionary: payload))
-                    case "otherGameFinished":
-                        self.delegate?.didReceiveOtherGameFinished(gStackGameOtherGameFinished(dictionary: payload))
-                    case "error":
-                        self.delegate?.didReceiveErrorMsg(gStackGameErrorMsg(dictionary: payload))
-                    default:
-                        break
-                    }
+                        switch type {
+                        case "sendQuestion":
+                            self.delegate?.didReceiveQuestion(gStackGameQuestion(dictionary: payload))
+                        case "timer":
+                            self.delegate?.didReceiveTimer(gStackGameTimer(dictionary: payload))
+                        case "startRound":
+                            self.delegate?.didReceiveStartRound(gStackGameStartRound(dictionary: payload))
+                        case "roundResult":
+                            self.delegate?.didReceiveRoundResult(gStackGameRoundResult(dictionary: payload))
+                        case "sendPlayerInfo":
+                            self.delegate?.didReceivePlayerInfo(gStackGamePlayerInfo(dictionary: payload))
+                        case "correctAnswer":
+                            self.delegate?.didReceiveCorrectAnswer(gStackGameCorrectAnswer(dictionary: payload))
+                        case "updateScore":
+                            self.delegate?.didReceiveUpdatedScore(gStackGameUpdatedScore(dictionary: payload))
+                        case "gameResult":
+                            self.delegate?.didReceiveGameResult(gStackGameResult(dictionary: payload))
+                        case "otherGameFinished":
+                            self.delegate?.didReceiveOtherGameFinished(gStackGameOtherGameFinished(dictionary: payload))
+                        case "error":
+                            self.delegate?.didReceiveErrorMsg(gStackGameErrorMsg(dictionary: payload))
+                        default:
+                            break
+                        }
                 }
             }
         }
@@ -142,6 +144,7 @@ public class gStackGame: NSObject {
     }
     
     public func endGame() {
+        //primus?.removeAllListeners()
         primus?.end()
         primus = nil
     }

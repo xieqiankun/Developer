@@ -24,7 +24,34 @@ class TestViewController: UIViewController,SimplePingDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+//        let v = AwardGradientView()
+//        v.frame = view.frame
+//        view.addSubview(v)
+        let imageview = UIImageView()
+        imageview.frame = view.frame
+        imageview.image = applyBlurEffect(UIImage(named: "BlueMan")!)
+        view.addSubview(imageview)
+
+        
+        let layer = CAGradientLayer()
+        layer.frame = view.frame
+        layer.colors = [ UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5).CGColor,UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0).CGColor]
+        view.layer.addSublayer(layer)
+        
+    }
     
+    func applyBlurEffect(image: UIImage) -> UIImage{
+        var imageToBlur = CIImage(image: image)
+        var blurfilter = CIFilter(name: "CIGaussianBlur")
+        blurfilter!.setValue(imageToBlur, forKey: "inputImage")
+        blurfilter!.setValue(5, forKey: "inputRadius")
+        var resultImage = blurfilter!.valueForKey("outputImage") as! CIImage
+        var blurredImage = UIImage(CIImage: resultImage)
+
+        return blurredImage
+    }
        /*
     // MARK: - Navigation
 
@@ -60,9 +87,9 @@ class TestViewController: UIViewController,SimplePingDelegate {
 //            
 //        }
         
-        triviaFetchGifs { (store, error) in
-            print(store?.correctGifs?[0].image)
-        }
+//        triviaFetchGifs { (store, error) in
+//            print(store?.correctGifs?[0].image)
+//        }
     }
     
     

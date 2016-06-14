@@ -29,6 +29,7 @@ public protocol gStackTournamentListProtocol: class {
 
 public class gStackTournament: NSObject {
     var uuid: String?
+    var isPractice = false
     public var name: String?
     public var isPrivate: Bool?
     public var buyin: NSNumber?
@@ -97,6 +98,26 @@ public class gStackTournament: NSObject {
         beginnerThreshold = tournament["beginnerThr"] as? NSNumber
         priority = tournament["priority"] as? NSNumber
         info = tournament["info"] as? String
+    }
+    
+    init(practice: [String: AnyObject]){
+        
+        isPractice = true
+        if let _uuid = practice["uuid"] as? String{
+            uuid = _uuid
+        }
+        if let _category = practice["category"] as? String,let _zone = practice["zone"] as? String, let _time = practice["time"] as? NSNumber, let _num = practice["num"] as? NSNumber{
+
+            questions = gStackTournamentQuestionsInfo()
+            questions!._zone = _zone
+            questions!.category = _category
+            questions!.num = _num
+            questions!.time = _time
+        }
+        if let _name = practice["name"] as? String{
+            name = _name
+        }
+    
     }
     
     public class func tournamentsForStatusInArray(status: gStackTournamentStatus, filter: gStackTournamentFilter, array: Array<gStackTournament>) -> Array<gStackTournament> {

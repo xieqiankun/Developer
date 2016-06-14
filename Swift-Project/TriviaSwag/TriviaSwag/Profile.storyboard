@@ -17,6 +17,8 @@
             <string>GROBOLD</string>
             <string>GROBOLD</string>
             <string>GROBOLD</string>
+            <string>GROBOLD</string>
+            <string>GROBOLD</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -249,7 +251,7 @@
                                                                 <state key="selected" image="BigButtonUnselectedTouched"/>
                                                                 <state key="highlighted" image="BigButtonUnselectedTouched"/>
                                                                 <connections>
-                                                                    <segue destination="7Xm-Ra-JUa" kind="presentation" id="60m-C6-qeB"/>
+                                                                    <segue destination="7Xm-Ra-JUa" kind="presentation" identifier="StatusUpdate" id="60m-C6-qeB"/>
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="clip" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="CBh-DJ-3zF">
@@ -515,13 +517,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z47-AC-ZKE">
-                                <rect key="frame" x="33" y="34" width="605" height="174"/>
+                                <rect key="frame" x="31" y="34" width="605" height="174"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StatusUpdateBackground" translatesAutoresizingMaskIntoConstraints="NO" id="VAB-xo-0K1">
-                                        <rect key="frame" x="10" y="5" width="581" height="161"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="StatusUpdateBackground" translatesAutoresizingMaskIntoConstraints="NO" id="VAB-xo-0K1">
+                                        <rect key="frame" x="18" y="5" width="581" height="161"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rR6-3M-Hmz" userLabel="TextBoxView">
-                                        <rect key="frame" x="34" y="66" width="533" height="69"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rR6-3M-Hmz" userLabel="TextBoxView">
+                                        <rect key="frame" x="42" y="66" width="533" height="69"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StatusUpdateTextFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7X-G2-LAG">
                                                 <rect key="frame" x="0.0" y="0.0" width="533" height="69"/>
@@ -530,15 +532,23 @@
                                                 <rect key="frame" x="8" y="0.0" width="517" height="69"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                             </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0/160" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ve-XA-srC">
+                                                <rect key="frame" x="483" y="40" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="12"/>
+                                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <accessibility key="accessibilityConfiguration" label="TextBoxView"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="6Ve-XA-srC" secondAttribute="trailing" constant="8" id="6vp-Mh-qaE"/>
                                             <constraint firstItem="F7X-G2-LAG" firstAttribute="top" secondItem="rR6-3M-Hmz" secondAttribute="top" id="GcE-Ng-rJx"/>
                                             <constraint firstAttribute="bottom" secondItem="F7X-G2-LAG" secondAttribute="bottom" id="Pqi-M6-We9"/>
+                                            <constraint firstAttribute="bottom" secondItem="6Ve-XA-srC" secondAttribute="bottom" constant="8" id="RYU-Rd-pZP"/>
                                             <constraint firstAttribute="trailing" secondItem="F7X-G2-LAG" secondAttribute="trailing" id="XFi-dJ-2Xn"/>
                                             <constraint firstItem="g6s-eY-Rrx" firstAttribute="top" secondItem="rR6-3M-Hmz" secondAttribute="top" id="cIl-id-L1r"/>
                                             <constraint firstAttribute="trailing" secondItem="g6s-eY-Rrx" secondAttribute="trailing" constant="8" id="fn8-aO-vHh"/>
@@ -547,49 +557,63 @@
                                             <constraint firstItem="F7X-G2-LAG" firstAttribute="leading" secondItem="rR6-3M-Hmz" secondAttribute="leading" id="z0g-EN-GU9"/>
                                         </constraints>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CancelButton-Untouched" translatesAutoresizingMaskIntoConstraints="NO" id="wIe-3c-HMD">
-                                        <rect key="frame" x="88" y="137" width="169" height="24"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDu-a5-Xco">
+                                        <rect key="frame" x="75" y="137" width="163" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="169" id="7XX-wh-v78"/>
+                                            <constraint firstAttribute="width" constant="163" id="I25-JM-He2"/>
                                         </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SubmitButton-Untouched" translatesAutoresizingMaskIntoConstraints="NO" id="Qu4-cL-H8y">
-                                        <rect key="frame" x="334" y="137" width="169" height="24"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="cancel:" destination="7Xm-Ra-JUa" eventType="touchUpInside" id="mza-lg-9Bz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkc-eZ-Dm8">
+                                        <rect key="frame" x="367" y="137" width="163" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="169" id="uBr-Qk-UVy"/>
+                                            <constraint firstAttribute="width" constant="163" id="JjK-gr-aaG"/>
                                         </constraints>
-                                    </imageView>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="update:" destination="7Xm-Ra-JUa" eventType="touchUpInside" id="NdB-3m-b32"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="wIe-3c-HMD" firstAttribute="top" secondItem="z47-AC-ZKE" secondAttribute="top" constant="137" id="2He-RU-405"/>
+                                    <constraint firstAttribute="bottom" secondItem="YDu-a5-Xco" secondAttribute="bottom" constant="13" id="4eY-S0-i4z"/>
                                     <constraint firstAttribute="bottom" secondItem="rR6-3M-Hmz" secondAttribute="bottom" constant="39" id="5Bi-l4-R45"/>
+                                    <constraint firstItem="YDu-a5-Xco" firstAttribute="top" secondItem="z47-AC-ZKE" secondAttribute="top" constant="137" id="DBr-wK-bUn"/>
+                                    <constraint firstItem="Vkc-eZ-Dm8" firstAttribute="top" secondItem="z47-AC-ZKE" secondAttribute="top" constant="137" id="KeA-hc-Ts2"/>
                                     <constraint firstItem="rR6-3M-Hmz" firstAttribute="centerX" secondItem="VAB-xo-0K1" secondAttribute="centerX" id="MXw-kK-mhf"/>
                                     <constraint firstItem="VAB-xo-0K1" firstAttribute="top" secondItem="z47-AC-ZKE" secondAttribute="top" constant="5" id="NWf-z4-bRj"/>
                                     <constraint firstItem="VAB-xo-0K1" firstAttribute="top" secondItem="z47-AC-ZKE" secondAttribute="top" constant="5" id="QW6-qu-KqS"/>
                                     <constraint firstItem="VAB-xo-0K1" firstAttribute="width" secondItem="z47-AC-ZKE" secondAttribute="width" constant="-24" id="Sgg-DX-zpw"/>
                                     <constraint firstAttribute="height" constant="174" id="Thn-5n-hFd"/>
                                     <constraint firstItem="rR6-3M-Hmz" firstAttribute="leading" secondItem="z47-AC-ZKE" secondAttribute="leading" constant="34" id="VxX-4V-2eg"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vkc-eZ-Dm8" secondAttribute="trailing" constant="75" id="WLw-Qi-wGb"/>
+                                    <constraint firstItem="YDu-a5-Xco" firstAttribute="leading" secondItem="z47-AC-ZKE" secondAttribute="leading" constant="75" id="WZr-Ju-8uD"/>
                                     <constraint firstAttribute="trailing" secondItem="VAB-xo-0K1" secondAttribute="trailing" constant="14" id="Wgn-xH-mkf"/>
-                                    <constraint firstItem="wIe-3c-HMD" firstAttribute="leading" secondItem="z47-AC-ZKE" secondAttribute="leading" constant="88" id="joK-d0-EXQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="wIe-3c-HMD" secondAttribute="bottom" constant="13" id="nr8-EK-7na"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vkc-eZ-Dm8" secondAttribute="bottom" constant="13" id="lpH-eg-eWg"/>
                                     <constraint firstItem="VAB-xo-0K1" firstAttribute="leading" secondItem="z47-AC-ZKE" secondAttribute="leading" constant="10" id="pzy-yR-gGD"/>
-                                    <constraint firstItem="Qu4-cL-H8y" firstAttribute="top" secondItem="z47-AC-ZKE" secondAttribute="top" constant="137" id="s3n-EQ-UDv"/>
                                     <constraint firstItem="VAB-xo-0K1" firstAttribute="height" secondItem="z47-AC-ZKE" secondAttribute="height" constant="-13" id="toS-rH-6aP"/>
                                     <constraint firstItem="rR6-3M-Hmz" firstAttribute="top" secondItem="z47-AC-ZKE" secondAttribute="top" constant="66" id="u46-jg-o21"/>
-                                    <constraint firstAttribute="bottom" secondItem="Qu4-cL-H8y" secondAttribute="bottom" constant="13" id="v67-wX-Oq4"/>
-                                    <constraint firstAttribute="trailing" secondItem="Qu4-cL-H8y" secondAttribute="trailing" constant="102" id="xbR-VM-SMT"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="z47-AC-ZKE" firstAttribute="centerX" secondItem="mHx-pu-nLk" secondAttribute="centerX" constant="2" id="IFf-5y-yA6"/>
+                            <constraint firstItem="z47-AC-ZKE" firstAttribute="centerX" secondItem="mHx-pu-nLk" secondAttribute="centerX" id="IFf-5y-yA6"/>
                             <constraint firstItem="z47-AC-ZKE" firstAttribute="top" secondItem="Jbw-ls-wuO" secondAttribute="bottom" constant="14" id="r09-zV-r4J"/>
                             <constraint firstItem="z47-AC-ZKE" firstAttribute="width" secondItem="mHx-pu-nLk" secondAttribute="width" constant="-62" id="zIk-pQ-Smn"/>
                         </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="cancelButton" destination="YDu-a5-Xco" id="vmm-AQ-s3j"/>
+                        <outlet property="status" destination="g6s-eY-Rrx" id="Rbj-NO-vKX"/>
+                        <outlet property="statusLength" destination="6Ve-XA-srC" id="GwQ-hh-vVH"/>
+                        <outlet property="updateButton" destination="Vkc-eZ-Dm8" id="bo7-0v-Acv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N2h-Re-ADC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -604,7 +628,6 @@
         <image name="BigButtonUnselectedTouched" width="464" height="48"/>
         <image name="BigButtonUnselectedUntouched" width="464" height="48"/>
         <image name="BigPopUp" width="1216" height="696"/>
-        <image name="CancelButton-Untouched" width="398" height="58"/>
         <image name="ChatButton-Touched" width="198" height="68"/>
         <image name="ChatButton-Untouched" width="198" height="68"/>
         <image name="Close-Big" width="108" height="108"/>
@@ -615,7 +638,6 @@
         <image name="RankIcon" width="70" height="70"/>
         <image name="StatusUpdateBackground" width="1216" height="426"/>
         <image name="StatusUpdateTextFill" width="1152" height="170"/>
-        <image name="SubmitButton-Untouched" width="398" height="58"/>
         <image name="United States" width="48" height="48"/>
     </resources>
 </document>

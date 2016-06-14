@@ -83,19 +83,7 @@ public func gStackSetCurrentUserAvatar(avatar: String, completion: (error: NSErr
     })
 }
 
-//nq
-public func gStackSetCurrentUserStatus(status: String, completion: (error: NSError?) -> Void) {
-    makeRequest(true, route: "userstatus", type: "setUserStatus", payload: ["status":status], completion: {
-        data, response, error in
-        processResponse(error, data: data, completion: {
-            _error, _ in
-            if _error == nil {
-                triviaCurrentUser?.status = status
-            }
-            completion(error: _error)
-        })
-    })
-}
+
 
 //nq
 public func gStackGetGameMessage(completion: (error: NSError?, message: String?) -> Void) {
@@ -241,7 +229,7 @@ public func gStackGetTournamentsForCurrentUser(completion: (error: NSError?, tou
                         }
                     }
                 }
-                gStackCachedTournaments = tournaments
+                gStackCacheDataManager.sharedInstance.setTournaments(tournaments)
                 completion(error: nil, tournaments: tournaments)
             }
         })

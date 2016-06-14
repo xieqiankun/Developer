@@ -22,11 +22,19 @@ class triviaNotificationHandler: NSObject {
     
     override init() {
         super.init()
+        
+        connectToPusherServer()
 
+
+    }
+    
+    func connectToPusherServer() {
+        
         pusherClient = PTPusher(key: "4779f1bf61be1bc819da", delegate: self, encrypted: true)
         pusherClient.authorizationURL = NSURL(string: serverPrefix().stringByAppendingString("pusher/auth"))
         pusherClient.connect()
-
+        
+        //pusherClient.delegate = self
     }
     
     func subscribeToPushPresentChannel(channel: String ) {
@@ -134,10 +142,6 @@ extension triviaNotificationHandler: PTPusherDelegate, PTPusherPresenceChannelDe
     func pusher(pusher: PTPusher!, connection: PTPusherConnection!, failedWithError error: NSError!) {
         print("pusher connection failed with error \(error)")
     }
-
-    
-    
-    
     
 }
 

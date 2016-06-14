@@ -154,7 +154,7 @@ class SettingsTableViewController: UITableViewController {
             cell.backgroundColor = SettingMasterSelectedCellColor
             cell.didSelectCell()
         } else {
-            cell.backgroundColor = UIColor.clearColor()
+            cell.backgroundColor = SettingSlaveCellColor
         }
         
 
@@ -165,7 +165,7 @@ class SettingsTableViewController: UITableViewController {
         if let lastPath = self.lastIndexPath{
             if (indexPath.row != lastPath.row){
                 let nextCell = cell as! SettingsTableViewCell
-                nextCell.backgroundColor = UIColor.clearColor()
+                nextCell.backgroundColor = SettingSlaveCellColor
                 nextCell.didDeselectCell()
             }
         }
@@ -177,7 +177,7 @@ class SettingsTableViewController: UITableViewController {
         delegate?.dismissCurrentViewController()
         if let pendingCell = tableView.cellForRowAtIndexPath(indexPath){
             let cell = pendingCell as! SettingsTableViewCell
-            cell.backgroundColor = UIColor.clearColor()
+            cell.backgroundColor = SettingSlaveCellColor
             cell.didDeselectCell()
         }
       

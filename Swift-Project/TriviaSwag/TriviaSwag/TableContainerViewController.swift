@@ -94,9 +94,7 @@ class TableContainerViewController: UIViewController, UIPageViewControllerDelega
         setPageTitle()
         setPageDotColor()
         
-        //        print("----------")
-        //        print(pageControl.currentPage)
-        //        print("----------")
+
         let index = pageControl.currentPage
         
         switch index {

@@ -8,8 +8,14 @@
 
 import UIKit
 
-class GameOverViewController: UIViewController {
+protocol RestartGame:class {
+    func restartGame()
+}
 
+class GameOverViewController: UIViewController{
+
+    weak var restartDelegate: RestartGame?
+    
     var tournament: gStackTournament!
     var questions: [gStackGameQuestion]!
     var answers: [gStackGameCorrectAnswer]!
@@ -17,7 +23,17 @@ class GameOverViewController: UIViewController {
     var numOfQuestion: Int = 0
     var totalTime: Double = 0.0
     
-    var leaderboard: gStackTournamentLeaderboard?
+    let animationTime = 5.0
+    
+    var leaderboard: gStackTournamentLeaderboard? {
+        didSet{
+            dispatch_async(dispatch_get_main_queue()) {
+                if self.leaderboard != nil {
+                    self.addLeadersInTenScreen()
+                }
+            }
+        }
+    }
     
     @IBOutlet weak var constrain: NSLayoutConstraint!
     //1 st
@@ -79,6 +95,15 @@ class GameOverViewController: UIViewController {
     @IBOutlet weak var avatar_4: UIImageView!
     @IBOutlet weak var avatarView_4: UIView!
 
+    //practice
+    @IBOutlet weak var practiceScreen: UIView!
+    
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        print("did deinit game over screen")
+    }
+
     let strokeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : kMainScreenLeaderboardFillColor,
@@ -90,9 +115,25 @@ class GameOverViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         setupFirstScreen()
-        setupTenScreen()
+        if tournament.isPractice {
+            setupPracticeScreen()
+            tenScreen.hidden = true
+        } else {
+            setupTenScreen()
+            practiceScreen.hidden = true
+        }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(GameOverViewController.refresh), name: gStackFetchTournamentLeaderboardName, object: nil)
+        
     }
-
+    
+    func refresh() {
+        
+        if let lb = gStackCacheDataManager.sharedInstance.getLeaderboard(tournament){
+            self.leaderboard = lb
+        }
+    }
+    
     func setupFirstScreen() {
         
         avatarGIF.image = UIImage.gifWithName("Win-BlueMonster")
@@ -105,12 +146,34 @@ class GameOverViewController: UIViewController {
     func setupTenScreen(){
         tournamentName.attributedText = NSAttributedString(string: tournament.name!, attributes:strokeTextAttributes)
         title_rank.attributedText = NSAttributedString(string: "RANK", attributes: strokeTextAttributes)
-        title_time.attributedText = NSAttributedString(string: "AVG. TIME", attributes: strokeTextAttributes)
+        title_time.attributedText = NSAttributedString(string: "AVG.TIME", attributes: strokeTextAttributes)
         title_prize.attributedText = NSAttributedString(string: "PRIZE", attributes: strokeTextAttributes)
         title_score.attributedText = NSAttributedString(string: "SCORE", attributes: strokeTextAttributes)
         title_player.attributedText = NSAttributedString(string: "PLAYER", attributes: strokeTextAttributes)
         title_correct.attributedText = NSAttributedString(string: "CORRECT", attributes: strokeTextAttributes)
         
+    }
+    func setupPracticeScreen() {
+        
+    }
+
+    
+    override func viewDidLayoutSubviews() {
+        avatarView_1.layer.cornerRadius = avatarView_1.bounds.width / 2
+        avatarView_1.layer.borderColor = UIColor.blackColor().CGColor
+        avatarView_1.layer.borderWidth = 2
+        
+        avatarView_2.layer.cornerRadius = avatarView_2.bounds.width / 2
+        avatarView_2.layer.borderColor = UIColor.blackColor().CGColor
+        avatarView_2.layer.borderWidth = 2
+        
+        avatarView_3.layer.cornerRadius = avatarView_3.bounds.width / 2
+        avatarView_3.layer.borderColor = UIColor.blackColor().CGColor
+        avatarView_3.layer.borderWidth = 2
+        
+        avatarView_4.layer.cornerRadius = avatarView_4.bounds.width / 2
+        avatarView_4.layer.borderColor = UIColor.blackColor().CGColor
+        avatarView_4.layer.borderWidth = 2
     }
     
     
@@ -122,38 +185,35 @@ class GameOverViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        UIView.animateWithDuration(3, delay: 0, options: [], animations: {
-            self.spinner.transform = CGAffineTransformRotate(self.spinner.transform, CGFloat(M_PI_2))
-            }, completion: {
-            (true) in
-            gStackFetchLeaderboardForTournament(self.tournament, completion: { [weak self] (error, leaderboard) in
-                if let strongSelf = self {
-                    strongSelf.leaderboard = leaderboard
-                }
-            })
-        })
-        UIView.animateWithDuration(3, delay: 3, options: [], animations: {
+
+        UIView.animateWithDuration(animationTime, delay: 0, options: [], animations: {
             self.spinner.transform = CGAffineTransformRotate(self.spinner.transform, CGFloat(M_PI_2))
             }, completion: {
             (true) in
             self.constrain.constant = self.view.bounds.width
-        
         })
         
-        UIView.animateWithDuration(1, delay: 6.1, options: [], animations: {
+        UIView.animateWithDuration(1, delay: animationTime + 0.1, options: [], animations: {
             self.view.layoutIfNeeded()
             }, completion: nil)
         
-        delay(5.0) {
-            self.addLeadersInTenScreen()
+        delay(1.5) {
+//            gStackFetchLeaderboardForTournament(self.tournament, completion: { [weak self] (error, leaderboard) in
+//                if let strongSelf = self {
+//                    strongSelf.leaderboard = leaderboard
+//                }
+//            })
+            gStackCacheDataManager.sharedInstance.getLeaderboard(self.tournament)
         }
+        
+
     }
     
     
     func addLeadersInTenScreen() {
         
         if let lead = leaderboard where lead.rank != -1{
-            
+
             let leaders = lead.leaders
             
             switch leaders.count {
@@ -239,6 +299,16 @@ class GameOverViewController: UIViewController {
         }
     }
     
+    // try this
+    func getUncachedImage (named name : String) -> UIImage?
+    {
+        if let imgPath = NSBundle.mainBundle().pathForResource(name, ofType: nil)
+        {
+            return UIImage(contentsOfFile: imgPath)
+        }
+        return nil
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -249,7 +319,17 @@ class GameOverViewController: UIViewController {
     @IBAction func close() {
         performSegueWithIdentifier("unwind", sender: nil)
     }
-
+    
+    
+    var isAllowRestart = false
+    @IBAction func restart() {
+        restartDelegate?.restartGame()
+        dismissViewControllerAnimated(true, completion: nil)
+    
+    }
+    @IBAction func login() {
+        performSegueWithIdentifier("login", sender: nil)
+    }
     /*
     // MARK: - Navigation
 

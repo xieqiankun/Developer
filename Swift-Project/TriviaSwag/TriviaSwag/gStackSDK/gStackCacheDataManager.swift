@@ -8,19 +8,77 @@
 
 import UIKit
 
+var gStackFetchTournamentsNotificationName = "gStackFetchTournamentsNotification"
+var gStackFetchTournamentLeaderboardName = "gStackFetchTournamentLeaderboardNotification"
+
 class gStackCacheDataManager: NSObject {
 
-    var cachedTournaments:[gStackTournament]{
-        get {
-            return gStackCachedTournaments
+    static let sharedInstance = gStackCacheDataManager()
+    
+    private var cachedTournaments:[gStackTournament] = [gStackTournament]() {
+        didSet{
+            NSNotificationCenter.defaultCenter().postNotificationName(gStackFetchTournamentsNotificationName, object: nil)
         }
     }
     
-    var cachedLeaderboard:[String:gStackTournamentLeaderboard]{
-        get {
-            return gStackCachedLeaderBoard
+    private var cachedLeaderboard:[String:gStackTournamentLeaderboard] = [String:gStackTournamentLeaderboard]()
+    
+    private var timer:NSTimer?
+
+    deinit{
+        self.timer?.invalidate()
+        self.timer = nil
+    }
+    
+    func refresh() {
+        cachedLeaderboard.removeAll()
+        
+    }
+    
+    func setTournaments(tournaments:[gStackTournament]) {
+        cachedTournaments = tournaments
+    }
+    
+    func getTournaments() -> [gStackTournament]{
+        return cachedTournaments
+    }
+    
+    func refreshTournaments() {
+        gStackFetchTournaments { (error, tournaments) in
+            
         }
     }
+    
+    func setLeaderboard(uid: String, leaderboard: gStackTournamentLeaderboard) {
+    
+        cachedLeaderboard[uid] = leaderboard
+        
+    }
+    
+    func getLeaderboard(tournament: gStackTournament) -> gStackTournamentLeaderboard? {
+        if timer == nil {
+            timer = NSTimer.scheduledTimerWithTimeInterval(15, target: self, selector: #selector(gStackCacheDataManager.refresh), userInfo: nil, repeats: true)
+        }
+        if let leaderboard = cachedLeaderboard[tournament.uuid!]{
+            return leaderboard
+        } else {
+            gStackFetchLeaderboardForTournament(tournament, completion: { (error, leaderboard) in
+                if error == nil {
+                    NSNotificationCenter.defaultCenter().postNotificationName(gStackFetchTournamentLeaderboardName, object: nil)
+                }
+            })
+            return nil
+        }
+    }
+    
+    
+    func preLoadData() {
+        
+        gStackFetchTournaments { (error, tournaments) in
+            
+        }
+    }
+    
     
     
 }

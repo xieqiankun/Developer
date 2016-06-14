@@ -13,7 +13,7 @@ public typealias SimplePingClientCallback = (String?)->()
 class SimplePingClient: NSObject {
     static let singletonPC = SimplePingClient()
     
-    let hostName = "www.apple.com"
+    let hostName = "www.google.com"
     
     private var resultCallback: SimplePingClientCallback?
     
@@ -28,6 +28,7 @@ class SimplePingClient: NSObject {
     
     private func pingHost(resultCallback callback: SimplePingClientCallback?) {
         resultCallback = callback
+        dict.removeAll()
         let pinger = SimplePing(hostName: self.hostName)
         self.pinger = pinger
         pinger.addressStyle = .ICMPv4

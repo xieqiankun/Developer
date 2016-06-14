@@ -115,9 +115,11 @@ class ProfileViewController: UIViewController {
                 updateAddFriendBtn()
             }
             triviaFetchProfileForDisplayName(userName, completion: {[weak self] (user, error) in
-                if let strongSelf = self {
-                    print(user?.displayName)
-                    strongSelf.user = user
+                if error == nil {
+                    if let strongSelf = self {
+                        print(user?.displayName)
+                        strongSelf.user = user
+                    }
                 }
             })
         }
@@ -191,6 +193,10 @@ class ProfileViewController: UIViewController {
 
         if let inbox = triviaCurrentUserInbox {
             if inbox.isSentFriendRequestToUser(self.userName) {
+                userStatus = .Pending
+                return
+            }
+            if inbox.isReceiveFriendRequestFromUser(self.userName){
                 userStatus = .Pending
                 return
             }
@@ -327,15 +333,16 @@ class ProfileViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
         
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
     }
-    */
+    
 
 }
 

@@ -8,20 +8,6 @@
 
 import UIKit
 
-//let kQuestionBorderColor = UIColor.blueColor()
-//let kQuestionBackgroundColor = UIColor.blueColor()
-//let kAnswerBorderColor = UIColor.blueColor()
-//let kAnswerBackgroundColor = UIColor.darkGrayColor()
-//let kRightAnswerColor = UIColor.greenColor()
-//let kWrongAnswerColor = UIColor.redColor()
-//let kQuestionMarkerNormalColor = UIColor.blueColor()
-//let kQuestionMarkerAnsweringColor = UIColor.yellowColor()
-//let kQuestionMarkerCorrectColor = UIColor.greenColor()
-//let kQuestionMarkerIncorrectColor = UIColor.redColor()
-//let kTimebarNormalColor = UIColor.yellowColor()
-//let kResultCorrectColor = UIColor.greenColor()
-//let kResultIncorrectColor = UIColor.redColor()
-
 let kTimebarColor = UIColor.yellowColor()
 
 class GameViewController: UIViewController {
@@ -91,8 +77,10 @@ class GameViewController: UIViewController {
     // result part
     @IBOutlet weak var resultBackgroundView: UIView!
     @IBOutlet weak var avatorGif: UIImageView!
-    @IBOutlet weak var funnyGif: UIImageView!
-    @IBOutlet weak var funnyGif_Incorrect: UIImageView!
+    @IBOutlet weak var avatorGif_Incorrect: UIImageView!
+
+    @IBOutlet weak var funnyGif: AnimatedImageView!
+    @IBOutlet weak var funnyGif_Incorrect: AnimatedImageView!
 
     @IBOutlet weak var funnyLabel: UILabel!
     @IBOutlet weak var funnyLabel_Incorrect: UILabel!
@@ -114,40 +102,66 @@ class GameViewController: UIViewController {
         // clear it cause using strong reference
         headerHeightConstrain = nil
         questionHeightConstrain = nil
+
         print("deinit the game view controller")
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         initGamePlayUI()
-        prepareState(false,completion:nil)
+
+    }
+    var isAllowToStart = true
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
-        // test network
-        SimplePingClient.pingHost { latency in
-            print("latency is: \(latency)")
+        if isAllowToStart {
+           isAllowToStart = false
             
-            if let lat = latency {
-                let num = Int(lat)
-                // set the max delay to 3 seconds
-                if num <= 3000 {
-                    self.startgame()
-                } else {
-                    dispatch_async(dispatch_get_main_queue()) {
-                        let button1 = AlertButton(title: "", imageNames: ["PlayNowButton-Untouched","PlayNowButton-Touched"], style: .Custom,action: {
-                            self.startgame()
-                        })
-                        let button2 = AlertButton(title: "", imageNames: [], style: .Cancel, action: nil)
-                        let vc = StoryboardAlertViewControllerFactory().createAlertViewController([button1,button2], title: "Slimmy Internet!", message: "Are you sure you want to play?")
-                        self.presentViewController(vc, animated: true, completion: nil)
+            prepareState(false,completion:nil)
+
+            preGameAnimationInit()
+            
+            prepareGamePlayUI()
+            
+            // test network
+            SimplePingClient.pingHost { [weak self]latency in
+                print("latency is: \(latency)")
+                if let lat = latency {
+                    let num = Int(lat)
+                    // set the max delay to 3 seconds
+                    if num <= 3000 {
+                        if let strongSelf = self {
+                            strongSelf.startgame()
+                        }
+                        
+                    } else {
+                        dispatch_async(dispatch_get_main_queue()) {
+                            let button1 = AlertButton(title: "", imageNames: ["PlayNowButton-Untouched","PlayNowButton-Touched"], style: .Custom,action: {
+                                if let strongSelf = self {
+                                    strongSelf.startgame()
+                                }
+                            })
+                            let button2 = AlertButton(title: "", imageNames: [], style: .Cancel, action: nil)
+                            let vc = StoryboardAlertViewControllerFactory().createAlertViewController([button1,button2], title: "Slimmy Internet!", message: "Are you sure you want to play?")
+                            if let strongSelf = self {
+                                strongSelf.presentViewController(vc, animated: true, completion: nil)
+                            }
+                        }
                     }
                 }
             }
+
+            
+            
         }
+       
     }
     
     func startgame() {
-        
+        preGameAnimation()
+
         if let tournament = self.currentTournament {
             gStackStartGameForTournament(tournament) { (error, game) in
                 
@@ -161,6 +175,11 @@ class GameViewController: UIViewController {
         
     }
     
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        endGame()
+
+    }
     override func viewDidLayoutSubviews() {
         
         ballView.layer.cornerRadius = ballView.bounds.height / 2
@@ -173,6 +192,7 @@ class GameViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+
         // Dispose of any resources that can be recreated.
     }
     
@@ -245,7 +265,7 @@ class GameViewController: UIViewController {
             
             for view in questionMarkers {
                 view.layer.cornerRadius = view.bounds.height / 2
-                view.layer.borderColor = kGameplayFutureQuestionCircleStroke.CGColor
+                //view.layer.borderColor = kGameplayFutureQuestionCircleStroke.CGColor
                 view.layer.borderWidth = 3.0
             }
             
@@ -253,28 +273,30 @@ class GameViewController: UIViewController {
         
         // set correct gif and incorrect gif border
         funnyGif.layer.cornerRadius = 20
-        funnyGif.layer.borderColor = kGameplayAnswerButtonTouchedCorrectStroke.CGColor
         funnyGif.layer.borderWidth = 3.0
         funnyGif.clipsToBounds = true
         
         funnyGif_Incorrect.layer.cornerRadius = 20
-        funnyGif_Incorrect.layer.borderColor = kGameplayAnswerButtonTouchedIncorrectStroke.CGColor
         funnyGif_Incorrect.layer.borderWidth = 3.0
         funnyGif_Incorrect.clipsToBounds = true
 
         
-        for label in questionMakerLabels {
-            label.textColor = kGameplayFutureQuestionCircleStroke
-        }
-        for imageview in questionMarkerIndicators{
-            imageview.hidden = true
-        }
-        
-        
+        // set avatar gifs
+        pregameLoading.image = UIImage.gifWithName("PregameLoading")
+        go.image = UIImage.gifWithName("Go2")
+        onYourMonster.image = UIImage.gifWithName("OnYourMonster2")
+        goSet.image = UIImage.gifWithName("GetSet2")
+    }
+    
+    
+    func prepareGamePlayUI() {
         
         // set game leader
-        // TODO: - there be may a bug for not caching the leaderboard
-        if let uuid = currentTournament?.uuid, let leaderboard = gStackCachedLeaderBoard[uuid]{
+        // TODO: - there be may a bug for not cacheing the leaderboard
+        if let t = currentTournament where t.isPractice == true {
+            leaderDisplayName.text = "Practice"
+            leaderScore.text = "Mode"
+        } else if let uuid = currentTournament?.uuid, let leaderboard = gStackCacheDataManager.sharedInstance.getLeaderboard(currentTournament!){
             if let leader = leaderboard.leaders.first{
                 leaderDisplayName.text = leader.displayName
                 if let score = leader.correctTime?.doubleValue{
@@ -282,38 +304,52 @@ class GameViewController: UIViewController {
                 }
             }
         }
-    }
-    
+        
+        funnyGif.layer.borderColor = kGameplayAnswerButtonTouchedCorrectStroke.CGColor
+        funnyGif_Incorrect.layer.borderColor = kGameplayAnswerButtonTouchedIncorrectStroke.CGColor
 
-    @IBAction func test () {
-        
-        if headerHeightConstrain.active {
-            playingState(true, completion: nil)
-        } else {
-            prepareState(true,completion: nil)
+        for view in questionMarkers {
+            view.layer.borderColor = kGameplayFutureQuestionCircleStroke.CGColor
         }
+        for label in questionMakerLabels {
+            label.hidden = false
+            label.textColor = kGameplayFutureQuestionCircleStroke
+        }
+        for view in questionMarkerIndicators {
+            view.hidden = true
+        }
+        //set gif
+        avatorGif.image = UIImage.gifWithName("Win-BlueMonster(reduced)")
+        avatorGif_Incorrect.image = UIImage.gifWithName("Lose-BlueMonster(reduced)")
         
     }
     
-    @IBAction func test2() {
-        
-        //resultState(true)
-        rippleAnimation(answer2, relativeLoaction: CGPointZero, color: kGameplayAnswerButtonTouchedCorrectStroke)
-        
-        
-    }
-    @IBAction func test3() {
-        
-        //resultState(true)
-        //rippleAnimation(answer3, relativeLoaction: CGPointZero, color: UIColor.blackColor())
-        self.dismissViewControllerAnimated(true, completion: nil)
-        
-    }
+    
+    // MARK: - End Game
+    var isForfeit = false
     
     func stopPlaying() {
         
-        game?.sendForfeitMessage()
-        dismissViewControllerAnimated(true, completion: nil)
+        let button1 = AlertButton(title: "Forfeit", imageNames: [], style: .Normal,action: {
+            self.isForfeit = true
+            self.game?.sendForfeitMessage()
+            self.endGame()
+            self.performSegueWithIdentifier("backToMain", sender: nil)
+
+        })
+        let button2 = AlertButton(title: "", imageNames: [], style: .Cancel, action: nil)
+        let vc = StoryboardAlertViewControllerFactory().createAlertViewController([button1,button2], title: "Forfeit!", message: "Are you sure you want to stop?")
+        
+        presentViewController(vc, animated: true, completion: nil)
+        
+    }
+    
+    func endGame() {
+        
+        if game != nil {
+            game!.endGame()
+            game = nil
+        }
         
     }
     
@@ -321,7 +357,7 @@ class GameViewController: UIViewController {
     //MARK: - Animation part, define three state of game: prepare state, playing state, result state
     //        using antolayout to set the animation for the ui
     
-    func prepareState(animate:Bool, completion: ((Bool)-> Void)?){
+    func prepareState(animate:Bool, completion: (Void -> Void)?){
         
         headerHeightConstrain.active = true
         questionHeightConstrain.active = true
@@ -337,14 +373,22 @@ class GameViewController: UIViewController {
                 self.questionView.alpha = 1
                 self.questionLabel.alpha = 1
                 self.view.layoutIfNeeded()
-                }, completion: completion)
+                }, completion: {
+                    finished in
+                    if completion != nil {
+                        completion!()
+                    }
+            })
 
         } else {
             self.view.layoutIfNeeded()
+            if completion != nil {
+                completion!()
+            }
         }
     }
     
-    func playingState(animate: Bool, completion:((Bool) -> Void)?){
+    func playingState(animate: Bool, completion:(Void -> Void)?){
         
         // change active or not to change the constraint
         headerHeightConstrain.active = false
@@ -353,22 +397,25 @@ class GameViewController: UIViewController {
         questionBackgroundPlayingHeightConstrain.priority = 999
         questionBackgroundPrepareHeightConstrain.priority = 998
         
-        
         if animate {
-            UIView.animateWithDuration(0.3) {
+            UIView.animateWithDuration(0.2, delay: 0.0, options: [], animations: {
                 self.questionLabel.alpha = 0
-               
                 self.view.layoutIfNeeded()
-            }
-            UIView.animateWithDuration(0.2, delay: 0.28, options: [], animations: {
+                }, completion: {
+                    finished in
+                    self.view.setNeedsLayout()
+            })
+            UIView.animateWithDuration(0.2, delay: 0.3, options: [], animations: {
                 self.timebarWidthConstrain.constant = self.questionBackgroundView.frame.width - self.ballView.frame.width - self.clockView.frame.width
                 self.clock.alpha = 1
                 self.questionLabel.alpha = 1
-                }, completion: completion)
-//            UIView.animateWithDuration(0.1, delay: 0.4, options: [], animations: {
-//
-//                }, completion: completion)
-            
+                }, completion: {
+                    finished in
+                    if completion != nil {
+                        completion!()
+                    }
+            })
+
         } else {
             self.view.layoutIfNeeded()
         }
@@ -474,7 +521,7 @@ class GameViewController: UIViewController {
         var option = Option()
         //configure
         option.radius = CGFloat(150.0)
-        option.duration = CFTimeInterval(0.4)
+        option.duration = CFTimeInterval(0.3)
         option.fillColor = color
         
         rippleTouchAnimation(view, location: relativeLoaction, option: option)
@@ -495,320 +542,61 @@ class GameViewController: UIViewController {
      */
     
     
-    // MARK: - Game logic part
+    // MARK: - Game logic part variable
     
-    func clearAnswerBackground() {
-        answer1.backgroundColor = kGameplayAnswerButtonUntouchedFill
-        answer2.backgroundColor = kGameplayAnswerButtonUntouchedFill
-        answer3.backgroundColor = kGameplayAnswerButtonUntouchedFill
-        answer4.backgroundColor = kGameplayAnswerButtonUntouchedFill
-    }
-    
-    func clearLabels() {
-        
-
-            self.answerLabel1.text = ""
-            self.answerLabel2.text = ""
-            self.answerLabel3.text = ""
-            self.answerLabel4.text = ""
-            self.questionLabel.text = ""
-        
-        
-    }
-    
-    func setQuestionLabelWithCurrentQuestion() {
-        if let question = self.currentQuestion {
-            questionLabel.text = question.formattedQuestion()
-            
-        }
-    }
-    
-    func setGifs() {
-        funnyLabel.hidden = false
-        funnyGif.hidden = false
-        funnyLabel_Incorrect.hidden = false
-        funnyGif_Incorrect.hidden = false
-        
-        if let store = triviaCurrentGifStore {
-            
-            let correct = store.getRandomGif(true)
-            if let correctURL = NSURL(string: correct.image!){
-                UIImage.gifWithRemoteUrl(correctURL, completion: { [weak self](image) in
-                    if let strongSelf = self {
-                        dispatch_async(dispatch_get_main_queue(), { 
-                            strongSelf.funnyGif.image = image
-                        })
-                    }
-                })
-            }
-            //funnyGif.image = UIImage.animatedImageWithAnimatedGIFURL(correctURL!)
-
-            funnyLabel.text = correct.text!
-            
-            let incorrect = store.getRandomGif(false)
-            if let incorrectURL = NSURL(string: incorrect.image!){
-                UIImage.gifWithRemoteUrl(incorrectURL, completion: { [weak self](image) in
-                    if let strongSelf = self {
-                        dispatch_async(dispatch_get_main_queue(), { 
-                            strongSelf.funnyGif_Incorrect.image = image
-                        })
-                    }
-                })
-            }
-            //funnyGif_Incorrect.image = UIImage.animatedImageWithAnimatedGIFURL(incorrectURL!)
-            
-            funnyLabel_Incorrect.text = incorrect.text!
-
-        }
-        
-    }
-    
-    func setAnswerLabelsWithCurrentQuestion() {
-        if let question = self.currentQuestion {
-            
-            answerLabel1.text = question.formattedAnswers()[0]
-            answerLabel2.text = question.formattedAnswers()[1]
-            answerLabel3.text = question.formattedAnswers()[2]
-            answerLabel4.text = question.formattedAnswers()[3]
-        }
-    }
-    
-    func setCurrentQuestionNumber(){
-        
-        if let question = currentQuestion {
-            
-            self.tournamentQuestionNumberLabel.text = "Question: \((question.questionNum?.intValue)! + 1)"
-            
-        }
-        
-    }
+  
+    var timer: NSTimer?
+    var step = CGFloat(0.0)
+    var timeInterval = 0.03
     
     
     
-    func setCorrectResult() {
-        
-        resultBackgroundView.layer.cornerRadius = 15
-        resultBackgroundView.layer.borderColor = kGameplayAnswerButtonTouchedCorrectStroke.CGColor
-        resultBackgroundView.layer.borderWidth = 3.0
-        
-        resultBackgroundView.backgroundColor = kGameplayAnswerButtonTouchedCorrectFill
-        
-        //let (str, img) = GIFStore.sharedInstance.getRandomGif(true)
-        
-        avatorGif.image = UIImage.gifWithName("Win-BlueMonster")
-        //funnyGif.image = img
-        //funnyLabel.text = str
-        funnyLabel_Incorrect.hidden = true
-        funnyGif_Incorrect.hidden = true
-    }
+    // pre game aniamtion
+    @IBOutlet weak var pregameView:UIView!
+    @IBOutlet weak var pregameLoading: UIImageView!
     
-    func setIncorrectResult() {
-        
-        resultBackgroundView.layer.cornerRadius = 15
-        resultBackgroundView.layer.borderColor = kGameplayAnswerButtonTouchedIncorrectStroke.CGColor
-        resultBackgroundView.layer.borderWidth = 3.0
-        
-        resultBackgroundView.backgroundColor = kGameplayAnswerButtonTouchedIncorrectFill
-        
-        //let (str, img) = GIFStore.sharedInstance.getRandomGif(false)
-
-        avatorGif.image = UIImage.gifWithName("Lose-BlueMonster")
-//        funnyGif.image = img
-//        funnyLabel.text = str
-        funnyLabel.hidden = true
-        funnyGif.hidden = true
-
-    }
-    
-    func setIncorrectButton(num: Int){
-        switch num {
-        case 0:
-            answer1.layer.borderColor = kGameplayAnswerButtonTouchedIncorrectStroke.CGColor
-        case 1:
-            answer2.layer.borderColor = kGameplayAnswerButtonTouchedIncorrectStroke.CGColor
-        case 2:
-            answer3.layer.borderColor = kGameplayAnswerButtonTouchedIncorrectStroke.CGColor
-        case 3:
-            answer4.layer.borderColor = kGameplayAnswerButtonTouchedIncorrectStroke.CGColor
-        default:
-            break
-        }
-    }
-    
-    func setCorrectButton(num: Int){
-        
-        switch num {
-        case 0:
-            answer1.layer.borderColor = kGameplayAnswerButtonTouchedCorrectStroke.CGColor
-        case 1:
-            answer2.layer.borderColor = kGameplayAnswerButtonTouchedCorrectStroke.CGColor
-        case 2:
-            answer3.layer.borderColor = kGameplayAnswerButtonTouchedCorrectStroke.CGColor
-        case 3:
-            answer4.layer.borderColor = kGameplayAnswerButtonTouchedCorrectStroke.CGColor
-        default:
-            break
-        }
-    }
-    
-    func setUntouchButtons(){
-        
-        answer1.layer.borderColor = kGameplayAnswerButtonUntouchedStroke.CGColor
-        answer2.layer.borderColor = kGameplayAnswerButtonUntouchedStroke.CGColor
-        answer3.layer.borderColor = kGameplayAnswerButtonUntouchedStroke.CGColor
-        answer4.layer.borderColor = kGameplayAnswerButtonUntouchedStroke.CGColor
-
-    }
-    
-    func setNotTouchButtons(view: UIView){
-        
-        view.layer.borderColor = kGameplayAnswerButtonNotTouchedIncorrectStroke.CGColor
-    }
-    
-    
-    func setCurrentQuestionMarker(num: Int) {
-
-        let v = questionMarkers[num]
-        v.layer.borderColor = kGameplayCurrentQuestionCircleStroke.CGColor
-        let l = questionMakerLabels[num]
-        l.textColor = kGameplayCurrentQuestionCircleStroke
-        
-    }
-    func setCorrectQuestionMarker(num: Int) {
-        
-        let v = questionMarkers[num]
-        v.layer.borderColor = kGameplayAnswerButtonTouchedCorrectFill.CGColor
-        let l = questionMakerLabels[num]
-        l.hidden = true
-    
-        let i = questionMarkerIndicators[num]
-        if let image = UIImage(named: "CorrectIcon"){
-            i.image = image
-            i.hidden = false
-        }
-        
-    }
-    func setIncorrectQuestionMarker(num: Int) {
-        
-        let v = questionMarkers[num]
-        v.layer.borderColor = kGameplayAnswerButtonTouchedIncorrectStroke.CGColor
-        let l = questionMakerLabels[num]
-        l.hidden = true
-        let i = questionMarkerIndicators[num]
-        if let image = UIImage(named: "IncorrectIcon"){
-            i.image = image
-            i.hidden = false
-        }
-        
-    }
-    
-    func updateUserScore(scores:[Double]) {
-        
-        var res = 0.0
-        
-        for val in scores {
-            res = val + res
-        }
-        
-        userScore.text = "$\(res)"
-    }
-    
-    func startRightOrWrongAnimation(correct: Int, selected: Int) {
-        
-        var location: CGPoint!
-        if selectedLocation == nil {
-            location = CGPointZero
-        } else {
-            location = selectedLocation!
-        }
-        
-        print(selectedLocation)
-
-        if correct == 1 {
-            switch selected {
-            case 0:
-                rippleAnimation(answer1, relativeLoaction: location, color: kGameplayAnswerButtonTouchedCorrectFill)
-            case 1:
-                rippleAnimation(answer2, relativeLoaction: location, color: kGameplayAnswerButtonTouchedCorrectFill)
-            case 2:
-                rippleAnimation(answer3, relativeLoaction: location, color: kGameplayAnswerButtonTouchedCorrectFill)
-            case 3:
-                rippleAnimation(answer4, relativeLoaction: location, color: kGameplayAnswerButtonTouchedCorrectFill)
-            default:
-                break
-            }
-        } else {
-            switch selected {
-            case 0:
-                rippleAnimation(answer1, relativeLoaction: location, color: kGameplayAnswerButtonTouchedIncorrectFill)
-            case 1:
-                rippleAnimation(answer2, relativeLoaction: location, color: kGameplayAnswerButtonTouchedIncorrectFill)
-            case 2:
-                rippleAnimation(answer3, relativeLoaction: location, color: kGameplayAnswerButtonTouchedIncorrectFill)
-            case 3:
-                rippleAnimation(answer4, relativeLoaction: location, color: kGameplayAnswerButtonTouchedIncorrectFill)
-            default:
-                break
-            }
-        }
-    }
+    @IBOutlet weak var goSet: UIImageView!
+    @IBOutlet weak var go: UIImageView!
+    @IBOutlet weak var onYourMonster: UIImageView!
 
     
-    private var timer: NSTimer?
-    private var step = CGFloat(0.0)
+    @IBOutlet  var pre_11: NSLayoutConstraint!
+    @IBOutlet  var pre_12: NSLayoutConstraint!
+    @IBOutlet  var pre_13: NSLayoutConstraint!
+    @IBOutlet  var pre_21: NSLayoutConstraint!
+    @IBOutlet  var pre_22: NSLayoutConstraint!
+    @IBOutlet  var pre_23: NSLayoutConstraint!
+    @IBOutlet  var pre_31: NSLayoutConstraint!
+    @IBOutlet  var pre_32: NSLayoutConstraint!
+    @IBOutlet  var pre_33: NSLayoutConstraint!
     
-    func setTimer(){
-        
-        if let question = currentQuestion {
-            if let time = question.timer?.intValue {
-                clockLabel.text = String(format: "%.2f", Double(time)/1000)
+    @IBOutlet  var pre_height1: NSLayoutConstraint!
+    @IBOutlet  var pre_height2: NSLayoutConstraint!
+    @IBOutlet  var pre_height3: NSLayoutConstraint!
+    
+    @IBOutlet  var precount_11: NSLayoutConstraint!
+    @IBOutlet  var precount_12: NSLayoutConstraint!
+    @IBOutlet  var precount_13: NSLayoutConstraint!
+    @IBOutlet  var precount_21: NSLayoutConstraint!
+    @IBOutlet  var precount_22: NSLayoutConstraint!
+    @IBOutlet  var precount_23: NSLayoutConstraint!
+    @IBOutlet  var precount_31: NSLayoutConstraint!
+    @IBOutlet  var precount_32: NSLayoutConstraint!
+    @IBOutlet  var precount_33: NSLayoutConstraint!
 
-                step = timebarWidthConstrain.constant / CGFloat(time/1000) * 0.01
-//                print("------------")
-//                print(timebarWidthConstrain.constant)
-//                print(step)
-//                print("------------")
 
-            }
-        }
-    }
-    
-    func startCountdown() {
-        
-        if self.timer != nil {
-            self.timer!.invalidate()
-            self.timer = nil
-        }
-            
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(GameViewController.countingdown), userInfo: nil, repeats: true)
-        
-    }
-    
-    func stopCountdown() {
-        
-        if self.timer != nil {
-            self.timer!.invalidate()
-            self.timer = nil
-        }
-        
-    }
-    
-    func countingdown() {
+    @IBOutlet  var precount_height1: NSLayoutConstraint!
+    @IBOutlet  var precount_height2: NSLayoutConstraint!
+    @IBOutlet  var precount_height3: NSLayoutConstraint!
 
-        if let currentTime = Double(clockLabel.text!){
-            
-            if currentTime > 0 {
-                clockLabel.text = String(format: "%.2f", currentTime - 0.01)
-            } else {
-                self.timer?.invalidate()
-                self.timer = nil
-            }
-        
-        }
-        if timebarWidthConstrain.constant - step > 0 {
-            timebarWidthConstrain.constant = timebarWidthConstrain.constant - step
-        }
-    }
+    @IBOutlet weak var preImage_1: UIImageView!
+    @IBOutlet weak var preImage_2: UIImageView!
+    @IBOutlet weak var preImage_3: UIImageView!
+
+    @IBOutlet weak var finishPrepare: NSLayoutConstraint!
+    
+    var isFirstQuestion = true
+    
 }
 
 

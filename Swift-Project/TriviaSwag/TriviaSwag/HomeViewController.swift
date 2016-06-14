@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableContainerView: UIView!
@@ -19,6 +21,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tourneyTalkViewContainer: UIView!
     
     var reachability: Reachability?
+    var tournamentForDetails: gStackTournament?
     
     deinit{
         reachability?.stopNotifier()
@@ -154,6 +157,36 @@ class HomeViewController: UIViewController {
     @IBAction func backToMain(segue: UIStoryboardSegue)
     {
     }
+    
+    
+    func viewTournamentDetails(tourney: gStackTournament, sender: UIButton){
+        
+        tournamentForDetails = tourney
+        performSegueWithIdentifier("TourneyDetailView", sender: sender)
+    }
+    
+//    @IBAction func restartTheGame(segue: UIStoryboardSegue)
+//    {
+//        if let vc = segue.sourceViewController as? GameOverViewController{
+//            let sb = UIStoryboard(name: "Game", bundle: nil)
+//            let gamevc = sb.instantiateInitialViewController() as! GameViewController
+//            gamevc.currentTournament = vc.tournament
+//            delayDisplayViewController(gamevc)
+//        }
+//    }
+    @IBAction func login(segue: UIStoryboardSegue){
+        print("I am in unwind segue")
+        let sb = UIStoryboard(name: "LoginSignUp", bundle: nil)
+        let vc = sb.instantiateInitialViewController()
+        delayDisplayViewController(vc!)
+    }
+    
+    func delayDisplayViewController(vc:UIViewController){
+        delay(0.1) { 
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
+    }
+    
     // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -161,6 +194,10 @@ class HomeViewController: UIViewController {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
         
+        if (segue.identifier == "TourneyDetailView"){
+            let dest = segue.destinationViewController as! TournamentDescriptionViewController
+            dest.tournament = tournamentForDetails
+        }
      }
 
 }
@@ -184,7 +221,7 @@ extension HomeViewController {
             reachability!.whenReachable = {
                 reachability in
                 
-                if gStackCachedTournaments.count == 0 {
+                if gStackCacheDataManager.sharedInstance.getTournaments().count == 0 {
                     
                     if gStackAppIDToken == nil {
                         gStackLoginWithAppID() { (error) -> Void in

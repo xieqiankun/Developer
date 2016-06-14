@@ -36,7 +36,7 @@
                                         <rect key="frame" x="16" y="86" width="583" height="260"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LeaderboardCell" rowHeight="51" id="mmW-Rf-3vu" customClass="LeaderboardTableViewCell" customModule="TriviaSwag" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LeaderboardCell" rowHeight="51" id="mmW-Rf-3vu" customClass="LeaderboardTableViewCell" customModule="TriviaSwag" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="583" height="51"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mmW-Rf-3vu" id="mDQ-Pe-6ZW">

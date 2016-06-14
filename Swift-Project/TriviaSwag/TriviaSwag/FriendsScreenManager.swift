@@ -87,7 +87,7 @@ class FriendsScreenManager: NSObject {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(FriendsScreenManager.friendOffline(_:)), name: triviaUserFriendOfflineNotificationName, object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(FriendsScreenManager.updateUserInbox), name: triviaUpdateInboxNotificationName, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(FriendsScreenManager.updateUserInbox), name: triviaDidDeleteMessageNotificationName, object: nil)
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(FriendsScreenManager.updateUserInbox), name: triviaDidDeleteMessageNotificationName, object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(FriendsScreenManager.updateUserInbox), name: triviaDidUpdateFriendsNotificationName, object: nil)
     }

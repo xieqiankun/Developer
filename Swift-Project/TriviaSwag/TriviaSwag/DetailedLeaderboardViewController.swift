@@ -14,7 +14,7 @@ class DetailedLeaderboardViewController: UIViewController {
     
     
     var leaderboard:gStackTournamentLeaderboard!
-
+    var currentTournament: gStackTournament!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -26,6 +26,23 @@ class DetailedLeaderboardViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.clearColor()
         // Do any additional setup after loading the view.
+        if triviaCurrentUserInbox == nil {
+            triviaGetCurrentUserInbox({ (error, inbox) in
+                
+            })
+        }
+        if leaderboard == nil {
+            gStackFetchLeaderboardForTournament(currentTournament, completion: { [weak self](error, leaderboard) in
+                if let strongSelf = self {
+                    
+                    strongSelf.leaderboard = leaderboard
+                    dispatch_async(dispatch_get_main_queue(), { 
+                        strongSelf.tableView.reloadData()
+                    })
+                }
+            })
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -121,6 +138,16 @@ extension DetailedLeaderboardViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         let height = tableView.frame.height * 0.012
         return CGFloat(height)
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let board = leaderboard {
+           let leader = board.leaders[indexPath.section]
+            let sb = UIStoryboard(name: "Profile", bundle: nil)
+            let vc = sb.instantiateInitialViewController() as! ProfileViewController
+            vc.userName = leader.displayName!
+            presentViewController(vc, animated: true, completion: nil)
+        }
     }
 
     

@@ -11,19 +11,29 @@ import ImageIO
 
 extension UIImage {
     
-    public class func gifWithRemoteUrl(url:NSURL, completion:(image: UIImage?) -> Void) {
-        
-        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
-            
-            guard let data = data where error == nil else { return }
-
-            let im = gifWithData(data)
-            completion(image: im)
-            
-            }.resume()
-
-    }
-    
+//    public class func gifWithRemoteUrl(url:NSURL, completion:(image: UIImage?) -> Void) -> NSURLSessionDownloadTask {
+//        
+//        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+//   
+//        let session = NSURLSession(configuration: config)
+//        let task = session.downloadTaskWithURL(url) { (url, response, error) in
+//
+//            guard let url = url where error == nil else { return }
+//
+//            let im = gifWithNSURL(url)
+//            
+//            dispatch_async(dispatch_get_main_queue(), { 
+//                completion(image: im)
+//            })
+//            session.finishTasksAndInvalidate()
+//        }
+//        
+//        task.resume()
+//        
+//        return task
+//        
+//    }
+//    
     public class func gifWithData(data: NSData) -> UIImage? {
         // Create source from data
         guard let source = CGImageSourceCreateWithData(data, nil) else {
@@ -50,6 +60,18 @@ extension UIImage {
         
         return gifWithData(imageData)
     }
+    
+    public class func gifWithNSURL(gifNSUrl:NSURL) -> UIImage? {
+        
+        // Validate data
+        guard let imageData = NSData(contentsOfURL: gifNSUrl) else {
+            print("SwiftGif: Cannot turn image named \"\(gifNSUrl)\" into NSData")
+            return nil
+        }
+        
+        return gifWithData(imageData)
+    }
+
     
     public class func gifWithName(name: String) -> UIImage? {
         // Check for existance of gif

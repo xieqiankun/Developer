@@ -7,9 +7,16 @@
 //
 
 import UIKit
+
 extension UIImageView {
     func loadImageWithURL(url: NSURL) -> NSURLSessionDownloadTask {
-        let session = NSURLSession.sharedSession()
+        
+        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+        config.requestCachePolicy = NSURLRequestCachePolicy.ReturnCacheDataElseLoad
+        config.URLCache = NSURLCache.sharedURLCache()
+        
+        let session = NSURLSession(configuration: config)
+        
         
         let downloadTask = session.downloadTaskWithURL(url, completionHandler: {
             [weak self] url, response, error in
@@ -20,8 +27,11 @@ extension UIImageView {
                         }
                     }
                 } else {
-                    print(error?.domain)
+//                    print(error?.domain)
+//                    print(error.debugDescription)
+//                    print(error?.code)
                 }
+            session.finishTasksAndInvalidate()
         })
         
         downloadTask.resume()
@@ -50,3 +60,10 @@ extension UIImageView {
     }
 
 }
+
+
+
+
+
+
+

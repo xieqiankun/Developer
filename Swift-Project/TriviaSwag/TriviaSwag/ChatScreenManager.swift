@@ -42,7 +42,7 @@ class ChatScreenManager:NSObject {
         self.displayName = displayName
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatScreenManager.refreshMessages), name: triviaUpdateInboxNotificationName, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatScreenManager.refreshMessages), name: triviaDidSendMessageNotificationName, object: nil)
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatScreenManager.refreshMessages), name: triviaDidSendMessageNotificationName, object: nil)
         
         fetchMessages()
         
@@ -83,8 +83,9 @@ class ChatScreenManager:NSObject {
     // insert message into database and delete the message in inbox
     func insertNewMessages(messages: [triviaMessage]) {
         
-        for message in messages {
+        if messages.count > 0 {
             
+            let message =  messages[0]
             let _message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: managedObjectContext) as! triviaMessageMO
             _message.receiver = message.recipient
             _message.sender = message.sender
@@ -98,7 +99,25 @@ class ChatScreenManager:NSObject {
                     print("\(message._id)")
                 }
             })
+
         }
+        
+//        for message in messages {
+//            
+//            let _message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: managedObjectContext) as! triviaMessageMO
+//            _message.receiver = message.recipient
+//            _message.sender = message.sender
+//            _message.date = message.date
+//            _message.body = message.body
+//            _message.userName = triviaCurrentUser!.displayName!
+//            self.messages.append(_message)
+//            // delete messages on server side
+//            triviaDeleteMessage(message, completion: { (error, updatedInbox) in
+//                if error == nil {
+//                    print("\(message._id)")
+//                }
+//            })
+//        }
         saveContext()
     }
     

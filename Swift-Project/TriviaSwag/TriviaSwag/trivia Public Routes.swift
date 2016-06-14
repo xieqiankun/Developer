@@ -18,6 +18,7 @@ public func triviaUserLogin(email: String, password: String, completion: (error:
             _error, _payload in
             if _error != nil {
                 completion(error: _error)
+                triviaCurrentUser = nil
             } else if let payload = _payload as? Dictionary<String,AnyObject> {
                 triviaCurrentUser = triviaUser(payload: payload)
                 // store user login token
@@ -29,6 +30,7 @@ public func triviaUserLogin(email: String, password: String, completion: (error:
                 }
             } else {
                 completion(error: triviaMissingPayloadError)
+                triviaCurrentUser = nil
             }
         })
     })
@@ -160,7 +162,7 @@ public func triviaFetchProfileForDisplayName(displayName: String, completion: (u
 }
 
 
-public func triviaFetchPurchesItems(completion:(shop:triviaShop?, error: NSError? ) -> Void) {
+public func triviaFetchDataCenter(completion:(center:triviaDataCenter?, error: NSError? ) -> Void) {
     
     makeRequest(false, route: "triviamonster", type: "getGameData", payload: true, completion: {
         data, response, error in
@@ -168,9 +170,9 @@ public func triviaFetchPurchesItems(completion:(shop:triviaShop?, error: NSError
             _error, _payload in
             if _error == nil {
                 if let payload = _payload as? [String: AnyObject]{
-                    let shop = triviaShop(payload: (payload))
-                    triviaCurrentShop = shop
-                    completion(shop: shop, error: nil)
+                    let datacenter = triviaDataCenter(payload: (payload))
+                    triviaCurrentDataCenter = datacenter
+                    completion(center: datacenter, error: nil)
                     
                 }
              // Handle error
@@ -180,24 +182,6 @@ public func triviaFetchPurchesItems(completion:(shop:triviaShop?, error: NSError
     
 }
 
-public func triviaFetchGifs(completion:(store:triviaGifStore?, error: NSError? ) -> Void) {
-    
-    makeRequest(false, route: "triviamonster", type: "getGameData", payload: true, completion: {
-        data, response, error in
-        processResponse(error, data: data, completion: {
-            _error, _payload in
-            if _error == nil {
-                if let payload = _payload as? [String: AnyObject]{
-                    let store = triviaGifStore(payload: (payload))
-                    triviaCurrentGifStore = store
-                    completion(store: store, error: nil)
-                }
-                // Handle error
-            }
-        })
-    })
-    
-}
 
 
 

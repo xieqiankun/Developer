@@ -46,11 +46,8 @@ func saveLogInTokenForCurrentUser(){
 //MARK: - Handle Trivia User Inbox
 public var triviaCurrentUserInbox: triviaUserInbox?
 
-//MARK: - Handle Trivia Shop
-public var triviaCurrentShop: triviaShop?
-
-//MARK: - Handke Trivia Gif stroe
-public var triviaCurrentGifStore: triviaGifStore?
+//MARK: - Handle Trivia Datacenter
+public var triviaCurrentDataCenter: triviaDataCenter?
 
 
 

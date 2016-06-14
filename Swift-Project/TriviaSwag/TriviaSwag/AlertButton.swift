@@ -51,10 +51,16 @@ class AlertButton: UIButton {
     func configureNormal(title: String){
         let imageUntouch = UIImage(named:"GenericButton-Untouched")
         let imageTouch = UIImage(named: "GenericButton-Touched")
-        self.setImage(imageTouch, forState: .Highlighted)
-        self.setImage(imageUntouch, forState: .Normal)
+
+        self.setBackgroundImage(imageTouch, forState: .Highlighted)
+        self.setBackgroundImage(imageUntouch, forState: .Normal)
         
+        self.titleLabel?.font = UIFont(name: "GROBOLD", size: 30)
+        self.titleLabel?.adjustsFontSizeToFitWidth  = true
         self.setTitle(title, forState: .Normal)
+        self.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        self.setTitleColor(UIColor.blackColor(), forState: .Highlighted)
+
         self.addTarget(self, action: #selector(AlertButton.handleTap), forControlEvents: UIControlEvents.TouchUpInside)
     }
     

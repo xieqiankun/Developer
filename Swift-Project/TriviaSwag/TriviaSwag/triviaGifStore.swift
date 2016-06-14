@@ -14,9 +14,7 @@ public class triviaGifStore: NSObject {
     var incorrectGifs: [triviaGif]?
     
     init(payload:[String: AnyObject]){
-        if let gifs = payload["gifs"] as? [String:AnyObject]{
-            if let corrects = gifs["correct"] as? [[String: String]] {
-                print(" I am here ----------")
+            if let corrects = payload["correct"] as? [[String: String]] {
                 var c = [triviaGif]()
                 for correct in corrects {
                     let gif = triviaGif(payload: correct)
@@ -24,7 +22,7 @@ public class triviaGifStore: NSObject {
                 }
                 correctGifs = c
             }
-            if let incorrects = gifs["incorrect"] as? [[String: String]] {
+            if let incorrects = payload["incorrect"] as? [[String: String]] {
                 var c = [triviaGif]()
                 for incorrect in incorrects {
                     let gif = triviaGif(payload: incorrect)
@@ -32,8 +30,6 @@ public class triviaGifStore: NSObject {
                 }
                 incorrectGifs = c
             }
-        }
-        
     }
     
     func getRandomGif(correct:Bool) -> triviaGif{
@@ -58,6 +54,7 @@ public class triviaGif {
     
     public var image: String?
     public var text: String?
+    public var cachedImage:UIImage?
     
     init(payload: [String: String]) {
         

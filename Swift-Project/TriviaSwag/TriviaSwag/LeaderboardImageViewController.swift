@@ -17,6 +17,7 @@ class LeaderboardImageViewController: UIViewController {
     
     var leaderboard: gStackTournamentLeaderboard? {
         didSet{
+            print("did set leader oard")
             dispatch_async(dispatch_get_main_queue()) { 
                 self.setLeaders()
             }
@@ -25,11 +26,21 @@ class LeaderboardImageViewController: UIViewController {
     
     var currentTournament: gStackTournament? {
         didSet{
+            print("did set tournament")
             leaderboard = nil
-            gStackFetchLeaderboardForTournament(currentTournament!) { (error, leaderboard) in
-                self.leaderboard = leaderboard
-                print("set leaderboard")
+            
+            delay(0.1) { 
+                if let tournament = self.currentTournament {
+                    self.leaderboard = gStackCacheDataManager.sharedInstance.getLeaderboard(tournament)
+                }
             }
+
+//            gStackFetchLeaderboardForTournament(currentTournament!) { (error, leaderboard) in
+//                if error == nil {
+//                    self.leaderboard = leaderboard
+//                    print("set leaderboard")
+//                }
+//            }
         }
     }
     // no leader
@@ -67,11 +78,24 @@ class LeaderboardImageViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LeaderboardImageViewController.updateTournamentLeaderboard(_:)), name: TournamentDidSelectNotificationName, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LeaderboardImageViewController.updateTournamentLeaderboard(_:)), name: TournamentWillAppearNotificationName, object: nil)
         
+        // leaderboard
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LeaderboardImageViewController.refresh), name: gStackFetchTournamentLeaderboardName, object: nil)
+        
         let gesture = UITapGestureRecognizer(target: self, action: #selector(LeaderboardImageViewController.showDetailLeaderboard))
         gesture.cancelsTouchesInView = false
         view.addGestureRecognizer(gesture)
         
         leaderboard = nil
+    }
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func refresh() {
+        if let tournament = currentTournament, let lb = gStackCacheDataManager.sharedInstance.getLeaderboard(tournament){
+            self.leaderboard = lb
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -95,16 +119,17 @@ class LeaderboardImageViewController: UIViewController {
     func setLeaders() {
         
         if leaderboard == nil {
+            cancelDownloadSession()
             UIView.animateWithDuration(0.1, delay: 0, options: [], animations: {
                 self.view_1.alpha = 0
                 self.view_2.alpha = 0
                 self.view_3.alpha = 0
                 self.figure.alpha = 0
                 }, completion: nil)
-            
             return
         }
-        
+
+        startDownloadSession()
         let num = leaderboard!.leaders.count
         print(num)
         switch num {
@@ -112,6 +137,9 @@ class LeaderboardImageViewController: UIViewController {
             self.figure.alpha = 0
             UIView.animateWithDuration(0.1, delay: 0, options: [], animations: {
                 self.figure.alpha = 1
+                self.view_1.alpha = 0
+                self.view_2.alpha = 0
+                self.view_3.alpha = 0
                 }, completion: nil)
         case 1:
             self.figure.alpha = 0
@@ -203,6 +231,54 @@ class LeaderboardImageViewController: UIViewController {
         
     }
     
+    private weak var task1:NSURLSessionDownloadTask?
+    private weak var task2:NSURLSessionDownloadTask?
+    private weak var task3:NSURLSessionDownloadTask?
+
+    
+    func startDownloadSession() {
+        
+        cancelDownloadSession()
+        
+        if let prizes = currentTournament?.prizes{
+            
+            for (index, prize) in prizes.enumerate(){
+             
+                switch index {
+                case 0:
+                    if let url = prize.image, let nsurl = NSURL(string: url){
+                        //task1 = award_1.loadImageWithURL(nsurl)
+                        award_1.kf_setImageWithURL(nsurl)
+                    }
+                case 1:
+                    if let url = prize.image, let nsurl = NSURL(string: url){
+                        //task2 = award_2.loadImageWithURL(nsurl)
+                        award_2.kf_setImageWithURL(nsurl)
+                    }
+                case 2:
+                    if let url = prize.image, let nsurl = NSURL(string: url){
+                        //task3 = award_3.loadImageWithURL(nsurl)
+                        award_3.kf_setImageWithURL(nsurl)
+                    }
+                default:
+                    break
+                }
+
+            }
+            
+        }
+        
+    }
+    
+    func cancelDownloadSession() {
+        task1?.cancel()
+        task1 = nil
+        task2?.cancel()
+        task2 = nil
+        task3?.cancel()
+        task3 = nil
+    }
+    
     
     // MARK: - Navigation
 
@@ -213,10 +289,11 @@ class LeaderboardImageViewController: UIViewController {
         
         if let des = segue.destinationViewController as? DetailedLeaderboardViewController where segue.identifier == "DetailLeaderboard" {
             print("I am here")
+            des.currentTournament = self.currentTournament
             if let lb = self.leaderboard{
                 des.leaderboard = lb
             } else {
-                des.leaderboard = gStackTournamentLeaderboard(array: [[String:AnyObject]]())
+                des.leaderboard = nil
             }
             
         }

@@ -43,6 +43,9 @@
 
 - (id)objectFromJSONData:(NSData *)data
 {
+    if (data == nil){
+        return nil;
+    }
   return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 }
 

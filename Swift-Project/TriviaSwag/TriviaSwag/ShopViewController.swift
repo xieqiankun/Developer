@@ -26,11 +26,14 @@ class ShopViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.clearColor()
         
-        if triviaCurrentShop != nil {
+        if triviaCurrentDataCenter != nil {
             configueShopItems()
         } else {
-            triviaFetchPurchesItems({ (shop, error) in
-                self.configueShopItems()
+            triviaFetchDataCenter({ [weak self](center, error) in
+                if let strongSelf = self {
+                    strongSelf.configueShopItems()
+                    
+                }
             })
         }
         
@@ -38,7 +41,7 @@ class ShopViewController: UIViewController {
     
     func configueShopItems() {
         
-        if let currentShop = triviaCurrentShop {
+        if let center = triviaCurrentDataCenter,let currentShop = center.shop{
             for iap in iaps {
                 let index = iaps.indexOf(iap)
                 let item = currentShop.shopItems[index!]

@@ -24,13 +24,13 @@ func primusURL(connection: gStackGameConnection) -> NSURL? {
     return NSURL(string: urlString)
 }
 
-public var gStackCachedTournaments = Array<gStackTournament>()
+//public var gStackCachedTournaments = Array<gStackTournament>()
 
 public var gStackAppIDToken: String?
 public var gStackPusherChannel: String?
 
-public var gStackCachedLeaderBoard = [String: gStackTournamentLeaderboard]()
+//public var gStackCachedLeaderBoard = [String: gStackTournamentLeaderboard]()
 
 // user info
-public var gStackDisplayName: String  = "yyy"
+public var gStackDisplayName: String  = "Guest"
 public var gStackAvator: String = ""

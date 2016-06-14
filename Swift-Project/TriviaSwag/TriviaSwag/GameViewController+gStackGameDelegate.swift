@@ -38,8 +38,12 @@ extension GameViewController: gStackGameDelegate{
     }
     func didReceiveTimer(timer:gStackGameTimer){
         //for helping the ui
-        
+        if let num = timer.timer?.doubleValue{
+            let num = num / 1000
+            preGameStartTimer(num)
+        }
     }
+    
     func didReceiveErrorMsg(error:gStackGameErrorMsg){
         print("Receive an error: \(error.error)")
     }
@@ -49,93 +53,96 @@ extension GameViewController: gStackGameDelegate{
     func didReceiveRoundResult( win: gStackGameRoundResult) {
         
     }
+
     func didReceiveQuestion(question: gStackGameQuestion){
+        
+        if isFirstQuestion {
+            isFirstQuestion = false
+            
+            self.preGameToGaming()
+        }
+        
         self.currentQuestion = question
         //cache the question
         self.questions.append(question)
-        self.isAllowSubmit = true
         
-        setQuestionLabelWithCurrentQuestion()
-        setCurrentQuestionNumber()
+        self.setQuestionLabelWithCurrentQuestion()
+        self.setCurrentQuestionNumber()
         if let num = question.questionNum?.integerValue{
-            setCurrentQuestionMarker(num)
+            self.setCurrentQuestionMarker(num)
         }
         
         self.prepareState(true, completion:{
-            (true) in
-            dispatch_async(dispatch_get_main_queue(), { 
-                self.setGifs()
-                self.setAnswerLabelsWithCurrentQuestion()
-                self.clearAnswerBackground()
-                self.setUntouchButtons()
-            })
+            self.setGifs()
+            self.setAnswerLabelsWithCurrentQuestion()
+            self.clearAnswerBackground()
+            self.setUntouchButtons()
         })
-
-
+        
         let delayInSeconds = Double(question.promptTime!)  / 1000
         
         // need to minus animation time for preparing aniamtin
         delay(delayInSeconds - 0.5) {
-            self.playingState(true,completion: {
-                (true) in
+            self.playingState(true, completion: {
+                self.isAllowSubmit = true
                 // Timer
                 self.setTimer()
                 self.startCountdown()
             })
         }
-        
     }
+    
     func didReceivePlayerInfo(playerInfo: gStackGamePlayerInfo){
         
         
     }
+    
     func didReceiveCorrectAnswer(correctAnswer: gStackGameCorrectAnswer){
         //cache answers
-        answers.append(correctAnswer)
+        self.answers.append(correctAnswer)
         // in case user didn't answer
-        stopCountdown()
-        if isAllowSubmit {
-            setIncorrectResult()
+        self.stopCountdown()
+        if self.isAllowSubmit {
+            self.setIncorrectResult()
         }
-        resultState(true)
+        self.resultState(true)
         
         let correct = correctAnswer.correctAnswer?.integerValue
         // reuse for displaying the right answer
-        setCorrectButton(correct!)
-        startRightOrWrongAnimation(1, selected: correct!)
+        self.setCorrectButton(correct!)
+        self.startRightOrWrongAnimation(1, selected: correct!)
+        
         
         let timer = correctAnswer.timer?.integerValue
         let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(Double(timer! - 800) / 1000 * Double(NSEC_PER_SEC)))
-        dispatch_after(delayTime, dispatch_get_main_queue()) { 
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
             //self.clearLabels()
         }
     }
     
     func didReceiveUpdatedScore(updatedScore: gStackGameUpdatedScore){
         
-        NSLog("receive update scores")
-
-        stopCountdown()
+        self.stopCountdown()
         
         let seleted = updatedScore.answerNumber?.integerValue
         
         // 0 means wrong 1 means right
         if (updatedScore.rightOrWrong?.integerValue)! == 0 {
             if let num = seleted {
-                startRightOrWrongAnimation(0, selected: num)
-                setIncorrectResult()
+                self.startRightOrWrongAnimation(0, selected: num)
+                self.setIncorrectResult()
                 // change button border for incorrect
-                setIncorrectButton(num)
+                self.setIncorrectButton(num)
                 if let num = updatedScore.questionNum?.integerValue{
-                    setIncorrectQuestionMarker(num)
+                    self.setIncorrectQuestionMarker(num)
                 }
             }
         } else {
             if let num = seleted {
-                startRightOrWrongAnimation(1, selected: num)
-                setCorrectResult()
+                self.startRightOrWrongAnimation(1, selected: num)
+                self.setCorrectResult()
                 if let num = updatedScore.questionNum?.integerValue{
-                    setCorrectQuestionMarker(num)
+                    self.setCorrectQuestionMarker(num)
                 }
             }
         }
@@ -148,39 +155,48 @@ extension GameViewController: gStackGameDelegate{
                     temp.append(score)
                 }
             }
-            updateUserScore(temp)
+            self.updateUserScore(temp)
         }
+        
         
         
     }
     
     func didReceiveGameResult(result: gStackGameResult){
         //        self.soundGameover?.play()
-        stopCountdown()
-        let sb = UIStoryboard(name: "GameOver", bundle: nil)
-        let vc = sb.instantiateInitialViewController() as! GameOverViewController
+        if !isForfeit{
+            self.stopCountdown()
+            let sb = UIStoryboard(name: "GameOver", bundle: nil)
+            let vc = sb.instantiateInitialViewController() as! GameOverViewController
+            
+            vc.tournament = self.currentTournament
+            vc.answers = self.answers
+            vc.questions = self.questions
+            vc.numOfQuestion = (result.teamScores?[0].count)!
+            var correct = 0
+            for num in result.teamScores![0] {
+                let score = num.doubleValue
+                if score != 0 {
+                    correct  = correct + 1
+                }
+            }
+            vc.numOfCorrect = correct
+            var time = 0.0
+            for num in result.teamAnswersTime![0] {
+                let score = num.doubleValue
+                if score != 0 {
+                    time  = time + score
+                }
+            }
+            vc.totalTime = time
+            vc.restartDelegate = self
+            self.presentViewController(vc, animated: true) {
+                self.clearGifCache()
+            }
+
+        }
         
-        vc.tournament = self.currentTournament
-        vc.answers = self.answers
-        vc.questions = self.questions
-        vc.numOfQuestion = (result.teamScores?[0].count)!
-        var correct = 0
-        for num in result.teamScores![0] {
-            let score = num.doubleValue
-            if score != 0 {
-                correct  = correct + 1
-            }
-        }
-        vc.numOfCorrect = correct
-        var time = 0.0
-        for num in result.teamAnswersTime![0] {
-            let score = num.doubleValue
-            if score != 0 {
-                time  = time + score
-            }
-        }
-        vc.totalTime = time
-        self.presentViewController(vc, animated: true, completion: nil)
+        self.endGame()
     }
     
     func didReceiveOtherGameFinished(alive:gStackGameOtherGameFinished){

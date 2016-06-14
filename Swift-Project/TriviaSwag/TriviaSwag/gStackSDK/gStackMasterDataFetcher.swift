@@ -96,7 +96,7 @@ func gStackProcessResponse(error: NSError?, data: NSData?, completion: (error: N
         var parseError: NSError?
         do {
             let reply = try gStackParseJSONReply(data!)
-            //print(reply)
+            print(reply)
             if let payload = reply["payload"] as? Dictionary<String,AnyObject> {
                 if let errorString = payload["error"] as? String {
                     // control api error, like token expire

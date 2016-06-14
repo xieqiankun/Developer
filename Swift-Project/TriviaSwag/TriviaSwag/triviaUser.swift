@@ -183,9 +183,14 @@ public class triviaUser: NSObject {
     public class func logOutCurrentUser() {
         NSUserDefaults.standardUserDefaults().removeObjectForKey(triviaUserLogInTokenKey)
         NSUserDefaults.standardUserDefaults().synchronize()
-        if let _channel = triviaCurrentUser?.channel{
-            triviaNotificationHandler.sharedInstance.unsubscribeToPusherChannel(_channel)
-        }
+//        if let _channel = triviaCurrentUser?.channel{
+//            triviaNotificationHandler.sharedInstance.unsubscribeToPusherChannel(_channel)
+//        }
+        gStackClearCurrentUserInfo()
+        triviaNotificationHandler.sharedInstance.pusherClient.disconnect()
+        triviaNotificationHandler.sharedInstance.pusherClient = nil
+        triviaNotificationHandler.sharedInstance.connectToPusherServer()
+        triviaCurrentUserInbox = nil
         triviaCurrentUser = nil
     }
     

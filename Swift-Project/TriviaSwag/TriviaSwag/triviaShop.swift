@@ -12,14 +12,10 @@ public class triviaShop: NSObject {
     
     var shopItems = [triviaShopItem]()
     
-    init(payload:[String: AnyObject]){
-        if let items = payload["iap"] as? [[String:AnyObject]]{
-            for item in items {
-                shopItems.append(triviaShopItem(payload: item))
-            }
-            
+    init(payload:[[String:AnyObject]]){
+        for item in payload {
+            shopItems.append(triviaShopItem(payload: item))
         }
-        
     }
 }
 

@@ -9,8 +9,8 @@
 import Foundation
 
 let triviaUpdateInboxNotificationName = "triviaFetchUserInbox"
-let triviaDidSendMessageNotificationName = "triviaDidSendMessage"
-let triviaDidDeleteMessageNotificationName = "triviaDidDeleteMessage"
+//let triviaDidSendMessageNotificationName = "triviaDidSendMessage"
+//let triviaDidDeleteMessageNotificationName = "triviaDidDeleteMessage"
 let triviaDidUpdateFriendsNotificationName = "triviaDidUpadateFriend"
 
 //MARK: - User
@@ -22,6 +22,7 @@ public func triviaGetCurrentUserInfo(completion: (error: NSError?) -> Void) {
             _error, _payload in
             if _error != nil {
                 completion(error: _error)
+                triviaCurrentUser = nil
             } else if let payload = _payload as? Dictionary<String,AnyObject> {
                 triviaCurrentUser = triviaUser(payload: payload)
                 // update token every time user open the app
@@ -33,6 +34,7 @@ public func triviaGetCurrentUserInfo(completion: (error: NSError?) -> Void) {
                 
             } else {
                 completion(error: gStackMissingPayloadError)
+                triviaCurrentUser = nil
             }
         })
     })
@@ -117,10 +119,6 @@ public func triviaGetCurrentUserInbox(completion: (error: NSError?, inbox: trivi
                     
                     triviaCurrentUserInbox = currentInbox
                     
-                    //                    print("In fetching message ------")
-                    //                    print(currentInbox.friendRequests.count)
-                    //                    print("In fetching message ------")
-                    //
                     completion(error: nil, inbox: currentInbox)
                     // post fetch trivia inbox success notification
                     NSNotificationCenter.defaultCenter().postNotificationName(triviaUpdateInboxNotificationName, object: nil)
@@ -167,7 +165,7 @@ public func triviaDeleteCommunique(communique: triviaCommunique, completion: (er
                         //                    print("In deleting message ------")
                         
                         completion(error: nil, updatedInbox: inbox)
-                        NSNotificationCenter.defaultCenter().postNotificationName(triviaDidDeleteMessageNotificationName, object: nil)
+                        NSNotificationCenter.defaultCenter().postNotificationName(triviaUpdateInboxNotificationName, object: nil)
                     }
                 } else {
                     completion(error: gStackMissingPayloadError, updatedInbox: nil)
@@ -246,7 +244,7 @@ public func triviaSendMessage(message: triviaMessage, completion: (error: NSErro
                         triviaCurrentUserInbox = currentInbox
                         completion(error: nil, updatedInbox: currentInbox)
                         // post fetch trivia inbox success notification
-                        NSNotificationCenter.defaultCenter().postNotificationName(triviaDidSendMessageNotificationName, object: nil)
+                        NSNotificationCenter.defaultCenter().postNotificationName(triviaUpdateInboxNotificationName, object: nil)
                     } else {
                         let missingError = NSError(domain: "Missing updated inbox", code: 1111, userInfo: nil)
                         completion(error: missingError, updatedInbox: nil)
@@ -525,6 +523,18 @@ public func triviaUnfriend(friendDisplayName: String, completion: (error: NSErro
 }
 
 
-
+//nq
+public func triviaSetCurrentUserStatus(status: String, completion: (error: NSError?) -> Void) {
+    makeRequest(true, route: "userstatus", type: "setUserStatus", payload: ["status":status], completion: {
+        data, response, error in
+        processResponse(error, data: data, completion: {
+            _error, _ in
+            if _error == nil {
+                triviaCurrentUser?.status = status
+            }
+            completion(error: _error)
+        })
+    })
+}
 
 

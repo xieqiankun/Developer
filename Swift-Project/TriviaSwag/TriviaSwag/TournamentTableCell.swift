@@ -43,12 +43,17 @@ class TournamentTableViewCell: UITableViewCell {
         view.image = UIImage(named: "TournamentItemUntouched.png")
         
         if tournamentStatus == gStackTournamentStatus.Active {
-            startbtn.hidden = false
+            startbtn.hidden = true
         }
     }
     
+    private var task: NSURLSessionDownloadTask?
+    
     func setupCell(tournament: gStackTournament) {
-        
+        if task != nil {
+            task?.cancel()
+            task = nil
+        }
         self.backgroundColor = UIColor.clearColor()
         self.myLabel.text = tournament.name
         self.setRoundCorner()
@@ -58,7 +63,18 @@ class TournamentTableViewCell: UITableViewCell {
         if tournamentStatus != gStackTournamentStatus.Active {
             startbtn.hidden = true
         } else {
-            startbtn.hidden = false
+            startbtn.hidden = true
+        }
+        
+        if let prizes = tournament.prizes{
+            
+            if prizes.count > 0{
+                let prize = prizes[0]
+                if let url = prize.image, let nsurl = NSURL(string: url){
+                    //task = prizeImageView.loadImageWithURL(nsurl)
+                    prizeImageView.kf_setImageWithURL(nsurl)
+                }
+            }
         }
     }
     

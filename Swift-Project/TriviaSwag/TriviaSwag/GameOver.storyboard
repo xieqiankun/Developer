@@ -52,15 +52,108 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILo-jU-fHH" userLabel="Practice Screen">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Practice-BlurBackground" translatesAutoresizingMaskIntoConstraints="NO" id="IJX-e4-bkw">
+                                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7f6-CS-k3K">
+                                        <rect key="frame" x="445" y="322" width="207" height="45"/>
+                                        <state key="normal" title="Button" image="LoginButtonUntouched"/>
+                                        <state key="highlighted" image="LoginButtonTouched"/>
+                                        <connections>
+                                            <action selector="login" destination="nrl-5R-NeC" eventType="touchUpInside" id="cvC-ps-EBj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3OK-jJ-NDa">
+                                        <rect key="frame" x="230" y="322" width="207" height="45"/>
+                                        <state key="normal" title="Button" image="PracticeButtonUntouched"/>
+                                        <state key="highlighted" image="PracticeButtonTouched"/>
+                                        <connections>
+                                            <action selector="restart" destination="nrl-5R-NeC" eventType="touchUpInside" id="kqX-vu-cgz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Taa-aG-h8o">
+                                        <rect key="frame" x="608" y="8" width="51" height="51"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Taa-aG-h8o" secondAttribute="height" id="0gQ-tE-RCk"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="CloseButton"/>
+                                        <state key="highlighted" image="CloseButtonTouched"/>
+                                        <connections>
+                                            <action selector="close" destination="nrl-5R-NeC" eventType="touchUpInside" id="Zkx-qk-77h"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="PracticeTournamentText" translatesAutoresizingMaskIntoConstraints="NO" id="lmP-9C-lBq">
+                                        <rect key="frame" x="168" y="0.0" width="333" height="57"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vw-01-Rs9">
+                                        <rect key="frame" x="15" y="322" width="207" height="45"/>
+                                        <state key="normal" title="Button" image="HomeButtonUntouched"/>
+                                        <state key="highlighted" image="HomeButtonTouched"/>
+                                        <connections>
+                                            <action selector="close" destination="nrl-5R-NeC" eventType="touchUpInside" id="gnB-yZ-gku"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYx-0T-vzx">
+                                        <rect key="frame" x="0.0" y="65" width="667" height="244"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PleaseLoginImage" translatesAutoresizingMaskIntoConstraints="NO" id="eHT-oV-fpU">
+                                                <rect key="frame" x="0.0" y="17" width="667" height="210"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="eHT-oV-fpU" secondAttribute="height" multiplier="2668:840" id="rG4-DT-MQZ"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="eHT-oV-fpU" firstAttribute="leading" secondItem="nYx-0T-vzx" secondAttribute="leading" id="KQb-NT-VyU"/>
+                                            <constraint firstItem="eHT-oV-fpU" firstAttribute="centerY" secondItem="nYx-0T-vzx" secondAttribute="centerY" id="RTi-pf-XAT"/>
+                                            <constraint firstAttribute="trailing" secondItem="eHT-oV-fpU" secondAttribute="trailing" id="z81-ms-5Kf"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="7vw-01-Rs9" firstAttribute="leading" secondItem="ILo-jU-fHH" secondAttribute="leading" constant="15" id="0y0-qJ-LJg"/>
+                                    <constraint firstItem="nYx-0T-vzx" firstAttribute="top" secondItem="lmP-9C-lBq" secondAttribute="bottom" constant="8" id="1A8-ls-oPb"/>
+                                    <constraint firstAttribute="trailing" secondItem="IJX-e4-bkw" secondAttribute="trailing" id="2Zg-9D-RZK"/>
+                                    <constraint firstAttribute="bottom" secondItem="7f6-CS-k3K" secondAttribute="bottom" constant="8" id="34f-LM-cmC"/>
+                                    <constraint firstItem="3OK-jJ-NDa" firstAttribute="leading" secondItem="7vw-01-Rs9" secondAttribute="trailing" constant="8" id="AsV-T6-1hw"/>
+                                    <constraint firstItem="lmP-9C-lBq" firstAttribute="top" secondItem="ILo-jU-fHH" secondAttribute="top" id="BSr-1H-zsZ"/>
+                                    <constraint firstItem="3OK-jJ-NDa" firstAttribute="width" secondItem="7vw-01-Rs9" secondAttribute="width" id="Dbz-EP-QMA"/>
+                                    <constraint firstItem="3OK-jJ-NDa" firstAttribute="height" secondItem="7vw-01-Rs9" secondAttribute="height" id="Gfc-9a-ne0"/>
+                                    <constraint firstItem="7f6-CS-k3K" firstAttribute="top" secondItem="nYx-0T-vzx" secondAttribute="bottom" constant="12" id="I8t-R2-8Sw"/>
+                                    <constraint firstAttribute="bottom" secondItem="IJX-e4-bkw" secondAttribute="bottom" id="Mud-hd-LLH"/>
+                                    <constraint firstAttribute="bottom" secondItem="7vw-01-Rs9" secondAttribute="bottom" constant="8" id="RTQ-lN-1bg"/>
+                                    <constraint firstItem="lmP-9C-lBq" firstAttribute="centerX" secondItem="ILo-jU-fHH" secondAttribute="centerX" id="g3n-Ho-9jQ"/>
+                                    <constraint firstItem="IJX-e4-bkw" firstAttribute="leading" secondItem="ILo-jU-fHH" secondAttribute="leading" id="jYu-f2-gIA"/>
+                                    <constraint firstItem="lmP-9C-lBq" firstAttribute="height" secondItem="ILo-jU-fHH" secondAttribute="height" multiplier="0.15" id="jyp-FB-cbK"/>
+                                    <constraint firstAttribute="bottom" secondItem="3OK-jJ-NDa" secondAttribute="bottom" constant="8" id="kVC-1l-iaB"/>
+                                    <constraint firstItem="7f6-CS-k3K" firstAttribute="height" secondItem="7vw-01-Rs9" secondAttribute="height" id="o49-ih-HLn"/>
+                                    <constraint firstItem="nYx-0T-vzx" firstAttribute="leading" secondItem="ILo-jU-fHH" secondAttribute="leading" id="oia-05-SWa"/>
+                                    <constraint firstItem="IJX-e4-bkw" firstAttribute="top" secondItem="ILo-jU-fHH" secondAttribute="top" id="pz6-WS-w0x"/>
+                                    <constraint firstAttribute="trailing" secondItem="Taa-aG-h8o" secondAttribute="trailing" constant="8" id="qR9-hg-xcN"/>
+                                    <constraint firstItem="nYx-0T-vzx" firstAttribute="height" secondItem="ILo-jU-fHH" secondAttribute="height" multiplier="0.65" id="rby-J1-aZL"/>
+                                    <constraint firstItem="nYx-0T-vzx" firstAttribute="top" secondItem="Taa-aG-h8o" secondAttribute="bottom" constant="7" id="rnX-tu-FbS"/>
+                                    <constraint firstAttribute="trailing" secondItem="nYx-0T-vzx" secondAttribute="trailing" id="rqa-pe-KDe"/>
+                                    <constraint firstItem="7f6-CS-k3K" firstAttribute="width" secondItem="7vw-01-Rs9" secondAttribute="width" id="saf-qP-H1E"/>
+                                    <constraint firstItem="lmP-9C-lBq" firstAttribute="width" secondItem="ILo-jU-fHH" secondAttribute="width" multiplier="0.5" id="tU4-xX-iY7"/>
+                                    <constraint firstItem="Taa-aG-h8o" firstAttribute="top" secondItem="ILo-jU-fHH" secondAttribute="top" constant="8" id="wyd-m9-xkM"/>
+                                    <constraint firstAttribute="trailing" secondItem="7f6-CS-k3K" secondAttribute="trailing" constant="15" id="xII-W7-mIU"/>
+                                    <constraint firstItem="7f6-CS-k3K" firstAttribute="leading" secondItem="3OK-jJ-NDa" secondAttribute="trailing" constant="8" id="yrV-CJ-fDu"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Koc-Ag-Ohg" userLabel="Ten Screen">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GameoverBackground" translatesAutoresizingMaskIntoConstraints="NO" id="4b0-Xg-Nye">
                                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIv-wk-KbN">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kIv-wk-KbN">
                                         <rect key="frame" x="167" y="5" width="334" height="57"/>
-                                        <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="35"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -69,7 +162,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ih6-Ej-rI2">
                                                 <rect key="frame" x="0.0" y="0.0" width="89" height="30"/>
-                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -81,39 +174,39 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJG-CI-T5O">
-                                                <rect key="frame" x="119" y="0.0" width="187" height="30"/>
-                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                                                <rect key="frame" x="119" y="0.0" width="148" height="30"/>
+                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCi-bg-QO6">
-                                                <rect key="frame" x="306" y="0.0" width="89" height="30"/>
-                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                                                <rect key="frame" x="267" y="0.0" width="102" height="30"/>
+                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heD-zF-iDl">
-                                                <rect key="frame" x="395" y="0.0" width="89" height="30"/>
-                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                                                <rect key="frame" x="369" y="0.0" width="102" height="30"/>
+                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hye-34-6N4">
-                                                <rect key="frame" x="484" y="0.0" width="89" height="30"/>
-                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                                                <rect key="frame" x="471" y="0.0" width="102" height="30"/>
+                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neV-oT-UcE">
                                                 <rect key="frame" x="573" y="0.0" width="64" height="30"/>
-                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="Hye-34-6N4" firstAttribute="width" secondItem="eCi-bg-QO6" secondAttribute="width" id="6P4-Uw-gU6"/>
-                                            <constraint firstItem="Hye-34-6N4" firstAttribute="width" secondItem="GpA-cf-CtL" secondAttribute="width" multiplier="0.14" id="Kt7-7o-j9K"/>
+                                            <constraint firstItem="Hye-34-6N4" firstAttribute="width" secondItem="GpA-cf-CtL" secondAttribute="width" multiplier="0.16" id="Kt7-7o-j9K"/>
                                             <constraint firstItem="heD-zF-iDl" firstAttribute="width" secondItem="eCi-bg-QO6" secondAttribute="width" id="NXZ-nN-q7I"/>
                                             <constraint firstItem="ih6-Ej-rI2" firstAttribute="width" secondItem="GpA-cf-CtL" secondAttribute="width" multiplier="0.14" id="Sj1-nj-bz4"/>
                                             <constraint firstItem="neV-oT-UcE" firstAttribute="width" secondItem="GpA-cf-CtL" secondAttribute="width" multiplier="0.1" id="UcF-Jx-QSc"/>
@@ -131,9 +224,9 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DXI-Ts-oYf">
                                                         <rect key="frame" x="16" y="7" width="605" height="34"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tR-xU-bbo">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tR-xU-bbo">
                                                                 <rect key="frame" x="0.0" y="0.0" width="61" height="34"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -155,27 +248,27 @@
                                                                     <constraint firstItem="wt1-jB-Sfd" firstAttribute="width" secondItem="nvF-Jh-ejH" secondAttribute="height" multiplier="0.7" id="rp9-az-khU"/>
                                                                 </constraints>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GX4-9q-9zY" userLabel="displayName">
-                                                                <rect key="frame" x="111" y="0.0" width="173" height="34"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="20"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GX4-9q-9zY" userLabel="displayName">
+                                                                <rect key="frame" x="111" y="0.0" width="137" height="34"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pms-zQ-fhW" userLabel="correct">
-                                                                <rect key="frame" x="292" y="0.0" width="85" height="34"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="18"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pms-zQ-fhW" userLabel="correct">
+                                                                <rect key="frame" x="256" y="0.0" width="97" height="34"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SjZ-84-Aey" userLabel="time">
-                                                                <rect key="frame" x="385" y="0.0" width="85" height="34"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SjZ-84-Aey" userLabel="time">
+                                                                <rect key="frame" x="361" y="0.0" width="97" height="34"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cF2-0h-2Kp" userLabel="score">
-                                                                <rect key="frame" x="478" y="0.0" width="85" height="34"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cF2-0h-2Kp" userLabel="score">
+                                                                <rect key="frame" x="466" y="0.0" width="97" height="34"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -197,7 +290,7 @@
                                                             </view>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="cF2-0h-2Kp" firstAttribute="width" secondItem="DXI-Ts-oYf" secondAttribute="width" multiplier="0.14" id="4DU-PY-EzI"/>
+                                                            <constraint firstItem="cF2-0h-2Kp" firstAttribute="width" secondItem="DXI-Ts-oYf" secondAttribute="width" multiplier="0.16" id="4DU-PY-EzI"/>
                                                             <constraint firstItem="cF2-0h-2Kp" firstAttribute="width" secondItem="Pms-zQ-fhW" secondAttribute="width" id="Ve2-8q-w8n"/>
                                                             <constraint firstItem="6tR-xU-bbo" firstAttribute="width" secondItem="DXI-Ts-oYf" secondAttribute="width" multiplier="0.1" id="bWx-kJ-oA0"/>
                                                             <constraint firstItem="SjZ-84-Aey" firstAttribute="width" secondItem="Pms-zQ-fhW" secondAttribute="width" id="fmL-yz-DNe"/>
@@ -225,9 +318,9 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qDQ-1d-eOw">
                                                         <rect key="frame" x="16" y="7" width="605" height="34"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xJ-XC-fMN">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xJ-XC-fMN">
                                                                 <rect key="frame" x="0.0" y="0.0" width="61" height="34"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -249,27 +342,27 @@
                                                                     <constraint firstItem="3qH-qN-ITK" firstAttribute="centerY" secondItem="p7l-dy-lFM" secondAttribute="centerY" id="kc2-2q-c8J"/>
                                                                 </constraints>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0g-BY-vxN" userLabel="displayName">
-                                                                <rect key="frame" x="111" y="0.0" width="173" height="34"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="20"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Y0g-BY-vxN" userLabel="displayName">
+                                                                <rect key="frame" x="111" y="0.0" width="137" height="34"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3x-6K-ggo" userLabel="correct">
-                                                                <rect key="frame" x="292" y="0.0" width="85" height="34"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="18"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="X3x-6K-ggo" userLabel="correct">
+                                                                <rect key="frame" x="256" y="0.0" width="97" height="34"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pze-5I-xTe" userLabel="time">
-                                                                <rect key="frame" x="385" y="0.0" width="85" height="34"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pze-5I-xTe" userLabel="time">
+                                                                <rect key="frame" x="361" y="0.0" width="97" height="34"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EE-Qb-C1q" userLabel="score">
-                                                                <rect key="frame" x="478" y="0.0" width="85" height="34"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8EE-Qb-C1q" userLabel="score">
+                                                                <rect key="frame" x="466" y="0.0" width="97" height="34"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -292,7 +385,7 @@
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="8EE-Qb-C1q" firstAttribute="width" secondItem="X3x-6K-ggo" secondAttribute="width" id="EIN-R3-Apq"/>
-                                                            <constraint firstItem="8EE-Qb-C1q" firstAttribute="width" secondItem="qDQ-1d-eOw" secondAttribute="width" multiplier="0.14" id="kmv-z5-0Ph"/>
+                                                            <constraint firstItem="8EE-Qb-C1q" firstAttribute="width" secondItem="qDQ-1d-eOw" secondAttribute="width" multiplier="0.16" id="kmv-z5-0Ph"/>
                                                             <constraint firstItem="5xJ-XC-fMN" firstAttribute="width" secondItem="qDQ-1d-eOw" secondAttribute="width" multiplier="0.1" id="sA3-vn-qdh"/>
                                                             <constraint firstItem="Pze-5I-xTe" firstAttribute="width" secondItem="X3x-6K-ggo" secondAttribute="width" id="tQm-vR-ZUw"/>
                                                         </constraints>
@@ -319,9 +412,9 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YIj-15-lfT">
                                                         <rect key="frame" x="16" y="7" width="605" height="34"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zek-gX-w68">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zek-gX-w68">
                                                                 <rect key="frame" x="0.0" y="0.0" width="61" height="34"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -343,27 +436,27 @@
                                                                     <constraint firstItem="o1r-lG-NZq" firstAttribute="width" secondItem="1MF-g4-Qfa" secondAttribute="height" multiplier="0.7" id="pNt-Wz-Dhi"/>
                                                                 </constraints>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SS2-8y-LTG" userLabel="displayName">
-                                                                <rect key="frame" x="111" y="0.0" width="173" height="34"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="20"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SS2-8y-LTG" userLabel="displayName">
+                                                                <rect key="frame" x="111" y="0.0" width="137" height="34"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTa-Jb-dl5" userLabel="correct">
-                                                                <rect key="frame" x="292" y="0.0" width="85" height="34"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="18"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LTa-Jb-dl5" userLabel="correct">
+                                                                <rect key="frame" x="256" y="0.0" width="97" height="34"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pR-VS-QGs" userLabel="time">
-                                                                <rect key="frame" x="385" y="0.0" width="85" height="34"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6pR-VS-QGs" userLabel="time">
+                                                                <rect key="frame" x="361" y="0.0" width="97" height="34"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aw7-KG-jb6" userLabel="score">
-                                                                <rect key="frame" x="478" y="0.0" width="85" height="34"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aw7-KG-jb6" userLabel="score">
+                                                                <rect key="frame" x="466" y="0.0" width="97" height="34"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -386,7 +479,7 @@
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="aw7-KG-jb6" firstAttribute="width" secondItem="LTa-Jb-dl5" secondAttribute="width" id="OTS-S6-jDp"/>
-                                                            <constraint firstItem="aw7-KG-jb6" firstAttribute="width" secondItem="YIj-15-lfT" secondAttribute="width" multiplier="0.14" id="PMK-xs-O8m"/>
+                                                            <constraint firstItem="aw7-KG-jb6" firstAttribute="width" secondItem="YIj-15-lfT" secondAttribute="width" multiplier="0.16" id="PMK-xs-O8m"/>
                                                             <constraint firstItem="6pR-VS-QGs" firstAttribute="width" secondItem="LTa-Jb-dl5" secondAttribute="width" id="XWV-l0-kd2"/>
                                                             <constraint firstItem="zek-gX-w68" firstAttribute="width" secondItem="YIj-15-lfT" secondAttribute="width" multiplier="0.1" id="nu4-NK-Pyn"/>
                                                         </constraints>
@@ -413,9 +506,9 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="49n-wb-klz">
                                                         <rect key="frame" x="16" y="7" width="605" height="34"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TP6-cZ-jf8">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TP6-cZ-jf8">
                                                                 <rect key="frame" x="0.0" y="0.0" width="61" height="34"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -437,27 +530,27 @@
                                                                     <constraint firstItem="KKN-XI-8ra" firstAttribute="centerY" secondItem="0EF-gJ-FEg" secondAttribute="centerY" id="rZI-I7-Bvi"/>
                                                                 </constraints>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DyQ-ha-HN2" userLabel="displayName">
-                                                                <rect key="frame" x="111" y="0.0" width="173" height="34"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="20"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DyQ-ha-HN2" userLabel="displayName">
+                                                                <rect key="frame" x="111" y="0.0" width="137" height="34"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIr-bk-Tif" userLabel="correct">
-                                                                <rect key="frame" x="292" y="0.0" width="85" height="34"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="18"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xIr-bk-Tif" userLabel="correct">
+                                                                <rect key="frame" x="256" y="0.0" width="97" height="34"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dN-BE-5H6" userLabel="time">
-                                                                <rect key="frame" x="385" y="0.0" width="85" height="34"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4dN-BE-5H6" userLabel="time">
+                                                                <rect key="frame" x="361" y="0.0" width="97" height="34"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4y3-Xh-kXb" userLabel="score">
-                                                                <rect key="frame" x="478" y="0.0" width="85" height="34"/>
-                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4y3-Xh-kXb" userLabel="score">
+                                                                <rect key="frame" x="466" y="0.0" width="97" height="34"/>
+                                                                <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="25"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -482,7 +575,7 @@
                                                             <constraint firstItem="4y3-Xh-kXb" firstAttribute="width" secondItem="xIr-bk-Tif" secondAttribute="width" id="Rjw-Op-fv0"/>
                                                             <constraint firstItem="TP6-cZ-jf8" firstAttribute="width" secondItem="49n-wb-klz" secondAttribute="width" multiplier="0.1" id="VCO-wN-9Bi"/>
                                                             <constraint firstItem="4dN-BE-5H6" firstAttribute="width" secondItem="xIr-bk-Tif" secondAttribute="width" id="WuU-TC-kWo"/>
-                                                            <constraint firstItem="4y3-Xh-kXb" firstAttribute="width" secondItem="49n-wb-klz" secondAttribute="width" multiplier="0.14" id="ff0-jI-yS2"/>
+                                                            <constraint firstItem="4y3-Xh-kXb" firstAttribute="width" secondItem="49n-wb-klz" secondAttribute="width" multiplier="0.16" id="ff0-jI-yS2"/>
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
@@ -512,6 +605,9 @@
                                         <rect key="frame" x="230" y="322" width="207" height="45"/>
                                         <state key="normal" title="Button" image="PlayAgainButtonUntouched"/>
                                         <state key="highlighted" image="PlayAgainButtonTouched"/>
+                                        <connections>
+                                            <action selector="restart" destination="nrl-5R-NeC" eventType="touchUpInside" id="coY-U1-2wG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XL8-Zy-AQY">
                                         <rect key="frame" x="608" y="8" width="51" height="51"/>
@@ -562,29 +658,29 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tpM-nv-OkY" userLabel="First Screen">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spinner" translatesAutoresizingMaskIntoConstraints="NO" id="HM2-rC-iIv">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spinner3" translatesAutoresizingMaskIntoConstraints="NO" id="HM2-rC-iIv">
                                         <rect key="frame" x="-167" y="-313" width="1001" height="1001"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="HM2-rC-iIv" secondAttribute="height" id="9ne-bI-eJI"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GameoverBackground" translatesAutoresizingMaskIntoConstraints="NO" id="XxR-cP-eJ2">
+                                    <imageView userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GameoverBackground" translatesAutoresizingMaskIntoConstraints="NO" id="XxR-cP-eJ2">
                                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sHc-Aw-W9H">
-                                        <rect key="frame" x="258" y="113" width="150" height="150"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sHc-Aw-W9H">
+                                        <rect key="frame" x="240" y="95" width="187" height="187"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="sHc-Aw-W9H" secondAttribute="height" id="dW0-QF-Vu4"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YCv-C6-dwn">
-                                        <rect key="frame" x="139" y="273" width="388" height="97"/>
+                                        <rect key="frame" x="177" y="291" width="312" height="78"/>
                                         <fontDescription key="fontDescription" name="GROBOLD" family="GROBOLD" pointSize="50"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreatJob" translatesAutoresizingMaskIntoConstraints="NO" id="keo-my-99j">
-                                        <rect key="frame" x="139" y="8" width="388" height="97"/>
+                                        <rect key="frame" x="177" y="8" width="312" height="78"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="keo-my-99j" secondAttribute="height" multiplier="4" id="iFw-2J-dp5"/>
                                         </constraints>
@@ -601,7 +697,7 @@
                                     <constraint firstItem="keo-my-99j" firstAttribute="centerX" secondItem="tpM-nv-OkY" secondAttribute="centerX" id="GXi-dq-Omc"/>
                                     <constraint firstItem="XxR-cP-eJ2" firstAttribute="leading" secondItem="tpM-nv-OkY" secondAttribute="leading" id="Gjd-UP-62U"/>
                                     <constraint firstAttribute="trailing" secondItem="XxR-cP-eJ2" secondAttribute="trailing" id="LU3-Nb-PmM"/>
-                                    <constraint firstItem="sHc-Aw-W9H" firstAttribute="height" secondItem="tpM-nv-OkY" secondAttribute="height" multiplier="0.4" id="Pkj-xa-Day"/>
+                                    <constraint firstItem="sHc-Aw-W9H" firstAttribute="height" secondItem="tpM-nv-OkY" secondAttribute="height" multiplier="0.5" id="Pkj-xa-Day"/>
                                     <constraint firstAttribute="bottom" secondItem="XxR-cP-eJ2" secondAttribute="bottom" id="dxJ-f5-uHm"/>
                                     <constraint firstItem="YCv-C6-dwn" firstAttribute="top" secondItem="sHc-Aw-W9H" secondAttribute="bottom" constant="10" id="dy3-UG-c99"/>
                                     <constraint firstItem="HM2-rC-iIv" firstAttribute="centerX" secondItem="tpM-nv-OkY" secondAttribute="centerX" id="rbg-AU-wnZ"/>
@@ -614,14 +710,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ILo-jU-fHH" secondAttribute="trailing" id="0bV-4u-3Uv"/>
                             <constraint firstItem="Dig-Nk-9MW" firstAttribute="height" secondItem="Wt2-rR-wY2" secondAttribute="height" multiplier="0.12" id="HHM-dB-nb1"/>
+                            <constraint firstItem="ILo-jU-fHH" firstAttribute="top" secondItem="Wt2-rR-wY2" secondAttribute="top" id="JNx-5g-Wmz"/>
                             <constraint firstItem="hxg-NN-CKR" firstAttribute="top" secondItem="tpM-nv-OkY" secondAttribute="bottom" id="LIZ-5w-ihM"/>
+                            <constraint firstItem="ILo-jU-fHH" firstAttribute="leading" secondItem="Wt2-rR-wY2" secondAttribute="leading" id="QPq-ah-wYS"/>
                             <constraint firstItem="Koc-Ag-Ohg" firstAttribute="leading" secondItem="Wt2-rR-wY2" secondAttribute="leading" id="V9f-sO-LWd"/>
                             <constraint firstAttribute="bottom" secondItem="Koc-Ag-Ohg" secondAttribute="bottom" id="XHe-Fh-SR1"/>
                             <constraint firstItem="Koc-Ag-Ohg" firstAttribute="top" secondItem="Wt2-rR-wY2" secondAttribute="top" id="eCe-9B-Odr"/>
                             <constraint firstItem="xjX-uD-LVq" firstAttribute="height" secondItem="Wt2-rR-wY2" secondAttribute="height" multiplier="0.16" id="f49-VK-vdP"/>
                             <constraint firstItem="tpM-nv-OkY" firstAttribute="width" secondItem="Wt2-rR-wY2" secondAttribute="width" id="jgd-zN-R5I"/>
                             <constraint firstAttribute="trailing" secondItem="Koc-Ag-Ohg" secondAttribute="trailing" id="jpH-4I-cc0"/>
+                            <constraint firstItem="hxg-NN-CKR" firstAttribute="top" secondItem="ILo-jU-fHH" secondAttribute="bottom" id="pZ6-q6-6fJ"/>
                             <constraint firstItem="tpM-nv-OkY" firstAttribute="top" secondItem="Wt2-rR-wY2" secondAttribute="topMargin" id="s5r-dz-Fl7"/>
                             <constraint firstItem="tpM-nv-OkY" firstAttribute="leading" secondItem="Wt2-rR-wY2" secondAttribute="leading" id="uGp-n8-Ige"/>
                         </constraints>
@@ -653,6 +753,7 @@
                         <outlet property="player_2" destination="Y0g-BY-vxN" id="TTP-am-iaW"/>
                         <outlet property="player_3" destination="SS2-8y-LTG" id="s5g-AV-hYp"/>
                         <outlet property="player_4" destination="DyQ-ha-HN2" id="Wxj-AG-csk"/>
+                        <outlet property="practiceScreen" destination="ILo-jU-fHH" id="jYD-la-LEW"/>
                         <outlet property="rank_1" destination="6tR-xU-bbo" id="d8r-DK-eWA"/>
                         <outlet property="rank_2" destination="5xJ-XC-fMN" id="jL0-eK-qVS"/>
                         <outlet property="rank_3" destination="zek-gX-w68" id="Vjd-BW-LWb"/>
@@ -675,6 +776,7 @@
                         <outlet property="title_time" destination="heD-zF-iDl" id="Ymv-X8-8En"/>
                         <outlet property="tournamentName" destination="kIv-wk-KbN" id="92G-JZ-3CS"/>
                         <segue destination="iow-QP-aI9" kind="unwind" identifier="unwind" unwindAction="backToMain:" id="Z6r-Sh-dE7"/>
+                        <segue destination="iow-QP-aI9" kind="unwind" identifier="login" unwindAction="login:" id="Iu0-b3-8j6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9DG-9y-ERK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -689,13 +791,22 @@
         <image name="CloseButtonTouched" width="83" height="83"/>
         <image name="GameoverBackground" width="1334" height="750"/>
         <image name="GreatJob" width="741" height="164"/>
+        <image name="HomeButtonTouched" width="420" height="104"/>
+        <image name="HomeButtonUntouched" width="420" height="104"/>
         <image name="LeaderboardPlayers" width="1272" height="102"/>
+        <image name="LoginButtonTouched" width="420" height="104"/>
+        <image name="LoginButtonUntouched" width="420" height="104"/>
         <image name="PlayAgainButtonTouched" width="420" height="104"/>
         <image name="PlayAgainButtonUntouched" width="420" height="104"/>
+        <image name="PleaseLoginImage" width="1334" height="420"/>
+        <image name="Practice-BlurBackground" width="1334" height="750"/>
+        <image name="PracticeButtonTouched" width="420" height="104"/>
+        <image name="PracticeButtonUntouched" width="420" height="104"/>
+        <image name="PracticeTournamentText" width="743" height="103"/>
         <image name="ReviewButton" width="461" height="136"/>
         <image name="ShareButtonGameOverTouched" width="420" height="104"/>
         <image name="ShareButtonGameOverUntouched" width="420" height="104"/>
-        <image name="Spinner" width="1582" height="1582"/>
+        <image name="Spinner3" width="50" height="50"/>
         <image name="amazon-gift-card" width="288" height="288"/>
     </resources>
 </document>

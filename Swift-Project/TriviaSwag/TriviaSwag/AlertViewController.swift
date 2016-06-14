@@ -27,7 +27,9 @@ class AlertViewController: UIViewController {
     @IBOutlet weak var buttonView2: UIView!
   
     
-    
+    deinit{
+        print("deinit alert view controller")
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

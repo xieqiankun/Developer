@@ -8,9 +8,6 @@
 
 import Foundation
 
-var gStackFetchTournamentsNotificationName = "gStackFetchTournamentsNotification"
-
-
 public class gStackPrizeWinner : NSObject {
     public var prize: String?
     public var displayName: String?
@@ -37,11 +34,11 @@ public func gStackFetchTournaments(completion: (error: NSError?, tournaments: Ar
                         returnTournaments.append(gStackTournament(tournament: tournament))
                     }
                     
-                    gStackCachedTournaments = returnTournaments
+                    //gStackCachedTournaments = returnTournaments
                     // Post notification for successfully fetch the tournaments
-                    NSNotificationCenter.defaultCenter().postNotificationName(gStackFetchTournamentsNotificationName, object: nil)
-                    
+                    //NSNotificationCenter.defaultCenter().postNotificationName(gStackFetchTournamentsNotificationName, object: nil)
                     completion(error: nil, tournaments: returnTournaments)
+                    gStackCacheDataManager.sharedInstance.setTournaments(returnTournaments)
                 } else {
                     completion(error: error, tournaments: nil)
                 }
@@ -56,6 +53,12 @@ public func gStackFetchTournaments(completion: (error: NSError?, tournaments: Ar
 public func gStackSetCurrentUserInfo(displayName: String, avator: String){
     gStackAvator = avator
     gStackDisplayName = displayName
+    
+}
+
+public func gStackClearCurrentUserInfo(){
+    gStackAvator = ""
+    gStackDisplayName = "Guest"
     
 }
 
@@ -107,11 +110,11 @@ public func gStackFetchLeaderboardForTournament(tournament: gStackTournament, co
                             leaderboard?.rank = rank
                         }
                     }
-                    completion(error: nil, leaderboard: leaderboard)
                     //store the leaderboard locally
-                    if let id = tournament.uuid {
-                        gStackCachedLeaderBoard[id] = leaderboard
+                    if let id = tournament.uuid, let l = leaderboard {
+                        gStackCacheDataManager.sharedInstance.setLeaderboard(id, leaderboard: l)
                     }
+                    completion(error: nil, leaderboard: leaderboard)
                     
                 } else {
                     completion(error: gStackMissingPayloadError, leaderboard: nil)
