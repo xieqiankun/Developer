@@ -1,0 +1,24 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "E0w-Qh-mQq"; */
+"E0w-Qh-mQq.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "E8j-pq-0YS"; */
+"E8j-pq-0YS.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Close"; ObjectID = "Udq-5m-OGi"; */
+"Udq-5m-OGi.normalTitle" = "关闭";
+
+/* Class = "UISegmentedControl"; cOS-c1-NYu.segmentTitles[0] = "All"; ObjectID = "cOS-c1-NYu"; */
+"cOS-c1-NYu.segmentTitles[0]" = "所有";
+
+/* Class = "UISegmentedControl"; cOS-c1-NYu.segmentTitles[1] = "Music"; ObjectID = "cOS-c1-NYu"; */
+"cOS-c1-NYu.segmentTitles[1]" = "音乐";
+
+/* Class = "UISegmentedControl"; cOS-c1-NYu.segmentTitles[2] = "Software"; ObjectID = "cOS-c1-NYu"; */
+"cOS-c1-NYu.segmentTitles[2]" = "软件";
+
+/* Class = "UISegmentedControl"; cOS-c1-NYu.segmentTitles[3] = "E-Books"; ObjectID = "cOS-c1-NYu"; */
+"cOS-c1-NYu.segmentTitles[3]" = "电子书";
+
+/* Class = "UISearchBar"; placeholder = "App name, artist, song, album, e-book"; ObjectID = "pPv-JU-mzb"; */
+"pPv-JU-mzb.placeholder" = "啊啊啊啊啊啊";
